@@ -24,6 +24,7 @@ Run:
   python sync_shared.py exports/desktop-2.140.json exports/excel-16.0.json --write  # write
 """
 import argparse
+import html
 import json
 import os
 import re
@@ -72,6 +73,24 @@ def load_export(path):
     return data
 
 
+def clean_text(text):
+    """The engine's Documentation.* strings are HTML fragments indented for a C# source
+    file. Four leading spaces make a Markdown code block, so the indentation goes too."""
+    if not text:
+        return ""
+    t = re.sub(r"<code>\s*(.*?)\s*</code>", r"`\1`", text, flags=re.S | re.I)
+    t = re.sub(r"<br\s*/?>|</?p\s*>|</?div\s*>|</tr\s*>|</?ul\s*>", "\n", t, flags=re.I)
+    t = re.sub(r"<li\s*>", "\n- ", t, flags=re.I)
+    t = re.sub(r"</li\s*>", "", t, flags=re.I)
+    t = re.sub(r"</td\s*>", " ", t, flags=re.I)
+    t = re.sub(r"</?(b|strong)\s*>", "**", t, flags=re.I)
+    t = re.sub(r"</?(i|em)\s*>", "*", t, flags=re.I)
+    t = re.sub(r"<[^>]+>", "", t)
+    t = html.unescape(t).replace("\xa0", " ")
+    lines = [re.sub(r"[ \t]+", " ", line).strip() for line in t.splitlines()]
+    return re.sub(r"\n{3,}", "\n\n", "\n".join(lines)).strip()
+
+
 def signature(fn):
     parts = []
     for p in fn.get("parameters") or []:
@@ -81,7 +100,7 @@ def signature(fn):
 
 
 def summary(fn):
-    text = (fn.get("description") or fn.get("longDescription") or "").strip()
+    text = clean_text(fn.get("description") or fn.get("longDescription"))
     text = re.sub(r"\s+", " ", text)
     first = re.split(r"(?<=\.)\s", text, maxsplit=1)[0]
     if len(first) > SUMMARY_CHARS:
@@ -175,7 +194,7 @@ def render_card(row, fn, exports_meta):
         "```",
         "",
     ]
-    description = (fn.get("longDescription") or fn.get("description") or "").strip()
+    description = clean_text(fn.get("longDescription") or fn.get("description"))
     if description:
         lines += [description, ""]
     if row["partialHosts"]:
@@ -196,7 +215,7 @@ def render_card(row, fn, exports_meta):
         lines += ["## Examples (engine metadata — not verified here)", ""]
         for e in examples:
             if e.get("description"):
-                lines += [e["description"], ""]
+                lines += [clean_text(e["description"]), ""]
             lines += ["```m", e["code"].strip(), "```", ""]
             if e.get("result"):
                 lines += ["Stated result:", "", "```m", e["result"].strip(), "```", ""]
@@ -210,12 +229,13 @@ def render_catalog_md(rows, exports_meta):
         "",
         f"{len(rows)} functions from `#shared` ({source}). "
         "Flags: ★ field note · ▶ executed examples · ⌂ not in every host.",
-        "Open one card: `library/<file>.md`.",
+        "Open one card: `library/<file>.md`, where <file> is the name in lower case with "
+        "every run of non-alphanumerics as one dash (`Table.AddColumn` -> `table-addcolumn`).",
         "",
-        "| Function | File | Category | Returns | Flags | Summary |",
-        "|---|---|---|---|---|---|",
+        "| Function | Category | Returns | Flags | Summary |",
+        "|---|---|---|---|---|",
     ]
-    lines += [f"| `{r['name']}` | {r['file']} | {r['category']} | {r['returns']} | "
+    lines += [f"| `{r['name']}` | {r['category']} | {r['returns']} | "
               f"{flags(r)} | {r['summary']} |" for r in rows]
     return "\n".join(lines) + "\n"
 

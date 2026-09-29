@@ -190,12 +190,36 @@ Se añadirán al llegar su contenido: `check_doc_claims`, `check_examples` con p
 | 4 | Páginas conceptuales: sin upstream, ¿de dónde salen? (propuesta: a mano, cortas, con ejemplo ejecutado) | `generated/concepts.md` |
 | 5 | Repos candidatos para `m-lib` | Fase 2 |
 
+| 6 | **Constantes** (`GroupKind.Local`, `JoinKind.*`, `Occurrence.*`): están en `#shared` pero no son funciones y el export no las toma. Los agentes también las inventan. ¿Segundo índice `constants.md`? | Que «no está en el catálogo» valga también para ellas |
+| 7 | **Conectores frente a biblioteca:** ~353 de las 932 funciones son puntos de entrada de conectores (`Mixpanel.Tables`, `Stripe.Contents`…), muchas sin descripción. `catalog.md` pesa ~26.500 tokens, casi el doble que el de DAX. ¿Separar `connectors.md`? | Coste de la primera lectura |
+
+### Primer export (2026-09-28) — lo que enseñó
+
+- Desktop 2.157.879.0, **932 funciones, 0 errores de export**, refresco en 5 s. Las firmas
+  coinciden con las de Microsoft (`Table.AddColumn(..., optional columnType as nullable type)
+  as table`), así que `TypeName` es correcto.
+- La primera versión de la consulta **no parseaba**: usaba `meta` y `type` como
+  identificadores (palabras reservadas de M) y tenía `name = name` dentro de un record, que
+  se refiere al propio campo. Desktop lo reporta como «Se esperaba el token Identifier» al
+  abrir el `.pbip`, no al refrescar. Es exactamente la clase de error que este repo quiere
+  evitar en los agentes, cometida escribiéndolo.
+- Los textos `Documentation.*` son **HTML** (`<code>`, `<ul><li>`, `&quot;`) con sangría de
+  código C#. Cuatro espacios iniciales en Markdown son un bloque de código, así que
+  `sync_shared.py` convierte a Markdown y quita la sangría.
+- `#date`, `#table` y compañía **no están en `#shared`**: son sintaxis. La eval de §7 tiene
+  que tratarlos como palabras clave, no buscarlos en el catálogo.
+- El export de Desktop está automatizado: `lab/shared-export/` genera un `.pbip` cuya única
+  partición **es** `export_shared.pq`, lo abre, refresca por TMSL y lee el JSON por ADOMD
+  usando el cliente que trae el propio Desktop. La pregunta 2 (PQTest) deja de bloquear para
+  Desktop; sigue abierta para Excel y dataflows.
+
 ---
 
 ## 10. Plan por fases
 
-1. **Esqueleto** (este commit): manifiestos, INDEX, 4 `SKILL.md`, generador con fixture, CI.
-2. **Primer export** de Desktop → `generated/` real → README con números reales.
+1. ✅ **Esqueleto**: manifiestos, INDEX, 4 `SKILL.md`, generador con fixture, CI.
+2. ✅ **Primer export** de Desktop → `generated/` real (2026-09-28). Falta: Excel como
+   segundo host, y decidir §9.6 y §9.7.
 3. **Eval A/B** con 4 modelos → tabla del README.
 4. **`m-folding`** completo, con lab.
 5. Field notes y ejemplos por categorías completas (Text, List, Table).

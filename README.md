@@ -4,9 +4,10 @@
 with its signature, types and the hosts that have it, plus the gotchas the documentation
 doesn't tell you.
 
-> **Status: skeleton.** The structure, the generator and CI are in place. The catalogue is
-> empty until the first export from Power BI Desktop. No number in this README is claimed
-> before it can be counted from the tree. Plan and open questions:
+> **Status: early.** The catalogue is generated from one export, Power BI Desktop; its size
+> and the build it came from are in the header of
+> [`catalog.md`](skills/m-reference/generated/catalog.md), counted by the generator rather
+> than typed here. No second host, field notes or evals yet. Plan and open questions:
 > [design spec](docs/superpowers/specs/2026-09-28-powerquery-m-for-agents-design.md).
 
 Sibling of [dax-for-agents](https://github.com/CSalcedoDataBI/dax-for-agents), with the same
@@ -30,7 +31,7 @@ So the catalogue is **exported, not scraped**:
 
 | Skill | For | Status |
 |---|---|---|
-| `m-reference` | Does it exist, what does it take and return, which hosts | 🚧 generator ready |
+| `m-reference` | Does it exist, what does it take and return, which hosts | ✅ Desktop export · 🚧 more hosts |
 | `m-folding` | Does this step fold, what breaks it, how to verify | 🚧 stub |
 | `m-custom-functions` | Writing and documenting your own functions | 🚧 stub |
 | `m-iteration` | `List.Generate`, `List.Accumulate`, buffering, pagination | 🚧 stub |

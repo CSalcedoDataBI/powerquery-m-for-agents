@@ -21,7 +21,7 @@ Partitions, TMDL, incremental refresh policy? → not here. Use data-goblin's po
 
 | Skill | Use it when | Status |
 |---|---|---|
-| **`m-reference`** | Language reference: whether a function exists, its signature and types, what it returns, which hosts have it. Cards generated from the engine's own `#shared`, plus field notes measured in the lab. | 🚧 generator ready, first export pending |
+| **`m-reference`** | Language reference: whether a function exists, its signature and types, what it returns, which hosts have it. Cards generated from the engine's own `#shared`, plus field notes measured in the lab. | ✅ Desktop export · 🚧 more hosts, notes |
 | **`m-folding`** | Whether a step folds to the source, what breaks it, how to verify, `Value.NativeQuery` with `EnableFolding`. | 🚧 stub |
 | **`m-custom-functions`** | Typed and optional parameters, recursion, documenting your function with `Value.ReplaceType`. | 🚧 stub |
 | **`m-iteration`** | `List.Generate`, `List.Accumulate`, buffering, pagination, `GroupKind.Local`. | 🚧 stub |

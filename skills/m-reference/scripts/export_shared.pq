@@ -16,7 +16,7 @@ let
     // `table [a = number]` reads as "table" and Int64.Type (number + facets) as "number".
     TypeName = (t as type) as text =>
         let
-            nullable = Type.IsNullable(t),
+            isNullable = Type.IsNullable(t),
             base = Type.NonNullable(t),
             candidates = {
                 {type logical, "logical"}, {type number, "number"}, {type time, "time"},
@@ -28,28 +28,30 @@ let
             },
             hit = List.First(List.Select(candidates, each Type.Is(base, _{0})), null),
             name =
-                if Type.Is(base, type none) then (if nullable then "null" else "none")
+                if Type.Is(base, type none) then (if isNullable then "null" else "none")
                 else if hit = null then "any"
                 else hit{1}
         in
-            if nullable and name <> "any" and name <> "null" then "nullable " & name else name,
+            if isNullable and name <> "any" and name <> "null" then "nullable " & name else name,
 
     TextField = (r as record, field as text) as nullable text =>
         let v = Record.FieldOrDefault(r, field, null) in if v is text then v else null,
 
-    Row = (name as text, f as function) as record =>
+    // Names below avoid M keywords (`meta`, `type`) and never shadow a field with itself:
+    // inside a record literal, `name = name` refers to the field, not to the variable.
+    Row = (fnName as text, f as function) as record =>
         let
             t = Value.Type(f),
-            meta = Value.Metadata(t),
+            docs = Value.Metadata(t),
             params = Type.FunctionParameters(t),
             names = Record.FieldNames(params),
             required = Type.FunctionRequiredParameters(t),
-            rawExamples = Record.FieldOrDefault(meta, "Documentation.Examples", {}),
+            rawExamples = Record.FieldOrDefault(docs, "Documentation.Examples", {}),
             exampleList =
                 if rawExamples is list then rawExamples
                 else if rawExamples is record then {rawExamples}
                 else {},
-            examples = List.Transform(
+            exampleRows = List.Transform(
                 List.Select(exampleList, each _ is record),
                 each [
                     description = TextField(_, "Description"),
@@ -59,28 +61,32 @@ let
             )
         in
             [
-                name = name,
-                category = TextField(meta, "Documentation.Category"),
-                description = TextField(meta, "Documentation.Description"),
-                longDescription = TextField(meta, "Documentation.LongDescription"),
+                name = fnName,
+                category = TextField(docs, "Documentation.Category"),
+                description = TextField(docs, "Documentation.Description"),
+                longDescription = TextField(docs, "Documentation.LongDescription"),
                 parameters = List.Transform(
                     List.Positions(names),
                     (i) => [
                         name = names{i},
-                        type = TypeName(Record.Field(params, names{i})),
-                        optional = i >= required
+                        #"type" = TypeName(Record.Field(params, names{i})),
+                        #"optional" = i >= required
                     ]
                 ),
                 returns = TypeName(Type.FunctionReturn(t)),
-                examples = examples
+                examples = exampleRows
             ],
 
     // #shared also lists this workbook's own queries. Those are not the library.
     UserMembers = try Record.FieldNames(#sections[Section1]) otherwise {},
     Shared = Record.ToTable(#shared),
+    // User members are ruled out BEFORE [Value] is touched: evaluating this query's own
+    // member from inside itself is a cyclic reference. `and` short-circuits in M, and the
+    // try covers any other member that fails to evaluate.
     Functions = Table.SelectRows(
         Shared,
-        each [Value] is function and not List.Contains(UserMembers, [Name])
+        each not List.Contains(UserMembers, [Name])
+            and (try [Value] is function otherwise false)
     ),
     Rows = List.Transform(
         Table.ToRecords(Functions),

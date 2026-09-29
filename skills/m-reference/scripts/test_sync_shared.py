@@ -35,6 +35,17 @@ class Names(unittest.TestCase):
                          " as table")
 
 
+class CleanText(unittest.TestCase):
+    def test_html_becomes_markdown(self):
+        raw = ("Groups <code>table</code> rows.<br>\n    <ul><li>One</li><li>Two</li></ul>"
+               "\n    Use &quot;x&quot;.")
+        self.assertEqual(s.clean_text(raw), 'Groups `table` rows.\n\n- One\n- Two\n\nUse "x".')
+
+    def test_no_line_keeps_code_block_indentation(self):
+        out = s.clean_text("First.\n        Second, indented as in the C# source.")
+        self.assertFalse(any(line.startswith("    ") for line in out.splitlines()))
+
+
 class Sync(unittest.TestCase):
     def setUp(self):
         self.ref = tempfile.mkdtemp()

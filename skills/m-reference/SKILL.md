@@ -10,25 +10,34 @@ engine itself** (`#shared`), not scraped from documentation: a function in the c
 exists in the host it names. See
 [the design spec](../../docs/superpowers/specs/2026-09-28-powerquery-m-for-agents-design.md).
 
-> **Status.** Skeleton. The generator (`scripts/sync_shared.py`) is built and tested against
-> fixtures; `generated/` does not exist until the first real export from Power BI Desktop.
-> Until then, **do not rely on this skill to say a function exists.**
+> **Status.** `generated/` is built from one export: Power BI Desktop (the host and build are
+> in the header of `catalog.md`). No other host yet, so no card carries ⌂. No field notes or
+> executed examples yet.
 
 ## How to use this
 
 **One hop. Do not read the whole library.**
 
-1. Read **`generated/catalog.md`**. Every function, one row each: name, card file,
-   category, return type, flags, one-line summary.
-2. Find the function. Open its card: **`generated/library/<file>.md`**.
+1. Read **`generated/catalog.md`**. Every function, one row each: name, category, return
+   type, flags, one-line summary.
+2. Find the function. Open its card: **`generated/library/<file>.md`** (file naming below).
 3. Flag **★** → also read **`notes/<file>.md`**: field knowledge not in the engine metadata.
 4. Flag **▶** → the card links to **`examples/<category>/<file>.md`**: queries executed in
    this repository's lab, each with the value the engine returned.
 5. Flag **⌂** → the function is missing from at least one exported host. The card says
    which ones have it. Check before suggesting it for Excel or a dataflow.
 
-**A name that is not in `catalog.md` does not exist in any exported host.** Say so rather
-than offering it.
+**A function name that is not in `catalog.md` does not exist in any exported host.** Say so
+rather than offering it. Two kinds of name are **not** covered, so their absence proves
+nothing:
+
+- **Constants** such as `GroupKind.Local`, `JoinKind.Inner`, `Occurrence.All`. They live in
+  `#shared` but are not functions, and the export takes functions only.
+- **Literal keywords** such as `#date`, `#table`, `#duration`. They are part of the language
+  syntax, not library members.
+
+The catalogue also lists connector entry points (`Mixpanel.Tables`, `Stripe.Contents`, …)
+alongside the core library. Many of those carry no description.
 
 The card section `## Examples (engine metadata — not verified here)` is copied from the
 function's own `Documentation.Examples`. Useful for shape; not evidence.
@@ -50,11 +59,22 @@ Card file names: lower case, dot becomes a dash (`Table.AddColumn` → `table-ad
 
 ## Regenerating
 
+**Power BI Desktop, automated** (from the repo root, with Desktop closed or open on
+something else — the script only touches the engine it starts):
+
+```bash
+python lab/shared-export/build_pbip.py --host desktop --host-version <Desktop build>
+powershell.exe -ExecutionPolicy Bypass -File lab/shared-export/export_desktop.ps1
+```
+
+**Any other host, by hand:**
+
 1. Paste `scripts/export_shared.pq` into a blank query in the host; set `Host` and
    `HostVersion`.
 2. Save the resulting JSON (concatenate the `json` chunks in `part` order, or save the chunk
    table as JSON — the sync accepts both) to `exports/<host>-<version>.json`.
-3. Report, then write:
+
+Then report, and write:
 
 ```bash
 python skills/m-reference/scripts/sync_shared.py exports/desktop.json exports/excel.json
