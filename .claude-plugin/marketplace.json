@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "powerquery-m-for-agents",
+  "description": "The canonical Power Query M language reference for AI agents, exported from the engine's own #shared and annotated with the gotchas the documentation leaves out.",
+  "owner": {
+    "name": "CSalcedoDataBI",
+    "url": "https://github.com/CSalcedoDataBI"
+  },
+  "plugins": [
+    {
+      "name": "m",
+      "source": "./",
+      "description": "The Power Query M language, agent-native: function cards from #shared with host availability, query folding, custom functions and iteration. Not modeling or TMDL."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "host": "excel",
+  "hostVersion": "fixture",
+  "exportedAt": "2026-09-28T00:00:00Z",
+  "functions": [
+    {"name": "List.Sum", "category": "List.Addition", "description": "Returns the sum of the non-null values in the list.", "parameters": [{"name": "list", "type": "list", "optional": false}], "returns": "any", "examples": []},
+    {"name": "#date", "category": null, "description": "Creates a date value.", "parameters": [], "returns": "date", "examples": []}
+  ]
+}

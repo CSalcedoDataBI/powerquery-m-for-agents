@@ -1,0 +1,41 @@
+name: Validate skills
+
+on:
+  # Commits land directly on main, so dropping `push` would drop the only run, not a
+  # duplicate. While the repo is private every run costs quota, so the job stays short.
+  # Going public (spec section 10) makes it free (R8).
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# R2: only the latest push to a ref matters.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    # R3: frontmatter and unit tests. Anything past 10 min is a hang.
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Install deps
+        run: pip install pyyaml
+      - name: Validate skills (frontmatter, INDEX, scripts, catalogue integrity)
+        run: python scripts/validate_skills.py
+      - name: Plugin manifest matches the skills on disk
+        run: python scripts/check_plugin_manifest.py
+      - name: Actions cost rules
+        run: python scripts/check_workflow_cost.py
+      - name: Unit tests (repo scripts)
+        run: python -m unittest discover -s scripts -t scripts -v
+      - name: Unit tests (sync pipeline)
+        run: python -m unittest discover -s skills/m-reference/scripts -t skills/m-reference/scripts -v

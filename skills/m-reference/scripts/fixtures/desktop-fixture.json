@@ -1,0 +1,52 @@
+{
+  "host": "desktop",
+  "hostVersion": "fixture",
+  "exportedAt": "2026-09-28T00:00:00Z",
+  "functions": [
+    {
+      "name": "Table.AddColumn",
+      "category": "Table.Transformation",
+      "description": "Adds a column with the specified name. The value is computed using the specified selection function with each row taken as an input.",
+      "longDescription": null,
+      "parameters": [
+        {"name": "table", "type": "table", "optional": false},
+        {"name": "newColumnName", "type": "text", "optional": false},
+        {"name": "columnGenerator", "type": "function", "optional": false},
+        {"name": "columnType", "type": "nullable type", "optional": true}
+      ],
+      "returns": "table",
+      "examples": [
+        {"description": "Add a column named TotalPrice.", "code": "Table.AddColumn(Source, \"TotalPrice\", each [Price] + [Shipping])", "result": null}
+      ]
+    },
+    {
+      "name": "List.Sum",
+      "category": "List.Addition",
+      "description": "Returns the sum of the non-null values in the list.",
+      "parameters": [
+        {"name": "list", "type": "list", "optional": false},
+        {"name": "precision", "type": "nullable number", "optional": true}
+      ],
+      "returns": "any",
+      "examples": [
+        {"description": "Find the sum of the numbers in the list.", "code": "List.Sum({1, 2, 3})", "result": "6"}
+      ]
+    },
+    {
+      "name": "#date",
+      "category": null,
+      "description": "Creates a date value from year, month and day.",
+      "parameters": [
+        {"name": "year", "type": "number", "optional": false},
+        {"name": "month", "type": "number", "optional": false},
+        {"name": "day", "type": "number", "optional": false}
+      ],
+      "returns": "date",
+      "examples": []
+    },
+    {
+      "name": "Broken.Function",
+      "exportError": true
+    }
+  ]
+}

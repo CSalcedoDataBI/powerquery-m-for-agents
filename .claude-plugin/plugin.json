@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "m",
+  "displayName": "Power Query M for agents",
+  "version": "0.1.0",
+  "description": "The Power Query M language, agent-native. Every library function exported from the engine's own #shared, with its signature, parameter types, return type and the hosts that have it (Power BI Desktop, Excel, Dataflows Gen2); query folding and what breaks it; writing and documenting custom functions; and iteration with List.Generate, List.Accumulate and buffering. Annotated with field notes measured in a runnable lab. Not modeling or TMDL - that is data-goblin's power-query skill.",
+  "author": {
+    "name": "CSalcedoDataBI",
+    "url": "https://github.com/CSalcedoDataBI"
+  },
+  "homepage": "https://github.com/CSalcedoDataBI/powerquery-m-for-agents",
+  "repository": "https://github.com/CSalcedoDataBI/powerquery-m-for-agents",
+  "license": "MIT",
+  "keywords": [
+    "power-query",
+    "m-language",
+    "power-bi",
+    "fabric",
+    "dataflows",
+    "reference"
+  ],
+  "skills": [
+    "./skills/m-reference",
+    "./skills/m-folding",
+    "./skills/m-custom-functions",
+    "./skills/m-iteration"
+  ]
+}
