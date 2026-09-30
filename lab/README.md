@@ -8,6 +8,7 @@ what the engine returned instead of what we expect. No external sources: data co
 |---|---|
 | `shared-export/` | `export_shared.pq` in a generated PBIP, to export `#shared` → `exports/*.json` |
 | `runner/` | Every ```` ```m ```` block under `skills/`, writing each result below its block |
+| `review/` | One PBIP per example category: open, Refresh, and read each example with its recorded and live result |
 | `drafting/` | A pilot (#21): an outside model drafts example pages in a container; the runner decides what they return |
 
 ## The runner
