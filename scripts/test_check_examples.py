@@ -180,6 +180,11 @@ class Check(unittest.TestCase):
         self.assertEqual(mb.unsafe_calls('New.Connector("x")', catalog), [])
         self.assertEqual(mb.unsafe_calls('{JoinKind.Inner, #"Step one"}', catalog, unknown=True), [])
 
+    def test_section_access_is_refused(self):
+        self.assertEqual(mb.unsafe_calls("Section1!Query", {"functions": []}),
+                         ["section access (!)"])
+        self.assertEqual(mb.unsafe_calls('"a!b"', {"functions": []}), [])
+
     def test_names_in_text_literals_and_comments_call_nothing(self):
         p = self.block_page("skills/m-reference/concepts/lit.md",
                             '"File.Contents" // File.Contents', '"File.Contents"')

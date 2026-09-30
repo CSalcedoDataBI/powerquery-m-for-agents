@@ -120,10 +120,11 @@ IMPURE_CATEGORIES = {"Values.Implementation"}
 IMPURE_NAMES = {"Value.NativeQuery", "Function.InvokeAfter"}
 # Parsers of text or binary values. Every way to fetch that value (File.Contents, Web.Contents)
 # is refused, so what they parse can only be a literal of the block.
-# Expression.Constant and Expression.Identifier only write M source as text; evaluating it is
+# Expression.Constant and Expression.Identifier only write M source as text, Value.Expression
+# returns a value's syntax tree; evaluating any of it is
 # Expression.Evaluate, which stays refused with the rest of its category.
 PURE_NAMES = {"Table.WithErrorContext", "Csv.Document", "Json.Document", "Xml.Document",
-              "Xml.Tables", "Expression.Constant", "Expression.Identifier"}
+              "Xml.Tables", "Expression.Constant", "Expression.Identifier", "Value.Expression"}
 # Values that describe the machine the runner is on, which a result would publish: its time
 # zone, its clock, its culture (the reason #shared exports TimeZone.Current as null).
 MACHINE_NAMES = {"DateTime.LocalNow", "DateTime.FixedLocalNow", "DateTimeZone.LocalNow",
@@ -200,6 +201,9 @@ def unsafe_calls(code, catalog, unknown=False):
     known = set(functions) | {c["name"] for c in catalog.get("constants", [])}
     bare, quoted = scan(code)
     found = [f"#{m}" for m in ENVIRONMENT_RE.findall(bare)]
+    # Section access (Section1!Query) reads the query document; M has no other use for "!".
+    if "!" in bare:
+        found.append("section access (!)")
     for name in sorted(set(DOTTED_RE.findall(bare)) | set(quoted)):
         if name in MACHINE_NAMES:
             found.append(name)

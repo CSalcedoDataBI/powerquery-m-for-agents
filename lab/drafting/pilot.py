@@ -97,7 +97,8 @@ def unwrap(text):
     return m.group(1) if m else t
 
 
-FENCE_RE = re.compile(r"^```(\w*)\s*$")
+# Any Markdown fence: backticks or tildes, up to three spaces in.
+FENCE_RE = re.compile(r"^ {0,3}(`{3,}|~{3,})")
 
 
 def off_format(page):
@@ -106,14 +107,14 @@ def off_format(page):
     is reviewed as code, so nothing it writes may act as more than text."""
     in_block = False
     for line in page.splitlines():
-        m = FENCE_RE.match(line)
-        if m:
-            if not in_block and m.group(1) != "m":
-                return f"a ```{m.group(1)} fence"
-            in_block = not in_block
-            continue
         if in_block:
+            in_block = line.rstrip() != "```"
             continue
+        if line.rstrip() == "```m":
+            in_block = True
+            continue
+        if FENCE_RE.match(line):
+            return f"a fence other than ```m: {line.strip()[:20]}"
         if re.search(r"<[A-Za-z!/]", line):
             return "HTML"
         # Inline [x](url), reference [x][id] and definitions [id]: url, any scheme:// URL,
