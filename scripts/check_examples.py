@@ -22,8 +22,19 @@ sys.path.insert(0, HERE)
 import m_blocks  # noqa: E402
 
 REF = os.path.join(m_blocks.SKILLS, "m-reference")
-# Library names are Prefix.Name (Table.AddColumn, Int64.Type); `#date` and friends are syntax.
+# Most library names are Prefix.Name (Table.AddColumn, Int64.Type): any such token is checked.
 NAME_RE = re.compile(r"(?<![\w.])([A-Z][A-Za-z0-9]*\.[A-Z][A-Za-z0-9]*)(?![\w])")
+# Some are not (appFigures.Tables, BinaryFormat.7BitEncodedSignedInteger). A looser token is
+# checked only when its prefix is one the export uses, so `catalog.md` or `e.g` never count.
+LOOSE_RE = re.compile(r"(?<![\w.])([A-Za-z][A-Za-z0-9]*\.[A-Za-z0-9][A-Za-z0-9]*)(?![\w])")
+# Names the engine prints that are not library members: error reasons in `error: <Reason>:`.
+REASON_RE = re.compile(r"error: ([A-Za-z][A-Za-z0-9]*\.[A-Za-z][A-Za-z0-9]*):")
+
+
+def names_in(text, prefixes):
+    found = set(NAME_RE.findall(text))
+    found |= {n for n in LOOSE_RE.findall(text) if n.split(".", 1)[0] in prefixes}
+    return found
 
 
 def category_slug(category):
@@ -47,19 +58,20 @@ def check(root=m_blocks.ROOT, ref=REF, page_list=None):
             texts[page] = f.read()
 
     # 1: results and stamps
-    printed = set()
+    parsed, results = {}, []
     for page, text in texts.items():
         try:
             blocks = m_blocks.find_blocks(text)
         except ValueError as e:
             errors.append(f"{page}: {e}")
             continue
+        parsed[page] = blocks
         for i, block in enumerate(blocks):
             if block.result is None:
                 errors.append(f"{page}: ```m block {i + 1} (line {block.code_start + 1}) has no "
                               "```text result - run lab/runner/run_examples.py --write")
             else:
-                printed |= set(NAME_RE.findall(block.result))
+                results.append(block.result)
         if blocks and not m_blocks.stamp(text):
             errors.append(f"{page}: has ```m blocks but no '<!-- lab: <host> <build> -->' stamp")
 
@@ -67,7 +79,17 @@ def check(root=m_blocks.ROOT, ref=REF, page_list=None):
     if catalog is None:
         return errors
     functions = {r["name"]: r for r in catalog.get("functions", [])}
-    known = set(functions) | {c["name"] for c in catalog.get("constants", [])} | printed
+    exported = set(functions) | {c["name"] for c in catalog.get("constants", [])}
+    prefixes = {n.split(".", 1)[0] for n in exported}
+    # What the engine printed vouches for a name only where it cannot be echoing a typo: the
+    # reason of an error, and names in results that hold no error at all. An error message
+    # repeats the name that failed ("The name 'Text.Uppercase' doesn't exist"), so it doesn't.
+    printed = set()
+    for result in results:
+        printed |= set(REASON_RE.findall(result))
+        if "error: " not in result:
+            printed |= names_in(result, prefixes)
+    known = exported | printed
 
     # 2: example placement
     by_file = {r["file"]: r for r in functions.values()}
@@ -88,13 +110,13 @@ def check(root=m_blocks.ROOT, ref=REF, page_list=None):
                           f"examples go in examples/{category_slug(row['category'])}/")
 
     # 3: no invented names, outside the engine's own result blocks
-    for page, text in texts.items():
-        prose = text
-        for block in reversed(m_blocks.find_blocks(text)):
+    for page, blocks in parsed.items():
+        prose = texts[page]
+        for block in reversed(blocks):
             if block.result is not None:
                 lines = prose.split("\n")
                 prose = "\n".join(lines[:block.result_start] + lines[block.result_end + 1:])
-        for name in sorted(set(NAME_RE.findall(prose)) - known):
+        for name in sorted(names_in(prose, prefixes) - known):
             errors.append(f"{page}: '{name}' is not in the export nor printed by the engine")
     return errors
 

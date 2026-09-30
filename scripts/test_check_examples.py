@@ -101,6 +101,21 @@ class Check(unittest.TestCase):
         self.assertEqual(len(errors), 1)
         self.assertIn("'Text.Uppercase'", errors[0])
 
+    def test_a_typo_echoed_in_an_error_message_is_not_vouched_for(self):
+        p = self.page("skills/m-reference/concepts/z.md",
+                      "<!-- lab: desktop 1 -->\n\n```m\nText.Uppercase(\"a\")\n```\n\n```text\n"
+                      "error: Expression.Error: The name 'Text.Uppercase' wasn't recognized.\n```\n")
+        self.assertIn("'Text.Uppercase'", "\n".join(self.run_check(p)))
+
+    def test_names_off_the_strict_shape_are_checked_under_known_prefixes(self):
+        # `Text.upper` has a lowercase second segment, so only the loose pattern sees it;
+        # `catalog.md` has a prefix the export never uses and is left alone.
+        p = self.page("skills/m-reference/concepts/w.md",
+                      "See `Text.upper` in catalog.md.\n")
+        errors = self.run_check(p)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("'Text.upper'", errors[0])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -28,6 +28,7 @@ each other: a table type from one block showed up in another block that used the
 removes that dependence; two full runs then return identical results.
 
 Without `--port`, a run opens and closes its own Desktop and evaluates everything in one
-refresh, with a warning: fine for a quick look, not for results to publish.
+refresh: fine for a quick look, and it refuses `--write`/`--check` unless `--allow-batch`
+says so on purpose.
 
 `--only <text>[,<text>]` limits a run to the pages whose path contains any of the texts.

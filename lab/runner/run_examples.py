@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
 """Run every ```m block of the skills in Power BI Desktop and write what the engine returned.
 
-  python lab/runner/run_examples.py            # run, report which results changed
-  python lab/runner/run_examples.py --write    # run, write the ```text blocks and stamps
-  python lab/runner/run_examples.py --check    # run, exit 1 if any written result differs
+  python lab/runner/run_examples.py --open                # once: Desktop on the runner model
+  python lab/runner/run_examples.py --port N              # run, report which results changed
+  python lab/runner/run_examples.py --port N --write      # run, write the ```text blocks
+  python lab/runner/run_examples.py --port N --check      # run, exit 1 if any result differs
 
-All blocks go into one query (runner.pq) written to lab/runner/build/runner-query.pq. The
-throwaway PBIP next to it has one partition that reads that file and evaluates it with
-Expression.Evaluate over #shared. Without --port, each run opens Desktop, refreshes and
-closes it. To keep one Desktop open for a whole session:
+The throwaway PBIP under lab/runner/build/ has one partition that reads runner-query.pq and
+evaluates it with Expression.Evaluate over #shared. With --port, every block is evaluated
+in its own refresh of that open Desktop (run_isolated.ps1), because blocks evaluated in one
+refresh were seen to leak into each other.
 
-  python lab/runner/run_examples.py --open                       # once
-  python lab/runner/run_examples.py --port N --write             # refreshes and reads
-  python lab/runner/run_examples.py --prepare                    # or: write the query,
-  #   refresh table ExamplesRunner yourself (e.g. the powerbi-modeling MCP), then
-  python lab/runner/run_examples.py --port N --no-refresh --write
+Batch runs - one evaluation for all blocks - are for a quick look only: without --port (opens
+and closes its own Desktop), with --batch, or with --no-refresh after refreshing the model
+yourself (--prepare writes the query first). They refuse --write/--check unless
+--allow-batch says otherwise.
 
 Windows only; the format is checked on CI by check_examples.py.
 """
@@ -168,6 +168,8 @@ def main(argv=None):
     parser.add_argument("--batch", action="store_true",
                         help="with --port: evaluate every case in one refresh (fast, but cases "
                              "can leak into each other; see run_isolated.ps1)")
+    parser.add_argument("--allow-batch", action="store_true",
+                        help="let --write/--check use a batch run anyway")
     parser.add_argument("--only", default="",
                         help="run only the pages whose path contains this text")
     args = parser.parse_args(argv)
@@ -192,8 +194,12 @@ def main(argv=None):
     if args.port and not args.no_refresh and not args.batch:
         got = run_isolated(cases, args.port)
     else:
-        print("WARNING: one evaluation for every case; cases can leak into each other. "
-              "For results to publish, use --port N (isolated) on a Desktop left --open.")
+        # One evaluation for every case: cases can leak into each other (run_isolated.ps1),
+        # so its results may be looked at, never written or used as the reference.
+        if (args.write or args.check) and not args.allow_batch:
+            raise SystemExit("--write/--check need isolated runs: open Desktop with --open, "
+                             "then --port N. --allow-batch overrides on purpose.")
+        print("WARNING: one evaluation for every case; cases can leak into each other.")
         got = run(pbip, args.port, refresh=not args.no_refresh)
     version = desktop_version()
 
