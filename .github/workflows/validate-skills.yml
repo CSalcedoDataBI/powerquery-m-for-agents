@@ -37,6 +37,8 @@ jobs:
         run: python scripts/check_examples.py
       - name: SharedExport.pbip matches export_shared.pq
         run: python lab/shared-export/build_pbip.py --check
+      - name: Review PBIPs match the example pages
+        run: python lab/review/build_review.py --check
       - name: Actions cost rules
         run: python scripts/check_workflow_cost.py
       - name: Unit tests (repo scripts)
