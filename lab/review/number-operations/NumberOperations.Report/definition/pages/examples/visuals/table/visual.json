@@ -1,0 +1,123 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "table",
+  "position": {
+    "x": 300,
+    "y": 80,
+    "z": 2,
+    "width": 956,
+    "height": 620
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NumberOperations"
+                    }
+                  },
+                  "Property": "Function"
+                }
+              },
+              "queryRef": "NumberOperations.Function",
+              "nativeQueryRef": "Function"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NumberOperations"
+                    }
+                  },
+                  "Property": "Block"
+                }
+              },
+              "queryRef": "NumberOperations.Block",
+              "nativeQueryRef": "Block"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NumberOperations"
+                    }
+                  },
+                  "Property": "Code"
+                }
+              },
+              "queryRef": "NumberOperations.Code",
+              "nativeQueryRef": "Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NumberOperations"
+                    }
+                  },
+                  "Property": "Recorded"
+                }
+              },
+              "queryRef": "NumberOperations.Recorded",
+              "nativeQueryRef": "Recorded"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NumberOperations"
+                    }
+                  },
+                  "Property": "Live"
+                }
+              },
+              "queryRef": "NumberOperations.Live",
+              "nativeQueryRef": "Live"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NumberOperations"
+                    }
+                  },
+                  "Property": "Match"
+                }
+              },
+              "queryRef": "NumberOperations.Match",
+              "nativeQueryRef": "Match"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "NumberOperations"
+                  }
+                },
+                "Property": "seq"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    }
+  }
+}
