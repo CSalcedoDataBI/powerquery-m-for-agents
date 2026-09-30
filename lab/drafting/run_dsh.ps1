@@ -1,0 +1,98 @@
+<#
+.SYNOPSIS
+  Answers each prompt of a pilot run with dsh, one throwaway container per function (#21).
+
+.DESCRIPTION
+  The container gets no host path and exactly one secret:
+    - the prompt goes in on stdin and the answer comes out on stdout (dsh --json);
+    - DEEPSEEK_API_KEY is read from the Windows user registry into this process and handed to
+      docker by NAME (-e DEEPSEEK_API_KEY), so the value is never on a command line;
+    - before any model call, the container's environment is listed (names only) and the run
+      stops if anything but the expected names is there;
+    - read-only root, tmpfs home and work dir, all capabilities dropped, no new privileges,
+      no published port (headless opens none);
+    - the privacy patch baked into the image turns off the session-log and plugin-inventory
+      uploads, and DSH_TELEMETRY_DISABLED turns off telemetry export.
+  Answers land in <Out>/answers/<file>.jsonl and timings in <Out>/runs.json; pilot.py
+  collect decides what, if anything, reaches skills/.
+
+.EXAMPLE
+  pwsh lab/drafting/run_dsh.ps1 -Out lab/drafting/out/dsh -CheckOnly   # build + env check, no model call
+  pwsh lab/drafting/run_dsh.ps1 -Out lab/drafting/out/dsh -Only number-mod
+  pwsh lab/drafting/run_dsh.ps1 -Out lab/drafting/out/dsh
+#>
+param(
+    [Parameter(Mandatory)][string]$Out,
+    [string]$Image = 'pq-drafting-dsh:0.2.0-rc.2',
+    [string[]]$Only,
+    [switch]$Build,
+    [switch]$CheckOnly,
+    [int]$TimeoutSec = 600
+)
+$ErrorActionPreference = 'Stop'
+$Out = (Resolve-Path $Out).Path
+$prompts = Join-Path $Out 'prompts'
+$answers = Join-Path $Out 'answers'
+if (-not (Test-Path $prompts)) { throw "No prompts in $prompts - run: python lab/drafting/pilot.py prompts --out $Out" }
+New-Item -ItemType Directory -Force $answers | Out-Null
+
+docker image inspect $Image *> $null
+if ($Build -or $LASTEXITCODE -ne 0) {
+    docker build -t $Image $PSScriptRoot
+    if ($LASTEXITCODE -ne 0) { throw 'docker build failed' }
+}
+
+$key = [Environment]::GetEnvironmentVariable('DEEPSEEK_API_KEY', 'User')
+if (-not $key) { throw 'DEEPSEEK_API_KEY is not set in the user registry.' }
+$env:DEEPSEEK_API_KEY = $key
+Remove-Variable key
+
+$isolation = @('--rm', '--read-only', '--tmpfs', '/tmp',
+    '--tmpfs', '/home/node:uid=1000,gid=1000', '--tmpfs', '/work:uid=1000,gid=1000',
+    '--cap-drop', 'ALL', '--security-opt', 'no-new-privileges',
+    '--pids-limit', '256', '--memory', '2g', '--cpus', '2',
+    '-e', 'DEEPSEEK_API_KEY')
+# What the image, docker and sh (PWD) put there, plus the one secret. Anything else stops the run.
+$allowed = 'PATH', 'HOSTNAME', 'HOME', 'NODE_VERSION', 'YARN_VERSION', 'DSH_TELEMETRY_DISABLED',
+    'NO_UPDATE_NOTIFIER', 'NPM_CONFIG_UPDATE_NOTIFIER', 'DSH_HOME', 'PWD', 'DEEPSEEK_API_KEY'
+
+try {
+    $names = docker run @isolation --entrypoint sh $Image -c 'env | cut -d= -f1' |
+        Where-Object { $_ } | Sort-Object
+    if ($LASTEXITCODE -ne 0) { throw 'could not list the container environment' }
+    Write-Host "Container environment: $($names -join ', ')"
+    $extra = $names | Where-Object { $_ -notin $allowed }
+    if ($extra) { throw "Unexpected variables in the container: $($extra -join ', ')" }
+    if ('DEEPSEEK_API_KEY' -notin $names) { throw 'DEEPSEEK_API_KEY did not reach the container' }
+    # Kernel filesystems, the tmpfs above, and the three files docker itself mounts read-only.
+    $mounts = docker run @isolation --entrypoint sh $Image -c 'awk ''$3 !~ /^(proc|sysfs|tmpfs|devpts|mqueue|cgroup2?|overlay)$/ && $2 !~ /^\/etc\/(hostname|hosts|resolv\.conf)$/'' /proc/mounts'
+    if ($mounts) { throw "Unexpected mounts in the container:`n$($mounts -join "`n")" }
+    $version = docker run @isolation $Image --version
+    Write-Host "dsh $version - isolation checked (no host mount, one secret)."
+    if ($CheckOnly) { return }
+
+    $files = Get-ChildItem $prompts -Filter *.txt | Sort-Object Name
+    if ($Only) { $files = $files | Where-Object { $_.BaseName -in $Only } }
+    $runs = @()
+    foreach ($f in $files) {
+        $target = Join-Path $answers "$($f.BaseName).jsonl"
+        $errors = Join-Path $answers "$($f.BaseName).stderr.txt"
+        $name = "pq-dsh-$($f.BaseName)-$PID"
+        $argv = @('run', '-i', '--name', $name) + $isolation +
+            @($Image, '--profile', 'headless', '--json', '--patch', '/cfg/privacy.patch.yml')
+        $clock = [Diagnostics.Stopwatch]::StartNew()
+        $p = Start-Process docker -ArgumentList $argv -NoNewWindow -PassThru `
+            -RedirectStandardInput $f.FullName -RedirectStandardOutput $target -RedirectStandardError $errors
+        if (-not $p.WaitForExit($TimeoutSec * 1000)) {
+            docker kill $name *> $null
+            $p.WaitForExit()
+        }
+        $clock.Stop()
+        $runs += [ordered]@{ file = $f.BaseName; exit = $p.ExitCode; seconds = [math]::Round($clock.Elapsed.TotalSeconds, 1) }
+        Write-Host ("  {0,-28} exit {1}  {2,6:n1}s" -f $f.BaseName, $p.ExitCode, $clock.Elapsed.TotalSeconds)
+    }
+    $runs | ConvertTo-Json -AsArray | Set-Content (Join-Path $Out 'runs.json') -Encoding utf8
+}
+finally {
+    Remove-Item Env:DEEPSEEK_API_KEY -ErrorAction SilentlyContinue
+}

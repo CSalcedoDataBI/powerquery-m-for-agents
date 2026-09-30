@@ -4,7 +4,7 @@ category: "Number.Operations"
 returns: "nullable number"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Returns the natural logarithm of a number, `number`. If `number` is null `Number
 | Name | Type | Optional |
 |---|---|---|
 | `number` | `nullable number` | no |
+
+**Executed examples (1):** [examples/number-operations/number-ln.md](../../examples/number-operations/number-ln.md)
 
 ## Examples (engine metadata — not verified here)
 

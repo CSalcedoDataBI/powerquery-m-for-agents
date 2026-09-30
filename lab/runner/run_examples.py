@@ -16,6 +16,9 @@ and closes its own Desktop), with --batch, or with --no-refresh after refreshing
 yourself (--prepare writes the query first). They refuse --write/--check unless
 --allow-batch says otherwise.
 
+Blocks that could reach outside the engine (#shared, data sources, Expression.Evaluate) are
+refused before anything runs: every block is code run on this machine.
+
 Windows only; the format is checked on CI by check_examples.py.
 """
 import argparse
@@ -184,6 +187,16 @@ def main(argv=None):
         print("No ```m blocks under skills/.")
         return 0
     print(f"{len(cases)} block(s) in {len(texts)} page(s).")
+    # Every block runs on this machine: refuse the ones that could read or send anything.
+    with open(os.path.join(ROOT, "skills", "m-reference", "generated", "catalog.json"),
+              encoding="utf-8") as f:
+        catalog = json.load(f)
+    unsafe = [(p, i, n) for p, i, code in cases for n in m_blocks.unsafe_calls(code, catalog)]
+    if unsafe:
+        for p, i, n in unsafe:
+            print(f"  UNSAFE {p}:{i} calls {n}")
+        raise SystemExit("refusing to run blocks that can reach outside the engine "
+                         "(see m_blocks.unsafe_calls)")
     pbip = build(cases)
     if args.prepare:
         print(f"Wrote {os.path.join(BUILD, 'runner-query.pq')}.")

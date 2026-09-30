@@ -102,3 +102,78 @@ def apply_results(text, results, host, version):
     else:
         out = line + "\n\n" + out
     return out
+
+
+# What a block may call. The runner evaluates every block with Expression.Evaluate over
+# #shared in the maintainer's own Power BI Desktop, so a block is code run on that machine:
+# one that reads a file or calls a URL would do it there. Blocks are limited to library
+# functions that compute on values, by the category the export gives each function.
+PURE_CATEGORIES = {
+    "Binary", "Binary Formats", "Combiner", "Comparer", "Date", "DateTime", "DateTimeZone",
+    "Duration", "Error", "Function", "Lines", "List", "Logical", "Metadata", "Number",
+    "Record", "Replacer", "Splitter", "Table", "Text", "Time", "Type", "Uri", "Values",
+}
+# Internal hooks (Embedded.Value, Variable.Value, Value.Firewall): off, except the one a page
+# is about. Value.NativeQuery sends a query to a data source.
+IMPURE_CATEGORIES = {"Values.Implementation"}
+IMPURE_NAMES = {"Value.NativeQuery"}
+PURE_NAMES = {"Table.WithErrorContext"}
+DOTTED_RE = re.compile(r"(?<![\w.])([A-Za-z][A-Za-z0-9]*\.[A-Za-z0-9][A-Za-z0-9]*)(?![\w])")
+ENVIRONMENT_RE = re.compile(r"#(shared|sections)\b")
+
+
+def scan(code):
+    """(code, quoted): the code with text literals and comments blanked out, and the names it
+    writes as quoted identifiers. #"Web.Contents" is the same name as Web.Contents, so a
+    check that blanks every "..." misses it."""
+    out, quoted, i, n = [], [], 0, len(code)
+    while i < n:
+        if code.startswith("//", i):
+            j = code.find("\n", i)
+            i = n if j < 0 else j
+            out.append(" ")
+        elif code.startswith("/*", i):
+            j = code.find("*/", i + 2)
+            i = n if j < 0 else j + 2
+            out.append(" ")
+        elif code[i] == '"' or code.startswith('#"', i):
+            ident = code[i] == "#"
+            k, buf = i + (2 if ident else 1), []
+            while k < n:
+                if code[k] == '"':
+                    if code.startswith('""', k):
+                        buf.append('"')
+                        k += 2
+                        continue
+                    break
+                buf.append(code[k])
+                k += 1
+            if ident:
+                quoted.append("".join(buf))
+            out.append(" " if ident else '""')
+            i = k + 1
+        else:
+            out.append(code[i])
+            i += 1
+    return "".join(out), quoted
+
+
+def unsafe_calls(code, catalog):
+    """What in one ```m block could reach outside the engine: the environment itself
+    (#shared, #sections) and any exported function outside PURE_CATEGORIES - data sources,
+    connectors, Expression.Evaluate. Names the export does not have are left to the
+    invented-name check; they cannot resolve to anything."""
+    functions = {r["name"]: r for r in catalog.get("functions", [])}
+    bare, quoted = scan(code)
+    found = [f"#{m}" for m in ENVIRONMENT_RE.findall(bare)]
+    for name in sorted(set(DOTTED_RE.findall(bare)) | set(quoted)):
+        row = functions.get(name)
+        if row is None:
+            continue
+        category = row.get("category") or ""
+        if name in PURE_NAMES:
+            continue
+        if (row.get("kind") != "library" or name in IMPURE_NAMES
+                or category in IMPURE_CATEGORIES or category.split(".")[0] not in PURE_CATEGORIES):
+            found.append(name)
+    return found

@@ -59,7 +59,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `BinaryFormat.UnsignedInteger16` | Binary Formats.Reading numbers | any |  | A binary format that reads a 16-bit unsigned integer. |
 | `BinaryFormat.UnsignedInteger32` | Binary Formats.Reading numbers | any |  | A binary format that reads a 32-bit unsigned integer. |
 | `BinaryFormat.UnsignedInteger64` | Binary Formats.Reading numbers | any |  | A binary format that reads a 64-bit unsigned integer. |
-| `Byte.From` | Number.Conversion and formatting | nullable number |  | Creates an 8-bit integer from the given value. |
+| `Byte.From` | Number.Conversion and formatting | nullable number | ▶ | Creates an 8-bit integer from the given value. |
 | `Cdm.Contents` | Accessing data | table |  | Cdm.Contents |
 | `Cdm.MapToEntity` | Cdm | table |  | Returns a table with columns mapped to the attributes of an entity in the Common Data Model, including data types. |
 | `Character.FromNumber` | Text.Conversions from and to text | nullable text |  | Converts a number to a text character. |
@@ -90,7 +90,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Cube.PropertyKey` | Cube | any |  | Returns the key of a property. |
 | `Cube.ReplaceDimensions` | Cube | table |  | Replaces the set of dimensions returned by Cube.Dimensions. |
 | `Cube.Transform` | Cube | table |  | Applies a list of cube functions. |
-| `Currency.From` | Number.Conversion and formatting | nullable number |  | Returns a currency value from the given value. |
+| `Currency.From` | Number.Conversion and formatting | nullable number | ▶ | Returns a currency value from the given value. |
 | `Date.AddDays` | Date | any |  | Adds the specified days to the date. |
 | `Date.AddMonths` | Date | any |  | Adds the specified months to the date. |
 | `Date.AddQuarters` | Date | any |  | Adds the specified quarters to the date. |
@@ -189,14 +189,14 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `DateTimeZone.ZoneHours` | DateTimeZone | nullable number |  | Gets the timezone hour of the value. |
 | `DateTimeZone.ZoneMinutes` | DateTimeZone | nullable number |  | Gets the timezone minutes of the value. |
 | `DB2.Database` | Accessing data | table |  | Returns a table of SQL tables and views available in a Db2 database. |
-| `Decimal.From` | Number.Conversion and formatting | nullable number |  | Creates a Decimal from the given value. |
+| `Decimal.From` | Number.Conversion and formatting | nullable number | ▶ | Creates a Decimal from the given value. |
 | `DeltaLake.Metadata` | Accessing data | table |  | Given a Delta Lake table, returns the log entries for that table. |
 | `DeltaLake.Table` | Accessing data | any |  | Returns the contents of the Delta Lake table. |
 | `Diagnostics.ActivityId` | Diagnostics | nullable text |  | Returns an opaque identifier for the currently-running evaluation. |
 | `Diagnostics.CorrelationId` | Diagnostics | nullable text |  | Returns an opaque identifier to correlate incoming requests with outgoing ones. |
 | `Diagnostics.Trace` | Diagnostics | any |  | Writes a trace entry, if tracing is enabled, and returns the value. |
 | `DirectQueryCapabilities.From` | Values.Implementation | table |  | This function is intended for internal use only. |
-| `Double.From` | Number.Conversion and formatting | nullable number |  | Creates a Double from the given value. |
+| `Double.From` | Number.Conversion and formatting | nullable number | ▶ | Creates a Double from the given value. |
 | `Duration.Days` | Duration | nullable number |  | Returns the days portion of a duration. |
 | `Duration.From` | Duration | nullable duration |  | Creates a duration from the given value. |
 | `Duration.FromText` | Duration | nullable duration |  | Returns a duration value from textual elapsed time forms (d.h:m:s). |
@@ -247,10 +247,10 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Identity.IsMemberOf` | Accessing data | logical |  | Determines whether an identity is a member of an identity collection. |
 | `IdentityProvider.Default` | Accessing data | any |  | The default identity provider for the current host. |
 | `Informix.Database` | Accessing data | table |  | Returns a table of SQL tables and views available in an Informix database. |
-| `Int16.From` | Number.Conversion and formatting | nullable number |  | Creates a 16-bit integer from the given value. |
-| `Int32.From` | Number.Conversion and formatting | nullable number |  | Creates a 32-bit integer from the given value. |
-| `Int64.From` | Number.Conversion and formatting | nullable number |  | Creates a 64-bit integer from the given value. |
-| `Int8.From` | Number.Conversion and formatting | nullable number |  | Creates a signed 8-bit integer from the given value. |
+| `Int16.From` | Number.Conversion and formatting | nullable number | ▶ | Creates a 16-bit integer from the given value. |
+| `Int32.From` | Number.Conversion and formatting | nullable number | ▶ | Creates a 32-bit integer from the given value. |
+| `Int64.From` | Number.Conversion and formatting | nullable number | ▶ | Creates a 64-bit integer from the given value. |
+| `Int8.From` | Number.Conversion and formatting | nullable number | ▶ | Creates a signed 8-bit integer from the given value. |
 | `ItemExpression.From` | Table.Table construction | record |  | Returns the abstract syntax tree (AST) for the body of a function. |
 | `Json.Document` | Accessing data | any |  | Returns the content of the JSON document. |
 | `Json.FromValue` | Text.Conversions from and to text | binary |  | Produces a JSON representation of a given value. |
@@ -334,7 +334,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Logical.ToText` | Logical | nullable text |  | Returns the text "true" or "false" given a logical value. |
 | `Module.Versions` | Values.Implementation | record |  | Returns a record of module versions for the current module and its dependencies. |
 | `MySQL.Database` | Accessing data | table |  | Returns a table of SQL tables, views, and stored scalar functions available in a MySQL database. |
-| `Number.Abs` | Number.Operations | nullable number |  | Returns the absolute value of the number. |
+| `Number.Abs` | Number.Operations | nullable number | ▶ | Returns the absolute value of the number. |
 | `Number.Acos` | Number.Trigonometry | nullable number |  | Returns the arccosine of the number. |
 | `Number.Asin` | Number.Trigonometry | nullable number |  | Returns the arcsine of the number. |
 | `Number.Atan` | Number.Trigonometry | nullable number |  | Returns the arctangent of the number. |
@@ -345,23 +345,23 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Number.BitwiseShiftLeft` | Number.Bytes | nullable number |  | Shifts the bits set to the left. |
 | `Number.BitwiseShiftRight` | Number.Bytes | nullable number |  | Shifts the bits set to the right. |
 | `Number.BitwiseXor` | Number.Bytes | nullable number |  | Returns the result of performing a bitwise "XOR" (Exclusive-OR) between the two inputs. |
-| `Number.Combinations` | Number.Operations | nullable number |  | Returns the number of unique combinations. |
+| `Number.Combinations` | Number.Operations | nullable number | ▶ | Returns the number of unique combinations. |
 | `Number.Cos` | Number.Trigonometry | nullable number |  | Returns the cosine of the number. |
 | `Number.Cosh` | Number.Trigonometry | nullable number |  | Returns the hyperbolic cosine of the number. |
-| `Number.Exp` | Number.Operations | nullable number |  | Raises e to the given power. |
-| `Number.Factorial` | Number.Operations | nullable number |  | Returns the factorial of the number. |
-| `Number.From` | Number.Conversion and formatting | nullable number |  | Creates a number from the given value. |
-| `Number.FromText` | Number.Conversion and formatting | nullable number | ★ | Creates numbers from common text formats ("15", "3,423.10", "5.0E-10"). |
-| `Number.IntegerDivide` | Number.Operations | nullable number |  | Divides two numbers and returns the integer portion of the result. |
+| `Number.Exp` | Number.Operations | nullable number | ▶ | Raises e to the given power. |
+| `Number.Factorial` | Number.Operations | nullable number | ▶ | Returns the factorial of the number. |
+| `Number.From` | Number.Conversion and formatting | nullable number | ▶ | Creates a number from the given value. |
+| `Number.FromText` | Number.Conversion and formatting | nullable number | ★▶ | Creates numbers from common text formats ("15", "3,423.10", "5.0E-10"). |
+| `Number.IntegerDivide` | Number.Operations | nullable number | ▶ | Divides two numbers and returns the integer portion of the result. |
 | `Number.IsEven` | Number.Information | logical |  | Indicates if the value is even. |
 | `Number.IsNaN` | Number.Information | logical |  | Indicates if the value is NaN (Not a number). |
 | `Number.IsOdd` | Number.Information | logical |  | Indicates if the value is odd. |
-| `Number.Ln` | Number.Operations | nullable number |  | Returns the natural logarithm of the number. |
-| `Number.Log` | Number.Operations | nullable number |  | Returns the logarithm of the number to the specified base (default e). |
-| `Number.Log10` | Number.Operations | nullable number |  | Returns the base 10 logarithm of the number. |
-| `Number.Mod` | Number.Operations | nullable number |  | Integer divides two numbers and returns the remainder. |
-| `Number.Permutations` | Number.Operations | nullable number |  | Returns the number of permutations. |
-| `Number.Power` | Number.Operations | nullable number |  | Raises a number to the given power. |
+| `Number.Ln` | Number.Operations | nullable number | ▶ | Returns the natural logarithm of the number. |
+| `Number.Log` | Number.Operations | nullable number | ▶ | Returns the logarithm of the number to the specified base (default e). |
+| `Number.Log10` | Number.Operations | nullable number | ▶ | Returns the base 10 logarithm of the number. |
+| `Number.Mod` | Number.Operations | nullable number | ▶ | Integer divides two numbers and returns the remainder. |
+| `Number.Permutations` | Number.Operations | nullable number | ▶ | Returns the number of permutations. |
+| `Number.Power` | Number.Operations | nullable number | ▶ | Raises a number to the given power. |
 | `Number.Random` | Number.Random | number |  | Returns a random number. |
 | `Number.RandomBetween` | Number.Random | number |  | Returns a random number between two numbers. |
 | `Number.Round` | Number.Rounding | nullable number |  | Returns the rounded number. |
@@ -369,13 +369,13 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Number.RoundDown` | Number.Rounding | nullable number |  | Returns the highest previous number. |
 | `Number.RoundTowardZero` | Number.Rounding | nullable number |  | Returns the result of rounding positive numbers down and negative numbers up. |
 | `Number.RoundUp` | Number.Rounding | nullable number |  | Returns the next highest number. |
-| `Number.Sign` | Number.Operations | nullable number |  | Returns 1 if the number is positive, -1 if it is negative, and 0 if it is zero. |
+| `Number.Sign` | Number.Operations | nullable number | ▶ | Returns 1 if the number is positive, -1 if it is negative, and 0 if it is zero. |
 | `Number.Sin` | Number.Trigonometry | nullable number |  | Returns the sine of the number. |
 | `Number.Sinh` | Number.Trigonometry | nullable number |  | Returns the hyperbolic sine of the number. |
-| `Number.Sqrt` | Number.Operations | nullable number |  | Returns the square root of the number. |
+| `Number.Sqrt` | Number.Operations | nullable number | ▶ | Returns the square root of the number. |
 | `Number.Tan` | Number.Trigonometry | nullable number |  | Returns the tangent of the number. |
 | `Number.Tanh` | Number.Trigonometry | nullable number |  | Returns the hyperbolic tangent of the number. |
-| `Number.ToText` | Number.Conversion and formatting | nullable text |  | Converts the given number to text. |
+| `Number.ToText` | Number.Conversion and formatting | nullable text | ▶ | Converts the given number to text. |
 | `OData.Feed` | Accessing data | any |  | Returns a table of OData feeds offered by an OData service. |
 | `Odbc.DataSource` | Accessing data | table |  | Returns a table of SQL tables and views from the ODBC data source. |
 | `Odbc.InferOptions` | Accessing data | record |  | Returns the result of trying to infer SQL capabilities for an ODBC driver. |
@@ -386,7 +386,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Parquet.Document` | Accessing data | any |  | Returns the contents of the Parquet document as a table. |
 | `Parquet.Metadata` | Accessing data | any |  | This function is intended for internal use only. |
 | `Pdf.Tables` | Accessing data | table |  | Returns any tables found in a PDF file. |
-| `Percentage.From` | Number.Conversion and formatting | nullable number |  | Returns a percentage value from the given value. |
+| `Percentage.From` | Number.Conversion and formatting | nullable number | ▶ | Returns a percentage value from the given value. |
 | `PostgreSQL.Database` | Accessing data | table |  | Returns a table of SQL tables and views available in a PostgreSQL database. |
 | `Progress.DataSourceProgress` | Values.Implementation | any |  | This function is intended for internal use only. |
 | `RData.FromBinary` | Accessing data | any |  | Returns a record of data frames from the RData file. |
@@ -418,7 +418,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `SharePoint.Contents` | Accessing data | table |  | Returns a table containing content from a SharePoint site. |
 | `SharePoint.Files` | Accessing data | table |  | Returns a table containing documents from a SharePoint site. |
 | `SharePoint.Tables` | Accessing data | table |  | Returns a table containing content from a SharePoint List. |
-| `Single.From` | Number.Conversion and formatting | nullable number |  | Creates a Single from the given value. |
+| `Single.From` | Number.Conversion and formatting | nullable number | ▶ | Creates a Single from the given value. |
 | `Soda.Feed` | Accessing data | table |  | Returns a table from the contents at the specified URL formatted according to the SODA 2.0 API. |
 | `Splitter.SplitByNothing` | Splitter | function |  | Returns a function that does no splitting, returning its argument as a single element list. |
 | `Splitter.SplitTextByAnyDelimiter` | Splitter | function |  | Returns a function that splits text into a list of text at any of the specified delimiters. |

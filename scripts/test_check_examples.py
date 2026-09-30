@@ -55,7 +55,9 @@ class Check(unittest.TestCase):
         os.makedirs(os.path.join(self.ref, "generated"))
         with open(os.path.join(self.ref, "generated", "catalog.json"), "w", encoding="utf-8") as f:
             json.dump({"functions": [{"name": "Text.Upper", "file": "text-upper",
-                                      "category": "Text.Transformations", "kind": "library"}],
+                                      "category": "Text.Transformations", "kind": "library"},
+                                     {"name": "File.Contents", "file": "file-contents",
+                                      "category": "Accessing data", "kind": "library"}],
                        "constants": [{"name": "JoinKind.Inner"}]}, f)
 
     def tearDown(self):
@@ -138,6 +140,28 @@ class Check(unittest.TestCase):
         errors = self.run_check(p)
         self.assertEqual(len(errors), 1)
         self.assertIn("'Text.upper'", errors[0])
+
+    def block_page(self, rel, code, result):
+        return self.page(rel, f"<!-- lab: desktop 1 -->\n\n```m\n{code}\n```\n\n```text\n{result}\n```\n")
+
+    def test_a_quoted_identifier_is_the_name_it_quotes(self):
+        p = self.block_page("skills/m-reference/concepts/q.md", '#"Text.Uper"("a")', '"A"')
+        errors = self.run_check(p)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("'Text.Uper'", errors[0])
+
+    def test_a_block_that_reaches_outside_the_engine_fails(self):
+        for code in ['File.Contents("x.csv")', '#"File.Contents"("x.csv")',
+                     'Record.Field(#shared, "Text.Upper")']:
+            with self.subTest(code=code):
+                p = self.block_page("skills/m-reference/concepts/io.md", code, "1")
+                errors = self.run_check(p)
+                self.assertTrue(any("reach outside the engine" in e for e in errors), errors)
+
+    def test_names_in_text_literals_and_comments_call_nothing(self):
+        p = self.block_page("skills/m-reference/concepts/lit.md",
+                            '"File.Contents" // File.Contents', '"File.Contents"')
+        self.assertEqual(self.run_check(p), [])
 
 
 if __name__ == "__main__":

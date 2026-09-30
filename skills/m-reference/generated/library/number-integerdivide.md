@@ -4,7 +4,7 @@ category: "Number.Operations"
 returns: "nullable number"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 2
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -30,6 +30,8 @@ If `number1` or `number2` are null, `Number.IntegerDivide` returns null.
 | `number1` | `nullable number` | no |
 | `number2` | `nullable number` | no |
 | `precision` | `nullable number` | yes |
+
+**Executed examples (2):** [examples/number-operations/number-integerdivide.md](../../examples/number-operations/number-integerdivide.md)
 
 ## Examples (engine metadata — not verified here)
 

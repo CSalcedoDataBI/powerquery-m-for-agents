@@ -4,7 +4,7 @@ category: "Number.Operations"
 returns: "nullable number"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -32,6 +32,8 @@ If `number` or `divisor` are `null`, this function returns `null`.
 | `number` | `nullable number` | no |
 | `divisor` | `nullable number` | no |
 | `precision` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/number-operations/number-mod.md](../../examples/number-operations/number-mod.md)
 
 ## Examples (engine metadata — not verified here)
 

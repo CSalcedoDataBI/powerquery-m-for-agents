@@ -8,6 +8,7 @@ what the engine returned instead of what we expect. No external sources: data co
 |---|---|
 | `shared-export/` | `export_shared.pq` in a generated PBIP, to export `#shared` → `exports/*.json` |
 | `runner/` | Every ```` ```m ```` block under `skills/`, writing each result below its block |
+| `drafting/` | A pilot (#21): an outside model drafts example pages in a container; the runner decides what they return |
 
 ## The runner
 
@@ -32,3 +33,7 @@ refresh: fine for a quick look, and it refuses `--write`/`--check` unless `--all
 says so on purpose.
 
 `--only <text>[,<text>]` limits a run to the pages whose path contains any of the texts.
+
+The runner refuses a block that could reach outside the engine - `#shared`, a data source, a
+connector, `Expression.Evaluate` - before anything runs: every block is code evaluated on the
+machine that runs it, and on a public repo a page can come from anyone.

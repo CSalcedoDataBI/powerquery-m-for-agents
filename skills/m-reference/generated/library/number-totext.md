@@ -4,7 +4,7 @@ category: "Number.Conversion and formatting"
 returns: "nullable text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 2
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -29,6 +29,8 @@ An optional `culture` may also be provided (for example, "en-US") to control the
 | `number` | `nullable number` | no |
 | `format` | `nullable text` | yes |
 | `culture` | `nullable text` | yes |
+
+**Executed examples (2):** [examples/number-conversion-and-formatting/number-totext.md](../../examples/number-conversion-and-formatting/number-totext.md)
 
 ## Examples (engine metadata — not verified here)
 

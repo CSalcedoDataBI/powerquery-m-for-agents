@@ -4,7 +4,7 @@ category: "Number.Conversion and formatting"
 returns: "nullable number"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 2
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ Returns a `currency` value from the given `value`. If the given `value` is `null
 | `value` | `any` | no |
 | `culture` | `nullable text` | yes |
 | `roundingMode` | `nullable number` | yes |
+
+**Executed examples (2):** [examples/number-conversion-and-formatting/currency-from.md](../../examples/number-conversion-and-formatting/currency-from.md)
 
 ## Examples (engine metadata — not verified here)
 
