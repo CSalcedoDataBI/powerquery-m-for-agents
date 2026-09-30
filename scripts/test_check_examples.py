@@ -180,6 +180,15 @@ class Check(unittest.TestCase):
         self.assertEqual(mb.unsafe_calls('New.Connector("x")', catalog), [])
         self.assertEqual(mb.unsafe_calls('{JoinKind.Inner, #"Step one"}', catalog, unknown=True), [])
 
+    def test_identifiers_with_underscores_are_names(self):
+        catalog = {"functions": []}
+        self.assertEqual(mb.unsafe_calls('My_Connector.Contents("x")', catalog, unknown=True),
+                         ["My_Connector.Contents"])
+        self.assertIn("My_Connector.Contents", c.code_names('My_Connector.Contents("x")'))
+
+    def test_a_verbatim_literal_is_text(self):
+        self.assertEqual(mb.unsafe_calls('#!"Token ! expected"', {"functions": []}), [])
+
     def test_section_access_is_refused(self):
         self.assertEqual(mb.unsafe_calls("Section1!Query", {"functions": []}),
                          ["section access (!)"])

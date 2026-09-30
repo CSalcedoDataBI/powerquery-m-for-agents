@@ -13,8 +13,9 @@
       no published port (headless opens none);
     - the privacy patch baked into the image turns off the session-log and plugin-inventory
       uploads, and DSH_TELEMETRY_DISABLED turns off telemetry export. Before the real key is
-      even read, a container with no network and a fake key sends one task to a stand-in API
-      on its own loopback (capture.mjs) and the run stops if either field is still sent.
+      even read, a container with no network and a fake key runs one whole turn against a
+      stand-in API on its own loopback (capture.mjs), and the run stops if the turn does not
+      complete or if either field appears anywhere in any request.
   Answers land in <Out>/answers/<file>.jsonl and timings in <Out>/runs.json; pilot.py
   collect decides what, if anything, reaches skills/.
 
@@ -50,12 +51,18 @@ $sandbox = @('--rm', '--read-only', '--tmpfs', '/tmp:exec',
     '--cap-drop', 'ALL', '--security-opt', 'no-new-privileges',
     '--pids-limit', '256', '--memory', '2g', '--cpus', '2')
 
-# Privacy check: no network, a fake key, the API replaced by capture.mjs on the loopback.
+# Privacy check: no network, a fake key, the API replaced by capture.mjs on the loopback. The
+# stand-in answers successfully, so dsh runs a whole turn and every request of it is checked.
 $capture = 'node /cfg/capture.mjs & sleep 1; echo "Say ok." | ' +
     'DEEPSEEK_BASE_URL=http://127.0.0.1:8799 DEEPSEEK_API_KEY=sk-fake-privacy-check ' +
-    'dsh-run --profile headless --json > /dev/null 2>&1; cat /tmp/request-fields.txt'
-$sent = docker run @sandbox --network none --entrypoint sh $Image -c $capture
-if ($LASTEXITCODE -ne 0 -or -not $sent) { throw 'Privacy check: dsh sent no request to the stand-in API' }
+    'dsh-run --profile headless --json > /tmp/out.jsonl 2>&1 && ' +
+    'grep -q ''"reason":{"kind":"completed"}'' /tmp/out.jsonl && echo TURN-COMPLETED; ' +
+    'cat /tmp/request-fields.txt'
+$probeOut = docker run @sandbox --network none --entrypoint sh $Image -c $capture
+if ($LASTEXITCODE -ne 0) { throw 'Privacy check: the probe container failed' }
+if ('TURN-COMPLETED' -notin $probeOut) { throw 'Privacy check: dsh did not complete a turn against the stand-in API' }
+$sent = @($probeOut | Where-Object { $_ -like 'POST *' })
+if (-not $sent) { throw 'Privacy check: dsh sent no request to the stand-in API' }
 $leaks = $sent | Select-String -Pattern 'LEAK|dsh_session_log|dsh_plugin_packages'
 if ($leaks) { throw "Privacy check failed - still sent:`n$($leaks -join "`n")" }
 Write-Host "Privacy check: $(@($sent).Count) request(s), fields: $((@($sent)[0] -split ' ')[2])"

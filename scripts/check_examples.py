@@ -52,7 +52,8 @@ def code_names(code):
     between identifiers, so each one is a library name - including a misspelled lowercase
     prefix, which the prose check cannot tell from a file name."""
     bare, quoted = m_blocks.scan(code)
-    return set(LOOSE_RE.findall(bare)) | {q for q in quoted if LOOSE_RE.fullmatch(q)}
+    return set(m_blocks.DOTTED_RE.findall(bare)) | {q for q in quoted
+                                                     if m_blocks.DOTTED_RE.fullmatch(q)}
 
 
 def category_slug(category):

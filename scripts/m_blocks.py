@@ -132,7 +132,9 @@ MACHINE_NAMES = {"DateTime.LocalNow", "DateTime.FixedLocalNow", "DateTimeZone.Lo
                  "DateTimeZone.ToLocal", "Culture.Current", "TimeZone.Current"}
 ESCAPE_RE = re.compile(r"#\(([^()]*)\)")
 SINGLE_ESCAPES = {"cr": chr(13), "lf": chr(10), "tab": chr(9), "#": "#"}
-DOTTED_RE = re.compile(r"(?<![\w.])([A-Za-z][A-Za-z0-9]*\.[A-Za-z0-9][A-Za-z0-9]*)(?![\w])")
+# An M identifier with dots: a letter or underscore, then letters, digits, underscores, in
+# any script (My_Connector.Contents, Ñandú.X), and every dotted segment of it.
+DOTTED_RE = re.compile(r"(?<![\w.])([^\W\d]\w*(?:\.\w+)+)(?![\w])")
 ENVIRONMENT_RE = re.compile(r"#(shared|sections)\b")
 
 
@@ -150,9 +152,10 @@ def scan(code):
             j = code.find("*/", i + 2)
             i = n if j < 0 else j + 2
             out.append(" ")
-        elif code[i] == '"' or code.startswith('#"', i):
-            ident = code[i] == "#"
-            k, buf = i + (2 if ident else 1), []
+        elif code[i] == '"' or code.startswith('#"', i) or code.startswith('#!"', i):
+            # "text", #"quoted identifier", #!"verbatim literal" (text as well).
+            ident = code.startswith('#"', i)
+            k, buf = i + (2 if ident else 3 if code[i] == "#" else 1), []
             while k < n:
                 if code[k] == '"':
                     if code.startswith('""', k):
