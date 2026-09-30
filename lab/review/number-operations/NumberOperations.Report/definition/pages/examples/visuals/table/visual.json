@@ -100,23 +100,6 @@
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "NumberOperations"
-                  }
-                },
-                "Property": "seq"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     }
   }

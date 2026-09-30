@@ -100,23 +100,6 @@
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "NumberConversionAndFormatting"
-                  }
-                },
-                "Property": "seq"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ]
       }
     }
   }
