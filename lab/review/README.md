@@ -6,8 +6,35 @@ them.
 
 | Batch | Project |
 |---|---|
-| Number.Operations | [number-operations/NumberOperations.pbip](number-operations/NumberOperations.pbip) |
+| List.Addition | [list-addition/ListAddition.pbip](list-addition/ListAddition.pbip) |
+| List.Averages | [list-averages/ListAverages.pbip](list-averages/ListAverages.pbip) |
+| List.Generators | [list-generators/ListGenerators.pbip](list-generators/ListGenerators.pbip) |
+| List.Information | [list-information/ListInformation.pbip](list-information/ListInformation.pbip) |
+| List.Membership functions | [list-membership-functions/ListMembershipFunctions.pbip](list-membership-functions/ListMembershipFunctions.pbip) |
+| List.Numerics | [list-numerics/ListNumerics.pbip](list-numerics/ListNumerics.pbip) |
+| List.Ordering | [list-ordering/ListOrdering.pbip](list-ordering/ListOrdering.pbip) |
+| List.Selection | [list-selection/ListSelection.pbip](list-selection/ListSelection.pbip) |
+| List.Set operations | [list-set-operations/ListSetOperations.pbip](list-set-operations/ListSetOperations.pbip) |
+| List.Transformation functions | [list-transformation-functions/ListTransformationFunctions.pbip](list-transformation-functions/ListTransformationFunctions.pbip) |
 | Number.Conversion and formatting | [number-conversion-and-formatting/NumberConversionAndFormatting.pbip](number-conversion-and-formatting/NumberConversionAndFormatting.pbip) |
+| Number.Operations | [number-operations/NumberOperations.pbip](number-operations/NumberOperations.pbip) |
+| Table.Column operations | [table-column-operations/TableColumnOperations.pbip](table-column-operations/TableColumnOperations.pbip) |
+| Table.Conversions | [table-conversions/TableConversions.pbip](table-conversions/TableConversions.pbip) |
+| Table.Information | [table-information/TableInformation.pbip](table-information/TableInformation.pbip) |
+| Table.Membership | [table-membership/TableMembership.pbip](table-membership/TableMembership.pbip) |
+| Table.Ordering | [table-ordering/TableOrdering.pbip](table-ordering/TableOrdering.pbip) |
+| Table.Other | [table-other/TableOther.pbip](table-other/TableOther.pbip) |
+| Table.Row operations | [table-row-operations/TableRowOperations.pbip](table-row-operations/TableRowOperations.pbip) |
+| Table.Table construction | [table-table-construction/TableTableConstruction.pbip](table-table-construction/TableTableConstruction.pbip) |
+| Table.Transformation | [table-transformation/TableTransformation.pbip](table-transformation/TableTransformation.pbip) |
+| Text | [text/Text.pbip](text/Text.pbip) |
+| Text.Conversions from and to text | [text-conversions-from-and-to-text/TextConversionsFromAndToText.pbip](text-conversions-from-and-to-text/TextConversionsFromAndToText.pbip) |
+| Text.Extraction | [text-extraction/TextExtraction.pbip](text-extraction/TextExtraction.pbip) |
+| Text.Information | [text-information/TextInformation.pbip](text-information/TextInformation.pbip) |
+| Text.Membership | [text-membership/TextMembership.pbip](text-membership/TextMembership.pbip) |
+| Text.Modification | [text-modification/TextModification.pbip](text-modification/TextModification.pbip) |
+| Text.Transformations | [text-transformations/TextTransformations.pbip](text-transformations/TextTransformations.pbip) |
+| Values.Implementation | [values-implementation/ValuesImplementation.pbip](values-implementation/ValuesImplementation.pbip) |
 
 ## How to review
 

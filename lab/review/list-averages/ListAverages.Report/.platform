@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "ListAverages"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "76603e6b-ffb2-5b8b-96a6-6e6ff0c150de"
+  }
+}
