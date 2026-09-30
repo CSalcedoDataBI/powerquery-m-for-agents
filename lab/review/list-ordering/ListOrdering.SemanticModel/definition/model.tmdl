@@ -6,6 +6,34 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["ListOrdering"]
+annotation PBI_QueryOrder = ["ListOrdering", "List.Max (1)", "List.MaxN (1)", "List.Median (1)", "List.Min (1)", "List.MinN (1)", "List.Percentile (1)", "List.Sort (1)"]
+
+queryGroup 'List.Max'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'List.MaxN'
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 'List.Median'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'List.Min'
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup 'List.MinN'
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup 'List.Percentile'
+
+	annotation PBI_QueryGroupOrder = 5
+
+queryGroup 'List.Sort'
+
+	annotation PBI_QueryGroupOrder = 6
 
 ref table ListOrdering

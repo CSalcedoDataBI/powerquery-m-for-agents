@@ -6,6 +6,22 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["TableConversions"]
+annotation PBI_QueryOrder = ["TableConversions", "Table.ToColumns (1)", "Table.ToList (1)", "Table.ToRecords (1)", "Table.ToRows (1)"]
+
+queryGroup 'Table.ToColumns'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Table.ToList'
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 'Table.ToRecords'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'Table.ToRows'
+
+	annotation PBI_QueryGroupOrder = 3
 
 ref table TableConversions

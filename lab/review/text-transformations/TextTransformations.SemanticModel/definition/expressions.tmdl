@@ -1,0 +1,84 @@
+expression 'Text.AfterDelimiter (1)' =
+		{Text.AfterDelimiter("111-222-333", "-"), Text.AfterDelimiter("111-222-333", "-", {0, RelativePosition.FromEnd})}
+	lineageTag: 3ea1c000-e507-5856-90db-be600a00a5a1
+	queryGroup: 'Text.AfterDelimiter'
+
+expression 'Text.BeforeDelimiter (1)' =
+		Text.BeforeDelimiter("111-222-333", "-", 1)
+	lineageTag: b61914c8-3fa2-5cc2-856f-ca27bf237ce1
+	queryGroup: 'Text.BeforeDelimiter'
+
+expression 'Text.BetweenDelimiters (1)' =
+		Text.BetweenDelimiters("a (b) c (d)", "(", ")", 1)
+	lineageTag: 1e95fb55-97f4-5493-8042-0039bd3e4629
+	queryGroup: 'Text.BetweenDelimiters'
+
+expression 'Text.Clean (1)' =
+		Text.Clean("a#(lf)b#(tab)c")
+	lineageTag: 4351ed7f-958c-5f4f-b5a4-d437ff608b0f
+	queryGroup: 'Text.Clean'
+
+expression 'Text.Combine (1)' =
+		Text.Combine({"a", null, "b"}, ", ")
+	lineageTag: dc0ea430-de68-50b1-9783-57fdb09dd9d2
+	queryGroup: 'Text.Combine'
+
+expression 'Text.Lower (1)' =
+		Text.Lower("ÀBC")
+	lineageTag: 7852491c-cc64-5c3a-a637-70610339d4d3
+	queryGroup: 'Text.Lower'
+
+expression 'Text.PadEnd (1)' =
+		Text.PadEnd("7", 3, ".")
+	lineageTag: 8e665cad-7dea-5709-ae32-ee94982ea8c7
+	queryGroup: 'Text.PadEnd'
+
+expression 'Text.PadStart (1)' =
+		{Text.PadStart("7", 3, "0"), Text.PadStart("1234", 3, "0")}
+	lineageTag: d05d21c2-8787-587c-9568-ffc5c84f3af2
+	queryGroup: 'Text.PadStart'
+
+expression 'Text.Proper (1)' =
+		Text.Proper("mcDONALD o'brien")
+	lineageTag: 3023cf30-26f7-5f6e-aef6-3158f3787306
+	queryGroup: 'Text.Proper'
+
+expression 'Text.Repeat (1)' =
+		Text.Repeat("ab", 3)
+	lineageTag: e57db2b5-8448-5a62-9cae-c7144b0a7d23
+	queryGroup: 'Text.Repeat'
+
+expression 'Text.Reverse (1)' =
+		Text.Reverse("abc")
+	lineageTag: fd6695c2-576a-5178-9453-1647492ccb8d
+	queryGroup: 'Text.Reverse'
+
+expression 'Text.Split (1)' =
+		Text.Split("a,,b", ",")
+	lineageTag: 46e9726f-17b7-50f6-b026-565382376e72
+	queryGroup: 'Text.Split'
+
+expression 'Text.SplitAny (1)' =
+		Text.SplitAny("a,b;c", ",;")
+	lineageTag: aeb1ea02-f5a3-5176-9fd6-f8bfbb3c0741
+	queryGroup: 'Text.SplitAny'
+
+expression 'Text.Trim (1)' =
+		{Text.Trim("  a  "), Text.Trim("--a--", "-")}
+	lineageTag: fa196f86-a227-5a89-8ec0-fa3671fa2e01
+	queryGroup: 'Text.Trim'
+
+expression 'Text.TrimEnd (1)' =
+		Text.TrimEnd("a000", "0")
+	lineageTag: 5d4a8df5-089c-59e2-8683-3c5a3deb5b2a
+	queryGroup: 'Text.TrimEnd'
+
+expression 'Text.TrimStart (1)' =
+		Text.TrimStart("000123", "0")
+	lineageTag: f5d401d2-edc3-5d5d-9498-cc38dad914ff
+	queryGroup: 'Text.TrimStart'
+
+expression 'Text.Upper (1)' =
+		{Text.Upper("abc"), Text.Upper("straße")}
+	lineageTag: 75b5059b-7548-5d68-93c3-06150474fdb8
+	queryGroup: 'Text.Upper'

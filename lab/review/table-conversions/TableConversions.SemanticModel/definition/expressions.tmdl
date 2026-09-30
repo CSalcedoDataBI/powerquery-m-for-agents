@@ -1,0 +1,28 @@
+expression 'Table.ToColumns (1)' =
+		let
+		    T = #table(type table [Name = text, Qty = Int64.Type], {{"a", 1}, {"b", 2}, {"a", 3}})
+		in
+		    Table.ToColumns(T)
+	lineageTag: 1d461514-96c6-554e-87fe-43cd4185803e
+	queryGroup: 'Table.ToColumns'
+
+expression 'Table.ToList (1)' =
+		Table.ToList(#table({"a", "b"}, {{"x", "y"}, {"z", "w"}}), Combiner.CombineTextByDelimiter("|"))
+	lineageTag: c4069b42-7cb5-5393-b7ab-2608e464deb6
+	queryGroup: 'Table.ToList'
+
+expression 'Table.ToRecords (1)' =
+		let
+		    T = #table(type table [Name = text, Qty = Int64.Type], {{"a", 1}, {"b", 2}, {"a", 3}})
+		in
+		    Table.ToRecords(T)
+	lineageTag: 142f2e8d-48fe-5729-9c2e-cd22594fbb8f
+	queryGroup: 'Table.ToRecords'
+
+expression 'Table.ToRows (1)' =
+		let
+		    T = #table(type table [Name = text, Qty = Int64.Type], {{"a", 1}, {"b", 2}, {"a", 3}})
+		in
+		    Table.ToRows(T)
+	lineageTag: a043114f-33b6-50fd-87d3-6e4366b38abe
+	queryGroup: 'Table.ToRows'

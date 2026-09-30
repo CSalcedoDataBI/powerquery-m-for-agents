@@ -1,0 +1,14 @@
+expression 'List.Difference (1)' =
+		List.Difference({1, 2, 2, 3}, {2})
+	lineageTag: 01094a7e-3358-5524-a475-faa2fd0e53f9
+	queryGroup: 'List.Difference'
+
+expression 'List.Intersect (1)' =
+		List.Intersect({{1, 2, 2, 3}, {2, 2, 4}})
+	lineageTag: db23e007-b3b6-5ca8-98f5-dbfc2bf320d0
+	queryGroup: 'List.Intersect'
+
+expression 'List.Union (1)' =
+		List.Union({{1, 2, 2}, {2, 3}})
+	lineageTag: 4c83fee8-3eea-5f9f-963f-3df6aaae6aec
+	queryGroup: 'List.Union'

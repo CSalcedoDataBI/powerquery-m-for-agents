@@ -163,12 +163,46 @@ def thank_you_page(name):
     return files
 
 
+def quoted(identifier):
+    return "'" + identifier.replace("'", "''") + "'"
+
+
+def example_queries(name, functions):
+    """One Power Query query per block, in a folder (query group) per function, not loaded to the
+    model: open Transform data and each example is there to click through. A query named exactly
+    Table.AddColumn would shadow the library function in this file, so the block number goes in
+    the name: 'Table.AddColumn (1)'."""
+    expressions, groups, order = [], [], [name]
+    for g, (fn, blocks) in enumerate(functions):
+        groups.append(f"queryGroup {quoted(fn)}\n\n\tannotation PBI_QueryGroupOrder = {g}\n")
+        for b, block in enumerate(blocks):
+            query = f"{fn} ({b + 1})"
+            order.append(query)
+            # TMDL cannot hold a blank line inside an expression, and dropping one could change a
+            # multi-line text literal. No block has one today; if one ever does, stop and say so.
+            lines = block.code.splitlines()
+            if any(not line.strip() for line in lines):
+                raise SystemExit(f"{fn} block {b + 1} has a blank line; remove it from its page")
+            code = "\n".join("\t\t" + line for line in lines)
+            expressions.append(
+                f"expression {quoted(query)} =\n{code}\n"
+                f"\tlineageTag: {guid(name, 'query', query)}\n"
+                f"\tqueryGroup: {quoted(fn)}\n")
+    return "\n".join(expressions), "\n".join(groups), order
+
+
 def project(category, functions, allowed):
     name = project_name(category)
     rows = [(fn, b, block.code, block.result) for fn, blocks in functions for b, block in enumerate(blocks)]
     ids = {"generator": GENERATOR, "model": guid(name, "model"), "report": guid(name, "report"),
            "table": guid(name, "table"), "columns": [guid(name, c) for c, _ in COLUMNS]}
     files = project_files(name, tmdl_source(partition(rows, allowed)), COLUMNS, ids)
+    expressions, groups, order = example_queries(name, functions)
+    sm = f"{name}.SemanticModel/definition/"
+    files[sm + "expressions.tmdl"] = expressions
+    files[sm + "model.tmdl"] = files[sm + "model.tmdl"].replace(
+        f'annotation PBI_QueryOrder = ["{name}"]\n',
+        f"annotation PBI_QueryOrder = {json.dumps(order, ensure_ascii=False)}\n\n{groups}", 1)
     table = f"{name}.SemanticModel/definition/tables/{name}.tmdl"
     files[table] = files[table].replace(
         "\tpartition ",

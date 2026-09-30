@@ -6,6 +6,38 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["TableTableConstruction"]
+annotation PBI_QueryOrder = ["TableTableConstruction", "Table.FromColumns (1)", "Table.FromList (1)", "Table.FromRecords (1)", "Table.FromRows (1)", "Table.FromValue (1)", "Table.View (1)", "Table.ViewError (1)", "Table.ViewFunction (1)"]
+
+queryGroup 'Table.FromColumns'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Table.FromList'
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 'Table.FromRecords'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'Table.FromRows'
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup 'Table.FromValue'
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup 'Table.View'
+
+	annotation PBI_QueryGroupOrder = 5
+
+queryGroup 'Table.ViewError'
+
+	annotation PBI_QueryGroupOrder = 6
+
+queryGroup 'Table.ViewFunction'
+
+	annotation PBI_QueryGroupOrder = 7
 
 ref table TableTableConstruction

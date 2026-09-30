@@ -1,0 +1,4 @@
+expression 'Table.WithErrorContext (1)' =
+		try Table.WithErrorContext(error "boom", "my context")
+	lineageTag: 51cd7473-cbd4-50ea-9f1f-44e923daa968
+	queryGroup: 'Table.WithErrorContext'

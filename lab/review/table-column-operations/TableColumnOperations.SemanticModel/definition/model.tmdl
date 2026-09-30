@@ -6,6 +6,70 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["TableColumnOperations"]
+annotation PBI_QueryOrder = ["TableColumnOperations", "Table.Column (1)", "Table.ColumnNames (1)", "Table.ColumnsOfType (1)", "Table.DemoteHeaders (1)", "Table.DuplicateColumn (1)", "Table.HasColumns (1)", "Table.Pivot (1)", "Table.PrefixColumns (1)", "Table.PromoteHeaders (1)", "Table.RemoveColumns (1)", "Table.RenameColumns (1)", "Table.ReorderColumns (1)", "Table.SelectColumns (1)", "Table.TransformColumnNames (1)", "Table.Unpivot (1)", "Table.UnpivotOtherColumns (1)"]
+
+queryGroup 'Table.Column'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Table.ColumnNames'
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 'Table.ColumnsOfType'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'Table.DemoteHeaders'
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup 'Table.DuplicateColumn'
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup 'Table.HasColumns'
+
+	annotation PBI_QueryGroupOrder = 5
+
+queryGroup 'Table.Pivot'
+
+	annotation PBI_QueryGroupOrder = 6
+
+queryGroup 'Table.PrefixColumns'
+
+	annotation PBI_QueryGroupOrder = 7
+
+queryGroup 'Table.PromoteHeaders'
+
+	annotation PBI_QueryGroupOrder = 8
+
+queryGroup 'Table.RemoveColumns'
+
+	annotation PBI_QueryGroupOrder = 9
+
+queryGroup 'Table.RenameColumns'
+
+	annotation PBI_QueryGroupOrder = 10
+
+queryGroup 'Table.ReorderColumns'
+
+	annotation PBI_QueryGroupOrder = 11
+
+queryGroup 'Table.SelectColumns'
+
+	annotation PBI_QueryGroupOrder = 12
+
+queryGroup 'Table.TransformColumnNames'
+
+	annotation PBI_QueryGroupOrder = 13
+
+queryGroup 'Table.Unpivot'
+
+	annotation PBI_QueryGroupOrder = 14
+
+queryGroup 'Table.UnpivotOtherColumns'
+
+	annotation PBI_QueryGroupOrder = 15
 
 ref table TableColumnOperations

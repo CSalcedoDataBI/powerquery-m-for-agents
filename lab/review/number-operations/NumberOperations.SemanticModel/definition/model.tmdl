@@ -6,6 +6,58 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["NumberOperations"]
+annotation PBI_QueryOrder = ["NumberOperations", "Number.Abs (1)", "Number.Abs (2)", "Number.Abs (3)", "Number.Combinations (1)", "Number.Combinations (2)", "Number.Combinations (3)", "Number.Combinations (4)", "Number.Exp (1)", "Number.Exp (2)", "Number.Exp (3)", "Number.Factorial (1)", "Number.Factorial (2)", "Number.Factorial (3)", "Number.IntegerDivide (1)", "Number.IntegerDivide (2)", "Number.IntegerDivide (3)", "Number.IntegerDivide (4)", "Number.Ln (1)", "Number.Ln (2)", "Number.Ln (3)", "Number.Log (1)", "Number.Log (2)", "Number.Log (3)", "Number.Log10 (1)", "Number.Log10 (2)", "Number.Log10 (3)", "Number.Mod (1)", "Number.Mod (2)", "Number.Mod (3)", "Number.Permutations (1)", "Number.Permutations (2)", "Number.Permutations (3)", "Number.Power (1)", "Number.Power (2)", "Number.Power (3)", "Number.Sign (1)", "Number.Sign (2)", "Number.Sign (3)", "Number.Sqrt (1)", "Number.Sqrt (2)", "Number.Sqrt (3)"]
+
+queryGroup 'Number.Abs'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Number.Combinations'
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 'Number.Exp'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'Number.Factorial'
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup 'Number.IntegerDivide'
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup 'Number.Ln'
+
+	annotation PBI_QueryGroupOrder = 5
+
+queryGroup 'Number.Log'
+
+	annotation PBI_QueryGroupOrder = 6
+
+queryGroup 'Number.Log10'
+
+	annotation PBI_QueryGroupOrder = 7
+
+queryGroup 'Number.Mod'
+
+	annotation PBI_QueryGroupOrder = 8
+
+queryGroup 'Number.Permutations'
+
+	annotation PBI_QueryGroupOrder = 9
+
+queryGroup 'Number.Power'
+
+	annotation PBI_QueryGroupOrder = 10
+
+queryGroup 'Number.Sign'
+
+	annotation PBI_QueryGroupOrder = 11
+
+queryGroup 'Number.Sqrt'
+
+	annotation PBI_QueryGroupOrder = 12
 
 ref table NumberOperations

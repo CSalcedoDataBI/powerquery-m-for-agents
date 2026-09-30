@@ -6,6 +6,10 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["ValuesImplementation"]
+annotation PBI_QueryOrder = ["ValuesImplementation", "Table.WithErrorContext (1)"]
+
+queryGroup 'Table.WithErrorContext'
+
+	annotation PBI_QueryGroupOrder = 0
 
 ref table ValuesImplementation

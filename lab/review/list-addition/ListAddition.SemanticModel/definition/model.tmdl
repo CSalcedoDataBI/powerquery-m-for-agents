@@ -6,6 +6,10 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["ListAddition"]
+annotation PBI_QueryOrder = ["ListAddition", "List.Sum (1)"]
+
+queryGroup 'List.Sum'
+
+	annotation PBI_QueryGroupOrder = 0
 
 ref table ListAddition

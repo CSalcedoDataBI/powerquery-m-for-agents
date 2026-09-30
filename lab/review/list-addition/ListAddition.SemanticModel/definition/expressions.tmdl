@@ -1,0 +1,4 @@
+expression 'List.Sum (1)' =
+		{List.Sum({1, null, 2}), List.Sum({}), List.Sum({0.1, 0.2}), List.Sum({0.1, 0.2}, Precision.Decimal)}
+	lineageTag: a0ad5593-bbdd-5b5e-95eb-257a9621bb76
+	queryGroup: 'List.Sum'

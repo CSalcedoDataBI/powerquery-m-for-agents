@@ -6,6 +6,78 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["ListSelection"]
+annotation PBI_QueryOrder = ["ListSelection", "List.Alternate (1)", "List.Buffer (1)", "List.Distinct (1)", "List.FindText (1)", "List.First (1)", "List.FirstN (1)", "List.InsertRange (1)", "List.IsDistinct (1)", "List.Last (1)", "List.LastN (1)", "List.MatchesAll (1)", "List.MatchesAny (1)", "List.Positions (1)", "List.Range (1)", "List.Select (1)", "List.Single (1)", "List.SingleOrDefault (1)", "List.Skip (1)"]
+
+queryGroup 'List.Alternate'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'List.Buffer'
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 'List.Distinct'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'List.FindText'
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup 'List.First'
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup 'List.FirstN'
+
+	annotation PBI_QueryGroupOrder = 5
+
+queryGroup 'List.InsertRange'
+
+	annotation PBI_QueryGroupOrder = 6
+
+queryGroup 'List.IsDistinct'
+
+	annotation PBI_QueryGroupOrder = 7
+
+queryGroup 'List.Last'
+
+	annotation PBI_QueryGroupOrder = 8
+
+queryGroup 'List.LastN'
+
+	annotation PBI_QueryGroupOrder = 9
+
+queryGroup 'List.MatchesAll'
+
+	annotation PBI_QueryGroupOrder = 10
+
+queryGroup 'List.MatchesAny'
+
+	annotation PBI_QueryGroupOrder = 11
+
+queryGroup 'List.Positions'
+
+	annotation PBI_QueryGroupOrder = 12
+
+queryGroup 'List.Range'
+
+	annotation PBI_QueryGroupOrder = 13
+
+queryGroup 'List.Select'
+
+	annotation PBI_QueryGroupOrder = 14
+
+queryGroup 'List.Single'
+
+	annotation PBI_QueryGroupOrder = 15
+
+queryGroup 'List.SingleOrDefault'
+
+	annotation PBI_QueryGroupOrder = 16
+
+queryGroup 'List.Skip'
+
+	annotation PBI_QueryGroupOrder = 17
 
 ref table ListSelection

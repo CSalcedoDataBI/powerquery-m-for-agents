@@ -6,6 +6,78 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["ListTransformationFunctions"]
+annotation PBI_QueryOrder = ["ListTransformationFunctions", "List.Accumulate (1)", "List.Combine (1)", "List.ConformToPageReader (1)", "List.RemoveFirstN (1)", "List.RemoveItems (1)", "List.RemoveLastN (1)", "List.RemoveMatchingItems (1)", "List.RemoveNulls (1)", "List.RemoveRange (1)", "List.Repeat (1)", "List.ReplaceMatchingItems (1)", "List.ReplaceRange (1)", "List.ReplaceValue (1)", "List.Reverse (1)", "List.Split (1)", "List.Transform (1)", "List.TransformMany (1)", "List.Zip (1)"]
+
+queryGroup 'List.Accumulate'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'List.Combine'
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 'List.ConformToPageReader'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'List.RemoveFirstN'
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup 'List.RemoveItems'
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup 'List.RemoveLastN'
+
+	annotation PBI_QueryGroupOrder = 5
+
+queryGroup 'List.RemoveMatchingItems'
+
+	annotation PBI_QueryGroupOrder = 6
+
+queryGroup 'List.RemoveNulls'
+
+	annotation PBI_QueryGroupOrder = 7
+
+queryGroup 'List.RemoveRange'
+
+	annotation PBI_QueryGroupOrder = 8
+
+queryGroup 'List.Repeat'
+
+	annotation PBI_QueryGroupOrder = 9
+
+queryGroup 'List.ReplaceMatchingItems'
+
+	annotation PBI_QueryGroupOrder = 10
+
+queryGroup 'List.ReplaceRange'
+
+	annotation PBI_QueryGroupOrder = 11
+
+queryGroup 'List.ReplaceValue'
+
+	annotation PBI_QueryGroupOrder = 12
+
+queryGroup 'List.Reverse'
+
+	annotation PBI_QueryGroupOrder = 13
+
+queryGroup 'List.Split'
+
+	annotation PBI_QueryGroupOrder = 14
+
+queryGroup 'List.Transform'
+
+	annotation PBI_QueryGroupOrder = 15
+
+queryGroup 'List.TransformMany'
+
+	annotation PBI_QueryGroupOrder = 16
+
+queryGroup 'List.Zip'
+
+	annotation PBI_QueryGroupOrder = 17
 
 ref table ListTransformationFunctions

@@ -6,6 +6,42 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["TableMembership"]
+annotation PBI_QueryOrder = ["TableMembership", "Table.Contains (1)", "Table.ContainsAll (1)", "Table.ContainsAny (1)", "Table.Distinct (1)", "Table.IsDistinct (1)", "Table.PositionOf (1)", "Table.PositionOfAny (1)", "Table.RemoveMatchingRows (1)", "Table.ReplaceMatchingRows (1)"]
+
+queryGroup 'Table.Contains'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Table.ContainsAll'
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 'Table.ContainsAny'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'Table.Distinct'
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup 'Table.IsDistinct'
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup 'Table.PositionOf'
+
+	annotation PBI_QueryGroupOrder = 5
+
+queryGroup 'Table.PositionOfAny'
+
+	annotation PBI_QueryGroupOrder = 6
+
+queryGroup 'Table.RemoveMatchingRows'
+
+	annotation PBI_QueryGroupOrder = 7
+
+queryGroup 'Table.ReplaceMatchingRows'
+
+	annotation PBI_QueryGroupOrder = 8
 
 ref table TableMembership

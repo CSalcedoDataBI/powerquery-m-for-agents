@@ -1,0 +1,34 @@
+expression 'List.Max (1)' =
+		{List.Max({1, 5, null}), List.Max({}), List.Max({}, 0)}
+	lineageTag: 2624c310-68df-5bf7-80ed-a3b61e553310
+	queryGroup: 'List.Max'
+
+expression 'List.MaxN (1)' =
+		List.MaxN({5, 1, 9, 3}, 2)
+	lineageTag: e0ad250c-8bb0-5930-9168-ae03fbc443a6
+	queryGroup: 'List.MaxN'
+
+expression 'List.Median (1)' =
+		{List.Median({1, 3, 2}), List.Median({1, 2, 3, 4})}
+	lineageTag: 819bc524-be20-5e3b-a216-501bf1ba4034
+	queryGroup: 'List.Median'
+
+expression 'List.Min (1)' =
+		List.Min({"b", "a"})
+	lineageTag: 086fd390-0fcb-55b5-84a6-0aff08b984c0
+	queryGroup: 'List.Min'
+
+expression 'List.MinN (1)' =
+		List.MinN({5, 1, 9, 3}, 2)
+	lineageTag: 3e707178-d4b3-5c2f-8164-fb4170bedb1a
+	queryGroup: 'List.MinN'
+
+expression 'List.Percentile (1)' =
+		{List.Percentile({1, 2, 3, 4}, 0.5), List.Percentile({1, 2, 3, 4}, {0.25, 0.75})}
+	lineageTag: 2c63fc19-d470-52af-b873-d97a6aaed579
+	queryGroup: 'List.Percentile'
+
+expression 'List.Sort (1)' =
+		{List.Sort({3, 1, 2}), List.Sort({3, 1, 2}, Order.Descending), List.Sort({"b", "A", "a"})}
+	lineageTag: abd90d86-49e7-520d-9a7f-1e7ba335a513
+	queryGroup: 'List.Sort'

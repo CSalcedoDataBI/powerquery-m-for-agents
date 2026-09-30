@@ -6,6 +6,26 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["TextMembership"]
+annotation PBI_QueryOrder = ["TextMembership", "Text.Contains (1)", "Text.EndsWith (1)", "Text.PositionOf (1)", "Text.PositionOfAny (1)", "Text.StartsWith (1)"]
+
+queryGroup 'Text.Contains'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Text.EndsWith'
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 'Text.PositionOf'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'Text.PositionOfAny'
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup 'Text.StartsWith'
+
+	annotation PBI_QueryGroupOrder = 4
 
 ref table TextMembership

@@ -1,0 +1,89 @@
+expression 'List.Alternate (1)' =
+		List.Alternate({1..10}, 1, 2, 1)
+	lineageTag: cfe0653d-06da-5ce7-9413-014ef5464f80
+	queryGroup: 'List.Alternate'
+
+expression 'List.Buffer (1)' =
+		List.Buffer({3, 1, 2})
+	lineageTag: 0f27b41f-1aac-5365-8870-03f6ee23450e
+	queryGroup: 'List.Buffer'
+
+expression 'List.Distinct (1)' =
+		{List.Distinct({1, 1, 2}), List.Distinct({"a", "A", "b"}, Comparer.OrdinalIgnoreCase)}
+	lineageTag: 403012b9-8be2-5ec2-aa02-e7ed5d326478
+	queryGroup: 'List.Distinct'
+
+expression 'List.FindText (1)' =
+		List.FindText({"apple", "banana", "BANANA"}, "an")
+	lineageTag: 46434aa8-5dab-5600-bb0e-ca4f5a5c563a
+	queryGroup: 'List.FindText'
+
+expression 'List.First (1)' =
+		{List.First({1, 2}), List.First({}), List.First({}, "none")}
+	lineageTag: baa7b81c-5359-5e66-b436-8de4c52479f4
+	queryGroup: 'List.First'
+
+expression 'List.FirstN (1)' =
+		{List.FirstN({1, 2, 3, 4}, 2), List.FirstN({1, 2, 5, 1}, each _ < 3)}
+	lineageTag: 0ba93cff-4858-5568-af16-1806b446ae95
+	queryGroup: 'List.FirstN'
+
+expression 'List.InsertRange (1)' =
+		List.InsertRange({1, 4}, 1, {2, 3})
+	lineageTag: a8444020-bc78-5b9a-b2e5-96b215e0b25a
+	queryGroup: 'List.InsertRange'
+
+expression 'List.IsDistinct (1)' =
+		List.IsDistinct({1, 2, 1})
+	lineageTag: ce17c281-4356-500f-858b-dd56ccec48ea
+	queryGroup: 'List.IsDistinct'
+
+expression 'List.Last (1)' =
+		List.Last({1, 2, 3})
+	lineageTag: e7cb7f66-54b7-5ae1-90e4-e56b464c9bad
+	queryGroup: 'List.Last'
+
+expression 'List.LastN (1)' =
+		List.LastN({1, 2, 3, 4}, 2)
+	lineageTag: ee908c64-33bb-5539-b682-e2d84da36929
+	queryGroup: 'List.LastN'
+
+expression 'List.MatchesAll (1)' =
+		List.MatchesAll({2, 4}, each _ > 1)
+	lineageTag: d9924723-0891-5363-be19-4ed593dbc164
+	queryGroup: 'List.MatchesAll'
+
+expression 'List.MatchesAny (1)' =
+		List.MatchesAny({1, 2}, each _ > 1)
+	lineageTag: 8d07b759-2a03-514c-8f7f-1c2ecc9e16d3
+	queryGroup: 'List.MatchesAny'
+
+expression 'List.Positions (1)' =
+		List.Positions({"x", "y"})
+	lineageTag: 3c5f532f-fa01-5d31-9808-8fa787bb8f17
+	queryGroup: 'List.Positions'
+
+expression 'List.Range (1)' =
+		List.Range({1..10}, 2, 3)
+	lineageTag: ee2f9564-89ba-5148-878d-72a4fe08d4e6
+	queryGroup: 'List.Range'
+
+expression 'List.Select (1)' =
+		List.Select({1..6}, each Number.Mod(_, 2) = 0)
+	lineageTag: 30e0ebab-37c3-571c-947f-a78ddbc6d22a
+	queryGroup: 'List.Select'
+
+expression 'List.Single (1)' =
+		{List.Single({7}), List.Single({1, 2})}
+	lineageTag: 9b6d0833-5dd9-5d4b-884a-d28bc50414d5
+	queryGroup: 'List.Single'
+
+expression 'List.SingleOrDefault (1)' =
+		{List.SingleOrDefault({}, "none"), List.SingleOrDefault({1, 2})}
+	lineageTag: c12d5a6e-a984-5c9e-a49c-60feef6d96e4
+	queryGroup: 'List.SingleOrDefault'
+
+expression 'List.Skip (1)' =
+		List.Skip({1..5}, each _ < 3)
+	lineageTag: e7e036fb-02ab-5c41-8f50-a1d76d720cf4
+	queryGroup: 'List.Skip'

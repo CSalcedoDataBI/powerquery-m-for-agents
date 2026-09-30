@@ -1,0 +1,218 @@
+expression 'Number.Abs (1)' =
+		Number.Abs(-3.5)
+	lineageTag: 2c537377-f672-5f73-89b6-5efedb7a5ea7
+	queryGroup: 'Number.Abs'
+
+expression 'Number.Abs (2)' =
+		Number.Abs(null)
+	lineageTag: a646b47b-bf28-55ab-9861-ae774e2ca0df
+	queryGroup: 'Number.Abs'
+
+expression 'Number.Abs (3)' =
+		Number.Abs(0) + Number.Abs(4)
+	lineageTag: 2400bd83-818f-5128-a2f7-5e5887444b95
+	queryGroup: 'Number.Abs'
+
+expression 'Number.Combinations (1)' =
+		Number.Combinations(null, 3)
+	lineageTag: 11dea28b-dc41-51f4-9166-ccfcba4122dd
+	queryGroup: 'Number.Combinations'
+
+expression 'Number.Combinations (2)' =
+		Number.Combinations(5, null)
+	lineageTag: 8b94d85e-5286-5b14-8153-7baed91fcaef
+	queryGroup: 'Number.Combinations'
+
+expression 'Number.Combinations (3)' =
+		Number.Combinations(5, 0)
+	lineageTag: 47c5ea2f-184a-5dc4-9880-b7c4bdc1107c
+	queryGroup: 'Number.Combinations'
+
+expression 'Number.Combinations (4)' =
+		Number.Combinations(2, 3)
+	lineageTag: 2c5c385b-fd81-5327-870e-29471b6bf36f
+	queryGroup: 'Number.Combinations'
+
+expression 'Number.Exp (1)' =
+		Number.Exp(null)
+	lineageTag: c72f2aee-78c5-508c-95ba-6f97420390ef
+	queryGroup: 'Number.Exp'
+
+expression 'Number.Exp (2)' =
+		Number.Exp(0)
+	lineageTag: de4ec6df-b953-507d-af45-b278510aab94
+	queryGroup: 'Number.Exp'
+
+expression 'Number.Exp (3)' =
+		Number.Exp(-1000)
+	lineageTag: 005eeff6-9098-508e-a1a9-cbad7a5ef137
+	queryGroup: 'Number.Exp'
+
+expression 'Number.Factorial (1)' =
+		Number.Factorial(null)
+	lineageTag: 06cb4615-9972-590d-b577-2a65f0f6254d
+	queryGroup: 'Number.Factorial'
+
+expression 'Number.Factorial (2)' =
+		Number.Factorial(0)
+	lineageTag: aad06279-70be-52d0-a213-e7ad320f3c55
+	queryGroup: 'Number.Factorial'
+
+expression 'Number.Factorial (3)' =
+		Number.Factorial(5)
+	lineageTag: 140ee766-d97e-5d5a-bc19-5b76bdea0c46
+	queryGroup: 'Number.Factorial'
+
+expression 'Number.IntegerDivide (1)' =
+		Number.IntegerDivide(null, 4)
+	lineageTag: 31f863d8-8825-5610-9e80-58d155f1c73c
+	queryGroup: 'Number.IntegerDivide'
+
+expression 'Number.IntegerDivide (2)' =
+		Number.IntegerDivide(-7, 2)
+	lineageTag: 0a226e50-99a1-5921-8f37-78d9ecf06af5
+	queryGroup: 'Number.IntegerDivide'
+
+expression 'Number.IntegerDivide (3)' =
+		Number.IntegerDivide(10.5, 0.2, Precision.Decimal)
+	lineageTag: 9a04da38-a9dd-5841-bb01-da512f2517e3
+	queryGroup: 'Number.IntegerDivide'
+
+expression 'Number.IntegerDivide (4)' =
+		Number.IntegerDivide(7, 0)
+	lineageTag: 98277ac6-ca3d-5bee-94de-3c6c60604ace
+	queryGroup: 'Number.IntegerDivide'
+
+expression 'Number.Ln (1)' =
+		Number.Ln(null)
+	lineageTag: 6b8ea097-7ad4-5792-923a-77f3ca795d67
+	queryGroup: 'Number.Ln'
+
+expression 'Number.Ln (2)' =
+		List.Transform({0, 1, Number.E}, Number.Ln)
+	lineageTag: 0104ce99-753d-5a51-a580-347273f210a0
+	queryGroup: 'Number.Ln'
+
+expression 'Number.Ln (3)' =
+		Number.Ln(-1)
+	lineageTag: 78125a54-617d-5aba-a8db-adacc03eba8d
+	queryGroup: 'Number.Ln'
+
+expression 'Number.Log (1)' =
+		Number.Log(2)
+	lineageTag: 080975a8-c27a-58aa-90e3-a0f2f654baa5
+	queryGroup: 'Number.Log'
+
+expression 'Number.Log (2)' =
+		Number.Log(2, 10)
+	lineageTag: 53a2e378-da97-53d7-b75f-a0fab8b7af8f
+	queryGroup: 'Number.Log'
+
+expression 'Number.Log (3)' =
+		Number.Log(null, 10)
+	lineageTag: 509d30eb-0543-531b-a345-8e1f92db2ea2
+	queryGroup: 'Number.Log'
+
+expression 'Number.Log10 (1)' =
+		Number.Log10(null)
+	lineageTag: 17a5d8a3-5f6e-5375-9bd3-9236c9b96ec8
+	queryGroup: 'Number.Log10'
+
+expression 'Number.Log10 (2)' =
+		Number.Log10(0)
+	lineageTag: c65859d8-cfac-571c-950b-75c4cc5c1fbf
+	queryGroup: 'Number.Log10'
+
+expression 'Number.Log10 (3)' =
+		Number.Log10(-1)
+	lineageTag: 40dd02dc-3ad6-5de1-845a-0a6d3ec910a5
+	queryGroup: 'Number.Log10'
+
+expression 'Number.Mod (1)' =
+		[
+		    NullDividend = Number.Mod(null, 3),
+		    NullDivisor = Number.Mod(5, null)
+		]
+	lineageTag: 1c98a0f9-370a-569b-a5fe-cb057d76d764
+	queryGroup: 'Number.Mod'
+
+expression 'Number.Mod (2)' =
+		let
+		    Dividend = 10.5,
+		    Divisor = 0.2
+		in
+		    [
+		        DoublePrecision = Number.ToText(Number.Mod(Dividend, Divisor, Precision.Double), "G"),
+		        DecimalPrecision = Number.ToText(Number.Mod(Dividend, Divisor, Precision.Decimal), "G")
+		    ]
+	lineageTag: cc2960a4-2c03-5430-b800-85bec724f606
+	queryGroup: 'Number.Mod'
+
+expression 'Number.Mod (3)' =
+		[
+		    NegativeDividend = Number.Mod(-5, 3),
+		    NegativeDivisor = Number.Mod(5, -3),
+		    ZeroDivisor = Number.Mod(5, 0)
+		]
+	lineageTag: 31387769-44f2-598d-9070-63658dde9be9
+	queryGroup: 'Number.Mod'
+
+expression 'Number.Permutations (1)' =
+		Number.Permutations(null, 3)
+	lineageTag: 02505217-01e4-5731-8ddf-e672642c404a
+	queryGroup: 'Number.Permutations'
+
+expression 'Number.Permutations (2)' =
+		Number.Permutations(5, null)
+	lineageTag: 326644dc-88f5-5e82-a2de-4fe66e7e47fd
+	queryGroup: 'Number.Permutations'
+
+expression 'Number.Permutations (3)' =
+		Number.Permutations(5, 0)
+	lineageTag: ba42fa66-78c0-56af-b74f-054ebe35da30
+	queryGroup: 'Number.Permutations'
+
+expression 'Number.Power (1)' =
+		Number.Power(2, null)
+	lineageTag: 25d74c84-8cf0-5190-aaae-a4c4156fe94d
+	queryGroup: 'Number.Power'
+
+expression 'Number.Power (2)' =
+		Number.Power(2, -3)
+	lineageTag: 2e94efe0-0ea1-5e9e-96e1-e1affd811a35
+	queryGroup: 'Number.Power'
+
+expression 'Number.Power (3)' =
+		Number.Power(-8, 1 / 3)
+	lineageTag: 75e0e7d9-49ea-5c3d-b884-3bec1e40d4f3
+	queryGroup: 'Number.Power'
+
+expression 'Number.Sign (1)' =
+		Number.Sign(null)
+	lineageTag: 7f66d7a4-8c6c-5f65-8b23-93ad3d7fc533
+	queryGroup: 'Number.Sign'
+
+expression 'Number.Sign (2)' =
+		Number.Sign(-0.0)
+	lineageTag: fbc03fd3-5c87-5895-94bd-0a24ae2b8ace
+	queryGroup: 'Number.Sign'
+
+expression 'Number.Sign (3)' =
+		List.Transform({-2.5, 0, 7, null}, Number.Sign)
+	lineageTag: aa55c0c1-e8dd-5a68-abd1-533f295c3cad
+	queryGroup: 'Number.Sign'
+
+expression 'Number.Sqrt (1)' =
+		Number.Sqrt(null)
+	lineageTag: 63146071-0542-5e50-ab80-790d40268fba
+	queryGroup: 'Number.Sqrt'
+
+expression 'Number.Sqrt (2)' =
+		Number.Sqrt(-16)
+	lineageTag: 91b4db6e-9846-5ec8-84a1-b66fc9d67a31
+	queryGroup: 'Number.Sqrt'
+
+expression 'Number.Sqrt (3)' =
+		Number.Sqrt(85)
+	lineageTag: 824d8202-a658-55ef-b49e-7663be644cec
+	queryGroup: 'Number.Sqrt'
