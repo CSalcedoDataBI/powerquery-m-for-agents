@@ -149,8 +149,15 @@ def scan(code):
             i = n if j < 0 else j
             out.append(" ")
         elif code.startswith("/*", i):
-            j = code.find("*/", i + 2)
-            i = n if j < 0 else j + 2
+            # Delimited comments nest in M: /* a /* b */ c */ is one comment.
+            depth, i = 1, i + 2
+            while i < n and depth:
+                if code.startswith("/*", i):
+                    depth, i = depth + 1, i + 2
+                elif code.startswith("*/", i):
+                    depth, i = depth - 1, i + 2
+                else:
+                    i += 1
             out.append(" ")
         elif code[i] == '"' or code.startswith('#"', i) or code.startswith('#!"', i):
             # "text", #"quoted identifier", #!"verbatim literal" (text as well).
@@ -223,3 +230,13 @@ def unsafe_calls(code, catalog, unknown=False):
                 or category in IMPURE_CATEGORIES or category.split(".")[0] not in PURE_CATEGORIES):
             found.append(name)
     return found
+
+
+def allowed_names(catalog):
+    """Every exported name a block may use: the library functions and constants that
+    unsafe_calls lets through. The runner evaluates each block against only these members
+    of #shared, so a name the scan cannot see - a bare global such as another query - does
+    not resolve either."""
+    names = [r["name"] for r in catalog.get("functions", []) if r.get("kind") == "library"]
+    names += [c["name"] for c in catalog.get("constants", [])]
+    return sorted({n for n in names if not unsafe_calls(n, catalog)})

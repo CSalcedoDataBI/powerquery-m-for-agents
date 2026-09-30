@@ -34,7 +34,11 @@ says so on purpose.
 
 `--only <text>[,<text>]` limits a run to the pages whose path contains any of the texts.
 
-The runner refuses a block that could reach outside the engine - `#shared`, a data source, a
+Blocks are evaluated against only the members of `#shared` that `m_blocks.allowed_names` lists
+(the pure library functions and the constants), not the whole of it: a name the scan below cannot
+see - another query, a connector newer than the export - does not exist for a block.
+
+The runner also refuses a block that could reach outside the engine - `#shared`, a data source, a
 connector, `Expression.Evaluate` - before anything runs: every block is code evaluated on the
 machine that runs it, and on a public repo a page can come from anyone. Values that only
 describe that machine (`DateTimeZone.LocalNow`, `Culture.Current`, ...) are refused too.

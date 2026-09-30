@@ -20,10 +20,19 @@ createServer((req, res) => {
   let body = ''
   req.on('data', (c) => { body += c })
   req.on('end', () => {
+    const extras = ['dsh_session_log', 'dsh_plugin_packages']
+    // Raw text, and every key of the decoded JSON at any depth: an escaped key such as
+    // "dsh_session_log" decodes to the same field without matching the raw text.
+    const leaks = new Set(extras.filter((f) => body.includes(f)))
+    const walk = (v) => {
+      if (Array.isArray(v)) v.forEach(walk)
+      else if (v && typeof v === 'object') {
+        for (const [k, x] of Object.entries(v)) { if (extras.includes(k)) leaks.add(k); walk(x) }
+      }
+    }
     let keys = []
-    try { keys = Object.keys(JSON.parse(body)) } catch { keys = ['<not json>'] }
-    const leaks = ['dsh_session_log', 'dsh_plugin_packages'].filter((f) => body.includes(f))
-    const line = `${req.method} ${req.url} ${keys.join(',')}${leaks.length ? ' LEAK ' + leaks.join(',') : ''}`
+    try { const parsed = JSON.parse(body); keys = Object.keys(parsed); walk(parsed) } catch { keys = ['<not json>'] }
+    const line = `${req.method} ${req.url} ${keys.join(',')}${leaks.size ? ' LEAK ' + [...leaks].join(',') : ''}`
     appendFileSync('/tmp/request-fields.txt', line + '\n')
     res.writeHead(200, { 'content-type': 'text/event-stream' })
     res.end(events.map(([e, d]) => `event: ${e}\ndata: ${JSON.stringify(d)}\n\n`).join(''))

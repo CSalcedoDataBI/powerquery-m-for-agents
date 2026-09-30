@@ -17,7 +17,9 @@ yourself (--prepare writes the query first). They refuse --write/--check unless
 --allow-batch says otherwise.
 
 Blocks that could reach outside the engine (#shared, data sources, Expression.Evaluate) are
-refused before anything runs: every block is code run on this machine.
+refused before anything runs: every block is code run on this machine. What runs is evaluated
+against only the allowed members of #shared (m_blocks.allowed_names), so a name the scan
+missed does not resolve either.
 
 Windows only; the format is checked on CI by check_examples.py.
 """
@@ -75,14 +77,22 @@ QUERY_FILE = os.path.join(BUILD, "runner-query.pq")
 CASES_DIR = os.path.join(BUILD, "cases")
 
 
+def load_catalog():
+    with open(os.path.join(ROOT, "skills", "m-reference", "generated", "catalog.json"),
+              encoding="utf-8") as f:
+        return json.load(f)
+
+
 def query_text(cases):
     with open(os.path.join(HERE, "runner.pq"), encoding="utf-8") as f:
         query = f.read()
     listed = ", ".join("{" + m_text(f"{p}:{i}") + ", " + m_text(code) + "}" for p, i, code in cases)
-    marker = "    Cases = {},"
-    if query.count(marker) != 1:
-        raise SystemExit("runner.pq no longer has exactly one 'Cases = {},' line")
-    return query.replace(marker, f"    Cases = {{{listed}}},")
+    allowed = ", ".join(m_text(n) for n in m_blocks.allowed_names(load_catalog()))
+    for marker, value in (("    Cases = {},", listed), ("    Allowed = {},", allowed)):
+        if query.count(marker) != 1:
+            raise SystemExit(f"runner.pq no longer has exactly one '{marker.strip()}' line")
+        query = query.replace(marker, marker.replace("{}", "{" + value + "}"))
+    return query
 
 
 def write_text(path, text):
@@ -188,9 +198,7 @@ def main(argv=None):
         return 0
     print(f"{len(cases)} block(s) in {len(texts)} page(s).")
     # Every block runs on this machine: refuse the ones that could read or send anything.
-    with open(os.path.join(ROOT, "skills", "m-reference", "generated", "catalog.json"),
-              encoding="utf-8") as f:
-        catalog = json.load(f)
+    catalog = load_catalog()
     unsafe = [(p, i, n) for p, i, code in cases
               for n in m_blocks.unsafe_calls(code, catalog, unknown=True)]
     if unsafe:

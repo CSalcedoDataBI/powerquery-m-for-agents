@@ -189,6 +189,18 @@ class Check(unittest.TestCase):
     def test_a_verbatim_literal_is_text(self):
         self.assertEqual(mb.unsafe_calls('#!"Token ! expected"', {"functions": []}), [])
 
+    def test_nested_comments_hide_what_they_contain(self):
+        self.assertEqual(mb.unsafe_calls('1 /* a /* b */ File.Contents("x") */ + 2',
+                                         {"functions": []}, unknown=True), [])
+
+    def test_allowed_names_are_what_unsafe_calls_lets_through(self):
+        catalog = {"functions": [
+            {"name": "Text.Upper", "category": "Text.Transformations", "kind": "library"},
+            {"name": "File.Contents", "category": "Accessing data", "kind": "library"},
+            {"name": "Some.Connector", "category": None, "kind": "connector"}],
+            "constants": [{"name": "JoinKind.Inner"}, {"name": "Culture.Current"}]}
+        self.assertEqual(mb.allowed_names(catalog), ["JoinKind.Inner", "Text.Upper"])
+
     def test_section_access_is_refused(self):
         self.assertEqual(mb.unsafe_calls("Section1!Query", {"functions": []}),
                          ["section access (!)"])

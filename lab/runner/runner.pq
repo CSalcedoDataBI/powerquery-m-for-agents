@@ -2,10 +2,14 @@
 // as M literal text, so a page can quote what the engine returned instead of what we expect.
 //
 // run_examples.py replaces the Cases line with the blocks it collected and builds a PBIP
-// whose only partition is this query. Each case is evaluated with Expression.Evaluate over
-// #shared: the whole library, and nothing else - no data sources, no other queries.
+// whose only partition is this query. It also replaces the Allowed line with the names
+// m_blocks.allowed_names lets a block use, and each case is evaluated with Expression.Evaluate
+// over those members of #shared only: no data sources, no connectors, no other queries, no
+// Expression.Evaluate - even for a name m_blocks.unsafe_calls could not see.
 let
     Cases = {},
+    Allowed = {},
+    Environment = Record.SelectFields(#shared, Allowed, MissingField.Ignore),
 
     // A text as an M text literal: "#(" first, so the escapes added after it stay single.
     Quote = (t as text) as text =>
@@ -171,7 +175,7 @@ let
     // renamed columns (reproduced 2026-09-29; one query with both steps is not affected). A
     // distinct environment per case is meant to keep each evaluation to itself.
     Run = (i as number, code as text) as text =>
-        let r = try Render(Expression.Evaluate(code, #shared & [#"__runner case" = i])) in
+        let r = try Render(Expression.Evaluate(code, Environment & [#"__runner case" = i])) in
             if r[HasError] then ErrorText(r[Error]) else r[Value],
 
     Result = #table(
