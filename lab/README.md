@@ -39,4 +39,6 @@ connector, `Expression.Evaluate` - before anything runs: every block is code eva
 machine that runs it, and on a public repo a page can come from anyone. Values that only
 describe that machine (`DateTimeZone.LocalNow`, `Culture.Current`, ...) are refused too.
 Not every one can be caught by name: a conversion from `datetime` to `datetimezone` takes the
-machine's zone. Check a result's `#datetimezone` offsets before committing it.
+machine's zone. Check a result's `#datetimezone` offsets before committing it. Culture is not one of these:
+the runner's model sets `culture` and `sourceQueryCulture` to en-US, so a conversion without
+an explicit culture reads en-US on any machine.
