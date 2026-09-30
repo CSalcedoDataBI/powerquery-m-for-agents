@@ -130,8 +130,7 @@ def examples_page(name, category, count):
                    "objects": {"data": [{"properties": {"mode": literal("'Basic'")}}]}},
         "table": {"visualType": "tableEx", "position": {"x": 300, "y": 80, "z": 2, "width": 956, "height": 620},
                   "query": {"queryState": {"Values": {"projections": [
-                      field(name, c) for c in ("Function", "Block", "Code", "Recorded", "Live", "Match")]}},
-                      "sortDefinition": {"sort": [{"field": field(name, "seq")["field"], "direction": "Ascending"}]}}},
+                      field(name, c) for c in ("Function", "Block", "Code", "Recorded", "Live", "Match")]}}}},
     }
     files = {}
     for vid, v in visuals.items():
@@ -159,6 +158,8 @@ def thank_you_page(name):
         if v["visual"]["visualType"] == DENEB:
             v["visual"]["query"] = {"queryState": {"dataset": {"projections": [
                 field(name, "Function"), measure(name, "Examples")]}}}
+            # The source page filters on its own model's fields; here they do not exist.
+            v.pop("filterConfig", None)
         files[f"definition/pages/thankyou/visuals/{vid}/visual.json"] = json_text(v)
     return files
 
