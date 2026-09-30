@@ -2,14 +2,30 @@
 
 # Number.Combinations
 
-Order does not matter: subsets of 5 items.
+The examples show null arguments and the boundary case of choosing no items.
 
 ```m
-{Number.Combinations(5, 2), Number.Combinations(5, 0), Number.Combinations(5, 5)}
+Number.Combinations(null, 3)
 ```
 
 ```text
-{10, 1, 1}
+null
+```
+
+```m
+Number.Combinations(5, null)
+```
+
+```text
+null
+```
+
+```m
+Number.Combinations(5, 0)
+```
+
+```text
+1
 ```
 
 A subset larger than the set is zero ways, not an error.

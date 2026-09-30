@@ -2,22 +2,28 @@
 
 # Number.Log
 
-Without a base it is the natural logarithm.
+These examples show the default base, an explicit base, and how a null input is handled.
 
 ```m
-{Number.Log(Number.E), Number.Log(8, 2), Number.Log(100, 10)}
+Number.Log(2)
 ```
 
 ```text
-{1, 3, 2}
+0.69314718055994529
 ```
 
-Base 1 and null.
-
 ```m
-{Number.Log(10, 1), Number.Log(null, 2)}
+Number.Log(2, 10)
 ```
 
 ```text
-{#nan, null}
+0.3010299956639812
+```
+
+```m
+Number.Log(null, 10)
+```
+
+```text
+null
 ```

@@ -4,7 +4,7 @@ category: "Number.Operations"
 returns: "nullable number"
 hosts: ["desktop"]
 notes: false
-examples: 1
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,7 +25,7 @@ If `number` is null, `Number.Sqrt` returns null. If it is a negative value, `Num
 |---|---|---|
 | `number` | `nullable number` | no |
 
-**Executed examples (1):** [examples/number-operations/number-sqrt.md](../../examples/number-operations/number-sqrt.md)
+**Executed examples (3):** [examples/number-operations/number-sqrt.md](../../examples/number-operations/number-sqrt.md)
 
 ## Examples (engine metadata — not verified here)
 

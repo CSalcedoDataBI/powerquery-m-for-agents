@@ -4,7 +4,7 @@ category: "Number.Operations"
 returns: "nullable number"
 hosts: ["desktop"]
 notes: false
-examples: 2
+examples: 4
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -29,7 +29,7 @@ Returns the number of unique combinations from a list of items, `setSize` with s
 | `setSize` | `nullable number` | no |
 | `combinationSize` | `nullable number` | no |
 
-**Executed examples (2):** [examples/number-operations/number-combinations.md](../../examples/number-operations/number-combinations.md)
+**Executed examples (4):** [examples/number-operations/number-combinations.md](../../examples/number-operations/number-combinations.md)
 
 ## Examples (engine metadata — not verified here)
 

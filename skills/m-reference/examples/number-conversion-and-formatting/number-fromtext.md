@@ -2,22 +2,32 @@
 
 # Number.FromText
 
-The common text formats.
+Null text yields null, the optional culture changes how separators are read, and text without a valid number raises an error.
 
 ```m
-{Number.FromText("15"), Number.FromText("3,423.10"), Number.FromText("5.0E-10")}
+Number.FromText(null)
 ```
 
 ```text
-{15, 3423.1, 5E-10}
+null
 ```
 
-Culture, and text that is not a number.
+The culture argument is optional but decisive when a comma is involved.
 
 ```m
-{Number.FromText("3.423,10", "de-DE"), try Number.FromText("12 units")}
+Number.FromText("1.234,5", "de-DE")
 ```
 
 ```text
-{3423.1, [HasError = true, Error = [Reason = "DataFormat.Error", Message = "We couldn't convert to Number.", Detail = "12 units", #"Message.Format" = "We couldn't convert to Number.", #"Message.Parameters" = null, ErrorCode = "10041"]]}
+1234.5
+```
+
+A string that does not hold a valid number fails instead of returning null.
+
+```m
+Number.FromText("12 apples")
+```
+
+```text
+error: DataFormat.Error: We couldn't convert to Number. | Detail: "12 apples"
 ```

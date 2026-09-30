@@ -2,12 +2,28 @@
 
 # Single.From
 
-Single has about seven significant digits.
+These examples show how `Single.From` handles `null`, the optional `culture` argument, and values outside the Single range.
 
 ```m
-{Single.From(1.23456789), Single.From("0.1"), Single.From(null)}
+Single.From(null)
 ```
 
 ```text
-{1.2345678806304932, 0.10000000149011612, null}
+null
+```
+
+```m
+Single.From("1,5", "fr-FR")
+```
+
+```text
+1.5
+```
+
+```m
+Single.From(1E39)
+```
+
+```text
+#infinity
 ```

@@ -4,7 +4,7 @@ category: "Number.Operations"
 returns: "nullable number"
 hosts: ["desktop"]
 notes: false
-examples: 1
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,7 +25,7 @@ If `number` is null, `Number.Sign` returns null.
 |---|---|---|
 | `number` | `nullable number` | no |
 
-**Executed examples (1):** [examples/number-operations/number-sign.md](../../examples/number-operations/number-sign.md)
+**Executed examples (3):** [examples/number-operations/number-sign.md](../../examples/number-operations/number-sign.md)
 
 ## Examples (engine metadata — not verified here)
 

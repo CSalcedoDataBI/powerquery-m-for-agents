@@ -4,7 +4,7 @@ category: "Number.Operations"
 returns: "nullable number"
 hosts: ["desktop"]
 notes: false
-examples: 1
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -26,7 +26,7 @@ Returns the absolute value of `number`. If `number` is null, `Number.Abs` return
 |---|---|---|
 | `number` | `nullable number` | no |
 
-**Executed examples (1):** [examples/number-operations/number-abs.md](../../examples/number-operations/number-abs.md)
+**Executed examples (3):** [examples/number-operations/number-abs.md](../../examples/number-operations/number-abs.md)
 
 ## Examples (engine metadata — not verified here)
 

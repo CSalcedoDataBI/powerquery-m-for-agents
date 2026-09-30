@@ -2,22 +2,28 @@
 
 # Int64.From
 
-Halves round to even unless a mode says otherwise.
+These examples show how `Int64.From` handles nulls, default banker's rounding, and culture-aware text conversion with an explicit rounding mode.
 
 ```m
-{Int64.From(0.5), Int64.From(1.5), Int64.From(0.5, null, RoundingMode.Up)}
+Int64.From(null)
 ```
 
 ```text
-{0, 2, 1}
+null
 ```
 
-Text in another culture, and null.
-
 ```m
-{Int64.From("1.000", "de-DE"), Int64.From(null)}
+Int64.From(2.5)
 ```
 
 ```text
-{1000, null}
+2
+```
+
+```m
+Int64.From("4,5", "fr-FR", RoundingMode.AwayFromZero)
+```
+
+```text
+5
 ```

@@ -4,7 +4,7 @@ category: "Number.Conversion and formatting"
 returns: "nullable number"
 hosts: ["desktop"]
 notes: false
-examples: 2
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -42,7 +42,7 @@ If `value` is of any other type, an error is returned.
 | `value` | `any` | no |
 | `culture` | `nullable text` | yes |
 
-**Executed examples (2):** [examples/number-conversion-and-formatting/number-from.md](../../examples/number-conversion-and-formatting/number-from.md)
+**Executed examples (3):** [examples/number-conversion-and-formatting/number-from.md](../../examples/number-conversion-and-formatting/number-from.md)
 
 ## Examples (engine metadata — not verified here)
 

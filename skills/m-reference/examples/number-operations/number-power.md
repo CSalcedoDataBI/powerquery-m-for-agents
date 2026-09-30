@@ -2,20 +2,26 @@
 
 # Number.Power
 
-Integer, fractional and negative powers.
+The examples show null propagation, negative exponents, and a negative base raised to a fractional power.
 
 ```m
-{Number.Power(2, 10), Number.Power(9, 0.5), Number.Power(2, -1)}
+Number.Power(2, null)
 ```
 
 ```text
-{1024, 3, 0.5}
+null
 ```
 
-A negative base with a fractional power is NaN, even when a real root exists.
+```m
+Number.Power(2, -3)
+```
+
+```text
+0.125
+```
 
 ```m
-Number.Power(-8, 1/3)
+Number.Power(-8, 1 / 3)
 ```
 
 ```text

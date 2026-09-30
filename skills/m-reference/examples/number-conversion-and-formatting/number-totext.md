@@ -2,22 +2,32 @@
 
 # Number.ToText
 
-Format strings.
+The examples show null handling, culture-sensitive separators, and standard format strings.
 
 ```m
-{Number.ToText(1234.5), Number.ToText(1234.5, "N2"), Number.ToText(0.256, "P1"), Number.ToText(255, "X")}
+Number.ToText(null)
 ```
 
 ```text
-{"1234.5", "1,234.50", "25.6%", "FF"}
+null
 ```
 
-The culture changes the separators.
-
 ```m
-{Number.ToText(1234.5, "N2", "en-US"), Number.ToText(1234.5, "N2", "de-DE")}
+Number.ToText(1234.5678, "N2", "de-DE")
 ```
 
 ```text
-{"1,234.50", "1.234,50"}
+"1.234,57"
+```
+
+```m
+[
+    default = Number.ToText(4),
+    exponential = Number.ToText(4, "e"),
+    percent = Number.ToText(-0.1234, "P1", "en-US")
+]
+```
+
+```text
+[default = "4", exponential = "4.000000e+000", percent = "-12.3%"]
 ```

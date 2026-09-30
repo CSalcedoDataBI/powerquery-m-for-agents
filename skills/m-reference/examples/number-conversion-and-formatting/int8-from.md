@@ -2,22 +2,28 @@
 
 # Int8.From
 
-Int8 is signed: -128 to 127.
+These examples show null input, the default banker's rounding, and an explicit rounding mode with a culture.
 
 ```m
-{Int8.From(-128), try Int8.From(128)}
+Int8.From(null)
 ```
 
 ```text
-{-128, [HasError = true, Error = [Reason = "Expression.Error", Message = "The number is out of range of an 8 bit integer value.", Detail = 128, #"Message.Format" = "The number is out of range of an 8 bit integer value.", #"Message.Parameters" = null, ErrorCode = "10483"]]}
+null
 ```
 
-A tie goes to even by default; the mode decides it otherwise.
-
 ```m
-{Int8.From(-1.5), Int8.From(-1.5, null, RoundingMode.TowardZero)}
+Int8.From("4.5")
 ```
 
 ```text
-{-2, -1}
+4
+```
+
+```m
+Int8.From("1,5", "de-DE", RoundingMode.AwayFromZero)
+```
+
+```text
+2
 ```

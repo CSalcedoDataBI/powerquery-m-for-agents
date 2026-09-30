@@ -2,12 +2,28 @@
 
 # Number.Permutations
 
-Order matters: arrangements of 2 out of 5.
+Null arguments propagate, and a zero permutation size is a valid edge case.
 
 ```m
-{Number.Permutations(5, 2), Number.Permutations(5, 5), Number.Permutations(5, 0)}
+Number.Permutations(null, 3)
 ```
 
 ```text
-{20, 120, 1}
+null
+```
+
+```m
+Number.Permutations(5, null)
+```
+
+```text
+null
+```
+
+```m
+Number.Permutations(5, 0)
+```
+
+```text
+1
 ```

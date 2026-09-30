@@ -2,22 +2,32 @@
 
 # Number.From
 
-Text, logicals, a date and a duration.
+Null is preserved and the optional culture argument changes how text is read.
 
 ```m
-{Number.From("10"), Number.From(true), Number.From(#date(1899, 12, 31)), Number.From(#duration(1, 12, 0, 0))}
+Number.From(null)
 ```
 
 ```text
-{10, 1, 1, 1.5}
+null
 ```
 
-The culture decides how text is read.
+Culture changes the meaning of separators, so the same text parses differently.
 
 ```m
-{Number.From("1,5", "es-ES"), Number.From("1,5", "en-US")}
+Number.From("1.234,56", "de-DE")
 ```
 
 ```text
-{1.5, 15}
+1234.56
+```
+
+Logical, time, and duration values convert as well.
+
+```m
+List.Transform({true, false, #time(6, 0, 0), #duration(1, 12, 0, 0)}, Number.From)
+```
+
+```text
+{1, 0, 0.25, 1.5}
 ```

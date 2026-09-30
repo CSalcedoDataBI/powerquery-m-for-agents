@@ -2,22 +2,28 @@
 
 # Double.From
 
-Text, a date (days since 1899-12-30) and null.
+Nulls pass through, the optional culture changes how text is read, and a number past the Double range becomes infinity, not an error.
 
 ```m
-{Double.From("1e3"), Double.From(#date(1900, 1, 1)), Double.From(null)}
+Double.From(null)
 ```
 
 ```text
-{1000, 2, null}
+null
 ```
 
-Text that is not a number.
-
 ```m
-try Double.From("abc")
+Double.From("1,5", "fr-FR")
 ```
 
 ```text
-[HasError = true, Error = [Reason = "DataFormat.Error", Message = "We couldn't convert to Number.", Detail = "abc", #"Message.Format" = "We couldn't convert to Number.", #"Message.Parameters" = null, ErrorCode = "10041"]]
+1.5
+```
+
+```m
+Double.From(Number.Power(2, 1024))
+```
+
+```text
+#infinity
 ```

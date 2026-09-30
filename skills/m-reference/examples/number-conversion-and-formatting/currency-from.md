@@ -2,22 +2,28 @@
 
 # Currency.From
 
-Currency keeps four decimals; the rest is rounded.
+These examples show null handling, default rounding, and an explicit rounding mode.
 
 ```m
-{Currency.From(1.23456), Currency.From(1.23455), Currency.From(1.23455, null, RoundingMode.AwayFromZero)}
+Currency.From(null)
 ```
 
 ```text
-{1.2346, 1.23460, 1.23460}
+null
 ```
 
-Text is read with the culture.
-
 ```m
-{Currency.From("1.234,5", "es-ES"), Currency.From("1,234.5", "en-US")}
+Currency.From("1.23445")
 ```
 
 ```text
-{1234.5, 1234.5}
+1.23440
+```
+
+```m
+Currency.From("1.23445", "en-US", RoundingMode.Up)
+```
+
+```text
+1.23450
 ```

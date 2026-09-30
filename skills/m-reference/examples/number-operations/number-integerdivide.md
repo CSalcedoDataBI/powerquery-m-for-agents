@@ -2,14 +2,30 @@
 
 # Number.IntegerDivide
 
-The fraction is dropped, including for negatives.
+Nulls propagate, negative dividends keep only the integer portion, and the optional third argument takes `Precision.Double` or `Precision.Decimal`.
 
 ```m
-{Number.IntegerDivide(7, 2), Number.IntegerDivide(-7, 2), Number.IntegerDivide(7, -2)}
+Number.IntegerDivide(null, 4)
 ```
 
 ```text
-{3, -3, -3}
+null
+```
+
+```m
+Number.IntegerDivide(-7, 2)
+```
+
+```text
+-3
+```
+
+```m
+Number.IntegerDivide(10.5, 0.2, Precision.Decimal)
+```
+
+```text
+52
 ```
 
 Dividing by zero returns NaN, not an error.

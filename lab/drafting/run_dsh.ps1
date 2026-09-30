@@ -12,15 +12,18 @@
     - read-only root, tmpfs home and work dir, all capabilities dropped, no new privileges,
       no published port (headless opens none);
     - the privacy patch baked into the image turns off the session-log and plugin-inventory
-      uploads, and DSH_TELEMETRY_DISABLED turns off telemetry export.
+      uploads, and DSH_TELEMETRY_DISABLED turns off telemetry export. Before the real key is
+      even read, a container with no network and a fake key sends one task to a stand-in API
+      on its own loopback (capture.mjs) and the run stops if either field is still sent.
   Answers land in <Out>/answers/<file>.jsonl and timings in <Out>/runs.json; pilot.py
   collect decides what, if anything, reaches skills/.
 
 .EXAMPLE
-  pwsh lab/drafting/run_dsh.ps1 -Out lab/drafting/out/dsh -CheckOnly   # build + env check, no model call
-  pwsh lab/drafting/run_dsh.ps1 -Out lab/drafting/out/dsh -Only number-mod
+  pwsh lab/drafting/run_dsh.ps1 -Out lab/drafting/out/dsh -CheckOnly   # build + all checks, no model call
+  pwsh lab/drafting/run_dsh.ps1 -Out lab/drafting/out/dsh -Only number-mod,number-abs
   pwsh lab/drafting/run_dsh.ps1 -Out lab/drafting/out/dsh
 #>
+[CmdletBinding(PositionalBinding = $false)]
 param(
     [Parameter(Mandatory)][string]$Out,
     [string]$Image = 'pq-drafting-dsh:0.2.0-rc.2',
@@ -42,16 +45,28 @@ if ($Build -or $LASTEXITCODE -ne 0) {
     if ($LASTEXITCODE -ne 0) { throw 'docker build failed' }
 }
 
+# /tmp alone is exec: dsh's native-addon loader copies its prebuilt .node there before loading
+# it, and docker mounts tmpfs noexec by default ("failed to map segment from shared object").
+$sandbox = @('--rm', '--read-only', '--tmpfs', '/tmp:exec',
+    '--tmpfs', '/home/node:uid=1000,gid=1000', '--tmpfs', '/work:uid=1000,gid=1000',
+    '--cap-drop', 'ALL', '--security-opt', 'no-new-privileges',
+    '--pids-limit', '256', '--memory', '2g', '--cpus', '2')
+
+# Privacy check: no network, a fake key, the API replaced by capture.mjs on the loopback.
+$probe = 'node /cfg/capture.mjs & sleep 1; echo "Say ok." | ' +
+    'DEEPSEEK_BASE_URL=http://127.0.0.1:8799 DEEPSEEK_API_KEY=sk-fake-privacy-check ' +
+    'dsh-run --profile headless --json > /dev/null 2>&1; cat /tmp/request-fields.txt'
+$sent = docker run @sandbox --network none --entrypoint sh $Image -c $probe
+if (-not $sent) { throw 'Privacy check: dsh sent no request to the stand-in API' }
+$leaks = $sent | Select-String -Pattern 'dsh_session_log|dsh_plugin_packages'
+if ($leaks) { throw "Privacy check failed - still sent:`n$($leaks -join "`n")" }
+Write-Host "Privacy check: $(@($sent).Count) request(s), fields: $((@($sent)[0] -split ' ')[2])"
+
 $key = [Environment]::GetEnvironmentVariable('DEEPSEEK_API_KEY', 'User')
 if (-not $key) { throw 'DEEPSEEK_API_KEY is not set in the user registry.' }
 $env:DEEPSEEK_API_KEY = $key
 Remove-Variable key
-
-$isolation = @('--rm', '--read-only', '--tmpfs', '/tmp',
-    '--tmpfs', '/home/node:uid=1000,gid=1000', '--tmpfs', '/work:uid=1000,gid=1000',
-    '--cap-drop', 'ALL', '--security-opt', 'no-new-privileges',
-    '--pids-limit', '256', '--memory', '2g', '--cpus', '2',
-    '-e', 'DEEPSEEK_API_KEY')
+$isolation = $sandbox + @('-e', 'DEEPSEEK_API_KEY')
 # What the image, docker and sh (PWD) put there, plus the one secret. Anything else stops the run.
 $allowed = 'PATH', 'HOSTNAME', 'HOME', 'NODE_VERSION', 'YARN_VERSION', 'DSH_TELEMETRY_DISABLED',
     'NO_UPDATE_NOTIFIER', 'NPM_CONFIG_UPDATE_NOTIFIER', 'DSH_HOME', 'PWD', 'DEEPSEEK_API_KEY'
@@ -72,14 +87,15 @@ try {
     if ($CheckOnly) { return }
 
     $files = Get-ChildItem $prompts -Filter *.txt | Sort-Object Name
-    if ($Only) { $files = $files | Where-Object { $_.BaseName -in $Only } }
+    # -Only a,b,c arrives as one string through pwsh -File.
+    if ($Only) { $wanted = $Only -split ','; $files = $files | Where-Object { $_.BaseName -in $wanted } }
     $runs = @()
     foreach ($f in $files) {
         $target = Join-Path $answers "$($f.BaseName).jsonl"
         $errors = Join-Path $answers "$($f.BaseName).stderr.txt"
         $name = "pq-dsh-$($f.BaseName)-$PID"
         $argv = @('run', '-i', '--name', $name) + $isolation +
-            @($Image, '--profile', 'headless', '--json', '--patch', '/cfg/privacy.patch.yml')
+            @($Image, '--profile', 'headless', '--json')
         $clock = [Diagnostics.Stopwatch]::StartNew()
         $p = Start-Process docker -ArgumentList $argv -NoNewWindow -PassThru `
             -RedirectStandardInput $f.FullName -RedirectStandardOutput $target -RedirectStandardError $errors

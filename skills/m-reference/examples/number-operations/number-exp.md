@@ -2,12 +2,28 @@
 
 # Number.Exp
 
-e to the power, with e itself for comparison.
+Nulls stay null, zero returns exactly 1, and very negative inputs underflow toward 0.
 
 ```m
-{Number.Exp(0), Number.Exp(1), Number.E, Number.Exp(null)}
+Number.Exp(null)
 ```
 
 ```text
-{1, 2.7182818284590451, 2.7182818284590451, null}
+null
+```
+
+```m
+Number.Exp(0)
+```
+
+```text
+1
+```
+
+```m
+Number.Exp(-1000)
+```
+
+```text
+0
 ```

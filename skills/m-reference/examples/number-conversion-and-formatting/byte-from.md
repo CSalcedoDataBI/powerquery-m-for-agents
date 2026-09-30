@@ -2,22 +2,32 @@
 
 # Byte.From
 
-A fraction is rounded; the default mode is to even.
+Nulls pass through, and the default rounding of a fractional value is not the one you might expect.
 
 ```m
-{Byte.From(2.5), Byte.From(3.5), Byte.From(2.5, null, RoundingMode.AwayFromZero)}
+Byte.From(null)
 ```
 
 ```text
-{2, 4, 3}
+null
 ```
 
-Out of range for a byte (0 to 255).
+With no rounding mode, a fractional value rounds to the nearest even integer.
 
 ```m
-{try Byte.From(256), try Byte.From(-1)}
+Byte.From("4.5")
 ```
 
 ```text
-{[HasError = true, Error = [Reason = "Expression.Error", Message = "The number is out of range of a byte value.", Detail = 256, #"Message.Format" = "The number is out of range of a byte value.", #"Message.Parameters" = null, ErrorCode = "10106"]], [HasError = true, Error = [Reason = "Expression.Error", Message = "The number is out of range of a byte value.", Detail = -1, #"Message.Format" = "The number is out of range of a byte value.", #"Message.Parameters" = null, ErrorCode = "10106"]]}
+4
+```
+
+Naming a rounding mode while leaving `culture` unset rounds the other way.
+
+```m
+Byte.From("4.5", null, RoundingMode.AwayFromZero)
+```
+
+```text
+5
 ```

@@ -2,12 +2,28 @@
 
 # Number.Abs
 
-Negatives, null and infinity.
+Nulls stay null, and zero or already-positive values come back unchanged.
 
 ```m
-{Number.Abs(-3.5), Number.Abs(null), Number.Abs(Number.NegativeInfinity)}
+Number.Abs(-3.5)
 ```
 
 ```text
-{3.5, null, #infinity}
+3.5
+```
+
+```m
+Number.Abs(null)
+```
+
+```text
+null
+```
+
+```m
+Number.Abs(0) + Number.Abs(4)
+```
+
+```text
+4
 ```

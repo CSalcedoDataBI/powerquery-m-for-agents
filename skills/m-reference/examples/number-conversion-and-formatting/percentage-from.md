@@ -2,22 +2,34 @@
 
 # Percentage.From
 
-Text with a percent sign, and a plain number.
+These examples show what happens with `null`, text that has no percent symbol, and the optional `culture` argument.
+
+A `null` input returns `null` rather than an error.
 
 ```m
-{Percentage.From("12.5%"), Percentage.From(0.125), Percentage.From("12.5")}
+Percentage.From(null)
 ```
 
 ```text
-{0.125, 0.125, 12.5}
+null
 ```
 
-The value's type after the call.
+Without a percent sign the text is read as a plain number: nothing is divided by 100.
 
 ```m
-Value.Type(Percentage.From(0.5))
+Percentage.From("12.3")
 ```
 
 ```text
-type number
+12.3
+```
+
+Culture matters when the text uses a comma as the decimal separator.
+
+```m
+Percentage.From("12,3%", "de-DE")
+```
+
+```text
+0.123
 ```

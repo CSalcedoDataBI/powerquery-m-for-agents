@@ -2,32 +2,48 @@
 
 # Number.Mod
 
-The remainder takes the sign of the dividend.
+The examples show how nulls, the optional precision argument, and negative or zero divisors behave.
+
+A null dividend or divisor propagates instead of being treated as zero.
 
 ```m
-{Number.Mod(7, 3), Number.Mod(-7, 3), Number.Mod(7, -3)}
+[
+    NullDividend = Number.Mod(null, 3),
+    NullDivisor = Number.Mod(5, null)
+]
 ```
 
 ```text
-{1, -1, 1}
+[NullDividend = null, NullDivisor = null]
 ```
 
-Double against Decimal precision.
+The optional third argument switches between double and decimal arithmetic, which changes the decimal expansion of the remainder.
 
 ```m
-{Number.Mod(10.5, 0.2), Number.Mod(10.5, 0.2, Precision.Decimal)}
+let
+    Dividend = 10.5,
+    Divisor = 0.2
+in
+    [
+        DoublePrecision = Number.ToText(Number.Mod(Dividend, Divisor, Precision.Double), "G"),
+        DecimalPrecision = Number.ToText(Number.Mod(Dividend, Divisor, Precision.Decimal), "G")
+    ]
 ```
 
 ```text
-{0.099999999999999423, 0.1}
+[DoublePrecision = "0.0999999999999994", DecimalPrecision = "0.1"]
 ```
 
-A zero divisor returns NaN, not an error.
+The sign of the remainder follows the dividend, and a zero divisor is its own edge case.
 
 ```m
-Number.Mod(5, 0)
+[
+    NegativeDividend = Number.Mod(-5, 3),
+    NegativeDivisor = Number.Mod(5, -3),
+    ZeroDivisor = Number.Mod(5, 0)
+]
 ```
 
 ```text
-#nan
+[NegativeDividend = -2, NegativeDivisor = 2, ZeroDivisor = #nan]
 ```

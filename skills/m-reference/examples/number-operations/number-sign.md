@@ -2,12 +2,28 @@
 
 # Number.Sign
 
-Sign of positive, negative, zero and null.
+Nulls propagate, zero is its own sign, and a list keeps both behaviours.
 
 ```m
-{Number.Sign(4.2), Number.Sign(-0.1), Number.Sign(0), Number.Sign(null)}
+Number.Sign(null)
 ```
 
 ```text
-{1, -1, 0, null}
+null
+```
+
+```m
+Number.Sign(-0.0)
+```
+
+```text
+0
+```
+
+```m
+List.Transform({-2.5, 0, 7, null}, Number.Sign)
+```
+
+```text
+{-1, 0, 1, null}
 ```

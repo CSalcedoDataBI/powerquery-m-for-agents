@@ -2,12 +2,28 @@
 
 # Number.Log10
 
-Powers of ten, and zero.
+Nulls pass through unchanged, while zero and negative inputs expose the logarithm's boundary behaviour.
 
 ```m
-{Number.Log10(1000), Number.Log10(0.01), Number.Log10(0)}
+Number.Log10(null)
 ```
 
 ```text
-{3, -2, -#infinity}
+null
+```
+
+```m
+Number.Log10(0)
+```
+
+```text
+-#infinity
+```
+
+```m
+Number.Log10(-1)
+```
+
+```text
+#nan
 ```

@@ -2,12 +2,28 @@
 
 # Number.Ln
 
-Natural logarithm, including 0 and a negative.
+These examples show null handling and the boundary values where the natural logarithm stops returning an ordinary number.
 
 ```m
-{Number.Ln(Number.E), Number.Ln(1), Number.Ln(0), Number.Ln(-1)}
+Number.Ln(null)
 ```
 
 ```text
-{1, 0, -#infinity, #nan}
+null
+```
+
+```m
+List.Transform({0, 1, Number.E}, Number.Ln)
+```
+
+```text
+{-#infinity, 0, 1}
+```
+
+```m
+Number.Ln(-1)
+```
+
+```text
+#nan
 ```

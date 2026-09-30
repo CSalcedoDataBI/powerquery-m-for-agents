@@ -2,22 +2,28 @@
 
 # Decimal.From
 
-Text, logical and null.
+Null passes through, an explicit culture changes how text is parsed, and a value that is already a number is returned as-is.
 
 ```m
-{Decimal.From("4.5"), Decimal.From(true), Decimal.From(null)}
+Decimal.From(null)
 ```
 
 ```text
-{4.5, 1, null}
+null
 ```
 
-The culture decides the decimal separator.
-
 ```m
-{Decimal.From("4,5", "es-ES"), Decimal.From("4,5", "en-US")}
+Decimal.From("1.234,5", "de-DE")
 ```
 
 ```text
-{4.5, 45}
+1234.5
+```
+
+```m
+Decimal.From(123)
+```
+
+```text
+123
 ```

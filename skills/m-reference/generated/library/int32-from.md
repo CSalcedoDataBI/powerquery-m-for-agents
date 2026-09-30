@@ -4,7 +4,7 @@ category: "Number.Conversion and formatting"
 returns: "nullable number"
 hosts: ["desktop"]
 notes: false
-examples: 2
+examples: 4
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -26,7 +26,7 @@ Returns a 32-bit integer `number` value from the given `value`. If the given `va
 | `culture` | `nullable text` | yes |
 | `roundingMode` | `nullable number` | yes |
 
-**Executed examples (2):** [examples/number-conversion-and-formatting/int32-from.md](../../examples/number-conversion-and-formatting/int32-from.md)
+**Executed examples (4):** [examples/number-conversion-and-formatting/int32-from.md](../../examples/number-conversion-and-formatting/int32-from.md)
 
 ## Examples (engine metadata — not verified here)
 

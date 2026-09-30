@@ -2,12 +2,28 @@
 
 # Number.Sqrt
 
-A square root, and a negative number.
+The examples show null input, a negative input, and a non-perfect square.
 
 ```m
-{Number.Sqrt(16), Number.Sqrt(2), Number.Sqrt(-1)}
+Number.Sqrt(null)
 ```
 
 ```text
-{4, 1.4142135623730951, #nan}
+null
+```
+
+```m
+Number.Sqrt(-16)
+```
+
+```text
+#nan
+```
+
+```m
+Number.Sqrt(85)
+```
+
+```text
+9.2195444572928871
 ```
