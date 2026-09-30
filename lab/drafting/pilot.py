@@ -183,7 +183,7 @@ def cmd_collect(args):
             entry["status"] = f"unreadable: {e}"
             continue
         entry["blocks"] = len(blocks)
-        unsafe = sorted({n for b in blocks for n in m_blocks.unsafe_calls(b.code, catalog)})
+        unsafe = sorted({n for b in blocks for n in m_blocks.unsafe_calls(b.code, catalog, unknown=True)})
         if unsafe:
             entry["status"] = "refused: " + ", ".join(unsafe)
             continue

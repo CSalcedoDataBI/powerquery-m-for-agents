@@ -120,8 +120,10 @@ IMPURE_CATEGORIES = {"Values.Implementation"}
 IMPURE_NAMES = {"Value.NativeQuery", "Function.InvokeAfter"}
 # Parsers of text or binary values. Every way to fetch that value (File.Contents, Web.Contents)
 # is refused, so what they parse can only be a literal of the block.
+# Expression.Constant and Expression.Identifier only write M source as text; evaluating it is
+# Expression.Evaluate, which stays refused with the rest of its category.
 PURE_NAMES = {"Table.WithErrorContext", "Csv.Document", "Json.Document", "Xml.Document",
-              "Xml.Tables"}
+              "Xml.Tables", "Expression.Constant", "Expression.Identifier"}
 # Values that describe the machine the runner is on, which a result would publish: its time
 # zone, its clock, its culture (the reason #shared exports TimeZone.Current as null).
 MACHINE_NAMES = {"DateTime.LocalNow", "DateTime.FixedLocalNow", "DateTimeZone.LocalNow",
