@@ -8,23 +8,68 @@ one in skills/m-reference/scripts/. Rebuild after editing the query:
 
 Then open SharedExport.pbip in Power BI Desktop and run export_desktop.ps1, which refreshes
 the table over the local Analysis Services port and writes exports/<host>-<version>.json.
+
+CI runs `build_pbip.py --check`: it rebuilds in memory with the Host and HostVersion the
+committed partition already carries and fails if any file on disk differs, so an edit to
+export_shared.pq that was never rebuilt cannot leave Desktop exporting the old query.
 """
 import argparse
 import json
 import os
 import re
+import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
 QUERY = os.path.join(ROOT, "skills", "m-reference", "scripts", "export_shared.pq")
 NAME = "SharedExport"
+TABLE = os.path.join(HERE, f"{NAME}.SemanticModel", "definition", "tables", f"{NAME}.tmdl")
+
+# Every file build() produces, keyed by path relative to HERE. write() fills it; main()
+# either flushes it to disk or compares it with disk.
+FILES = {}
 
 
 def write(rel, text):
-    path = os.path.join(HERE, rel)
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8", newline="\r\n") as f:
-        f.write(text)
+    FILES[rel] = text
+
+
+def flush():
+    for rel, text in FILES.items():
+        path = os.path.join(HERE, rel)
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, "w", encoding="utf-8", newline="\r\n") as f:
+            f.write(text)
+
+
+def stale_files():
+    """Paths whose content on disk differs from the build, ignoring line endings.
+
+    .gitattributes pins CRLF only for TMDL/PBIP/PBIR, so the JSON files check out as LF on
+    Linux; the check is about content, not about how git chose to end the lines.
+    """
+    stale = []
+    for rel, text in sorted(FILES.items()):
+        path = os.path.join(HERE, rel)
+        if not os.path.exists(path):
+            stale.append(f"{rel} (missing)")
+            continue
+        with open(path, encoding="utf-8", newline="") as f:
+            on_disk = f.read().replace("\r\n", "\n")
+        if on_disk != text:
+            stale.append(rel)
+    return stale
+
+
+def committed_host():
+    """Host and HostVersion stamped into the committed partition, so --check needs no flags."""
+    with open(TABLE, encoding="utf-8") as f:
+        text = f.read()
+    host = re.search(r'^\s*Host = "([^"]*)",', text, flags=re.M)
+    version = re.search(r'^\s*HostVersion = "([^"]*)",', text, flags=re.M)
+    if not host or not version:
+        raise SystemExit(f"{TABLE} has no Host/HostVersion line to rebuild from")
+    return host.group(1), version.group(1)
 
 
 def json_text(obj):
@@ -137,8 +182,25 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("--host", default="desktop")
     parser.add_argument("--host-version", default="")
+    parser.add_argument("--check", action="store_true",
+                        help="rebuild in memory from the committed Host/HostVersion and fail "
+                             "if the files on disk differ; writes nothing")
     args = parser.parse_args()
+    if args.check:
+        host, host_version = committed_host()
+        build(host, host_version)
+        stale = stale_files()
+        if stale:
+            print("SharedExport.pbip is stale against export_shared.pq. Rebuild with:\n"
+                  f"  python lab/shared-export/build_pbip.py --host {host} "
+                  f"--host-version {host_version}\n"
+                  "Differs:\n  " + "\n  ".join(stale), file=sys.stderr)
+            sys.exit(1)
+        print(f"SharedExport.pbip matches export_shared.pq ({len(FILES)} files, "
+              f"host={host}, version={host_version or 'unset'})")
+        return
     build(args.host, args.host_version)
+    flush()
     print(f"Built {os.path.join(HERE, NAME + '.pbip')} (host={args.host}, "
           f"version={args.host_version or 'unset'})")
 
