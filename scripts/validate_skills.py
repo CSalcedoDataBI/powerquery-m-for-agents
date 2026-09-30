@@ -122,6 +122,28 @@ if os.path.exists(cat_json):
         flagged = {fn.get("file") for fn in cat.get("functions", []) if fn.get("notes")}
         for bad in sorted(flagged - notes):
             errors.append(f"catalog flags '{bad}' as having notes but notes/{bad}.md is missing")
+        # Each name the agent can look up sits in exactly the index its kind says, so a
+        # hand edit or a half-written sync cannot hide a function from the lookup.
+        expected = {
+            "catalog.md": {fn.get("name") for fn in cat.get("functions", [])
+                           if fn.get("kind", "library") == "library"},
+            "connectors.md": {fn.get("name") for fn in cat.get("functions", [])
+                              if fn.get("kind") == "connector"},
+            "constants.md": {c.get("name") for c in cat.get("constants", [])},
+        }
+        for index, names in expected.items():
+            path = os.path.join(GEN, index)
+            if not os.path.exists(path):
+                if names:
+                    errors.append(f"generated/{index} is missing but catalog.json has "
+                                  f"{len(names)} entries for it - run the sync")
+                continue
+            with open(path, encoding="utf-8") as f:
+                listed = set(re.findall(r"^\| `([^`]+)` \|", f.read(), re.M))
+            for missing in sorted(names - listed):
+                errors.append(f"generated/{index} does not list '{missing}' from catalog.json")
+            for extra in sorted(listed - names):
+                errors.append(f"generated/{index} lists '{extra}', which catalog.json puts elsewhere")
     except (json.JSONDecodeError, AttributeError, TypeError) as e:
         errors.append(f"m-reference/generated/catalog.json is not readable: {e}")
 elif cards:

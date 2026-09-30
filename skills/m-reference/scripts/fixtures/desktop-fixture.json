@@ -47,6 +47,35 @@
     {
       "name": "Broken.Function",
       "exportError": true
+    },
+    {
+      "name": "Csv.Document",
+      "category": "Accessing data",
+      "description": "Returns the contents of the CSV document as a table.",
+      "parameters": [{"name": "source", "type": "any", "optional": false}],
+      "returns": "table",
+      "examples": []
+    },
+    {
+      "name": "Mixpanel.Tables",
+      "category": null,
+      "description": null,
+      "parameters": [],
+      "returns": "table",
+      "examples": []
+    },
+    {
+      "name": "List.Hidden",
+      "category": null,
+      "description": "Uncategorised, but its prefix is a library prefix.",
+      "parameters": [],
+      "returns": "list",
+      "examples": []
     }
+  ],
+  "constants": [
+    {"name": "JoinKind.Inner", "type": "number", "value": "0", "description": "A possible value for the optional <code>JoinKind</code> parameter in <code>Table.Join</code>.\r\n    The table resulting from an inner join contains a row for each pair of matching rows."},
+    {"name": "Int64.Type", "type": "type", "value": null, "description": "Represents a 64-bit integer | pipe included."},
+    {"name": "Broken.Constant", "exportError": true}
   ]
 }

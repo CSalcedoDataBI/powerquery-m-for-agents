@@ -9,6 +9,20 @@ Excel, Dataflows Gen2). This script merges them:
   - its `hosts` field lists every export it appears in;
   - it is flagged ⌂ when it is missing from at least one of them.
 
+The functions are split into two indexes, both backed by the same cards:
+
+  - catalog.md    the language library;
+  - connectors.md connector entry points (`Mixpanel.Tables`, `Stripe.Contents`, ...).
+
+A connector is a function the engine gives no Documentation.Category whose prefix no
+categorised function shares. The core library documents its category; connectors shipped
+as extensions mostly do not. "Accessing data" (Csv.Document, Web.Contents, ...) is a
+documented library category, so it stays in catalog.md.
+
+The non-function members of #shared (GroupKind.Local, JoinKind.Inner, Int64.Type, ...)
+go to constants.md, merged across hosts the same way. They have no cards: one row says it
+all. An export taken before the query exported constants simply contributes none.
+
 Everything under generated/ is replaced wholesale. notes/ and examples/ are read to set
 the ★ and ▶ flags and are never written.
 
@@ -35,6 +49,9 @@ REF = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 COUNT_TOLERANCE = 0.05
 MIN_FUNCTIONS = 100
 SUMMARY_CHARS = 120
+# A constant's first sentence is often the same for the whole enum ("A possible value for
+# the optional JoinKind parameter in Table.Join."), so its row keeps more of the text.
+CONSTANT_SUMMARY_CHARS = 200
 
 
 class GateError(Exception):
@@ -59,6 +76,20 @@ def category_of(fn):
         return fn["category"]
     name = fn["name"]
     return name.split(".", 1)[0] if "." in name else "(none)"
+
+
+def library_prefixes(functions):
+    """Prefixes of the functions the engine categorised: `Table`, `List`, `Csv`, ..."""
+    return {fn["name"].split(".", 1)[0] for fn in functions if fn.get("category")}
+
+
+def kind_of(fn, prefixes):
+    """'connector' for an uncategorised `Vendor.Function` whose vendor is not a library
+    prefix; 'library' otherwise. `#date` has no dot and stays in the library."""
+    name = fn["name"]
+    if fn.get("category") or "." not in name:
+        return "library"
+    return "library" if name.split(".", 1)[0] in prefixes else "connector"
 
 
 def load_export(path):
@@ -99,13 +130,21 @@ def signature(fn):
     return f"{fn['name']}({', '.join(parts)}) as {fn.get('returns') or 'any'}"
 
 
+def truncate(text, limit):
+    if len(text) > limit:
+        text = text[:limit - 1].rstrip() + "…"
+    return text.replace("|", "\\|")
+
+
 def summary(fn):
     text = clean_text(fn.get("description") or fn.get("longDescription"))
     text = re.sub(r"\s+", " ", text)
-    first = re.split(r"(?<=\.)\s", text, maxsplit=1)[0]
-    if len(first) > SUMMARY_CHARS:
-        first = first[:SUMMARY_CHARS - 1].rstrip() + "…"
-    return first.replace("|", "\\|")
+    return truncate(re.split(r"(?<=\.)\s", text, maxsplit=1)[0], SUMMARY_CHARS)
+
+
+def constant_summary(const):
+    return truncate(re.sub(r"\s+", " ", clean_text(const.get("description"))),
+                    CONSTANT_SUMMARY_CHARS)
 
 
 def stems(directory):
@@ -142,8 +181,35 @@ def merge(exports, min_functions):
     return hosts, merged
 
 
+def merge_constants(exports):
+    """Constants merged like functions: first export wins, `hosts` lists every export that
+    has it. Only exports that carry a `constants` list count as hosts here, so an export
+    taken before constants were exported does not flag every constant as partial."""
+    carrying = [e for e in exports if isinstance(e.get("constants"), list)]
+    merged = {}
+    for export in carrying:
+        for const in export["constants"]:
+            if not isinstance(const, dict) or not const.get("name") or const.get("exportError"):
+                continue
+            entry = merged.setdefault(const["name"], {"const": const, "hosts": []})
+            entry["hosts"].append(export["host"])
+    rows = []
+    for name in sorted(merged, key=str.lower):
+        const, const_hosts = merged[name]["const"], merged[name]["hosts"]
+        rows.append({
+            "name": name,
+            "type": const.get("type") or "any",
+            "value": const.get("value"),
+            "summary": constant_summary(const),
+            "hosts": const_hosts,
+            "partialHosts": len(const_hosts) < len(carrying),
+        })
+    return rows
+
+
 def build_rows(ref, hosts, merged):
     notes = stems(os.path.join(ref, "notes"))
+    prefixes = library_prefixes(entry["fn"] for entry in merged.values())
     rows = []
     for name in sorted(merged, key=str.lower):
         fn, fn_hosts = merged[name]["fn"], merged[name]["hosts"]
@@ -152,6 +218,7 @@ def build_rows(ref, hosts, merged):
         rows.append({
             "name": name,
             "file": file,
+            "kind": kind_of(fn, prefixes),
             "category": category,
             "returns": fn.get("returns") or "any",
             "signature": signature(fn),
@@ -222,21 +289,72 @@ def render_card(row, fn, exports_meta):
     return "\n".join(lines).rstrip() + "\n"
 
 
-def render_catalog_md(rows, exports_meta):
-    source = ", ".join(f"`{m['host']}` {m.get('hostVersion') or ''}".strip() for m in exports_meta)
+def source_text(exports_meta):
+    return ", ".join(f"`{m['host']}` {m.get('hostVersion') or ''}".strip() for m in exports_meta)
+
+
+CARD_HINT = ("Open one card: `library/<file>.md`, where <file> is the name in lower case with "
+             "every run of non-alphanumerics as one dash (`Table.AddColumn` -> `table-addcolumn`).")
+
+
+def render_catalog_md(rows, exports_meta, n_connectors=0, n_constants=0):
+    elsewhere = []
+    if n_connectors:
+        elsewhere.append(f"{n_connectors} connector entry points are in `connectors.md`")
+    if n_constants:
+        elsewhere.append(f"{n_constants} constants and type values in `constants.md`")
     lines = [
         "# M function catalogue",
         "",
-        f"{len(rows)} functions from `#shared` ({source}). "
+        f"{len(rows)} library functions from `#shared` ({source_text(exports_meta)}). "
         "Flags: ★ field note · ▶ executed examples · ⌂ not in every host.",
-        "Open one card: `library/<file>.md`, where <file> is the name in lower case with "
-        "every run of non-alphanumerics as one dash (`Table.AddColumn` -> `table-addcolumn`).",
+    ]
+    if elsewhere:
+        lines.append("Not listed here: " + "; ".join(elsewhere) + ".")
+    lines += [
+        CARD_HINT,
         "",
         "| Function | Category | Returns | Flags | Summary |",
         "|---|---|---|---|---|",
     ]
     lines += [f"| `{r['name']}` | {r['category']} | {r['returns']} | "
               f"{flags(r)} | {r['summary']} |" for r in rows]
+    return "\n".join(lines) + "\n"
+
+
+def render_connectors_md(rows, exports_meta):
+    lines = [
+        "# M connector entry points",
+        "",
+        f"{len(rows)} connector functions from `#shared` ({source_text(exports_meta)}): "
+        "functions the engine gives no category, from a prefix no library function uses. "
+        "Many carry no description. Flags as in `catalog.md`.",
+        CARD_HINT,
+        "",
+        "| Function | Connector | Returns | Flags | Summary |",
+        "|---|---|---|---|---|",
+    ]
+    lines += [f"| `{r['name']}` | {r['category']} | {r['returns']} | "
+              f"{flags(r)} | {r['summary']} |" for r in rows]
+    return "\n".join(lines) + "\n"
+
+
+def render_constants_md(rows, exports_meta):
+    lines = [
+        "# M constants",
+        "",
+        f"{len(rows)} non-function members of `#shared` ({source_text(exports_meta)}): enum "
+        "values, type values and numeric constants. `Value` is the member as text (en-US); "
+        "empty when it is not a primitive, such as a type. ⌂ = not in every host. "
+        "They have no cards.",
+        "",
+        "| Name | Type | Value | Flags | Summary |",
+        "|---|---|---|---|---|",
+    ]
+    for r in rows:
+        value = "" if r["value"] is None else f"`{r['value']}`".replace("|", "\\|")
+        lines.append(f"| `{r['name']}` | {r['type']} | {value} | "
+                     f"{'⌂' if r['partialHosts'] else ''} | {r['summary']} |")
     return "\n".join(lines) + "\n"
 
 
@@ -253,6 +371,9 @@ def sync(export_paths, ref=REF, write=False, accept_count_change=False,
     exports = [load_export(p) for p in export_paths]
     hosts, merged = merge(exports, min_functions)
     rows = build_rows(ref, hosts, merged)
+    library_rows = [r for r in rows if r["kind"] == "library"]
+    connector_rows = [r for r in rows if r["kind"] == "connector"]
+    constants = merge_constants(exports)
     generated = os.path.join(ref, "generated")
 
     before = previous_count(generated)
@@ -266,7 +387,9 @@ def sync(export_paths, ref=REF, write=False, accept_count_change=False,
                      "exportedAt": e.get("exportedAt") or "",
                      "functions": len(e["functions"])} for e in exports]
     report = (f"{len(rows)} functions from {len(exports)} export(s) "
-              f"({', '.join(hosts)}); {sum(r['partialHosts'] for r in rows)} not in every host, "
+              f"({', '.join(hosts)}): {len(library_rows)} library, "
+              f"{len(connector_rows)} connectors; {len(constants)} constants; "
+              f"{sum(r['partialHosts'] for r in rows)} functions not in every host, "
               f"{sum(r['notes'] for r in rows)} with notes, "
               f"{sum(1 for r in rows if r['examples'])} with examples.")
     if not write:
@@ -280,10 +403,19 @@ def sync(export_paths, ref=REF, write=False, accept_count_change=False,
         with open(os.path.join(library, f"{row['file']}.md"), "w", encoding="utf-8",
                   newline="\n") as f:
             f.write(render_card(row, merged[row["name"]]["fn"], exports_meta))
-    with open(os.path.join(staging, "catalog.md"), "w", encoding="utf-8", newline="\n") as f:
-        f.write(render_catalog_md(rows, exports_meta))
+    indexes = {
+        "catalog.md": render_catalog_md(library_rows, exports_meta,
+                                        len(connector_rows), len(constants)),
+        "connectors.md": render_connectors_md(connector_rows, exports_meta),
+    }
+    if constants:
+        indexes["constants.md"] = render_constants_md(constants, exports_meta)
+    for name, text in indexes.items():
+        with open(os.path.join(staging, name), "w", encoding="utf-8", newline="\n") as f:
+            f.write(text)
     with open(os.path.join(staging, "catalog.json"), "w", encoding="utf-8", newline="\n") as f:
-        json.dump({"exports": exports_meta, "functions": rows}, f, ensure_ascii=False, indent=1)
+        json.dump({"exports": exports_meta, "functions": rows, "constants": constants}, f,
+                  ensure_ascii=False, indent=1)
         f.write("\n")
 
     # Swap in one move, so a failure part-way leaves the previous generated/ as it was.

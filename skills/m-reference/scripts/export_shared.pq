@@ -1,12 +1,13 @@
 // export_shared.pq - dumps every library function the engine has loaded, with the
-// documentation metadata carried on its type, as JSON.
+// documentation metadata carried on its type, and every other library member (constants
+// such as GroupKind.Local, type values such as Int64.Type) with its value, as JSON.
 //
 // Paste into a blank query (Power BI Desktop, Excel, Dataflows Gen2). Set Host below.
 // The result is a table of JSON chunks: 30,000 characters each, because an Excel cell holds
 // 32,767 and the full export is several megabytes. Concatenate `json` in `part` order and
 // save it as exports/<host>-<version>.json; sync_shared.py reads that file.
 //
-// Nothing here is guessed from docs: a function is in the output only if #shared has it.
+// Nothing here is guessed from docs: a member is in the output only if #shared has it.
 let
     Host = "desktop",
     // Fill in the host build (Help > About in Desktop). It is stamped into catalog.json.
@@ -92,11 +93,39 @@ let
         Table.ToRecords(Functions),
         each try Row([Name], [Value]) otherwise [name = [Name], exportError = true]
     ),
+
+    // Everything else in the library: enum constants (GroupKind.Local = 0), type values
+    // (Int64.Type), numbers (Number.PI). `value` is the constant as text, culture-fixed so the
+    // export does not depend on the host's locale; null when the member is not a primitive.
+    ConstRow = (memberName as text, v as any) as record =>
+        let
+            docs = Value.Metadata(Value.Type(v)),
+            own = Value.Metadata(v)
+        in
+            [
+                name = memberName,
+                #"type" = TypeName(Value.Type(v)),
+                value = try Text.From(v, "en-US") otherwise null,
+                description =
+                    let d = TextField(own, "Documentation.Description") in
+                        if d <> null then d else TextField(docs, "Documentation.Description")
+            ],
+    Constants = Table.SelectRows(
+        Shared,
+        each not List.Contains(UserMembers, [Name])
+            and (try not ([Value] is function) otherwise false)
+    ),
+    ConstRows = List.Transform(
+        Table.ToRecords(Constants),
+        each try ConstRow([Name], [Value]) otherwise [name = [Name], exportError = true]
+    ),
+
     Payload = [
         host = Host,
         hostVersion = HostVersion,
         exportedAt = DateTimeZone.ToText(DateTimeZone.UtcNow(), [Format = "yyyy-MM-ddTHH:mm:ssZ"]),
-        functions = Rows
+        functions = Rows,
+        constants = ConstRows
     ],
     Json = Text.FromBinary(Json.FromValue(Payload), TextEncoding.Utf8),
     ChunkSize = 30000,

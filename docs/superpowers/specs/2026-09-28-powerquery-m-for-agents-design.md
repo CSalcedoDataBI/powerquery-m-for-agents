@@ -190,8 +190,8 @@ Se añadirán al llegar su contenido: `check_doc_claims`, `check_examples` con p
 | 4 | Páginas conceptuales: sin upstream, ¿de dónde salen? (propuesta: a mano, cortas, con ejemplo ejecutado) | `generated/concepts.md` |
 | 5 | Repos candidatos para `m-lib` | Fase 2 |
 
-| 6 | **Constantes** (`GroupKind.Local`, `JoinKind.*`, `Occurrence.*`): están en `#shared` pero no son funciones y el export no las toma. Los agentes también las inventan. ¿Segundo índice `constants.md`? | Que «no está en el catálogo» valga también para ellas |
-| 7 | **Conectores frente a biblioteca:** ~353 de las 932 funciones son puntos de entrada de conectores (`Mixpanel.Tables`, `Stripe.Contents`…), muchas sin descripción. `catalog.md` pesa ~26.500 tokens, casi el doble que el de DAX. ¿Separar `connectors.md`? | Coste de la primera lectura |
+| 6 | ✅ **Constantes** (`GroupKind.Local`, `JoinKind.*`, `Occurrence.*`): decidido (2026-09-29) — el export también toma los miembros de `#shared` que no son funciones, y `sync_shared.py` genera `constants.md` (nombre, tipo, valor, resumen; sin cards). | — |
+| 7 | ✅ **Conectores frente a biblioteca:** decidido (2026-09-29) — `connectors.md` aparte. Regla: función **sin** `Documentation.Category` cuyo prefijo no usa ninguna función categorizada. «Accessing data» (`Csv.Document`, `Web.Contents`…) es categoría documentada de la biblioteca y se queda en `catalog.md`. | — |
 
 ### Primer export (2026-09-28) — lo que enseñó
 
@@ -213,13 +213,26 @@ Se añadirán al llegar su contenido: `check_doc_claims`, `check_examples` con p
   usando el cliente que trae el propio Desktop. La pregunta 2 (PQTest) deja de bloquear para
   Desktop; sigue abierta para Excel y dataflows.
 
+### Constantes y conectores (2026-09-29) — lo que enseñó
+
+- El mismo Desktop 2.157.879.0 expone **201 miembros que no son funciones**: 118 números
+  (enums como `JoinKind.Inner = 0`, `Number.PI`), 69 valores de tipo (`Int64.Type`,
+  `JoinKind.Type`), 9 textos, 3 nulos y 2 records. 192 traen `Documentation.Description`,
+  a veces en el valor y a veces en su tipo; la consulta mira los dos.
+- La primera frase de la descripción de un enum suele ser la misma para todos sus valores
+  («A possible value for the optional `JoinKind` parameter in `Table.Join`»), así que
+  `constants.md` guarda hasta 200 caracteres en vez de la primera frase.
+- La regla de conectores separa **273** de las 932 funciones, no las ~353 que estimaba §9.7.
+  El resto de las 275 sin categoría (`Value.ResourceExpression`, una de `Cdm`) comparte
+  prefijo con la biblioteca. `catalog.md` pasa de 106.079 a 81.257 bytes.
+
 ---
 
 ## 10. Plan por fases
 
 1. ✅ **Esqueleto**: manifiestos, INDEX, 4 `SKILL.md`, generador con fixture, CI.
 2. ✅ **Primer export** de Desktop → `generated/` real (2026-09-28). Falta: Excel como
-   segundo host, y decidir §9.6 y §9.7.
+   segundo host. §9.6 y §9.7 decididos el 2026-09-29.
 3. **Eval A/B** con 4 modelos → tabla del README.
 4. **`m-folding`** completo, con lab.
 5. Field notes y ejemplos por categorías completas (Text, List, Table).

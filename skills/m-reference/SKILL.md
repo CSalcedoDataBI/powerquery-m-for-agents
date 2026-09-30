@@ -18,26 +18,30 @@ exists in the host it names. See
 
 **One hop. Do not read the whole library.**
 
-1. Read **`generated/catalog.md`**. Every function, one row each: name, category, return
-   type, flags, one-line summary.
+1. Read **`generated/catalog.md`**. Every library function, one row each: name, category,
+   return type, flags, one-line summary. Looking for a connector (`Snowflake.Databases`,
+   `Stripe.Contents`)? Read **`generated/connectors.md`** instead. A constant or type value
+   (`JoinKind.Inner`, `Int64.Type`)? **`generated/constants.md`**, which already holds the
+   whole answer: there are no constant cards.
 2. Find the function. Open its card: **`generated/library/<file>.md`** (file naming below).
+   Connector cards live there too.
 3. Flag **★** → also read **`notes/<file>.md`**: field knowledge not in the engine metadata.
 4. Flag **▶** → the card links to **`examples/<category>/<file>.md`**: queries executed in
    this repository's lab, each with the value the engine returned.
 5. Flag **⌂** → the function is missing from at least one exported host. The card says
    which ones have it. Check before suggesting it for Excel or a dataflow.
 
-**A function name that is not in `catalog.md` does not exist in any exported host.** Say so
-rather than offering it. Two kinds of name are **not** covered, so their absence proves
-nothing:
+**A name that is in none of `catalog.md`, `connectors.md` and `constants.md` does not exist
+in any exported host.** Say so rather than offering it. That covers functions, connector
+entry points and constants such as `GroupKind.Local` or `Occurrence.All`. One kind of name is
+**not** covered, so its absence proves nothing:
 
-- **Constants** such as `GroupKind.Local`, `JoinKind.Inner`, `Occurrence.All`. They live in
-  `#shared` but are not functions, and the export takes functions only.
 - **Literal keywords** such as `#date`, `#table`, `#duration`. They are part of the language
   syntax, not library members.
 
-The catalogue also lists connector entry points (`Mixpanel.Tables`, `Stripe.Contents`, …)
-alongside the core library. Many of those carry no description.
+A connector is a function the engine gives no category, under a prefix no library function
+uses. Many carry no description. Data-access functions the engine documents (`Csv.Document`,
+`Web.Contents`, `Sql.Database`, …) are library, in `catalog.md`.
 
 The card section `## Examples (engine metadata — not verified here)` is copied from the
 function's own `Documentation.Examples`. Useful for shape; not evidence.
@@ -46,12 +50,14 @@ function's own `Documentation.Examples`. Useful for shape; not evidence.
 
 | Path | What it is |
 |---|---|
-| `generated/catalog.md` | The index the agent reads. **Generated** |
-| `generated/catalog.json` | The same index for scripts. **Generated**, never loaded into context |
-| `generated/library/<file>.md` | One card per function. **Generated — never edit by hand** |
+| `generated/catalog.md` | The index the agent reads: library functions. **Generated** |
+| `generated/connectors.md` | Connector entry points, same columns. **Generated** |
+| `generated/constants.md` | Constants and type values, with their value. **Generated** |
+| `generated/catalog.json` | All three indexes for scripts. **Generated**, never loaded into context |
+| `generated/library/<file>.md` | One card per function or connector. **Generated — never edit by hand** |
 | `notes/<file>.md` | Field notes. **Hand-written**; the sync never touches them |
 | `examples/<category>/<file>.md` | Executed examples. **Hand-written** |
-| `scripts/export_shared.pq` | The M query that dumps `#shared` as JSON |
+| `scripts/export_shared.pq` | The M query that dumps `#shared` (functions and constants) as JSON |
 | `scripts/sync_shared.py` | JSON exports → `generated/` |
 
 Card file names: lower case, dot becomes a dash (`Table.AddColumn` → `table-addcolumn`),
