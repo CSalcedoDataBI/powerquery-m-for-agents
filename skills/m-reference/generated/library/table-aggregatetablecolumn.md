@@ -4,7 +4,7 @@ category: "Table.Transformation"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ Aggregates tables in `table`[`column`] into multiple columns containing aggregat
 | `table` | `table` | no |
 | `column` | `text` | no |
 | `aggregations` | `list` | no |
+
+**Executed examples (1):** [examples/table-transformation/table-aggregatetablecolumn.md](../../examples/table-transformation/table-aggregatetablecolumn.md)
 
 ## Examples (engine metadata — not verified here)
 

@@ -4,7 +4,7 @@ category: "List.Generators"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ Returns a list of `time` values of size `count`, starting at `start`. The given 
 | `start` | `time` | no |
 | `count` | `number` | no |
 | `step` | `duration` | no |
+
+**Executed examples (1):** [examples/list-generators/list-times.md](../../examples/list-generators/list-times.md)
 
 ## Examples (engine metadata — not verified here)
 

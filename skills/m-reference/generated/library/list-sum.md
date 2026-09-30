@@ -4,7 +4,7 @@ category: "List.Addition"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns the sum of the non-null values in the list, `list`. Returns null if ther
 |---|---|---|
 | `list` | `list` | no |
 | `precision` | `nullable number` | yes |
+
+**Executed examples (1):** [examples/list-addition/list-sum.md](../../examples/list-addition/list-sum.md)
 
 ## Examples (engine metadata — not verified here)
 

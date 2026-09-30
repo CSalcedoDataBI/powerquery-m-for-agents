@@ -4,7 +4,7 @@ category: "Text.Transformations"
 returns: "nullable text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns a text value composed of the input text `text` repeated `count` times.
 |---|---|---|
 | `text` | `nullable text` | no |
 | `count` | `number` | no |
+
+**Executed examples (1):** [examples/text-transformations/text-repeat.md](../../examples/text-transformations/text-repeat.md)
 
 ## Examples (engine metadata — not verified here)
 

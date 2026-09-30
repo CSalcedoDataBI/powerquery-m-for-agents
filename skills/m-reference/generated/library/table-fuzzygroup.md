@@ -4,7 +4,7 @@ category: "Table.Transformation"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 2
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -46,6 +46,8 @@ The default value is 0.80.
 | `key` | `any` | no |
 | `aggregatedColumns` | `list` | no |
 | `options` | `nullable record` | yes |
+
+**Executed examples (2):** [examples/table-transformation/table-fuzzygroup.md](../../examples/table-transformation/table-fuzzygroup.md)
 
 ## Examples (engine metadata — not verified here)
 

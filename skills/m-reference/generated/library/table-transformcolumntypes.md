@@ -3,8 +3,8 @@ name: "Table.TransformColumnTypes"
 category: "Table.Transformation"
 returns: "table"
 hosts: ["desktop"]
-notes: false
-examples: 0
+notes: true
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -39,6 +39,10 @@ For each column listed in `typeTransformations`, the ".From" method correspondin
 | `table` | `table` | no |
 | `typeTransformations` | `list` | no |
 | `culture` | `any` | yes |
+
+**Field note:** [`notes/table-transformcolumntypes.md`](../../notes/table-transformcolumntypes.md)
+
+**Executed examples (1):** [examples/table-transformation/table-transformcolumntypes.md](../../examples/table-transformation/table-transformcolumntypes.md)
 
 ## Examples (engine metadata — not verified here)
 

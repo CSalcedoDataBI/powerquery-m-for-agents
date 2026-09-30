@@ -4,7 +4,7 @@ category: "Text.Transformations"
 returns: "nullable text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -26,6 +26,8 @@ An optional character `character` can be used to specify the character used for 
 | `text` | `nullable text` | no |
 | `count` | `number` | no |
 | `character` | `nullable text` | yes |
+
+**Executed examples (1):** [examples/text-transformations/text-padend.md](../../examples/text-transformations/text-padend.md)
 
 ## Examples (engine metadata — not verified here)
 

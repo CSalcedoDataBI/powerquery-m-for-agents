@@ -4,7 +4,7 @@ category: "List.Selection"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -28,6 +28,8 @@ Returns the last item in the specified list, or the optional default value if th
 |---|---|---|
 | `list` | `list` | no |
 | `defaultValue` | `any` | yes |
+
+**Executed examples (1):** [examples/list-selection/list-last.md](../../examples/list-selection/list-last.md)
 
 ## Examples (engine metadata — not verified here)
 

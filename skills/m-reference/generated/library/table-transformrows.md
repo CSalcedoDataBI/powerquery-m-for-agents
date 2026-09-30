@@ -4,7 +4,7 @@ category: "Table.Transformation"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Creates a `list` by applying the `transform` operation to each row in `table`.
 |---|---|---|
 | `table` | `table` | no |
 | `transform` | `function` | no |
+
+**Executed examples (1):** [examples/table-transformation/table-transformrows.md](../../examples/table-transformation/table-transformrows.md)
 
 ## Examples (engine metadata — not verified here)
 

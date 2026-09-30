@@ -4,7 +4,7 @@ category: "Text.Conversions from and to text"
 returns: "text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ Returns formatted text that is created by applying `arguments` from a list or re
 | `formatString` | `text` | no |
 | `arguments` | `any` | no |
 | `culture` | `nullable text` | yes |
+
+**Executed examples (1):** [examples/text-conversions-from-and-to-text/text-format.md](../../examples/text-conversions-from-and-to-text/text-format.md)
 
 ## Examples (engine metadata — not verified here)
 

@@ -4,7 +4,7 @@ category: "Table.Transformation"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -40,6 +40,8 @@ Splits the specified column into a set of additional columns using the specified
 | `columnNamesOrNumber` | `any` | yes |
 | `default` | `any` | yes |
 | `extraColumns` | `any` | yes |
+
+**Executed examples (1):** [examples/table-transformation/table-splitcolumn.md](../../examples/table-transformation/table-splitcolumn.md)
 
 ## Examples (engine metadata — not verified here)
 

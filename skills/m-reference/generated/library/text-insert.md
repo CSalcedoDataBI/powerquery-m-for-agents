@@ -4,7 +4,7 @@ category: "Text.Modification"
 returns: "nullable text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ Returns the result of inserting text value `newText` into the text value `text` 
 | `text` | `nullable text` | no |
 | `offset` | `number` | no |
 | `newText` | `text` | no |
+
+**Executed examples (1):** [examples/text-modification/text-insert.md](../../examples/text-modification/text-insert.md)
 
 ## Examples (engine metadata — not verified here)
 

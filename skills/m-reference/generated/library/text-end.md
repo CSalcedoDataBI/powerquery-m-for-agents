@@ -4,7 +4,7 @@ category: "Text.Extraction"
 returns: "nullable text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns a `text` value that is the last `count` characters of the `text` value `
 |---|---|---|
 | `text` | `nullable text` | no |
 | `count` | `number` | no |
+
+**Executed examples (1):** [examples/text-extraction/text-end.md](../../examples/text-extraction/text-end.md)
 
 ## Examples (engine metadata — not verified here)
 

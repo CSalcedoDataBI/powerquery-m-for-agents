@@ -4,7 +4,7 @@ category: "List.Transformation functions"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Removes all occurrences of the given values in the `list2` from `list1`. If the 
 |---|---|---|
 | `list1` | `list` | no |
 | `list2` | `list` | no |
+
+**Executed examples (1):** [examples/list-transformation-functions/list-removeitems.md](../../examples/list-transformation-functions/list-removeitems.md)
 
 ## Examples (engine metadata — not verified here)
 

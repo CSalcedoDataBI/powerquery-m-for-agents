@@ -4,7 +4,7 @@ category: "Text.Membership"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -26,6 +26,8 @@ An optional parameter `occurrence` may be used to specify which occurrence posit
 | `text` | `text` | no |
 | `characters` | `list` | no |
 | `occurrence` | `nullable number` | yes |
+
+**Executed examples (1):** [examples/text-membership/text-positionofany.md](../../examples/text-membership/text-positionofany.md)
 
 ## Examples (engine metadata — not verified here)
 

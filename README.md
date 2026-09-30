@@ -7,7 +7,8 @@ doesn't tell you.
 > **Status: early.** The catalogue is generated from one export, Power BI Desktop; its size
 > and the build it came from are in the header of
 > [`catalog.md`](skills/m-reference/generated/catalog.md), counted by the generator rather
-> than typed here. No second host, field notes or evals yet. Plan and open questions:
+> than typed here. Executed examples cover the Text, List and Table functions, and the language
+> itself has hand-written concept pages. No second host or evals yet. Plan and open questions:
 > [design spec](docs/superpowers/specs/2026-09-28-powerquery-m-for-agents-design.md).
 
 Sibling of [dax-for-agents](https://github.com/CSalcedoDataBI/dax-for-agents), with the same

@@ -4,7 +4,7 @@ category: "Table.Transformation"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -37,6 +37,8 @@ Replaces a value with a new value in the specified columns of a table.
 | `newValue` | `any` | no |
 | `replacer` | `function` | no |
 | `columnsToSearch` | `list` | no |
+
+**Executed examples (1):** [examples/table-transformation/table-replacevalue.md](../../examples/table-transformation/table-replacevalue.md)
 
 ## Examples (engine metadata — not verified here)
 

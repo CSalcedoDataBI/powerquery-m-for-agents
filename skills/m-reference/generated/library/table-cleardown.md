@@ -4,7 +4,7 @@ category: "Table.Transformation"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Replaces the specified `columns` with null when all their values are repeated fr
 |---|---|---|
 | `table` | `table` | no |
 | `columns` | `list` | no |
+
+**Executed examples (1):** [examples/table-transformation/table-cleardown.md](../../examples/table-transformation/table-cleardown.md)
 
 ## Examples (engine metadata — not verified here)
 

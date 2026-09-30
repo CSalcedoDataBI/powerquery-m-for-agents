@@ -4,7 +4,7 @@ category: "Table.Column operations"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Demotes the column headers (i.e. column names) to the first row of values. The d
 | Name | Type | Optional |
 |---|---|---|
 | `table` | `table` | no |
+
+**Executed examples (1):** [examples/table-column-operations/table-demoteheaders.md](../../examples/table-column-operations/table-demoteheaders.md)
 
 ## Examples (engine metadata — not verified here)
 

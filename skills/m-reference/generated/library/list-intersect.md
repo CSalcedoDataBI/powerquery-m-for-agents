@@ -4,7 +4,7 @@ category: "List.Set operations"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns the intersection of the list values found in the input list `lists`. An 
 |---|---|---|
 | `lists` | `list` | no |
 | `equationCriteria` | `any` | yes |
+
+**Executed examples (1):** [examples/list-set-operations/list-intersect.md](../../examples/list-set-operations/list-intersect.md)
 
 ## Examples (engine metadata — not verified here)
 

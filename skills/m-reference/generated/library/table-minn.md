@@ -4,7 +4,7 @@ category: "Table.Ordering"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -29,6 +29,8 @@ Returns the smallest row(s) in the `table`, given the `comparisonCriteria`. Afte
 | `table` | `table` | no |
 | `comparisonCriteria` | `any` | no |
 | `countOrCondition` | `any` | no |
+
+**Executed examples (1):** [examples/table-ordering/table-minn.md](../../examples/table-ordering/table-minn.md)
 
 ## Examples (engine metadata — not verified here)
 

@@ -4,7 +4,7 @@ category: "Table.Column operations"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -26,6 +26,8 @@ Translates a set of columns in a table into attribute-value pairs, combined with
 | `pivotColumns` | `list` | no |
 | `attributeColumn` | `text` | no |
 | `valueColumn` | `text` | no |
+
+**Executed examples (1):** [examples/table-column-operations/table-unpivot.md](../../examples/table-column-operations/table-unpivot.md)
 
 ## Examples (engine metadata — not verified here)
 

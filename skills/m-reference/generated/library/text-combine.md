@@ -4,7 +4,7 @@ category: "Text.Transformations"
 returns: "text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ An optional `separator` used in the final combined text can be specified.
 |---|---|---|
 | `texts` | `list` | no |
 | `separator` | `nullable text` | yes |
+
+**Executed examples (1):** [examples/text-transformations/text-combine.md](../../examples/text-transformations/text-combine.md)
 
 ## Examples (engine metadata — not verified here)
 

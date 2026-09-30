@@ -258,77 +258,77 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Lines.FromText` | Lines | list |  | Converts a text value to a list of text values split at lines breaks. |
 | `Lines.ToBinary` | Lines | binary |  | Converts a list of text into a binary value using the specified encoding and lineSeparator.The specified lineSeparator… |
 | `Lines.ToText` | Lines | text |  | Converts a list of text into a single text. |
-| `List.Accumulate` | List.Transformation functions | any |  | Accumulates a summary value from the items in the list. |
-| `List.AllTrue` | List.Membership functions | logical |  | Returns true if all expressions are true. |
-| `List.Alternate` | List.Selection | list |  | Returns a list comprised of all the odd numbered offset elements in a list. |
-| `List.AnyTrue` | List.Membership functions | logical |  | Returns true if any expression is true. |
-| `List.Average` | List.Averages | any |  | Returns the average of the values. |
-| `List.Buffer` | List.Selection | list |  | Buffers a list. |
-| `List.Combine` | List.Transformation functions | list |  | Returns a single list by combining multiple lists. |
-| `List.ConformToPageReader` | List.Transformation functions | table |  | This function is intended for internal use only. |
-| `List.Contains` | List.Membership functions | logical |  | Indicates whether the list contains the value. |
-| `List.ContainsAll` | List.Membership functions | logical |  | Indicates where a list includes all the values in another list. |
-| `List.ContainsAny` | List.Membership functions | logical |  | Indicates where a list includes any of the values in another list. |
-| `List.Count` | List.Information | number |  | Returns the number of items in the list. |
-| `List.Covariance` | List.Numerics | nullable number |  | Returns the covariance between the two lists of numbers. |
-| `List.Dates` | List.Generators | list |  | Generates a list of date values given an initial value, count, and incremental duration value. |
-| `List.DateTimes` | List.Generators | list |  | Generates a list of datetime values given an initial value, count, and incremental duration value. |
-| `List.DateTimeZones` | List.Generators | list |  | Generates a list of datetimezone values given an initial value, count, and incremental duration value. |
-| `List.Difference` | List.Set operations | list |  | Returns the difference of the two given lists. |
-| `List.Distinct` | List.Selection | list |  | Returns a list of values with duplicates removed. |
-| `List.Durations` | List.Generators | list |  | Generates a list of duration values given an initial value, count, and incremental duration value. |
-| `List.FindText` | List.Selection | list |  | Returns a list of values (including record fields) that contain the specified text. |
-| `List.First` | List.Selection | any |  | Returns the first value of the list or the specified default if empty. |
-| `List.FirstN` | List.Selection | any |  | Returns the first set of items in the list by specifying how many items to return or a qualifying condition. |
-| `List.Generate` | List.Generators | list |  | Generates a list of values. |
-| `List.InsertRange` | List.Selection | list |  | Inserts values into a list at the given index. |
-| `List.Intersect` | List.Set operations | list |  | Returns the intersection of the list values found in the input. |
-| `List.IsDistinct` | List.Selection | logical |  | Indicates whether there are duplicates in the list. |
-| `List.IsEmpty` | List.Information | logical |  | Returns true if the list is empty. |
-| `List.Last` | List.Selection | any |  | Returns the last value of the list or the specified default if empty. |
-| `List.LastN` | List.Selection | any |  | Returns a list of the last item or items in the specified list. |
-| `List.MatchesAll` | List.Selection | logical |  | Returns true if the condition function is satisfied by all values in the list. |
-| `List.MatchesAny` | List.Selection | logical |  | Returns true if the condition function is satisfied by any value. |
-| `List.Max` | List.Ordering | any |  | Returns the maximum value or the default value for an empty list. |
-| `List.MaxN` | List.Ordering | list |  | Returns the maximum value(s) in the list. |
-| `List.Median` | List.Ordering | any |  | Returns the median value in the list. |
-| `List.Min` | List.Ordering | any |  | Returns the minimum value or the default value for an empty list. |
-| `List.MinN` | List.Ordering | list |  | Returns the minimum value(s) in the list. |
-| `List.Mode` | List.Averages | any |  | Returns the most frequent value in the list. |
-| `List.Modes` | List.Averages | list |  | Returns a list of the most frequent values in the list. |
-| `List.NonNullCount` | List.Information | number |  | Returns the number of non-null items in the list. |
-| `List.Numbers` | List.Generators | list |  | Returns a list of numbers given an initial value, count, and optional increment value. |
-| `List.Percentile` | List.Ordering | any |  | Returns one or more sample percentiles corresponding to the given probabilities. |
-| `List.PositionOf` | List.Membership functions | any |  | Returns the offset(s) of a value in a list. |
-| `List.PositionOfAny` | List.Membership functions | any |  | Returns the first offset of a value in a list. |
-| `List.Positions` | List.Selection | list |  | Returns a list of offsets for the input. |
-| `List.Product` | List.Numerics | nullable number |  | Returns the product of the numbers in the list. |
-| `List.Random` | List.Generators | list |  | Returns a list of random numbers. |
-| `List.Range` | List.Selection | list |  | Returns a subset of the list beginning at an offset. |
-| `List.RemoveFirstN` | List.Transformation functions | list |  | Returns a list that skips the specified number of elements at the beginning of the list. |
-| `List.RemoveItems` | List.Transformation functions | list |  | Removes items from list1 that are present in list. |
-| `List.RemoveLastN` | List.Transformation functions | list |  | Returns a list that removes the specified number of elements from the end of the list. |
-| `List.RemoveMatchingItems` | List.Transformation functions | list |  | Removes all occurrences of the input values. |
-| `List.RemoveNulls` | List.Transformation functions | list |  | Removes all "null" values from the specified list. |
-| `List.RemoveRange` | List.Transformation functions | list |  | Removes count number of values starting at the specified position. |
-| `List.Repeat` | List.Transformation functions | list |  | Returns a list that is count repetitions of the original list. |
-| `List.ReplaceMatchingItems` | List.Transformation functions | list |  | Applies each replacement of { old, new }. |
-| `List.ReplaceRange` | List.Transformation functions | list |  | Replaces count number of values starting at position with the replacement values. |
-| `List.ReplaceValue` | List.Transformation functions | list |  | Searches a list for the specified value and replaces it. |
-| `List.Reverse` | List.Transformation functions | list |  | Reverses the order of values in the list. |
-| `List.Select` | List.Selection | list |  | Returns a list of values that match the condition. |
-| `List.Single` | List.Selection | any |  | Returns the one list item for a list of length one, otherwise raises an error. |
-| `List.SingleOrDefault` | List.Selection | any |  | Returns the one list item for a list of length one and the default value for an empty list. |
-| `List.Skip` | List.Selection | list |  | Returns a list that skips the specified number of elements at the beginning of the list. |
-| `List.Sort` | List.Ordering | list |  | Sorts a list of data according to the criteria specified. |
-| `List.Split` | List.Transformation functions | list |  | Splits the specified list into a list of lists using the specified page size. |
-| `List.StandardDeviation` | List.Averages | nullable number |  | Returns a sample based estimate of the standard deviation. |
-| `List.Sum` | List.Addition | any |  | Returns the sum of the items in the list. |
-| `List.Times` | List.Generators | list |  | Generates a list of time values given an initial value, count, and incremental duration value. |
-| `List.Transform` | List.Transformation functions | list |  | Returns a new list of values computed from this list. |
-| `List.TransformMany` | List.Transformation functions | list |  | Returns a list whose elements are transformed from the input list using specified functions. |
-| `List.Union` | List.Set operations | list |  | Returns the union of the list values found in the input. |
-| `List.Zip` | List.Transformation functions | list |  | Returns a list of lists by combining items at the same position in multiple lists. |
+| `List.Accumulate` | List.Transformation functions | any | ▶ | Accumulates a summary value from the items in the list. |
+| `List.AllTrue` | List.Membership functions | logical | ▶ | Returns true if all expressions are true. |
+| `List.Alternate` | List.Selection | list | ▶ | Returns a list comprised of all the odd numbered offset elements in a list. |
+| `List.AnyTrue` | List.Membership functions | logical | ▶ | Returns true if any expression is true. |
+| `List.Average` | List.Averages | any | ▶ | Returns the average of the values. |
+| `List.Buffer` | List.Selection | list | ▶ | Buffers a list. |
+| `List.Combine` | List.Transformation functions | list | ▶ | Returns a single list by combining multiple lists. |
+| `List.ConformToPageReader` | List.Transformation functions | table | ▶ | This function is intended for internal use only. |
+| `List.Contains` | List.Membership functions | logical | ▶ | Indicates whether the list contains the value. |
+| `List.ContainsAll` | List.Membership functions | logical | ▶ | Indicates where a list includes all the values in another list. |
+| `List.ContainsAny` | List.Membership functions | logical | ▶ | Indicates where a list includes any of the values in another list. |
+| `List.Count` | List.Information | number | ▶ | Returns the number of items in the list. |
+| `List.Covariance` | List.Numerics | nullable number | ▶ | Returns the covariance between the two lists of numbers. |
+| `List.Dates` | List.Generators | list | ▶ | Generates a list of date values given an initial value, count, and incremental duration value. |
+| `List.DateTimes` | List.Generators | list | ▶ | Generates a list of datetime values given an initial value, count, and incremental duration value. |
+| `List.DateTimeZones` | List.Generators | list | ▶ | Generates a list of datetimezone values given an initial value, count, and incremental duration value. |
+| `List.Difference` | List.Set operations | list | ▶ | Returns the difference of the two given lists. |
+| `List.Distinct` | List.Selection | list | ▶ | Returns a list of values with duplicates removed. |
+| `List.Durations` | List.Generators | list | ▶ | Generates a list of duration values given an initial value, count, and incremental duration value. |
+| `List.FindText` | List.Selection | list | ▶ | Returns a list of values (including record fields) that contain the specified text. |
+| `List.First` | List.Selection | any | ▶ | Returns the first value of the list or the specified default if empty. |
+| `List.FirstN` | List.Selection | any | ▶ | Returns the first set of items in the list by specifying how many items to return or a qualifying condition. |
+| `List.Generate` | List.Generators | list | ▶ | Generates a list of values. |
+| `List.InsertRange` | List.Selection | list | ▶ | Inserts values into a list at the given index. |
+| `List.Intersect` | List.Set operations | list | ▶ | Returns the intersection of the list values found in the input. |
+| `List.IsDistinct` | List.Selection | logical | ▶ | Indicates whether there are duplicates in the list. |
+| `List.IsEmpty` | List.Information | logical | ▶ | Returns true if the list is empty. |
+| `List.Last` | List.Selection | any | ▶ | Returns the last value of the list or the specified default if empty. |
+| `List.LastN` | List.Selection | any | ▶ | Returns a list of the last item or items in the specified list. |
+| `List.MatchesAll` | List.Selection | logical | ▶ | Returns true if the condition function is satisfied by all values in the list. |
+| `List.MatchesAny` | List.Selection | logical | ▶ | Returns true if the condition function is satisfied by any value. |
+| `List.Max` | List.Ordering | any | ▶ | Returns the maximum value or the default value for an empty list. |
+| `List.MaxN` | List.Ordering | list | ▶ | Returns the maximum value(s) in the list. |
+| `List.Median` | List.Ordering | any | ▶ | Returns the median value in the list. |
+| `List.Min` | List.Ordering | any | ▶ | Returns the minimum value or the default value for an empty list. |
+| `List.MinN` | List.Ordering | list | ▶ | Returns the minimum value(s) in the list. |
+| `List.Mode` | List.Averages | any | ▶ | Returns the most frequent value in the list. |
+| `List.Modes` | List.Averages | list | ▶ | Returns a list of the most frequent values in the list. |
+| `List.NonNullCount` | List.Information | number | ▶ | Returns the number of non-null items in the list. |
+| `List.Numbers` | List.Generators | list | ▶ | Returns a list of numbers given an initial value, count, and optional increment value. |
+| `List.Percentile` | List.Ordering | any | ▶ | Returns one or more sample percentiles corresponding to the given probabilities. |
+| `List.PositionOf` | List.Membership functions | any | ▶ | Returns the offset(s) of a value in a list. |
+| `List.PositionOfAny` | List.Membership functions | any | ▶ | Returns the first offset of a value in a list. |
+| `List.Positions` | List.Selection | list | ▶ | Returns a list of offsets for the input. |
+| `List.Product` | List.Numerics | nullable number | ▶ | Returns the product of the numbers in the list. |
+| `List.Random` | List.Generators | list | ▶ | Returns a list of random numbers. |
+| `List.Range` | List.Selection | list | ▶ | Returns a subset of the list beginning at an offset. |
+| `List.RemoveFirstN` | List.Transformation functions | list | ▶ | Returns a list that skips the specified number of elements at the beginning of the list. |
+| `List.RemoveItems` | List.Transformation functions | list | ▶ | Removes items from list1 that are present in list. |
+| `List.RemoveLastN` | List.Transformation functions | list | ▶ | Returns a list that removes the specified number of elements from the end of the list. |
+| `List.RemoveMatchingItems` | List.Transformation functions | list | ▶ | Removes all occurrences of the input values. |
+| `List.RemoveNulls` | List.Transformation functions | list | ▶ | Removes all "null" values from the specified list. |
+| `List.RemoveRange` | List.Transformation functions | list | ▶ | Removes count number of values starting at the specified position. |
+| `List.Repeat` | List.Transformation functions | list | ▶ | Returns a list that is count repetitions of the original list. |
+| `List.ReplaceMatchingItems` | List.Transformation functions | list | ▶ | Applies each replacement of { old, new }. |
+| `List.ReplaceRange` | List.Transformation functions | list | ▶ | Replaces count number of values starting at position with the replacement values. |
+| `List.ReplaceValue` | List.Transformation functions | list | ▶ | Searches a list for the specified value and replaces it. |
+| `List.Reverse` | List.Transformation functions | list | ▶ | Reverses the order of values in the list. |
+| `List.Select` | List.Selection | list | ▶ | Returns a list of values that match the condition. |
+| `List.Single` | List.Selection | any | ▶ | Returns the one list item for a list of length one, otherwise raises an error. |
+| `List.SingleOrDefault` | List.Selection | any | ▶ | Returns the one list item for a list of length one and the default value for an empty list. |
+| `List.Skip` | List.Selection | list | ▶ | Returns a list that skips the specified number of elements at the beginning of the list. |
+| `List.Sort` | List.Ordering | list | ▶ | Sorts a list of data according to the criteria specified. |
+| `List.Split` | List.Transformation functions | list | ▶ | Splits the specified list into a list of lists using the specified page size. |
+| `List.StandardDeviation` | List.Averages | nullable number | ▶ | Returns a sample based estimate of the standard deviation. |
+| `List.Sum` | List.Addition | any | ▶ | Returns the sum of the items in the list. |
+| `List.Times` | List.Generators | list | ▶ | Generates a list of time values given an initial value, count, and incremental duration value. |
+| `List.Transform` | List.Transformation functions | list | ▶ | Returns a new list of values computed from this list. |
+| `List.TransformMany` | List.Transformation functions | list | ▶ | Returns a list whose elements are transformed from the input list using specified functions. |
+| `List.Union` | List.Set operations | list | ▶ | Returns the union of the list values found in the input. |
+| `List.Zip` | List.Transformation functions | list | ▶ | Returns a list of lists by combining items at the same position in multiple lists. |
 | `Logical.From` | Logical | nullable logical |  | Creates a logical from the given value. |
 | `Logical.FromText` | Logical | nullable logical |  | Creates a logical value from the text values "true" and "false". |
 | `Logical.ToText` | Logical | nullable text |  | Returns the text "true" or "false" given a logical value. |
@@ -351,7 +351,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Number.Exp` | Number.Operations | nullable number |  | Raises e to the given power. |
 | `Number.Factorial` | Number.Operations | nullable number |  | Returns the factorial of the number. |
 | `Number.From` | Number.Conversion and formatting | nullable number |  | Creates a number from the given value. |
-| `Number.FromText` | Number.Conversion and formatting | nullable number |  | Creates numbers from common text formats ("15", "3,423.10", "5.0E-10"). |
+| `Number.FromText` | Number.Conversion and formatting | nullable number | ★ | Creates numbers from common text formats ("15", "3,423.10", "5.0E-10"). |
 | `Number.IntegerDivide` | Number.Operations | nullable number |  | Divides two numbers and returns the integer portion of the result. |
 | `Number.IsEven` | Number.Information | logical |  | Indicates if the value is even. |
 | `Number.IsNaN` | Number.Information | logical |  | Indicates if the value is NaN (Not a number). |
@@ -435,163 +435,163 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `SqlExpression.SchemaFrom` | Values.Implementation | any |  | This function is intended for internal use only. |
 | `SqlExpression.ToExpression` | Values.Implementation | text |  | Converts the provided SQL query to M code. |
 | `Sybase.Database` | Accessing data | table |  | Returns a table of SQL tables and views available in a Sybase database. |
-| `Table.AddColumn` | Table.Transformation | table |  | Adds a column with the specified name. |
-| `Table.AddFuzzyClusterColumn` | Table.Transformation | table |  | Adds a new column with representative values obtained by fuzzy grouping values of the specified column in the table. |
-| `Table.AddIndexColumn` | Table.Transformation | table |  | Appends a column with explicit position values. |
-| `Table.AddJoinColumn` | Table.Transformation | table |  | Performs a join between tables on supplied columns and produces the join result in a new column. |
-| `Table.AddKey` | Table.Transformation | table |  | Adds a key to a table. |
-| `Table.AddRankColumn` | Table.Ordering | table |  | Appends a column with the ranking of one or more other columns. |
-| `Table.AggregateTableColumn` | Table.Transformation | table |  | Aggregates a column of tables into multiple columns in the containing table. |
-| `Table.AlternateRows` | Table.Row operations | table |  | Keeps the initial offset then alternates taking and skipping the following rows. |
-| `Table.ApproximateRowCount` | Table.Information | number |  | Returns the approximate number of rows in the table. |
-| `Table.Buffer` | Table.Other | table |  | Buffers a table in memory, isolating it from external changes during evaluation. |
-| `Table.ClearDown` | Table.Transformation | table |  | Clears repeating sets of column values. |
-| `Table.Column` | Table.Column operations | list |  | Returns a specified column of data from the table as a list. |
-| `Table.ColumnCount` | Table.Information | number |  | Returns the number of columns in the table. |
-| `Table.ColumnNames` | Table.Column operations | list |  | Returns the column names as a list. |
-| `Table.ColumnsOfType` | Table.Column operations | list |  | Returns a list with the names of the columns that match the specified types. |
-| `Table.Combine` | Table.Row operations | table |  | Returns a table that is the result of merging a list of tables. |
-| `Table.CombineColumns` | Table.Transformation | table |  | Combines the specified columns into a new column using the specified combiner function. |
-| `Table.CombineColumnsToRecord` | Table.Transformation | table |  | Combines the specified columns into a new record-valued column where each record has field names and values correspondi… |
-| `Table.ConformToPageReader` | Table.Transformation | table |  | This function is intended for internal use only. |
-| `Table.Contains` | Table.Membership | logical |  | Indicates whether the specified record appears as a row in the table. |
-| `Table.ContainsAll` | Table.Membership | logical |  | Indicates whether all of the specified records appear as rows in the table. |
-| `Table.ContainsAny` | Table.Membership | logical |  | Indicates whether any of the specified records appear as rows in the table. |
-| `Table.DemoteHeaders` | Table.Column operations | table |  | Demotes the column headers to the first row of values. |
-| `Table.Distinct` | Table.Membership | table |  | Removes duplicate rows from the table. |
-| `Table.DuplicateColumn` | Table.Column operations | table |  | Duplicates a column with the specified name. |
-| `Table.ExpandListColumn` | Table.Transformation | table |  | Given a column of lists in a table, create a copy of a row for each value in its list. |
-| `Table.ExpandRecordColumn` | Table.Transformation | table |  | Expands a column of records into columns with each of the values. |
-| `Table.ExpandTableColumn` | Table.Transformation | table |  | Expands a column of records or a column of tables into multiple columns in the containing table. |
-| `Table.FillDown` | Table.Transformation | table |  | Propagates the value of a previous cell to the null-valued cells below in the column. |
-| `Table.FillUp` | Table.Transformation | table |  | Propagates the value of a cell to the null-valued cells above in the column. |
-| `Table.FilterWithDataTable` | Table.Transformation | any |  | This function is intended for internal use only. |
-| `Table.FindText` | Table.Row operations | table |  | Returns all the rows that contain the given text in the table. |
-| `Table.First` | Table.Row operations | any |  | Returns the first row or a specified default value. |
-| `Table.FirstN` | Table.Row operations | table |  | Returns the first count rows specified. |
-| `Table.FirstValue` | Table.Row operations | any |  | Returns the first column of the first row of the table or a specified default value. |
-| `Table.FromColumns` | Table.Table construction | table |  | Creates a table from a list of columns and specified values. |
-| `Table.FromList` | Table.Table construction | table |  | Converts a list into a table by applying the specified splitting function to each item in the list. |
-| `Table.FromPartitions` | Table.Row operations | table |  | Returns a table that is the result of combining a set of partitioned tables. |
-| `Table.FromRecords` | Table.Table construction | table |  | Converts a list of records into a table. |
-| `Table.FromRows` | Table.Table construction | table |  | Creates a table from a list of row values and optional columns. |
-| `Table.FromValue` | Table.Table construction | table |  | Creates a table with a column from the provided value(s). |
-| `Table.FuzzyGroup` | Table.Transformation | table |  | Groups rows in the table based on fuzzy matching of keys. |
-| `Table.FuzzyJoin` | Table.Transformation | table |  | Joins the rows from the two tables that fuzzy match based on the given keys. |
-| `Table.FuzzyNestedJoin` | Table.Transformation | table |  | Performs a fuzzy join between tables on supplied columns and produces the join result in a new column. |
-| `Table.Group` | Table.Transformation | table |  | Groups rows in the table that have the same key. |
-| `Table.HasColumns` | Table.Column operations | logical |  | Indicates whether the table contains the specified column(s). |
-| `Table.InsertRows` | Table.Row operations | table |  | Inserts a list of rows into the table at the specified position. |
-| `Table.IsDistinct` | Table.Membership | logical |  | Indicates whether the table contains only distinct rows (no duplicates). |
-| `Table.IsEmpty` | Table.Information | logical |  | Indicates whether the table contains any rows. |
-| `Table.Join` | Table.Transformation | table |  | Joins the rows from the two tables that match based on the given keys. |
-| `Table.Keys` | Table.Transformation | list |  | Returns the keys of the specified table. |
-| `Table.Last` | Table.Row operations | any |  | Returns the last row or a specified default value. |
-| `Table.LastN` | Table.Row operations | table |  | Returns the last specified number of rows. |
-| `Table.MatchesAllRows` | Table.Row operations | logical |  | Indicates whether all the rows in the table meet the given condition. |
-| `Table.MatchesAnyRows` | Table.Row operations | logical |  | Indicates whether any the rows in the table meet the given condition. |
-| `Table.Max` | Table.Ordering | any |  | Returns the largest row or default value using the given criteria. |
-| `Table.MaxN` | Table.Ordering | table |  | Returns the largest row(s) using the given criteria. |
-| `Table.Min` | Table.Ordering | any |  | Returns the smallest row or a default value using the given criteria. |
-| `Table.MinN` | Table.Ordering | table |  | Returns the smallest row(s) using the given criteria. |
-| `Table.NestedJoin` | Table.Transformation | table |  | Performs a join between tables on supplied columns and produces the join result in a new column. |
-| `Table.Partition` | Table.Row operations | list |  | Partitions the table into a list of tables based on the number of groups and column specified. |
-| `Table.PartitionKey` | Table.Transformation | nullable list |  | Returns the partition key of the specified table. |
-| `Table.PartitionValues` | Table.Information | table |  | Returns information about how a table is partitioned. |
-| `Table.Pivot` | Table.Column operations | table |  | Given a pair of columns representing attribute-value pairs, rotates the data in the attribute column into a column head… |
-| `Table.PositionOf` | Table.Membership | any |  | Returns the position or positions of the row within the table. |
-| `Table.PositionOfAny` | Table.Membership | any |  | Returns the position or positions of any of the specified rows within the table. |
-| `Table.PrefixColumns` | Table.Column operations | table |  | Returns a table where the columns have all been prefixed with the given text. |
-| `Table.Profile` | Table.Information | table |  | Returns a profile of the columns of a table. |
-| `Table.PromoteHeaders` | Table.Column operations | table |  | Promotes the first row of values as the new column headers (i.e. |
-| `Table.Range` | Table.Row operations | table |  | Returns the rows beginning at the specified offset. |
-| `Table.RemoveColumns` | Table.Column operations | table |  | Removes the specified columns. |
-| `Table.RemoveFirstN` | Table.Row operations | table |  | Returns a table with the first count rows skipped. |
-| `Table.RemoveLastN` | Table.Row operations | table |  | Returns a table with the last N rows removed. |
-| `Table.RemoveMatchingRows` | Table.Membership | table |  | Removes all occurrences of the specified rows from the table. |
-| `Table.RemoveRows` | Table.Row operations | table |  | Removes the specified number of rows. |
-| `Table.RemoveRowsWithErrors` | Table.Row operations | table |  | Returns a table with the rows removed from the input table that contain an error in at least one of the cells. |
-| `Table.RenameColumns` | Table.Column operations | table |  | Applies rename(s) of the form {old, new}. |
-| `Table.ReorderColumns` | Table.Column operations | table |  | Returns a table with the columns in the specified order. |
-| `Table.Repeat` | Table.Row operations | table |  | Repeats the rows of the tables a specified number of times. |
-| `Table.ReplaceErrorValues` | Table.Transformation | table |  | Replaces the error values in the specified columns with the corresponding specified value. |
-| `Table.ReplaceKeys` | Table.Transformation | table |  | Replaces the keys of the specified table. |
-| `Table.ReplaceMatchingRows` | Table.Membership | table |  | Replaces all the specified rows with the provided row(s). |
-| `Table.ReplacePartitionKey` | Table.Transformation | table |  | Replaces the partition key of the specified table. |
-| `Table.ReplaceRelationshipIdentity` | Table.Transformation | any |  | This function is intended for internal use only. |
-| `Table.ReplaceRows` | Table.Row operations | table |  | Replaces the specified range of rows with the provided row(s). |
-| `Table.ReplaceValue` | Table.Transformation | table |  | Replaces one value with another in the specified columns. |
-| `Table.ReverseRows` | Table.Row operations | table |  | Returns a table with the rows in reverse order. |
-| `Table.RowCount` | Table.Information | number |  | Returns the number of rows in the table. |
-| `Table.Schema` | Table.Information | table |  | Returns a table containing a description of the columns (i.e. |
-| `Table.SelectColumns` | Table.Column operations | table |  | Returns a table with only the specified columns. |
-| `Table.SelectRows` | Table.Row operations | table |  | Selects the rows that meet the condition function. |
-| `Table.SelectRowsWithErrors` | Table.Row operations | table |  | Returns a table with only those rows of the input table that contain an error in at least one of the cells. |
-| `Table.SingleRow` | Table.Row operations | record |  | Returns the single row in the table. |
-| `Table.Skip` | Table.Row operations | table |  | Returns a table with the first count rows skipped. |
-| `Table.Sort` | Table.Ordering | table |  | Sorts the table using one or more column names and comparison criteria. |
-| `Table.Split` | Table.Transformation | list |  | Splits the specified table into a list of tables using the specified page size. |
-| `Table.SplitAt` | Table.Row operations | list |  | Returns a list containing the first count rows specified and the remaining rows. |
-| `Table.SplitColumn` | Table.Transformation | table |  | Splits the specified column into a set of additional columns using the specified splitter function. |
-| `Table.StopFolding` | Table.Other | table |  | Prevents any downstream operations from being run against the original source of the data. |
-| `Table.ToColumns` | Table.Conversions | list |  | Creates a list of nested lists of column values from a table. |
-| `Table.ToList` | Table.Conversions | list |  | Converts a table into a list by applying the specified combining function to each row of values in the table. |
-| `Table.ToRecords` | Table.Conversions | list |  | Converts a table to a list of records. |
-| `Table.ToRows` | Table.Conversions | list |  | Creates a list of nested lists of row values from a table. |
-| `Table.TransformColumnNames` | Table.Column operations | table |  | Transforms column names by using the given function. |
-| `Table.TransformColumns` | Table.Transformation | table |  | Transforms the values of one or more columns. |
-| `Table.TransformColumnTypes` | Table.Transformation | table |  | Applies type transformation(s) of the form { column, type } using a specific culture. |
-| `Table.TransformRows` | Table.Transformation | list |  | Transforms the rows of the table using the specified transform function. |
-| `Table.Transpose` | Table.Transformation | table |  | Makes columns into rows and rows into columns. |
-| `Table.Unpivot` | Table.Column operations | table |  | Translates a set of columns in a table into attribute-value pairs. |
-| `Table.UnpivotOtherColumns` | Table.Column operations | table |  | Translates all columns other than a specified set into attribute-value pairs. |
-| `Table.View` | Table.Table construction | table |  | Creates or extends a table with user-defined handlers for query and action operations. |
-| `Table.ViewError` | Table.Table construction | record |  | Creates a modified error record which won't trigger a fallback when raised by a handler defined on a view (via Table.Vi… |
-| `Table.ViewFunction` | Table.Table construction | function |  | Creates a function that can be intercepted by a handler defined on a view (via Table.View). |
-| `Table.WithErrorContext` | Values.Implementation | any |  | This function is intended for internal use only. |
+| `Table.AddColumn` | Table.Transformation | table | ★▶ | Adds a column with the specified name. |
+| `Table.AddFuzzyClusterColumn` | Table.Transformation | table | ▶ | Adds a new column with representative values obtained by fuzzy grouping values of the specified column in the table. |
+| `Table.AddIndexColumn` | Table.Transformation | table | ▶ | Appends a column with explicit position values. |
+| `Table.AddJoinColumn` | Table.Transformation | table | ▶ | Performs a join between tables on supplied columns and produces the join result in a new column. |
+| `Table.AddKey` | Table.Transformation | table | ▶ | Adds a key to a table. |
+| `Table.AddRankColumn` | Table.Ordering | table | ▶ | Appends a column with the ranking of one or more other columns. |
+| `Table.AggregateTableColumn` | Table.Transformation | table | ▶ | Aggregates a column of tables into multiple columns in the containing table. |
+| `Table.AlternateRows` | Table.Row operations | table | ▶ | Keeps the initial offset then alternates taking and skipping the following rows. |
+| `Table.ApproximateRowCount` | Table.Information | number | ▶ | Returns the approximate number of rows in the table. |
+| `Table.Buffer` | Table.Other | table | ▶ | Buffers a table in memory, isolating it from external changes during evaluation. |
+| `Table.ClearDown` | Table.Transformation | table | ▶ | Clears repeating sets of column values. |
+| `Table.Column` | Table.Column operations | list | ▶ | Returns a specified column of data from the table as a list. |
+| `Table.ColumnCount` | Table.Information | number | ▶ | Returns the number of columns in the table. |
+| `Table.ColumnNames` | Table.Column operations | list | ▶ | Returns the column names as a list. |
+| `Table.ColumnsOfType` | Table.Column operations | list | ▶ | Returns a list with the names of the columns that match the specified types. |
+| `Table.Combine` | Table.Row operations | table | ▶ | Returns a table that is the result of merging a list of tables. |
+| `Table.CombineColumns` | Table.Transformation | table | ▶ | Combines the specified columns into a new column using the specified combiner function. |
+| `Table.CombineColumnsToRecord` | Table.Transformation | table | ▶ | Combines the specified columns into a new record-valued column where each record has field names and values correspondi… |
+| `Table.ConformToPageReader` | Table.Transformation | table | ▶ | This function is intended for internal use only. |
+| `Table.Contains` | Table.Membership | logical | ▶ | Indicates whether the specified record appears as a row in the table. |
+| `Table.ContainsAll` | Table.Membership | logical | ▶ | Indicates whether all of the specified records appear as rows in the table. |
+| `Table.ContainsAny` | Table.Membership | logical | ▶ | Indicates whether any of the specified records appear as rows in the table. |
+| `Table.DemoteHeaders` | Table.Column operations | table | ▶ | Demotes the column headers to the first row of values. |
+| `Table.Distinct` | Table.Membership | table | ★▶ | Removes duplicate rows from the table. |
+| `Table.DuplicateColumn` | Table.Column operations | table | ▶ | Duplicates a column with the specified name. |
+| `Table.ExpandListColumn` | Table.Transformation | table | ▶ | Given a column of lists in a table, create a copy of a row for each value in its list. |
+| `Table.ExpandRecordColumn` | Table.Transformation | table | ▶ | Expands a column of records into columns with each of the values. |
+| `Table.ExpandTableColumn` | Table.Transformation | table | ▶ | Expands a column of records or a column of tables into multiple columns in the containing table. |
+| `Table.FillDown` | Table.Transformation | table | ▶ | Propagates the value of a previous cell to the null-valued cells below in the column. |
+| `Table.FillUp` | Table.Transformation | table | ▶ | Propagates the value of a cell to the null-valued cells above in the column. |
+| `Table.FilterWithDataTable` | Table.Transformation | any | ▶ | This function is intended for internal use only. |
+| `Table.FindText` | Table.Row operations | table | ▶ | Returns all the rows that contain the given text in the table. |
+| `Table.First` | Table.Row operations | any | ▶ | Returns the first row or a specified default value. |
+| `Table.FirstN` | Table.Row operations | table | ▶ | Returns the first count rows specified. |
+| `Table.FirstValue` | Table.Row operations | any | ▶ | Returns the first column of the first row of the table or a specified default value. |
+| `Table.FromColumns` | Table.Table construction | table | ▶ | Creates a table from a list of columns and specified values. |
+| `Table.FromList` | Table.Table construction | table | ▶ | Converts a list into a table by applying the specified splitting function to each item in the list. |
+| `Table.FromPartitions` | Table.Row operations | table | ▶ | Returns a table that is the result of combining a set of partitioned tables. |
+| `Table.FromRecords` | Table.Table construction | table | ▶ | Converts a list of records into a table. |
+| `Table.FromRows` | Table.Table construction | table | ▶ | Creates a table from a list of row values and optional columns. |
+| `Table.FromValue` | Table.Table construction | table | ▶ | Creates a table with a column from the provided value(s). |
+| `Table.FuzzyGroup` | Table.Transformation | table | ▶ | Groups rows in the table based on fuzzy matching of keys. |
+| `Table.FuzzyJoin` | Table.Transformation | table | ▶ | Joins the rows from the two tables that fuzzy match based on the given keys. |
+| `Table.FuzzyNestedJoin` | Table.Transformation | table | ▶ | Performs a fuzzy join between tables on supplied columns and produces the join result in a new column. |
+| `Table.Group` | Table.Transformation | table | ▶ | Groups rows in the table that have the same key. |
+| `Table.HasColumns` | Table.Column operations | logical | ▶ | Indicates whether the table contains the specified column(s). |
+| `Table.InsertRows` | Table.Row operations | table | ▶ | Inserts a list of rows into the table at the specified position. |
+| `Table.IsDistinct` | Table.Membership | logical | ▶ | Indicates whether the table contains only distinct rows (no duplicates). |
+| `Table.IsEmpty` | Table.Information | logical | ▶ | Indicates whether the table contains any rows. |
+| `Table.Join` | Table.Transformation | table | ★▶ | Joins the rows from the two tables that match based on the given keys. |
+| `Table.Keys` | Table.Transformation | list | ▶ | Returns the keys of the specified table. |
+| `Table.Last` | Table.Row operations | any | ▶ | Returns the last row or a specified default value. |
+| `Table.LastN` | Table.Row operations | table | ▶ | Returns the last specified number of rows. |
+| `Table.MatchesAllRows` | Table.Row operations | logical | ▶ | Indicates whether all the rows in the table meet the given condition. |
+| `Table.MatchesAnyRows` | Table.Row operations | logical | ▶ | Indicates whether any the rows in the table meet the given condition. |
+| `Table.Max` | Table.Ordering | any | ▶ | Returns the largest row or default value using the given criteria. |
+| `Table.MaxN` | Table.Ordering | table | ▶ | Returns the largest row(s) using the given criteria. |
+| `Table.Min` | Table.Ordering | any | ▶ | Returns the smallest row or a default value using the given criteria. |
+| `Table.MinN` | Table.Ordering | table | ▶ | Returns the smallest row(s) using the given criteria. |
+| `Table.NestedJoin` | Table.Transformation | table | ▶ | Performs a join between tables on supplied columns and produces the join result in a new column. |
+| `Table.Partition` | Table.Row operations | list | ▶ | Partitions the table into a list of tables based on the number of groups and column specified. |
+| `Table.PartitionKey` | Table.Transformation | nullable list | ▶ | Returns the partition key of the specified table. |
+| `Table.PartitionValues` | Table.Information | table | ▶ | Returns information about how a table is partitioned. |
+| `Table.Pivot` | Table.Column operations | table | ▶ | Given a pair of columns representing attribute-value pairs, rotates the data in the attribute column into a column head… |
+| `Table.PositionOf` | Table.Membership | any | ▶ | Returns the position or positions of the row within the table. |
+| `Table.PositionOfAny` | Table.Membership | any | ▶ | Returns the position or positions of any of the specified rows within the table. |
+| `Table.PrefixColumns` | Table.Column operations | table | ▶ | Returns a table where the columns have all been prefixed with the given text. |
+| `Table.Profile` | Table.Information | table | ▶ | Returns a profile of the columns of a table. |
+| `Table.PromoteHeaders` | Table.Column operations | table | ▶ | Promotes the first row of values as the new column headers (i.e. |
+| `Table.Range` | Table.Row operations | table | ▶ | Returns the rows beginning at the specified offset. |
+| `Table.RemoveColumns` | Table.Column operations | table | ▶ | Removes the specified columns. |
+| `Table.RemoveFirstN` | Table.Row operations | table | ▶ | Returns a table with the first count rows skipped. |
+| `Table.RemoveLastN` | Table.Row operations | table | ▶ | Returns a table with the last N rows removed. |
+| `Table.RemoveMatchingRows` | Table.Membership | table | ▶ | Removes all occurrences of the specified rows from the table. |
+| `Table.RemoveRows` | Table.Row operations | table | ▶ | Removes the specified number of rows. |
+| `Table.RemoveRowsWithErrors` | Table.Row operations | table | ▶ | Returns a table with the rows removed from the input table that contain an error in at least one of the cells. |
+| `Table.RenameColumns` | Table.Column operations | table | ▶ | Applies rename(s) of the form {old, new}. |
+| `Table.ReorderColumns` | Table.Column operations | table | ▶ | Returns a table with the columns in the specified order. |
+| `Table.Repeat` | Table.Row operations | table | ▶ | Repeats the rows of the tables a specified number of times. |
+| `Table.ReplaceErrorValues` | Table.Transformation | table | ▶ | Replaces the error values in the specified columns with the corresponding specified value. |
+| `Table.ReplaceKeys` | Table.Transformation | table | ▶ | Replaces the keys of the specified table. |
+| `Table.ReplaceMatchingRows` | Table.Membership | table | ▶ | Replaces all the specified rows with the provided row(s). |
+| `Table.ReplacePartitionKey` | Table.Transformation | table | ▶ | Replaces the partition key of the specified table. |
+| `Table.ReplaceRelationshipIdentity` | Table.Transformation | any | ▶ | This function is intended for internal use only. |
+| `Table.ReplaceRows` | Table.Row operations | table | ▶ | Replaces the specified range of rows with the provided row(s). |
+| `Table.ReplaceValue` | Table.Transformation | table | ▶ | Replaces one value with another in the specified columns. |
+| `Table.ReverseRows` | Table.Row operations | table | ▶ | Returns a table with the rows in reverse order. |
+| `Table.RowCount` | Table.Information | number | ▶ | Returns the number of rows in the table. |
+| `Table.Schema` | Table.Information | table | ▶ | Returns a table containing a description of the columns (i.e. |
+| `Table.SelectColumns` | Table.Column operations | table | ▶ | Returns a table with only the specified columns. |
+| `Table.SelectRows` | Table.Row operations | table | ▶ | Selects the rows that meet the condition function. |
+| `Table.SelectRowsWithErrors` | Table.Row operations | table | ▶ | Returns a table with only those rows of the input table that contain an error in at least one of the cells. |
+| `Table.SingleRow` | Table.Row operations | record | ▶ | Returns the single row in the table. |
+| `Table.Skip` | Table.Row operations | table | ▶ | Returns a table with the first count rows skipped. |
+| `Table.Sort` | Table.Ordering | table | ▶ | Sorts the table using one or more column names and comparison criteria. |
+| `Table.Split` | Table.Transformation | list | ▶ | Splits the specified table into a list of tables using the specified page size. |
+| `Table.SplitAt` | Table.Row operations | list | ▶ | Returns a list containing the first count rows specified and the remaining rows. |
+| `Table.SplitColumn` | Table.Transformation | table | ▶ | Splits the specified column into a set of additional columns using the specified splitter function. |
+| `Table.StopFolding` | Table.Other | table | ▶ | Prevents any downstream operations from being run against the original source of the data. |
+| `Table.ToColumns` | Table.Conversions | list | ▶ | Creates a list of nested lists of column values from a table. |
+| `Table.ToList` | Table.Conversions | list | ▶ | Converts a table into a list by applying the specified combining function to each row of values in the table. |
+| `Table.ToRecords` | Table.Conversions | list | ▶ | Converts a table to a list of records. |
+| `Table.ToRows` | Table.Conversions | list | ▶ | Creates a list of nested lists of row values from a table. |
+| `Table.TransformColumnNames` | Table.Column operations | table | ▶ | Transforms column names by using the given function. |
+| `Table.TransformColumns` | Table.Transformation | table | ▶ | Transforms the values of one or more columns. |
+| `Table.TransformColumnTypes` | Table.Transformation | table | ★▶ | Applies type transformation(s) of the form { column, type } using a specific culture. |
+| `Table.TransformRows` | Table.Transformation | list | ▶ | Transforms the rows of the table using the specified transform function. |
+| `Table.Transpose` | Table.Transformation | table | ▶ | Makes columns into rows and rows into columns. |
+| `Table.Unpivot` | Table.Column operations | table | ▶ | Translates a set of columns in a table into attribute-value pairs. |
+| `Table.UnpivotOtherColumns` | Table.Column operations | table | ▶ | Translates all columns other than a specified set into attribute-value pairs. |
+| `Table.View` | Table.Table construction | table | ▶ | Creates or extends a table with user-defined handlers for query and action operations. |
+| `Table.ViewError` | Table.Table construction | record | ▶ | Creates a modified error record which won't trigger a fallback when raised by a handler defined on a view (via Table.Vi… |
+| `Table.ViewFunction` | Table.Table construction | function | ▶ | Creates a function that can be intercepted by a handler defined on a view (via Table.View). |
+| `Table.WithErrorContext` | Values.Implementation | any | ▶ | This function is intended for internal use only. |
 | `Tables.GetRelationships` | Table.Information | table |  | Gets the relationships among a set of tables. |
 | `Teradata.Database` | Accessing data | table |  | Returns a table of SQL tables and views from the Teradata database. |
-| `Text.AfterDelimiter` | Text.Transformations | any |  | Text.AfterDelimiter |
-| `Text.At` | Text.Extraction | nullable text |  | Returns the character at the specified position. |
-| `Text.BeforeDelimiter` | Text.Transformations | any |  | Text.BeforeDelimiter |
-| `Text.BetweenDelimiters` | Text.Transformations | any |  | Text.BetweenDelimiters |
-| `Text.Clean` | Text.Transformations | nullable text |  | Returns the text value with all control characters removed. |
-| `Text.Combine` | Text.Transformations | text |  | Concatenates a list of text values into one text value. |
-| `Text.Contains` | Text.Membership | nullable logical |  | Returns whether the text contains the substring. |
-| `Text.End` | Text.Extraction | nullable text |  | Returns the last characters of the text. |
-| `Text.EndsWith` | Text.Membership | nullable logical |  | Indicates whether the text ends in the specified value. |
-| `Text.Format` | Text.Conversions from and to text | text |  | Returns formatted text from a format string and arguments. |
-| `Text.From` | Text.Conversions from and to text | nullable text |  | Creates a text value from the given value. |
-| `Text.FromBinary` | Text.Conversions from and to text | nullable text |  | Decodes data from a binary form into text. |
-| `Text.InferNumberType` | Text | type |  | Infers the granular number type (Int64.Type, Double.Type, and so on) of a number encoded in text. |
-| `Text.Insert` | Text.Modification | nullable text |  | Inserts one text value into another at a given position. |
-| `Text.Length` | Text.Information | nullable number |  | Returns the number of characters. |
-| `Text.Lower` | Text.Transformations | nullable text |  | Converts all characters to lowercase. |
-| `Text.Middle` | Text.Extraction | nullable text |  | Returns the substring up to a specific length. |
-| `Text.NewGuid` | Text.Conversions from and to text | text |  | Returns a new, random globally unique identifier (GUID). |
-| `Text.PadEnd` | Text.Transformations | nullable text |  | Returns text of a specified length by padding the end of the given text. |
-| `Text.PadStart` | Text.Transformations | nullable text |  | Returns text of a specified length by padding the start of the given text. |
-| `Text.PositionOf` | Text.Membership | any |  | Returns the first position of the value (-1 if not found). |
-| `Text.PositionOfAny` | Text.Membership | any |  | Returns the first position in the text value of any listed character (-1 if not found). |
-| `Text.Proper` | Text.Transformations | nullable text |  | Capitalizes the first letter of each word. |
-| `Text.Range` | Text.Extraction | nullable text |  | Returns the substring found at offset. |
-| `Text.Remove` | Text.Modification | nullable text |  | Removes all occurrences of the given character or list of characters from the input text value. |
-| `Text.RemoveRange` | Text.Modification | nullable text |  | Removes a count of characters starting at the given offset |
-| `Text.Repeat` | Text.Transformations | nullable text |  | Returns a text value composed of the input text repeated a specified number of times. |
-| `Text.Replace` | Text.Modification | nullable text |  | Replaces all occurrences of the given substring in the text. |
-| `Text.ReplaceRange` | Text.Modification | nullable text |  | Removes a range of characters and inserts a new value at a specified position. |
-| `Text.Reverse` | Text.Transformations | nullable text |  | Text.Reverse |
-| `Text.Select` | Text.Modification | nullable text |  | Selects all occurrences of the given character or list of characters from the input text value. |
-| `Text.Split` | Text.Transformations | list |  | Splits text into a list of text values based upon a specified delimiter. |
-| `Text.SplitAny` | Text.Transformations | list |  | Returns a list of text values, split on any of the characters in the delimiter. |
-| `Text.Start` | Text.Extraction | nullable text |  | Returns the start of the text. |
-| `Text.StartsWith` | Text.Membership | nullable logical |  | Indicates whether the text starts with a specified value. |
-| `Text.ToBinary` | Text.Conversions from and to text | nullable binary |  | Encodes text into a binary form. |
-| `Text.ToList` | Text.Conversions from and to text | list |  | Returns a list of character values from the given text value. |
-| `Text.Trim` | Text.Transformations | nullable text |  | Removes all the specified leading and trailing characters. |
-| `Text.TrimEnd` | Text.Transformations | nullable text |  | Removes all specified trailing characters. |
-| `Text.TrimStart` | Text.Transformations | nullable text |  | Removes all specified leading characters. |
-| `Text.Upper` | Text.Transformations | nullable text |  | Converts all characters to uppercase. |
+| `Text.AfterDelimiter` | Text.Transformations | any | ▶ | Text.AfterDelimiter |
+| `Text.At` | Text.Extraction | nullable text | ▶ | Returns the character at the specified position. |
+| `Text.BeforeDelimiter` | Text.Transformations | any | ▶ | Text.BeforeDelimiter |
+| `Text.BetweenDelimiters` | Text.Transformations | any | ▶ | Text.BetweenDelimiters |
+| `Text.Clean` | Text.Transformations | nullable text | ▶ | Returns the text value with all control characters removed. |
+| `Text.Combine` | Text.Transformations | text | ▶ | Concatenates a list of text values into one text value. |
+| `Text.Contains` | Text.Membership | nullable logical | ▶ | Returns whether the text contains the substring. |
+| `Text.End` | Text.Extraction | nullable text | ▶ | Returns the last characters of the text. |
+| `Text.EndsWith` | Text.Membership | nullable logical | ▶ | Indicates whether the text ends in the specified value. |
+| `Text.Format` | Text.Conversions from and to text | text | ▶ | Returns formatted text from a format string and arguments. |
+| `Text.From` | Text.Conversions from and to text | nullable text | ▶ | Creates a text value from the given value. |
+| `Text.FromBinary` | Text.Conversions from and to text | nullable text | ▶ | Decodes data from a binary form into text. |
+| `Text.InferNumberType` | Text | type | ▶ | Infers the granular number type (Int64.Type, Double.Type, and so on) of a number encoded in text. |
+| `Text.Insert` | Text.Modification | nullable text | ▶ | Inserts one text value into another at a given position. |
+| `Text.Length` | Text.Information | nullable number | ▶ | Returns the number of characters. |
+| `Text.Lower` | Text.Transformations | nullable text | ▶ | Converts all characters to lowercase. |
+| `Text.Middle` | Text.Extraction | nullable text | ▶ | Returns the substring up to a specific length. |
+| `Text.NewGuid` | Text.Conversions from and to text | text | ▶ | Returns a new, random globally unique identifier (GUID). |
+| `Text.PadEnd` | Text.Transformations | nullable text | ▶ | Returns text of a specified length by padding the end of the given text. |
+| `Text.PadStart` | Text.Transformations | nullable text | ▶ | Returns text of a specified length by padding the start of the given text. |
+| `Text.PositionOf` | Text.Membership | any | ▶ | Returns the first position of the value (-1 if not found). |
+| `Text.PositionOfAny` | Text.Membership | any | ▶ | Returns the first position in the text value of any listed character (-1 if not found). |
+| `Text.Proper` | Text.Transformations | nullable text | ▶ | Capitalizes the first letter of each word. |
+| `Text.Range` | Text.Extraction | nullable text | ▶ | Returns the substring found at offset. |
+| `Text.Remove` | Text.Modification | nullable text | ▶ | Removes all occurrences of the given character or list of characters from the input text value. |
+| `Text.RemoveRange` | Text.Modification | nullable text | ▶ | Removes a count of characters starting at the given offset |
+| `Text.Repeat` | Text.Transformations | nullable text | ▶ | Returns a text value composed of the input text repeated a specified number of times. |
+| `Text.Replace` | Text.Modification | nullable text | ▶ | Replaces all occurrences of the given substring in the text. |
+| `Text.ReplaceRange` | Text.Modification | nullable text | ▶ | Removes a range of characters and inserts a new value at a specified position. |
+| `Text.Reverse` | Text.Transformations | nullable text | ▶ | Text.Reverse |
+| `Text.Select` | Text.Modification | nullable text | ▶ | Selects all occurrences of the given character or list of characters from the input text value. |
+| `Text.Split` | Text.Transformations | list | ▶ | Splits text into a list of text values based upon a specified delimiter. |
+| `Text.SplitAny` | Text.Transformations | list | ▶ | Returns a list of text values, split on any of the characters in the delimiter. |
+| `Text.Start` | Text.Extraction | nullable text | ▶ | Returns the start of the text. |
+| `Text.StartsWith` | Text.Membership | nullable logical | ▶ | Indicates whether the text starts with a specified value. |
+| `Text.ToBinary` | Text.Conversions from and to text | nullable binary | ▶ | Encodes text into a binary form. |
+| `Text.ToList` | Text.Conversions from and to text | list | ▶ | Returns a list of character values from the given text value. |
+| `Text.Trim` | Text.Transformations | nullable text | ▶ | Removes all the specified leading and trailing characters. |
+| `Text.TrimEnd` | Text.Transformations | nullable text | ▶ | Removes all specified trailing characters. |
+| `Text.TrimStart` | Text.Transformations | nullable text | ▶ | Removes all specified leading characters. |
+| `Text.Upper` | Text.Transformations | nullable text | ▶ | Converts all characters to uppercase. |
 | `Time.EndOfHour` | Date | any |  | Returns the end of the hour. |
 | `Time.From` | Time | nullable time |  | Creates a time from the given value. |
 | `Time.FromText` | Time | nullable time |  | Creates a Time from local and universal, and custom Time formats. |

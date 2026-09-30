@@ -4,7 +4,7 @@ category: "Text.Conversions from and to text"
 returns: "nullable text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -28,6 +28,8 @@ Decodes data from a binary value to a text value using the specified encoding ty
 |---|---|---|
 | `binary` | `nullable binary` | no |
 | `encoding` | `nullable number` | yes |
+
+**Executed examples (1):** [examples/text-conversions-from-and-to-text/text-frombinary.md](../../examples/text-conversions-from-and-to-text/text-frombinary.md)
 
 ## Examples (engine metadata — not verified here)
 

@@ -4,7 +4,7 @@ category: "Table.Transformation"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,3 +24,5 @@ This function is intended for internal use only.
 |---|---|---|
 | `table` | `table` | no |
 | `shapingFunction` | `function` | no |
+
+**Executed examples (1):** [examples/table-transformation/table-conformtopagereader.md](../../examples/table-transformation/table-conformtopagereader.md)

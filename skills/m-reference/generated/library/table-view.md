@@ -4,7 +4,7 @@ category: "Table.Table construction"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -34,6 +34,8 @@ Refer to the published Power Query custom connector documentation for a more com
 |---|---|---|
 | `table` | `nullable table` | no |
 | `handlers` | `record` | no |
+
+**Executed examples (1):** [examples/table-table-construction/table-view.md](../../examples/table-table-construction/table-view.md)
 
 ## Examples (engine metadata — not verified here)
 

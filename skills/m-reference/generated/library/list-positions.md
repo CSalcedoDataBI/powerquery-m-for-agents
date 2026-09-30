@@ -4,7 +4,7 @@ category: "List.Selection"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -27,6 +27,8 @@ When using `List.Transform` to change a list, the list of positions can be used 
 | Name | Type | Optional |
 |---|---|---|
 | `list` | `list` | no |
+
+**Executed examples (1):** [examples/list-selection/list-positions.md](../../examples/list-selection/list-positions.md)
 
 ## Examples (engine metadata — not verified here)
 

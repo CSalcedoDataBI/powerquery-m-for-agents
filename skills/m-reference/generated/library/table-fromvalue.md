@@ -4,7 +4,7 @@ category: "Table.Table construction"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -26,6 +26,8 @@ Creates a table with a column containing the provided value or list of values, `
 |---|---|---|
 | `value` | `any` | no |
 | `options` | `nullable record` | yes |
+
+**Executed examples (1):** [examples/table-table-construction/table-fromvalue.md](../../examples/table-table-construction/table-fromvalue.md)
 
 ## Examples (engine metadata — not verified here)
 

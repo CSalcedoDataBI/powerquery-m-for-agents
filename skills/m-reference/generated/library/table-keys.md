@@ -4,7 +4,7 @@ category: "Table.Transformation"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Returns the keys of the specified table.
 | Name | Type | Optional |
 |---|---|---|
 | `table` | `table` | no |
+
+**Executed examples (1):** [examples/table-transformation/table-keys.md](../../examples/table-transformation/table-keys.md)
 
 ## Examples (engine metadata — not verified here)
 

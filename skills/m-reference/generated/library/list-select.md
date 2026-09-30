@@ -4,7 +4,7 @@ category: "List.Selection"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -28,6 +28,8 @@ Returns the values from the specified list that match the selection condition.
 |---|---|---|
 | `list` | `list` | no |
 | `selection` | `function` | no |
+
+**Executed examples (1):** [examples/list-selection/list-select.md](../../examples/list-selection/list-select.md)
 
 ## Examples (engine metadata — not verified here)
 

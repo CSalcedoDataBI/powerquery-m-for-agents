@@ -4,7 +4,7 @@ category: "List.Membership functions"
 returns: "logical"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Returns true if any expression in the list `list` is true.
 | Name | Type | Optional |
 |---|---|---|
 | `list` | `list` | no |
+
+**Executed examples (1):** [examples/list-membership-functions/list-anytrue.md](../../examples/list-membership-functions/list-anytrue.md)
 
 ## Examples (engine metadata — not verified here)
 

@@ -4,7 +4,7 @@ category: "Table.Row operations"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -26,6 +26,8 @@ If the tables of the resulting list are enumerated exactly once and in order, th
 |---|---|---|
 | `table` | `table` | no |
 | `count` | `number` | no |
+
+**Executed examples (1):** [examples/table-row-operations/table-splitat.md](../../examples/table-row-operations/table-splitat.md)
 
 ## Examples (engine metadata — not verified here)
 

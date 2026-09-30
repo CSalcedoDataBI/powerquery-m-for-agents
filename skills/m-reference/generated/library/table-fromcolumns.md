@@ -4,7 +4,7 @@ category: "Table.Table construction"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ If some columns have more values then others, the missing values will be filled 
 |---|---|---|
 | `lists` | `list` | no |
 | `columns` | `any` | yes |
+
+**Executed examples (1):** [examples/table-table-construction/table-fromcolumns.md](../../examples/table-table-construction/table-fromcolumns.md)
 
 ## Examples (engine metadata — not verified here)
 

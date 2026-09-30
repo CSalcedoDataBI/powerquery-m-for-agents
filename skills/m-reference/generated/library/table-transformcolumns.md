@@ -4,7 +4,7 @@ category: "Table.Transformation"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -38,6 +38,8 @@ Transforms the specified table by applying each column operation in a list.
 | `transformOperations` | `list` | no |
 | `defaultTransformation` | `nullable function` | yes |
 | `missingField` | `nullable number` | yes |
+
+**Executed examples (1):** [examples/table-transformation/table-transformcolumns.md](../../examples/table-transformation/table-transformcolumns.md)
 
 ## Examples (engine metadata — not verified here)
 

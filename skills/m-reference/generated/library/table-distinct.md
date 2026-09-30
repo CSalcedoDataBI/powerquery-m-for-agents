@@ -3,8 +3,8 @@ name: "Table.Distinct"
 category: "Table.Membership"
 returns: "table"
 hosts: ["desktop"]
-notes: false
-examples: 0
+notes: true
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -30,6 +30,10 @@ If you want the duplicate removal to behave predictably, first buffer the table 
 |---|---|---|
 | `table` | `table` | no |
 | `equationCriteria` | `any` | yes |
+
+**Field note:** [`notes/table-distinct.md`](../../notes/table-distinct.md)
+
+**Executed examples (1):** [examples/table-membership/table-distinct.md](../../examples/table-membership/table-distinct.md)
 
 ## Examples (engine metadata — not verified here)
 

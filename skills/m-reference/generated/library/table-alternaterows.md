@@ -4,7 +4,7 @@ category: "Table.Row operations"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -34,6 +34,8 @@ Keeps the initial offset then alternates taking and skipping the following rows.
 | `offset` | `number` | no |
 | `skip` | `number` | no |
 | `take` | `number` | no |
+
+**Executed examples (1):** [examples/table-row-operations/table-alternaterows.md](../../examples/table-row-operations/table-alternaterows.md)
 
 ## Examples (engine metadata — not verified here)
 

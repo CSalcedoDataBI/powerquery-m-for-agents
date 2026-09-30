@@ -4,7 +4,7 @@ category: "List.Averages"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ If the list is empty null is returned.
 |---|---|---|
 | `list` | `list` | no |
 | `precision` | `nullable number` | yes |
+
+**Executed examples (1):** [examples/list-averages/list-average.md](../../examples/list-averages/list-average.md)
 
 ## Examples (engine metadata — not verified here)
 

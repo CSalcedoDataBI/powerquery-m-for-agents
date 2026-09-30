@@ -4,7 +4,7 @@ category: "Table.Information"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -40,3 +40,5 @@ The following information is returned for each column (when applicable):
 |---|---|---|
 | `table` | `table` | no |
 | `additionalAggregates` | `nullable list` | yes |
+
+**Executed examples (1):** [examples/table-information/table-profile.md](../../examples/table-information/table-profile.md)

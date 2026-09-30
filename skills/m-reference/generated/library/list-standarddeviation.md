@@ -4,7 +4,7 @@ category: "List.Averages"
 returns: "nullable number"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ An error is raised on an empty list or a list of items that is not type `number`
 | Name | Type | Optional |
 |---|---|---|
 | `numbersList` | `list` | no |
+
+**Executed examples (1):** [examples/list-averages/list-standarddeviation.md](../../examples/list-averages/list-standarddeviation.md)
 
 ## Examples (engine metadata — not verified here)
 

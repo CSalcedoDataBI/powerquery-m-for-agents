@@ -4,7 +4,7 @@ category: "Table.Row operations"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -34,6 +34,8 @@ Replaces a specified number of rows, `count`, in the input `table` with the spec
 | `offset` | `number` | no |
 | `count` | `number` | no |
 | `rows` | `list` | no |
+
+**Executed examples (1):** [examples/table-row-operations/table-replacerows.md](../../examples/table-row-operations/table-replacerows.md)
 
 ## Examples (engine metadata — not verified here)
 

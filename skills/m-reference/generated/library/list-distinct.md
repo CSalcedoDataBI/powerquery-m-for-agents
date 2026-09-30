@@ -4,7 +4,7 @@ category: "List.Selection"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -28,6 +28,8 @@ Returns a list that contains all the values in the specified list with duplicate
 |---|---|---|
 | `list` | `list` | no |
 | `equationCriteria` | `any` | yes |
+
+**Executed examples (1):** [examples/list-selection/list-distinct.md](../../examples/list-selection/list-distinct.md)
 
 ## Examples (engine metadata — not verified here)
 

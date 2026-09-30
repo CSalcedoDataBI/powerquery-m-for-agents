@@ -4,7 +4,7 @@ category: "Table.Column operations"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -27,6 +27,8 @@ Given a pair of columns representing attribute-value pairs, rotates the data in 
 | `attributeColumn` | `text` | no |
 | `valueColumn` | `text` | no |
 | `aggregationFunction` | `nullable function` | yes |
+
+**Executed examples (1):** [examples/table-column-operations/table-pivot.md](../../examples/table-column-operations/table-pivot.md)
 
 ## Examples (engine metadata — not verified here)
 

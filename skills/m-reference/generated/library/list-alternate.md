@@ -4,7 +4,7 @@ category: "List.Selection"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -32,6 +32,8 @@ Returns a list comprised of all the odd numbered offset elements in a list. Alte
 | `count` | `number` | no |
 | `repeatInterval` | `nullable number` | yes |
 | `offset` | `nullable number` | yes |
+
+**Executed examples (1):** [examples/list-selection/list-alternate.md](../../examples/list-selection/list-alternate.md)
 
 ## Examples (engine metadata — not verified here)
 

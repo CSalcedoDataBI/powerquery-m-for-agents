@@ -4,7 +4,7 @@ category: "List.Transformation functions"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Removes all occurrences of "null" values in the `list`. If there are no 'null' v
 | Name | Type | Optional |
 |---|---|---|
 | `list` | `list` | no |
+
+**Executed examples (1):** [examples/list-transformation-functions/list-removenulls.md](../../examples/list-transformation-functions/list-removenulls.md)
 
 ## Examples (engine metadata — not verified here)
 

@@ -4,7 +4,7 @@ category: "Text.Extraction"
 returns: "nullable text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ Returns `count` characters, or through the end of `text`; at the offset `start`.
 | `text` | `nullable text` | no |
 | `start` | `number` | no |
 | `count` | `nullable number` | yes |
+
+**Executed examples (1):** [examples/text-extraction/text-middle.md](../../examples/text-extraction/text-middle.md)
 
 ## Examples (engine metadata — not verified here)
 

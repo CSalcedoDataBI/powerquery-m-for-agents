@@ -33,6 +33,8 @@ jobs:
         run: python scripts/validate_skills.py
       - name: Plugin manifest matches the skills on disk
         run: python scripts/check_plugin_manifest.py
+      - name: Executed examples (results present, placement, no invented names)
+        run: python scripts/check_examples.py
       - name: SharedExport.pbip matches export_shared.pq
         run: python lab/shared-export/build_pbip.py --check
       - name: Actions cost rules

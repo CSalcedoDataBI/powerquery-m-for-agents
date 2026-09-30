@@ -4,7 +4,7 @@ category: "Text.Modification"
 returns: "nullable text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -26,6 +26,8 @@ Returns the result of removing a number of characters, `count`, from text value 
 | `offset` | `number` | no |
 | `count` | `number` | no |
 | `newText` | `text` | no |
+
+**Executed examples (1):** [examples/text-modification/text-replacerange.md](../../examples/text-modification/text-replacerange.md)
 
 ## Examples (engine metadata — not verified here)
 

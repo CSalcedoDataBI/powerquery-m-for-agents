@@ -4,7 +4,7 @@ category: "Table.Transformation"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -26,6 +26,8 @@ Combines the specified columns into a new column using the specified combiner fu
 | `sourceColumns` | `list` | no |
 | `combiner` | `function` | no |
 | `column` | `text` | no |
+
+**Executed examples (1):** [examples/table-transformation/table-combinecolumns.md](../../examples/table-transformation/table-combinecolumns.md)
 
 ## Examples (engine metadata — not verified here)
 

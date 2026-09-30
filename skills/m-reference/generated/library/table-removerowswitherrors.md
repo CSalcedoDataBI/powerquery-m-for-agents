@@ -4,7 +4,7 @@ category: "Table.Row operations"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns a table with the rows removed from the input table that contain an error
 |---|---|---|
 | `table` | `table` | no |
 | `columns` | `nullable list` | yes |
+
+**Executed examples (1):** [examples/table-row-operations/table-removerowswitherrors.md](../../examples/table-row-operations/table-removerowswitherrors.md)
 
 ## Examples (engine metadata — not verified here)
 

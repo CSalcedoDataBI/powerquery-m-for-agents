@@ -4,7 +4,7 @@ category: "Table.Column operations"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -26,6 +26,8 @@ If the column doesn't exist, an error is raised unless the optional parameter `m
 | `table` | `table` | no |
 | `renames` | `list` | no |
 | `missingField` | `nullable number` | yes |
+
+**Executed examples (1):** [examples/table-column-operations/table-renamecolumns.md](../../examples/table-column-operations/table-renamecolumns.md)
 
 ## Examples (engine metadata — not verified here)
 

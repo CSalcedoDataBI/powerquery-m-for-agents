@@ -4,7 +4,7 @@ category: "Text.Modification"
 returns: "nullable text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -26,6 +26,8 @@ An optional parameter, `count` can by used to specify the number of characters t
 | `text` | `nullable text` | no |
 | `offset` | `number` | no |
 | `count` | `nullable number` | yes |
+
+**Executed examples (1):** [examples/text-modification/text-removerange.md](../../examples/text-modification/text-removerange.md)
 
 ## Examples (engine metadata — not verified here)
 

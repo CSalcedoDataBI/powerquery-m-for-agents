@@ -4,7 +4,7 @@ category: "Table.Row operations"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -31,6 +31,8 @@ The number of rows removed depends on the optional parameter `countOrCondition`.
 |---|---|---|
 | `table` | `table` | no |
 | `countOrCondition` | `any` | yes |
+
+**Executed examples (1):** [examples/table-row-operations/table-removefirstn.md](../../examples/table-row-operations/table-removefirstn.md)
 
 ## Examples (engine metadata — not verified here)
 

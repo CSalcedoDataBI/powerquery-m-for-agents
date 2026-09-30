@@ -4,7 +4,7 @@ category: "Table.Transformation"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -33,6 +33,8 @@ An optional set of `keyEqualityComparers` may be included to specify how to comp
 | `newColumnName` | `text` | no |
 | `joinKind` | `nullable number` | yes |
 | `keyEqualityComparers` | `nullable list` | yes |
+
+**Executed examples (1):** [examples/table-transformation/table-nestedjoin.md](../../examples/table-transformation/table-nestedjoin.md)
 
 ## Examples (engine metadata — not verified here)
 

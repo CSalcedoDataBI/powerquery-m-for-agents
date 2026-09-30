@@ -4,7 +4,7 @@ category: "List.Numerics"
 returns: "nullable number"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns the covariance between two lists, `numberList1` and `numberList2`. `numb
 |---|---|---|
 | `numberList1` | `list` | no |
 | `numberList2` | `list` | no |
+
+**Executed examples (1):** [examples/list-numerics/list-covariance.md](../../examples/list-numerics/list-covariance.md)
 
 ## Examples (engine metadata — not verified here)
 

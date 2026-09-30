@@ -4,7 +4,7 @@ category: "Text.Transformations"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -27,6 +27,8 @@ An optional list `index` indicates which occurrence of the `delimiter` should be
 | `text` | `nullable text` | no |
 | `delimiter` | `text` | no |
 | `index` | `any` | yes |
+
+**Executed examples (1):** [examples/text-transformations/text-afterdelimiter.md](../../examples/text-transformations/text-afterdelimiter.md)
 
 ## Examples (engine metadata — not verified here)
 

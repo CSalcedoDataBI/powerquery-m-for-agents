@@ -4,7 +4,7 @@ category: "Table.Ordering"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Sorts the `table` using the list of one or more column names and optional `compa
 |---|---|---|
 | `table` | `table` | no |
 | `comparisonCriteria` | `any` | no |
+
+**Executed examples (1):** [examples/table-ordering/table-sort.md](../../examples/table-ordering/table-sort.md)
 
 ## Examples (engine metadata — not verified here)
 

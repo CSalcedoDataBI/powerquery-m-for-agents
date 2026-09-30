@@ -4,7 +4,7 @@ category: "Text.Conversions from and to text"
 returns: "text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -17,3 +17,5 @@ Text.NewGuid() as text
 ```
 
 Returns a new, random globally unique identifier (GUID).
+
+**Executed examples (1):** [examples/text-conversions-from-and-to-text/text-newguid.md](../../examples/text-conversions-from-and-to-text/text-newguid.md)

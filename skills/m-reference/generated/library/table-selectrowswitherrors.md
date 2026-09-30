@@ -4,7 +4,7 @@ category: "Table.Row operations"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns a table with only those rows of the input table that contain an error in
 |---|---|---|
 | `table` | `table` | no |
 | `columns` | `nullable list` | yes |
+
+**Executed examples (1):** [examples/table-row-operations/table-selectrowswitherrors.md](../../examples/table-row-operations/table-selectrowswitherrors.md)
 
 ## Examples (engine metadata — not verified here)
 

@@ -4,7 +4,7 @@ category: "Table.Transformation"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 2
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -70,6 +70,8 @@ The default value is 0.80.
 | `key2` | `any` | no |
 | `joinKind` | `nullable number` | yes |
 | `joinOptions` | `nullable record` | yes |
+
+**Executed examples (2):** [examples/table-transformation/table-fuzzyjoin.md](../../examples/table-transformation/table-fuzzyjoin.md)
 
 ## Examples (engine metadata — not verified here)
 

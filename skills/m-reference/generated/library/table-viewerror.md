@@ -4,7 +4,7 @@ category: "Table.Table construction"
 returns: "record"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,3 +23,5 @@ Creates a modified error record from `errorRecord` which won't trigger a fallbac
 | Name | Type | Optional |
 |---|---|---|
 | `errorRecord` | `record` | no |
+
+**Executed examples (1):** [examples/table-table-construction/table-viewerror.md](../../examples/table-table-construction/table-viewerror.md)

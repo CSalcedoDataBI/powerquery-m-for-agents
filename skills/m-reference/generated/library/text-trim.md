@@ -4,7 +4,7 @@ category: "Text.Transformations"
 returns: "nullable text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -28,6 +28,8 @@ Returns the result of removing all leading and trailing characters from the spec
 |---|---|---|
 | `text` | `nullable text` | no |
 | `trim` | `any` | yes |
+
+**Executed examples (1):** [examples/text-transformations/text-trim.md](../../examples/text-transformations/text-trim.md)
 
 ## Examples (engine metadata — not verified here)
 

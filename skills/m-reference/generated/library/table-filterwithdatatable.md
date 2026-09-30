@@ -4,7 +4,7 @@ category: "Table.Transformation"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,3 +24,5 @@ This function is intended for internal use only.
 |---|---|---|
 | `table` | `table` | no |
 | `dataTableIdentifier` | `text` | no |
+
+**Executed examples (1):** [examples/table-transformation/table-filterwithdatatable.md](../../examples/table-transformation/table-filterwithdatatable.md)

@@ -4,7 +4,7 @@ category: "Table.Transformation"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -26,6 +26,8 @@ Expands tables in `table`[`column`] into multiple rows and columns. `columnNames
 | `column` | `text` | no |
 | `columnNames` | `list` | no |
 | `newColumnNames` | `nullable list` | yes |
+
+**Executed examples (1):** [examples/table-transformation/table-expandtablecolumn.md](../../examples/table-transformation/table-expandtablecolumn.md)
 
 ## Examples (engine metadata — not verified here)
 

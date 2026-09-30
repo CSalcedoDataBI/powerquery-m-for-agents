@@ -4,7 +4,7 @@ category: "List.Selection"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Buffers the list `list` in memory. The result of this call is a stable list.
 | Name | Type | Optional |
 |---|---|---|
 | `list` | `list` | no |
+
+**Executed examples (1):** [examples/list-selection/list-buffer.md](../../examples/list-selection/list-buffer.md)
 
 ## Examples (engine metadata — not verified here)
 

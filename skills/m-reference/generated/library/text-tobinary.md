@@ -4,7 +4,7 @@ category: "Text.Conversions from and to text"
 returns: "nullable binary"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -31,6 +31,8 @@ Encodes a text value into a binary value using the specified encoding.
 | `text` | `nullable text` | no |
 | `encoding` | `nullable number` | yes |
 | `includeByteOrderMark` | `nullable logical` | yes |
+
+**Executed examples (1):** [examples/text-conversions-from-and-to-text/text-tobinary.md](../../examples/text-conversions-from-and-to-text/text-tobinary.md)
 
 ## Examples (engine metadata — not verified here)
 

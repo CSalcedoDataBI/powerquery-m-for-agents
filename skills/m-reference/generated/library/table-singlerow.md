@@ -4,7 +4,7 @@ category: "Table.Row operations"
 returns: "record"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Returns the single row in the one row `table`. If the `table` has more than one 
 | Name | Type | Optional |
 |---|---|---|
 | `table` | `table` | no |
+
+**Executed examples (1):** [examples/table-row-operations/table-singlerow.md](../../examples/table-row-operations/table-singlerow.md)
 
 ## Examples (engine metadata — not verified here)
 

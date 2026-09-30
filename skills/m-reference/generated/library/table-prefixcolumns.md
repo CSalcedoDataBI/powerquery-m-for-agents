@@ -4,7 +4,7 @@ category: "Table.Column operations"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns a table where all the column names from the `table` provided are prefixe
 |---|---|---|
 | `table` | `table` | no |
 | `prefix` | `text` | no |
+
+**Executed examples (1):** [examples/table-column-operations/table-prefixcolumns.md](../../examples/table-column-operations/table-prefixcolumns.md)
 
 ## Examples (engine metadata — not verified here)
 

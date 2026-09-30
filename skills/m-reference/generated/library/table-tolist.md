@@ -4,7 +4,7 @@ category: "Table.Conversions"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Converts a table into a list by applying the specified combining function to eac
 |---|---|---|
 | `table` | `table` | no |
 | `combiner` | `nullable function` | yes |
+
+**Executed examples (1):** [examples/table-conversions/table-tolist.md](../../examples/table-conversions/table-tolist.md)
 
 ## Examples (engine metadata — not verified here)
 

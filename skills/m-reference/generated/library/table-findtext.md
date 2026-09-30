@@ -4,7 +4,7 @@ category: "Table.Row operations"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns the rows in the table `table` that contain the text `text`. If the text 
 |---|---|---|
 | `table` | `table` | no |
 | `text` | `text` | no |
+
+**Executed examples (1):** [examples/table-row-operations/table-findtext.md](../../examples/table-row-operations/table-findtext.md)
 
 ## Examples (engine metadata — not verified here)
 

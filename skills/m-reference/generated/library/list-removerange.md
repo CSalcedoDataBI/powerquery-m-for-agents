@@ -4,7 +4,7 @@ category: "List.Transformation functions"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ Removes `count` values in the `list` starting at the specified position, `index`
 | `list` | `list` | no |
 | `index` | `number` | no |
 | `count` | `nullable number` | yes |
+
+**Executed examples (1):** [examples/list-transformation-functions/list-removerange.md](../../examples/list-transformation-functions/list-removerange.md)
 
 ## Examples (engine metadata — not verified here)
 

@@ -4,7 +4,7 @@ category: "Table.Row operations"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ Returns a table that is the result of combining a set of partitioned tables, `pa
 | `partitionColumn` | `text` | no |
 | `partitions` | `list` | no |
 | `partitionColumnType` | `nullable type` | yes |
+
+**Executed examples (1):** [examples/table-row-operations/table-frompartitions.md](../../examples/table-row-operations/table-frompartitions.md)
 
 ## Examples (engine metadata — not verified here)
 

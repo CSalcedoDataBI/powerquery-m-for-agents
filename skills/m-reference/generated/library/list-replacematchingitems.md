@@ -4,7 +4,7 @@ category: "List.Transformation functions"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -26,6 +26,8 @@ An optional equation criteria value, `equationCriteria`, can be specified to con
 | `list` | `list` | no |
 | `replacements` | `list` | no |
 | `equationCriteria` | `any` | yes |
+
+**Executed examples (1):** [examples/list-transformation-functions/list-replacematchingitems.md](../../examples/list-transformation-functions/list-replacematchingitems.md)
 
 ## Examples (engine metadata — not verified here)
 

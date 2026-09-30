@@ -4,7 +4,7 @@ category: "Table.Conversions"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Creates a list of nested lists from the table, `table`. Each list item is an inn
 | Name | Type | Optional |
 |---|---|---|
 | `table` | `table` | no |
+
+**Executed examples (1):** [examples/table-conversions/table-tocolumns.md](../../examples/table-conversions/table-tocolumns.md)
 
 ## Examples (engine metadata — not verified here)
 

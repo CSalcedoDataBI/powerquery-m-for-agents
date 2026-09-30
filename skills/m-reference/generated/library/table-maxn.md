@@ -4,7 +4,7 @@ category: "Table.Ordering"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -30,6 +30,8 @@ After the rows are sorted, the `countOrCondition` parameter must be specified to
 | `table` | `table` | no |
 | `comparisonCriteria` | `any` | no |
 | `countOrCondition` | `any` | no |
+
+**Executed examples (1):** [examples/table-ordering/table-maxn.md](../../examples/table-ordering/table-maxn.md)
 
 ## Examples (engine metadata — not verified here)
 

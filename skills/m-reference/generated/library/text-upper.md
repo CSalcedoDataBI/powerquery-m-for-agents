@@ -4,7 +4,7 @@ category: "Text.Transformations"
 returns: "nullable text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns the result of converting all characters in `text` to uppercase. An optio
 |---|---|---|
 | `text` | `nullable text` | no |
 | `culture` | `nullable text` | yes |
+
+**Executed examples (1):** [examples/text-transformations/text-upper.md](../../examples/text-transformations/text-upper.md)
 
 ## Examples (engine metadata — not verified here)
 
