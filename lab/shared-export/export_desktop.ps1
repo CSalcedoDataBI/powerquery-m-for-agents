@@ -30,6 +30,11 @@ Add-Type -Path (Join-Path (Split-Path $DesktopExe) "Microsoft.PowerBI.AdomdClien
 
 # Engines that exist before we open the file are someone else's model: never touch them.
 $before = @((Get-Process msmdsrv -ErrorAction SilentlyContinue).Id)
+# A model that fails to load (an M parse error, say) never creates a table: the engine port
+# listens but TMSCHEMA_TABLES stays empty. Desktop's only trace is a frown snapshot, so a new
+# one - or Desktop exiting - ends the wait instead of the timeout.
+$frownDir = Join-Path $env:LOCALAPPDATA "Microsoft\Power BI Desktop"
+$started = Get-Date
 $desktop = Start-Process -FilePath $DesktopExe -ArgumentList "`"$pbip`"" -PassThru
 Write-Output "Opened Desktop $version (PID $($desktop.Id)); waiting for its engine..."
 
@@ -43,9 +48,24 @@ function Find-Port {
     return $null
 }
 
+function Assert-DesktopHealthy {
+    if ($desktop.HasExited) {
+        throw "Desktop exited (code $($desktop.ExitCode)) before the model loaded."
+    }
+    $frown = Get-ChildItem $frownDir -Filter "FrownSnapShot*.zip" -ErrorAction SilentlyContinue |
+        Where-Object { $_.LastWriteTime -ge $started } |
+        Sort-Object LastWriteTime | Select-Object -First 1
+    if ($frown) {
+        throw ("Desktop reported an error while loading the model (frown snapshot $($frown.FullName)). " +
+            "Usually export_shared.pq does not parse, or SharedExport.pbip is stale: run " +
+            "build_pbip.py --check. Desktop is left open (PID $($desktop.Id)) so you can read the message.")
+    }
+}
+
 $deadline = (Get-Date).AddSeconds($TimeoutSeconds)
 $conn = $null
 while (-not $conn) {
+    Assert-DesktopHealthy
     if ((Get-Date) -gt $deadline) { throw "No model came up within $TimeoutSeconds s." }
     Start-Sleep -Seconds 3
     $port = Find-Port
