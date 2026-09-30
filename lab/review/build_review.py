@@ -20,7 +20,6 @@ import argparse
 import json
 import os
 import re
-import shutil
 import sys
 import uuid
 
@@ -204,18 +203,23 @@ def main(argv=None):
         folder = os.path.join(HERE, slug)
         if not args.only and not os.path.isdir(folder):
             continue
+        # .pbi/ is Power BI Desktop's own state (data cache, settings), ignored by git: it is
+        # never compared and never deleted, so a project open in Desktop keeps working.
         on_disk = {}
         if os.path.isdir(folder):
-            for dirpath, _, names in os.walk(folder):
+            for dirpath, dirnames, names in os.walk(folder):
+                dirnames[:] = [d for d in dirnames if d != ".pbi"]
                 for n in names:
                     p = os.path.join(dirpath, n)
-                    on_disk[os.path.relpath(p, folder).replace("\\", "/")] = open(p, encoding="utf-8").read()
+                    with open(p, encoding="utf-8") as f:
+                        on_disk[os.path.relpath(p, folder).replace("\\", "/")] = f.read()
         if args.check:
             if on_disk != files:
                 stale.append(slug)
             continue
         if on_disk != files:
-            shutil.rmtree(folder, ignore_errors=True)
+            for rel in set(on_disk) - set(files):
+                os.remove(os.path.join(folder, rel))
             for rel, text in files.items():
                 path = os.path.join(folder, rel)
                 os.makedirs(os.path.dirname(path), exist_ok=True)
