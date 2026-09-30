@@ -185,12 +185,17 @@ def unescape(text):
     return ESCAPE_RE.sub(one, text)
 
 
-def unsafe_calls(code, catalog):
+def unsafe_calls(code, catalog, unknown=False):
     """What in one ```m block could reach outside the engine: the environment itself
     (#shared, #sections) and any exported function outside PURE_CATEGORIES - data sources,
-    connectors, Expression.Evaluate - and the names in MACHINE_NAMES. Names the export does
-    not have are left to the invented-name check; they cannot resolve to anything."""
+    connectors, Expression.Evaluate - and the names in MACHINE_NAMES.
+
+    A dotted name the export does not have is left to the invented-name check, unless
+    `unknown` is set. The runner sets it: it evaluates against the live #shared of whatever
+    Desktop is open, which can hold a connector the committed export does not, so a name
+    this check cannot classify is refused before anything runs."""
     functions = {r["name"]: r for r in catalog.get("functions", [])}
+    known = set(functions) | {c["name"] for c in catalog.get("constants", [])}
     bare, quoted = scan(code)
     found = [f"#{m}" for m in ENVIRONMENT_RE.findall(bare)]
     for name in sorted(set(DOTTED_RE.findall(bare)) | set(quoted)):
@@ -199,6 +204,8 @@ def unsafe_calls(code, catalog):
             continue
         row = functions.get(name)
         if row is None:
+            if unknown and name not in known and DOTTED_RE.fullmatch(name):
+                found.append(name)
             continue
         category = row.get("category") or ""
         if name in PURE_NAMES:

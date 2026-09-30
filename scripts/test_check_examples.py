@@ -172,6 +172,14 @@ class Check(unittest.TestCase):
                 errors = mb.unsafe_calls(code, {"functions": []})
                 self.assertEqual(errors, [code.split("(")[0]])
 
+    def test_the_runner_refuses_names_the_export_does_not_have(self):
+        # The live #shared can hold a connector the committed export does not.
+        catalog = {"functions": [], "constants": [{"name": "JoinKind.Inner"}]}
+        self.assertEqual(mb.unsafe_calls('New.Connector("x")', catalog, unknown=True),
+                         ["New.Connector"])
+        self.assertEqual(mb.unsafe_calls('New.Connector("x")', catalog), [])
+        self.assertEqual(mb.unsafe_calls('{JoinKind.Inner, #"Step one"}', catalog, unknown=True), [])
+
     def test_names_in_text_literals_and_comments_call_nothing(self):
         p = self.block_page("skills/m-reference/concepts/lit.md",
                             '"File.Contents" // File.Contents', '"File.Contents"')

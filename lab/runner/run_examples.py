@@ -191,7 +191,8 @@ def main(argv=None):
     with open(os.path.join(ROOT, "skills", "m-reference", "generated", "catalog.json"),
               encoding="utf-8") as f:
         catalog = json.load(f)
-    unsafe = [(p, i, n) for p, i, code in cases for n in m_blocks.unsafe_calls(code, catalog)]
+    unsafe = [(p, i, n) for p, i, code in cases
+              for n in m_blocks.unsafe_calls(code, catalog, unknown=True)]
     if unsafe:
         for p, i, n in unsafe:
             print(f"  UNSAFE {p}:{i} calls {n}")

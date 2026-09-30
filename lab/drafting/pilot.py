@@ -116,8 +116,10 @@ def off_format(page):
             continue
         if re.search(r"<[A-Za-z!/]", line):
             return "HTML"
-        # Inline [x](url), reference [x][id] and definitions [id]: url, bare URLs and schemes.
-        if re.search(r"\]\(|\]\[|^\s*\[[^\]]*\]:|https?://|www\.|\bjavascript:|\bdata:", line, re.I):
+        # Inline [x](url), reference [x][id] and definitions [id]: url, any scheme:// URL,
+        # www., and the schemes that need no slashes.
+        if re.search(r"\]\(|\]\[|^\s*\[[^\]]*\]:|\b[a-z][a-z0-9+.-]*://|www\.|\b(javascript|data|mailto):",
+                     line, re.I):
             return "a link"
     return None
 
