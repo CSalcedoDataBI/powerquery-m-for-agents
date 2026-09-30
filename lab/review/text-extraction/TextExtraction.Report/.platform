@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "TextExtraction"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3bb8d993-01a4-58e9-a903-94e9f179e02e"
+  }
+}

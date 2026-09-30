@@ -1,0 +1,106 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "table",
+  "position": {
+    "x": 300,
+    "y": 80,
+    "z": 2,
+    "width": 956,
+    "height": 620
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TableColumnOperations"
+                    }
+                  },
+                  "Property": "Function"
+                }
+              },
+              "queryRef": "TableColumnOperations.Function",
+              "nativeQueryRef": "Function"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TableColumnOperations"
+                    }
+                  },
+                  "Property": "Block"
+                }
+              },
+              "queryRef": "TableColumnOperations.Block",
+              "nativeQueryRef": "Block"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TableColumnOperations"
+                    }
+                  },
+                  "Property": "Code"
+                }
+              },
+              "queryRef": "TableColumnOperations.Code",
+              "nativeQueryRef": "Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TableColumnOperations"
+                    }
+                  },
+                  "Property": "Recorded"
+                }
+              },
+              "queryRef": "TableColumnOperations.Recorded",
+              "nativeQueryRef": "Recorded"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TableColumnOperations"
+                    }
+                  },
+                  "Property": "Live"
+                }
+              },
+              "queryRef": "TableColumnOperations.Live",
+              "nativeQueryRef": "Live"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TableColumnOperations"
+                    }
+                  },
+                  "Property": "Match"
+                }
+              },
+              "queryRef": "TableColumnOperations.Match",
+              "nativeQueryRef": "Match"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

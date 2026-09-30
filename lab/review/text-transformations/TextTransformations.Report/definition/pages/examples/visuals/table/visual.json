@@ -1,0 +1,106 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "table",
+  "position": {
+    "x": 300,
+    "y": 80,
+    "z": 2,
+    "width": 956,
+    "height": 620
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TextTransformations"
+                    }
+                  },
+                  "Property": "Function"
+                }
+              },
+              "queryRef": "TextTransformations.Function",
+              "nativeQueryRef": "Function"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TextTransformations"
+                    }
+                  },
+                  "Property": "Block"
+                }
+              },
+              "queryRef": "TextTransformations.Block",
+              "nativeQueryRef": "Block"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TextTransformations"
+                    }
+                  },
+                  "Property": "Code"
+                }
+              },
+              "queryRef": "TextTransformations.Code",
+              "nativeQueryRef": "Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TextTransformations"
+                    }
+                  },
+                  "Property": "Recorded"
+                }
+              },
+              "queryRef": "TextTransformations.Recorded",
+              "nativeQueryRef": "Recorded"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TextTransformations"
+                    }
+                  },
+                  "Property": "Live"
+                }
+              },
+              "queryRef": "TextTransformations.Live",
+              "nativeQueryRef": "Live"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TextTransformations"
+                    }
+                  },
+                  "Property": "Match"
+                }
+              },
+              "queryRef": "TextTransformations.Match",
+              "nativeQueryRef": "Match"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

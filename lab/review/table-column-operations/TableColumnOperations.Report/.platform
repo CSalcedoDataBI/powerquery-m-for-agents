@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "TableColumnOperations"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "fb14a8ab-47de-567b-b575-e7481a86cba6"
+  }
+}
