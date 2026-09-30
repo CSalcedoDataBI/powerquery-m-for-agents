@@ -107,6 +107,21 @@ class Check(unittest.TestCase):
                       "error: Expression.Error: The name 'Text.Uppercase' wasn't recognized.\n```\n")
         self.assertIn("'Text.Uppercase'", "\n".join(self.run_check(p)))
 
+    def test_a_typo_echoed_by_a_try_record_is_not_vouched_for(self):
+        p = self.page("skills/m-reference/concepts/v.md",
+                      "<!-- lab: desktop 1 -->\n\n```m\ntry Text.Uppercase(\"a\")\n```\n\n```text\n"
+                      "[HasError = true, Error = [Reason = \"Expression.Error\", Message = "
+                      "\"The name 'Text.Uppercase' wasn't recognized.\"]]\n```\n")
+        self.assertIn("'Text.Uppercase'", "\n".join(self.run_check(p)))
+
+    def test_any_dotted_name_in_code_is_checked_but_text_literals_are_not(self):
+        p = self.page("skills/m-reference/concepts/u.md",
+                      "<!-- lab: desktop 1 -->\n\n```m\n{appFigurs.Tables(), \"report.csv\"}\n```\n"
+                      "\n```text\nerror: Expression.Error: x\n```\n")
+        errors = self.run_check(p)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("'appFigurs.Tables'", errors[0])
+
     def test_names_off_the_strict_shape_are_checked_under_known_prefixes(self):
         # `Text.upper` has a lowercase second segment, so only the loose pattern sees it;
         # `catalog.md` has a prefix the export never uses and is left alone.

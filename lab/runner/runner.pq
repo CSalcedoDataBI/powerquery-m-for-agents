@@ -95,9 +95,11 @@ let
                 // "The import TypeText matches no exports".
                 else if Type.Is(base, type list) then "{" & @TypeText(Type.ListItem(base)) & "}"
                 else if Type.Is(base, type function) then FunctionTypeText(base)
-                else Primitive(base)
+                else Primitive(base),
+            // `any` includes null; the same type without null is spelled anynonnull.
+            spelled = if body = "any" and not Type.IsNullable(t) then "anynonnull" else body
         in
-            (if nullable and body <> "any" then "nullable " else "") & body,
+            (if nullable and body <> "any" then "nullable " else "") & spelled,
 
     ErrorText = (e as record) as text =>
         let

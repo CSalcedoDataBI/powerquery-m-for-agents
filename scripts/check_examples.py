@@ -31,10 +31,20 @@ LOOSE_RE = re.compile(r"(?<![\w.])([A-Za-z][A-Za-z0-9]*\.[A-Za-z0-9][A-Za-z0-9]*
 REASON_RE = re.compile(r"error: ([A-Za-z][A-Za-z0-9]*\.[A-Za-z][A-Za-z0-9]*):")
 
 
+STRING_RE = re.compile(r'"(?:[^"]|"")*"')
+
+
 def names_in(text, prefixes):
     found = set(NAME_RE.findall(text))
     found |= {n for n in LOOSE_RE.findall(text) if n.split(".", 1)[0] in prefixes}
     return found
+
+
+def code_names(code):
+    """Every a.b token in M code outside text literals. M has no other use for a dot between
+    identifiers, so each one is a library name - including a misspelled lowercase prefix,
+    which the prose check cannot tell from a file name."""
+    return set(LOOSE_RE.findall(STRING_RE.sub('""', code)))
 
 
 def category_slug(category):
@@ -81,15 +91,18 @@ def check(root=m_blocks.ROOT, ref=REF, page_list=None):
     functions = {r["name"]: r for r in catalog.get("functions", [])}
     exported = set(functions) | {c["name"] for c in catalog.get("constants", [])}
     prefixes = {n.split(".", 1)[0] for n in exported}
-    # What the engine printed vouches for a name only where it cannot be echoing a typo: the
-    # reason of an error, and names in results that hold no error at all. An error message
-    # repeats the name that failed ("The name 'Text.Uppercase' doesn't exist"), so it doesn't.
+    # What the engine printed vouches for names the code never wrote: error reasons
+    # (Expression.Error), metadata fields (Documentation.Name). A name that also appears in
+    # some ```m block cannot be vouched for this way - an error message, or a `try` record's
+    # Message, repeats the very name that failed ("The name 'Text.Uppercase' ...").
+    written = set()
+    for blocks in parsed.values():
+        for block in blocks:
+            written |= code_names(block.code)
     printed = set()
     for result in results:
-        printed |= set(REASON_RE.findall(result))
-        if "error: " not in result:
-            printed |= names_in(result, prefixes)
-    known = exported | printed
+        printed |= set(REASON_RE.findall(result)) | names_in(result, prefixes)
+    known = exported | (printed - written)
 
     # 2: example placement
     by_file = {r["file"]: r for r in functions.values()}
@@ -116,7 +129,8 @@ def check(root=m_blocks.ROOT, ref=REF, page_list=None):
             if block.result is not None:
                 lines = prose.split("\n")
                 prose = "\n".join(lines[:block.result_start] + lines[block.result_end + 1:])
-        for name in sorted(names_in(prose, prefixes) - known):
+        in_code = set().union(*(code_names(b.code) for b in blocks)) if blocks else set()
+        for name in sorted((names_in(prose, prefixes) | in_code) - known):
             errors.append(f"{page}: '{name}' is not in the export nor printed by the engine")
     return errors
 
