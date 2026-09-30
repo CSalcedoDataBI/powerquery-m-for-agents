@@ -12,6 +12,8 @@ The model writes only the ```m blocks and the note. Nothing it writes is trusted
     lab/runner/run_examples.py, never from the model.
   - A block that could reach outside the engine (m_blocks.unsafe_calls) keeps the whole page
     out: the runner would evaluate it on this machine.
+  - Outside ```m blocks a page may hold headings and plain prose only: another fence, HTML,
+    an image or a link refuses it (off_format).
   - A page is written only under examples/<category>/<file>.md of a pilot function, and never
     over an existing page unless --force says so.
 
@@ -95,6 +97,30 @@ def unwrap(text):
     return m.group(1) if m else t
 
 
+FENCE_RE = re.compile(r"^```(\w*)\s*$")
+
+
+def off_format(page):
+    """Why a page is not in the example format, or None. Beyond ```m blocks the model may
+    write headings and plain prose - no other fence, HTML, image or link: nothing it writes
+    is reviewed as code, so nothing it writes may act as more than text."""
+    in_block = False
+    for line in page.splitlines():
+        m = FENCE_RE.match(line)
+        if m:
+            if not in_block and m.group(1) != "m":
+                return f"a ```{m.group(1)} fence"
+            in_block = not in_block
+            continue
+        if in_block:
+            continue
+        if re.search(r"<[A-Za-z!/]", line):
+            return "HTML"
+        if re.search(r"\]\(|https?://|www\.", line):
+            return "a link"
+    return None
+
+
 def cmd_prompts(args):
     catalog = load_catalog()
     models = []
@@ -160,6 +186,10 @@ def cmd_collect(args):
             continue
         if not blocks:
             entry["status"] = "no ```m block"
+            continue
+        why = off_format(page)
+        if why:
+            entry["status"] = f"refused: {why}"
             continue
         if not page.startswith(f"# {row['name']}\n"):
             page = f"# {row['name']}\n\n" + page

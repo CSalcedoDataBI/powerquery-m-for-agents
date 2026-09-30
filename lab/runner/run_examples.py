@@ -195,8 +195,8 @@ def main(argv=None):
     if unsafe:
         for p, i, n in unsafe:
             print(f"  UNSAFE {p}:{i} calls {n}")
-        raise SystemExit("refusing to run blocks that can reach outside the engine "
-                         "(see m_blocks.unsafe_calls)")
+        raise SystemExit("refusing to run blocks that can reach outside the engine or "
+                         "describe this machine (see m_blocks.unsafe_calls)")
     pbip = build(cases)
     if args.prepare:
         print(f"Wrote {os.path.join(BUILD, 'runner-query.pq')}.")

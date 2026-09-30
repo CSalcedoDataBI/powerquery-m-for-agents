@@ -158,6 +158,20 @@ class Check(unittest.TestCase):
                 errors = self.run_check(p)
                 self.assertTrue(any("reach outside the engine" in e for e in errors), errors)
 
+    def test_an_escaped_quoted_identifier_is_decoded(self):
+        # #(002E) is "." in a quoted identifier, so this is File.Contents.
+        p = self.block_page("skills/m-reference/concepts/esc.md",
+                            '#"File#(002E)Contents"("x.csv")', "1")
+        errors = self.run_check(p)
+        self.assertTrue(any("File.Contents" in e and "outside the engine" in e for e in errors),
+                        errors)
+
+    def test_values_that_describe_the_machine_fail(self):
+        for code in ["DateTimeZone.LocalNow()", "Culture.Current"]:
+            with self.subTest(code=code):
+                errors = mb.unsafe_calls(code, {"functions": []})
+                self.assertEqual(errors, [code.split("(")[0]])
+
     def test_names_in_text_literals_and_comments_call_nothing(self):
         p = self.block_page("skills/m-reference/concepts/lit.md",
                             '"File.Contents" // File.Contents', '"File.Contents"')

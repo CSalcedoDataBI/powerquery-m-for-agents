@@ -28,7 +28,6 @@ param(
     [Parameter(Mandatory)][string]$Out,
     [string]$Image = 'pq-drafting-dsh:0.2.0-rc.2',
     [string[]]$Only,
-    [switch]$Build,
     [switch]$CheckOnly,
     [int]$TimeoutSec = 600
 )
@@ -39,11 +38,10 @@ $answers = Join-Path $Out 'answers'
 if (-not (Test-Path $prompts)) { throw "No prompts in $prompts - run: python lab/drafting/pilot.py prompts --out $Out" }
 New-Item -ItemType Directory -Force $answers | Out-Null
 
-docker image inspect $Image *> $null
-if ($Build -or $LASTEXITCODE -ne 0) {
-    docker build -t $Image $PSScriptRoot
-    if ($LASTEXITCODE -ne 0) { throw 'docker build failed' }
-}
+# Always built from this folder, and run by the ID the build returns: an image that merely
+# carries the tag - stale, or put there by something else - never receives the key.
+$Image = docker build -q -t $Image $PSScriptRoot
+if ($LASTEXITCODE -ne 0 -or $Image -notmatch '^sha256:[0-9a-f]{64}$') { throw "docker build failed: $Image" }
 
 # /tmp alone is exec: dsh's native-addon loader copies its prebuilt .node there before loading
 # it, and docker mounts tmpfs noexec by default ("failed to map segment from shared object").

@@ -10,7 +10,8 @@
      has, or a name the engine itself printed in some result (an error reason such as
      `Expression.Error`, a metadata field such as `Documentation.Name`).
   4. No block reaches outside the engine: no #shared/#sections, no data source, connector or
-     Expression.Evaluate (m_blocks.unsafe_calls). The runner evaluates every block on the
+     Expression.Evaluate, nothing that reads the machine's clock, zone or culture
+     (m_blocks.unsafe_calls). The runner evaluates every block on the
      machine of whoever runs it, so a page from a pull request is code run there.
 
   python scripts/check_examples.py
@@ -145,8 +146,8 @@ def check(root=m_blocks.ROOT, ref=REF, page_list=None):
         for i, block in enumerate(blocks):
             for name in m_blocks.unsafe_calls(block.code, catalog):
                 errors.append(f"{page}: ```m block {i + 1} (line {block.code_start + 1}) calls "
-                              f"{name}, which can reach outside the engine; examples only "
-                              "compute on literals")
+                              f"{name}, which can reach outside the engine or describe the "
+                              "machine it runs on; examples only compute on literals")
     return errors
 
 

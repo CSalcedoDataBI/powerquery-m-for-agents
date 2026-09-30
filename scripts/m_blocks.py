@@ -117,7 +117,17 @@ PURE_CATEGORIES = {
 # is about. Value.NativeQuery sends a query to a data source.
 IMPURE_CATEGORIES = {"Values.Implementation"}
 IMPURE_NAMES = {"Value.NativeQuery"}
-PURE_NAMES = {"Table.WithErrorContext"}
+# Parsers of text or binary values. Every way to fetch that value (File.Contents, Web.Contents)
+# is refused, so what they parse can only be a literal of the block.
+PURE_NAMES = {"Table.WithErrorContext", "Csv.Document", "Json.Document", "Xml.Document",
+              "Xml.Tables"}
+# Values that describe the machine the runner is on, which a result would publish: its time
+# zone, its clock, its culture (the reason #shared exports TimeZone.Current as null).
+MACHINE_NAMES = {"DateTime.LocalNow", "DateTime.FixedLocalNow", "DateTimeZone.LocalNow",
+                 "DateTimeZone.FixedLocalNow", "DateTimeZone.UtcNow", "DateTimeZone.FixedUtcNow",
+                 "DateTimeZone.ToLocal", "Culture.Current", "TimeZone.Current"}
+ESCAPE_RE = re.compile(r"#\(([^()]*)\)")
+SINGLE_ESCAPES = {"cr": chr(13), "lf": chr(10), "tab": chr(9), "#": "#"}
 DOTTED_RE = re.compile(r"(?<![\w.])([A-Za-z][A-Za-z0-9]*\.[A-Za-z0-9][A-Za-z0-9]*)(?![\w])")
 ENVIRONMENT_RE = re.compile(r"#(shared|sections)\b")
 
@@ -155,18 +165,37 @@ def scan(code):
         else:
             out.append(code[i])
             i += 1
-    return "".join(out), quoted
+    return "".join(out), [unescape(q) for q in quoted]
+
+
+def unescape(text):
+    """A quoted identifier or text literal as M reads it: #(002E) is ".", #(cr,lf) two
+    characters. #"File#(002E)Contents" is File.Contents. An escape M would reject is kept."""
+    def one(m):
+        out = []
+        for part in m.group(1).split(","):
+            if part in SINGLE_ESCAPES:
+                out.append(SINGLE_ESCAPES[part])
+            elif re.fullmatch(r"[0-9A-Fa-f]{4}|[0-9A-Fa-f]{8}", part) and int(part, 16) <= 0x10FFFF:
+                out.append(chr(int(part, 16)))
+            else:
+                return m.group(0)
+        return "".join(out)
+    return ESCAPE_RE.sub(one, text)
 
 
 def unsafe_calls(code, catalog):
     """What in one ```m block could reach outside the engine: the environment itself
     (#shared, #sections) and any exported function outside PURE_CATEGORIES - data sources,
-    connectors, Expression.Evaluate. Names the export does not have are left to the
-    invented-name check; they cannot resolve to anything."""
+    connectors, Expression.Evaluate - and the names in MACHINE_NAMES. Names the export does
+    not have are left to the invented-name check; they cannot resolve to anything."""
     functions = {r["name"]: r for r in catalog.get("functions", [])}
     bare, quoted = scan(code)
     found = [f"#{m}" for m in ENVIRONMENT_RE.findall(bare)]
     for name in sorted(set(DOTTED_RE.findall(bare)) | set(quoted)):
+        if name in MACHINE_NAMES:
+            found.append(name)
+            continue
         row = functions.get(name)
         if row is None:
             continue
