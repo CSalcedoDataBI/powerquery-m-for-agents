@@ -131,6 +131,7 @@ PURE_NAMES = {"Table.WithErrorContext", "Csv.Document", "Json.Document", "Xml.Do
 MACHINE_NAMES = {"DateTime.LocalNow", "DateTime.FixedLocalNow", "DateTimeZone.LocalNow",
                  "DateTimeZone.FixedLocalNow", "DateTimeZone.UtcNow", "DateTimeZone.FixedUtcNow",
                  "DateTimeZone.ToLocal", "Culture.Current", "TimeZone.Current"}
+NEWLINE_RE = re.compile("[\r\n\u0085\u2028\u2029]")
 ESCAPE_RE = re.compile(r"#\(([^()]*)\)")
 SINGLE_ESCAPES = {"cr": chr(13), "lf": chr(10), "tab": chr(9), "#": "#"}
 # An M identifier with dots: a letter or underscore, then letters, digits, underscores, in
@@ -146,8 +147,10 @@ def scan(code):
     out, quoted, i, n = [], [], 0, len(code)
     while i < n:
         if code.startswith("//", i):
-            j = code.find("\n", i)
-            i = n if j < 0 else j
+            # A line comment ends at any M new-line character, CR alone included: ending it at
+            # LF only would hide the code after a bare CR, which the engine runs.
+            m = NEWLINE_RE.search(code, i)
+            i = m.start() if m else n
             out.append(" ")
         elif code.startswith("/*", i):
             # Delimited comments nest in M: /* a /* b */ c */ is one comment.

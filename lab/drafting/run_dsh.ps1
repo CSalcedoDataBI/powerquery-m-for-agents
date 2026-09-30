@@ -63,7 +63,7 @@ if ($LASTEXITCODE -ne 0) { throw 'Privacy check: the probe container failed' }
 if ('TURN-COMPLETED' -notin $probeOut) { throw 'Privacy check: dsh did not complete a turn against the stand-in API' }
 $sent = @($probeOut | Where-Object { $_ -like 'POST *' })
 if (-not $sent) { throw 'Privacy check: dsh sent no request to the stand-in API' }
-$leaks = $sent | Select-String -Pattern 'LEAK|dsh_session_log|dsh_plugin_packages'
+$leaks = $sent | Select-String -Pattern 'LEAK|UNREADABLE|dsh_session_log|dsh_plugin_packages'
 if ($leaks) { throw "Privacy check failed - still sent:`n$($leaks -join "`n")" }
 Write-Host "Privacy check: $(@($sent).Count) request(s), fields: $((@($sent)[0] -split ' ')[2])"
 
@@ -79,8 +79,9 @@ if ($LASTEXITCODE -ne 0) { throw 'could not list the container environment' }
 Write-Host "Container environment: $($names -join ', ')"
 $extra = $names | Where-Object { $_ -notin $allowed }
 if ($extra) { throw "Unexpected variables in the container: $($extra -join ', ')" }
-# Kernel filesystems, the tmpfs above, and the three files docker itself mounts read-only.
-$mounts = docker run @probe --entrypoint sh $Image -c 'awk ''$3 !~ /^(proc|sysfs|tmpfs|devpts|mqueue|cgroup2?|overlay)$/ && $2 !~ /^\/etc\/(hostname|hosts|resolv\.conf)$/'' /proc/mounts'
+# Kernel filesystems, the tmpfs above, and the three files docker itself mounts - those only
+# as docker mounts them (ext4, read-only): a host file bind-mounted over one would not be.
+$mounts = docker run @probe --entrypoint sh $Image -c 'awk ''$3 !~ /^(proc|sysfs|tmpfs|devpts|mqueue|cgroup2?|overlay)$/ && !($2 ~ /^\/etc\/(hostname|hosts|resolv\.conf)$/ && $3 == "ext4" && $4 ~ /^ro,/)'' /proc/mounts'
 if ($LASTEXITCODE -ne 0) { throw 'could not read the container mounts' }
 if ($mounts) { throw "Unexpected mounts in the container:`n$($mounts -join "`n")" }
 $version = docker run @probe $Image --version
@@ -113,6 +114,15 @@ try {
             $p.WaitForExit()
         }
         $clock.Stop()
+        # Nothing should ever print the key; if a crash dump or a debug line did, it does not
+        # stay on disk.
+        foreach ($written in $target, $errors) {
+            $text = Get-Content $written -Raw -ErrorAction SilentlyContinue
+            if ($text -and $text.Contains($env:DEEPSEEK_API_KEY)) {
+                Set-Content $written $text.Replace($env:DEEPSEEK_API_KEY, '[REDACTED]') -NoNewline -Encoding utf8
+                Write-Warning "The key appeared in $(Split-Path $written -Leaf) and was redacted."
+            }
+        }
         $runs += [ordered]@{ file = $f.BaseName; exit = $p.ExitCode; seconds = [math]::Round($clock.Elapsed.TotalSeconds, 1) }
         Write-Host ("  {0,-28} exit {1}  {2,6:n1}s" -f $f.BaseName, $p.ExitCode, $clock.Elapsed.TotalSeconds)
     }

@@ -189,6 +189,14 @@ class Check(unittest.TestCase):
     def test_a_verbatim_literal_is_text(self):
         self.assertEqual(mb.unsafe_calls('#!"Token ! expected"', {"functions": []}), [])
 
+    def test_a_line_comment_ends_at_a_bare_carriage_return(self):
+        # M ends a // comment at CR as well as LF: what follows the CR is code.
+        self.assertEqual(mb.unsafe_calls('// x\rFile.Contents("s")',
+                                         {"functions": [{"name": "File.Contents",
+                                                         "category": "Accessing data",
+                                                         "kind": "library"}]}),
+                         ["File.Contents"])
+
     def test_nested_comments_hide_what_they_contain(self):
         self.assertEqual(mb.unsafe_calls('1 /* a /* b */ File.Contents("x") */ + 2',
                                          {"functions": []}, unknown=True), [])

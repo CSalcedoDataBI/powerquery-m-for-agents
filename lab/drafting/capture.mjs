@@ -6,6 +6,7 @@
 // with a fake key, and fails on any LEAK or on a turn that did not complete.
 import { createServer } from 'node:http'
 import { appendFileSync } from 'node:fs'
+import { brotliDecompressSync, gunzipSync, inflateSync } from 'node:zlib'
 
 const events = [
   ['message_start', { type: 'message_start', message: { id: 'msg_capture', type: 'message', role: 'assistant', model: 'capture', content: [], stop_reason: null, stop_sequence: null, usage: { input_tokens: 1, output_tokens: 0 } } }],
@@ -17,13 +18,23 @@ const events = [
 ]
 
 createServer((req, res) => {
-  let body = ''
-  req.on('data', (c) => { body += c })
+  const chunks = []
+  req.on('data', (c) => { chunks.push(c) })
   req.on('end', () => {
+    // A compressed body is read decompressed; one that cannot be read is UNREADABLE, and
+    // run_dsh.ps1 fails on that as on a LEAK - never read as clean.
+    let body
+    try {
+      const raw = Buffer.concat(chunks)
+      const enc = (req.headers['content-encoding'] || 'identity').toLowerCase()
+      const bytes = enc === 'gzip' ? gunzipSync(raw) : enc === 'deflate' ? inflateSync(raw)
+        : enc === 'br' ? brotliDecompressSync(raw) : enc === 'identity' ? raw : null
+      body = bytes === null ? null : bytes.toString('utf8')
+    } catch { body = null }
     const extras = ['dsh_session_log', 'dsh_plugin_packages']
     // Raw text, and every key of the decoded JSON at any depth: an escaped key such as
     // "dsh_session_log" decodes to the same field without matching the raw text.
-    const leaks = new Set(extras.filter((f) => body.includes(f)))
+    const leaks = new Set(body === null ? [] : extras.filter((f) => body.includes(f)))
     const walk = (v) => {
       if (Array.isArray(v)) v.forEach(walk)
       else if (v && typeof v === 'object') {
@@ -31,7 +42,7 @@ createServer((req, res) => {
       }
     }
     let keys = []
-    try { const parsed = JSON.parse(body); keys = Object.keys(parsed); walk(parsed) } catch { keys = ['<not json>'] }
+    try { const parsed = JSON.parse(body); keys = Object.keys(parsed); walk(parsed) } catch { keys = ['UNREADABLE'] }
     const line = `${req.method} ${req.url} ${keys.join(',')}${leaks.size ? ' LEAK ' + [...leaks].join(',') : ''}`
     appendFileSync('/tmp/request-fields.txt', line + '\n')
     res.writeHead(200, { 'content-type': 'text/event-stream' })
