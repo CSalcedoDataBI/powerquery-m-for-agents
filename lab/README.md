@@ -36,4 +36,7 @@ says so on purpose.
 
 The runner refuses a block that could reach outside the engine - `#shared`, a data source, a
 connector, `Expression.Evaluate` - before anything runs: every block is code evaluated on the
-machine that runs it, and on a public repo a page can come from anyone.
+machine that runs it, and on a public repo a page can come from anyone. Values that only
+describe that machine (`DateTimeZone.LocalNow`, `Culture.Current`, ...) are refused too.
+Not every one can be caught by name: a conversion from `datetime` to `datetimezone` takes the
+machine's zone. Check a result's `#datetimezone` offsets before committing it.

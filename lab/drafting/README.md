@@ -39,5 +39,11 @@ python lab/drafting/pilot.py report --out lab/drafting/out/dsh
 - a block that could reach outside the engine refuses the whole page (`m_blocks.unsafe_calls`,
   the same rule `check_examples.py` applies to every page on CI, and the runner applies before it
   evaluates anything);
+- outside ```` ```m ```` blocks a page may hold headings and plain prose only: another fence,
+  HTML or a link refuses it;
 - a page is written only as `examples/<category>/<file>.md` of a pilot function, never over an
   existing page without `--force`.
+
+None of that judges the prose. **Every page is read by a person before it is committed**, against
+the results the engine wrote: in the pilot that review edited 3 of 26 pages (a made-up argument
+value, a claim the result contradicted, a mechanism the page could not show).

@@ -51,39 +51,41 @@ $sandbox = @('--rm', '--read-only', '--tmpfs', '/tmp:exec',
     '--pids-limit', '256', '--memory', '2g', '--cpus', '2')
 
 # Privacy check: no network, a fake key, the API replaced by capture.mjs on the loopback.
-$probe = 'node /cfg/capture.mjs & sleep 1; echo "Say ok." | ' +
+$capture = 'node /cfg/capture.mjs & sleep 1; echo "Say ok." | ' +
     'DEEPSEEK_BASE_URL=http://127.0.0.1:8799 DEEPSEEK_API_KEY=sk-fake-privacy-check ' +
     'dsh-run --profile headless --json > /dev/null 2>&1; cat /tmp/request-fields.txt'
-$sent = docker run @sandbox --network none --entrypoint sh $Image -c $probe
+$sent = docker run @sandbox --network none --entrypoint sh $Image -c $capture
 if (-not $sent) { throw 'Privacy check: dsh sent no request to the stand-in API' }
 $leaks = $sent | Select-String -Pattern 'dsh_session_log|dsh_plugin_packages'
 if ($leaks) { throw "Privacy check failed - still sent:`n$($leaks -join "`n")" }
 Write-Host "Privacy check: $(@($sent).Count) request(s), fields: $((@($sent)[0] -split ' ')[2])"
+
+# The same container, without network and with a fake key, is what every check inspects:
+# the real key reaches only the containers that answer a prompt.
+$probe = $sandbox + @('--network', 'none', '-e', 'DEEPSEEK_API_KEY=sk-fake-probe')
+# What the image, docker and sh (PWD) put there, plus the one secret. Anything else stops the run.
+$allowed = 'PATH', 'HOSTNAME', 'HOME', 'NODE_VERSION', 'YARN_VERSION', 'DSH_TELEMETRY_DISABLED',
+    'NO_UPDATE_NOTIFIER', 'NPM_CONFIG_UPDATE_NOTIFIER', 'DSH_HOME', 'PWD', 'DEEPSEEK_API_KEY'
+$names = docker run @probe --entrypoint sh $Image -c 'env | cut -d= -f1' |
+    Where-Object { $_ } | Sort-Object
+if ($LASTEXITCODE -ne 0) { throw 'could not list the container environment' }
+Write-Host "Container environment: $($names -join ', ')"
+$extra = $names | Where-Object { $_ -notin $allowed }
+if ($extra) { throw "Unexpected variables in the container: $($extra -join ', ')" }
+# Kernel filesystems, the tmpfs above, and the three files docker itself mounts read-only.
+$mounts = docker run @probe --entrypoint sh $Image -c 'awk ''$3 !~ /^(proc|sysfs|tmpfs|devpts|mqueue|cgroup2?|overlay)$/ && $2 !~ /^\/etc\/(hostname|hosts|resolv\.conf)$/'' /proc/mounts'
+if ($mounts) { throw "Unexpected mounts in the container:`n$($mounts -join "`n")" }
+$version = docker run @probe $Image --version
+Write-Host "dsh $version - isolation checked (no host mount, one secret)."
+if ($CheckOnly) { return }
 
 $key = [Environment]::GetEnvironmentVariable('DEEPSEEK_API_KEY', 'User')
 if (-not $key) { throw 'DEEPSEEK_API_KEY is not set in the user registry.' }
 $env:DEEPSEEK_API_KEY = $key
 Remove-Variable key
 $isolation = $sandbox + @('-e', 'DEEPSEEK_API_KEY')
-# What the image, docker and sh (PWD) put there, plus the one secret. Anything else stops the run.
-$allowed = 'PATH', 'HOSTNAME', 'HOME', 'NODE_VERSION', 'YARN_VERSION', 'DSH_TELEMETRY_DISABLED',
-    'NO_UPDATE_NOTIFIER', 'NPM_CONFIG_UPDATE_NOTIFIER', 'DSH_HOME', 'PWD', 'DEEPSEEK_API_KEY'
 
 try {
-    $names = docker run @isolation --entrypoint sh $Image -c 'env | cut -d= -f1' |
-        Where-Object { $_ } | Sort-Object
-    if ($LASTEXITCODE -ne 0) { throw 'could not list the container environment' }
-    Write-Host "Container environment: $($names -join ', ')"
-    $extra = $names | Where-Object { $_ -notin $allowed }
-    if ($extra) { throw "Unexpected variables in the container: $($extra -join ', ')" }
-    if ('DEEPSEEK_API_KEY' -notin $names) { throw 'DEEPSEEK_API_KEY did not reach the container' }
-    # Kernel filesystems, the tmpfs above, and the three files docker itself mounts read-only.
-    $mounts = docker run @isolation --entrypoint sh $Image -c 'awk ''$3 !~ /^(proc|sysfs|tmpfs|devpts|mqueue|cgroup2?|overlay)$/ && $2 !~ /^\/etc\/(hostname|hosts|resolv\.conf)$/'' /proc/mounts'
-    if ($mounts) { throw "Unexpected mounts in the container:`n$($mounts -join "`n")" }
-    $version = docker run @isolation $Image --version
-    Write-Host "dsh $version - isolation checked (no host mount, one secret)."
-    if ($CheckOnly) { return }
-
     $files = Get-ChildItem $prompts -Filter *.txt | Sort-Object Name
     # -Only a,b,c arrives as one string through pwsh -File.
     if ($Only) { $wanted = $Only -split ','; $files = $files | Where-Object { $_.BaseName -in $wanted } }
