@@ -4,7 +4,7 @@ category: "Table.Membership"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -34,6 +34,8 @@ Returns the row(s) position(s) from the `table` of the first occurrence of the l
 | `rows` | `list` | no |
 | `occurrence` | `nullable number` | yes |
 | `equationCriteria` | `any` | yes |
+
+**Executed examples (1):** [examples/table-membership/table-positionofany.md](../../examples/table-membership/table-positionofany.md)
 
 ## Examples (engine metadata — not verified here)
 

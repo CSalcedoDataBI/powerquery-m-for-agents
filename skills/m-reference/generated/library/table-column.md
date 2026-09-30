@@ -4,7 +4,7 @@ category: "Table.Column operations"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns the column of data specified by `column` from the table `table` as a lis
 |---|---|---|
 | `table` | `table` | no |
 | `column` | `text` | no |
+
+**Executed examples (1):** [examples/table-column-operations/table-column.md](../../examples/table-column-operations/table-column.md)
 
 ## Examples (engine metadata — not verified here)
 

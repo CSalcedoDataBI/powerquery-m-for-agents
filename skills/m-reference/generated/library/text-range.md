@@ -4,7 +4,7 @@ category: "Text.Extraction"
 returns: "nullable text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -26,6 +26,8 @@ An optional parameter, `count`, can be included to specify how many characters t
 | `text` | `nullable text` | no |
 | `offset` | `number` | no |
 | `count` | `nullable number` | yes |
+
+**Executed examples (1):** [examples/text-extraction/text-range.md](../../examples/text-extraction/text-range.md)
 
 ## Examples (engine metadata — not verified here)
 

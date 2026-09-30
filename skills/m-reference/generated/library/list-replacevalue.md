@@ -4,7 +4,7 @@ category: "List.Transformation functions"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -26,6 +26,8 @@ Searches a list of values, `list`, for the value `oldValue` and replaces each oc
 | `oldValue` | `any` | no |
 | `newValue` | `any` | no |
 | `replacer` | `function` | no |
+
+**Executed examples (1):** [examples/list-transformation-functions/list-replacevalue.md](../../examples/list-transformation-functions/list-replacevalue.md)
 
 ## Examples (engine metadata — not verified here)
 

@@ -4,7 +4,7 @@ category: "Table.Column operations"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -26,6 +26,8 @@ Duplicate the column named `columnName` to the table `table`. The values and typ
 | `columnName` | `text` | no |
 | `newColumnName` | `text` | no |
 | `columnType` | `nullable type` | yes |
+
+**Executed examples (1):** [examples/table-column-operations/table-duplicatecolumn.md](../../examples/table-column-operations/table-duplicatecolumn.md)
 
 ## Examples (engine metadata — not verified here)
 

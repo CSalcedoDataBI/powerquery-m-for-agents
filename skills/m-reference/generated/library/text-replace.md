@@ -4,7 +4,7 @@ category: "Text.Modification"
 returns: "nullable text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ Returns the result of replacing all occurrences of text value `old` in text valu
 | `text` | `nullable text` | no |
 | `old` | `text` | no |
 | `new` | `text` | no |
+
+**Executed examples (1):** [examples/text-modification/text-replace.md](../../examples/text-modification/text-replace.md)
 
 ## Examples (engine metadata — not verified here)
 

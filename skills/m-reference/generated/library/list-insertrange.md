@@ -4,7 +4,7 @@ category: "List.Selection"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -31,6 +31,8 @@ Returns a new list produced by inserting the values in `values` into `list` at `
 | `list` | `list` | no |
 | `index` | `number` | no |
 | `values` | `list` | no |
+
+**Executed examples (1):** [examples/list-selection/list-insertrange.md](../../examples/list-selection/list-insertrange.md)
 
 ## Examples (engine metadata — not verified here)
 

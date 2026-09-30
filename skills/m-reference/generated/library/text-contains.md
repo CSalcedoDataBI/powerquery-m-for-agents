@@ -4,7 +4,7 @@ category: "Text.Membership"
 returns: "nullable logical"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -38,6 +38,8 @@ All characters are treated literally. For example, "DR", " DR", "DR ", and " DR 
 | `text` | `nullable text` | no |
 | `substring` | `text` | no |
 | `comparer` | `nullable function` | yes |
+
+**Executed examples (1):** [examples/text-membership/text-contains.md](../../examples/text-membership/text-contains.md)
 
 ## Examples (engine metadata — not verified here)
 

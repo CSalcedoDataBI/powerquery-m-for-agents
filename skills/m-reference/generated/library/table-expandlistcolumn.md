@@ -4,7 +4,7 @@ category: "Table.Transformation"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Given a `table` where `column` contains a list of values, splits the list into a
 |---|---|---|
 | `table` | `table` | no |
 | `column` | `text` | no |
+
+**Executed examples (1):** [examples/table-transformation/table-expandlistcolumn.md](../../examples/table-transformation/table-expandlistcolumn.md)
 
 ## Examples (engine metadata — not verified here)
 

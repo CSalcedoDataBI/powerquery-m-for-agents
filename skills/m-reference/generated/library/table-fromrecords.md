@@ -4,7 +4,7 @@ category: "Table.Table construction"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -37,6 +37,8 @@ Using `MissingField.Ignore` in this parameter produces an error.
 | `records` | `list` | no |
 | `columns` | `any` | yes |
 | `missingField` | `nullable number` | yes |
+
+**Executed examples (1):** [examples/table-table-construction/table-fromrecords.md](../../examples/table-table-construction/table-fromrecords.md)
 
 ## Examples (engine metadata — not verified here)
 

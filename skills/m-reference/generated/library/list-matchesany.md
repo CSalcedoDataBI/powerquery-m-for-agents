@@ -4,7 +4,7 @@ category: "List.Selection"
 returns: "logical"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -28,6 +28,8 @@ Returns `true` if the condition function is satisfied by any of the values in th
 |---|---|---|
 | `list` | `list` | no |
 | `condition` | `function` | no |
+
+**Executed examples (1):** [examples/list-selection/list-matchesany.md](../../examples/list-selection/list-matchesany.md)
 
 ## Examples (engine metadata — not verified here)
 

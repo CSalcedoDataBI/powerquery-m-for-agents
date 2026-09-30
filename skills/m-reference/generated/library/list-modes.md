@@ -4,7 +4,7 @@ category: "List.Averages"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ An optional comparison criteria value, `equationCriteria`, can be specified to c
 |---|---|---|
 | `list` | `list` | no |
 | `equationCriteria` | `any` | yes |
+
+**Executed examples (1):** [examples/list-averages/list-modes.md](../../examples/list-averages/list-modes.md)
 
 ## Examples (engine metadata — not verified here)
 

@@ -4,7 +4,7 @@ category: "Text.Extraction"
 returns: "nullable text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns the first `count` characters of `text` as a text value.
 |---|---|---|
 | `text` | `nullable text` | no |
 | `count` | `number` | no |
+
+**Executed examples (1):** [examples/text-extraction/text-start.md](../../examples/text-extraction/text-start.md)
 
 ## Examples (engine metadata — not verified here)
 

@@ -4,7 +4,7 @@ category: "Table.Information"
 returns: "logical"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Indicates whether the `table` contains any rows. Returns `true` if there are no 
 | Name | Type | Optional |
 |---|---|---|
 | `table` | `table` | no |
+
+**Executed examples (1):** [examples/table-information/table-isempty.md](../../examples/table-information/table-isempty.md)
 
 ## Examples (engine metadata — not verified here)
 

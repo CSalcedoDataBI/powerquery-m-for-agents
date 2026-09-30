@@ -4,7 +4,7 @@ category: "Text.Transformations"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -30,6 +30,8 @@ The `endIndex` is similar, except that indexing is done relative to the `startIn
 | `endDelimiter` | `text` | no |
 | `startIndex` | `any` | yes |
 | `endIndex` | `any` | yes |
+
+**Executed examples (1):** [examples/text-transformations/text-betweendelimiters.md](../../examples/text-transformations/text-betweendelimiters.md)
 
 ## Examples (engine metadata — not verified here)
 

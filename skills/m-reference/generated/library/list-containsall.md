@@ -4,7 +4,7 @@ category: "List.Membership functions"
 returns: "logical"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -31,6 +31,8 @@ Indicates whether the list includes all the values from another list. Returns `t
 | `list` | `list` | no |
 | `values` | `list` | no |
 | `equationCriteria` | `any` | yes |
+
+**Executed examples (1):** [examples/list-membership-functions/list-containsall.md](../../examples/list-membership-functions/list-containsall.md)
 
 ## Examples (engine metadata — not verified here)
 

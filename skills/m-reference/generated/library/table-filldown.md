@@ -4,7 +4,7 @@ category: "Table.Transformation"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns a table from the `table` specified where the value of a previous cell is
 |---|---|---|
 | `table` | `table` | no |
 | `columns` | `list` | no |
+
+**Executed examples (1):** [examples/table-transformation/table-filldown.md](../../examples/table-transformation/table-filldown.md)
 
 ## Examples (engine metadata — not verified here)
 

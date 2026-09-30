@@ -4,7 +4,7 @@ category: "Table.Information"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,3 +23,5 @@ Returns information about how a table is partitioned. A table is returned where 
 | Name | Type | Optional |
 |---|---|---|
 | `table` | `table` | no |
+
+**Executed examples (1):** [examples/table-information/table-partitionvalues.md](../../examples/table-information/table-partitionvalues.md)

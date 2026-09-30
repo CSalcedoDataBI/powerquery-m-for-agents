@@ -4,7 +4,7 @@ category: "List.Transformation functions"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,3 +25,5 @@ the source list, the next element of the output list is a list containing the ne
 |---|---|---|
 | `list` | `list` | no |
 | `pageSize` | `number` | no |
+
+**Executed examples (1):** [examples/list-transformation-functions/list-split.md](../../examples/list-transformation-functions/list-split.md)

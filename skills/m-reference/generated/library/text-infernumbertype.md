@@ -4,7 +4,7 @@ category: "Text"
 returns: "type"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,3 +24,5 @@ Infers the granular number type (Int64.Type, Double.Type, and so on) of `text`. 
 |---|---|---|
 | `text` | `text` | no |
 | `culture` | `nullable text` | yes |
+
+**Executed examples (1):** [examples/text/text-infernumbertype.md](../../examples/text/text-infernumbertype.md)

@@ -4,7 +4,7 @@ category: "Table.Column operations"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns a list with the names of the columns from table `table` that match the t
 |---|---|---|
 | `table` | `table` | no |
 | `listOfTypes` | `list` | no |
+
+**Executed examples (1):** [examples/table-column-operations/table-columnsoftype.md](../../examples/table-column-operations/table-columnsoftype.md)
 
 ## Examples (engine metadata — not verified here)
 

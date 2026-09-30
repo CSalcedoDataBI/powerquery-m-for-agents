@@ -4,7 +4,7 @@ category: "Table.Transformation"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -34,6 +34,8 @@ Given the `column` of records in the input `table`, creates a table with a colum
 | `column` | `text` | no |
 | `fieldNames` | `list` | no |
 | `newColumnNames` | `nullable list` | yes |
+
+**Executed examples (1):** [examples/table-transformation/table-expandrecordcolumn.md](../../examples/table-transformation/table-expandrecordcolumn.md)
 
 ## Examples (engine metadata — not verified here)
 

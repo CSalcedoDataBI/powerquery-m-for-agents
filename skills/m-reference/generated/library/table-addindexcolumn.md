@@ -4,7 +4,7 @@ category: "Table.Transformation"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -28,6 +28,8 @@ An optional value, `initialValue`, the initial index value. An optional value, `
 | `initialValue` | `nullable number` | yes |
 | `increment` | `nullable number` | yes |
 | `columnType` | `nullable type` | yes |
+
+**Executed examples (1):** [examples/table-transformation/table-addindexcolumn.md](../../examples/table-transformation/table-addindexcolumn.md)
 
 ## Examples (engine metadata — not verified here)
 

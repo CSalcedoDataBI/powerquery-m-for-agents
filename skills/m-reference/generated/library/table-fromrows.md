@@ -4,7 +4,7 @@ category: "Table.Table construction"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Creates a table from the list `rows` where each element of the list is an inner 
 |---|---|---|
 | `rows` | `list` | no |
 | `columns` | `any` | yes |
+
+**Executed examples (1):** [examples/table-table-construction/table-fromrows.md](../../examples/table-table-construction/table-fromrows.md)
 
 ## Examples (engine metadata — not verified here)
 

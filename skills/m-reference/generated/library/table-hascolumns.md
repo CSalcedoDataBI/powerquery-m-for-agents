@@ -4,7 +4,7 @@ category: "Table.Column operations"
 returns: "logical"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Indicates whether the `table` contains the specified column(s), `columns`. Retur
 |---|---|---|
 | `table` | `table` | no |
 | `columns` | `any` | no |
+
+**Executed examples (1):** [examples/table-column-operations/table-hascolumns.md](../../examples/table-column-operations/table-hascolumns.md)
 
 ## Examples (engine metadata — not verified here)
 

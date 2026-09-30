@@ -4,7 +4,7 @@ category: "Text.Membership"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -38,6 +38,8 @@ The following built-in comparers are available in the formula language:
 | `substring` | `text` | no |
 | `occurrence` | `nullable number` | yes |
 | `comparer` | `nullable function` | yes |
+
+**Executed examples (1):** [examples/text-membership/text-positionof.md](../../examples/text-membership/text-positionof.md)
 
 ## Examples (engine metadata — not verified here)
 

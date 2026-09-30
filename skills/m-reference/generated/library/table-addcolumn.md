@@ -3,8 +3,8 @@ name: "Table.AddColumn"
 category: "Table.Transformation"
 returns: "table"
 hosts: ["desktop"]
-notes: false
-examples: 0
+notes: true
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -26,6 +26,10 @@ Adds a column named `newColumnName` to the table `table`. The values for the col
 | `newColumnName` | `text` | no |
 | `columnGenerator` | `function` | no |
 | `columnType` | `nullable type` | yes |
+
+**Field note:** [`notes/table-addcolumn.md`](../../notes/table-addcolumn.md)
+
+**Executed examples (1):** [examples/table-transformation/table-addcolumn.md](../../examples/table-transformation/table-addcolumn.md)
 
 ## Examples (engine metadata — not verified here)
 

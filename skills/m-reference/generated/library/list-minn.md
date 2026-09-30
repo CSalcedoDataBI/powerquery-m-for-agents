@@ -4,7 +4,7 @@ category: "List.Ordering"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -33,6 +33,8 @@ The parameter, `countOrCondition`, specifies the number of values to return or a
 | `countOrCondition` | `any` | no |
 | `comparisonCriteria` | `any` | yes |
 | `includeNulls` | `nullable logical` | yes |
+
+**Executed examples (1):** [examples/list-ordering/list-minn.md](../../examples/list-ordering/list-minn.md)
 
 ## Examples (engine metadata — not verified here)
 

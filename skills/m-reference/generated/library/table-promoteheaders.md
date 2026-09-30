@@ -4,7 +4,7 @@ category: "Table.Column operations"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -29,6 +29,8 @@ For values that cannot be converted to text, a default column name will be used.
 |---|---|---|
 | `table` | `table` | no |
 | `options` | `nullable record` | yes |
+
+**Executed examples (1):** [examples/table-column-operations/table-promoteheaders.md](../../examples/table-column-operations/table-promoteheaders.md)
 
 ## Examples (engine metadata — not verified here)
 

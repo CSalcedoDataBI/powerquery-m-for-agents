@@ -4,7 +4,7 @@ category: "Table.Row operations"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,3 +24,5 @@ Returns the first column of the first row of the table `table` or a specified de
 |---|---|---|
 | `table` | `table` | no |
 | `default` | `any` | yes |
+
+**Executed examples (1):** [examples/table-row-operations/table-firstvalue.md](../../examples/table-row-operations/table-firstvalue.md)

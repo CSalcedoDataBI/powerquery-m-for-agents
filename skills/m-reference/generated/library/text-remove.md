@@ -4,7 +4,7 @@ category: "Text.Modification"
 returns: "nullable text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns a copy of the text value `text` with all the characters from `removeChar
 |---|---|---|
 | `text` | `nullable text` | no |
 | `removeChars` | `any` | no |
+
+**Executed examples (1):** [examples/text-modification/text-remove.md](../../examples/text-modification/text-remove.md)
 
 ## Examples (engine metadata — not verified here)
 

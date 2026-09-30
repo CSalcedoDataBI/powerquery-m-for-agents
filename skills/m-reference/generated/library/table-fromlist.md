@@ -4,7 +4,7 @@ category: "Table.Table construction"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -27,6 +27,8 @@ Converts a list, `list` into a table by applying the optional splitting function
 | `columns` | `any` | yes |
 | `default` | `any` | yes |
 | `extraValues` | `nullable number` | yes |
+
+**Executed examples (1):** [examples/table-table-construction/table-fromlist.md](../../examples/table-table-construction/table-fromlist.md)
 
 ## Examples (engine metadata — not verified here)
 

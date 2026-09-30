@@ -4,7 +4,7 @@ category: "Table.Transformation"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -29,6 +29,8 @@ This function behaves identically to `Table.NestedJoin` with `joinKind` set to `
 | `table2` | `any` | no |
 | `key2` | `any` | no |
 | `newColumnName` | `text` | no |
+
+**Executed examples (1):** [examples/table-transformation/table-addjoincolumn.md](../../examples/table-transformation/table-addjoincolumn.md)
 
 ## Examples (engine metadata — not verified here)
 

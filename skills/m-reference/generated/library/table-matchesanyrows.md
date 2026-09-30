@@ -4,7 +4,7 @@ category: "Table.Row operations"
 returns: "logical"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Indicates whether any the rows in the `table` match the given `condition`. Retur
 |---|---|---|
 | `table` | `table` | no |
 | `condition` | `function` | no |
+
+**Executed examples (1):** [examples/table-row-operations/table-matchesanyrows.md](../../examples/table-row-operations/table-matchesanyrows.md)
 
 ## Examples (engine metadata — not verified here)
 

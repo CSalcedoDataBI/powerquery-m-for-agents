@@ -4,7 +4,7 @@ category: "Table.Column operations"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -26,6 +26,8 @@ Translates all columns other than a specified set into attribute-value pairs, co
 | `pivotColumns` | `list` | no |
 | `attributeColumn` | `text` | no |
 | `valueColumn` | `text` | no |
+
+**Executed examples (1):** [examples/table-column-operations/table-unpivotothercolumns.md](../../examples/table-column-operations/table-unpivotothercolumns.md)
 
 ## Examples (engine metadata — not verified here)
 

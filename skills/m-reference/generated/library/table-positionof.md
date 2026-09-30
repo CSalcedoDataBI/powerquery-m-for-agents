@@ -4,7 +4,7 @@ category: "Table.Membership"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -34,6 +34,8 @@ Returns the row position of the first occurrence of the `row` in the `table` spe
 | `row` | `record` | no |
 | `occurrence` | `any` | yes |
 | `equationCriteria` | `any` | yes |
+
+**Executed examples (1):** [examples/table-membership/table-positionof.md](../../examples/table-membership/table-positionof.md)
 
 ## Examples (engine metadata — not verified here)
 

@@ -4,7 +4,7 @@ category: "Table.Other"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -35,6 +35,8 @@ buffered but you just want to prevent downstream folding, use `Table.StopFolding
 |---|---|---|
 | `table` | `table` | no |
 | `options` | `nullable record` | yes |
+
+**Executed examples (1):** [examples/table-other/table-buffer.md](../../examples/table-other/table-buffer.md)
 
 ## Examples (engine metadata — not verified here)
 

@@ -4,7 +4,7 @@ category: "Table.Membership"
 returns: "logical"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ An optional parameter, `comparisonCriteria`, specifies which columns of the tabl
 |---|---|---|
 | `table` | `table` | no |
 | `comparisonCriteria` | `any` | yes |
+
+**Executed examples (1):** [examples/table-membership/table-isdistinct.md](../../examples/table-membership/table-isdistinct.md)
 
 ## Examples (engine metadata — not verified here)
 

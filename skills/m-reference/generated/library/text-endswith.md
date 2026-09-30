@@ -4,7 +4,7 @@ category: "Text.Membership"
 returns: "nullable logical"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -35,6 +35,8 @@ The following built-in comparers are available in the formula language:
 | `text` | `nullable text` | no |
 | `substring` | `text` | no |
 | `comparer` | `nullable function` | yes |
+
+**Executed examples (1):** [examples/text-membership/text-endswith.md](../../examples/text-membership/text-endswith.md)
 
 ## Examples (engine metadata — not verified here)
 

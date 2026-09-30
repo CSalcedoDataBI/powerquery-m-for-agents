@@ -4,7 +4,7 @@ category: "List.Selection"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ If the list is empty, the function returns null unless an optional `default` is 
 |---|---|---|
 | `list` | `list` | no |
 | `default` | `any` | yes |
+
+**Executed examples (1):** [examples/list-selection/list-singleordefault.md](../../examples/list-selection/list-singleordefault.md)
 
 ## Examples (engine metadata — not verified here)
 

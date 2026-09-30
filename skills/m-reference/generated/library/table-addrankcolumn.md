@@ -4,7 +4,7 @@ category: "Table.Ordering"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -27,6 +27,8 @@ The RankKind option in `options` can be used by advanced users to pick a more-sp
 | `newColumnName` | `text` | no |
 | `comparisonCriteria` | `any` | no |
 | `options` | `nullable record` | yes |
+
+**Executed examples (1):** [examples/table-ordering/table-addrankcolumn.md](../../examples/table-ordering/table-addrankcolumn.md)
 
 ## Examples (engine metadata — not verified here)
 

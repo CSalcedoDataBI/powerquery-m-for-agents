@@ -4,7 +4,7 @@ category: "List.Generators"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -31,6 +31,8 @@ Returns a list of numbers given an initial value, count, and optional increment 
 | `start` | `number` | no |
 | `count` | `number` | no |
 | `increment` | `nullable number` | yes |
+
+**Executed examples (1):** [examples/list-generators/list-numbers.md](../../examples/list-generators/list-numbers.md)
 
 ## Examples (engine metadata — not verified here)
 

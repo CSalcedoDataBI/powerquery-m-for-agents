@@ -4,7 +4,7 @@ category: "Table.Transformation"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ Adds a key to `table`, where `columns` is the list of column names that define t
 | `table` | `table` | no |
 | `columns` | `list` | no |
 | `isPrimary` | `logical` | no |
+
+**Executed examples (1):** [examples/table-transformation/table-addkey.md](../../examples/table-transformation/table-addkey.md)
 
 ## Examples (engine metadata — not verified here)
 

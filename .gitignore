@@ -31,3 +31,6 @@ skills/m-reference/.publish-*/
 # Agent harness notes. They record what is true of the MACHINE a session ran on —
 # assembly paths, which refresh path leaves a banner — not of this repository.
 /.claude/
+
+# Throwaway PBIP and results of lab/runner/run_examples.py; rebuilt on every run.
+/lab/runner/build/

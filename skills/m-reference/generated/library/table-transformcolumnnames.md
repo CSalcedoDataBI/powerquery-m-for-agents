@@ -4,7 +4,7 @@ category: "Table.Column operations"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -37,6 +37,8 @@ The following built-in comparers are available in the formula language:
 | `table` | `table` | no |
 | `nameGenerator` | `function` | no |
 | `options` | `nullable record` | yes |
+
+**Executed examples (1):** [examples/table-column-operations/table-transformcolumnnames.md](../../examples/table-column-operations/table-transformcolumnnames.md)
 
 ## Examples (engine metadata — not verified here)
 

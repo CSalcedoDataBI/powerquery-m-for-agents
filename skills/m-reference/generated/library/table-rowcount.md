@@ -4,7 +4,7 @@ category: "Table.Information"
 returns: "number"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Returns the number of rows in the `table`.
 | Name | Type | Optional |
 |---|---|---|
 | `table` | `table` | no |
+
+**Executed examples (1):** [examples/table-information/table-rowcount.md](../../examples/table-information/table-rowcount.md)
 
 ## Examples (engine metadata — not verified here)
 

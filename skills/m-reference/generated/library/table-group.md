@@ -4,7 +4,7 @@ category: "Table.Transformation"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -36,6 +36,8 @@ This function does not guarantee the ordering of the rows it returns.
 | `aggregatedColumns` | `list` | no |
 | `groupKind` | `nullable number` | yes |
 | `comparer` | `nullable function` | yes |
+
+**Executed examples (1):** [examples/table-transformation/table-group.md](../../examples/table-transformation/table-group.md)
 
 ## Examples (engine metadata — not verified here)
 

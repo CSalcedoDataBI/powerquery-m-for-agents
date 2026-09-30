@@ -4,7 +4,7 @@ category: "Table.Row operations"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -35,6 +35,8 @@ The `hash` function is applied to the value of the `column` row to obtain a hash
 | `column` | `text` | no |
 | `groups` | `number` | no |
 | `hash` | `function` | no |
+
+**Executed examples (1):** [examples/table-row-operations/table-partition.md](../../examples/table-row-operations/table-partition.md)
 
 ## Examples (engine metadata — not verified here)
 

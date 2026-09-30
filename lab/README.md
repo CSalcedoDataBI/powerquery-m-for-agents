@@ -1,5 +1,34 @@
 # Lab
 
-Planned (spec §7): runnable `.pbip` scenarios with data from *Enter Data* or small CSV files,
-no external sources. Every field note in `skills/m-reference/notes/` carries the query it
-makes a claim about and the value the engine returned here.
+Everything here runs Power Query M in Power BI Desktop's own engine, so the pages can quote
+what the engine returned instead of what we expect. No external sources: data comes from
+`#table` literals.
+
+| Folder | What it runs |
+|---|---|
+| `shared-export/` | `export_shared.pq` in a generated PBIP, to export `#shared` → `exports/*.json` |
+| `runner/` | Every ```` ```m ```` block under `skills/`, writing each result below its block |
+
+## The runner
+
+`run_examples.py` gathers the blocks into `runner.pq`, which renders any value as an M literal
+(tables with their column types, errors as `error: <Reason>: <Message>`). A throwaway PBIP in
+`runner/build/` (ignored by git) has one partition that reads that query from a file and
+evaluates it with `Expression.Evaluate` over `#shared`.
+
+```bash
+python lab/runner/run_examples.py --open                 # once: opens Desktop, leaves it open
+python lab/runner/run_examples.py --port <port> --write  # every block, each in its own refresh
+python lab/runner/run_examples.py --port <port> --check  # exit 1 if any written result changed
+```
+
+Each block runs in its **own refresh**. Evaluated together in one refresh, blocks leaked into
+each other: a table type from one block showed up in another block that used the same
+`#table` literal with different column-name casing (2026-09-29). One refresh per block
+removes that dependence; two full runs then return identical results.
+
+Without `--port`, a run opens and closes its own Desktop and evaluates everything in one
+refresh: fine for a quick look, and it refuses `--write`/`--check` unless `--allow-batch`
+says so on purpose.
+
+`--only <text>[,<text>]` limits a run to the pages whose path contains any of the texts.

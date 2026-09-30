@@ -3,7 +3,7 @@ name: "Number.FromText"
 category: "Number.Conversion and formatting"
 returns: "nullable number"
 hosts: ["desktop"]
-notes: false
+notes: true
 examples: 0
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
@@ -28,6 +28,8 @@ Returns a `number` value from the given text value, `text`.
 |---|---|---|
 | `text` | `nullable text` | no |
 | `culture` | `nullable text` | yes |
+
+**Field note:** [`notes/number-fromtext.md`](../../notes/number-fromtext.md)
 
 ## Examples (engine metadata — not verified here)
 

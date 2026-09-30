@@ -4,7 +4,7 @@ category: "List.Transformation functions"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -30,6 +30,8 @@ Returns a list that removes the last `countOrCondition` elements from the end of
 |---|---|---|
 | `list` | `list` | no |
 | `countOrCondition` | `any` | yes |
+
+**Executed examples (1):** [examples/list-transformation-functions/list-removelastn.md](../../examples/list-transformation-functions/list-removelastn.md)
 
 ## Examples (engine metadata — not verified here)
 

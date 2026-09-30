@@ -187,7 +187,7 @@ Se añadirán al llegar su contenido: `check_doc_claims`, `check_examples` con p
 | 1 | Licencia de los textos de `Documentation.*`: ¿citar o redactar? | Liberar el repo |
 | 2 | ¿PQTest.exe evalúa `export_shared.pq` sin Desktop? | Automatizar el export |
 | 3 | ¿Qué hosts se exportan en la v1? (propuesta: Desktop + Excel) | Flag ⌂ |
-| 4 | Páginas conceptuales: sin upstream, ¿de dónde salen? (propuesta: a mano, cortas, con ejemplo ejecutado) | `generated/concepts.md` |
+| 4 | ✅ Páginas conceptuales: decidido (2026-09-29) — a mano, cortas, cada afirmación con un bloque ejecutado en el lab. Van en `concepts.md` + `concepts/`, no en `generated/` (el sync reemplaza `generated/` entero). | — |
 | 5 | Repos candidatos para `m-lib` | Fase 2 |
 
 | 6 | ✅ **Constantes** (`GroupKind.Local`, `JoinKind.*`, `Occurrence.*`): decidido (2026-09-29) — el export también toma los miembros de `#shared` que no son funciones, y `sync_shared.py` genera `constants.md` (nombre, tipo, valor, resumen; sin cards). | — |
@@ -229,6 +229,22 @@ Se añadirán al llegar su contenido: `check_doc_claims`, `check_examples` con p
   El resto de las 275 sin categoría (`Value.ResourceExpression`, una de `Cdm`) comparte
   prefijo con la biblioteca. `catalog.md` pasa de 106.079 a 81.257 bytes.
 
+### Runner de ejemplos (2026-09-29) — lo que enseñó
+
+- `lab/runner/` ejecuta cada bloque ```` ```m ```` con `Expression.Evaluate` sobre `#shared`
+  en Desktop y escribe el resultado como literal M. Con Desktop abierto una sola vez (el MCP
+  `powerbi-modeling` localiza la instancia y refresca), todos los bloques corren en ~35 s.
+- **Los bloques se contaminaban entre sí** evaluados en un mismo refresco: el tipo de tabla de
+  un bloque aparecía en otro que usaba el mismo literal `#table` con los nombres de columna en
+  otra caja (`Name` frente a `NAME`). Se reprodujo también entre **dos consultas distintas de
+  un modelo** refrescadas juntas, pero no de forma determinista. El runner evalúa ahora cada
+  bloque en su propio refresco; dos corridas completas dan resultados idénticos. Queda abierto
+  investigar el efecto en modelos reales (issue aparte).
+- El motor desmintió dos afirmaciones que se escribieron de memoria: `List.Buffer` **no**
+  lanza los errores de sus elementos (los guarda como valores), e `Int64.Type = type number`
+  es `false` aunque `Type.Is` diga `true`. Y confirmó la del campo: `Table.Distinct` tras
+  `Table.Sort` sin `Table.Buffer` conserva la fila del orden **original**, incluso en memoria.
+
 ---
 
 ## 10. Plan por fases
@@ -238,5 +254,6 @@ Se añadirán al llegar su contenido: `check_doc_claims`, `check_examples` con p
    segundo host. §9.6 y §9.7 decididos el 2026-09-29.
 3. **Eval A/B** con 4 modelos → tabla del README.
 4. **`m-folding`** completo, con lab.
-5. Field notes y ejemplos por categorías completas (Text, List, Table).
+5. ✅ Field notes y ejemplos por categorías completas (Text, List, Table) — 2026-09-29, con
+   el runner de `lab/runner/`. Faltan las demás categorías.
 6. Pasar a público.

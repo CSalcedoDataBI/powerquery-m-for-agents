@@ -4,7 +4,7 @@ category: "Table.Row operations"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -28,6 +28,8 @@ Returns the first row(s) of the table `table`, depending on the value of `countO
 |---|---|---|
 | `table` | `table` | no |
 | `countOrCondition` | `any` | no |
+
+**Executed examples (1):** [examples/table-row-operations/table-firstn.md](../../examples/table-row-operations/table-firstn.md)
 
 ## Examples (engine metadata — not verified here)
 

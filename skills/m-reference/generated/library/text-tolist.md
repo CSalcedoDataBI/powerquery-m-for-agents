@@ -4,7 +4,7 @@ category: "Text.Conversions from and to text"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Returns a list of character values from the given text value `text`.
 | Name | Type | Optional |
 |---|---|---|
 | `text` | `text` | no |
+
+**Executed examples (1):** [examples/text-conversions-from-and-to-text/text-tolist.md](../../examples/text-conversions-from-and-to-text/text-tolist.md)
 
 ## Examples (engine metadata — not verified here)
 

@@ -4,7 +4,7 @@ category: "Table.Information"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -70,3 +70,5 @@ The description of the column.
 | Name | Type | Optional |
 |---|---|---|
 | `table` | `table` | no |
+
+**Executed examples (1):** [examples/table-information/table-schema.md](../../examples/table-information/table-schema.md)

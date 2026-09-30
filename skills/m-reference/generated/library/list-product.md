@@ -4,7 +4,7 @@ category: "List.Numerics"
 returns: "nullable number"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns the product of the non-null numbers in the list, `numbersList`. Returns 
 |---|---|---|
 | `numbersList` | `list` | no |
 | `precision` | `nullable number` | yes |
+
+**Executed examples (1):** [examples/list-numerics/list-product.md](../../examples/list-numerics/list-product.md)
 
 ## Examples (engine metadata — not verified here)
 

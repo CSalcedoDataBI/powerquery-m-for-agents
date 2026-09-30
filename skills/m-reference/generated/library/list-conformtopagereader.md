@@ -4,7 +4,7 @@ category: "List.Transformation functions"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,3 +24,5 @@ This function is intended for internal use only.
 |---|---|---|
 | `list` | `list` | no |
 | `options` | `nullable record` | yes |
+
+**Executed examples (1):** [examples/list-transformation-functions/list-conformtopagereader.md](../../examples/list-transformation-functions/list-conformtopagereader.md)

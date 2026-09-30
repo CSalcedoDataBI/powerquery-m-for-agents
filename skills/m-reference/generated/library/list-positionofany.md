@@ -4,7 +4,7 @@ category: "List.Membership functions"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -34,6 +34,8 @@ Returns the offset at which an item from the specified list of values appears in
 | `values` | `list` | no |
 | `occurrence` | `nullable number` | yes |
 | `equationCriteria` | `any` | yes |
+
+**Executed examples (1):** [examples/list-membership-functions/list-positionofany.md](../../examples/list-membership-functions/list-positionofany.md)
 
 ## Examples (engine metadata — not verified here)
 

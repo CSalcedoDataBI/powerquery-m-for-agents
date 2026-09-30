@@ -4,7 +4,7 @@ category: "List.Transformation functions"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -26,6 +26,8 @@ Replaces `count` values in the `list` with the list `replaceWith`, starting at s
 | `index` | `number` | no |
 | `count` | `number` | no |
 | `replaceWith` | `list` | no |
+
+**Executed examples (1):** [examples/list-transformation-functions/list-replacerange.md](../../examples/list-transformation-functions/list-replacerange.md)
 
 ## Examples (engine metadata — not verified here)
 

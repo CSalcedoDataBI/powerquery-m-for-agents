@@ -4,7 +4,7 @@ category: "Table.Column operations"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -31,6 +31,8 @@ Returns the `table` with only the specified `columns`.
 | `table` | `table` | no |
 | `columns` | `any` | no |
 | `missingField` | `nullable number` | yes |
+
+**Executed examples (1):** [examples/table-column-operations/table-selectcolumns.md](../../examples/table-column-operations/table-selectcolumns.md)
 
 ## Examples (engine metadata — not verified here)
 

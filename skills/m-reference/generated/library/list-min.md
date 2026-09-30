@@ -4,7 +4,7 @@ category: "List.Ordering"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -27,6 +27,8 @@ An optional comparisonCriteria value, `comparisonCriteria`, may be specified to 
 | `default` | `any` | yes |
 | `comparisonCriteria` | `any` | yes |
 | `includeNulls` | `nullable logical` | yes |
+
+**Executed examples (1):** [examples/list-ordering/list-min.md](../../examples/list-ordering/list-min.md)
 
 ## Examples (engine metadata — not verified here)
 

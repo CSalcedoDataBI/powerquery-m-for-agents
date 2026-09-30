@@ -4,7 +4,7 @@ category: "Table.Membership"
 returns: "logical"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -26,6 +26,8 @@ An optional parameter `equationCriteria` may be specified to control comparison 
 | `table` | `table` | no |
 | `row` | `record` | no |
 | `equationCriteria` | `any` | yes |
+
+**Executed examples (1):** [examples/table-membership/table-contains.md](../../examples/table-membership/table-contains.md)
 
 ## Examples (engine metadata — not verified here)
 

@@ -4,7 +4,7 @@ category: "List.Information"
 returns: "logical"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Returns `true` if the list, `list`, contains no values (length 0). If the list c
 | Name | Type | Optional |
 |---|---|---|
 | `list` | `list` | no |
+
+**Executed examples (1):** [examples/list-information/list-isempty.md](../../examples/list-information/list-isempty.md)
 
 ## Examples (engine metadata — not verified here)
 
