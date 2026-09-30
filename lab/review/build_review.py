@@ -178,7 +178,12 @@ def example_queries(name, functions):
         for b, block in enumerate(blocks):
             query = f"{fn} ({b + 1})"
             order.append(query)
-            code = "\n".join("\t\t" + line for line in block.code.splitlines() if line.strip())
+            # TMDL cannot hold a blank line inside an expression, and dropping one could change a
+            # multi-line text literal. No block has one today; if one ever does, stop and say so.
+            lines = block.code.splitlines()
+            if any(not line.strip() for line in lines):
+                raise SystemExit(f"{fn} block {b + 1} has a blank line; remove it from its page")
+            code = "\n".join("\t\t" + line for line in lines)
             expressions.append(
                 f"expression {quoted(query)} =\n{code}\n"
                 f"\tlineageTag: {guid(name, 'query', query)}\n"
