@@ -34,3 +34,7 @@ skills/m-reference/.publish-*/
 
 # Throwaway PBIP and results of lab/runner/run_examples.py; rebuilt on every run.
 /lab/runner/build/
+
+# Prompts, raw answers and measurements of lab/drafting/ runs. Pages that pass review are
+# copied into skills/ by pilot.py collect; nothing else leaves this folder.
+/lab/drafting/out/

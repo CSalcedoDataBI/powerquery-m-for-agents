@@ -1,0 +1,7 @@
+# The build needs only these files. Everything else here - out/ above all, with prompts,
+# answers and logs - stays out of the build context.
+*
+!Dockerfile
+!entrypoint.sh
+!privacy.patch.yml
+!capture.mjs

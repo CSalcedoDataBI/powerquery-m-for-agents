@@ -1476,7 +1476,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "CCHTagetik.Contents",
@@ -2196,7 +2196,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "CustomerInsights.Contents",
@@ -3861,7 +3861,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DeltaLake.Metadata",
@@ -4011,7 +4011,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Dremio.Databases",
@@ -5571,7 +5571,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Int32.From",
@@ -5586,7 +5586,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 4
   },
   {
    "name": "Int64.From",
@@ -5601,7 +5601,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Int8.From",
@@ -5616,7 +5616,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "IntersystemsHealthInsight.Database",
@@ -7566,7 +7566,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Number.Acos",
@@ -7731,7 +7731,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 4
   },
   {
    "name": "Number.Cos",
@@ -7776,7 +7776,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Number.Factorial",
@@ -7791,7 +7791,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Number.From",
@@ -7806,7 +7806,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Number.FromText",
@@ -7821,7 +7821,7 @@
    ],
    "partialHosts": false,
    "notes": true,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Number.IntegerDivide",
@@ -7836,7 +7836,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 4
   },
   {
    "name": "Number.IsEven",
@@ -7896,7 +7896,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Number.Log",
@@ -7911,7 +7911,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Number.Log10",
@@ -7926,7 +7926,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Number.Mod",
@@ -7941,7 +7941,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Number.Permutations",
@@ -7956,7 +7956,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Number.Power",
@@ -7971,7 +7971,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Number.Random",
@@ -8091,7 +8091,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Number.Sin",
@@ -8136,7 +8136,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Number.Tan",
@@ -8181,7 +8181,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "OData.Feed",
@@ -8421,7 +8421,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "PlanviewEnterprise.CallQueryService",
@@ -9246,7 +9246,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "SingleStoreODBC.Contents",
@@ -10431,7 +10431,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 0
   },
   {
    "name": "Table.FindText",

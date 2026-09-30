@@ -9,6 +9,10 @@
   3. No invented names: every `Prefix.Name` in a page is a function or constant the export
      has, or a name the engine itself printed in some result (an error reason such as
      `Expression.Error`, a metadata field such as `Documentation.Name`).
+  4. No block reaches outside the engine: no #shared/#sections, no data source, connector or
+     Expression.Evaluate, nothing that reads the machine's clock, zone or culture
+     (m_blocks.unsafe_calls). The runner evaluates every block on the
+     machine of whoever runs it, so a page from a pull request is code run there.
 
   python scripts/check_examples.py
 """
@@ -36,9 +40,6 @@ REASON_RE = re.compile(
     r'|#"([A-Za-z][A-Za-z0-9]*\.[A-Za-z][A-Za-z0-9]*)" = ')
 
 
-STRING_RE = re.compile(r'"(?:[^"]|"")*"')
-
-
 def names_in(text, prefixes):
     found = set(NAME_RE.findall(text))
     found |= {n for n in LOOSE_RE.findall(text) if n.split(".", 1)[0] in prefixes}
@@ -46,10 +47,13 @@ def names_in(text, prefixes):
 
 
 def code_names(code):
-    """Every a.b token in M code outside text literals. M has no other use for a dot between
-    identifiers, so each one is a library name - including a misspelled lowercase prefix,
-    which the prose check cannot tell from a file name."""
-    return set(LOOSE_RE.findall(STRING_RE.sub('""', code)))
+    """Every a.b token in M code outside text literals and comments, and every quoted
+    identifier shaped like one (#"Text.Upper" is Text.Upper). M has no other use for a dot
+    between identifiers, so each one is a library name - including a misspelled lowercase
+    prefix, which the prose check cannot tell from a file name."""
+    bare, quoted = m_blocks.scan(code)
+    return set(m_blocks.DOTTED_RE.findall(bare)) | {q for q in quoted
+                                                     if m_blocks.DOTTED_RE.fullmatch(q)}
 
 
 def category_slug(category):
@@ -137,6 +141,14 @@ def check(root=m_blocks.ROOT, ref=REF, page_list=None):
         in_code = set().union(*(code_names(b.code) for b in blocks)) if blocks else set()
         for name in sorted((names_in(prose, prefixes) | in_code) - known):
             errors.append(f"{page}: '{name}' is not in the export nor printed by the engine")
+
+    # 4: blocks only compute - the runner evaluates them on a maintainer's machine
+    for page, blocks in parsed.items():
+        for i, block in enumerate(blocks):
+            for name in m_blocks.unsafe_calls(block.code, catalog):
+                errors.append(f"{page}: ```m block {i + 1} (line {block.code_start + 1}) calls "
+                              f"{name}, which can reach outside the engine or describe the "
+                              "machine it runs on; examples only compute on literals")
     return errors
 
 

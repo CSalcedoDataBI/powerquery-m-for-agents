@@ -102,3 +102,145 @@ def apply_results(text, results, host, version):
     else:
         out = line + "\n\n" + out
     return out
+
+
+# What a block may call. The runner evaluates every block with Expression.Evaluate over
+# #shared in the maintainer's own Power BI Desktop, so a block is code run on that machine:
+# one that reads a file or calls a URL would do it there. Blocks are limited to library
+# functions that compute on values, by the category the export gives each function.
+PURE_CATEGORIES = {
+    "Binary", "Binary Formats", "Combiner", "Comparer", "Date", "DateTime", "DateTimeZone",
+    "Duration", "Error", "Function", "Lines", "List", "Logical", "Metadata", "Number",
+    "Record", "Replacer", "Splitter", "Table", "Text", "Time", "Type", "Uri", "Values",
+}
+# Internal hooks (Embedded.Value, Variable.Value, Value.Firewall): off, except the one a page
+# is about. Value.NativeQuery sends a query to a data source; Function.InvokeAfter stalls the
+# runner for as long as the block asks; Table.FilterWithDataTable looks a variable up by the
+# name it is given as text, the lookup Variable.Value does.
+IMPURE_CATEGORIES = {"Values.Implementation"}
+IMPURE_NAMES = {"Value.NativeQuery", "Function.InvokeAfter", "Table.FilterWithDataTable"}
+# Parsers of text or binary values. Every way to fetch that value (File.Contents, Web.Contents)
+# is refused, so what they parse can only be a literal of the block.
+# Expression.Constant and Expression.Identifier only write M source as text, Value.Expression
+# returns a value's syntax tree; evaluating any of it is
+# Expression.Evaluate, which stays refused with the rest of its category.
+PURE_NAMES = {"Table.WithErrorContext", "Csv.Document", "Json.Document", "Xml.Document",
+              "Xml.Tables", "Expression.Constant", "Expression.Identifier", "Value.Expression"}
+# Values that describe the machine the runner is on, which a result would publish: its time
+# zone, its clock, its culture (the reason #shared exports TimeZone.Current as null).
+MACHINE_NAMES = {"DateTime.LocalNow", "DateTime.FixedLocalNow", "DateTimeZone.LocalNow",
+                 "DateTimeZone.FixedLocalNow", "DateTimeZone.UtcNow", "DateTimeZone.FixedUtcNow",
+                 "DateTimeZone.ToLocal", "Culture.Current", "TimeZone.Current"}
+NEWLINE_RE = re.compile("[\r\n\u0085\u2028\u2029]")
+ESCAPE_RE = re.compile(r"#\(([^()]*)\)")
+SINGLE_ESCAPES = {"cr": chr(13), "lf": chr(10), "tab": chr(9), "#": "#"}
+# An M identifier with dots: a letter or underscore, then letters, digits, underscores, in
+# any script (My_Connector.Contents, Ñandú.X), and every dotted segment of it.
+DOTTED_RE = re.compile(r"(?<![\w.])([^\W\d]\w*(?:\.\w+)+)(?![\w])")
+ENVIRONMENT_RE = re.compile(r"#(shared|sections)\b")
+
+
+def scan(code):
+    """(code, quoted): the code with text literals and comments blanked out, and the names it
+    writes as quoted identifiers. #"Web.Contents" is the same name as Web.Contents, so a
+    check that blanks every "..." misses it."""
+    out, quoted, i, n = [], [], 0, len(code)
+    while i < n:
+        if code.startswith("//", i):
+            # A line comment ends at any M new-line character, CR alone included: ending it at
+            # LF only would hide the code after a bare CR, which the engine runs.
+            m = NEWLINE_RE.search(code, i)
+            i = m.start() if m else n
+            out.append(" ")
+        elif code.startswith("/*", i):
+            # Delimited comments nest in M: /* a /* b */ c */ is one comment.
+            depth, i = 1, i + 2
+            while i < n and depth:
+                if code.startswith("/*", i):
+                    depth, i = depth + 1, i + 2
+                elif code.startswith("*/", i):
+                    depth, i = depth - 1, i + 2
+                else:
+                    i += 1
+            out.append(" ")
+        elif code[i] == '"' or code.startswith('#"', i) or code.startswith('#!"', i):
+            # "text", #"quoted identifier", #!"verbatim literal" (text as well).
+            ident = code.startswith('#"', i)
+            k, buf = i + (2 if ident else 3 if code[i] == "#" else 1), []
+            while k < n:
+                if code[k] == '"':
+                    if code.startswith('""', k):
+                        buf.append('"')
+                        k += 2
+                        continue
+                    break
+                buf.append(code[k])
+                k += 1
+            if ident:
+                quoted.append("".join(buf))
+            out.append(" " if ident else '""')
+            i = k + 1
+        else:
+            out.append(code[i])
+            i += 1
+    return "".join(out), [unescape(q) for q in quoted]
+
+
+def unescape(text):
+    """A quoted identifier or text literal as M reads it: #(002E) is ".", #(cr,lf) two
+    characters. #"File#(002E)Contents" is File.Contents. An escape M would reject is kept."""
+    def one(m):
+        out = []
+        for part in m.group(1).split(","):
+            if part in SINGLE_ESCAPES:
+                out.append(SINGLE_ESCAPES[part])
+            elif re.fullmatch(r"[0-9A-Fa-f]{4}|[0-9A-Fa-f]{8}", part) and int(part, 16) <= 0x10FFFF:
+                out.append(chr(int(part, 16)))
+            else:
+                return m.group(0)
+        return "".join(out)
+    return ESCAPE_RE.sub(one, text)
+
+
+def unsafe_calls(code, catalog, unknown=False):
+    """What in one ```m block could reach outside the engine: the environment itself
+    (#shared, #sections) and any exported function outside PURE_CATEGORIES - data sources,
+    connectors, Expression.Evaluate - and the names in MACHINE_NAMES.
+
+    A dotted name the export does not have is left to the invented-name check, unless
+    `unknown` is set. The runner sets it: it evaluates against the live #shared of whatever
+    Desktop is open, which can hold a connector the committed export does not, so a name
+    this check cannot classify is refused before anything runs."""
+    functions = {r["name"]: r for r in catalog.get("functions", [])}
+    known = set(functions) | {c["name"] for c in catalog.get("constants", [])}
+    bare, quoted = scan(code)
+    found = [f"#{m}" for m in ENVIRONMENT_RE.findall(bare)]
+    # Section access (Section1!Query) reads the query document; M has no other use for "!".
+    if "!" in bare:
+        found.append("section access (!)")
+    for name in sorted(set(DOTTED_RE.findall(bare)) | set(quoted)):
+        if name in MACHINE_NAMES:
+            found.append(name)
+            continue
+        row = functions.get(name)
+        if row is None:
+            if unknown and name not in known and DOTTED_RE.fullmatch(name):
+                found.append(name)
+            continue
+        category = row.get("category") or ""
+        if name in PURE_NAMES:
+            continue
+        if (row.get("kind") != "library" or name in IMPURE_NAMES
+                or category in IMPURE_CATEGORIES or category.split(".")[0] not in PURE_CATEGORIES):
+            found.append(name)
+    return found
+
+
+def allowed_names(catalog):
+    """Every exported name a block may use: the library functions and constants that
+    unsafe_calls lets through. The runner evaluates each block against only these members
+    of #shared, so a name the scan cannot see - a bare global such as another query - does
+    not resolve either."""
+    names = [r["name"] for r in catalog.get("functions", []) if r.get("kind") == "library"]
+    names += [c["name"] for c in catalog.get("constants", [])]
+    return sorted({n for n in names if not unsafe_calls(n, catalog)})

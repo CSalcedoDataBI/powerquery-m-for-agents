@@ -1,0 +1,9 @@
+# Copied to $DSH_HOME/profiles/headless/cordis.patch.yml on every start (entrypoint.sh).
+# By default dsh sends the official API two extras with each request: the session log
+# (dsh_session_log) and the list of active plugin packages (dsh_plugin_packages). The pilot
+# needs neither, so neither is sent; run_dsh.ps1 checks that before any real call.
+- id: session-log-deepseek
+  disabled: true
+
+- id: plugin-package-inventory-deepseek
+  disabled: true

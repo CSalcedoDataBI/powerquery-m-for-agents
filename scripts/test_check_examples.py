@@ -55,7 +55,9 @@ class Check(unittest.TestCase):
         os.makedirs(os.path.join(self.ref, "generated"))
         with open(os.path.join(self.ref, "generated", "catalog.json"), "w", encoding="utf-8") as f:
             json.dump({"functions": [{"name": "Text.Upper", "file": "text-upper",
-                                      "category": "Text.Transformations", "kind": "library"}],
+                                      "category": "Text.Transformations", "kind": "library"},
+                                     {"name": "File.Contents", "file": "file-contents",
+                                      "category": "Accessing data", "kind": "library"}],
                        "constants": [{"name": "JoinKind.Inner"}]}, f)
 
     def tearDown(self):
@@ -138,6 +140,84 @@ class Check(unittest.TestCase):
         errors = self.run_check(p)
         self.assertEqual(len(errors), 1)
         self.assertIn("'Text.upper'", errors[0])
+
+    def block_page(self, rel, code, result):
+        return self.page(rel, f"<!-- lab: desktop 1 -->\n\n```m\n{code}\n```\n\n```text\n{result}\n```\n")
+
+    def test_a_quoted_identifier_is_the_name_it_quotes(self):
+        p = self.block_page("skills/m-reference/concepts/q.md", '#"Text.Uper"("a")', '"A"')
+        errors = self.run_check(p)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("'Text.Uper'", errors[0])
+
+    def test_a_block_that_reaches_outside_the_engine_fails(self):
+        for code in ['File.Contents("x.csv")', '#"File.Contents"("x.csv")',
+                     'Record.Field(#shared, "Text.Upper")']:
+            with self.subTest(code=code):
+                p = self.block_page("skills/m-reference/concepts/io.md", code, "1")
+                errors = self.run_check(p)
+                self.assertTrue(any("reach outside the engine" in e for e in errors), errors)
+
+    def test_an_escaped_quoted_identifier_is_decoded(self):
+        # #(002E) is "." in a quoted identifier, so this is File.Contents.
+        p = self.block_page("skills/m-reference/concepts/esc.md",
+                            '#"File#(002E)Contents"("x.csv")', "1")
+        errors = self.run_check(p)
+        self.assertTrue(any("File.Contents" in e and "outside the engine" in e for e in errors),
+                        errors)
+
+    def test_values_that_describe_the_machine_fail(self):
+        for code in ["DateTimeZone.LocalNow()", "Culture.Current"]:
+            with self.subTest(code=code):
+                errors = mb.unsafe_calls(code, {"functions": []})
+                self.assertEqual(errors, [code.split("(")[0]])
+
+    def test_the_runner_refuses_names_the_export_does_not_have(self):
+        # The live #shared can hold a connector the committed export does not.
+        catalog = {"functions": [], "constants": [{"name": "JoinKind.Inner"}]}
+        self.assertEqual(mb.unsafe_calls('New.Connector("x")', catalog, unknown=True),
+                         ["New.Connector"])
+        self.assertEqual(mb.unsafe_calls('New.Connector("x")', catalog), [])
+        self.assertEqual(mb.unsafe_calls('{JoinKind.Inner, #"Step one"}', catalog, unknown=True), [])
+
+    def test_identifiers_with_underscores_are_names(self):
+        catalog = {"functions": []}
+        self.assertEqual(mb.unsafe_calls('My_Connector.Contents("x")', catalog, unknown=True),
+                         ["My_Connector.Contents"])
+        self.assertIn("My_Connector.Contents", c.code_names('My_Connector.Contents("x")'))
+
+    def test_a_verbatim_literal_is_text(self):
+        self.assertEqual(mb.unsafe_calls('#!"Token ! expected"', {"functions": []}), [])
+
+    def test_a_line_comment_ends_at_a_bare_carriage_return(self):
+        # M ends a // comment at CR as well as LF: what follows the CR is code.
+        self.assertEqual(mb.unsafe_calls('// x\rFile.Contents("s")',
+                                         {"functions": [{"name": "File.Contents",
+                                                         "category": "Accessing data",
+                                                         "kind": "library"}]}),
+                         ["File.Contents"])
+
+    def test_nested_comments_hide_what_they_contain(self):
+        self.assertEqual(mb.unsafe_calls('1 /* a /* b */ File.Contents("x") */ + 2',
+                                         {"functions": []}, unknown=True), [])
+
+    def test_allowed_names_are_what_unsafe_calls_lets_through(self):
+        catalog = {"functions": [
+            {"name": "Text.Upper", "category": "Text.Transformations", "kind": "library"},
+            {"name": "File.Contents", "category": "Accessing data", "kind": "library"},
+            {"name": "Some.Connector", "category": None, "kind": "connector"}],
+            "constants": [{"name": "JoinKind.Inner"}, {"name": "Culture.Current"}]}
+        self.assertEqual(mb.allowed_names(catalog), ["JoinKind.Inner", "Text.Upper"])
+
+    def test_section_access_is_refused(self):
+        self.assertEqual(mb.unsafe_calls("Section1!Query", {"functions": []}),
+                         ["section access (!)"])
+        self.assertEqual(mb.unsafe_calls('"a!b"', {"functions": []}), [])
+
+    def test_names_in_text_literals_and_comments_call_nothing(self):
+        p = self.block_page("skills/m-reference/concepts/lit.md",
+                            '"File.Contents" // File.Contents', '"File.Contents"')
+        self.assertEqual(self.run_check(p), [])
 
 
 if __name__ == "__main__":

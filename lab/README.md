@@ -8,6 +8,7 @@ what the engine returned instead of what we expect. No external sources: data co
 |---|---|
 | `shared-export/` | `export_shared.pq` in a generated PBIP, to export `#shared` → `exports/*.json` |
 | `runner/` | Every ```` ```m ```` block under `skills/`, writing each result below its block |
+| `drafting/` | A pilot (#21): an outside model drafts example pages in a container; the runner decides what they return |
 
 ## The runner
 
@@ -32,3 +33,16 @@ refresh: fine for a quick look, and it refuses `--write`/`--check` unless `--all
 says so on purpose.
 
 `--only <text>[,<text>]` limits a run to the pages whose path contains any of the texts.
+
+Blocks are evaluated against only the members of `#shared` that `m_blocks.allowed_names` lists
+(the pure library functions and the constants), not the whole of it: a name the scan below cannot
+see - another query, a connector newer than the export - does not exist for a block.
+
+The runner also refuses a block that could reach outside the engine - `#shared`, a data source, a
+connector, `Expression.Evaluate` - before anything runs: every block is code evaluated on the
+machine that runs it, and on a public repo a page can come from anyone. Values that only
+describe that machine (`DateTimeZone.LocalNow`, `Culture.Current`, ...) are refused too.
+Not every one can be caught by name: a conversion from `datetime` to `datetimezone` takes the
+machine's zone. Check a result's `#datetimezone` offsets before committing it. Culture is not one of these:
+the runner's model sets `culture` and `sourceQueryCulture` to en-US, so a conversion without
+an explicit culture reads en-US on any machine.
