@@ -3,7 +3,7 @@
   {
    "host": "desktop",
    "hostVersion": "2.157.879.0",
-   "exportedAt": "2026-09-30T02:54:22Z",
+   "exportedAt": "2026-09-30T03:06:33Z",
    "functions": 932
   }
  ],
@@ -14333,7 +14333,7 @@
   {
    "name": "Culture.Current",
    "type": "text",
-   "value": "en-US",
+   "value": null,
    "summary": "Returns the name of the current culture for the application.",
    "hosts": [
     "desktop"
@@ -15843,7 +15843,7 @@
   {
    "name": "TimeZone.Current",
    "type": "text",
-   "value": "SA Pacific Standard Time",
+   "value": null,
    "summary": "Returns the name of the current time zone for the application.",
    "hosts": [
     "desktop"

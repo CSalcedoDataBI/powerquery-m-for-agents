@@ -111,6 +111,9 @@ table SharedExport
 				    // Everything else in the library: enum constants (GroupKind.Local = 0), type values
 				    // (Int64.Type), numbers (Number.PI). `value` is the constant as text, culture-fixed so the
 				    // export does not depend on the host's locale; null when the member is not a primitive.
+				    // `*.Current` members (Culture.Current, TimeZone.Current) are the machine's settings, not
+				    // constants: their value would publish the exporter's locale as if it were M's, so it is
+				    // left null and only the name, type and description are exported.
 				    ConstRow = (memberName as text, v as any) as record =>
 				        let
 				            docs = Value.Metadata(Value.Type(v)),
@@ -119,7 +122,9 @@ table SharedExport
 				            [
 				                name = memberName,
 				                #"type" = TypeName(Value.Type(v)),
-				                value = try Text.From(v, "en-US") otherwise null,
+				                value =
+				                    if Text.EndsWith(memberName, ".Current") then null
+				                    else try Text.From(v, "en-US") otherwise null,
 				                description =
 				                    let d = TextField(own, "Documentation.Description") in
 				                        if d <> null then d else TextField(docs, "Documentation.Description")

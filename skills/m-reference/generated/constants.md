@@ -1,6 +1,6 @@
 # M constants
 
-201 non-function members of `#shared` (`desktop` 2.157.879.0): enum values, type values and numeric constants. `Value` is the member as text (en-US); empty when it is not a primitive, such as a type. ⌂ = not in every host. They have no cards.
+201 non-function members of `#shared` (`desktop` 2.157.879.0): enum values, type values and numeric constants. `Value` is the member as text (en-US); empty when it is not a primitive, such as a type, or when it is a machine setting such as `Culture.Current`. ⌂ = not in every host. They have no cards.
 
 | Name | Type | Value | Flags | Summary |
 |---|---|---|---|---|
@@ -38,7 +38,7 @@
 | `CsvStyle.QuoteAfterDelimiter` | number | `0` |  | Quotes in a field are only significant immediately following the delimiter. |
 | `CsvStyle.QuoteAlways` | number | `1` |  | Quotes in a field are always significant regardless of where they appear. |
 | `CsvStyle.Type` | type |  |  | Specifies the significance of quotes in CSV documents. |
-| `Culture.Current` | text | `en-US` |  | Returns the name of the current culture for the application. |
+| `Culture.Current` | text |  |  | Returns the name of the current culture for the application. |
 | `Currency.Type` | type |  |  | The type that represents currency value. |
 | `Date.Type` | type |  |  | The type that represents all date values. |
 | `DateTime.Type` | type |  |  | The type that represents all date and time values without an associated timezone. |
@@ -189,7 +189,7 @@
 | `TextEncoding.Utf8` | number | `65001` |  | Use to choose the UTF8 binary form. |
 | `TextEncoding.Windows` | number | `1252` |  | Use to choose the Windows binary form. |
 | `Time.Type` | type |  |  | The type that represents all time values. |
-| `TimeZone.Current` | text | `SA Pacific Standard Time` |  | Returns the name of the current time zone for the application. |
+| `TimeZone.Current` | text |  |  | Returns the name of the current time zone for the application. |
 | `TraceLevel.Critical` | number | `1` |  | Specifies Critical trace level. |
 | `TraceLevel.Error` | number | `2` |  | Specifies Error trace level. |
 | `TraceLevel.Information` | number | `8` |  | Specifies Information trace level. |

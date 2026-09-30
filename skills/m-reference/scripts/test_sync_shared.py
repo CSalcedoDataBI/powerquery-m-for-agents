@@ -103,6 +103,10 @@ class Sync(unittest.TestCase):
             constants = {c["name"]: c for c in json.load(f)["constants"]}
         self.assertEqual(constants["JoinKind.Inner"]["hosts"], ["desktop"])
         self.assertFalse(constants["JoinKind.Inner"]["partialHosts"])
+        # ...and is not named as a source of constants.md either.
+        header = self.generated("constants.md").splitlines()[2]
+        self.assertIn("`desktop`", header)
+        self.assertNotIn("`excel`", header)
 
     def test_no_constants_index_when_no_export_has_them(self):
         self.run_sync(EXCEL)

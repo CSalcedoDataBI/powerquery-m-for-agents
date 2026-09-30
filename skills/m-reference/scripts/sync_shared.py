@@ -345,7 +345,8 @@ def render_constants_md(rows, exports_meta):
         "",
         f"{len(rows)} non-function members of `#shared` ({source_text(exports_meta)}): enum "
         "values, type values and numeric constants. `Value` is the member as text (en-US); "
-        "empty when it is not a primitive, such as a type. ⌂ = not in every host. "
+        "empty when it is not a primitive, such as a type, or when it is a machine setting "
+        "such as `Culture.Current`. ⌂ = not in every host. "
         "They have no cards.",
         "",
         "| Name | Type | Value | Flags | Summary |",
@@ -409,7 +410,10 @@ def sync(export_paths, ref=REF, write=False, accept_count_change=False,
         "connectors.md": render_connectors_md(connector_rows, exports_meta),
     }
     if constants:
-        indexes["constants.md"] = render_constants_md(constants, exports_meta)
+        # Only the exports that carried constants vouch for them.
+        constants_meta = [m for m, e in zip(exports_meta, exports)
+                          if isinstance(e.get("constants"), list)]
+        indexes["constants.md"] = render_constants_md(constants, constants_meta)
     for name, text in indexes.items():
         with open(os.path.join(staging, name), "w", encoding="utf-8", newline="\n") as f:
             f.write(text)

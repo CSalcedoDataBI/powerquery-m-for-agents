@@ -222,6 +222,9 @@ Se añadirán al llegar su contenido: `check_doc_claims`, `check_examples` con p
 - La primera frase de la descripción de un enum suele ser la misma para todos sus valores
   («A possible value for the optional `JoinKind` parameter in `Table.Join`»), así que
   `constants.md` guarda hasta 200 caracteres en vez de la primera frase.
+- `Culture.Current` y `TimeZone.Current` no son constantes sino la configuración de la
+  máquina que exporta: el primer export publicó la zona horaria del equipo como si fuera un
+  valor de M. La consulta deja en null el valor de todo miembro `*.Current`.
 - La regla de conectores separa **273** de las 932 funciones, no las ~353 que estimaba §9.7.
   El resto de las 275 sin categoría (`Value.ResourceExpression`, una de `Cdm`) comparte
   prefijo con la biblioteca. `catalog.md` pasa de 106.079 a 81.257 bytes.
