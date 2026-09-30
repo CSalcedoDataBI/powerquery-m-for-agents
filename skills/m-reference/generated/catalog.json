@@ -10431,7 +10431,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 0
   },
   {
    "name": "Table.FindText",

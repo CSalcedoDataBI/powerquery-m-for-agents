@@ -465,7 +465,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Table.ExpandTableColumn` | Table.Transformation | table | ▶ | Expands a column of records or a column of tables into multiple columns in the containing table. |
 | `Table.FillDown` | Table.Transformation | table | ▶ | Propagates the value of a previous cell to the null-valued cells below in the column. |
 | `Table.FillUp` | Table.Transformation | table | ▶ | Propagates the value of a cell to the null-valued cells above in the column. |
-| `Table.FilterWithDataTable` | Table.Transformation | any | ▶ | This function is intended for internal use only. |
+| `Table.FilterWithDataTable` | Table.Transformation | any |  | This function is intended for internal use only. |
 | `Table.FindText` | Table.Row operations | table | ▶ | Returns all the rows that contain the given text in the table. |
 | `Table.First` | Table.Row operations | any | ▶ | Returns the first row or a specified default value. |
 | `Table.FirstN` | Table.Row operations | table | ▶ | Returns the first count rows specified. |

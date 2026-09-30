@@ -115,9 +115,10 @@ PURE_CATEGORIES = {
 }
 # Internal hooks (Embedded.Value, Variable.Value, Value.Firewall): off, except the one a page
 # is about. Value.NativeQuery sends a query to a data source; Function.InvokeAfter stalls the
-# runner for as long as the block asks.
+# runner for as long as the block asks; Table.FilterWithDataTable looks a variable up by the
+# name it is given as text, the lookup Variable.Value does.
 IMPURE_CATEGORIES = {"Values.Implementation"}
-IMPURE_NAMES = {"Value.NativeQuery", "Function.InvokeAfter"}
+IMPURE_NAMES = {"Value.NativeQuery", "Function.InvokeAfter", "Table.FilterWithDataTable"}
 # Parsers of text or binary values. Every way to fetch that value (File.Contents, Web.Contents)
 # is refused, so what they parse can only be a literal of the block.
 # Expression.Constant and Expression.Identifier only write M source as text, Value.Expression
