@@ -61,10 +61,57 @@ class Sync(unittest.TestCase):
         with open(os.path.join(self.ref, "generated", "catalog.json"), encoding="utf-8") as f:
             return {r["name"]: r for r in json.load(f)["functions"]}
 
+    def generated(self, name):
+        with open(os.path.join(self.ref, "generated", name), encoding="utf-8") as f:
+            return f.read()
+
     def test_writes_one_card_per_usable_function(self):
         self.run_sync(DESKTOP)
         cards = sorted(os.listdir(os.path.join(self.ref, "generated", "library")))
-        self.assertEqual(cards, ["hash-date.md", "list-sum.md", "table-addcolumn.md"])
+        self.assertEqual(cards, ["csv-document.md", "hash-date.md", "list-hidden.md",
+                                 "list-sum.md", "mixpanel-tables.md", "table-addcolumn.md"])
+
+    def test_connectors_split_from_the_library(self):
+        self.run_sync(DESKTOP)
+        cat = self.catalog()
+        self.assertEqual(cat["Mixpanel.Tables"]["kind"], "connector")
+        # "Accessing data" is a library category; a dotless name and an uncategorised
+        # function under a library prefix stay in the library too.
+        for name in ("Csv.Document", "#date", "List.Hidden", "Table.AddColumn"):
+            self.assertEqual(cat[name]["kind"], "library", name)
+        catalog_md, connectors_md = self.generated("catalog.md"), self.generated("connectors.md")
+        self.assertNotIn("`Mixpanel.Tables`", catalog_md)
+        self.assertIn("| `Mixpanel.Tables` | Mixpanel |", connectors_md)
+        self.assertNotIn("`Csv.Document`", connectors_md)
+        self.assertIn("1 connector entry points are in `connectors.md`", catalog_md)
+
+    def test_constants_index(self):
+        self.run_sync(DESKTOP)
+        md = self.generated("constants.md")
+        self.assertIn("| `JoinKind.Inner` | number | `0` |", md)
+        # The row keeps the sentence after the enum's shared first one.
+        self.assertIn("inner join contains a row", md)
+        self.assertIn("| `Int64.Type` | type |  |", md)
+        self.assertIn("64-bit integer \\| pipe", md)
+        self.assertNotIn("Broken.Constant", md)
+        self.assertIn("2 constants and type values in `constants.md`", self.generated("catalog.md"))
+
+    def test_export_without_constants_does_not_flag_them_partial(self):
+        # excel-fixture predates the constants export: it contributes no hosts to them.
+        self.run_sync(DESKTOP, EXCEL, accept_count_change=True)
+        with open(os.path.join(self.ref, "generated", "catalog.json"), encoding="utf-8") as f:
+            constants = {c["name"]: c for c in json.load(f)["constants"]}
+        self.assertEqual(constants["JoinKind.Inner"]["hosts"], ["desktop"])
+        self.assertFalse(constants["JoinKind.Inner"]["partialHosts"])
+        # ...and is not named as a source of constants.md either.
+        header = self.generated("constants.md").splitlines()[2]
+        self.assertIn("`desktop`", header)
+        self.assertNotIn("`excel`", header)
+
+    def test_no_constants_index_when_no_export_has_them(self):
+        self.run_sync(EXCEL)
+        self.assertFalse(os.path.exists(os.path.join(self.ref, "generated", "constants.md")))
+        self.assertNotIn("constants.md", self.generated("catalog.md"))
 
     def test_export_errors_are_skipped(self):
         self.run_sync(DESKTOP)
@@ -111,7 +158,7 @@ class Sync(unittest.TestCase):
         self.run_sync(DESKTOP)
         with self.assertRaises(s.GateError):
             self.run_sync(EXCEL)
-        self.assertEqual(len(self.catalog()), 3, "previous generated/ must survive")
+        self.assertEqual(len(self.catalog()), 6, "previous generated/ must survive")
         self.run_sync(EXCEL, accept_count_change=True)
         self.assertEqual(len(self.catalog()), 2)
 
@@ -125,7 +172,7 @@ class Sync(unittest.TestCase):
                   for i in range((len(payload) + 49) // 50)]
         path = os.path.join(self.ref, "chunked.json")
         write(path, json.dumps(list(reversed(chunks))))
-        self.assertEqual(len(s.load_export(path)["functions"]), 4)
+        self.assertEqual(len(s.load_export(path)["functions"]), 7)
 
 
 if __name__ == "__main__":

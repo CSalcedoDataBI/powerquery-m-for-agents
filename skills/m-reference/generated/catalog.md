@@ -1,63 +1,25 @@
 # M function catalogue
 
-932 functions from `#shared` (`desktop` 2.157.879.0). Flags: ★ field note · ▶ executed examples · ⌂ not in every host.
+659 library functions from `#shared` (`desktop` 2.157.879.0). Flags: ★ field note · ▶ executed examples · ⌂ not in every host.
+Not listed here: 273 connector entry points are in `connectors.md`; 201 constants and type values in `constants.md`.
 Open one card: `library/<file>.md`, where <file> is the name in lower case with every run of non-alphanumerics as one dash (`Table.AddColumn` -> `table-addcolumn`).
 
 | Function | Category | Returns | Flags | Summary |
 |---|---|---|---|---|
 | `Access.Database` | Accessing data | table |  | Returns a structural representation of an Access database. |
 | `AccessControlEntry.ConditionToIdentities` | Accessing data | list |  | Returns a list of identities that the condition will accept. |
-| `Acterys.Contents` | Acterys | any |  |  |
-| `Actian.Contents` | Actian | any |  |  |
 | `Action.WithErrorContext` | Values.Implementation | any |  | This function is intended for internal use only. |
 | `ActiveDirectory.Domains` | Accessing data | table |  | Returns a list of Active Directory domains in the same forest as the specified domain or of the current machine's domai… |
 | `AdobeAnalytics.Cubes` | Accessing data | table |  | Returns the report suites in Adobe Analytics. |
 | `AdoDotNet.DataSource` | Accessing data | table |  | Returns the schema collection for an ADO.NET data source. |
 | `AdoDotNet.Query` | Accessing data | table |  | Returns the result of running a native query on an ADO.NET data source. |
-| `ADPAnalytics.Contents` | ADPAnalytics | any |  |  |
-| `AmazonAthena.Databases` | AmazonAthena | table |  | This function sends basic authentication info |
-| `AmazonOpenSearchService.Contents` | AmazonOpenSearchService | table |  |  |
-| `AmazonRedshift.Database` | AmazonRedshift | table |  | Import data from an Amazon Redshift database. |
 | `AnalysisServices.Database` | Accessing data | table |  | Returns a table of multidimensional cubes or tabular models from the Analysis Services database. |
 | `AnalysisServices.Databases` | Accessing data | table |  | Returns the Analysis Services databases on a particular host. |
-| `Anaplan.Contents` | Anaplan | table |  |  |
-| `ApacheHiveLLAP.Database` | ApacheHiveLLAP | table |  | Import data from a Hive LLAP |
-| `ApacheSpark.Tables` | ApacheSpark | table |  | Returns a table listing the tables on the specified Spark cluster. |
-| `appFigures.Content` | appFigures | any |  |  |
-| `appFigures.Tables` | appFigures | table |  |  |
-| `AptixInsights.Feed` | AptixInsights | table |  | Use the Aptix Insights Platform OData API to build powerful reports and dashboards. |
-| `Asana.Tables` | Asana | table |  | Returns a table with Asana task data |
-| `AssembleViews.Contents` | AssembleViews | table |  | Access views created within Assemble Insight |
-| `AssembleViews.Feed` | AssembleViews | table |  | Access views created within Assemble Insight |
-| `AtScale.Cubes` | AtScale | table |  | Import/DirectQuery cube data from an AtScale. |
-| `AutodeskConstructionCloud.Contents` | AutodeskConstructionCloud | table |  |  |
-| `AutodeskConstructionCloud.Feed` | AutodeskConstructionCloud | table |  |  |
-| `AutomationAnywhere.Feed` | AutomationAnywhere | table |  | Automation Anywhere - Login |
-| `AutomyDataAnalytics.Contents` | AutomyDataAnalytics | table |  |  |
-| `AzureCosmosDBForMongoDBvCore.Contents` | AzureCosmosDBForMongoDBvCore | table |  | Azure Cosmos DB for MongoDB vCore |
-| `AzureCostManagement.Contents` | AzureCostManagement | table |  |  |
-| `AzureCostManagement.Tables` | AzureCostManagement | table |  | Azure Cost Management |
-| `AzureDataExplorer.Contents` | AzureDataExplorer | table |  | Imports data from Azure Data Explorer (Kusto) |
-| `AzureDataExplorer.Databases` | AzureDataExplorer | list |  |  |
-| `AzureDataExplorer.KqlDatabase` | AzureDataExplorer | table |  | Import data from Fabric Kusto cluster in discovery mode. |
-| `AzureDeviceRegistry.Query` | AzureDeviceRegistry | table |  | Connector to pull Assets and Devices from Azure Device Registry |
-| `AzureDevOpsServer.AccountContents` | AzureDevOpsServer | table |  | Enter Url of your Azure DevOps Analytics Service. |
-| `AzureDevOpsServer.AnalyticsViews` | AzureDevOpsServer | table |  | Enter organization and project names. |
-| `AzureDevOpsServer.Feed` | AzureDevOpsServer | table |  | Azure DevOps Services Feed |
-| `AzureDevOpsServer.Views` | AzureDevOpsServer | table |  | Enter organization and project names. |
-| `AzureEnterprise.Contents` | AzureEnterprise | binary |  | Enter the URL of the Azure Enterprise REST API endpoint associated with your enrollment |
-| `AzureEnterprise.Tables` | AzureEnterprise | table |  | Enter the URL of the Azure Enterprise REST API endpoint associated with your enrollment |
-| `AzureHiveLLAP.Database` | AzureHiveLLAP | table |  | Import data from HDInsight Interactive Query |
-| `AzureResourceGraph.Query` | AzureResourceGraph | table |  | See https://learn.microsoft.com/azure/governance/resource-graph/samples/starter?tabs=azure-cli for starter query sample… |
-| `AzureSpark.Tables` | AzureSpark | table |  | List the tables in an Azure Spark instance. |
 | `AzureStorage.BlobContents` | Accessing data | binary |  | Returns the content of the specified blob from an Azure storage vault. |
 | `AzureStorage.Blobs` | Accessing data | table |  | Returns a navigational table containing the containers found in the specified account from an Azure storage vault. |
 | `AzureStorage.DataLake` | Accessing data | table |  | Returns a navigational table containing the documents found in the specified container and its subfolders from Azure Da… |
 | `AzureStorage.DataLakeContents` | Accessing data | binary |  | Returns the content of the specified file from an Azure Data Lake Storage filesystem. |
 | `AzureStorage.Tables` | Accessing data | table |  | Returns a navigational table containing the tables found in the specified account from an Azure storage vault. |
-| `AzureTimeSeriesInsights.Contents` | AzureTimeSeriesInsights | table |  |  |
-| `BI360.Contents` | BI360 | table |  | Retrieves a Navigation Table populated with the enabled tables for a given token |
-| `BIConnector.Contents` | BIConnector | table |  | Enter connection information |
 | `Binary.ApproximateLength` | Binary | nullable number |  | Returns the approximate length of the binary. |
 | `Binary.Buffer` | Binary | nullable binary |  | Buffers the binary value in memory. |
 | `Binary.Combine` | Binary | binary |  | Combines a list of binaries into a single binary. |
@@ -97,42 +59,20 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `BinaryFormat.UnsignedInteger16` | Binary Formats.Reading numbers | any |  | A binary format that reads a 16-bit unsigned integer. |
 | `BinaryFormat.UnsignedInteger32` | Binary Formats.Reading numbers | any |  | A binary format that reads a 32-bit unsigned integer. |
 | `BinaryFormat.UnsignedInteger64` | Binary Formats.Reading numbers | any |  | A binary format that reads a 64-bit unsigned integer. |
-| `BitSightSecurityRatings.Contents` | BitSightSecurityRatings | any |  |  |
-| `Bloomberg.Query` | Bloomberg | table |  | Used for retrieving Bloomberg data |
-| `BQECore.Contents` | BQECore | any |  |  |
-| `BQL.Query` | BQL | table |  | Used for retrieving Bloomberg data |
-| `BuildingConnected.Contents` | BuildingConnected | table |  | Returns a table of entities for the given url and entity name. |
 | `Byte.From` | Number.Conversion and formatting | nullable number |  | Creates an 8-bit integer from the given value. |
-| `CCHTagetik.Contents` | CCHTagetik | table |  | Wolters Kluwer CCH Tagetik |
-| `CCHTagetik.Contents2` | CCHTagetik | table |  | Wolters Kluwer CCH Tagetik |
-| `CCHTagetik.Contents3` | CCHTagetik | table |  | Wolters Kluwer CCH Tagetik |
-| `CCHTagetik.Contents4` | CCHTagetik | table |  | Wolters Kluwer CCH Tagetik |
-| `CDataConnectCloud.Contents` | CDataConnectCloud | table |  | Returns a table with relevant data from the connected data source in CData Connect Cloud. |
-| `CDataConnectCloud.ContentsV2` | CDataConnectCloud | table |  | Returns a table with relevant data from the connected data source in CData Connect Cloud. |
 | `Cdm.Contents` | Accessing data | table |  | Cdm.Contents |
 | `Cdm.MapToEntity` | Cdm | table |  | Returns a table with columns mapped to the attributes of an entity in the Common Data Model, including data types. |
-| `Cds.Contents` | Cds | any |  |  |
-| `Cds.Entities` | Cds | table |  | Connect to your Common Data Service instance (Dynamics 365 and PowerApps). |
-| `Celonis.KnowledgeModels` | Celonis | table |  |  |
-| `Celonis.Navigation` | Celonis | table |  |  |
 | `Character.FromNumber` | Text.Conversions from and to text | nullable text |  | Converts a number to a text character. |
 | `Character.ToNumber` | Text.Conversions from and to text | nullable number |  | Converts a character to a number value. |
-| `Cherwell.SavedSearches` | Cherwell | table |  | Returns the results of a Saved Search from a Cherwell Service Management REST API (requires CSM version 10.2 or later). |
-| `ClickHouse.Database` | ClickHouse | table |  | ClickHouse ODBC connector for Power Query |
-| `CloudBluePSA.Feed` | CloudBluePSA | table |  | This function will resolve the page limitation issue and will retrieve and combine all pages of data returned by the AP… |
-| `Cognite.Contents` | Cognite | table |  | Cognite Data Fusion (CDF) |
-| `CogniteDataSource.Contents` | CogniteDataSource | table |  | Cognite Data Fusion (CDF) |
 | `Combiner.CombineTextByDelimiter` | Combiner | function |  | Returns a function that combines a list of text using the specified delimiter. |
 | `Combiner.CombineTextByEachDelimiter` | Combiner | function |  | Returns a function that combines a list of text using a sequence of delimiters. |
 | `Combiner.CombineTextByLengths` | Combiner | function |  | Returns a function that combines a list of text using the specified lengths. |
 | `Combiner.CombineTextByPositions` | Combiner | function |  | Returns a function that combines a list of text using the specified output positions. |
 | `Combiner.CombineTextByRanges` | Combiner | function |  | Returns a function that combines a list of text using the specified positions and lengths. |
-| `CommonDataService.Database` | CommonDataService | table |  | Connect to your Dataverse instance (Dynamics 365 and PowerApps). |
 | `Comparer.Equals` | Comparer | logical |  | Returns a logical value based on the equality check over the two given values. |
 | `Comparer.FromCulture` | Comparer | function |  | Returns a comparer function based on the specified culture and case-sensitivity. |
 | `Comparer.Ordinal` | Comparer | number |  | Returns a comparer function which uses Ordinal rules to compare values. |
 | `Comparer.OrdinalIgnoreCase` | Comparer | number |  | Returns a case-insensitive comparer function which uses Ordinal rules to compare values. |
-| `CosmosDB.Contents` | CosmosDB | table |  |  |
 | `Csv.Document` | Accessing data | table |  | Returns the contents of the CSV document as a table. |
 | `Cube.AddAndExpandDimensionColumn` | Cube | table |  | Merges the specified dimension table into the cube's filter context and changes the dimensional granularity of the filt… |
 | `Cube.AddMeasureColumn` | Cube | table |  | Adds a column to the cube that contains the results of the measure applied in the row context of each row. |
@@ -151,17 +91,6 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Cube.ReplaceDimensions` | Cube | table |  | Replaces the set of dimensions returned by Cube.Dimensions. |
 | `Cube.Transform` | Cube | table |  | Applies a list of cube functions. |
 | `Currency.From` | Number.Conversion and formatting | nullable number |  | Returns a currency value from the given value. |
-| `CustomerInsights.Contents` | CustomerInsights | table |  |  |
-| `Databricks.Catalogs` | Databricks | table |  |  |
-| `Databricks.Contents` | Databricks | table |  |  |
-| `Databricks.Query` | Databricks | function |  | Define a Databricks data source for running SQL queries |
-| `DatabricksMultiCloud.Catalogs` | DatabricksMultiCloud | table |  |  |
-| `DatabricksMultiCloud.Query` | DatabricksMultiCloud | function |  | Define a Databricks data source for running SQL queries |
-| `DataLake.Contents` | DataLake | table |  | Enter the URL of your Azure Data Lake Storage Gen1 account. |
-| `DataLake.Files` | DataLake | table |  | Enter the URL of your Azure Data Lake Storage account. |
-| `DataVirtuality.Database` | DataVirtuality | table |  | Data Virtuality LDW |
-| `DataWorld.Contents` | DataWorld | table |  |  |
-| `DataWorld.Dataset` | DataWorld | table |  | Retrieves a dataset from Data.World |
 | `Date.AddDays` | Date | any |  | Adds the specified days to the date. |
 | `Date.AddMonths` | Date | any |  | Adds the specified months to the date. |
 | `Date.AddQuarters` | Date | any |  | Adds the specified quarters to the date. |
@@ -260,27 +189,14 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `DateTimeZone.ZoneHours` | DateTimeZone | nullable number |  | Gets the timezone hour of the value. |
 | `DateTimeZone.ZoneMinutes` | DateTimeZone | nullable number |  | Gets the timezone minutes of the value. |
 | `DB2.Database` | Accessing data | table |  | Returns a table of SQL tables and views available in a Db2 database. |
-| `DCWInsights.Feed` | DCWInsights | table |  | Use the DCW Integrations Platform OData API to build powerful reports and dashboards. |
 | `Decimal.From` | Number.Conversion and formatting | nullable number |  | Creates a Decimal from the given value. |
 | `DeltaLake.Metadata` | Accessing data | table |  | Given a Delta Lake table, returns the log entries for that table. |
 | `DeltaLake.Table` | Accessing data | any |  | Returns the contents of the Delta Lake table. |
-| `DeltaSharing.Contents` | DeltaSharing | table |  |  |
-| `Denodo.Contents` | Denodo | table |  | The Denodo Connector allows you to connect to Denodo's VDP server from PowerBI |
 | `Diagnostics.ActivityId` | Diagnostics | nullable text |  | Returns an opaque identifier for the currently-running evaluation. |
 | `Diagnostics.CorrelationId` | Diagnostics | nullable text |  | Returns an opaque identifier to correlate incoming requests with outgoing ones. |
 | `Diagnostics.Trace` | Diagnostics | any |  | Writes a trace entry, if tracing is enabled, and returns the value. |
 | `DirectQueryCapabilities.From` | Values.Implementation | table |  | This function is intended for internal use only. |
-| `DocumentDB.Contents` | DocumentDB | table |  | Enter the URL of an Azure Cosmos DB account. |
 | `Double.From` | Number.Conversion and formatting | nullable number |  | Creates a Double from the given value. |
-| `Dremio.Databases` | Dremio | table |  | Returns a table listing the datasets on Dremio Server. |
-| `Dremio.DatabasesV300` | Dremio | table |  | Returns a table listing the datasets on Dremio Server. |
-| `Dremio.DatabasesV370` | Dremio | table |  | Returns a table listing the datasets on Dremio Server. |
-| `DremioCloud.Databases` | DremioCloud | table |  | Returns a table listing the datasets in the specified project on Dremio Cloud. |
-| `DremioCloud.DatabasesByServer` | DremioCloud | table |  | Returns a table listing the datasets on the specified server on Dremio Cloud. |
-| `DremioCloud.DatabasesByServerV330` | DremioCloud | table |  | Returns a table listing the datasets on the specified server on Dremio Cloud. |
-| `DremioCloud.DatabasesByServerV360` | DremioCloud | table |  | Returns a table listing the datasets on the specified server on Dremio Cloud. |
-| `DremioCloud.DatabasesByServerV370` | DremioCloud | table |  | Returns a table listing the datasets on the specified server on Dremio Cloud. |
-| `DremioTesting.Contents` | DremioTesting | any |  |  |
 | `Duration.Days` | Duration | nullable number |  | Returns the days portion of a duration. |
 | `Duration.From` | Duration | nullable duration |  | Creates a duration from the given value. |
 | `Duration.FromText` | Duration | nullable duration |  | Returns a duration value from textual elapsed time forms (d.h:m:s). |
@@ -293,26 +209,9 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Duration.TotalMinutes` | Duration | nullable number |  | Returns the total minutes this duration spans. |
 | `Duration.TotalSeconds` | Duration | nullable number |  | Returns the total seconds this duration spans. |
 | `Duration.ToText` | Duration | nullable text |  | Returns the text of the form "d.h:m:s". |
-| `Dynamics365BusinessCentral.ApiContents` | Dynamics365BusinessCentral | table |  | Enter your Dynamics 365 Business Central environment and company. |
-| `Dynamics365BusinessCentral.ApiContentsWithOptions` | Dynamics365BusinessCentral | table |  | Enter your Dynamics 365 Business Central environment and company. |
-| `Dynamics365BusinessCentral.Contents` | Dynamics365BusinessCentral | table |  | Enter your Dynamics 365 Business Central environment and company. |
-| `Dynamics365BusinessCentral.EnvironmentContents` | Dynamics365BusinessCentral | table |  | Enter your Dynamics 365 Business Central environment and company. |
-| `Dynamics365BusinessCentralOnPremises.Contents` | Dynamics365BusinessCentralOnPremises | table |  | Enter the URL of your Dynamics 365 Business Central (on-premises) OData service endpoint. |
-| `DynamicsNav.Contents` | DynamicsNav | table |  | Enter the URL of your Dynamics NAV OData service endpoint. |
-| `DynatraceGrail.Contents` | DynatraceGrail | table |  | DQL Connector can be used to fetch data from Grail using DQL custom query or by selecting tables. |
-| `EduFrame.Contents` | EduFrame | table |  |  |
 | `Embedded.Value` | Values.Implementation | any |  | This function is intended for internal use only. |
-| `Emigo.Contents` | Emigo | table |  | The purpose of the method is to set parameters for odata feed data source calls, thus the non-function calls may be lim… |
-| `Emigo.GetExtractFunction` | Emigo | any |  |  |
-| `EmigoDataSourceConnector.GetExtractFunction` | EmigoDataSourceConnector | any |  |  |
-| `EntersoftBusinessSuite.Contents` | EntersoftBusinessSuite | any |  |  |
-| `EQuIS.Contents` | EQuIS | table |  |  |
 | `Error.Record` | Error | record |  | Returns an error record from the provided text values for reason, message, detail, and error code. |
 | `Essbase.Cubes` | Accessing data | table |  | Returns the cubes in an Essbase instance grouped by Essbase server. |
-| `eWayCRM.Contents` | eWayCRM | table |  |  |
-| `eWayCRM.Contents2` | eWayCRM | table |  |  |
-| `ExactOnlinePremium.Contents` | ExactOnlinePremium | table |  | Get data directly from Exact Online Premium |
-| `Exasol.Database` | Exasol | table |  | Exasol |
 | `Excel.CurrentWorkbook` | Accessing data | table |  | Returns the contents of the current Excel workbook. |
 | `Excel.ShapeTable` | Values.Implementation | any |  | This function is intended for internal use only. |
 | `Excel.Workbook` | Accessing data | table |  | Returns the contents of the Excel workbook. |
@@ -320,37 +219,22 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Expression.Constant` | Expression | text |  | Returns the M source code representation of a constant value. |
 | `Expression.Evaluate` | Expression | any |  | Returns the result of evaluating an M expression. |
 | `Expression.Identifier` | Expression | text |  | Returns the M source code representation of an identifier. |
-| `Fabric.Warehouse` | Fabric | table |  | Imports data from Warehouse |
-| `FabricSql.Contents` | FabricSql | table |  | Imports data from SQL database Instance in Fabric |
-| `FactSetAnalytics.ConnectionCheck` | FactSetAnalytics | any |  |  |
-| `FactSetAnalytics.Contents` | FactSetAnalytics | table |  |  |
-| `FactSetAnalytics.Functions` | FactSetAnalytics | table |  |  |
-| `FactSetRMS.Functions` | FactSetRMS | table |  |  |
-| `Fhir.Contents` | Fhir | table |  |  |
 | `File.Contents` | Accessing data | binary |  | Returns the contents of the specified file as binary. |
 | `Folder.Contents` | Accessing data | table |  | Returns a table containing the properties and contents of the files and folders found in the specified folder. |
 | `Folder.Files` | Accessing data | table |  | Returns a table containing the properties and contents of the files found in the specified folder and subfolders. |
-| `Foundry.Contents` | Foundry | table |  | Connect to Palantir Foundry datasets. |
 | `Function.From` | Function | function |  | Creates a function with a specific parameter signature on top of a function that takes a single list argument. |
 | `Function.Invoke` | Function | any |  | Invokes the given function. |
 | `Function.InvokeAfter` | Function | any |  | Invokes the given function after the specified duration has passed. |
 | `Function.InvokeWithErrorContext` | Values.Implementation | any |  | This function is intended for internal use only. |
 | `Function.IsDataSource` | Type | logical |  | Returns whether or not a particular function is considered a data source. |
 | `Function.ScalarVector` | Function | function |  | Creates a scalar function on top of a vector function, batching multiple invocations. |
-| `Funnel.Contents` | Funnel | table |  | Returns a navigation table to help the user navigate their Workspaces and respective Data Shares. |
 | `Geography.FromWellKnownText` | Record.Serialization | nullable record |  | Translates text representing a geographic value in Well-Known Text (WKT) format into a structured record. |
 | `Geography.ToWellKnownText` | Record.Serialization | nullable text |  | Translates a structured geographic point value into its Well-Known Text (WKT) representation. |
 | `GeographyPoint.From` | Record.Serialization | record |  | Creates a record representing a geographic point from parts. |
 | `Geometry.FromWellKnownText` | Record.Serialization | nullable record |  | Translates text representing a geometric value in Well-Known Text (WKT) format into a structured record. |
 | `Geometry.ToWellKnownText` | Record.Serialization | nullable text |  | Translates a structured geometric point value into its Well-Known Text (WKT) representation. |
 | `GeometryPoint.From` | Record.Serialization | record |  | Creates a record representing a geometric point from parts. |
-| `Github.Contents` | Github | any |  |  |
-| `Github.PagedTable` | Github | any |  |  |
-| `Github.Tables` | Github | table |  | Enter the GitHub repository owner and the repository name. |
 | `GoogleAnalytics.Accounts` | Accessing data | table |  | Returns Google Analytics accounts. |
-| `GoogleBigQuery.Database` | GoogleBigQuery | table |  | Import data from a Google BigQuery database. |
-| `GoogleBigQueryAad.Database` | GoogleBigQueryAad | table |  | Import data from a Google BigQuery database using Microsoft Entra ID |
-| `GoogleSheets.Contents` | GoogleSheets | table |  | Imports data from GoogleSheets |
 | `Graph.Nodes` | Expression | list |  | This function is intended for internal use only. |
 | `Guid.From` | Text.Conversions from and to text | nullable text |  | Returns a guid value from the given value. |
 | `Hdfs.Contents` | Accessing data | table |  | Returns a table containing the properties and contents of the files and folders found in the specified folder from a Ha… |
@@ -358,56 +242,22 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `HdInsight.Containers` | Accessing data | table |  | Returns a navigational table containing the containers found in the specified account from an Azure storage vault. |
 | `HdInsight.Contents` | Accessing data | table |  | Returns a navigational table containing the containers found in the specified account from an Azure storage vault. |
 | `HdInsight.Files` | Accessing data | table |  | Returns a table containing the properties and contents of the blobs found in the specified container from an Azure stor… |
-| `HexagonSmartApi.ApplySelectList` | HexagonSmartApi | table |  |  |
-| `HexagonSmartApi.ApplyUnitsOfMeasure` | HexagonSmartApi | any |  |  |
-| `HexagonSmartApi.ExecuteParametricFilterOnFilterRecord` | HexagonSmartApi | any |  |  |
-| `HexagonSmartApi.ExecuteParametricFilterOnFilterUrl` | HexagonSmartApi | any |  |  |
-| `HexagonSmartApi.Feed` | HexagonSmartApi | table |  | Returns a table from a Hexagon PPM Smart API OData feed. |
-| `HexagonSmartApi.GenerateParametricFilterByFilterSourceType` | HexagonSmartApi | any |  |  |
-| `HexagonSmartApi.GetODataMetadata` | HexagonSmartApi | any |  |  |
-| `HexagonSmartApi.Typecast` | HexagonSmartApi | function |  | Function to return a table representing an OData entity typecast from the target entity. |
 | `Html.Table` | Accessing data | table |  | Returns a table containing the results of running the specified CSS selectors against the provided HTML. |
 | `Identity.From` | Accessing data | record |  | Creates an identity. |
 | `Identity.IsMemberOf` | Accessing data | logical |  | Determines whether an identity is a member of an identity collection. |
 | `IdentityProvider.Default` | Accessing data | any |  | The default identity provider for the current host. |
-| `Impala.Database` | Impala | table |  | Import data from an Impala cluster |
-| `Indexima.Database` | Indexima | table |  | Connection to Indexima Data Hub |
-| `IndustrialAppStore.NavigationTable` | IndustrialAppStore | any |  |  |
-| `InformationGrid.Contents` | InformationGrid | table |  | Retrieves information from authorised BI services available on the given server |
 | `Informix.Database` | Accessing data | table |  | Returns a table of SQL tables and views available in an Informix database. |
 | `Int16.From` | Number.Conversion and formatting | nullable number |  | Creates a 16-bit integer from the given value. |
 | `Int32.From` | Number.Conversion and formatting | nullable number |  | Creates a 32-bit integer from the given value. |
 | `Int64.From` | Number.Conversion and formatting | nullable number |  | Creates a 64-bit integer from the given value. |
 | `Int8.From` | Number.Conversion and formatting | nullable number |  | Creates a signed 8-bit integer from the given value. |
-| `IntersystemsHealthInsight.Database` | IntersystemsHealthInsight | table |  | InterSystems Health Insight |
-| `Intune.Contents` | Intune | table |  | Intune Data Warehouse |
-| `IntuneV2.Contents` | IntuneV2 | table |  | Intune Data Warehouse V2 |
-| `inwink.ScopeContents` | inwink | table |  | inwink data |
-| `IRIS.Database` | IRIS | table |  | InterSystems IRIS |
 | `ItemExpression.From` | Table.Table construction | record |  | Returns the abstract syntax tree (AST) for the body of a function. |
-| `JamfPro.Contents` | JamfPro | text |  |  |
-| `JethroODBC.Database` | JethroODBC | table |  |  |
 | `Json.Document` | Accessing data | any |  | Returns the content of the JSON document. |
 | `Json.FromValue` | Text.Conversions from and to text | binary |  | Produces a JSON representation of a given value. |
-| `Kognitwin.Contents` | Kognitwin | table |  |  |
-| `Kusto.Contents` | Kusto | table |  | Imports data from Azure Data Explorer (Kusto) |
-| `Kusto.Databases` | Kusto | list |  |  |
-| `kxkdbinsightsenterprise.Contents` | kxkdbinsightsenterprise | table |  | Imports data from KX kdb Insights Enterprise |
-| `Kyligence.Database` | Kyligence | table |  | Connect your Kyligence |
-| `KyvosODBC.Databases` | KyvosODBC | table |  | Returns a table listing the datasets on Kyvos Server. |
-| `Lakehouse.Contents` | Lakehouse | table |  | Import data from a Lakehouse |
-| `LEAP.Contents` | LEAP | table |  | Returns a table with relevant LEAP data. |
 | `Lines.FromBinary` | Lines | list |  | Converts a binary value to a list of text values split at lines breaks. |
 | `Lines.FromText` | Lines | list |  | Converts a text value to a list of text values split at lines breaks. |
 | `Lines.ToBinary` | Lines | binary |  | Converts a list of text into a binary value using the specified encoding and lineSeparator.The specified lineSeparator… |
 | `Lines.ToText` | Lines | text |  | Converts a list of text into a single text. |
-| `Linkar.Contents` | Linkar | table |  |  |
-| `LinkedIn.SalesContracts` | LinkedIn | table |  |  |
-| `LinkedIn.SalesContractsWithReportAccess` | LinkedIn | table |  |  |
-| `LinkedIn.SalesNavigator` | LinkedIn | table |  | LinkedIn Sales Navigator |
-| `LinkedIn.SalesNavigatorAnalytics` | LinkedIn | table |  |  |
-| `LinkedIn.SalesNavigatorAnalyticsImpl` | LinkedIn | any |  |  |
-| `LinkedInLearning.Contents` | LinkedInLearning | any |  |  |
 | `List.Accumulate` | List.Transformation functions | any |  | Accumulates a summary value from the items in the list. |
 | `List.AllTrue` | List.Membership functions | logical |  | Returns true if all expressions are true. |
 | `List.Alternate` | List.Selection | list |  | Returns a list comprised of all the odd numbered offset elements in a list. |
@@ -482,32 +332,8 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Logical.From` | Logical | nullable logical |  | Creates a logical from the given value. |
 | `Logical.FromText` | Logical | nullable logical |  | Creates a logical value from the text values "true" and "false". |
 | `Logical.ToText` | Logical | nullable text |  | Returns the text "true" or "false" given a logical value. |
-| `MailChimp.Collection` | MailChimp | table |  | Returns a table with data from a MailChimp endpoint. |
-| `MailChimp.Instance` | MailChimp | table |  | Returns raw response results from a MailChimp API endpoint. |
-| `MailChimp.Tables` | MailChimp | table |  |  |
-| `MailChimp.TablesV2` | MailChimp | table |  | Returns a table with key MailChimp data. |
-| `MariaDB.Contents` | MariaDB | table |  | Returns a navigation table. |
-| `Marketo.Activities` | Marketo | table |  | Returns a table with lead activities. |
-| `Marketo.Leads` | Marketo | table |  | Returns a table with lead details. |
-| `Marketo.Tables` | Marketo | table |  | Enter the URL of the Marketo REST API endpoint associated with your account. |
-| `MarkLogicODBC.Contents` | MarkLogicODBC | table |  | Returns the list of tables returned from the ODBC driver |
-| `MicrosoftAzureDataManagerForEnergy.Search` | MicrosoftAzureDataManagerForEnergy | table |  | Queries for records in the Microsoft Azure Data Manager for Energy instance |
-| `MicrosoftGraphSecurity.Contents` | MicrosoftGraphSecurity | table |  | Connector for the Microsoft Graph Security API |
-| `MicrosoftSentinel.Contents` | MicrosoftSentinel | table |  | Imports data from Sentinel KQL |
-| `MicroStrategyDataset.Contents` | MicroStrategyDataset | table |  |  |
-| `MicroStrategyDataset.TestConnection` | MicroStrategyDataset | any |  |  |
-| `Mixpanel.Contents` | Mixpanel | any |  |  |
-| `Mixpanel.Export` | Mixpanel | any |  |  |
-| `Mixpanel.FunnelById` | Mixpanel | any |  |  |
-| `Mixpanel.FunnelByName` | Mixpanel | any |  |  |
-| `Mixpanel.Funnels` | Mixpanel | any |  |  |
-| `Mixpanel.Segmentation` | Mixpanel | any |  |  |
-| `Mixpanel.Tables` | Mixpanel | any |  |  |
 | `Module.Versions` | Values.Implementation | record |  | Returns a record of module versions for the current module and its dependencies. |
-| `MongoDBAtlasODBC.Contents` | MongoDBAtlasODBC | table |  |  |
-| `MongoDBAtlasODBC.Query` | MongoDBAtlasODBC | any |  |  |
 | `MySQL.Database` | Accessing data | table |  | Returns a table of SQL tables, views, and stored scalar functions available in a MySQL database. |
-| `Netezza.Database` | Netezza | table |  | Import data from an IBM Netezza database. |
 | `Number.Abs` | Number.Operations | nullable number |  | Returns the absolute value of the number. |
 | `Number.Acos` | Number.Trigonometry | nullable number |  | Returns the arccosine of the number. |
 | `Number.Asin` | Number.Trigonometry | nullable number |  | Returns the arcsine of the number. |
@@ -556,36 +382,13 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Odbc.Query` | Accessing data | table |  | Returns the result of running a native query on an ODBC data source. |
 | `OleDb.DataSource` | Accessing data | table |  | Returns a table of SQL tables and views from the OLE DB data source. |
 | `OleDb.Query` | Accessing data | table |  | Returns the result of running a native query on an OLE DB data source. |
-| `OneLake.Contents` | OneLake | table |  | Access data in OneLake storage |
-| `OneLake.SqlAnalytics` | OneLake | table |  | Imports data from Fabric SQL Analytics endpoint |
-| `OneStream.Navigation` | OneStream | any |  |  |
-| `OpenSearchProject.Contents` | OpenSearchProject | table |  |  |
 | `Oracle.Database` | Accessing data | table |  | Returns a table of SQL tables and views from the Oracle database. |
 | `Parquet.Document` | Accessing data | any |  | Returns the contents of the Parquet document as a table. |
 | `Parquet.Metadata` | Accessing data | any |  | This function is intended for internal use only. |
-| `Paxata.Contents` | Paxata | table |  |  |
 | `Pdf.Tables` | Accessing data | table |  | Returns any tables found in a PDF file. |
 | `Percentage.From` | Number.Conversion and formatting | nullable number |  | Returns a percentage value from the given value. |
-| `PlanviewEnterprise.CallQueryService` | PlanviewEnterprise | table |  | Enter the URL, database name associated with your Planview Portfolios account and a SQL query. |
-| `PlanviewEnterprise.Feed` | PlanviewEnterprise | table |  | Enter the URL and database name associated with your Planview Portfolios account. |
-| `PlanviewOKR.Contents` | PlanviewOKR | table |  | Enter the URL of your Planview OKR account. |
-| `PlanviewProjectplace.Contents` | PlanviewProjectplace | table |  | Enter the URL of your Planview ProjectPlace account. |
 | `PostgreSQL.Database` | Accessing data | table |  | Returns a table of SQL tables and views available in a PostgreSQL database. |
-| `PowerBI.Dataflows` | PowerBI | table |  | Connect to all the Power BI dataflows you have access to, and choose the entities you’d like to use. |
-| `PowerBI.Datamarts` | PowerBI | table |  | Imports data from Datamarts |
-| `PowerPlatform.Dataflows` | PowerPlatform | table |  | Import data from a dataflow |
-| `ProductInsights.Contents` | ProductInsights | table |  |  |
-| `ProductInsights.QueryMetric` | ProductInsights | any |  |  |
-| `Profisee.Tables` | Profisee | table |  | Navigation Table returning Profisee entities. |
 | `Progress.DataSourceProgress` | Values.Implementation | any |  | This function is intended for internal use only. |
-| `Projectplace.Feed` | Projectplace | table |  | Enter the URL of your Planview Projectplace account. |
-| `Python.Execute` | Python | table |  | Executes Python script and returns data frames |
-| `QubolePresto.Contents` | QubolePresto | any |  |  |
-| `QuickBase.Contents` | QuickBase | table |  | Quick Base Connector |
-| `QuickBooks.Query` | QuickBooks | table |  |  |
-| `QuickBooks.Report` | QuickBooks | table |  |  |
-| `QuickBooks.Tables` | QuickBooks | any |  |  |
-| `R.Execute` | R | table |  |  |
 | `RData.FromBinary` | Accessing data | any |  | Returns a record of data frames from the RData file. |
 | `Record.AddField` | Record.Transformations | record |  | Adds a field to a record. |
 | `Record.Combine` | Record.Transformations | record |  | Combines the records in the given list. |
@@ -606,42 +409,17 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Record.TransformFields` | Record.Transformations | record |  | Returns a record after applying specified transformations. |
 | `Replacer.ReplaceText` | Replacer | nullable text |  | Replaces text within the provided input. |
 | `Replacer.ReplaceValue` | Replacer | any |  | Replaces values within the provided input. |
-| `Resource.Access` | Resource | any |  | Resource.Access |
-| `Roamler.Contents` | Roamler | any |  |  |
 | `RowExpression.Column` | Table.Table construction | record |  | Returns an abstract syntax tree (AST) that represents access to a column within a row expression. |
 | `RowExpression.From` | Table.Table construction | record |  | Returns the abstract syntax tree (AST) for the body of a function. |
 | `Salesforce.Data` | Accessing data | table |  | Returns the objects from the Salesforce account. |
 | `Salesforce.Reports` | Accessing data | table |  | Returns the reports from the Salesforce account. |
-| `Samsara.Records` | Samsara | table |  | Get records from supported Samsara APIs |
 | `SapBusinessWarehouse.Cubes` | Accessing data | table |  | Returns the InfoCubes and queries in an SAP Business Warehouse system grouped by InfoArea. |
 | `SapHana.Database` | Accessing data | table |  | Returns the packages in an SAP HANA database. |
-| `SDMX.Contents` | SDMX | table |  | Get data from an SDMX RESTful web service that supports the CSV format. |
 | `SharePoint.Contents` | Accessing data | table |  | Returns a table containing content from a SharePoint site. |
 | `SharePoint.Files` | Accessing data | table |  | Returns a table containing documents from a SharePoint site. |
 | `SharePoint.Tables` | Accessing data | table |  | Returns a table containing content from a SharePoint List. |
-| `ShortcutsBI.Contents` | ShortcutsBI | table |  |  |
 | `Single.From` | Number.Conversion and formatting | nullable number |  | Creates a Single from the given value. |
-| `SingleStoreODBC.Contents` | SingleStoreODBC | table |  | The SingleStore Connector is a high-performance connector that lets you DirectQuery and import data from your SingleSto… |
-| `SingleStoreODBC.Database` | SingleStoreODBC | table |  | The SingleStore Connector is a high-performance connector that lets you DirectQuery and import data from your SingleSto… |
-| `SingleStoreODBC.DataSource` | SingleStoreODBC | table |  | The SingleStore Connector is a high-performance connector that lets you DirectQuery and import data from your SingleSto… |
-| `SingleStoreODBC.Query` | SingleStoreODBC | table |  | The SingleStore Connector is a high-performance connector that lets you DirectQuery and import data from your SingleSto… |
-| `Siteimprove.Contents` | Siteimprove | table |  | Siteimprove API connector |
-| `Smartsheet.Content` | Smartsheet | any |  | Returns a table of data from an Smartsheet index endpoint. |
-| `Smartsheet.Query` | Smartsheet | any |  | Returns a JSON result from the Smartsheet API |
-| `Smartsheet.Tables` | Smartsheet | table |  | Returns a table of sheets, reports, folders, and workspaces from the Smartsheet API |
-| `SmartsheetGlobal.Contents` | SmartsheetGlobal | table |  | Returns a table of sheets, reports, folders, and workspaces from the Smartsheet API |
-| `SmartsheetGlobal.Query` | SmartsheetGlobal | any |  | Returns a JSON result from the Smartsheet API |
-| `Snowflake.Databases` | Snowflake | table |  | Import data from a Snowflake Computing warehouse. |
 | `Soda.Feed` | Accessing data | table |  | Returns a table from the contents at the specified URL formatted according to the SODA 2.0 API. |
-| `SoftOneBI.Contents` | SoftOneBI | table |  | Retrieves all Soft1/Atlantis tables in the datalake |
-| `SolarWindsServiceDesk.Contents` | SolarWindsServiceDesk | any |  |  |
-| `SolarWindsServiceDesk.ContentsV110` | SolarWindsServiceDesk | any |  |  |
-| `SolarWindsServiceDesk.ContentsV113` | SolarWindsServiceDesk | any |  |  |
-| `Spark.Tables` | Spark | table |  | Returns a table listing the tables on the specified Spark cluster. |
-| `SparkPost.GetList` | SparkPost | table |  | This function can be used to call any of the "Lists" endpoints offered by the SparkPost API v1. |
-| `SparkPost.GetTable` | SparkPost | table |  | Returns a table of available metrics from the SparkPost API v1 |
-| `SparkPost.NavTable` | SparkPost | table |  | Retrieve the built-in tables exposed by the SparkPost connector with data aggregated over a user-specified number of da… |
-| `Spigit.Contents` | Spigit | table |  | Enter the URL of your Planview IdeaPlace account. |
 | `Splitter.SplitByNothing` | Splitter | function |  | Returns a function that does no splitting, returning its argument as a single element list. |
 | `Splitter.SplitTextByAnyDelimiter` | Splitter | function |  | Returns a function that splits text into a list of text at any of the specified delimiters. |
 | `Splitter.SplitTextByCharacterTransition` | Splitter | function |  | Returns a function that splits text into a list of text according to a transition from one kind of character to another. |
@@ -656,19 +434,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Sql.Databases` | Accessing data | table |  | Returns a table of databases on a SQL Server. |
 | `SqlExpression.SchemaFrom` | Values.Implementation | any |  | This function is intended for internal use only. |
 | `SqlExpression.ToExpression` | Values.Implementation | text |  | Converts the provided SQL query to M code. |
-| `StarburstAad.Contents` | StarburstAad | table |  |  |
-| `StarburstPresto.Contents` | StarburstPresto | table |  |  |
-| `Stripe.Contents` | Stripe | table |  | Makes a call to the Stripe API, with the option to limit number of API calls made. |
-| `Stripe.Method` | Stripe | table |  | Makes a call to the Stripe API. |
-| `Stripe.Tables` | Stripe | table |  | Returns a table listing the available Stripe tables and functions. |
-| `SumTotal.ODataFeed` | SumTotal | table |  | SumTotal's Custom connector connects to SumTotal's external facing OData API service to pull data from data warehousing… |
-| `Supermetrics.Render` | Supermetrics | table |  |  |
-| `Supermetrics.Test` | Supermetrics | any |  |  |
-| `SurveyMonkey.Contents` | SurveyMonkey | table |  | A Navigation table showing all the surveys in the account related to the input access token. |
-| `SweetIQ.Contents` | SweetIQ | any |  |  |
-| `SweetIQ.Tables` | SweetIQ | any |  |  |
 | `Sybase.Database` | Accessing data | table |  | Returns a table of SQL tables and views available in a Sybase database. |
-| `Synapse.Contents` | Synapse | table |  | PQ Connector for Azure Synapse Analytics workspace |
 | `Table.AddColumn` | Table.Transformation | table |  | Adds a column with the specified name. |
 | `Table.AddFuzzyClusterColumn` | Table.Transformation | table |  | Adds a new column with representative values obtained by fuzzy grouping values of the specified column in the table. |
 | `Table.AddIndexColumn` | Table.Transformation | table |  | Appends a column with explicit position values. |
@@ -784,11 +550,6 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Table.ViewFunction` | Table.Table construction | function |  | Creates a function that can be intercepted by a handler defined on a view (via Table.View). |
 | `Table.WithErrorContext` | Values.Implementation | any |  | This function is intended for internal use only. |
 | `Tables.GetRelationships` | Table.Information | table |  | Gets the relationships among a set of tables. |
-| `TeamDesk.Database` | TeamDesk | table |  | Connects to TeamDesk database and let you select a table and a view to retrieve the data from. |
-| `TeamDesk.Select` | TeamDesk | table |  | Retrieves the data from select columns in provided table. |
-| `TeamDesk.SelectView` | TeamDesk | table |  | Retrieves the data from provided table and view. |
-| `TeamsAnalytics.Contents` | TeamsAnalytics | table |  | The Teams Analytics connector enables you to get insights into your usage of Teams. |
-| `Tenforce.Contents` | Tenforce | table |  | Selection data |
 | `Teradata.Database` | Accessing data | table |  | Returns a table of SQL tables and views from the Teradata database. |
 | `Text.AfterDelimiter` | Text.Transformations | any |  | Text.AfterDelimiter |
 | `Text.At` | Text.Extraction | nullable text |  | Returns the character at the specified position. |
@@ -831,7 +592,6 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Text.TrimEnd` | Text.Transformations | nullable text |  | Removes all specified trailing characters. |
 | `Text.TrimStart` | Text.Transformations | nullable text |  | Removes all specified leading characters. |
 | `Text.Upper` | Text.Transformations | nullable text |  | Converts all characters to uppercase. |
-| `TibcoTdv.DataSource` | TibcoTdv | table |  |  |
 | `Time.EndOfHour` | Date | any |  | Returns the end of the hour. |
 | `Time.From` | Time | nullable time |  | Creates a time from the given value. |
 | `Time.FromText` | Time | nullable time |  | Creates a Time from local and universal, and custom Time formats. |
@@ -841,13 +601,6 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Time.StartOfHour` | Date | any |  | Returns the start of the hour. |
 | `Time.ToRecord` | Time | record |  | Returns a record containing the Time value's parts. |
 | `Time.ToText` | Time | nullable text |  | Returns a textual representation of the time value. |
-| `TimeSeriesInsights.Contents` | TimeSeriesInsights | table |  |  |
-| `Troux.CustomFeed` | Troux | table |  | Enter the URL of your Planview Enterprise Architecture account and a query. |
-| `Troux.Feed` | Troux | table |  | Enter the URL of your Planview Enterprise Architecture account. |
-| `Troux.TestConnection` | Troux | any |  |  |
-| `Twilio.Contents` | Twilio | any |  |  |
-| `Twilio.Tables` | Twilio | table |  | Enter the number of months of historical Twilio data to retrieve. |
-| `Twilio.URL` | Twilio | any |  |  |
 | `Type.AddTableKey` | Type | type |  | Adds a key to the given table type. |
 | `Type.ClosedRecord` | Type | type |  | Returns a closed version of the given record type (or the same type, if it is already closed). |
 | `Type.Facets` | Type | record |  | Returns the facets of a type. |
@@ -876,7 +629,6 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Uri.Combine` | Uri | text |  | Returns an absolute URI that is the combination of the input base URI and relative URI. |
 | `Uri.EscapeDataString` | Uri | text |  | Encodes special characters in accordance with RFC 3986. |
 | `Uri.Parts` | Uri | record |  | Returns the parts of the input absolute URI as a record. |
-| `Usercube.Universes` | Usercube | table |  | Provides data from a Usercube instance |
 | `Value.Add` | Values.Arithmetic operations | any |  | Returns the sum of the two values. |
 | `Value.Alternates` | Expression | any |  | Expresses alternate query plans. |
 | `Value.As` | Values.Types | any |  | Returns the value if it's compatible with the specified type. |
@@ -906,34 +658,10 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Value.ViewFunction` | Values.Implementation | function |  | This function is intended for internal use only. |
 | `Variable.Value` | Values.Implementation | any |  | Returns the value of the specified variable. |
 | `Variable.ValueOrDefault` | Values.Implementation | any |  | Returns the value of the specified variable or the default value if the variable is not defined. |
-| `Vena.Contents` | Vena | table |  | Vena |
-| `Vertica.Database` | Vertica | table |  | Import data from Vertica |
-| `VesselInsight.Contents` | VesselInsight | any |  |  |
-| `VivaInsights.Data` | VivaInsights | table |  | Import weekly metrics and attribute data from Workplace Analytics. |
-| `VivaInsightsApi.GetResults` | VivaInsightsApi | any |  |  |
-| `VSTS.AccountContents` | VSTS | binary |  | Enter Url of your Azure DevOps Analytics Service. |
-| `VSTS.AnalyticsViews` | VSTS | table |  | Enter organization and project names. |
-| `VSTS.Contents` | VSTS | binary |  | Enter Url of your Azure DevOps Analytics Service. |
-| `VSTS.Feed` | VSTS | table |  | Azure DevOps Services Feed |
-| `VSTS.Views` | VSTS | table |  | Enter organization and project names. |
 | `Web.BrowserContents` | Accessing data | text |  | Returns the HTML for the specified URL, as viewed by a web browser. |
 | `Web.Contents` | Accessing data | binary |  | Returns the contents downloaded from the url as binary. |
 | `Web.Headers` | Accessing data | record |  | Returns the HTTP headers downloaded from the url as a record value. |
 | `Web.Page` | Accessing data | table |  | Returns the contents of the HTML document broken into its constituent structures, as well as a representation of the fu… |
 | `WebAction.Request` | Action | any |  | Creates an action that, when executed, will return the results of performing an HTTP request as a binary value. |
-| `Webtrends.KeyMetrics` | Webtrends | table |  | Returns a table with key Webtrends metrics. |
-| `Webtrends.Profile` | Webtrends | any |  |  |
-| `Webtrends.ReportContents` | Webtrends | table |  | Returns a table with report content from Webtrends. |
-| `Webtrends.Tables` | Webtrends | table |  | Enter the Profile ID associated with your Webtrends account. |
-| `WebtrendsAnalytics.Tables` | WebtrendsAnalytics | table |  | Enter the Profile ID associated with your Webtrends account. |
-| `Windsor.Main` | Windsor | table |  |  |
-| `Witivio.Contents` | Witivio | table |  | Witivio 365 - Configuration |
-| `WorkforceDimensions.Contents` | WorkforceDimensions | text |  | Configuration to access OAuth server as well as default date range settigns. |
-| `Wrike.Contents` | Wrike | table |  | Shared function and first entry point to Connector. |
 | `Xml.Document` | Accessing data | table |  | Returns the contents of the XML document as a hierarchical table. |
 | `Xml.Tables` | Accessing data | table |  | Returns the contents of the XML document as a nested collection of flattened tables. |
-| `Zendesk.Collection` | Zendesk | any |  |  |
-| `Zendesk.Tables` | Zendesk | table |  | Enter the URL of your Zendesk account. |
-| `ZendeskData.Contents` | ZendeskData | table |  | Returns a table with relevant Zendesk data. |
-| `ZohoCreator.Contents` | ZohoCreator | any |  | This connector will fetch data only from Zoho Creator application reports |
-| `Zucchetti.Contents` | Zucchetti | table |  | Returns contents of VisualQueries (vqr), reports or functions published by the Zucchetti HR software |
