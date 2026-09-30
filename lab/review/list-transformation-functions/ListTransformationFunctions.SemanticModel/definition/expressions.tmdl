@@ -1,0 +1,89 @@
+expression 'List.Accumulate (1)' =
+		List.Accumulate({1, 2, 3}, 0, (state, current) => state + current)
+	lineageTag: 2840111e-454e-5083-933f-1b8f3a456152
+	queryGroup: 'List.Accumulate'
+
+expression 'List.Combine (1)' =
+		List.Combine({{1, 2}, {3}, {}})
+	lineageTag: 1c821bf4-33c7-5957-95c6-0bc8f3e00651
+	queryGroup: 'List.Combine'
+
+expression 'List.ConformToPageReader (1)' =
+		List.ConformToPageReader({1, 2})
+	lineageTag: b662ebdd-07d3-5b2a-b341-b89bdde77701
+	queryGroup: 'List.ConformToPageReader'
+
+expression 'List.RemoveFirstN (1)' =
+		List.RemoveFirstN({1, 2, 3}, 1)
+	lineageTag: c62364ed-4d90-5a06-82ea-bc552787a452
+	queryGroup: 'List.RemoveFirstN'
+
+expression 'List.RemoveItems (1)' =
+		List.RemoveItems({1, 2, 2, 3}, {2})
+	lineageTag: 3318fed7-76a5-5867-8451-47ac2df42865
+	queryGroup: 'List.RemoveItems'
+
+expression 'List.RemoveLastN (1)' =
+		List.RemoveLastN({1, 2, 3}, 2)
+	lineageTag: fc8b09c8-0471-58fb-9a60-89e4035e4d11
+	queryGroup: 'List.RemoveLastN'
+
+expression 'List.RemoveMatchingItems (1)' =
+		List.RemoveMatchingItems({"a", "A", "b"}, {"a"}, Comparer.OrdinalIgnoreCase)
+	lineageTag: 6b74a12c-612a-52dc-84ed-1cd44a86da7c
+	queryGroup: 'List.RemoveMatchingItems'
+
+expression 'List.RemoveNulls (1)' =
+		List.RemoveNulls({1, null, 2})
+	lineageTag: 1dfaf7d6-776b-5cc2-916a-bc4515d73841
+	queryGroup: 'List.RemoveNulls'
+
+expression 'List.RemoveRange (1)' =
+		List.RemoveRange({1..5}, 1, 2)
+	lineageTag: 670dbe96-e2f0-504b-b0ad-fa3757e07e73
+	queryGroup: 'List.RemoveRange'
+
+expression 'List.Repeat (1)' =
+		List.Repeat({1, 2}, 2)
+	lineageTag: db8e0868-273b-5f1a-8807-1eb4c16f9c7a
+	queryGroup: 'List.Repeat'
+
+expression 'List.ReplaceMatchingItems (1)' =
+		List.ReplaceMatchingItems({1, 2, 3}, {{2, 20}})
+	lineageTag: 8cfc9c75-3c19-5368-a6b4-537876b7b3dd
+	queryGroup: 'List.ReplaceMatchingItems'
+
+expression 'List.ReplaceRange (1)' =
+		List.ReplaceRange({1..5}, 1, 2, {"x"})
+	lineageTag: a99abe21-0b37-547e-83e8-f91e83ece8fb
+	queryGroup: 'List.ReplaceRange'
+
+expression 'List.ReplaceValue (1)' =
+		{List.ReplaceValue({"ab", "b"}, "b", "z", Replacer.ReplaceText), List.ReplaceValue({"ab", "b"}, "b", "z", Replacer.ReplaceValue)}
+	lineageTag: 159148d4-9d04-563e-8e10-b61be02e235b
+	queryGroup: 'List.ReplaceValue'
+
+expression 'List.Reverse (1)' =
+		List.Reverse({1, 2, 3})
+	lineageTag: c30fbcd1-638d-5f6d-a3ba-db2a0676fa40
+	queryGroup: 'List.Reverse'
+
+expression 'List.Split (1)' =
+		List.Split({1..5}, 2)
+	lineageTag: 174aa097-83f0-5573-825c-b6d96921d883
+	queryGroup: 'List.Split'
+
+expression 'List.Transform (1)' =
+		List.Transform({1, 2}, each _ * 10)
+	lineageTag: dc969e45-19af-5254-8489-6ca730403921
+	queryGroup: 'List.Transform'
+
+expression 'List.TransformMany (1)' =
+		List.TransformMany({1, 2}, each {"a", "b"}, (x, y) => Text.From(x) & y)
+	lineageTag: 4e7c1d14-96fc-5c8d-85fe-a009a4bf6753
+	queryGroup: 'List.TransformMany'
+
+expression 'List.Zip (1)' =
+		List.Zip({{1, 2, 3}, {"a", "b"}})
+	lineageTag: 1fe18f82-b4f2-5998-bed1-4c8cac529a45
+	queryGroup: 'List.Zip'

@@ -6,6 +6,10 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["TextInformation"]
+annotation PBI_QueryOrder = ["TextInformation", "Text.Length (1)"]
+
+queryGroup 'Text.Length'
+
+	annotation PBI_QueryGroupOrder = 0
 
 ref table TextInformation

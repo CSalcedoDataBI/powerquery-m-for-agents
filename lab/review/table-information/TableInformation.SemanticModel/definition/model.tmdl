@@ -6,6 +6,34 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["TableInformation"]
+annotation PBI_QueryOrder = ["TableInformation", "Table.ApproximateRowCount (1)", "Table.ColumnCount (1)", "Table.IsEmpty (1)", "Table.PartitionValues (1)", "Table.Profile (1)", "Table.RowCount (1)", "Table.Schema (1)"]
+
+queryGroup 'Table.ApproximateRowCount'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Table.ColumnCount'
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 'Table.IsEmpty'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'Table.PartitionValues'
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup 'Table.Profile'
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup 'Table.RowCount'
+
+	annotation PBI_QueryGroupOrder = 5
+
+queryGroup 'Table.Schema'
+
+	annotation PBI_QueryGroupOrder = 6
 
 ref table TableInformation

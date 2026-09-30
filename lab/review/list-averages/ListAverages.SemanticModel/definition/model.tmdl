@@ -6,6 +6,22 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["ListAverages"]
+annotation PBI_QueryOrder = ["ListAverages", "List.Average (1)", "List.Mode (1)", "List.Modes (1)", "List.StandardDeviation (1)"]
+
+queryGroup 'List.Average'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'List.Mode'
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 'List.Modes'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'List.StandardDeviation'
+
+	annotation PBI_QueryGroupOrder = 3
 
 ref table ListAverages

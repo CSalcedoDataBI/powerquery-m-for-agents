@@ -6,6 +6,18 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["ListInformation"]
+annotation PBI_QueryOrder = ["ListInformation", "List.Count (1)", "List.IsEmpty (1)", "List.NonNullCount (1)"]
+
+queryGroup 'List.Count'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'List.IsEmpty'
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 'List.NonNullCount'
+
+	annotation PBI_QueryGroupOrder = 2
 
 ref table ListInformation

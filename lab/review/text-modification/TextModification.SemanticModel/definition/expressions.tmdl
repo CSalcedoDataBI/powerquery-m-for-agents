@@ -1,0 +1,29 @@
+expression 'Text.Insert (1)' =
+		Text.Insert("ABD", 2, "C")
+	lineageTag: 8d0fc61c-88f5-54ad-a237-d2b1a6842155
+	queryGroup: 'Text.Insert'
+
+expression 'Text.Remove (1)' =
+		Text.Remove("a-b_c", {"-", "_"})
+	lineageTag: 529a722b-c5ea-56d2-9c5b-f49538cfc840
+	queryGroup: 'Text.Remove'
+
+expression 'Text.RemoveRange (1)' =
+		Text.RemoveRange("ABCDEF", 2, 2)
+	lineageTag: 313934de-ab1b-5825-9152-7e1785d6faaa
+	queryGroup: 'Text.RemoveRange'
+
+expression 'Text.Replace (1)' =
+		Text.Replace("a.b.c", ".", "-")
+	lineageTag: a33c74b2-e2ea-5045-8a63-90fe1b811d14
+	queryGroup: 'Text.Replace'
+
+expression 'Text.ReplaceRange (1)' =
+		Text.ReplaceRange("ABCDEF", 2, 2, "xyz")
+	lineageTag: 65b14341-e7d7-58f6-a4d0-c43a6cf82385
+	queryGroup: 'Text.ReplaceRange'
+
+expression 'Text.Select (1)' =
+		Text.Select("a1b2c3", {"0".."9"})
+	lineageTag: 47a4d98e-b876-5824-82cb-9b46b552d738
+	queryGroup: 'Text.Select'

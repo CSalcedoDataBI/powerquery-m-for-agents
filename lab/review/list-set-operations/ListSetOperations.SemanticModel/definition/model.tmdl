@@ -6,6 +6,18 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["ListSetOperations"]
+annotation PBI_QueryOrder = ["ListSetOperations", "List.Difference (1)", "List.Intersect (1)", "List.Union (1)"]
+
+queryGroup 'List.Difference'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'List.Intersect'
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 'List.Union'
+
+	annotation PBI_QueryGroupOrder = 2
 
 ref table ListSetOperations

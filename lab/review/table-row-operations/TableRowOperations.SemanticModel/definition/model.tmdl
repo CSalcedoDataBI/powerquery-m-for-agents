@@ -6,6 +6,110 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["TableRowOperations"]
+annotation PBI_QueryOrder = ["TableRowOperations", "Table.AlternateRows (1)", "Table.Combine (1)", "Table.FindText (1)", "Table.First (1)", "Table.FirstN (1)", "Table.FirstValue (1)", "Table.FromPartitions (1)", "Table.InsertRows (1)", "Table.Last (1)", "Table.LastN (1)", "Table.MatchesAllRows (1)", "Table.MatchesAnyRows (1)", "Table.Partition (1)", "Table.Range (1)", "Table.RemoveFirstN (1)", "Table.RemoveLastN (1)", "Table.RemoveRows (1)", "Table.RemoveRowsWithErrors (1)", "Table.Repeat (1)", "Table.ReplaceRows (1)", "Table.ReverseRows (1)", "Table.SelectRows (1)", "Table.SelectRowsWithErrors (1)", "Table.SingleRow (1)", "Table.Skip (1)", "Table.SplitAt (1)"]
+
+queryGroup 'Table.AlternateRows'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Table.Combine'
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 'Table.FindText'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'Table.First'
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup 'Table.FirstN'
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup 'Table.FirstValue'
+
+	annotation PBI_QueryGroupOrder = 5
+
+queryGroup 'Table.FromPartitions'
+
+	annotation PBI_QueryGroupOrder = 6
+
+queryGroup 'Table.InsertRows'
+
+	annotation PBI_QueryGroupOrder = 7
+
+queryGroup 'Table.Last'
+
+	annotation PBI_QueryGroupOrder = 8
+
+queryGroup 'Table.LastN'
+
+	annotation PBI_QueryGroupOrder = 9
+
+queryGroup 'Table.MatchesAllRows'
+
+	annotation PBI_QueryGroupOrder = 10
+
+queryGroup 'Table.MatchesAnyRows'
+
+	annotation PBI_QueryGroupOrder = 11
+
+queryGroup 'Table.Partition'
+
+	annotation PBI_QueryGroupOrder = 12
+
+queryGroup 'Table.Range'
+
+	annotation PBI_QueryGroupOrder = 13
+
+queryGroup 'Table.RemoveFirstN'
+
+	annotation PBI_QueryGroupOrder = 14
+
+queryGroup 'Table.RemoveLastN'
+
+	annotation PBI_QueryGroupOrder = 15
+
+queryGroup 'Table.RemoveRows'
+
+	annotation PBI_QueryGroupOrder = 16
+
+queryGroup 'Table.RemoveRowsWithErrors'
+
+	annotation PBI_QueryGroupOrder = 17
+
+queryGroup 'Table.Repeat'
+
+	annotation PBI_QueryGroupOrder = 18
+
+queryGroup 'Table.ReplaceRows'
+
+	annotation PBI_QueryGroupOrder = 19
+
+queryGroup 'Table.ReverseRows'
+
+	annotation PBI_QueryGroupOrder = 20
+
+queryGroup 'Table.SelectRows'
+
+	annotation PBI_QueryGroupOrder = 21
+
+queryGroup 'Table.SelectRowsWithErrors'
+
+	annotation PBI_QueryGroupOrder = 22
+
+queryGroup 'Table.SingleRow'
+
+	annotation PBI_QueryGroupOrder = 23
+
+queryGroup 'Table.Skip'
+
+	annotation PBI_QueryGroupOrder = 24
+
+queryGroup 'Table.SplitAt'
+
+	annotation PBI_QueryGroupOrder = 25
 
 ref table TableRowOperations

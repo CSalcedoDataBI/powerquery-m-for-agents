@@ -1,0 +1,4 @@
+expression 'Text.Length (1)' =
+		{Text.Length("abc"), Text.Length(null)}
+	lineageTag: 00f9e91b-a10f-5c8e-909f-3fccd73c7e9f
+	queryGroup: 'Text.Length'

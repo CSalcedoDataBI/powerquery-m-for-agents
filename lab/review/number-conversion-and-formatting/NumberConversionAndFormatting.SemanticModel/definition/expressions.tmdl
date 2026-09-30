@@ -1,0 +1,203 @@
+expression 'Byte.From (1)' =
+		Byte.From(null)
+	lineageTag: 789f090d-b038-5c1c-bf76-c344d112fa0b
+	queryGroup: 'Byte.From'
+
+expression 'Byte.From (2)' =
+		Byte.From("4.5")
+	lineageTag: 97c380c5-f8f4-5c0f-aaba-9e452909a346
+	queryGroup: 'Byte.From'
+
+expression 'Byte.From (3)' =
+		Byte.From("4.5", null, RoundingMode.AwayFromZero)
+	lineageTag: 5c3538e1-01f7-513f-a21f-5d72a1851c25
+	queryGroup: 'Byte.From'
+
+expression 'Currency.From (1)' =
+		Currency.From(null)
+	lineageTag: f822a4a3-59d7-5d74-baca-26d7be41a966
+	queryGroup: 'Currency.From'
+
+expression 'Currency.From (2)' =
+		Currency.From("1.23445")
+	lineageTag: 51fcf6aa-99be-57a9-a769-0e11a35368cb
+	queryGroup: 'Currency.From'
+
+expression 'Currency.From (3)' =
+		Currency.From("1.23445", "en-US", RoundingMode.Up)
+	lineageTag: 3071ee0d-9e17-5d60-b588-1b6e2decef9d
+	queryGroup: 'Currency.From'
+
+expression 'Decimal.From (1)' =
+		Decimal.From(null)
+	lineageTag: ebb71a0b-de30-5738-b5dc-ecf5a97625d4
+	queryGroup: 'Decimal.From'
+
+expression 'Decimal.From (2)' =
+		Decimal.From("1.234,5", "de-DE")
+	lineageTag: cee07708-58e3-566a-b5e6-fc8930c32aca
+	queryGroup: 'Decimal.From'
+
+expression 'Decimal.From (3)' =
+		Decimal.From(123)
+	lineageTag: 42800a56-bea0-50d6-ab42-24f8d731370a
+	queryGroup: 'Decimal.From'
+
+expression 'Double.From (1)' =
+		Double.From(null)
+	lineageTag: 0725a4ba-5c16-5321-86ab-366fd9b719b4
+	queryGroup: 'Double.From'
+
+expression 'Double.From (2)' =
+		Double.From("1,5", "fr-FR")
+	lineageTag: f0bf0793-38de-5a15-8e70-4be3f4c8166a
+	queryGroup: 'Double.From'
+
+expression 'Double.From (3)' =
+		Double.From(Number.Power(2, 1024))
+	lineageTag: 949c5bc1-8cae-5073-9d68-7a92fa2e5145
+	queryGroup: 'Double.From'
+
+expression 'Int16.From (1)' =
+		Int16.From(null)
+	lineageTag: b73a7e39-7ad2-504b-b752-48803cfa16f3
+	queryGroup: 'Int16.From'
+
+expression 'Int16.From (2)' =
+		{Int16.From(2.5), Int16.From(3.5), Int16.From(2.5, null, RoundingMode.AwayFromZero)}
+	lineageTag: 69efb259-bf57-5d34-8787-f66d332c101f
+	queryGroup: 'Int16.From'
+
+expression 'Int16.From (3)' =
+		Int16.From(32768)
+	lineageTag: 12cf14d3-8a28-5c59-9b9f-86877a43c7e1
+	queryGroup: 'Int16.From'
+
+expression 'Int32.From (1)' =
+		Int32.From(null)
+	lineageTag: 2ba3e69a-7ec2-5615-9a31-22011b7816b2
+	queryGroup: 'Int32.From'
+
+expression 'Int32.From (2)' =
+		Int32.From(2.5)
+	lineageTag: e01150b7-b06c-50a2-8935-dbbf8e80b95c
+	queryGroup: 'Int32.From'
+
+expression 'Int32.From (3)' =
+		Int32.From("4.5", null, RoundingMode.AwayFromZero)
+	lineageTag: f03ac67c-b627-5ffb-b223-60eae0f60019
+	queryGroup: 'Int32.From'
+
+expression 'Int32.From (4)' =
+		{Int32.From(7.9, null, RoundingMode.Down), Int32.From(-7.9, null, RoundingMode.TowardZero)}
+	lineageTag: f56895ea-8898-5361-9167-b4de15e7104d
+	queryGroup: 'Int32.From'
+
+expression 'Int64.From (1)' =
+		Int64.From(null)
+	lineageTag: 67befb9a-3a57-59cc-86d5-d279e961ae4a
+	queryGroup: 'Int64.From'
+
+expression 'Int64.From (2)' =
+		Int64.From(2.5)
+	lineageTag: 67fc48ef-bf67-50fb-9cc7-bcfc8176dc38
+	queryGroup: 'Int64.From'
+
+expression 'Int64.From (3)' =
+		Int64.From("4,5", "fr-FR", RoundingMode.AwayFromZero)
+	lineageTag: 60aea43a-a03a-5d0b-9019-d3f42b2cf3f9
+	queryGroup: 'Int64.From'
+
+expression 'Int8.From (1)' =
+		Int8.From(null)
+	lineageTag: a41152e5-3d92-51bb-bb59-025bb4fe3629
+	queryGroup: 'Int8.From'
+
+expression 'Int8.From (2)' =
+		Int8.From("4.5")
+	lineageTag: 61c04826-47b5-5806-9d15-988138ff7a52
+	queryGroup: 'Int8.From'
+
+expression 'Int8.From (3)' =
+		Int8.From("1,5", "de-DE", RoundingMode.AwayFromZero)
+	lineageTag: 4180f09e-bfa1-57fd-ab27-234c173b9818
+	queryGroup: 'Int8.From'
+
+expression 'Number.From (1)' =
+		Number.From(null)
+	lineageTag: f9d3663d-494d-5bae-8b40-2daef32a4597
+	queryGroup: 'Number.From'
+
+expression 'Number.From (2)' =
+		Number.From("1.234,56", "de-DE")
+	lineageTag: 504416f9-2093-5ba1-b8e5-cf4d30f73ec9
+	queryGroup: 'Number.From'
+
+expression 'Number.From (3)' =
+		List.Transform({true, false, #time(6, 0, 0), #duration(1, 12, 0, 0)}, Number.From)
+	lineageTag: f383b03a-9b54-543a-9690-b084893b80c8
+	queryGroup: 'Number.From'
+
+expression 'Number.FromText (1)' =
+		Number.FromText(null)
+	lineageTag: f18b71fd-9690-5feb-a2c0-296b6b09e89c
+	queryGroup: 'Number.FromText'
+
+expression 'Number.FromText (2)' =
+		Number.FromText("1.234,5", "de-DE")
+	lineageTag: 9cd31605-f156-5179-a36f-69fd23fa8727
+	queryGroup: 'Number.FromText'
+
+expression 'Number.FromText (3)' =
+		Number.FromText("12 apples")
+	lineageTag: 1183a827-5efc-5cb6-b8f6-ff6b37f5b3e9
+	queryGroup: 'Number.FromText'
+
+expression 'Number.ToText (1)' =
+		Number.ToText(null)
+	lineageTag: b0504ebf-47dd-57c4-926d-871dd1e8c97a
+	queryGroup: 'Number.ToText'
+
+expression 'Number.ToText (2)' =
+		Number.ToText(1234.5678, "N2", "de-DE")
+	lineageTag: 45cb8760-2eef-5331-887f-68f26d87f17e
+	queryGroup: 'Number.ToText'
+
+expression 'Number.ToText (3)' =
+		[
+		    default = Number.ToText(4),
+		    exponential = Number.ToText(4, "e"),
+		    percent = Number.ToText(-0.1234, "P1", "en-US")
+		]
+	lineageTag: cbfc5337-9884-5572-bf7c-674bdf9981a0
+	queryGroup: 'Number.ToText'
+
+expression 'Percentage.From (1)' =
+		Percentage.From(null)
+	lineageTag: 0caf7482-1ab0-54b2-b17a-85811abd26e0
+	queryGroup: 'Percentage.From'
+
+expression 'Percentage.From (2)' =
+		Percentage.From("12.3")
+	lineageTag: c4c81e60-23fb-5fc5-9462-8363a69d39ad
+	queryGroup: 'Percentage.From'
+
+expression 'Percentage.From (3)' =
+		Percentage.From("12,3%", "de-DE")
+	lineageTag: aad7d679-91ce-5da2-8ce4-f93f4a869944
+	queryGroup: 'Percentage.From'
+
+expression 'Single.From (1)' =
+		Single.From(null)
+	lineageTag: 1a34a87b-64c2-5d94-882f-d5418d715e9a
+	queryGroup: 'Single.From'
+
+expression 'Single.From (2)' =
+		Single.From("1,5", "fr-FR")
+	lineageTag: 7677cc0f-e1f6-5e1d-9ef0-fcb85a69b98c
+	queryGroup: 'Single.From'
+
+expression 'Single.From (3)' =
+		Single.From(1E39)
+	lineageTag: e6924861-3e59-5147-88be-65f4d33d7388
+	queryGroup: 'Single.From'

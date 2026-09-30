@@ -6,6 +6,30 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["TextConversionsFromAndToText"]
+annotation PBI_QueryOrder = ["TextConversionsFromAndToText", "Text.Format (1)", "Text.From (1)", "Text.FromBinary (1)", "Text.NewGuid (1)", "Text.ToBinary (1)", "Text.ToList (1)"]
+
+queryGroup 'Text.Format'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Text.From'
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 'Text.FromBinary'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'Text.NewGuid'
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup 'Text.ToBinary'
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup 'Text.ToList'
+
+	annotation PBI_QueryGroupOrder = 5
 
 ref table TextConversionsFromAndToText
