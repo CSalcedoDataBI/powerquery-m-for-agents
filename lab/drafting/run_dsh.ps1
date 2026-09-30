@@ -55,8 +55,8 @@ $capture = 'node /cfg/capture.mjs & sleep 1; echo "Say ok." | ' +
     'DEEPSEEK_BASE_URL=http://127.0.0.1:8799 DEEPSEEK_API_KEY=sk-fake-privacy-check ' +
     'dsh-run --profile headless --json > /dev/null 2>&1; cat /tmp/request-fields.txt'
 $sent = docker run @sandbox --network none --entrypoint sh $Image -c $capture
-if (-not $sent) { throw 'Privacy check: dsh sent no request to the stand-in API' }
-$leaks = $sent | Select-String -Pattern 'dsh_session_log|dsh_plugin_packages'
+if ($LASTEXITCODE -ne 0 -or -not $sent) { throw 'Privacy check: dsh sent no request to the stand-in API' }
+$leaks = $sent | Select-String -Pattern 'LEAK|dsh_session_log|dsh_plugin_packages'
 if ($leaks) { throw "Privacy check failed - still sent:`n$($leaks -join "`n")" }
 Write-Host "Privacy check: $(@($sent).Count) request(s), fields: $((@($sent)[0] -split ' ')[2])"
 
@@ -74,8 +74,10 @@ $extra = $names | Where-Object { $_ -notin $allowed }
 if ($extra) { throw "Unexpected variables in the container: $($extra -join ', ')" }
 # Kernel filesystems, the tmpfs above, and the three files docker itself mounts read-only.
 $mounts = docker run @probe --entrypoint sh $Image -c 'awk ''$3 !~ /^(proc|sysfs|tmpfs|devpts|mqueue|cgroup2?|overlay)$/ && $2 !~ /^\/etc\/(hostname|hosts|resolv\.conf)$/'' /proc/mounts'
+if ($LASTEXITCODE -ne 0) { throw 'could not read the container mounts' }
 if ($mounts) { throw "Unexpected mounts in the container:`n$($mounts -join "`n")" }
 $version = docker run @probe $Image --version
+if ($LASTEXITCODE -ne 0) { throw 'dsh --version failed in the container' }
 Write-Host "dsh $version - isolation checked (no host mount, one secret)."
 if ($CheckOnly) { return }
 

@@ -114,9 +114,10 @@ PURE_CATEGORIES = {
     "Record", "Replacer", "Splitter", "Table", "Text", "Time", "Type", "Uri", "Values",
 }
 # Internal hooks (Embedded.Value, Variable.Value, Value.Firewall): off, except the one a page
-# is about. Value.NativeQuery sends a query to a data source.
+# is about. Value.NativeQuery sends a query to a data source; Function.InvokeAfter stalls the
+# runner for as long as the block asks.
 IMPURE_CATEGORIES = {"Values.Implementation"}
-IMPURE_NAMES = {"Value.NativeQuery"}
+IMPURE_NAMES = {"Value.NativeQuery", "Function.InvokeAfter"}
 # Parsers of text or binary values. Every way to fetch that value (File.Contents, Web.Contents)
 # is refused, so what they parse can only be a literal of the block.
 PURE_NAMES = {"Table.WithErrorContext", "Csv.Document", "Json.Document", "Xml.Document",
