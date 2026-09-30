@@ -122,6 +122,14 @@ class Check(unittest.TestCase):
         self.assertEqual(len(errors), 1)
         self.assertIn("'appFigurs.Tables'", errors[0])
 
+    def test_data_in_a_result_vouches_for_nothing_but_field_names_do(self):
+        p = self.page("skills/m-reference/concepts/t.md",
+                      "<!-- lab: desktop 1 -->\n\n`T.Name` and `Documentation.Name`.\n\n"
+                      "```m\n1\n```\n\n```text\n[#\"Documentation.Name\" = \"T.Name\"]\n```\n")
+        errors = self.run_check(p)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("'T.Name'", errors[0])
+
     def test_names_off_the_strict_shape_are_checked_under_known_prefixes(self):
         # `Text.upper` has a lowercase second segment, so only the loose pattern sees it;
         # `catalog.md` has a prefix the export never uses and is left alone.

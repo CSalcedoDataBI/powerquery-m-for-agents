@@ -27,8 +27,13 @@ NAME_RE = re.compile(r"(?<![\w.])([A-Z][A-Za-z0-9]*\.[A-Z][A-Za-z0-9]*)(?![\w])"
 # Some are not (appFigures.Tables, BinaryFormat.7BitEncodedSignedInteger). A looser token is
 # checked only when its prefix is one the export uses, so `catalog.md` or `e.g` never count.
 LOOSE_RE = re.compile(r"(?<![\w.])([A-Za-z][A-Za-z0-9]*\.[A-Za-z0-9][A-Za-z0-9]*)(?![\w])")
-# Names the engine prints that are not library members: error reasons in `error: <Reason>:`.
-REASON_RE = re.compile(r"error: ([A-Za-z][A-Za-z0-9]*\.[A-Za-z][A-Za-z0-9]*):")
+# Names the engine prints that are not library members, in the places only the engine writes
+# them: an error's reason (`error: <Reason>:` from the runner, `Reason = "<Reason>"` in a
+# `try` record) and a record field name (`#"Documentation.Name" = ...`). Data in a result -
+# a column called T.Name, a text value - vouches for nothing.
+REASON_RE = re.compile(
+    r'(?:error: |Reason = ")([A-Za-z][A-Za-z0-9]*\.[A-Za-z][A-Za-z0-9]*)[:"]'
+    r'|#"([A-Za-z][A-Za-z0-9]*\.[A-Za-z][A-Za-z0-9]*)" = ')
 
 
 STRING_RE = re.compile(r'"(?:[^"]|"")*"')
@@ -101,7 +106,7 @@ def check(root=m_blocks.ROOT, ref=REF, page_list=None):
             written |= code_names(block.code)
     printed = set()
     for result in results:
-        printed |= set(REASON_RE.findall(result)) | names_in(result, prefixes)
+        printed |= {a or b for a, b in REASON_RE.findall(result)}
     known = exported | (printed - written)
 
     # 2: example placement

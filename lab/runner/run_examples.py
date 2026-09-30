@@ -160,7 +160,8 @@ def main(argv=None):
                       help="build and open Desktop on the runner model, and leave it open")
     mode.add_argument("--prepare", action="store_true",
                       help="only write the query; refresh the open model yourself, then "
-                           "--port N --no-refresh --write")
+                           "--port N --no-refresh to look at the results (a batch run: "
+                           "writing them needs --allow-batch)")
     parser.add_argument("--port", type=int, default=0,
                         help="read from a Desktop already open on the runner model")
     parser.add_argument("--no-refresh", action="store_true",
