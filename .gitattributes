@@ -24,3 +24,9 @@
 # "#!/bin/sh" seguido de un retorno de carro y el script deja de encontrarse
 # (lab/drafting/entrypoint.sh: "dsh-run: not found").
 *.sh        text eol=lf
+
+# Lo que se envia al directorio de plugins es el archivo del repo (git archive / zip de
+# GitHub), y la carpeta del plugin es la raiz. Los exports crudos de #shared son la entrada
+# de sync_shared.py, no algo que el agente lea: quedan en el repo para reproducir cada
+# generacion, pero fuera del archivo que se envia (1,09 MB, sobre el limite de 256 KiB).
+exports/*.json export-ignore
