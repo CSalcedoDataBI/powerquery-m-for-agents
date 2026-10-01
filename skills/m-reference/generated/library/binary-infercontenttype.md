@@ -4,7 +4,7 @@ category: "Binary"
 returns: "record"
 hosts: ["desktop"]
 notes: false
-examples: 3
+examples: 2
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -27,4 +27,4 @@ If the inferred content type is text/csv, and the format is fixed-width, additio
 |---|---|---|
 | `source` | `binary` | no |
 
-**Executed examples (3):** [examples/binary/binary-infercontenttype.md](../../examples/binary/binary-infercontenttype.md)
+**Executed examples (2):** [examples/binary/binary-infercontenttype.md](../../examples/binary/binary-infercontenttype.md)

@@ -936,7 +936,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 2
   },
   {
    "name": "Binary.Length",

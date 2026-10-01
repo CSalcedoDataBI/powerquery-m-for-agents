@@ -12,15 +12,23 @@ let
     Environment = Record.SelectFields(#shared, Allowed, MissingField.Ignore),
 
     // A text as an M text literal: "#(" first, so the escapes added after it stay single.
+    // Every other control character as #(XXXX): written raw, it does not survive the trip
+    // back through ADOMD (U+0001 in Binary.InferContentType's delimiters was lost).
+    Controls = List.Numbers(0, 32) & List.Numbers(127, 33) & {8232, 8233},
     Quote = (t as text) as text =>
         let
             s1 = Text.Replace(t, "#(#)(", "#(#)(#)("),
             s2 = Text.Replace(s1, """", """"""),
             s3 = Text.Replace(s2, "#(cr)", "#(#)(cr)"),
             s4 = Text.Replace(s3, "#(lf)", "#(#)(lf)"),
-            s5 = Text.Replace(s4, "#(tab)", "#(#)(tab)")
+            s5 = Text.Replace(s4, "#(tab)", "#(#)(tab)"),
+            s6 = if Text.Length(Text.Select(s5, List.Transform(Controls, Character.FromNumber))) = 0 then s5
+                else Text.Combine(List.Transform(Text.ToList(s5), (c) =>
+                    if List.Contains(Controls, Character.ToNumber(c))
+                    then "#(#)(" & Text.PadStart(Number.ToText(Character.ToNumber(c), "X", "en-US"), 4, "0") & ")"
+                    else c))
         in
-            """" & s5 & """",
+            """" & s6 & """",
 
     Keywords = {"and", "as", "each", "else", "error", "false", "if", "in", "is", "let", "meta",
         "not", "null", "or", "otherwise", "section", "shared", "then", "true", "try", "type"},

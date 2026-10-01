@@ -2,24 +2,15 @@
 
 # Binary.InferContentType
 
-The record has two fields: the content type, and a table of every delimiter that was tried with
-the columns and rows each would give. Even a short phrase with one comma is reported as CSV. A
-null source is an error.
+Even a short phrase with one comma is reported as CSV, and the record lists every delimiter that
+was tried with the columns and rows each would give. A null source is an error.
 
 ```m
-Record.FieldNames(Binary.InferContentType(Text.ToBinary("Name,Age#(lf)Alice,30#(lf)Bob,25")))
+Binary.InferContentType(Text.ToBinary("Hello, world"))
 ```
 
 ```text
-{"Content.Type", "Csv.PotentialDelimiters"}
-```
-
-```m
-Record.FieldValues(Binary.InferContentType(Text.ToBinary("Hello, world"))){0}
-```
-
-```text
-"text/csv"
+[#"Content.Type" = "text/csv", #"Csv.PotentialDelimiters" = #table(type table [PotentialDelimiter = any, QuoteStyle = any, MaxColumns = any, NonEmptyColumns = any, MaxRows = any, NonEmptyRows = any], {{",", 0, 2, 2, 1, 1}, {",", 1, 2, 2, 1, 1}, {"#(tab)", 0, 1, 1, 1, 1}, {"#(tab)", 1, 1, 1, 1, 1}, {";", 0, 1, 1, 1, 1}, {";", 1, 1, 1, 1, 1}, {":", 0, 1, 1, 1, 1}, {":", 1, 1, 1, 1, 1}, {"|", 0, 1, 1, 1, 1}, {"|", 1, 1, 1, 1, 1}, {"#(0001)", 0, 1, 1, 1, 1}, {"#(0001)", 1, 1, 1, 1, 1}, {"W", 0, 2, 2, 1, 1}, {"W", 1, 2, 2, 1, 1}})]
 ```
 
 ```m
