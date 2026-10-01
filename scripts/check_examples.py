@@ -61,11 +61,7 @@ def category_slug(category):
 
 
 def load_catalog(ref):
-    path = os.path.join(ref, "generated", "catalog.json")
-    if not os.path.isfile(path):
-        return None
-    with open(path, encoding="utf-8") as f:
-        return json.load(f)
+    return m_blocks.load_catalog(ref)
 
 
 def check(root=m_blocks.ROOT, ref=REF, page_list=None):

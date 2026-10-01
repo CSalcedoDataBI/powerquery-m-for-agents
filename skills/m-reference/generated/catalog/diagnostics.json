@@ -1,0 +1,49 @@
+{
+ "functions": [
+  {
+   "name": "Diagnostics.ActivityId",
+   "file": "diagnostics-activityid",
+   "kind": "library",
+   "category": "Diagnostics",
+   "returns": "nullable text",
+   "signature": "Diagnostics.ActivityId() as nullable text",
+   "summary": "Returns an opaque identifier for the currently-running evaluation.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Diagnostics.CorrelationId",
+   "file": "diagnostics-correlationid",
+   "kind": "library",
+   "category": "Diagnostics",
+   "returns": "nullable text",
+   "signature": "Diagnostics.CorrelationId() as nullable text",
+   "summary": "Returns an opaque identifier to correlate incoming requests with outgoing ones.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Diagnostics.Trace",
+   "file": "diagnostics-trace",
+   "kind": "library",
+   "category": "Diagnostics",
+   "returns": "any",
+   "signature": "Diagnostics.Trace(traceLevel as number, message as any, value as any, optional delayed as nullable logical) as any",
+   "summary": "Writes a trace entry, if tracing is enabled, and returns the value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  }
+ ]
+}

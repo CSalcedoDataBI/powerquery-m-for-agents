@@ -61,7 +61,7 @@ uses. Many carry no description. Data-access functions the engine documents (`Cs
 | `generated/catalog.md` | The index the agent reads: library functions. **Generated** |
 | `generated/connectors.md` | Connector entry points, same columns. **Generated** |
 | `generated/constants.md` | Constants and type values, with their value. **Generated** |
-| `generated/catalog.json` | All three indexes for scripts. **Generated**, never loaded into context |
+| `generated/catalog/` | All three indexes for scripts, one JSON file per category root. **Generated**, never loaded into context |
 | `generated/library/<file>.md` | One card per function or connector. **Generated — never edit by hand** |
 | `concepts.md` | Index of the language pages. **Hand-written** |
 | `concepts/<topic>.md` | One page per language topic, with executed blocks. **Hand-written** |

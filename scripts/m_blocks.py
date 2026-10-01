@@ -36,6 +36,22 @@ class Block:
     result_end: int | None
 
 
+def sync_shared():
+    """skills/m-reference/scripts/sync_shared.py, which writes the catalogue and owns its format."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        "sync_shared", os.path.join(SKILLS, "m-reference", "scripts", "sync_shared.py"))
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_catalog(ref=os.path.join(SKILLS, "m-reference")):
+    """The m-reference catalogue as one dict, {exports, functions, constants}, or None.
+    It is written split under generated/catalog/; this reads it back whole."""
+    return sync_shared().load_catalog(os.path.join(ref, "generated"))
+
+
 def pages():
     """Hand-written Markdown under skills/, relative to ROOT. generated/ is the sync's."""
     found = []

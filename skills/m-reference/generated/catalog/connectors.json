@@ -1,0 +1,4099 @@
+{
+ "functions": [
+  {
+   "name": "Acterys.Contents",
+   "file": "acterys-contents",
+   "kind": "connector",
+   "category": "Acterys",
+   "returns": "any",
+   "signature": "Acterys.Contents() as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Actian.Contents",
+   "file": "actian-contents",
+   "kind": "connector",
+   "category": "Actian",
+   "returns": "any",
+   "signature": "Actian.Contents(server as text, database as text) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "ADPAnalytics.Contents",
+   "file": "adpanalytics-contents",
+   "kind": "connector",
+   "category": "ADPAnalytics",
+   "returns": "any",
+   "signature": "ADPAnalytics.Contents() as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AmazonAthena.Databases",
+   "file": "amazonathena-databases",
+   "kind": "connector",
+   "category": "AmazonAthena",
+   "returns": "table",
+   "signature": "AmazonAthena.Databases(DSN as text, optional role as nullable text, optional options as nullable record) as table",
+   "summary": "This function sends basic authentication info",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AmazonOpenSearchService.Contents",
+   "file": "amazonopensearchservice-contents",
+   "kind": "connector",
+   "category": "AmazonOpenSearchService",
+   "returns": "table",
+   "signature": "AmazonOpenSearchService.Contents(Server as text, Port as number, UseSSL as logical) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AmazonRedshift.Database",
+   "file": "amazonredshift-database",
+   "kind": "connector",
+   "category": "AmazonRedshift",
+   "returns": "table",
+   "signature": "AmazonRedshift.Database(server as text, database as text, optional options as nullable record) as table",
+   "summary": "Import data from an Amazon Redshift database.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Anaplan.Contents",
+   "file": "anaplan-contents",
+   "kind": "connector",
+   "category": "Anaplan",
+   "returns": "table",
+   "signature": "Anaplan.Contents(apiUrl as text, authUrl as text) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "ApacheHiveLLAP.Database",
+   "file": "apachehivellap-database",
+   "kind": "connector",
+   "category": "ApacheHiveLLAP",
+   "returns": "table",
+   "signature": "ApacheHiveLLAP.Database(server as text, database as text, thriftTransport as number, optional options as nullable record) as table",
+   "summary": "Import data from a Hive LLAP",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "ApacheSpark.Tables",
+   "file": "apachespark-tables",
+   "kind": "connector",
+   "category": "ApacheSpark",
+   "returns": "table",
+   "signature": "ApacheSpark.Tables(server as text, protocol as number, optional options as nullable record) as table",
+   "summary": "Returns a table listing the tables on the specified Spark cluster.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "appFigures.Content",
+   "file": "appfigures-content",
+   "kind": "connector",
+   "category": "appFigures",
+   "returns": "any",
+   "signature": "appFigures.Content(path as text, params as record) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "appFigures.Tables",
+   "file": "appfigures-tables",
+   "kind": "connector",
+   "category": "appFigures",
+   "returns": "table",
+   "signature": "appFigures.Tables() as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AptixInsights.Feed",
+   "file": "aptixinsights-feed",
+   "kind": "connector",
+   "category": "AptixInsights",
+   "returns": "table",
+   "signature": "AptixInsights.Feed(url as text, optional query as any) as table",
+   "summary": "Use the Aptix Insights Platform OData API to build powerful reports and dashboards.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Asana.Tables",
+   "file": "asana-tables",
+   "kind": "connector",
+   "category": "Asana",
+   "returns": "table",
+   "signature": "Asana.Tables(link as text) as table",
+   "summary": "Returns a table with Asana task data",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AssembleViews.Contents",
+   "file": "assembleviews-contents",
+   "kind": "connector",
+   "category": "AssembleViews",
+   "returns": "table",
+   "signature": "AssembleViews.Contents(resourceUrl as text, optional viewAtDate as any) as table",
+   "summary": "Access views created within Assemble Insight",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AssembleViews.Feed",
+   "file": "assembleviews-feed",
+   "kind": "connector",
+   "category": "AssembleViews",
+   "returns": "table",
+   "signature": "AssembleViews.Feed(resourceUrl as text) as table",
+   "summary": "Access views created within Assemble Insight",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AtScale.Cubes",
+   "file": "atscale-cubes",
+   "kind": "connector",
+   "category": "AtScale",
+   "returns": "table",
+   "signature": "AtScale.Cubes(server as text, optional options as nullable record) as table",
+   "summary": "Import/DirectQuery cube data from an AtScale.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AutodeskConstructionCloud.Contents",
+   "file": "autodeskconstructioncloud-contents",
+   "kind": "connector",
+   "category": "AutodeskConstructionCloud",
+   "returns": "table",
+   "signature": "AutodeskConstructionCloud.Contents(region as text) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AutodeskConstructionCloud.Feed",
+   "file": "autodeskconstructioncloud-feed",
+   "kind": "connector",
+   "category": "AutodeskConstructionCloud",
+   "returns": "table",
+   "signature": "AutodeskConstructionCloud.Feed(region as text) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AutomationAnywhere.Feed",
+   "file": "automationanywhere-feed",
+   "kind": "connector",
+   "category": "AutomationAnywhere",
+   "returns": "table",
+   "signature": "AutomationAnywhere.Feed(CRVersion as text, CRHostName as text) as table",
+   "summary": "Automation Anywhere - Login",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AutomyDataAnalytics.Contents",
+   "file": "automydataanalytics-contents",
+   "kind": "connector",
+   "category": "AutomyDataAnalytics",
+   "returns": "table",
+   "signature": "AutomyDataAnalytics.Contents() as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AzureCosmosDBForMongoDBvCore.Contents",
+   "file": "azurecosmosdbformongodbvcore-contents",
+   "kind": "connector",
+   "category": "AzureCosmosDBForMongoDBvCore",
+   "returns": "table",
+   "signature": "AzureCosmosDBForMongoDBvCore.Contents(baseURL as text, optional database as nullable text, optional collection as nullable text) as table",
+   "summary": "Azure Cosmos DB for MongoDB vCore",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AzureCostManagement.Contents",
+   "file": "azurecostmanagement-contents",
+   "kind": "connector",
+   "category": "AzureCostManagement",
+   "returns": "table",
+   "signature": "AzureCostManagement.Contents(scope as text, scopeValue as text, numberOfMonths as number, optional parameters as nullable record) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AzureCostManagement.Tables",
+   "file": "azurecostmanagement-tables",
+   "kind": "connector",
+   "category": "AzureCostManagement",
+   "returns": "table",
+   "signature": "AzureCostManagement.Tables(scope as text, scopeValue as text, numberOfMonths as number, optional options as nullable record) as table",
+   "summary": "Azure Cost Management",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AzureDataExplorer.Contents",
+   "file": "azuredataexplorer-contents",
+   "kind": "connector",
+   "category": "AzureDataExplorer",
+   "returns": "table",
+   "signature": "AzureDataExplorer.Contents(cluster as text, optional database as nullable text, optional tableOrQuery as nullable text, optional options as nullable record) as table",
+   "summary": "Imports data from Azure Data Explorer (Kusto)",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AzureDataExplorer.Databases",
+   "file": "azuredataexplorer-databases",
+   "kind": "connector",
+   "category": "AzureDataExplorer",
+   "returns": "list",
+   "signature": "AzureDataExplorer.Databases(cluster as text, optional options as nullable record) as list",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AzureDataExplorer.KqlDatabase",
+   "file": "azuredataexplorer-kqldatabase",
+   "kind": "connector",
+   "category": "AzureDataExplorer",
+   "returns": "table",
+   "signature": "AzureDataExplorer.KqlDatabase(optional cluster as nullable text, optional database as nullable text, optional tableOrQuery as nullable text, optional options as nullable record) as table",
+   "summary": "Import data from Fabric Kusto cluster in discovery mode.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AzureDeviceRegistry.Query",
+   "file": "azuredeviceregistry-query",
+   "kind": "connector",
+   "category": "AzureDeviceRegistry",
+   "returns": "table",
+   "signature": "AzureDeviceRegistry.Query(scope as text, optional subscriptions as nullable text, optional namespaces as nullable text, optional customAttributes as nullable text, optional options as nullable record) as table",
+   "summary": "Connector to pull Assets and Devices from Azure Device Registry",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AzureDevOpsServer.AccountContents",
+   "file": "azuredevopsserver-accountcontents",
+   "kind": "connector",
+   "category": "AzureDevOpsServer",
+   "returns": "table",
+   "signature": "AzureDevOpsServer.AccountContents(url as text, optional options as nullable record) as table",
+   "summary": "Enter Url of your Azure DevOps Analytics Service.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AzureDevOpsServer.AnalyticsViews",
+   "file": "azuredevopsserver-analyticsviews",
+   "kind": "connector",
+   "category": "AzureDevOpsServer",
+   "returns": "table",
+   "signature": "AzureDevOpsServer.AnalyticsViews(url as text, project as text, optional options as nullable record) as table",
+   "summary": "Enter organization and project names.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AzureDevOpsServer.Feed",
+   "file": "azuredevopsserver-feed",
+   "kind": "connector",
+   "category": "AzureDevOpsServer",
+   "returns": "table",
+   "signature": "AzureDevOpsServer.Feed(url as text, optional options as nullable record) as table",
+   "summary": "Azure DevOps Services Feed",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AzureDevOpsServer.Views",
+   "file": "azuredevopsserver-views",
+   "kind": "connector",
+   "category": "AzureDevOpsServer",
+   "returns": "table",
+   "signature": "AzureDevOpsServer.Views(url as text, project as text, areaPath as nullable text, optional options as nullable record) as table",
+   "summary": "Enter organization and project names.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AzureEnterprise.Contents",
+   "file": "azureenterprise-contents",
+   "kind": "connector",
+   "category": "AzureEnterprise",
+   "returns": "binary",
+   "signature": "AzureEnterprise.Contents(url as text, optional query as nullable record) as binary",
+   "summary": "Enter the URL of the Azure Enterprise REST API endpoint associated with your enrollment",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AzureEnterprise.Tables",
+   "file": "azureenterprise-tables",
+   "kind": "connector",
+   "category": "AzureEnterprise",
+   "returns": "table",
+   "signature": "AzureEnterprise.Tables(url as text) as table",
+   "summary": "Enter the URL of the Azure Enterprise REST API endpoint associated with your enrollment",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AzureHiveLLAP.Database",
+   "file": "azurehivellap-database",
+   "kind": "connector",
+   "category": "AzureHiveLLAP",
+   "returns": "table",
+   "signature": "AzureHiveLLAP.Database(server as text, database as text, optional options as nullable record) as table",
+   "summary": "Import data from HDInsight Interactive Query",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AzureResourceGraph.Query",
+   "file": "azureresourcegraph-query",
+   "kind": "connector",
+   "category": "AzureResourceGraph",
+   "returns": "table",
+   "signature": "AzureResourceGraph.Query(query as text, optional scope as nullable text, optional subscription as nullable text, optional managementGroup as nullable text, optional options as nullable record) as table",
+   "summary": "See https://learn.microsoft.com/azure/governance/resource-graph/samples/starter?tabs=azure-cli for starter query sample…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AzureSpark.Tables",
+   "file": "azurespark-tables",
+   "kind": "connector",
+   "category": "AzureSpark",
+   "returns": "table",
+   "signature": "AzureSpark.Tables(server as text, optional options as nullable record) as table",
+   "summary": "List the tables in an Azure Spark instance.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AzureTimeSeriesInsights.Contents",
+   "file": "azuretimeseriesinsights-contents",
+   "kind": "connector",
+   "category": "AzureTimeSeriesInsights",
+   "returns": "table",
+   "signature": "AzureTimeSeriesInsights.Contents(query as record) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BI360.Contents",
+   "file": "bi360-contents",
+   "kind": "connector",
+   "category": "BI360",
+   "returns": "table",
+   "signature": "BI360.Contents(Url as text) as table",
+   "summary": "Retrieves a Navigation Table populated with the enabled tables for a given token",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BIConnector.Contents",
+   "file": "biconnector-contents",
+   "kind": "connector",
+   "category": "BIConnector",
+   "returns": "table",
+   "signature": "BIConnector.Contents(dsnname as text) as table",
+   "summary": "Enter connection information",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BitSightSecurityRatings.Contents",
+   "file": "bitsightsecurityratings-contents",
+   "kind": "connector",
+   "category": "BitSightSecurityRatings",
+   "returns": "any",
+   "signature": "BitSightSecurityRatings.Contents(optional company_guid as nullable text, optional affects_rating_findings as nullable logical) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Bloomberg.Query",
+   "file": "bloomberg-query",
+   "kind": "connector",
+   "category": "Bloomberg",
+   "returns": "table",
+   "signature": "Bloomberg.Query(Bloomberg as text) as table",
+   "summary": "Used for retrieving Bloomberg data",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BQECore.Contents",
+   "file": "bqecore-contents",
+   "kind": "connector",
+   "category": "BQECore",
+   "returns": "any",
+   "signature": "BQECore.Contents() as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BQL.Query",
+   "file": "bql-query",
+   "kind": "connector",
+   "category": "BQL",
+   "returns": "table",
+   "signature": "BQL.Query(Bloomberg as text) as table",
+   "summary": "Used for retrieving Bloomberg data",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BuildingConnected.Contents",
+   "file": "buildingconnected-contents",
+   "kind": "connector",
+   "category": "BuildingConnected",
+   "returns": "table",
+   "signature": "BuildingConnected.Contents(optional rangeStart as nullable datetimezone, optional rangeEnd as nullable datetimezone, optional includeClosed as nullable logical) as table",
+   "summary": "Returns a table of entities for the given url and entity name.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "CCHTagetik.Contents",
+   "file": "cchtagetik-contents",
+   "kind": "connector",
+   "category": "CCHTagetik",
+   "returns": "table",
+   "signature": "CCHTagetik.Contents(URL as text, Database as text, optional AW as nullable text, optional Dataset as nullable text) as table",
+   "summary": "Wolters Kluwer CCH Tagetik",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "CCHTagetik.Contents2",
+   "file": "cchtagetik-contents2",
+   "kind": "connector",
+   "category": "CCHTagetik",
+   "returns": "table",
+   "signature": "CCHTagetik.Contents2(URL as text, Database as text, optional AW as nullable text, optional Dataset as nullable text, optional StartDate as nullable datetime, optional EndDate as nullable datetime) as table",
+   "summary": "Wolters Kluwer CCH Tagetik",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "CCHTagetik.Contents3",
+   "file": "cchtagetik-contents3",
+   "kind": "connector",
+   "category": "CCHTagetik",
+   "returns": "table",
+   "signature": "CCHTagetik.Contents3(URL as text, Database as text, optional FinancialOptions as nullable record, optional AnalyticalOptions as nullable record, optional AdvancedOptions as nullable record) as table",
+   "summary": "Wolters Kluwer CCH Tagetik",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "CCHTagetik.Contents4",
+   "file": "cchtagetik-contents4",
+   "kind": "connector",
+   "category": "CCHTagetik",
+   "returns": "table",
+   "signature": "CCHTagetik.Contents4(URL as text, Database as text, optional options as nullable record) as table",
+   "summary": "Wolters Kluwer CCH Tagetik",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "CDataConnectCloud.Contents",
+   "file": "cdataconnectcloud-contents",
+   "kind": "connector",
+   "category": "CDataConnectCloud",
+   "returns": "table",
+   "signature": "CDataConnectCloud.Contents(optional options as nullable record) as table",
+   "summary": "Returns a table with relevant data from the connected data source in CData Connect Cloud.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "CDataConnectCloud.ContentsV2",
+   "file": "cdataconnectcloud-contentsv2",
+   "kind": "connector",
+   "category": "CDataConnectCloud",
+   "returns": "table",
+   "signature": "CDataConnectCloud.ContentsV2(optional options as nullable record) as table",
+   "summary": "Returns a table with relevant data from the connected data source in CData Connect Cloud.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Cds.Contents",
+   "file": "cds-contents",
+   "kind": "connector",
+   "category": "Cds",
+   "returns": "any",
+   "signature": "Cds.Contents(url as text, optional options as nullable record) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Cds.Entities",
+   "file": "cds-entities",
+   "kind": "connector",
+   "category": "Cds",
+   "returns": "table",
+   "signature": "Cds.Entities(url as text, optional options as nullable record) as table",
+   "summary": "Connect to your Common Data Service instance (Dynamics 365 and PowerApps).",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Celonis.KnowledgeModels",
+   "file": "celonis-knowledgemodels",
+   "kind": "connector",
+   "category": "Celonis",
+   "returns": "table",
+   "signature": "Celonis.KnowledgeModels(URL as text) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Celonis.Navigation",
+   "file": "celonis-navigation",
+   "kind": "connector",
+   "category": "Celonis",
+   "returns": "table",
+   "signature": "Celonis.Navigation(URL as text) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Cherwell.SavedSearches",
+   "file": "cherwell-savedsearches",
+   "kind": "connector",
+   "category": "Cherwell",
+   "returns": "table",
+   "signature": "Cherwell.SavedSearches(API URL as text, Client ID as text, optional Locale as nullable text, optional Saved Search URL as nullable text) as table",
+   "summary": "Returns the results of a Saved Search from a Cherwell Service Management REST API (requires CSM version 10.2 or later).",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "ClickHouse.Database",
+   "file": "clickhouse-database",
+   "kind": "connector",
+   "category": "ClickHouse",
+   "returns": "table",
+   "signature": "ClickHouse.Database(server as text, port as number, optional database as nullable text, optional options as nullable record) as table",
+   "summary": "ClickHouse ODBC connector for Power Query",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "CloudBluePSA.Feed",
+   "file": "cloudbluepsa-feed",
+   "kind": "connector",
+   "category": "CloudBluePSA",
+   "returns": "table",
+   "signature": "CloudBluePSA.Feed(url as text, filter as text) as table",
+   "summary": "This function will resolve the page limitation issue and will retrieve and combine all pages of data returned by the AP…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Cognite.Contents",
+   "file": "cognite-contents",
+   "kind": "connector",
+   "category": "Cognite",
+   "returns": "table",
+   "signature": "Cognite.Contents(project as text, optional environment as nullable text) as table",
+   "summary": "Cognite Data Fusion (CDF)",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "CogniteDataSource.Contents",
+   "file": "cognitedatasource-contents",
+   "kind": "connector",
+   "category": "CogniteDataSource",
+   "returns": "table",
+   "signature": "CogniteDataSource.Contents(project as text, organization as text) as table",
+   "summary": "Cognite Data Fusion (CDF)",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "CommonDataService.Database",
+   "file": "commondataservice-database",
+   "kind": "connector",
+   "category": "CommonDataService",
+   "returns": "table",
+   "signature": "CommonDataService.Database(optional server as nullable text, optional options as nullable record) as table",
+   "summary": "Connect to your Dataverse instance (Dynamics 365 and PowerApps).",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "CosmosDB.Contents",
+   "file": "cosmosdb-contents",
+   "kind": "connector",
+   "category": "CosmosDB",
+   "returns": "table",
+   "signature": "CosmosDB.Contents(host as text, optional options as nullable record) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "CustomerInsights.Contents",
+   "file": "customerinsights-contents",
+   "kind": "connector",
+   "category": "CustomerInsights",
+   "returns": "table",
+   "signature": "CustomerInsights.Contents(optional options as nullable record) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Databricks.Catalogs",
+   "file": "databricks-catalogs",
+   "kind": "connector",
+   "category": "Databricks",
+   "returns": "table",
+   "signature": "Databricks.Catalogs(host as text, httpPath as text, optional options as nullable record) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Databricks.Contents",
+   "file": "databricks-contents",
+   "kind": "connector",
+   "category": "Databricks",
+   "returns": "table",
+   "signature": "Databricks.Contents(host as text, httpPath as text, optional options as nullable record) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Databricks.Query",
+   "file": "databricks-query",
+   "kind": "connector",
+   "category": "Databricks",
+   "returns": "function",
+   "signature": "Databricks.Query(host as text, httpPath as text, optional options as nullable record) as function",
+   "summary": "Define a Databricks data source for running SQL queries",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DatabricksMultiCloud.Catalogs",
+   "file": "databricksmulticloud-catalogs",
+   "kind": "connector",
+   "category": "DatabricksMultiCloud",
+   "returns": "table",
+   "signature": "DatabricksMultiCloud.Catalogs(host as text, httpPath as text, optional options as nullable record) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DatabricksMultiCloud.Query",
+   "file": "databricksmulticloud-query",
+   "kind": "connector",
+   "category": "DatabricksMultiCloud",
+   "returns": "function",
+   "signature": "DatabricksMultiCloud.Query(host as text, httpPath as text, optional options as nullable record) as function",
+   "summary": "Define a Databricks data source for running SQL queries",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DataLake.Contents",
+   "file": "datalake-contents",
+   "kind": "connector",
+   "category": "DataLake",
+   "returns": "table",
+   "signature": "DataLake.Contents(url as text, optional options as nullable record) as table",
+   "summary": "Enter the URL of your Azure Data Lake Storage Gen1 account.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DataLake.Files",
+   "file": "datalake-files",
+   "kind": "connector",
+   "category": "DataLake",
+   "returns": "table",
+   "signature": "DataLake.Files(url as text, optional options as nullable record) as table",
+   "summary": "Enter the URL of your Azure Data Lake Storage account.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DataVirtuality.Database",
+   "file": "datavirtuality-database",
+   "kind": "connector",
+   "category": "DataVirtuality",
+   "returns": "table",
+   "signature": "DataVirtuality.Database(server as text, database as text, optional options as nullable record) as table",
+   "summary": "Data Virtuality LDW",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DataWorld.Contents",
+   "file": "dataworld-contents",
+   "kind": "connector",
+   "category": "DataWorld",
+   "returns": "table",
+   "signature": "DataWorld.Contents() as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DataWorld.Dataset",
+   "file": "dataworld-dataset",
+   "kind": "connector",
+   "category": "DataWorld",
+   "returns": "table",
+   "signature": "DataWorld.Dataset(owner as text, id as text, optional query as nullable text) as table",
+   "summary": "Retrieves a dataset from Data.World",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DCWInsights.Feed",
+   "file": "dcwinsights-feed",
+   "kind": "connector",
+   "category": "DCWInsights",
+   "returns": "table",
+   "signature": "DCWInsights.Feed(url as text, optional query as any) as table",
+   "summary": "Use the DCW Integrations Platform OData API to build powerful reports and dashboards.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DeltaSharing.Contents",
+   "file": "deltasharing-contents",
+   "kind": "connector",
+   "category": "DeltaSharing",
+   "returns": "table",
+   "signature": "DeltaSharing.Contents(host as text, optional options as nullable record) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Denodo.Contents",
+   "file": "denodo-contents",
+   "kind": "connector",
+   "category": "Denodo",
+   "returns": "table",
+   "signature": "Denodo.Contents(DSN as text, optional debug as nullable logical, optional options as nullable record) as table",
+   "summary": "The Denodo Connector allows you to connect to Denodo's VDP server from PowerBI",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DocumentDB.Contents",
+   "file": "documentdb-contents",
+   "kind": "connector",
+   "category": "DocumentDB",
+   "returns": "table",
+   "signature": "DocumentDB.Contents(url as text, optional database as nullable text, optional collection as nullable text, optional options as nullable record) as table",
+   "summary": "Enter the URL of an Azure Cosmos DB account.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Dremio.Databases",
+   "file": "dremio-databases",
+   "kind": "connector",
+   "category": "Dremio",
+   "returns": "table",
+   "signature": "Dremio.Databases(server as text, optional engine as nullable text, optional routingTag as nullable text, optional routingQueue as nullable text) as table",
+   "summary": "Returns a table listing the datasets on Dremio Server.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Dremio.DatabasesV300",
+   "file": "dremio-databasesv300",
+   "kind": "connector",
+   "category": "Dremio",
+   "returns": "table",
+   "signature": "Dremio.DatabasesV300(server as text, encryption as text, optional engine as nullable text, optional routingTag as nullable text, optional routingQueue as nullable text) as table",
+   "summary": "Returns a table listing the datasets on Dremio Server.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Dremio.DatabasesV370",
+   "file": "dremio-databasesv370",
+   "kind": "connector",
+   "category": "Dremio",
+   "returns": "table",
+   "signature": "Dremio.DatabasesV370(server as text, encryption as text, optional engine as nullable text, optional routingTag as nullable text, optional routingQueue as nullable text, optional options as nullable record) as table",
+   "summary": "Returns a table listing the datasets on Dremio Server.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DremioCloud.Databases",
+   "file": "dremiocloud-databases",
+   "kind": "connector",
+   "category": "DremioCloud",
+   "returns": "table",
+   "signature": "DremioCloud.Databases(projectId as text, optional engine as nullable text) as table",
+   "summary": "Returns a table listing the datasets in the specified project on Dremio Cloud.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DremioCloud.DatabasesByServer",
+   "file": "dremiocloud-databasesbyserver",
+   "kind": "connector",
+   "category": "DremioCloud",
+   "returns": "table",
+   "signature": "DremioCloud.DatabasesByServer(server as text, optional projectId as nullable text, optional engine as nullable text) as table",
+   "summary": "Returns a table listing the datasets on the specified server on Dremio Cloud.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DremioCloud.DatabasesByServerV330",
+   "file": "dremiocloud-databasesbyserverv330",
+   "kind": "connector",
+   "category": "DremioCloud",
+   "returns": "table",
+   "signature": "DremioCloud.DatabasesByServerV330(server as text, optional projectId as nullable text, optional engine as nullable text, optional routingTag as nullable text, optional routingQueue as nullable text) as table",
+   "summary": "Returns a table listing the datasets on the specified server on Dremio Cloud.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DremioCloud.DatabasesByServerV360",
+   "file": "dremiocloud-databasesbyserverv360",
+   "kind": "connector",
+   "category": "DremioCloud",
+   "returns": "table",
+   "signature": "DremioCloud.DatabasesByServerV360(server as text, optional projectId as nullable text, optional engine as nullable text, optional routingTag as nullable text, optional routingQueue as nullable text, optional encryption as nullable text) as table",
+   "summary": "Returns a table listing the datasets on the specified server on Dremio Cloud.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DremioCloud.DatabasesByServerV370",
+   "file": "dremiocloud-databasesbyserverv370",
+   "kind": "connector",
+   "category": "DremioCloud",
+   "returns": "table",
+   "signature": "DremioCloud.DatabasesByServerV370(server as text, optional projectId as nullable text, optional engine as nullable text, optional routingTag as nullable text, optional routingQueue as nullable text, optional encryption as nullable text, optional options as nullable record) as table",
+   "summary": "Returns a table listing the datasets on the specified server on Dremio Cloud.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DremioTesting.Contents",
+   "file": "dremiotesting-contents",
+   "kind": "connector",
+   "category": "DremioTesting",
+   "returns": "any",
+   "signature": "DremioTesting.Contents() as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Dynamics365BusinessCentral.ApiContents",
+   "file": "dynamics365businesscentral-apicontents",
+   "kind": "connector",
+   "category": "Dynamics365BusinessCentral",
+   "returns": "table",
+   "signature": "Dynamics365BusinessCentral.ApiContents(optional environment as nullable text, optional company as nullable text, optional apiRoute as nullable text) as table",
+   "summary": "Enter your Dynamics 365 Business Central environment and company.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Dynamics365BusinessCentral.ApiContentsWithOptions",
+   "file": "dynamics365businesscentral-apicontentswithoptions",
+   "kind": "connector",
+   "category": "Dynamics365BusinessCentral",
+   "returns": "table",
+   "signature": "Dynamics365BusinessCentral.ApiContentsWithOptions(optional environment as nullable text, optional company as nullable text, optional apiRoute as nullable text, optional options as nullable record) as table",
+   "summary": "Enter your Dynamics 365 Business Central environment and company.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Dynamics365BusinessCentral.Contents",
+   "file": "dynamics365businesscentral-contents",
+   "kind": "connector",
+   "category": "Dynamics365BusinessCentral",
+   "returns": "table",
+   "signature": "Dynamics365BusinessCentral.Contents(optional company as nullable text) as table",
+   "summary": "Enter your Dynamics 365 Business Central environment and company.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Dynamics365BusinessCentral.EnvironmentContents",
+   "file": "dynamics365businesscentral-environmentcontents",
+   "kind": "connector",
+   "category": "Dynamics365BusinessCentral",
+   "returns": "table",
+   "signature": "Dynamics365BusinessCentral.EnvironmentContents(optional environment as nullable text, optional company as nullable text) as table",
+   "summary": "Enter your Dynamics 365 Business Central environment and company.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Dynamics365BusinessCentralOnPremises.Contents",
+   "file": "dynamics365businesscentralonpremises-contents",
+   "kind": "connector",
+   "category": "Dynamics365BusinessCentralOnPremises",
+   "returns": "table",
+   "signature": "Dynamics365BusinessCentralOnPremises.Contents(url as text, optional company as nullable text) as table",
+   "summary": "Enter the URL of your Dynamics 365 Business Central (on-premises) OData service endpoint.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DynamicsNav.Contents",
+   "file": "dynamicsnav-contents",
+   "kind": "connector",
+   "category": "DynamicsNav",
+   "returns": "table",
+   "signature": "DynamicsNav.Contents(url as text, optional company as nullable text) as table",
+   "summary": "Enter the URL of your Dynamics NAV OData service endpoint.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DynatraceGrail.Contents",
+   "file": "dynatracegrail-contents",
+   "kind": "connector",
+   "category": "DynatraceGrail",
+   "returns": "table",
+   "signature": "DynatraceGrail.Contents(url as text, optional QueryInput as nullable text, optional options as nullable record) as table",
+   "summary": "DQL Connector can be used to fetch data from Grail using DQL custom query or by selecting tables.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "EduFrame.Contents",
+   "file": "eduframe-contents",
+   "kind": "connector",
+   "category": "EduFrame",
+   "returns": "table",
+   "signature": "EduFrame.Contents(domainSlug as text) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Emigo.Contents",
+   "file": "emigo-contents",
+   "kind": "connector",
+   "category": "Emigo",
+   "returns": "table",
+   "signature": "Emigo.Contents(optional DataRestrictionType as nullable text, optional DataRestrictionValue as nullable text, optional DataRestrictionMode as nullable text, optional AuthorizationMode as nullable text) as table",
+   "summary": "The purpose of the method is to set parameters for odata feed data source calls, thus the non-function calls may be lim…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Emigo.GetExtractFunction",
+   "file": "emigo-getextractfunction",
+   "kind": "connector",
+   "category": "Emigo",
+   "returns": "any",
+   "signature": "Emigo.GetExtractFunction(ExtractName as text, optional DataRestrictionType as nullable text, optional DataRestrictionValue as nullable text, optional DataRestrictionMode as nullable text) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "EmigoDataSourceConnector.GetExtractFunction",
+   "file": "emigodatasourceconnector-getextractfunction",
+   "kind": "connector",
+   "category": "EmigoDataSourceConnector",
+   "returns": "any",
+   "signature": "EmigoDataSourceConnector.GetExtractFunction(ExtractName as text, optional DataRestrictionType as nullable text, optional DataRestrictionValue as nullable text, optional DataRestrictionMode as nullable text) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "EntersoftBusinessSuite.Contents",
+   "file": "entersoftbusinesssuite-contents",
+   "kind": "connector",
+   "category": "EntersoftBusinessSuite",
+   "returns": "any",
+   "signature": "EntersoftBusinessSuite.Contents() as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "EQuIS.Contents",
+   "file": "equis-contents",
+   "kind": "connector",
+   "category": "EQuIS",
+   "returns": "table",
+   "signature": "EQuIS.Contents(baseUri as text) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "eWayCRM.Contents",
+   "file": "ewaycrm-contents",
+   "kind": "connector",
+   "category": "eWayCRM",
+   "returns": "table",
+   "signature": "eWayCRM.Contents(optional IncludeRelations as nullable logical) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "eWayCRM.Contents2",
+   "file": "ewaycrm-contents2",
+   "kind": "connector",
+   "category": "eWayCRM",
+   "returns": "table",
+   "signature": "eWayCRM.Contents2(optional options as nullable record) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "ExactOnlinePremium.Contents",
+   "file": "exactonlinepremium-contents",
+   "kind": "connector",
+   "category": "ExactOnlinePremium",
+   "returns": "table",
+   "signature": "ExactOnlinePremium.Contents() as table",
+   "summary": "Get data directly from Exact Online Premium",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Exasol.Database",
+   "file": "exasol-database",
+   "kind": "connector",
+   "category": "Exasol",
+   "returns": "table",
+   "signature": "Exasol.Database(server as text, encrypted as text) as table",
+   "summary": "Exasol",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Fabric.Warehouse",
+   "file": "fabric-warehouse",
+   "kind": "connector",
+   "category": "Fabric",
+   "returns": "table",
+   "signature": "Fabric.Warehouse(optional options as nullable record) as table",
+   "summary": "Imports data from Warehouse",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "FabricSql.Contents",
+   "file": "fabricsql-contents",
+   "kind": "connector",
+   "category": "FabricSql",
+   "returns": "table",
+   "signature": "FabricSql.Contents(optional options as nullable record) as table",
+   "summary": "Imports data from SQL database Instance in Fabric",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "FactSetAnalytics.ConnectionCheck",
+   "file": "factsetanalytics-connectioncheck",
+   "kind": "connector",
+   "category": "FactSetAnalytics",
+   "returns": "any",
+   "signature": "FactSetAnalytics.ConnectionCheck() as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "FactSetAnalytics.Contents",
+   "file": "factsetanalytics-contents",
+   "kind": "connector",
+   "category": "FactSetAnalytics",
+   "returns": "table",
+   "signature": "FactSetAnalytics.Contents() as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "FactSetAnalytics.Functions",
+   "file": "factsetanalytics-functions",
+   "kind": "connector",
+   "category": "FactSetAnalytics",
+   "returns": "table",
+   "signature": "FactSetAnalytics.Functions() as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "FactSetRMS.Functions",
+   "file": "factsetrms-functions",
+   "kind": "connector",
+   "category": "FactSetRMS",
+   "returns": "table",
+   "signature": "FactSetRMS.Functions(optional options as nullable record) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Fhir.Contents",
+   "file": "fhir-contents",
+   "kind": "connector",
+   "category": "Fhir",
+   "returns": "table",
+   "signature": "Fhir.Contents(url as text, optional searchQuery as nullable text) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Foundry.Contents",
+   "file": "foundry-contents",
+   "kind": "connector",
+   "category": "Foundry",
+   "returns": "table",
+   "signature": "Foundry.Contents(BaseUri as text, optional datasetRid as nullable text, optional branch as nullable text) as table",
+   "summary": "Connect to Palantir Foundry datasets.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Funnel.Contents",
+   "file": "funnel-contents",
+   "kind": "connector",
+   "category": "Funnel",
+   "returns": "table",
+   "signature": "Funnel.Contents() as table",
+   "summary": "Returns a navigation table to help the user navigate their Workspaces and respective Data Shares.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Github.Contents",
+   "file": "github-contents",
+   "kind": "connector",
+   "category": "Github",
+   "returns": "any",
+   "signature": "Github.Contents(url as text) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Github.PagedTable",
+   "file": "github-pagedtable",
+   "kind": "connector",
+   "category": "Github",
+   "returns": "any",
+   "signature": "Github.PagedTable(url as text) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Github.Tables",
+   "file": "github-tables",
+   "kind": "connector",
+   "category": "Github",
+   "returns": "table",
+   "signature": "Github.Tables(RepositoryOwner as text, Repository as text) as table",
+   "summary": "Enter the GitHub repository owner and the repository name.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "GoogleBigQuery.Database",
+   "file": "googlebigquery-database",
+   "kind": "connector",
+   "category": "GoogleBigQuery",
+   "returns": "table",
+   "signature": "GoogleBigQuery.Database(optional options as nullable record) as table",
+   "summary": "Import data from a Google BigQuery database.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "GoogleBigQueryAad.Database",
+   "file": "googlebigqueryaad-database",
+   "kind": "connector",
+   "category": "GoogleBigQueryAad",
+   "returns": "table",
+   "signature": "GoogleBigQueryAad.Database(billingProject as text, optional options as nullable record) as table",
+   "summary": "Import data from a Google BigQuery database using Microsoft Entra ID",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "GoogleSheets.Contents",
+   "file": "googlesheets-contents",
+   "kind": "connector",
+   "category": "GoogleSheets",
+   "returns": "table",
+   "signature": "GoogleSheets.Contents(url as text) as table",
+   "summary": "Imports data from GoogleSheets",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "HexagonSmartApi.ApplySelectList",
+   "file": "hexagonsmartapi-applyselectlist",
+   "kind": "connector",
+   "category": "HexagonSmartApi",
+   "returns": "table",
+   "signature": "HexagonSmartApi.ApplySelectList(serviceRoot as text, inputSelectListTarget as any) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "HexagonSmartApi.ApplyUnitsOfMeasure",
+   "file": "hexagonsmartapi-applyunitsofmeasure",
+   "kind": "connector",
+   "category": "HexagonSmartApi",
+   "returns": "any",
+   "signature": "HexagonSmartApi.ApplyUnitsOfMeasure(serviceRoot as text, unitsOfMeasureTarget as any, unitCategory as text, fromUnit as text, toUnit as text, precision as number) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "HexagonSmartApi.ExecuteParametricFilterOnFilterRecord",
+   "file": "hexagonsmartapi-executeparametricfilteronfilterrecord",
+   "kind": "connector",
+   "category": "HexagonSmartApi",
+   "returns": "any",
+   "signature": "HexagonSmartApi.ExecuteParametricFilterOnFilterRecord(url as text, filter as record, optional objectHierarchyName as nullable text, optional objectHierarchyResourceIds as nullable text, optional objectTypes as nullable text, optional queryExpression as nullable text) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "HexagonSmartApi.ExecuteParametricFilterOnFilterUrl",
+   "file": "hexagonsmartapi-executeparametricfilteronfilterurl",
+   "kind": "connector",
+   "category": "HexagonSmartApi",
+   "returns": "any",
+   "signature": "HexagonSmartApi.ExecuteParametricFilterOnFilterUrl(url as text, filterTarget as text, parameterNames as record, optional objectHierarchyNameInput as nullable text, optional objectHierarchyResourceIdsInput as nullable text, optional objectTypesInput as nullable text, optional queryExpressionInput as nullable text) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "HexagonSmartApi.Feed",
+   "file": "hexagonsmartapi-feed",
+   "kind": "connector",
+   "category": "HexagonSmartApi",
+   "returns": "table",
+   "signature": "HexagonSmartApi.Feed(url as text, optional headers as nullable text, optional odataFeedVersion as nullable text) as table",
+   "summary": "Returns a table from a Hexagon PPM Smart API OData feed.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "HexagonSmartApi.GenerateParametricFilterByFilterSourceType",
+   "file": "hexagonsmartapi-generateparametricfilterbyfiltersourcetype",
+   "kind": "connector",
+   "category": "HexagonSmartApi",
+   "returns": "any",
+   "signature": "HexagonSmartApi.GenerateParametricFilterByFilterSourceType(serviceRoot as text, inputFilterSource as any) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "HexagonSmartApi.GetODataMetadata",
+   "file": "hexagonsmartapi-getodatametadata",
+   "kind": "connector",
+   "category": "HexagonSmartApi",
+   "returns": "any",
+   "signature": "HexagonSmartApi.GetODataMetadata(url as text, optional includeAnnotations as nullable logical) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "HexagonSmartApi.Typecast",
+   "file": "hexagonsmartapi-typecast",
+   "kind": "connector",
+   "category": "HexagonSmartApi",
+   "returns": "function",
+   "signature": "HexagonSmartApi.Typecast(typecastTarget as any, outputType as text) as function",
+   "summary": "Function to return a table representing an OData entity typecast from the target entity.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Impala.Database",
+   "file": "impala-database",
+   "kind": "connector",
+   "category": "Impala",
+   "returns": "table",
+   "signature": "Impala.Database(server as text, optional options as nullable record) as table",
+   "summary": "Import data from an Impala cluster",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Indexima.Database",
+   "file": "indexima-database",
+   "kind": "connector",
+   "category": "Indexima",
+   "returns": "table",
+   "signature": "Indexima.Database(server as text, port as number, optional ODBCdriver as nullable text, optional options as nullable record) as table",
+   "summary": "Connection to Indexima Data Hub",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "IndustrialAppStore.NavigationTable",
+   "file": "industrialappstore-navigationtable",
+   "kind": "connector",
+   "category": "IndustrialAppStore",
+   "returns": "any",
+   "signature": "IndustrialAppStore.NavigationTable() as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "InformationGrid.Contents",
+   "file": "informationgrid-contents",
+   "kind": "connector",
+   "category": "InformationGrid",
+   "returns": "table",
+   "signature": "InformationGrid.Contents(server as text) as table",
+   "summary": "Retrieves information from authorised BI services available on the given server",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "IntersystemsHealthInsight.Database",
+   "file": "intersystemshealthinsight-database",
+   "kind": "connector",
+   "category": "IntersystemsHealthInsight",
+   "returns": "table",
+   "signature": "IntersystemsHealthInsight.Database(host as text, port as number, namespace as text, ssl as text, hideSystemTables as text) as table",
+   "summary": "InterSystems Health Insight",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Intune.Contents",
+   "file": "intune-contents",
+   "kind": "connector",
+   "category": "Intune",
+   "returns": "table",
+   "signature": "Intune.Contents(maxHistoryDays as number) as table",
+   "summary": "Intune Data Warehouse",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "IntuneV2.Contents",
+   "file": "intunev2-contents",
+   "kind": "connector",
+   "category": "IntuneV2",
+   "returns": "table",
+   "signature": "IntuneV2.Contents(dataWarehouseAsuUri as text, optional options as nullable record) as table",
+   "summary": "Intune Data Warehouse V2",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "inwink.ScopeContents",
+   "file": "inwink-scopecontents",
+   "kind": "connector",
+   "category": "inwink",
+   "returns": "table",
+   "signature": "inwink.ScopeContents(customerId as text, scope as text, scopeId as text) as table",
+   "summary": "inwink data",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "IRIS.Database",
+   "file": "iris-database",
+   "kind": "connector",
+   "category": "IRIS",
+   "returns": "table",
+   "signature": "IRIS.Database(host as text, port as number, namespace as text, optional ssl as nullable text, optional logs as nullable text) as table",
+   "summary": "InterSystems IRIS",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "JamfPro.Contents",
+   "file": "jamfpro-contents",
+   "kind": "connector",
+   "category": "JamfPro",
+   "returns": "text",
+   "signature": "JamfPro.Contents(jamfUrl as text) as text",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "JethroODBC.Database",
+   "file": "jethroodbc-database",
+   "kind": "connector",
+   "category": "JethroODBC",
+   "returns": "table",
+   "signature": "JethroODBC.Database(server as text, database as text, optional options as nullable record) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Kognitwin.Contents",
+   "file": "kognitwin-contents",
+   "kind": "connector",
+   "category": "Kognitwin",
+   "returns": "table",
+   "signature": "Kognitwin.Contents(url as text) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Kusto.Contents",
+   "file": "kusto-contents",
+   "kind": "connector",
+   "category": "Kusto",
+   "returns": "table",
+   "signature": "Kusto.Contents(cluster as text, optional database as nullable text, optional tableOrQuery as nullable text, optional options as nullable record) as table",
+   "summary": "Imports data from Azure Data Explorer (Kusto)",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Kusto.Databases",
+   "file": "kusto-databases",
+   "kind": "connector",
+   "category": "Kusto",
+   "returns": "list",
+   "signature": "Kusto.Databases(cluster as text, optional options as nullable record) as list",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "kxkdbinsightsenterprise.Contents",
+   "file": "kxkdbinsightsenterprise-contents",
+   "kind": "connector",
+   "category": "kxkdbinsightsenterprise",
+   "returns": "table",
+   "signature": "kxkdbinsightsenterprise.Contents(HostUrl as text) as table",
+   "summary": "Imports data from KX kdb Insights Enterprise",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Kyligence.Database",
+   "file": "kyligence-database",
+   "kind": "connector",
+   "category": "Kyligence",
+   "returns": "table",
+   "signature": "Kyligence.Database(Server as text, Port as text, Project as text, optional options as nullable record) as table",
+   "summary": "Connect your Kyligence",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "KyvosODBC.Databases",
+   "file": "kyvosodbc-databases",
+   "kind": "connector",
+   "category": "KyvosODBC",
+   "returns": "table",
+   "signature": "KyvosODBC.Databases(server as text, httpPath as text, encryption as text) as table",
+   "summary": "Returns a table listing the datasets on Kyvos Server.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Lakehouse.Contents",
+   "file": "lakehouse-contents",
+   "kind": "connector",
+   "category": "Lakehouse",
+   "returns": "table",
+   "signature": "Lakehouse.Contents(optional options as nullable record) as table",
+   "summary": "Import data from a Lakehouse",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "LEAP.Contents",
+   "file": "leap-contents",
+   "kind": "connector",
+   "category": "LEAP",
+   "returns": "table",
+   "signature": "LEAP.Contents() as table",
+   "summary": "Returns a table with relevant LEAP data.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Linkar.Contents",
+   "file": "linkar-contents",
+   "kind": "connector",
+   "category": "Linkar",
+   "returns": "table",
+   "signature": "Linkar.Contents(server as text, entrypoint as text, port as number, optional language as nullable text, optional freetext as nullable text, optional customvars as nullable text, optional FileName as nullable text, optional SelectClause as nullable text, optional DictClause as nullable text, optional SortClause as nullable text, optional sqlmode as nullable logical) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "LinkedIn.SalesContracts",
+   "file": "linkedin-salescontracts",
+   "kind": "connector",
+   "category": "LinkedIn",
+   "returns": "table",
+   "signature": "LinkedIn.SalesContracts() as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "LinkedIn.SalesContractsWithReportAccess",
+   "file": "linkedin-salescontractswithreportaccess",
+   "kind": "connector",
+   "category": "LinkedIn",
+   "returns": "table",
+   "signature": "LinkedIn.SalesContractsWithReportAccess() as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "LinkedIn.SalesNavigator",
+   "file": "linkedin-salesnavigator",
+   "kind": "connector",
+   "category": "LinkedIn",
+   "returns": "table",
+   "signature": "LinkedIn.SalesNavigator(selectContracts as text, optional startAt as nullable date, optional endAt as nullable date) as table",
+   "summary": "LinkedIn Sales Navigator",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "LinkedIn.SalesNavigatorAnalytics",
+   "file": "linkedin-salesnavigatoranalytics",
+   "kind": "connector",
+   "category": "LinkedIn",
+   "returns": "table",
+   "signature": "LinkedIn.SalesNavigatorAnalytics(contractName as text, action as text, startAt as date, endAt as date) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "LinkedIn.SalesNavigatorAnalyticsImpl",
+   "file": "linkedin-salesnavigatoranalyticsimpl",
+   "kind": "connector",
+   "category": "LinkedIn",
+   "returns": "any",
+   "signature": "LinkedIn.SalesNavigatorAnalyticsImpl(contractName as text, action as text, startAt as date, endAt as date) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "LinkedInLearning.Contents",
+   "file": "linkedinlearning-contents",
+   "kind": "connector",
+   "category": "LinkedInLearning",
+   "returns": "any",
+   "signature": "LinkedInLearning.Contents(optional start_date as nullable datetime, optional end_date as nullable datetime) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "MailChimp.Collection",
+   "file": "mailchimp-collection",
+   "kind": "connector",
+   "category": "MailChimp",
+   "returns": "table",
+   "signature": "MailChimp.Collection(path as text, optional entityName as nullable text) as table",
+   "summary": "Returns a table with data from a MailChimp endpoint.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "MailChimp.Instance",
+   "file": "mailchimp-instance",
+   "kind": "connector",
+   "category": "MailChimp",
+   "returns": "table",
+   "signature": "MailChimp.Instance(path as text) as table",
+   "summary": "Returns raw response results from a MailChimp API endpoint.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "MailChimp.Tables",
+   "file": "mailchimp-tables",
+   "kind": "connector",
+   "category": "MailChimp",
+   "returns": "table",
+   "signature": "MailChimp.Tables() as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "MailChimp.TablesV2",
+   "file": "mailchimp-tablesv2",
+   "kind": "connector",
+   "category": "MailChimp",
+   "returns": "table",
+   "signature": "MailChimp.TablesV2() as table",
+   "summary": "Returns a table with key MailChimp data.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "MariaDB.Contents",
+   "file": "mariadb-contents",
+   "kind": "connector",
+   "category": "MariaDB",
+   "returns": "table",
+   "signature": "MariaDB.Contents(MariaDB Data Source as text, optional database as nullable text, optional CreateNavigationProperties as nullable logical) as table",
+   "summary": "Returns a navigation table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Marketo.Activities",
+   "file": "marketo-activities",
+   "kind": "connector",
+   "category": "Marketo",
+   "returns": "table",
+   "signature": "Marketo.Activities(url as text, startTime as date, activityIds as list) as table",
+   "summary": "Returns a table with lead activities.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Marketo.Leads",
+   "file": "marketo-leads",
+   "kind": "connector",
+   "category": "Marketo",
+   "returns": "table",
+   "signature": "Marketo.Leads(url as text, leadIds as list, optional options as any) as table",
+   "summary": "Returns a table with lead details.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Marketo.Tables",
+   "file": "marketo-tables",
+   "kind": "connector",
+   "category": "Marketo",
+   "returns": "table",
+   "signature": "Marketo.Tables(url as text, QueryStart as date) as table",
+   "summary": "Enter the URL of the Marketo REST API endpoint associated with your account.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "MarkLogicODBC.Contents",
+   "file": "marklogicodbc-contents",
+   "kind": "connector",
+   "category": "MarkLogicODBC",
+   "returns": "table",
+   "signature": "MarkLogicODBC.Contents(server as text, port as number) as table",
+   "summary": "Returns the list of tables returned from the ODBC driver",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "MicrosoftAzureDataManagerForEnergy.Search",
+   "file": "microsoftazuredatamanagerforenergy-search",
+   "kind": "connector",
+   "category": "MicrosoftAzureDataManagerForEnergy",
+   "returns": "table",
+   "signature": "MicrosoftAzureDataManagerForEnergy.Search(serviceName as text, dataPartition as text, kind as text, query as text, optional limit as nullable number, optional returnedFields as nullable text) as table",
+   "summary": "Queries for records in the Microsoft Azure Data Manager for Energy instance",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "MicrosoftGraphSecurity.Contents",
+   "file": "microsoftgraphsecurity-contents",
+   "kind": "connector",
+   "category": "MicrosoftGraphSecurity",
+   "returns": "table",
+   "signature": "MicrosoftGraphSecurity.Contents(version as text, optional options as nullable record) as table",
+   "summary": "Connector for the Microsoft Graph Security API",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "MicrosoftSentinel.Contents",
+   "file": "microsoftsentinel-contents",
+   "kind": "connector",
+   "category": "MicrosoftSentinel",
+   "returns": "table",
+   "signature": "MicrosoftSentinel.Contents(cluster as text, optional database as nullable text, optional tableOrQuery as nullable text, optional options as nullable record) as table",
+   "summary": "Imports data from Sentinel KQL",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "MicroStrategyDataset.Contents",
+   "file": "microstrategydataset-contents",
+   "kind": "connector",
+   "category": "MicroStrategyDataset",
+   "returns": "table",
+   "signature": "MicroStrategyDataset.Contents(libraryUrl as text, optional authMode as nullable text, optional options as nullable record) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "MicroStrategyDataset.TestConnection",
+   "file": "microstrategydataset-testconnection",
+   "kind": "connector",
+   "category": "MicroStrategyDataset",
+   "returns": "any",
+   "signature": "MicroStrategyDataset.TestConnection(libraryUrl as text) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Mixpanel.Contents",
+   "file": "mixpanel-contents",
+   "kind": "connector",
+   "category": "Mixpanel",
+   "returns": "any",
+   "signature": "Mixpanel.Contents(url as text) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Mixpanel.Export",
+   "file": "mixpanel-export",
+   "kind": "connector",
+   "category": "Mixpanel",
+   "returns": "any",
+   "signature": "Mixpanel.Export(fromDate as text, toDate as text, optional events as nullable list, optional bucket as nullable text) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Mixpanel.FunnelById",
+   "file": "mixpanel-funnelbyid",
+   "kind": "connector",
+   "category": "Mixpanel",
+   "returns": "any",
+   "signature": "Mixpanel.FunnelById(funnelId as number, optional fromDate as nullable text, optional toDate as nullable text, optional length as nullable number, optional interval as nullable number) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Mixpanel.FunnelByName",
+   "file": "mixpanel-funnelbyname",
+   "kind": "connector",
+   "category": "Mixpanel",
+   "returns": "any",
+   "signature": "Mixpanel.FunnelByName(funnelName as text, optional fromDate as nullable text, optional toDate as nullable text, optional length as nullable number, optional interval as nullable number) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Mixpanel.Funnels",
+   "file": "mixpanel-funnels",
+   "kind": "connector",
+   "category": "Mixpanel",
+   "returns": "any",
+   "signature": "Mixpanel.Funnels() as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Mixpanel.Segmentation",
+   "file": "mixpanel-segmentation",
+   "kind": "connector",
+   "category": "Mixpanel",
+   "returns": "any",
+   "signature": "Mixpanel.Segmentation(event as text, fromDate as text, toDate as text, optional whereClause as nullable text, optional unit as nullable text, optional interval as nullable number, optional countType as nullable text, optional onProperty as nullable text, optional limit as nullable number, optional where as nullable text) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Mixpanel.Tables",
+   "file": "mixpanel-tables",
+   "kind": "connector",
+   "category": "Mixpanel",
+   "returns": "any",
+   "signature": "Mixpanel.Tables() as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "MongoDBAtlasODBC.Contents",
+   "file": "mongodbatlasodbc-contents",
+   "kind": "connector",
+   "category": "MongoDBAtlasODBC",
+   "returns": "table",
+   "signature": "MongoDBAtlasODBC.Contents(mongodbUri as text, database as text, optional options as nullable record) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "MongoDBAtlasODBC.Query",
+   "file": "mongodbatlasodbc-query",
+   "kind": "connector",
+   "category": "MongoDBAtlasODBC",
+   "returns": "any",
+   "signature": "MongoDBAtlasODBC.Query(mongoDbUri as any, database as any, query as any, optional options as any) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Netezza.Database",
+   "file": "netezza-database",
+   "kind": "connector",
+   "category": "Netezza",
+   "returns": "table",
+   "signature": "Netezza.Database(server as text, database as text, optional options as nullable record) as table",
+   "summary": "Import data from an IBM Netezza database.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "OneLake.Contents",
+   "file": "onelake-contents",
+   "kind": "connector",
+   "category": "OneLake",
+   "returns": "table",
+   "signature": "OneLake.Contents(path as text, optional options as nullable record) as table",
+   "summary": "Access data in OneLake storage",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "OneLake.SqlAnalytics",
+   "file": "onelake-sqlanalytics",
+   "kind": "connector",
+   "category": "OneLake",
+   "returns": "table",
+   "signature": "OneLake.SqlAnalytics(workspace as text, database as text, artifactType as text, optional options as nullable record) as table",
+   "summary": "Imports data from Fabric SQL Analytics endpoint",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "OneStream.Navigation",
+   "file": "onestream-navigation",
+   "kind": "connector",
+   "category": "OneStream",
+   "returns": "any",
+   "signature": "OneStream.Navigation(OneStreamURL as text) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "OpenSearchProject.Contents",
+   "file": "opensearchproject-contents",
+   "kind": "connector",
+   "category": "OpenSearchProject",
+   "returns": "table",
+   "signature": "OpenSearchProject.Contents(Server as text, Port as number, UseSSL as logical) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Paxata.Contents",
+   "file": "paxata-contents",
+   "kind": "connector",
+   "category": "Paxata",
+   "returns": "table",
+   "signature": "Paxata.Contents(url as text) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "PlanviewEnterprise.CallQueryService",
+   "file": "planviewenterprise-callqueryservice",
+   "kind": "connector",
+   "category": "PlanviewEnterprise",
+   "returns": "table",
+   "signature": "PlanviewEnterprise.CallQueryService(url as text, database as text, sqlQueryString as text) as table",
+   "summary": "Enter the URL, database name associated with your Planview Portfolios account and a SQL query.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "PlanviewEnterprise.Feed",
+   "file": "planviewenterprise-feed",
+   "kind": "connector",
+   "category": "PlanviewEnterprise",
+   "returns": "table",
+   "signature": "PlanviewEnterprise.Feed(url as text, database as text) as table",
+   "summary": "Enter the URL and database name associated with your Planview Portfolios account.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "PlanviewOKR.Contents",
+   "file": "planviewokr-contents",
+   "kind": "connector",
+   "category": "PlanviewOKR",
+   "returns": "table",
+   "signature": "PlanviewOKR.Contents(ODataURL as text) as table",
+   "summary": "Enter the URL of your Planview OKR account.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "PlanviewProjectplace.Contents",
+   "file": "planviewprojectplace-contents",
+   "kind": "connector",
+   "category": "PlanviewProjectplace",
+   "returns": "table",
+   "signature": "PlanviewProjectplace.Contents(ODataURL as text) as table",
+   "summary": "Enter the URL of your Planview ProjectPlace account.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "PowerBI.Dataflows",
+   "file": "powerbi-dataflows",
+   "kind": "connector",
+   "category": "PowerBI",
+   "returns": "table",
+   "signature": "PowerBI.Dataflows(optional options as nullable record) as table",
+   "summary": "Connect to all the Power BI dataflows you have access to, and choose the entities you’d like to use.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "PowerBI.Datamarts",
+   "file": "powerbi-datamarts",
+   "kind": "connector",
+   "category": "PowerBI",
+   "returns": "table",
+   "signature": "PowerBI.Datamarts(optional server as nullable text) as table",
+   "summary": "Imports data from Datamarts",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "PowerPlatform.Dataflows",
+   "file": "powerplatform-dataflows",
+   "kind": "connector",
+   "category": "PowerPlatform",
+   "returns": "table",
+   "signature": "PowerPlatform.Dataflows(optional options as nullable record) as table",
+   "summary": "Import data from a dataflow",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "ProductInsights.Contents",
+   "file": "productinsights-contents",
+   "kind": "connector",
+   "category": "ProductInsights",
+   "returns": "table",
+   "signature": "ProductInsights.Contents() as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "ProductInsights.QueryMetric",
+   "file": "productinsights-querymetric",
+   "kind": "connector",
+   "category": "ProductInsights",
+   "returns": "any",
+   "signature": "ProductInsights.QueryMetric(urlAndQuery as text) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Profisee.Tables",
+   "file": "profisee-tables",
+   "kind": "connector",
+   "category": "Profisee",
+   "returns": "table",
+   "signature": "Profisee.Tables(url as text) as table",
+   "summary": "Navigation Table returning Profisee entities.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Projectplace.Feed",
+   "file": "projectplace-feed",
+   "kind": "connector",
+   "category": "Projectplace",
+   "returns": "table",
+   "signature": "Projectplace.Feed(ODataURL as text) as table",
+   "summary": "Enter the URL of your Planview Projectplace account.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Python.Execute",
+   "file": "python-execute",
+   "kind": "connector",
+   "category": "Python",
+   "returns": "table",
+   "signature": "Python.Execute(script as text, optional arguments as nullable record) as table",
+   "summary": "Executes Python script and returns data frames",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "QubolePresto.Contents",
+   "file": "qubolepresto-contents",
+   "kind": "connector",
+   "category": "QubolePresto",
+   "returns": "any",
+   "signature": "QubolePresto.Contents(dsn as text) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "QuickBase.Contents",
+   "file": "quickbase-contents",
+   "kind": "connector",
+   "category": "QuickBase",
+   "returns": "table",
+   "signature": "QuickBase.Contents(url as text) as table",
+   "summary": "Quick Base Connector",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "QuickBooks.Query",
+   "file": "quickbooks-query",
+   "kind": "connector",
+   "category": "QuickBooks",
+   "returns": "table",
+   "signature": "QuickBooks.Query(query as text, optional schema as nullable type) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "QuickBooks.Report",
+   "file": "quickbooks-report",
+   "kind": "connector",
+   "category": "QuickBooks",
+   "returns": "table",
+   "signature": "QuickBooks.Report(urlFragment as text) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "QuickBooks.Tables",
+   "file": "quickbooks-tables",
+   "kind": "connector",
+   "category": "QuickBooks",
+   "returns": "any",
+   "signature": "QuickBooks.Tables() as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "R.Execute",
+   "file": "r-execute",
+   "kind": "connector",
+   "category": "R",
+   "returns": "table",
+   "signature": "R.Execute(script as text, optional arguments as nullable record) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Resource.Access",
+   "file": "resource-access",
+   "kind": "connector",
+   "category": "Resource",
+   "returns": "any",
+   "signature": "Resource.Access(resource as any, optional nativeQuery as nullable text, optional options as nullable record) as any",
+   "summary": "Resource.Access",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Roamler.Contents",
+   "file": "roamler-contents",
+   "kind": "connector",
+   "category": "Roamler",
+   "returns": "any",
+   "signature": "Roamler.Contents() as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Samsara.Records",
+   "file": "samsara-records",
+   "kind": "connector",
+   "category": "Samsara",
+   "returns": "table",
+   "signature": "Samsara.Records(Region as text, RangeStart as text, optional RangeEnd as nullable text) as table",
+   "summary": "Get records from supported Samsara APIs",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SDMX.Contents",
+   "file": "sdmx-contents",
+   "kind": "connector",
+   "category": "SDMX",
+   "returns": "table",
+   "signature": "SDMX.Contents(url as text, Option as text, optional Language as nullable text) as table",
+   "summary": "Get data from an SDMX RESTful web service that supports the CSV format.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "ShortcutsBI.Contents",
+   "file": "shortcutsbi-contents",
+   "kind": "connector",
+   "category": "ShortcutsBI",
+   "returns": "table",
+   "signature": "ShortcutsBI.Contents() as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SingleStoreODBC.Contents",
+   "file": "singlestoreodbc-contents",
+   "kind": "connector",
+   "category": "SingleStoreODBC",
+   "returns": "table",
+   "signature": "SingleStoreODBC.Contents(ServerAddr as text, Database as text, optional options as nullable record) as table",
+   "summary": "The SingleStore Connector is a high-performance connector that lets you DirectQuery and import data from your SingleSto…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SingleStoreODBC.Database",
+   "file": "singlestoreodbc-database",
+   "kind": "connector",
+   "category": "SingleStoreODBC",
+   "returns": "table",
+   "signature": "SingleStoreODBC.Database(ServerAddr as text, Database as text, optional UseSSL as nullable logical) as table",
+   "summary": "The SingleStore Connector is a high-performance connector that lets you DirectQuery and import data from your SingleSto…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SingleStoreODBC.DataSource",
+   "file": "singlestoreodbc-datasource",
+   "kind": "connector",
+   "category": "SingleStoreODBC",
+   "returns": "table",
+   "signature": "SingleStoreODBC.DataSource(ServerAddr as text, Database as text, optional UseSSL as nullable logical) as table",
+   "summary": "The SingleStore Connector is a high-performance connector that lets you DirectQuery and import data from your SingleSto…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SingleStoreODBC.Query",
+   "file": "singlestoreodbc-query",
+   "kind": "connector",
+   "category": "SingleStoreODBC",
+   "returns": "table",
+   "signature": "SingleStoreODBC.Query(ServerAddr as text, Database as text, optional Query as nullable text) as table",
+   "summary": "The SingleStore Connector is a high-performance connector that lets you DirectQuery and import data from your SingleSto…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Siteimprove.Contents",
+   "file": "siteimprove-contents",
+   "kind": "connector",
+   "category": "Siteimprove",
+   "returns": "table",
+   "signature": "Siteimprove.Contents() as table",
+   "summary": "Siteimprove API connector",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Smartsheet.Content",
+   "file": "smartsheet-content",
+   "kind": "connector",
+   "category": "Smartsheet",
+   "returns": "any",
+   "signature": "Smartsheet.Content(endpoint as text) as any",
+   "summary": "Returns a table of data from an Smartsheet index endpoint.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Smartsheet.Query",
+   "file": "smartsheet-query",
+   "kind": "connector",
+   "category": "Smartsheet",
+   "returns": "any",
+   "signature": "Smartsheet.Query(endpoint as text, args as text, headers as record) as any",
+   "summary": "Returns a JSON result from the Smartsheet API",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Smartsheet.Tables",
+   "file": "smartsheet-tables",
+   "kind": "connector",
+   "category": "Smartsheet",
+   "returns": "table",
+   "signature": "Smartsheet.Tables() as table",
+   "summary": "Returns a table of sheets, reports, folders, and workspaces from the Smartsheet API",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SmartsheetGlobal.Contents",
+   "file": "smartsheetglobal-contents",
+   "kind": "connector",
+   "category": "SmartsheetGlobal",
+   "returns": "table",
+   "signature": "SmartsheetGlobal.Contents(region as text, optional options as nullable record) as table",
+   "summary": "Returns a table of sheets, reports, folders, and workspaces from the Smartsheet API",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SmartsheetGlobal.Query",
+   "file": "smartsheetglobal-query",
+   "kind": "connector",
+   "category": "SmartsheetGlobal",
+   "returns": "any",
+   "signature": "SmartsheetGlobal.Query(region as text, endpoint as text, args as text, headers as record, optional options as nullable record) as any",
+   "summary": "Returns a JSON result from the Smartsheet API",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Snowflake.Databases",
+   "file": "snowflake-databases",
+   "kind": "connector",
+   "category": "Snowflake",
+   "returns": "table",
+   "signature": "Snowflake.Databases(server as text, warehouse as text, optional options as nullable record) as table",
+   "summary": "Import data from a Snowflake Computing warehouse.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SoftOneBI.Contents",
+   "file": "softonebi-contents",
+   "kind": "connector",
+   "category": "SoftOneBI",
+   "returns": "table",
+   "signature": "SoftOneBI.Contents() as table",
+   "summary": "Retrieves all Soft1/Atlantis tables in the datalake",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SolarWindsServiceDesk.Contents",
+   "file": "solarwindsservicedesk-contents",
+   "kind": "connector",
+   "category": "SolarWindsServiceDesk",
+   "returns": "any",
+   "signature": "SolarWindsServiceDesk.Contents() as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SolarWindsServiceDesk.ContentsV110",
+   "file": "solarwindsservicedesk-contentsv110",
+   "kind": "connector",
+   "category": "SolarWindsServiceDesk",
+   "returns": "any",
+   "signature": "SolarWindsServiceDesk.ContentsV110(optional RangeStart as nullable datetime, optional RangeEnd as nullable datetime) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SolarWindsServiceDesk.ContentsV113",
+   "file": "solarwindsservicedesk-contentsv113",
+   "kind": "connector",
+   "category": "SolarWindsServiceDesk",
+   "returns": "any",
+   "signature": "SolarWindsServiceDesk.ContentsV113(optional RangeStart as nullable datetime, optional RangeEnd as nullable datetime, optional CustomFieldsStr as nullable text) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Spark.Tables",
+   "file": "spark-tables",
+   "kind": "connector",
+   "category": "Spark",
+   "returns": "table",
+   "signature": "Spark.Tables(server as text, protocol as number, optional options as nullable record) as table",
+   "summary": "Returns a table listing the tables on the specified Spark cluster.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SparkPost.GetList",
+   "file": "sparkpost-getlist",
+   "kind": "connector",
+   "category": "SparkPost",
+   "returns": "table",
+   "signature": "SparkPost.GetList(Path as text) as table",
+   "summary": "This function can be used to call any of the \"Lists\" endpoints offered by the SparkPost API v1.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SparkPost.GetTable",
+   "file": "sparkpost-gettable",
+   "kind": "connector",
+   "category": "SparkPost",
+   "returns": "table",
+   "signature": "SparkPost.GetTable(DaysToAggregate as number, MetricColumns as text, NonMetricColumns as text, Path as text) as table",
+   "summary": "Returns a table of available metrics from the SparkPost API v1",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SparkPost.NavTable",
+   "file": "sparkpost-navtable",
+   "kind": "connector",
+   "category": "SparkPost",
+   "returns": "table",
+   "signature": "SparkPost.NavTable(DaysToAggregate as number) as table",
+   "summary": "Retrieve the built-in tables exposed by the SparkPost connector with data aggregated over a user-specified number of da…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Spigit.Contents",
+   "file": "spigit-contents",
+   "kind": "connector",
+   "category": "Spigit",
+   "returns": "table",
+   "signature": "Spigit.Contents(ODataURL as text) as table",
+   "summary": "Enter the URL of your Planview IdeaPlace account.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "StarburstAad.Contents",
+   "file": "starburstaad-contents",
+   "kind": "connector",
+   "category": "StarburstAad",
+   "returns": "table",
+   "signature": "StarburstAad.Contents(Host as text, Port as number, optional Options as nullable record) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "StarburstPresto.Contents",
+   "file": "starburstpresto-contents",
+   "kind": "connector",
+   "category": "StarburstPresto",
+   "returns": "table",
+   "signature": "StarburstPresto.Contents(Host as text, Port as number, optional Options as nullable record) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Stripe.Contents",
+   "file": "stripe-contents",
+   "kind": "connector",
+   "category": "Stripe",
+   "returns": "table",
+   "signature": "Stripe.Contents(method as text, optional query as nullable record, optional pageLimit as nullable number) as table",
+   "summary": "Makes a call to the Stripe API, with the option to limit number of API calls made.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Stripe.Method",
+   "file": "stripe-method",
+   "kind": "connector",
+   "category": "Stripe",
+   "returns": "table",
+   "signature": "Stripe.Method(method as text, additionalParameters as record, ColumnNames as list) as table",
+   "summary": "Makes a call to the Stripe API.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Stripe.Tables",
+   "file": "stripe-tables",
+   "kind": "connector",
+   "category": "Stripe",
+   "returns": "table",
+   "signature": "Stripe.Tables() as table",
+   "summary": "Returns a table listing the available Stripe tables and functions.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SumTotal.ODataFeed",
+   "file": "sumtotal-odatafeed",
+   "kind": "connector",
+   "category": "SumTotal",
+   "returns": "table",
+   "signature": "SumTotal.ODataFeed(url as text) as table",
+   "summary": "SumTotal's Custom connector connects to SumTotal's external facing OData API service to pull data from data warehousing…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Supermetrics.Render",
+   "file": "supermetrics-render",
+   "kind": "connector",
+   "category": "Supermetrics",
+   "returns": "table",
+   "signature": "Supermetrics.Render() as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Supermetrics.Test",
+   "file": "supermetrics-test",
+   "kind": "connector",
+   "category": "Supermetrics",
+   "returns": "any",
+   "signature": "Supermetrics.Test() as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SurveyMonkey.Contents",
+   "file": "surveymonkey-contents",
+   "kind": "connector",
+   "category": "SurveyMonkey",
+   "returns": "table",
+   "signature": "SurveyMonkey.Contents() as table",
+   "summary": "A Navigation table showing all the surveys in the account related to the input access token.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SweetIQ.Contents",
+   "file": "sweetiq-contents",
+   "kind": "connector",
+   "category": "SweetIQ",
+   "returns": "any",
+   "signature": "SweetIQ.Contents(optional clientId as nullable text, optional path as nullable text, optional optionalParameter as nullable text) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SweetIQ.Tables",
+   "file": "sweetiq-tables",
+   "kind": "connector",
+   "category": "SweetIQ",
+   "returns": "any",
+   "signature": "SweetIQ.Tables() as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Synapse.Contents",
+   "file": "synapse-contents",
+   "kind": "connector",
+   "category": "Synapse",
+   "returns": "table",
+   "signature": "Synapse.Contents(optional option as nullable record) as table",
+   "summary": "PQ Connector for Azure Synapse Analytics workspace",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "TeamDesk.Database",
+   "file": "teamdesk-database",
+   "kind": "connector",
+   "category": "TeamDesk",
+   "returns": "table",
+   "signature": "TeamDesk.Database(url as text) as table",
+   "summary": "Connects to TeamDesk database and let you select a table and a view to retrieve the data from.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "TeamDesk.Select",
+   "file": "teamdesk-select",
+   "kind": "connector",
+   "category": "TeamDesk",
+   "returns": "table",
+   "signature": "TeamDesk.Select(url as text, optional table as nullable text, optional columns as any, optional filter as nullable text, optional orderBy as any) as table",
+   "summary": "Retrieves the data from select columns in provided table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "TeamDesk.SelectView",
+   "file": "teamdesk-selectview",
+   "kind": "connector",
+   "category": "TeamDesk",
+   "returns": "table",
+   "signature": "TeamDesk.SelectView(url as text, optional table as nullable text, optional view as nullable text, optional filter as nullable text) as table",
+   "summary": "Retrieves the data from provided table and view.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "TeamsAnalytics.Contents",
+   "file": "teamsanalytics-contents",
+   "kind": "connector",
+   "category": "TeamsAnalytics",
+   "returns": "table",
+   "signature": "TeamsAnalytics.Contents() as table",
+   "summary": "The Teams Analytics connector enables you to get insights into your usage of Teams.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Tenforce.Contents",
+   "file": "tenforce-contents",
+   "kind": "connector",
+   "category": "Tenforce",
+   "returns": "table",
+   "signature": "Tenforce.Contents(ApplicationUrl as text, ListId as text, DataType as text) as table",
+   "summary": "Selection data",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "TibcoTdv.DataSource",
+   "file": "tibcotdv-datasource",
+   "kind": "connector",
+   "category": "TibcoTdv",
+   "returns": "table",
+   "signature": "TibcoTdv.DataSource(dsn as text, optional advancedOptions as nullable text, optional options as nullable record) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "TimeSeriesInsights.Contents",
+   "file": "timeseriesinsights-contents",
+   "kind": "connector",
+   "category": "TimeSeriesInsights",
+   "returns": "table",
+   "signature": "TimeSeriesInsights.Contents(query as record) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Troux.CustomFeed",
+   "file": "troux-customfeed",
+   "kind": "connector",
+   "category": "Troux",
+   "returns": "table",
+   "signature": "Troux.CustomFeed(url as text, query as text) as table",
+   "summary": "Enter the URL of your Planview Enterprise Architecture account and a query.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Troux.Feed",
+   "file": "troux-feed",
+   "kind": "connector",
+   "category": "Troux",
+   "returns": "table",
+   "signature": "Troux.Feed(url as text) as table",
+   "summary": "Enter the URL of your Planview Enterprise Architecture account.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Troux.TestConnection",
+   "file": "troux-testconnection",
+   "kind": "connector",
+   "category": "Troux",
+   "returns": "any",
+   "signature": "Troux.TestConnection(url as text) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Twilio.Contents",
+   "file": "twilio-contents",
+   "kind": "connector",
+   "category": "Twilio",
+   "returns": "any",
+   "signature": "Twilio.Contents(URL as any, collectionName as any, optional historyInMonths as any, optional dateLabel as any) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Twilio.Tables",
+   "file": "twilio-tables",
+   "kind": "connector",
+   "category": "Twilio",
+   "returns": "table",
+   "signature": "Twilio.Tables(historyMonths as number) as table",
+   "summary": "Enter the number of months of historical Twilio data to retrieve.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Twilio.URL",
+   "file": "twilio-url",
+   "kind": "connector",
+   "category": "Twilio",
+   "returns": "any",
+   "signature": "Twilio.URL(url as any) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Usercube.Universes",
+   "file": "usercube-universes",
+   "kind": "connector",
+   "category": "Usercube",
+   "returns": "table",
+   "signature": "Usercube.Universes(serverUrl as text) as table",
+   "summary": "Provides data from a Usercube instance",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Vena.Contents",
+   "file": "vena-contents",
+   "kind": "connector",
+   "category": "Vena",
+   "returns": "table",
+   "signature": "Vena.Contents(source as text, optional modelQuery as nullable text, optional apiVersion as nullable text) as table",
+   "summary": "Vena",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Vertica.Database",
+   "file": "vertica-database",
+   "kind": "connector",
+   "category": "Vertica",
+   "returns": "table",
+   "signature": "Vertica.Database(server as text, database as text, optional options as nullable record) as table",
+   "summary": "Import data from Vertica",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "VesselInsight.Contents",
+   "file": "vesselinsight-contents",
+   "kind": "connector",
+   "category": "VesselInsight",
+   "returns": "any",
+   "signature": "VesselInsight.Contents() as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "VivaInsights.Data",
+   "file": "vivainsights-data",
+   "kind": "connector",
+   "category": "VivaInsights",
+   "returns": "table",
+   "signature": "VivaInsights.Data(scopeId as text, optional jobName as nullable text, optional jobId as nullable text, optional options as nullable record) as table",
+   "summary": "Import weekly metrics and attribute data from Workplace Analytics.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "VivaInsightsApi.GetResults",
+   "file": "vivainsightsapi-getresults",
+   "kind": "connector",
+   "category": "VivaInsightsApi",
+   "returns": "any",
+   "signature": "VivaInsightsApi.GetResults(optional options as nullable record, optional env as nullable text) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "VSTS.AccountContents",
+   "file": "vsts-accountcontents",
+   "kind": "connector",
+   "category": "VSTS",
+   "returns": "binary",
+   "signature": "VSTS.AccountContents(url as text, optional options as nullable record) as binary",
+   "summary": "Enter Url of your Azure DevOps Analytics Service.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "VSTS.AnalyticsViews",
+   "file": "vsts-analyticsviews",
+   "kind": "connector",
+   "category": "VSTS",
+   "returns": "table",
+   "signature": "VSTS.AnalyticsViews(url as text, project as text, optional options as nullable record) as table",
+   "summary": "Enter organization and project names.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "VSTS.Contents",
+   "file": "vsts-contents",
+   "kind": "connector",
+   "category": "VSTS",
+   "returns": "binary",
+   "signature": "VSTS.Contents(url as text, optional options as nullable record) as binary",
+   "summary": "Enter Url of your Azure DevOps Analytics Service.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "VSTS.Feed",
+   "file": "vsts-feed",
+   "kind": "connector",
+   "category": "VSTS",
+   "returns": "table",
+   "signature": "VSTS.Feed(url as text, optional options as nullable record) as table",
+   "summary": "Azure DevOps Services Feed",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "VSTS.Views",
+   "file": "vsts-views",
+   "kind": "connector",
+   "category": "VSTS",
+   "returns": "table",
+   "signature": "VSTS.Views(url as text, project as text, areaPath as nullable text, optional options as nullable record) as table",
+   "summary": "Enter organization and project names.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Webtrends.KeyMetrics",
+   "file": "webtrends-keymetrics",
+   "kind": "connector",
+   "category": "Webtrends",
+   "returns": "table",
+   "signature": "Webtrends.KeyMetrics(ProfileId as text, optional startDate as nullable date, optional endDate as nullable date) as table",
+   "summary": "Returns a table with key Webtrends metrics.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Webtrends.Profile",
+   "file": "webtrends-profile",
+   "kind": "connector",
+   "category": "Webtrends",
+   "returns": "any",
+   "signature": "Webtrends.Profile() as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Webtrends.ReportContents",
+   "file": "webtrends-reportcontents",
+   "kind": "connector",
+   "category": "Webtrends",
+   "returns": "table",
+   "signature": "Webtrends.ReportContents(ProfileId as text, ReportId as text, optional startDate as nullable date, optional endDate as nullable date) as table",
+   "summary": "Returns a table with report content from Webtrends.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Webtrends.Tables",
+   "file": "webtrends-tables",
+   "kind": "connector",
+   "category": "Webtrends",
+   "returns": "table",
+   "signature": "Webtrends.Tables(ProfileId as text, optional startDate as nullable date, optional endDate as nullable date) as table",
+   "summary": "Enter the Profile ID associated with your Webtrends account.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "WebtrendsAnalytics.Tables",
+   "file": "webtrendsanalytics-tables",
+   "kind": "connector",
+   "category": "WebtrendsAnalytics",
+   "returns": "table",
+   "signature": "WebtrendsAnalytics.Tables(ProfileId as text, Period as text, reportType as text, optional startDate as nullable date, optional endDate as nullable date, optional startPeriod as nullable text, optional endPeriod as nullable text) as table",
+   "summary": "Enter the Profile ID associated with your Webtrends account.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Windsor.Main",
+   "file": "windsor-main",
+   "kind": "connector",
+   "category": "Windsor",
+   "returns": "table",
+   "signature": "Windsor.Main() as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Witivio.Contents",
+   "file": "witivio-contents",
+   "kind": "connector",
+   "category": "Witivio",
+   "returns": "table",
+   "signature": "Witivio.Contents(botId as text) as table",
+   "summary": "Witivio 365 - Configuration",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "WorkforceDimensions.Contents",
+   "file": "workforcedimensions-contents",
+   "kind": "connector",
+   "category": "WorkforceDimensions",
+   "returns": "text",
+   "signature": "WorkforceDimensions.Contents(configurationServer as text, workForceDimensionsServer as text, symbolicPeriod as text, optional startDate as nullable date, optional endDate as nullable date) as text",
+   "summary": "Configuration to access OAuth server as well as default date range settigns.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Wrike.Contents",
+   "file": "wrike-contents",
+   "kind": "connector",
+   "category": "Wrike",
+   "returns": "table",
+   "signature": "Wrike.Contents() as table",
+   "summary": "Shared function and first entry point to Connector.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Zendesk.Collection",
+   "file": "zendesk-collection",
+   "kind": "connector",
+   "category": "Zendesk",
+   "returns": "any",
+   "signature": "Zendesk.Collection(url as any, collectionName as any, optional schema as any) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Zendesk.Tables",
+   "file": "zendesk-tables",
+   "kind": "connector",
+   "category": "Zendesk",
+   "returns": "table",
+   "signature": "Zendesk.Tables(url as text) as table",
+   "summary": "Enter the URL of your Zendesk account.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "ZendeskData.Contents",
+   "file": "zendeskdata-contents",
+   "kind": "connector",
+   "category": "ZendeskData",
+   "returns": "table",
+   "signature": "ZendeskData.Contents(url as text, optional options as nullable record) as table",
+   "summary": "Returns a table with relevant Zendesk data.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "ZohoCreator.Contents",
+   "file": "zohocreator-contents",
+   "kind": "connector",
+   "category": "ZohoCreator",
+   "returns": "any",
+   "signature": "ZohoCreator.Contents(creatordomain as text, scopname as text, applinkname as text, reportlinkname as text) as any",
+   "summary": "This connector will fetch data only from Zoho Creator application reports",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Zucchetti.Contents",
+   "file": "zucchetti-contents",
+   "kind": "connector",
+   "category": "Zucchetti",
+   "returns": "table",
+   "signature": "Zucchetti.Contents(Url as text, Environment as text) as table",
+   "summary": "Returns contents of VisualQueries (vqr), reports or functions published by the Zucchetti HR software",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  }
+ ]
+}

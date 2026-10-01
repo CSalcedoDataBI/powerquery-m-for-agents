@@ -88,10 +88,20 @@ for py in sorted(py_scripts):
     if r.returncode != 0:
         errors.append(f"py_compile failed: {os.path.relpath(py, ROOT)}: {r.stderr.strip()}")
 
+# ---- 3b: no shipped file over 256 KiB ----
+# The plugin directory holds a file over 256 KiB for a reviewer. Nothing under skills/ is
+# meant to: the catalogue for scripts is split by category for exactly this reason.
+for dirpath, _, filenames in os.walk(SKILLS):
+    for name in filenames:
+        path = os.path.join(dirpath, name)
+        if os.path.getsize(path) > 256 * 1024:
+            errors.append(f"{os.path.relpath(path, ROOT)} is {os.path.getsize(path):,} bytes, "
+                          f"over the 256 KiB a plugin file may weigh")
+
 # ---- 4: m-reference integrity ----
 REF = os.path.join(SKILLS, "m-reference")
 GEN = os.path.join(REF, "generated")
-cat_json = os.path.join(GEN, "catalog.json")
+cat_dir = os.path.join(GEN, "catalog")
 lib_dir = os.path.join(GEN, "library")
 notes_dir = os.path.join(REF, "notes")
 
@@ -110,10 +120,12 @@ notes = stems(notes_dir)
 for orphan in sorted(notes - cards):
     errors.append(f"m-reference/notes/{orphan}.md has no generated/library/{orphan}.md")
 
-if os.path.exists(cat_json):
+if os.path.isdir(cat_dir):
     try:
-        with open(cat_json, encoding="utf-8") as f:
-            cat = json.load(f)
+        import m_blocks
+        cat = m_blocks.load_catalog(REF)
+        if cat is None:
+            raise ValueError("generated/catalog/index.json is missing")
         rows = {fn.get("file") for fn in cat.get("functions", [])}
         for missing in sorted(rows - cards):
             errors.append(f"catalog lists '{missing}' but generated/library/{missing}.md is missing")
@@ -135,19 +147,19 @@ if os.path.exists(cat_json):
             path = os.path.join(GEN, index)
             if not os.path.exists(path):
                 if names:
-                    errors.append(f"generated/{index} is missing but catalog.json has "
+                    errors.append(f"generated/{index} is missing but the catalogue has "
                                   f"{len(names)} entries for it - run the sync")
                 continue
             with open(path, encoding="utf-8") as f:
                 listed = set(re.findall(r"^\| `([^`]+)` \|", f.read(), re.M))
             for missing in sorted(names - listed):
-                errors.append(f"generated/{index} does not list '{missing}' from catalog.json")
+                errors.append(f"generated/{index} does not list '{missing}' from the catalogue")
             for extra in sorted(listed - names):
-                errors.append(f"generated/{index} lists '{extra}', which catalog.json puts elsewhere")
-    except (json.JSONDecodeError, AttributeError, TypeError) as e:
-        errors.append(f"m-reference/generated/catalog.json is not readable: {e}")
+                errors.append(f"generated/{index} lists '{extra}', which the catalogue puts elsewhere")
+    except (OSError, ValueError, KeyError, AttributeError, TypeError) as e:
+        errors.append(f"m-reference/generated/catalog/ is not readable: {e}")
 elif cards:
-    errors.append("generated/library/ has cards but generated/catalog.json is missing - run the sync")
+    errors.append("generated/library/ has cards but generated/catalog/ is missing - run the sync")
 
 # ---- report ----
 if errors:

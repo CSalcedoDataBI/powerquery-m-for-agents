@@ -58,8 +58,8 @@ class Sync(unittest.TestCase):
         return s.sync(list(paths), ref=self.ref, write=True, **kw)
 
     def catalog(self):
-        with open(os.path.join(self.ref, "generated", "catalog.json"), encoding="utf-8") as f:
-            return {r["name"]: r for r in json.load(f)["functions"]}
+        catalog = s.load_catalog(os.path.join(self.ref, "generated"))
+        return {r["name"]: r for r in catalog["functions"]}
 
     def generated(self, name):
         with open(os.path.join(self.ref, "generated", name), encoding="utf-8") as f:
@@ -96,11 +96,30 @@ class Sync(unittest.TestCase):
         self.assertNotIn("Broken.Constant", md)
         self.assertIn("2 constants and type values in `constants.md`", self.generated("catalog.md"))
 
+    def test_the_catalogue_is_split_and_reads_back_whole(self):
+        self.run_sync(DESKTOP)
+        folder = os.path.join(self.ref, "generated", "catalog")
+        self.assertFalse(os.path.exists(os.path.join(self.ref, "generated", "catalog.json")))
+        with open(os.path.join(folder, "index.json"), encoding="utf-8") as f:
+            parts = json.load(f)["parts"]
+        self.assertGreater(len(parts), 1)
+        catalog = s.load_catalog(os.path.join(self.ref, "generated"))
+        names = [r["name"] for r in catalog["functions"]]
+        self.assertEqual(names, sorted(names, key=str.lower))
+        on_disk = 0
+        for part in parts:
+            with open(os.path.join(folder, part + ".json"), encoding="utf-8") as f:
+                rows = json.load(f)["functions"]
+            on_disk += len(rows)
+            self.assertEqual({s.catalog_part(r) for r in rows}, {part})
+        self.assertEqual(on_disk, len(names))
+        self.assertTrue(catalog["constants"])
+
     def test_export_without_constants_does_not_flag_them_partial(self):
         # excel-fixture predates the constants export: it contributes no hosts to them.
         self.run_sync(DESKTOP, EXCEL, accept_count_change=True)
-        with open(os.path.join(self.ref, "generated", "catalog.json"), encoding="utf-8") as f:
-            constants = {c["name"]: c for c in json.load(f)["constants"]}
+        constants = {c["name"]: c for c in
+                     s.load_catalog(os.path.join(self.ref, "generated"))["constants"]}
         self.assertEqual(constants["JoinKind.Inner"]["hosts"], ["desktop"])
         self.assertFalse(constants["JoinKind.Inner"]["partialHosts"])
         # ...and is not named as a source of constants.md either.

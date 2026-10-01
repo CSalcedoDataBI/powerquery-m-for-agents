@@ -1,0 +1,49 @@
+{
+ "functions": [
+  {
+   "name": "Value.Metadata",
+   "file": "value-metadata",
+   "kind": "library",
+   "category": "Metadata",
+   "returns": "any",
+   "signature": "Value.Metadata(value as any) as any",
+   "summary": "Returns a record containing the input's metadata.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Value.RemoveMetadata",
+   "file": "value-removemetadata",
+   "kind": "library",
+   "category": "Metadata",
+   "returns": "any",
+   "signature": "Value.RemoveMetadata(value as any, optional metaValue as any) as any",
+   "summary": "Strips the input of metadata.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Value.ReplaceMetadata",
+   "file": "value-replacemetadata",
+   "kind": "library",
+   "category": "Metadata",
+   "returns": "any",
+   "signature": "Value.ReplaceMetadata(value as any, metaValue as any) as any",
+   "summary": "Replaces the input's metadata information.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  }
+ ]
+}

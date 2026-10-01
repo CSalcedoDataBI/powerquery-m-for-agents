@@ -1,0 +1,19 @@
+{
+ "functions": [
+  {
+   "name": "Error.Record",
+   "file": "error-record",
+   "kind": "library",
+   "category": "Error",
+   "returns": "record",
+   "signature": "Error.Record(reason as text, optional message as nullable text, optional detail as any, optional parameters as nullable list, optional errorCode as nullable text) as record",
+   "summary": "Returns an error record from the provided text values for reason, message, detail, and error code.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  }
+ ]
+}

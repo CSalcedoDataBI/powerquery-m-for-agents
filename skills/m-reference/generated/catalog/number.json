@@ -1,0 +1,784 @@
+{
+ "functions": [
+  {
+   "name": "Byte.From",
+   "file": "byte-from",
+   "kind": "library",
+   "category": "Number.Conversion and formatting",
+   "returns": "nullable number",
+   "signature": "Byte.From(value as any, optional culture as nullable text, optional roundingMode as nullable number) as nullable number",
+   "summary": "Creates an 8-bit integer from the given value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Currency.From",
+   "file": "currency-from",
+   "kind": "library",
+   "category": "Number.Conversion and formatting",
+   "returns": "nullable number",
+   "signature": "Currency.From(value as any, optional culture as nullable text, optional roundingMode as nullable number) as nullable number",
+   "summary": "Returns a currency value from the given value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Decimal.From",
+   "file": "decimal-from",
+   "kind": "library",
+   "category": "Number.Conversion and formatting",
+   "returns": "nullable number",
+   "signature": "Decimal.From(value as any, optional culture as nullable text) as nullable number",
+   "summary": "Creates a Decimal from the given value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Double.From",
+   "file": "double-from",
+   "kind": "library",
+   "category": "Number.Conversion and formatting",
+   "returns": "nullable number",
+   "signature": "Double.From(value as any, optional culture as nullable text) as nullable number",
+   "summary": "Creates a Double from the given value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Int16.From",
+   "file": "int16-from",
+   "kind": "library",
+   "category": "Number.Conversion and formatting",
+   "returns": "nullable number",
+   "signature": "Int16.From(value as any, optional culture as nullable text, optional roundingMode as nullable number) as nullable number",
+   "summary": "Creates a 16-bit integer from the given value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Int32.From",
+   "file": "int32-from",
+   "kind": "library",
+   "category": "Number.Conversion and formatting",
+   "returns": "nullable number",
+   "signature": "Int32.From(value as any, optional culture as nullable text, optional roundingMode as nullable number) as nullable number",
+   "summary": "Creates a 32-bit integer from the given value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 4
+  },
+  {
+   "name": "Int64.From",
+   "file": "int64-from",
+   "kind": "library",
+   "category": "Number.Conversion and formatting",
+   "returns": "nullable number",
+   "signature": "Int64.From(value as any, optional culture as nullable text, optional roundingMode as nullable number) as nullable number",
+   "summary": "Creates a 64-bit integer from the given value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Int8.From",
+   "file": "int8-from",
+   "kind": "library",
+   "category": "Number.Conversion and formatting",
+   "returns": "nullable number",
+   "signature": "Int8.From(value as any, optional culture as nullable text, optional roundingMode as nullable number) as nullable number",
+   "summary": "Creates a signed 8-bit integer from the given value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Number.Abs",
+   "file": "number-abs",
+   "kind": "library",
+   "category": "Number.Operations",
+   "returns": "nullable number",
+   "signature": "Number.Abs(number as nullable number) as nullable number",
+   "summary": "Returns the absolute value of the number.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Number.Acos",
+   "file": "number-acos",
+   "kind": "library",
+   "category": "Number.Trigonometry",
+   "returns": "nullable number",
+   "signature": "Number.Acos(number as nullable number) as nullable number",
+   "summary": "Returns the arccosine of the number.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.Asin",
+   "file": "number-asin",
+   "kind": "library",
+   "category": "Number.Trigonometry",
+   "returns": "nullable number",
+   "signature": "Number.Asin(number as nullable number) as nullable number",
+   "summary": "Returns the arcsine of the number.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.Atan",
+   "file": "number-atan",
+   "kind": "library",
+   "category": "Number.Trigonometry",
+   "returns": "nullable number",
+   "signature": "Number.Atan(number as nullable number) as nullable number",
+   "summary": "Returns the arctangent of the number.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.Atan2",
+   "file": "number-atan2",
+   "kind": "library",
+   "category": "Number.Trigonometry",
+   "returns": "nullable number",
+   "signature": "Number.Atan2(y as nullable number, x as nullable number) as nullable number",
+   "summary": "Returns the arctangent of the division of the two numbers.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.BitwiseAnd",
+   "file": "number-bitwiseand",
+   "kind": "library",
+   "category": "Number.Bytes",
+   "returns": "nullable number",
+   "signature": "Number.BitwiseAnd(number1 as nullable number, number2 as nullable number) as nullable number",
+   "summary": "Returns the result of performing a bitwise \"And\" operation between the two inputs.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.BitwiseNot",
+   "file": "number-bitwisenot",
+   "kind": "library",
+   "category": "Number.Bytes",
+   "returns": "any",
+   "signature": "Number.BitwiseNot(number as any) as any",
+   "summary": "Returns a byte where each bit is the opposite of the input.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.BitwiseOr",
+   "file": "number-bitwiseor",
+   "kind": "library",
+   "category": "Number.Bytes",
+   "returns": "nullable number",
+   "signature": "Number.BitwiseOr(number1 as nullable number, number2 as nullable number) as nullable number",
+   "summary": "Returns the result of performing a bitwise \"Or\" between the two inputs.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.BitwiseShiftLeft",
+   "file": "number-bitwiseshiftleft",
+   "kind": "library",
+   "category": "Number.Bytes",
+   "returns": "nullable number",
+   "signature": "Number.BitwiseShiftLeft(number1 as nullable number, number2 as nullable number) as nullable number",
+   "summary": "Shifts the bits set to the left.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.BitwiseShiftRight",
+   "file": "number-bitwiseshiftright",
+   "kind": "library",
+   "category": "Number.Bytes",
+   "returns": "nullable number",
+   "signature": "Number.BitwiseShiftRight(number1 as nullable number, number2 as nullable number) as nullable number",
+   "summary": "Shifts the bits set to the right.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.BitwiseXor",
+   "file": "number-bitwisexor",
+   "kind": "library",
+   "category": "Number.Bytes",
+   "returns": "nullable number",
+   "signature": "Number.BitwiseXor(number1 as nullable number, number2 as nullable number) as nullable number",
+   "summary": "Returns the result of performing a bitwise \"XOR\" (Exclusive-OR) between the two inputs.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.Combinations",
+   "file": "number-combinations",
+   "kind": "library",
+   "category": "Number.Operations",
+   "returns": "nullable number",
+   "signature": "Number.Combinations(setSize as nullable number, combinationSize as nullable number) as nullable number",
+   "summary": "Returns the number of unique combinations.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 4
+  },
+  {
+   "name": "Number.Cos",
+   "file": "number-cos",
+   "kind": "library",
+   "category": "Number.Trigonometry",
+   "returns": "nullable number",
+   "signature": "Number.Cos(number as nullable number) as nullable number",
+   "summary": "Returns the cosine of the number.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.Cosh",
+   "file": "number-cosh",
+   "kind": "library",
+   "category": "Number.Trigonometry",
+   "returns": "nullable number",
+   "signature": "Number.Cosh(number as nullable number) as nullable number",
+   "summary": "Returns the hyperbolic cosine of the number.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.Exp",
+   "file": "number-exp",
+   "kind": "library",
+   "category": "Number.Operations",
+   "returns": "nullable number",
+   "signature": "Number.Exp(number as nullable number) as nullable number",
+   "summary": "Raises e to the given power.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Number.Factorial",
+   "file": "number-factorial",
+   "kind": "library",
+   "category": "Number.Operations",
+   "returns": "nullable number",
+   "signature": "Number.Factorial(number as nullable number) as nullable number",
+   "summary": "Returns the factorial of the number.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Number.From",
+   "file": "number-from",
+   "kind": "library",
+   "category": "Number.Conversion and formatting",
+   "returns": "nullable number",
+   "signature": "Number.From(value as any, optional culture as nullable text) as nullable number",
+   "summary": "Creates a number from the given value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Number.FromText",
+   "file": "number-fromtext",
+   "kind": "library",
+   "category": "Number.Conversion and formatting",
+   "returns": "nullable number",
+   "signature": "Number.FromText(text as nullable text, optional culture as nullable text) as nullable number",
+   "summary": "Creates numbers from common text formats (\"15\", \"3,423.10\", \"5.0E-10\").",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": true,
+   "examples": 3
+  },
+  {
+   "name": "Number.IntegerDivide",
+   "file": "number-integerdivide",
+   "kind": "library",
+   "category": "Number.Operations",
+   "returns": "nullable number",
+   "signature": "Number.IntegerDivide(number1 as nullable number, number2 as nullable number, optional precision as nullable number) as nullable number",
+   "summary": "Divides two numbers and returns the integer portion of the result.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 4
+  },
+  {
+   "name": "Number.IsEven",
+   "file": "number-iseven",
+   "kind": "library",
+   "category": "Number.Information",
+   "returns": "logical",
+   "signature": "Number.IsEven(number as number) as logical",
+   "summary": "Indicates if the value is even.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.IsNaN",
+   "file": "number-isnan",
+   "kind": "library",
+   "category": "Number.Information",
+   "returns": "logical",
+   "signature": "Number.IsNaN(number as number) as logical",
+   "summary": "Indicates if the value is NaN (Not a number).",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.IsOdd",
+   "file": "number-isodd",
+   "kind": "library",
+   "category": "Number.Information",
+   "returns": "logical",
+   "signature": "Number.IsOdd(number as number) as logical",
+   "summary": "Indicates if the value is odd.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.Ln",
+   "file": "number-ln",
+   "kind": "library",
+   "category": "Number.Operations",
+   "returns": "nullable number",
+   "signature": "Number.Ln(number as nullable number) as nullable number",
+   "summary": "Returns the natural logarithm of the number.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Number.Log",
+   "file": "number-log",
+   "kind": "library",
+   "category": "Number.Operations",
+   "returns": "nullable number",
+   "signature": "Number.Log(number as nullable number, optional base as nullable number) as nullable number",
+   "summary": "Returns the logarithm of the number to the specified base (default e).",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Number.Log10",
+   "file": "number-log10",
+   "kind": "library",
+   "category": "Number.Operations",
+   "returns": "nullable number",
+   "signature": "Number.Log10(number as nullable number) as nullable number",
+   "summary": "Returns the base 10 logarithm of the number.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Number.Mod",
+   "file": "number-mod",
+   "kind": "library",
+   "category": "Number.Operations",
+   "returns": "nullable number",
+   "signature": "Number.Mod(number as nullable number, divisor as nullable number, optional precision as nullable number) as nullable number",
+   "summary": "Integer divides two numbers and returns the remainder.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Number.Permutations",
+   "file": "number-permutations",
+   "kind": "library",
+   "category": "Number.Operations",
+   "returns": "nullable number",
+   "signature": "Number.Permutations(setSize as nullable number, permutationSize as nullable number) as nullable number",
+   "summary": "Returns the number of permutations.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Number.Power",
+   "file": "number-power",
+   "kind": "library",
+   "category": "Number.Operations",
+   "returns": "nullable number",
+   "signature": "Number.Power(number as nullable number, power as nullable number) as nullable number",
+   "summary": "Raises a number to the given power.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Number.Random",
+   "file": "number-random",
+   "kind": "library",
+   "category": "Number.Random",
+   "returns": "number",
+   "signature": "Number.Random() as number",
+   "summary": "Returns a random number.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.RandomBetween",
+   "file": "number-randombetween",
+   "kind": "library",
+   "category": "Number.Random",
+   "returns": "number",
+   "signature": "Number.RandomBetween(bottom as number, top as number) as number",
+   "summary": "Returns a random number between two numbers.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.Round",
+   "file": "number-round",
+   "kind": "library",
+   "category": "Number.Rounding",
+   "returns": "nullable number",
+   "signature": "Number.Round(number as nullable number, optional digits as nullable number, optional roundingMode as nullable number) as nullable number",
+   "summary": "Returns the rounded number.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.RoundAwayFromZero",
+   "file": "number-roundawayfromzero",
+   "kind": "library",
+   "category": "Number.Rounding",
+   "returns": "nullable number",
+   "signature": "Number.RoundAwayFromZero(number as nullable number, optional digits as nullable number) as nullable number",
+   "summary": "Returns the result of rounding positive numbers up and negative numbers down.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.RoundDown",
+   "file": "number-rounddown",
+   "kind": "library",
+   "category": "Number.Rounding",
+   "returns": "nullable number",
+   "signature": "Number.RoundDown(number as nullable number, optional digits as nullable number) as nullable number",
+   "summary": "Returns the highest previous number.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.RoundTowardZero",
+   "file": "number-roundtowardzero",
+   "kind": "library",
+   "category": "Number.Rounding",
+   "returns": "nullable number",
+   "signature": "Number.RoundTowardZero(number as nullable number, optional digits as nullable number) as nullable number",
+   "summary": "Returns the result of rounding positive numbers down and negative numbers up.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.RoundUp",
+   "file": "number-roundup",
+   "kind": "library",
+   "category": "Number.Rounding",
+   "returns": "nullable number",
+   "signature": "Number.RoundUp(number as nullable number, optional digits as nullable number) as nullable number",
+   "summary": "Returns the next highest number.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.Sign",
+   "file": "number-sign",
+   "kind": "library",
+   "category": "Number.Operations",
+   "returns": "nullable number",
+   "signature": "Number.Sign(number as nullable number) as nullable number",
+   "summary": "Returns 1 if the number is positive, -1 if it is negative, and 0 if it is zero.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Number.Sin",
+   "file": "number-sin",
+   "kind": "library",
+   "category": "Number.Trigonometry",
+   "returns": "nullable number",
+   "signature": "Number.Sin(number as nullable number) as nullable number",
+   "summary": "Returns the sine of the number.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.Sinh",
+   "file": "number-sinh",
+   "kind": "library",
+   "category": "Number.Trigonometry",
+   "returns": "nullable number",
+   "signature": "Number.Sinh(number as nullable number) as nullable number",
+   "summary": "Returns the hyperbolic sine of the number.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.Sqrt",
+   "file": "number-sqrt",
+   "kind": "library",
+   "category": "Number.Operations",
+   "returns": "nullable number",
+   "signature": "Number.Sqrt(number as nullable number) as nullable number",
+   "summary": "Returns the square root of the number.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Number.Tan",
+   "file": "number-tan",
+   "kind": "library",
+   "category": "Number.Trigonometry",
+   "returns": "nullable number",
+   "signature": "Number.Tan(number as nullable number) as nullable number",
+   "summary": "Returns the tangent of the number.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.Tanh",
+   "file": "number-tanh",
+   "kind": "library",
+   "category": "Number.Trigonometry",
+   "returns": "nullable number",
+   "signature": "Number.Tanh(number as nullable number) as nullable number",
+   "summary": "Returns the hyperbolic tangent of the number.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Number.ToText",
+   "file": "number-totext",
+   "kind": "library",
+   "category": "Number.Conversion and formatting",
+   "returns": "nullable text",
+   "signature": "Number.ToText(number as nullable number, optional format as nullable text, optional culture as nullable text) as nullable text",
+   "summary": "Converts the given number to text.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Percentage.From",
+   "file": "percentage-from",
+   "kind": "library",
+   "category": "Number.Conversion and formatting",
+   "returns": "nullable number",
+   "signature": "Percentage.From(value as any, optional culture as nullable text) as nullable number",
+   "summary": "Returns a percentage value from the given value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Single.From",
+   "file": "single-from",
+   "kind": "library",
+   "category": "Number.Conversion and formatting",
+   "returns": "nullable number",
+   "signature": "Single.From(value as any, optional culture as nullable text) as nullable number",
+   "summary": "Creates a Single from the given value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  }
+ ]
+}

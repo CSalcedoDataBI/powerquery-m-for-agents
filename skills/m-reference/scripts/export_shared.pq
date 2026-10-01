@@ -10,7 +10,7 @@
 // Nothing here is guessed from docs: a member is in the output only if #shared has it.
 let
     Host = "desktop",
-    // Fill in the host build (Help > About in Desktop). It is stamped into catalog.json.
+    // Fill in the host build (Help > About in Desktop). It is stamped into the catalogue (generated/catalog/index.json).
     HostVersion = "",
 
     // M has no Type.ToText. Primitive types are compared from specific to general, so

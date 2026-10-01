@@ -1,0 +1,64 @@
+{
+ "functions": [
+  {
+   "name": "Function.From",
+   "file": "function-from",
+   "kind": "library",
+   "category": "Function",
+   "returns": "function",
+   "signature": "Function.From(functionType as type, function as function) as function",
+   "summary": "Creates a function with a specific parameter signature on top of a function that takes a single list argument.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Function.Invoke",
+   "file": "function-invoke",
+   "kind": "library",
+   "category": "Function",
+   "returns": "any",
+   "signature": "Function.Invoke(function as function, args as list) as any",
+   "summary": "Invokes the given function.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Function.InvokeAfter",
+   "file": "function-invokeafter",
+   "kind": "library",
+   "category": "Function",
+   "returns": "any",
+   "signature": "Function.InvokeAfter(function as function, delay as duration) as any",
+   "summary": "Invokes the given function after the specified duration has passed.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Function.ScalarVector",
+   "file": "function-scalarvector",
+   "kind": "library",
+   "category": "Function",
+   "returns": "function",
+   "signature": "Function.ScalarVector(scalarFunctionType as type, vectorFunction as function) as function",
+   "summary": "Creates a scalar function on top of a vector function, batching multiple invocations.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  }
+ ]
+}

@@ -1,0 +1,409 @@
+{
+ "functions": [
+  {
+   "name": "Action.WithErrorContext",
+   "file": "action-witherrorcontext",
+   "kind": "library",
+   "category": "Values.Implementation",
+   "returns": "any",
+   "signature": "Action.WithErrorContext(action as any, context as text) as any",
+   "summary": "This function is intended for internal use only.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DirectQueryCapabilities.From",
+   "file": "directquerycapabilities-from",
+   "kind": "library",
+   "category": "Values.Implementation",
+   "returns": "table",
+   "signature": "DirectQueryCapabilities.From(value as any) as table",
+   "summary": "This function is intended for internal use only.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Embedded.Value",
+   "file": "embedded-value",
+   "kind": "library",
+   "category": "Values.Implementation",
+   "returns": "any",
+   "signature": "Embedded.Value(value as any, path as text) as any",
+   "summary": "This function is intended for internal use only.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Excel.ShapeTable",
+   "file": "excel-shapetable",
+   "kind": "library",
+   "category": "Values.Implementation",
+   "returns": "any",
+   "signature": "Excel.ShapeTable(table as table, optional options as nullable record) as any",
+   "summary": "This function is intended for internal use only.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Function.InvokeWithErrorContext",
+   "file": "function-invokewitherrorcontext",
+   "kind": "library",
+   "category": "Values.Implementation",
+   "returns": "any",
+   "signature": "Function.InvokeWithErrorContext(function as function, context as text) as any",
+   "summary": "This function is intended for internal use only.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Module.Versions",
+   "file": "module-versions",
+   "kind": "library",
+   "category": "Values.Implementation",
+   "returns": "record",
+   "signature": "Module.Versions() as record",
+   "summary": "Returns a record of module versions for the current module and its dependencies.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Progress.DataSourceProgress",
+   "file": "progress-datasourceprogress",
+   "kind": "library",
+   "category": "Values.Implementation",
+   "returns": "any",
+   "signature": "Progress.DataSourceProgress() as any",
+   "summary": "This function is intended for internal use only.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SqlExpression.SchemaFrom",
+   "file": "sqlexpression-schemafrom",
+   "kind": "library",
+   "category": "Values.Implementation",
+   "returns": "any",
+   "signature": "SqlExpression.SchemaFrom(schema as any) as any",
+   "summary": "This function is intended for internal use only.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SqlExpression.ToExpression",
+   "file": "sqlexpression-toexpression",
+   "kind": "library",
+   "category": "Values.Implementation",
+   "returns": "text",
+   "signature": "SqlExpression.ToExpression(sql as text, environment as record) as text",
+   "summary": "Converts the provided SQL query to M code.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Table.WithErrorContext",
+   "file": "table-witherrorcontext",
+   "kind": "library",
+   "category": "Values.Implementation",
+   "returns": "any",
+   "signature": "Table.WithErrorContext(value as any, context as text) as any",
+   "summary": "This function is intended for internal use only.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Value.Add",
+   "file": "value-add",
+   "kind": "library",
+   "category": "Values.Arithmetic operations",
+   "returns": "any",
+   "signature": "Value.Add(value1 as any, value2 as any, optional precision as nullable number) as any",
+   "summary": "Returns the sum of the two values.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Value.As",
+   "file": "value-as",
+   "kind": "library",
+   "category": "Values.Types",
+   "returns": "any",
+   "signature": "Value.As(value as any, type as type) as any",
+   "summary": "Returns the value if it's compatible with the specified type.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Value.Compare",
+   "file": "value-compare",
+   "kind": "library",
+   "category": "Values",
+   "returns": "number",
+   "signature": "Value.Compare(value1 as any, value2 as any, optional precision as nullable number) as number",
+   "summary": "Returns -1, 0, or 1 based on whether the first value is less than, equal to, or greater than the second.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Value.Divide",
+   "file": "value-divide",
+   "kind": "library",
+   "category": "Values.Arithmetic operations",
+   "returns": "any",
+   "signature": "Value.Divide(value1 as any, value2 as any, optional precision as nullable number) as any",
+   "summary": "Returns the result of dividing the first value by the second.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Value.Equals",
+   "file": "value-equals",
+   "kind": "library",
+   "category": "Values",
+   "returns": "logical",
+   "signature": "Value.Equals(value1 as any, value2 as any, optional precision as nullable number) as logical",
+   "summary": "Returns whether two values are equal.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Value.Firewall",
+   "file": "value-firewall",
+   "kind": "library",
+   "category": "Values.Implementation",
+   "returns": "any",
+   "signature": "Value.Firewall(key as text) as any",
+   "summary": "This function is intended for internal use only.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Value.Is",
+   "file": "value-is",
+   "kind": "library",
+   "category": "Values.Types",
+   "returns": "logical",
+   "signature": "Value.Is(value as any, type as type) as logical",
+   "summary": "Determines whether a value is compatible with the specified type.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Value.Multiply",
+   "file": "value-multiply",
+   "kind": "library",
+   "category": "Values.Arithmetic operations",
+   "returns": "any",
+   "signature": "Value.Multiply(value1 as any, value2 as any, optional precision as nullable number) as any",
+   "summary": "Returns the product of the two values.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Value.NativeQuery",
+   "file": "value-nativequery",
+   "kind": "library",
+   "category": "Values",
+   "returns": "any",
+   "signature": "Value.NativeQuery(target as any, query as text, optional parameters as any, optional options as nullable record) as any",
+   "summary": "Evaluates a query against a target.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Value.NullableEquals",
+   "file": "value-nullableequals",
+   "kind": "library",
+   "category": "Values",
+   "returns": "nullable logical",
+   "signature": "Value.NullableEquals(value1 as any, value2 as any, optional precision as nullable number) as nullable logical",
+   "summary": "Returns whether two values are equal.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Value.ReplaceType",
+   "file": "value-replacetype",
+   "kind": "library",
+   "category": "Values.Types",
+   "returns": "any",
+   "signature": "Value.ReplaceType(value as any, type as type) as any",
+   "summary": "Replaces the value's type.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Value.Subtract",
+   "file": "value-subtract",
+   "kind": "library",
+   "category": "Values.Arithmetic operations",
+   "returns": "any",
+   "signature": "Value.Subtract(value1 as any, value2 as any, optional precision as nullable number) as any",
+   "summary": "Returns the difference of the two values.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Value.Type",
+   "file": "value-type",
+   "kind": "library",
+   "category": "Values",
+   "returns": "type",
+   "signature": "Value.Type(value as any) as type",
+   "summary": "Returns the type of the given value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Value.ViewError",
+   "file": "value-viewerror",
+   "kind": "library",
+   "category": "Values.Implementation",
+   "returns": "record",
+   "signature": "Value.ViewError(errorRecord as record) as record",
+   "summary": "This function is intended for internal use only.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Value.ViewFunction",
+   "file": "value-viewfunction",
+   "kind": "library",
+   "category": "Values.Implementation",
+   "returns": "function",
+   "signature": "Value.ViewFunction(function as function) as function",
+   "summary": "This function is intended for internal use only.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Variable.Value",
+   "file": "variable-value",
+   "kind": "library",
+   "category": "Values.Implementation",
+   "returns": "any",
+   "signature": "Variable.Value(identifier as text) as any",
+   "summary": "Returns the value of the specified variable.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Variable.ValueOrDefault",
+   "file": "variable-valueordefault",
+   "kind": "library",
+   "category": "Values.Implementation",
+   "returns": "any",
+   "signature": "Variable.ValueOrDefault(identifier as text, optional defaultValue as any) as any",
+   "summary": "Returns the value of the specified variable or the default value if the variable is not defined.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  }
+ ]
+}

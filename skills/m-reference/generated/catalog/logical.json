@@ -1,0 +1,49 @@
+{
+ "functions": [
+  {
+   "name": "Logical.From",
+   "file": "logical-from",
+   "kind": "library",
+   "category": "Logical",
+   "returns": "nullable logical",
+   "signature": "Logical.From(value as any) as nullable logical",
+   "summary": "Creates a logical from the given value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Logical.FromText",
+   "file": "logical-fromtext",
+   "kind": "library",
+   "category": "Logical",
+   "returns": "nullable logical",
+   "signature": "Logical.FromText(text as nullable text) as nullable logical",
+   "summary": "Creates a logical value from the text values \"true\" and \"false\".",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Logical.ToText",
+   "file": "logical-totext",
+   "kind": "library",
+   "category": "Logical",
+   "returns": "nullable text",
+   "signature": "Logical.ToText(logicalValue as nullable logical) as nullable text",
+   "summary": "Returns the text \"true\" or \"false\" given a logical value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  }
+ ]
+}

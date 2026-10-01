@@ -1,0 +1,79 @@
+{
+ "functions": [
+  {
+   "name": "Combiner.CombineTextByDelimiter",
+   "file": "combiner-combinetextbydelimiter",
+   "kind": "library",
+   "category": "Combiner",
+   "returns": "function",
+   "signature": "Combiner.CombineTextByDelimiter(delimiter as text, optional quoteStyle as nullable number) as function",
+   "summary": "Returns a function that combines a list of text using the specified delimiter.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Combiner.CombineTextByEachDelimiter",
+   "file": "combiner-combinetextbyeachdelimiter",
+   "kind": "library",
+   "category": "Combiner",
+   "returns": "function",
+   "signature": "Combiner.CombineTextByEachDelimiter(delimiters as list, optional quoteStyle as nullable number) as function",
+   "summary": "Returns a function that combines a list of text using a sequence of delimiters.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Combiner.CombineTextByLengths",
+   "file": "combiner-combinetextbylengths",
+   "kind": "library",
+   "category": "Combiner",
+   "returns": "function",
+   "signature": "Combiner.CombineTextByLengths(lengths as list, optional template as nullable text) as function",
+   "summary": "Returns a function that combines a list of text using the specified lengths.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Combiner.CombineTextByPositions",
+   "file": "combiner-combinetextbypositions",
+   "kind": "library",
+   "category": "Combiner",
+   "returns": "function",
+   "signature": "Combiner.CombineTextByPositions(positions as list, optional template as nullable text) as function",
+   "summary": "Returns a function that combines a list of text using the specified output positions.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Combiner.CombineTextByRanges",
+   "file": "combiner-combinetextbyranges",
+   "kind": "library",
+   "category": "Combiner",
+   "returns": "function",
+   "signature": "Combiner.CombineTextByRanges(ranges as list, optional template as nullable text) as function",
+   "summary": "Returns a function that combines a list of text using the specified positions and lengths.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  }
+ ]
+}

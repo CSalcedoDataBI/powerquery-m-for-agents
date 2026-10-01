@@ -1,0 +1,34 @@
+{
+ "functions": [
+  {
+   "name": "Replacer.ReplaceText",
+   "file": "replacer-replacetext",
+   "kind": "library",
+   "category": "Replacer",
+   "returns": "nullable text",
+   "signature": "Replacer.ReplaceText(text as nullable text, old as text, new as text) as nullable text",
+   "summary": "Replaces text within the provided input.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Replacer.ReplaceValue",
+   "file": "replacer-replacevalue",
+   "kind": "library",
+   "category": "Replacer",
+   "returns": "any",
+   "signature": "Replacer.ReplaceValue(value as any, old as any, new as any) as any",
+   "summary": "Replaces values within the provided input.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  }
+ ]
+}

@@ -1,0 +1,64 @@
+{
+ "functions": [
+  {
+   "name": "Comparer.Equals",
+   "file": "comparer-equals",
+   "kind": "library",
+   "category": "Comparer",
+   "returns": "logical",
+   "signature": "Comparer.Equals(comparer as function, x as any, y as any) as logical",
+   "summary": "Returns a logical value based on the equality check over the two given values.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Comparer.FromCulture",
+   "file": "comparer-fromculture",
+   "kind": "library",
+   "category": "Comparer",
+   "returns": "function",
+   "signature": "Comparer.FromCulture(culture as text, optional ignoreCase as nullable logical) as function",
+   "summary": "Returns a comparer function based on the specified culture and case-sensitivity.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Comparer.Ordinal",
+   "file": "comparer-ordinal",
+   "kind": "library",
+   "category": "Comparer",
+   "returns": "number",
+   "signature": "Comparer.Ordinal(x as any, y as any) as number",
+   "summary": "Returns a comparer function which uses Ordinal rules to compare values.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Comparer.OrdinalIgnoreCase",
+   "file": "comparer-ordinalignorecase",
+   "kind": "library",
+   "category": "Comparer",
+   "returns": "number",
+   "signature": "Comparer.OrdinalIgnoreCase(x as any, y as any) as number",
+   "summary": "Returns a case-insensitive comparer function which uses Ordinal rules to compare values.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  }
+ ]
+}

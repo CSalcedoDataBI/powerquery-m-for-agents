@@ -1,0 +1,44 @@
+{
+ "exports": [
+  {
+   "host": "desktop",
+   "hostVersion": "2.157.879.0",
+   "exportedAt": "2026-09-30T03:06:33Z",
+   "functions": 932
+  }
+ ],
+ "parts": [
+  "accessing-data",
+  "action",
+  "binary",
+  "binary-formats",
+  "cdm",
+  "combiner",
+  "comparer",
+  "connectors",
+  "cube",
+  "date",
+  "datetime",
+  "datetimezone",
+  "diagnostics",
+  "duration",
+  "error",
+  "expression",
+  "function",
+  "lines",
+  "list",
+  "logical",
+  "metadata",
+  "number",
+  "record",
+  "replacer",
+  "splitter",
+  "table",
+  "text",
+  "time",
+  "type",
+  "uri",
+  "value",
+  "values"
+ ]
+}

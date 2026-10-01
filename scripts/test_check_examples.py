@@ -1,4 +1,3 @@
-import json
 import os
 import shutil
 import tempfile
@@ -52,13 +51,13 @@ class Check(unittest.TestCase):
     def setUp(self):
         self.root = tempfile.mkdtemp()
         self.ref = os.path.join(self.root, "skills", "m-reference")
-        os.makedirs(os.path.join(self.ref, "generated"))
-        with open(os.path.join(self.ref, "generated", "catalog.json"), "w", encoding="utf-8") as f:
-            json.dump({"functions": [{"name": "Text.Upper", "file": "text-upper",
-                                      "category": "Text.Transformations", "kind": "library"},
-                                     {"name": "File.Contents", "file": "file-contents",
-                                      "category": "Accessing data", "kind": "library"}],
-                       "constants": [{"name": "JoinKind.Inner"}]}, f)
+        mb.sync_shared().write_catalog(
+            os.path.join(self.ref, "generated"), [],
+            [{"name": "Text.Upper", "file": "text-upper",
+              "category": "Text.Transformations", "kind": "library"},
+             {"name": "File.Contents", "file": "file-contents",
+              "category": "Accessing data", "kind": "library"}],
+            [{"name": "JoinKind.Inner"}])
 
     def tearDown(self):
         shutil.rmtree(self.root, ignore_errors=True)

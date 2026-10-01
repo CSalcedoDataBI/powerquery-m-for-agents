@@ -30,8 +30,12 @@ Gates, all checked before anything is written:
   - an export with fewer than --min-functions functions (wrong query, wrong host);
   - two functions that map to the same card filename;
   - a notes/<file>.md with no card;
-  - the function count moving more than 5% from the last catalog.json, unless
+  - the function count moving more than 5% from the last catalogue, unless
     --accept-count-change.
+
+The catalogue for scripts is generated/catalog/: one JSON file per category root, plus
+connectors.json, constants.json and index.json, so no file nears the 256 KiB a plugin file
+may weigh. load_catalog() reads it back whole.
 
 Run:
   python sync_shared.py exports/desktop-2.140.json exports/excel-16.0.json          # report
@@ -359,12 +363,73 @@ def render_constants_md(rows, exports_meta):
     return "\n".join(lines) + "\n"
 
 
-def previous_count(generated):
-    path = os.path.join(generated, "catalog.json")
-    if not os.path.isfile(path):
+CATALOG_DIR = "catalog"
+RESERVED_PARTS = {"index", "connectors", "constants"}
+
+
+def catalog_part(row):
+    """The file a row goes in: connectors together, library functions by category root."""
+    if row.get("kind") == "connector":
+        return "connectors"
+    return category_slug((row.get("category") or "").split(".")[0])
+
+
+def write_catalog(generated, exports_meta, rows, constants):
+    """Write generated/catalog/: index.json (the exports and the part files), one file per
+    part, and constants.json. load_catalog reads it back as one dict."""
+    parts = {}
+    for row in rows:
+        parts.setdefault(catalog_part(row), []).append(row)
+    clash = sorted(p for p in parts if p in RESERVED_PARTS and p != "connectors")
+    if clash or any(r.get("kind") != "connector" for r in parts.get("connectors", [])):
+        raise GateError("a category root takes a reserved catalogue file name: "
+                        f"{clash or ['connectors']}")
+    folder = os.path.join(generated, CATALOG_DIR)
+    os.makedirs(folder, exist_ok=True)
+
+    def dump(name, value):
+        with open(os.path.join(folder, name + ".json"), "w", encoding="utf-8", newline="\n") as f:
+            json.dump(value, f, ensure_ascii=False, indent=1)
+            f.write("\n")
+
+    for name, part in parts.items():
+        dump(name, {"functions": part})
+    dump("constants", {"constants": constants})
+    dump("index", {"exports": exports_meta, "parts": sorted(parts)})
+
+
+def load_catalog(generated):
+    """generated/catalog/ as one dict, {exports, functions, constants}, the functions in the
+    order the sync wrote them (by name, case-insensitive). None when there is no catalogue."""
+    folder = os.path.join(generated, CATALOG_DIR)
+    index_path = os.path.join(folder, "index.json")
+    if not os.path.isfile(index_path):
         return None
-    with open(path, encoding="utf-8") as f:
-        return len(json.load(f).get("functions", []))
+    with open(index_path, encoding="utf-8") as f:
+        index = json.load(f)
+    functions = []
+    for name in index.get("parts", []):
+        with open(os.path.join(folder, name + ".json"), encoding="utf-8") as f:
+            functions.extend(json.load(f)["functions"])
+    constants = []
+    path = os.path.join(folder, "constants.json")
+    if os.path.isfile(path):
+        with open(path, encoding="utf-8") as f:
+            constants = json.load(f)["constants"]
+    functions.sort(key=lambda r: r["name"].lower())
+    return {"exports": index.get("exports", []), "functions": functions, "constants": constants}
+
+
+def previous_count(generated):
+    catalog = load_catalog(generated)
+    if catalog is None:
+        # The single catalog.json the sync wrote before the split.
+        path = os.path.join(generated, "catalog.json")
+        if not os.path.isfile(path):
+            return None
+        with open(path, encoding="utf-8") as f:
+            catalog = json.load(f)
+    return len(catalog.get("functions", []))
 
 
 def sync(export_paths, ref=REF, write=False, accept_count_change=False,
@@ -417,10 +482,7 @@ def sync(export_paths, ref=REF, write=False, accept_count_change=False,
     for name, text in indexes.items():
         with open(os.path.join(staging, name), "w", encoding="utf-8", newline="\n") as f:
             f.write(text)
-    with open(os.path.join(staging, "catalog.json"), "w", encoding="utf-8", newline="\n") as f:
-        json.dump({"exports": exports_meta, "functions": rows, "constants": constants}, f,
-                  ensure_ascii=False, indent=1)
-        f.write("\n")
+    write_catalog(staging, exports_meta, rows, constants)
 
     # Swap in one move, so a failure part-way leaves the previous generated/ as it was.
     retired = os.path.join(ref, f".retired-{os.getpid()}")

@@ -1,0 +1,139 @@
+{
+ "functions": [
+  {
+   "name": "Expression.Constant",
+   "file": "expression-constant",
+   "kind": "library",
+   "category": "Expression",
+   "returns": "text",
+   "signature": "Expression.Constant(value as any) as text",
+   "summary": "Returns the M source code representation of a constant value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Expression.Evaluate",
+   "file": "expression-evaluate",
+   "kind": "library",
+   "category": "Expression",
+   "returns": "any",
+   "signature": "Expression.Evaluate(document as text, optional environment as nullable record) as any",
+   "summary": "Returns the result of evaluating an M expression.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Expression.Identifier",
+   "file": "expression-identifier",
+   "kind": "library",
+   "category": "Expression",
+   "returns": "text",
+   "signature": "Expression.Identifier(name as text) as text",
+   "summary": "Returns the M source code representation of an identifier.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Graph.Nodes",
+   "file": "graph-nodes",
+   "kind": "library",
+   "category": "Expression",
+   "returns": "list",
+   "signature": "Graph.Nodes(graph as record) as list",
+   "summary": "This function is intended for internal use only.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Value.Alternates",
+   "file": "value-alternates",
+   "kind": "library",
+   "category": "Expression",
+   "returns": "any",
+   "signature": "Value.Alternates(alternates as list) as any",
+   "summary": "Expresses alternate query plans.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Value.Expression",
+   "file": "value-expression",
+   "kind": "library",
+   "category": "Expression",
+   "returns": "nullable record",
+   "signature": "Value.Expression(value as any) as nullable record",
+   "summary": "Returns an abstract syntax tree (AST) that represents the value's expression.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Value.Lineage",
+   "file": "value-lineage",
+   "kind": "library",
+   "category": "Expression",
+   "returns": "any",
+   "signature": "Value.Lineage(value as any) as any",
+   "summary": "This function is intended for internal use only.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Value.Optimize",
+   "file": "value-optimize",
+   "kind": "library",
+   "category": "Expression",
+   "returns": "any",
+   "signature": "Value.Optimize(value as any) as any",
+   "summary": "Signals Value.Expression to return the optimized expression for a value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Value.Traits",
+   "file": "value-traits",
+   "kind": "library",
+   "category": "Expression",
+   "returns": "table",
+   "signature": "Value.Traits(value as any) as table",
+   "summary": "This function is intended for internal use only.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  }
+ ]
+}

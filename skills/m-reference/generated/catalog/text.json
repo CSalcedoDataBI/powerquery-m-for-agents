@@ -1,0 +1,694 @@
+{
+ "functions": [
+  {
+   "name": "Character.FromNumber",
+   "file": "character-fromnumber",
+   "kind": "library",
+   "category": "Text.Conversions from and to text",
+   "returns": "nullable text",
+   "signature": "Character.FromNumber(number as nullable number) as nullable text",
+   "summary": "Converts a number to a text character.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Character.ToNumber",
+   "file": "character-tonumber",
+   "kind": "library",
+   "category": "Text.Conversions from and to text",
+   "returns": "nullable number",
+   "signature": "Character.ToNumber(character as nullable text) as nullable number",
+   "summary": "Converts a character to a number value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Guid.From",
+   "file": "guid-from",
+   "kind": "library",
+   "category": "Text.Conversions from and to text",
+   "returns": "nullable text",
+   "signature": "Guid.From(value as nullable text) as nullable text",
+   "summary": "Returns a guid value from the given value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Json.FromValue",
+   "file": "json-fromvalue",
+   "kind": "library",
+   "category": "Text.Conversions from and to text",
+   "returns": "binary",
+   "signature": "Json.FromValue(value as any, optional encoding as nullable number) as binary",
+   "summary": "Produces a JSON representation of a given value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Text.AfterDelimiter",
+   "file": "text-afterdelimiter",
+   "kind": "library",
+   "category": "Text.Transformations",
+   "returns": "any",
+   "signature": "Text.AfterDelimiter(text as nullable text, delimiter as text, optional index as any) as any",
+   "summary": "Text.AfterDelimiter",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.At",
+   "file": "text-at",
+   "kind": "library",
+   "category": "Text.Extraction",
+   "returns": "nullable text",
+   "signature": "Text.At(text as nullable text, index as number) as nullable text",
+   "summary": "Returns the character at the specified position.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.BeforeDelimiter",
+   "file": "text-beforedelimiter",
+   "kind": "library",
+   "category": "Text.Transformations",
+   "returns": "any",
+   "signature": "Text.BeforeDelimiter(text as nullable text, delimiter as text, optional index as any) as any",
+   "summary": "Text.BeforeDelimiter",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.BetweenDelimiters",
+   "file": "text-betweendelimiters",
+   "kind": "library",
+   "category": "Text.Transformations",
+   "returns": "any",
+   "signature": "Text.BetweenDelimiters(text as nullable text, startDelimiter as text, endDelimiter as text, optional startIndex as any, optional endIndex as any) as any",
+   "summary": "Text.BetweenDelimiters",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.Clean",
+   "file": "text-clean",
+   "kind": "library",
+   "category": "Text.Transformations",
+   "returns": "nullable text",
+   "signature": "Text.Clean(text as nullable text) as nullable text",
+   "summary": "Returns the text value with all control characters removed.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.Combine",
+   "file": "text-combine",
+   "kind": "library",
+   "category": "Text.Transformations",
+   "returns": "text",
+   "signature": "Text.Combine(texts as list, optional separator as nullable text) as text",
+   "summary": "Concatenates a list of text values into one text value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.Contains",
+   "file": "text-contains",
+   "kind": "library",
+   "category": "Text.Membership",
+   "returns": "nullable logical",
+   "signature": "Text.Contains(text as nullable text, substring as text, optional comparer as nullable function) as nullable logical",
+   "summary": "Returns whether the text contains the substring.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.End",
+   "file": "text-end",
+   "kind": "library",
+   "category": "Text.Extraction",
+   "returns": "nullable text",
+   "signature": "Text.End(text as nullable text, count as number) as nullable text",
+   "summary": "Returns the last characters of the text.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.EndsWith",
+   "file": "text-endswith",
+   "kind": "library",
+   "category": "Text.Membership",
+   "returns": "nullable logical",
+   "signature": "Text.EndsWith(text as nullable text, substring as text, optional comparer as nullable function) as nullable logical",
+   "summary": "Indicates whether the text ends in the specified value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.Format",
+   "file": "text-format",
+   "kind": "library",
+   "category": "Text.Conversions from and to text",
+   "returns": "text",
+   "signature": "Text.Format(formatString as text, arguments as any, optional culture as nullable text) as text",
+   "summary": "Returns formatted text from a format string and arguments.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.From",
+   "file": "text-from",
+   "kind": "library",
+   "category": "Text.Conversions from and to text",
+   "returns": "nullable text",
+   "signature": "Text.From(value as any, optional culture as nullable text) as nullable text",
+   "summary": "Creates a text value from the given value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.FromBinary",
+   "file": "text-frombinary",
+   "kind": "library",
+   "category": "Text.Conversions from and to text",
+   "returns": "nullable text",
+   "signature": "Text.FromBinary(binary as nullable binary, optional encoding as nullable number) as nullable text",
+   "summary": "Decodes data from a binary form into text.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.InferNumberType",
+   "file": "text-infernumbertype",
+   "kind": "library",
+   "category": "Text",
+   "returns": "type",
+   "signature": "Text.InferNumberType(text as text, optional culture as nullable text) as type",
+   "summary": "Infers the granular number type (Int64.Type, Double.Type, and so on) of a number encoded in text.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.Insert",
+   "file": "text-insert",
+   "kind": "library",
+   "category": "Text.Modification",
+   "returns": "nullable text",
+   "signature": "Text.Insert(text as nullable text, offset as number, newText as text) as nullable text",
+   "summary": "Inserts one text value into another at a given position.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.Length",
+   "file": "text-length",
+   "kind": "library",
+   "category": "Text.Information",
+   "returns": "nullable number",
+   "signature": "Text.Length(text as nullable text) as nullable number",
+   "summary": "Returns the number of characters.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.Lower",
+   "file": "text-lower",
+   "kind": "library",
+   "category": "Text.Transformations",
+   "returns": "nullable text",
+   "signature": "Text.Lower(text as nullable text, optional culture as nullable text) as nullable text",
+   "summary": "Converts all characters to lowercase.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.Middle",
+   "file": "text-middle",
+   "kind": "library",
+   "category": "Text.Extraction",
+   "returns": "nullable text",
+   "signature": "Text.Middle(text as nullable text, start as number, optional count as nullable number) as nullable text",
+   "summary": "Returns the substring up to a specific length.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.NewGuid",
+   "file": "text-newguid",
+   "kind": "library",
+   "category": "Text.Conversions from and to text",
+   "returns": "text",
+   "signature": "Text.NewGuid() as text",
+   "summary": "Returns a new, random globally unique identifier (GUID).",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.PadEnd",
+   "file": "text-padend",
+   "kind": "library",
+   "category": "Text.Transformations",
+   "returns": "nullable text",
+   "signature": "Text.PadEnd(text as nullable text, count as number, optional character as nullable text) as nullable text",
+   "summary": "Returns text of a specified length by padding the end of the given text.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.PadStart",
+   "file": "text-padstart",
+   "kind": "library",
+   "category": "Text.Transformations",
+   "returns": "nullable text",
+   "signature": "Text.PadStart(text as nullable text, count as number, optional character as nullable text) as nullable text",
+   "summary": "Returns text of a specified length by padding the start of the given text.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.PositionOf",
+   "file": "text-positionof",
+   "kind": "library",
+   "category": "Text.Membership",
+   "returns": "any",
+   "signature": "Text.PositionOf(text as text, substring as text, optional occurrence as nullable number, optional comparer as nullable function) as any",
+   "summary": "Returns the first position of the value (-1 if not found).",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.PositionOfAny",
+   "file": "text-positionofany",
+   "kind": "library",
+   "category": "Text.Membership",
+   "returns": "any",
+   "signature": "Text.PositionOfAny(text as text, characters as list, optional occurrence as nullable number) as any",
+   "summary": "Returns the first position in the text value of any listed character (-1 if not found).",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.Proper",
+   "file": "text-proper",
+   "kind": "library",
+   "category": "Text.Transformations",
+   "returns": "nullable text",
+   "signature": "Text.Proper(text as nullable text, optional culture as nullable text) as nullable text",
+   "summary": "Capitalizes the first letter of each word.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.Range",
+   "file": "text-range",
+   "kind": "library",
+   "category": "Text.Extraction",
+   "returns": "nullable text",
+   "signature": "Text.Range(text as nullable text, offset as number, optional count as nullable number) as nullable text",
+   "summary": "Returns the substring found at offset.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.Remove",
+   "file": "text-remove",
+   "kind": "library",
+   "category": "Text.Modification",
+   "returns": "nullable text",
+   "signature": "Text.Remove(text as nullable text, removeChars as any) as nullable text",
+   "summary": "Removes all occurrences of the given character or list of characters from the input text value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.RemoveRange",
+   "file": "text-removerange",
+   "kind": "library",
+   "category": "Text.Modification",
+   "returns": "nullable text",
+   "signature": "Text.RemoveRange(text as nullable text, offset as number, optional count as nullable number) as nullable text",
+   "summary": "Removes a count of characters starting at the given offset",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.Repeat",
+   "file": "text-repeat",
+   "kind": "library",
+   "category": "Text.Transformations",
+   "returns": "nullable text",
+   "signature": "Text.Repeat(text as nullable text, count as number) as nullable text",
+   "summary": "Returns a text value composed of the input text repeated a specified number of times.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.Replace",
+   "file": "text-replace",
+   "kind": "library",
+   "category": "Text.Modification",
+   "returns": "nullable text",
+   "signature": "Text.Replace(text as nullable text, old as text, new as text) as nullable text",
+   "summary": "Replaces all occurrences of the given substring in the text.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.ReplaceRange",
+   "file": "text-replacerange",
+   "kind": "library",
+   "category": "Text.Modification",
+   "returns": "nullable text",
+   "signature": "Text.ReplaceRange(text as nullable text, offset as number, count as number, newText as text) as nullable text",
+   "summary": "Removes a range of characters and inserts a new value at a specified position.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.Reverse",
+   "file": "text-reverse",
+   "kind": "library",
+   "category": "Text.Transformations",
+   "returns": "nullable text",
+   "signature": "Text.Reverse(text as nullable text) as nullable text",
+   "summary": "Text.Reverse",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.Select",
+   "file": "text-select",
+   "kind": "library",
+   "category": "Text.Modification",
+   "returns": "nullable text",
+   "signature": "Text.Select(text as nullable text, selectChars as any) as nullable text",
+   "summary": "Selects all occurrences of the given character or list of characters from the input text value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.Split",
+   "file": "text-split",
+   "kind": "library",
+   "category": "Text.Transformations",
+   "returns": "list",
+   "signature": "Text.Split(text as text, separator as text) as list",
+   "summary": "Splits text into a list of text values based upon a specified delimiter.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.SplitAny",
+   "file": "text-splitany",
+   "kind": "library",
+   "category": "Text.Transformations",
+   "returns": "list",
+   "signature": "Text.SplitAny(text as text, separators as text) as list",
+   "summary": "Returns a list of text values, split on any of the characters in the delimiter.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.Start",
+   "file": "text-start",
+   "kind": "library",
+   "category": "Text.Extraction",
+   "returns": "nullable text",
+   "signature": "Text.Start(text as nullable text, count as number) as nullable text",
+   "summary": "Returns the start of the text.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.StartsWith",
+   "file": "text-startswith",
+   "kind": "library",
+   "category": "Text.Membership",
+   "returns": "nullable logical",
+   "signature": "Text.StartsWith(text as nullable text, substring as text, optional comparer as nullable function) as nullable logical",
+   "summary": "Indicates whether the text starts with a specified value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.ToBinary",
+   "file": "text-tobinary",
+   "kind": "library",
+   "category": "Text.Conversions from and to text",
+   "returns": "nullable binary",
+   "signature": "Text.ToBinary(text as nullable text, optional encoding as nullable number, optional includeByteOrderMark as nullable logical) as nullable binary",
+   "summary": "Encodes text into a binary form.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.ToList",
+   "file": "text-tolist",
+   "kind": "library",
+   "category": "Text.Conversions from and to text",
+   "returns": "list",
+   "signature": "Text.ToList(text as text) as list",
+   "summary": "Returns a list of character values from the given text value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.Trim",
+   "file": "text-trim",
+   "kind": "library",
+   "category": "Text.Transformations",
+   "returns": "nullable text",
+   "signature": "Text.Trim(text as nullable text, optional trim as any) as nullable text",
+   "summary": "Removes all the specified leading and trailing characters.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.TrimEnd",
+   "file": "text-trimend",
+   "kind": "library",
+   "category": "Text.Transformations",
+   "returns": "nullable text",
+   "signature": "Text.TrimEnd(text as nullable text, optional trim as any) as nullable text",
+   "summary": "Removes all specified trailing characters.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.TrimStart",
+   "file": "text-trimstart",
+   "kind": "library",
+   "category": "Text.Transformations",
+   "returns": "nullable text",
+   "signature": "Text.TrimStart(text as nullable text, optional trim as any) as nullable text",
+   "summary": "Removes all specified leading characters.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Text.Upper",
+   "file": "text-upper",
+   "kind": "library",
+   "category": "Text.Transformations",
+   "returns": "nullable text",
+   "signature": "Text.Upper(text as nullable text, optional culture as nullable text) as nullable text",
+   "summary": "Converts all characters to uppercase.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Value.FromText",
+   "file": "value-fromtext",
+   "kind": "library",
+   "category": "Text.Conversions from and to text",
+   "returns": "any",
+   "signature": "Value.FromText(text as any, optional culture as nullable text) as any",
+   "summary": "Creates a strongly-typed value from a textual representation.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  }
+ ]
+}
