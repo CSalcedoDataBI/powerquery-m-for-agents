@@ -91,88 +91,88 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Cube.ReplaceDimensions` | Cube | table |  | Replaces the set of dimensions returned by Cube.Dimensions. |
 | `Cube.Transform` | Cube | table |  | Applies a list of cube functions. |
 | `Currency.From` | Number.Conversion and formatting | nullable number | ▶ | Returns a currency value from the given value. |
-| `Date.AddDays` | Date | any |  | Adds the specified days to the date. |
-| `Date.AddMonths` | Date | any |  | Adds the specified months to the date. |
-| `Date.AddQuarters` | Date | any |  | Adds the specified quarters to the date. |
-| `Date.AddWeeks` | Date | any |  | Adds the specified weeks to the date. |
-| `Date.AddYears` | Date | any |  | Adds the specified years to the date. |
-| `Date.Day` | Date | nullable number |  | Returns the day component. |
-| `Date.DayOfWeek` | Date | nullable number |  | Returns a number (from 0 to 6) indicating the day of the week of the provided value. |
-| `Date.DayOfWeekName` | Date | nullable text |  | Returns the day of the week name. |
-| `Date.DayOfYear` | Date | nullable number |  | Returns a number from 1 to 366 representing the day of the year. |
-| `Date.DaysInMonth` | Date | nullable number |  | Returns a number from 28 to 31 indicating the number of days in the month. |
-| `Date.EndOfDay` | Date | any |  | Returns the end of the day. |
-| `Date.EndOfMonth` | Date | any |  | Returns the end of the month. |
-| `Date.EndOfQuarter` | Date | any |  | Returns the end of the quarter. |
-| `Date.EndOfWeek` | Date | any |  | Returns the end of the week. |
-| `Date.EndOfYear` | Date | any |  | Returns the end of the year. |
-| `Date.From` | Date | nullable date |  | Creates a date from the given value. |
-| `Date.FromText` | Date | nullable date |  | Creates a Date from local, universal, and custom Date formats. |
-| `Date.IsInCurrentDay` | Date | nullable logical |  | Indicates whether this date occurs during the current day, as determined by the current date and time on the system. |
-| `Date.IsInCurrentMonth` | Date | nullable logical |  | Indicates whether this date occurs during the current month, as determined by the current date and time on the system. |
-| `Date.IsInCurrentQuarter` | Date | nullable logical |  | Indicates whether this date occurs during the current quarter, as determined by the current date and time on the system. |
-| `Date.IsInCurrentWeek` | Date | nullable logical |  | Indicates whether this date occurs during the current week, as determined by the current date and time on the system. |
-| `Date.IsInCurrentYear` | Date | nullable logical |  | Indicates whether this date occurs during the current year, as determined by the current date and time on the system. |
-| `Date.IsInNextDay` | Date | nullable logical |  | Indicates whether this date occurs during the next day, as determined by the current date and time on the system. |
-| `Date.IsInNextMonth` | Date | nullable logical |  | Indicates whether this date occurs during the next month, as determined by the current date and time on the system. |
-| `Date.IsInNextNDays` | Date | nullable logical |  | Indicates whether this date occurs during the next number of days, as determined by the current date and time on the sy… |
-| `Date.IsInNextNMonths` | Date | nullable logical |  | Indicates whether this date occurs during the next number of months, as determined by the current date and time on the… |
-| `Date.IsInNextNQuarters` | Date | nullable logical |  | Indicates whether this date occurs during the next number of quarters, as determined by the current date and time on th… |
-| `Date.IsInNextNWeeks` | Date | nullable logical |  | Indicates whether this date occurs during the next number of weeks, as determined by the current date and time on the s… |
-| `Date.IsInNextNYears` | Date | nullable logical |  | Indicates whether this date occurs during the next number of years, as determined by the current date and time on the s… |
-| `Date.IsInNextQuarter` | Date | nullable logical |  | Indicates whether this date occurs during the next quarter, as determined by the current date and time on the system. |
-| `Date.IsInNextWeek` | Date | nullable logical |  | Indicates whether this date occurs during the next week, as determined by the current date and time on the system. |
-| `Date.IsInNextYear` | Date | nullable logical |  | Indicates whether this date occurs during the next year, as determined by the current date and time on the system. |
-| `Date.IsInPreviousDay` | Date | nullable logical |  | Indicates whether this date occurs during the previous day, as determined by the current date and time on the system. |
-| `Date.IsInPreviousMonth` | Date | nullable logical |  | Indicates whether this date occurs during the previous month, as determined by the current date and time on the system. |
-| `Date.IsInPreviousNDays` | Date | nullable logical |  | Indicates whether this date occurs during the previous number of days, as determined by the current date and time on th… |
-| `Date.IsInPreviousNMonths` | Date | nullable logical |  | Indicates whether this date occurs during the previous number of months, as determined by the current date and time on… |
-| `Date.IsInPreviousNQuarters` | Date | nullable logical |  | Indicates whether this date occurs during the previous number of quarters, as determined by the current date and time o… |
-| `Date.IsInPreviousNWeeks` | Date | nullable logical |  | Indicates whether this date occurs during the previous number of weeks, as determined by the current date and time on t… |
-| `Date.IsInPreviousNYears` | Date | nullable logical |  | Indicates whether this date occurs during the previous number of years, as determined by the current date and time on t… |
-| `Date.IsInPreviousQuarter` | Date | nullable logical |  | Indicates whether this date occurs during the previous quarter, as determined by the current date and time on the syste… |
-| `Date.IsInPreviousWeek` | Date | nullable logical |  | Indicates whether this date occurs during the previous week, as determined by the current date and time on the system. |
-| `Date.IsInPreviousYear` | Date | nullable logical |  | Indicates whether this date occurs during the previous year, as determined by the current date and time on the system. |
-| `Date.IsInYearToDate` | Date | nullable logical |  | Indicates whether this date occurs during the current year and is on or before the current day, as determined by the cu… |
-| `Date.IsLeapYear` | Date | nullable logical |  | Indicates whether this date falls in a leap year. |
-| `Date.Month` | Date | nullable number |  | Returns the month component. |
-| `Date.MonthName` | Date | nullable text |  | Returns the name of the month component. |
-| `Date.QuarterOfYear` | Date | nullable number |  | Returns a number indicating which quarter of the year the date falls in. |
-| `Date.StartOfDay` | Date | any |  | Returns the start of the day. |
-| `Date.StartOfMonth` | Date | any |  | Returns the start of the month. |
-| `Date.StartOfQuarter` | Date | any |  | Returns the start of the quarter. |
-| `Date.StartOfWeek` | Date | any |  | Returns the start of the week. |
-| `Date.StartOfYear` | Date | any |  | Returns the start of the year. |
-| `Date.ToRecord` | Date | record |  | Returns a record containing parts of the date value. |
-| `Date.ToText` | Date | nullable text |  | Returns a textual representation of the date value. |
-| `Date.WeekOfMonth` | Date | nullable number |  | Returns a number from 1 to 6 indicating which week of the month this date falls in. |
-| `Date.WeekOfYear` | Date | nullable number |  | Returns a number from 1 to 54 indicating which week of the year this date falls in. |
-| `Date.Year` | Date | nullable number |  | Returns the year component. |
-| `DateTime.AddZone` | DateTime | nullable datetimezone |  | Adds timezone information to the datetime value. |
-| `DateTime.Date` | DateTime | nullable date |  | Returns the date component of the given date, datetime, or datetimezone value. |
+| `Date.AddDays` | Date | any | ▶ | Adds the specified days to the date. |
+| `Date.AddMonths` | Date | any | ▶ | Adds the specified months to the date. |
+| `Date.AddQuarters` | Date | any | ▶ | Adds the specified quarters to the date. |
+| `Date.AddWeeks` | Date | any | ▶ | Adds the specified weeks to the date. |
+| `Date.AddYears` | Date | any | ▶ | Adds the specified years to the date. |
+| `Date.Day` | Date | nullable number | ▶ | Returns the day component. |
+| `Date.DayOfWeek` | Date | nullable number | ▶ | Returns a number (from 0 to 6) indicating the day of the week of the provided value. |
+| `Date.DayOfWeekName` | Date | nullable text | ▶ | Returns the day of the week name. |
+| `Date.DayOfYear` | Date | nullable number | ▶ | Returns a number from 1 to 366 representing the day of the year. |
+| `Date.DaysInMonth` | Date | nullable number | ▶ | Returns a number from 28 to 31 indicating the number of days in the month. |
+| `Date.EndOfDay` | Date | any | ▶ | Returns the end of the day. |
+| `Date.EndOfMonth` | Date | any | ▶ | Returns the end of the month. |
+| `Date.EndOfQuarter` | Date | any | ▶ | Returns the end of the quarter. |
+| `Date.EndOfWeek` | Date | any | ▶ | Returns the end of the week. |
+| `Date.EndOfYear` | Date | any | ▶ | Returns the end of the year. |
+| `Date.From` | Date | nullable date | ▶ | Creates a date from the given value. |
+| `Date.FromText` | Date | nullable date | ▶ | Creates a Date from local, universal, and custom Date formats. |
+| `Date.IsInCurrentDay` | Date | nullable logical | ▶ | Indicates whether this date occurs during the current day, as determined by the current date and time on the system. |
+| `Date.IsInCurrentMonth` | Date | nullable logical | ▶ | Indicates whether this date occurs during the current month, as determined by the current date and time on the system. |
+| `Date.IsInCurrentQuarter` | Date | nullable logical | ▶ | Indicates whether this date occurs during the current quarter, as determined by the current date and time on the system. |
+| `Date.IsInCurrentWeek` | Date | nullable logical | ▶ | Indicates whether this date occurs during the current week, as determined by the current date and time on the system. |
+| `Date.IsInCurrentYear` | Date | nullable logical | ▶ | Indicates whether this date occurs during the current year, as determined by the current date and time on the system. |
+| `Date.IsInNextDay` | Date | nullable logical | ▶ | Indicates whether this date occurs during the next day, as determined by the current date and time on the system. |
+| `Date.IsInNextMonth` | Date | nullable logical | ▶ | Indicates whether this date occurs during the next month, as determined by the current date and time on the system. |
+| `Date.IsInNextNDays` | Date | nullable logical | ▶ | Indicates whether this date occurs during the next number of days, as determined by the current date and time on the sy… |
+| `Date.IsInNextNMonths` | Date | nullable logical | ▶ | Indicates whether this date occurs during the next number of months, as determined by the current date and time on the… |
+| `Date.IsInNextNQuarters` | Date | nullable logical | ▶ | Indicates whether this date occurs during the next number of quarters, as determined by the current date and time on th… |
+| `Date.IsInNextNWeeks` | Date | nullable logical | ▶ | Indicates whether this date occurs during the next number of weeks, as determined by the current date and time on the s… |
+| `Date.IsInNextNYears` | Date | nullable logical | ▶ | Indicates whether this date occurs during the next number of years, as determined by the current date and time on the s… |
+| `Date.IsInNextQuarter` | Date | nullable logical | ▶ | Indicates whether this date occurs during the next quarter, as determined by the current date and time on the system. |
+| `Date.IsInNextWeek` | Date | nullable logical | ▶ | Indicates whether this date occurs during the next week, as determined by the current date and time on the system. |
+| `Date.IsInNextYear` | Date | nullable logical | ▶ | Indicates whether this date occurs during the next year, as determined by the current date and time on the system. |
+| `Date.IsInPreviousDay` | Date | nullable logical | ▶ | Indicates whether this date occurs during the previous day, as determined by the current date and time on the system. |
+| `Date.IsInPreviousMonth` | Date | nullable logical | ▶ | Indicates whether this date occurs during the previous month, as determined by the current date and time on the system. |
+| `Date.IsInPreviousNDays` | Date | nullable logical | ▶ | Indicates whether this date occurs during the previous number of days, as determined by the current date and time on th… |
+| `Date.IsInPreviousNMonths` | Date | nullable logical | ▶ | Indicates whether this date occurs during the previous number of months, as determined by the current date and time on… |
+| `Date.IsInPreviousNQuarters` | Date | nullable logical | ▶ | Indicates whether this date occurs during the previous number of quarters, as determined by the current date and time o… |
+| `Date.IsInPreviousNWeeks` | Date | nullable logical | ▶ | Indicates whether this date occurs during the previous number of weeks, as determined by the current date and time on t… |
+| `Date.IsInPreviousNYears` | Date | nullable logical | ▶ | Indicates whether this date occurs during the previous number of years, as determined by the current date and time on t… |
+| `Date.IsInPreviousQuarter` | Date | nullable logical | ▶ | Indicates whether this date occurs during the previous quarter, as determined by the current date and time on the syste… |
+| `Date.IsInPreviousWeek` | Date | nullable logical | ▶ | Indicates whether this date occurs during the previous week, as determined by the current date and time on the system. |
+| `Date.IsInPreviousYear` | Date | nullable logical | ▶ | Indicates whether this date occurs during the previous year, as determined by the current date and time on the system. |
+| `Date.IsInYearToDate` | Date | nullable logical | ▶ | Indicates whether this date occurs during the current year and is on or before the current day, as determined by the cu… |
+| `Date.IsLeapYear` | Date | nullable logical | ▶ | Indicates whether this date falls in a leap year. |
+| `Date.Month` | Date | nullable number | ▶ | Returns the month component. |
+| `Date.MonthName` | Date | nullable text | ▶ | Returns the name of the month component. |
+| `Date.QuarterOfYear` | Date | nullable number | ▶ | Returns a number indicating which quarter of the year the date falls in. |
+| `Date.StartOfDay` | Date | any | ▶ | Returns the start of the day. |
+| `Date.StartOfMonth` | Date | any | ▶ | Returns the start of the month. |
+| `Date.StartOfQuarter` | Date | any | ▶ | Returns the start of the quarter. |
+| `Date.StartOfWeek` | Date | any | ▶ | Returns the start of the week. |
+| `Date.StartOfYear` | Date | any | ▶ | Returns the start of the year. |
+| `Date.ToRecord` | Date | record | ▶ | Returns a record containing parts of the date value. |
+| `Date.ToText` | Date | nullable text | ▶ | Returns a textual representation of the date value. |
+| `Date.WeekOfMonth` | Date | nullable number | ▶ | Returns a number from 1 to 6 indicating which week of the month this date falls in. |
+| `Date.WeekOfYear` | Date | nullable number | ▶ | Returns a number from 1 to 54 indicating which week of the year this date falls in. |
+| `Date.Year` | Date | nullable number | ▶ | Returns the year component. |
+| `DateTime.AddZone` | DateTime | nullable datetimezone | ▶ | Adds timezone information to the datetime value. |
+| `DateTime.Date` | DateTime | nullable date | ▶ | Returns the date component of the given date, datetime, or datetimezone value. |
 | `DateTime.FixedLocalNow` | DateTime | datetime |  | Returns the current date and time in the local timezone. |
-| `DateTime.From` | DateTime | nullable datetime |  | Creates a datetime from the given value. |
+| `DateTime.From` | DateTime | nullable datetime | ▶ | Creates a datetime from the given value. |
 | `DateTime.FromFileTime` | DateTime | nullable datetime |  | Creates a datetime from a 64 bits long number. |
-| `DateTime.FromText` | DateTime | nullable datetime |  | Creates a datetimezone from local and universal datetime formats. |
-| `DateTime.IsInCurrentHour` | DateTime | nullable logical |  | Indicates whether this datetime occurs during the current hour, as determined by the current date and time on the syste… |
-| `DateTime.IsInCurrentMinute` | DateTime | nullable logical |  | Indicates whether this datetime occurs during the current minute, as determined by the current date and time on the sys… |
-| `DateTime.IsInCurrentSecond` | DateTime | nullable logical |  | Indicates whether this datetime occurs during the current second, as determined by the current date and time on the sys… |
-| `DateTime.IsInNextHour` | DateTime | nullable logical |  | Indicates whether this datetime occurs during the next hour, as determined by the current date and time on the system. |
-| `DateTime.IsInNextMinute` | DateTime | nullable logical |  | Indicates whether this datetime occurs during the next minute, as determined by the current date and time on the system. |
-| `DateTime.IsInNextNHours` | DateTime | nullable logical |  | Indicates whether this datetime occurs during the next number of hours, as determined by the current date and time on t… |
-| `DateTime.IsInNextNMinutes` | DateTime | nullable logical |  | Indicates whether this datetime occurs during the next number of minutes, as determined by the current date and time on… |
-| `DateTime.IsInNextNSeconds` | DateTime | nullable logical |  | Indicates whether this datetime occurs during the next number of seconds, as determined by the current date and time on… |
-| `DateTime.IsInNextSecond` | DateTime | nullable logical |  | Indicates whether this datetime occurs during the next second, as determined by the current date and time on the system. |
-| `DateTime.IsInPreviousHour` | DateTime | nullable logical |  | Indicates whether this datetime occurs during the previous hour, as determined by the current date and time on the syst… |
-| `DateTime.IsInPreviousMinute` | DateTime | nullable logical |  | Indicates whether this datetime occurs during the previous minute, as determined by the current date and time on the sy… |
-| `DateTime.IsInPreviousNHours` | DateTime | nullable logical |  | Indicates whether this datetime occurs during the previous number of hours, as determined by the current date and time… |
-| `DateTime.IsInPreviousNMinutes` | DateTime | nullable logical |  | Indicates whether this datetime occurs during the previous number of minutes, as determined by the current date and tim… |
-| `DateTime.IsInPreviousNSeconds` | DateTime | nullable logical |  | Indicates whether this datetime occurs during the previous number of seconds, as determined by the current date and tim… |
-| `DateTime.IsInPreviousSecond` | DateTime | nullable logical |  | Indicates whether this datetime occurs during the previous second, as determined by the current date and time on the sy… |
+| `DateTime.FromText` | DateTime | nullable datetime | ▶ | Creates a datetimezone from local and universal datetime formats. |
+| `DateTime.IsInCurrentHour` | DateTime | nullable logical | ▶ | Indicates whether this datetime occurs during the current hour, as determined by the current date and time on the syste… |
+| `DateTime.IsInCurrentMinute` | DateTime | nullable logical | ▶ | Indicates whether this datetime occurs during the current minute, as determined by the current date and time on the sys… |
+| `DateTime.IsInCurrentSecond` | DateTime | nullable logical | ▶ | Indicates whether this datetime occurs during the current second, as determined by the current date and time on the sys… |
+| `DateTime.IsInNextHour` | DateTime | nullable logical | ▶ | Indicates whether this datetime occurs during the next hour, as determined by the current date and time on the system. |
+| `DateTime.IsInNextMinute` | DateTime | nullable logical | ▶ | Indicates whether this datetime occurs during the next minute, as determined by the current date and time on the system. |
+| `DateTime.IsInNextNHours` | DateTime | nullable logical | ▶ | Indicates whether this datetime occurs during the next number of hours, as determined by the current date and time on t… |
+| `DateTime.IsInNextNMinutes` | DateTime | nullable logical | ▶ | Indicates whether this datetime occurs during the next number of minutes, as determined by the current date and time on… |
+| `DateTime.IsInNextNSeconds` | DateTime | nullable logical | ▶ | Indicates whether this datetime occurs during the next number of seconds, as determined by the current date and time on… |
+| `DateTime.IsInNextSecond` | DateTime | nullable logical | ▶ | Indicates whether this datetime occurs during the next second, as determined by the current date and time on the system. |
+| `DateTime.IsInPreviousHour` | DateTime | nullable logical | ▶ | Indicates whether this datetime occurs during the previous hour, as determined by the current date and time on the syst… |
+| `DateTime.IsInPreviousMinute` | DateTime | nullable logical | ▶ | Indicates whether this datetime occurs during the previous minute, as determined by the current date and time on the sy… |
+| `DateTime.IsInPreviousNHours` | DateTime | nullable logical | ▶ | Indicates whether this datetime occurs during the previous number of hours, as determined by the current date and time… |
+| `DateTime.IsInPreviousNMinutes` | DateTime | nullable logical | ▶ | Indicates whether this datetime occurs during the previous number of minutes, as determined by the current date and tim… |
+| `DateTime.IsInPreviousNSeconds` | DateTime | nullable logical | ▶ | Indicates whether this datetime occurs during the previous number of seconds, as determined by the current date and tim… |
+| `DateTime.IsInPreviousSecond` | DateTime | nullable logical | ▶ | Indicates whether this datetime occurs during the previous second, as determined by the current date and time on the sy… |
 | `DateTime.LocalNow` | DateTime | datetime |  | Returns the current date and time in the local timezone. |
-| `DateTime.Time` | DateTime | nullable time |  | Returns the time part of the given datetime value. |
-| `DateTime.ToRecord` | DateTime | record |  | Returns a record containing the datetime value's parts. |
-| `DateTime.ToText` | DateTime | nullable text |  | Returns a textual representation of the datetime value. |
+| `DateTime.Time` | DateTime | nullable time | ▶ | Returns the time part of the given datetime value. |
+| `DateTime.ToRecord` | DateTime | record | ▶ | Returns a record containing the datetime value's parts. |
+| `DateTime.ToText` | DateTime | nullable text | ▶ | Returns a textual representation of the datetime value. |
 | `DateTimeZone.FixedLocalNow` | DateTimeZone | datetimezone |  | Returns the current date & time in the local timezone. |
 | `DateTimeZone.FixedUtcNow` | DateTimeZone | datetimezone |  | Returns the current date and time in UTC (the GMT timezone). |
 | `DateTimeZone.From` | DateTimeZone | nullable datetimezone |  | Creates a datetimezone from the given value. |
@@ -197,18 +197,18 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Diagnostics.Trace` | Diagnostics | any |  | Writes a trace entry, if tracing is enabled, and returns the value. |
 | `DirectQueryCapabilities.From` | Values.Implementation | table |  | This function is intended for internal use only. |
 | `Double.From` | Number.Conversion and formatting | nullable number | ▶ | Creates a Double from the given value. |
-| `Duration.Days` | Duration | nullable number |  | Returns the days portion of a duration. |
-| `Duration.From` | Duration | nullable duration |  | Creates a duration from the given value. |
-| `Duration.FromText` | Duration | nullable duration |  | Returns a duration value from textual elapsed time forms (d.h:m:s). |
-| `Duration.Hours` | Duration | nullable number |  | Returns the hours portion of a duration. |
-| `Duration.Minutes` | Duration | nullable number |  | Returns the minutes portion of a duration. |
-| `Duration.Seconds` | Duration | nullable number |  | Returns the seconds portion of a duration. |
-| `Duration.ToRecord` | Duration | record |  | Returns a record containing the parts of the duration. |
-| `Duration.TotalDays` | Duration | nullable number |  | Returns the total days this duration spans. |
-| `Duration.TotalHours` | Duration | nullable number |  | Returns the total hours this duration spans. |
-| `Duration.TotalMinutes` | Duration | nullable number |  | Returns the total minutes this duration spans. |
-| `Duration.TotalSeconds` | Duration | nullable number |  | Returns the total seconds this duration spans. |
-| `Duration.ToText` | Duration | nullable text |  | Returns the text of the form "d.h:m:s". |
+| `Duration.Days` | Duration | nullable number | ▶ | Returns the days portion of a duration. |
+| `Duration.From` | Duration | nullable duration | ▶ | Creates a duration from the given value. |
+| `Duration.FromText` | Duration | nullable duration | ▶ | Returns a duration value from textual elapsed time forms (d.h:m:s). |
+| `Duration.Hours` | Duration | nullable number | ▶ | Returns the hours portion of a duration. |
+| `Duration.Minutes` | Duration | nullable number | ▶ | Returns the minutes portion of a duration. |
+| `Duration.Seconds` | Duration | nullable number | ▶ | Returns the seconds portion of a duration. |
+| `Duration.ToRecord` | Duration | record | ▶ | Returns a record containing the parts of the duration. |
+| `Duration.TotalDays` | Duration | nullable number | ▶ | Returns the total days this duration spans. |
+| `Duration.TotalHours` | Duration | nullable number | ▶ | Returns the total hours this duration spans. |
+| `Duration.TotalMinutes` | Duration | nullable number | ▶ | Returns the total minutes this duration spans. |
+| `Duration.TotalSeconds` | Duration | nullable number | ▶ | Returns the total seconds this duration spans. |
+| `Duration.ToText` | Duration | nullable text | ▶ | Returns the text of the form "d.h:m:s". |
 | `Embedded.Value` | Values.Implementation | any |  | This function is intended for internal use only. |
 | `Error.Record` | Error | record |  | Returns an error record from the provided text values for reason, message, detail, and error code. |
 | `Essbase.Cubes` | Accessing data | table |  | Returns the cubes in an Essbase instance grouped by Essbase server. |
@@ -226,7 +226,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Function.Invoke` | Function | any |  | Invokes the given function. |
 | `Function.InvokeAfter` | Function | any |  | Invokes the given function after the specified duration has passed. |
 | `Function.InvokeWithErrorContext` | Values.Implementation | any |  | This function is intended for internal use only. |
-| `Function.IsDataSource` | Type | logical |  | Returns whether or not a particular function is considered a data source. |
+| `Function.IsDataSource` | Type | logical | ▶ | Returns whether or not a particular function is considered a data source. |
 | `Function.ScalarVector` | Function | function |  | Creates a scalar function on top of a vector function, batching multiple invocations. |
 | `Geography.FromWellKnownText` | Record.Serialization | nullable record |  | Translates text representing a geographic value in Well-Known Text (WKT) format into a structured record. |
 | `Geography.ToWellKnownText` | Record.Serialization | nullable text |  | Translates a structured geographic point value into its Well-Known Text (WKT) representation. |
@@ -592,39 +592,39 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Text.TrimEnd` | Text.Transformations | nullable text | ▶ | Removes all specified trailing characters. |
 | `Text.TrimStart` | Text.Transformations | nullable text | ▶ | Removes all specified leading characters. |
 | `Text.Upper` | Text.Transformations | nullable text | ▶ | Converts all characters to uppercase. |
-| `Time.EndOfHour` | Date | any |  | Returns the end of the hour. |
+| `Time.EndOfHour` | Date | any | ▶ | Returns the end of the hour. |
 | `Time.From` | Time | nullable time |  | Creates a time from the given value. |
 | `Time.FromText` | Time | nullable time |  | Creates a Time from local and universal, and custom Time formats. |
 | `Time.Hour` | Time | nullable number |  | Returns the hour component. |
 | `Time.Minute` | Time | nullable number |  | Returns the minute component. |
 | `Time.Second` | Time | nullable number |  | Returns the second component. |
-| `Time.StartOfHour` | Date | any |  | Returns the start of the hour. |
+| `Time.StartOfHour` | Date | any | ▶ | Returns the start of the hour. |
 | `Time.ToRecord` | Time | record |  | Returns a record containing the Time value's parts. |
 | `Time.ToText` | Time | nullable text |  | Returns a textual representation of the time value. |
-| `Type.AddTableKey` | Type | type |  | Adds a key to the given table type. |
-| `Type.ClosedRecord` | Type | type |  | Returns a closed version of the given record type (or the same type, if it is already closed). |
-| `Type.Facets` | Type | record |  | Returns the facets of a type. |
-| `Type.ForFunction` | Type | type |  | Returns a type that represents functions with specific parameter and return type constraints. |
-| `Type.ForRecord` | Type | type |  | Returns a type that represents records with specific type constraints on fields. |
-| `Type.FunctionParameters` | Type | record |  | Returns a record with field values set to the name of the parameters of a function type, and their values set to their… |
-| `Type.FunctionRequiredParameters` | Type | number |  | Returns a number indicating the minimum number of parameters required to invoke the type of function. |
-| `Type.FunctionReturn` | Type | type |  | Returns a type returned by a function type. |
-| `Type.Is` | Type | logical |  | Determines if a value of the first type is always compatible with the second type. |
-| `Type.IsNullable` | Type | logical |  | Returns true if a type is a nullable type; otherwise, false. |
-| `Type.IsOpenRecord` | Type | logical |  | Returns whether a record type is open. |
-| `Type.ListItem` | Type | type |  | Returns an item type from a list type. |
-| `Type.NonNullable` | Type | type |  | Returns the non nullable type from a type. |
-| `Type.OpenRecord` | Type | type |  | Returns an opened version of the given record type (or the same type, if it is already open). |
-| `Type.RecordFields` | Type | record |  | Returns a record describing the fields of a record type with each field of the returned record type having a correspond… |
-| `Type.ReplaceFacets` | Type | type |  | Replaces the facets of a type. |
-| `Type.ReplaceTableKeys` | Type | type |  | Returns a new table type with all keys replaced by the specified list of keys. |
-| `Type.ReplaceTablePartitionKey` | Type | type |  | Returns a new table type with the partition key replaced by the specified partition key. |
-| `Type.TableColumn` | Type | type |  | Returns the type of a column in a table. |
-| `Type.TableKeys` | Type | list |  | Returns the possibly empty list of keys for the given table type. |
-| `Type.TablePartitionKey` | Type | nullable list |  | Returns the partition key for the given table type if it has one. |
-| `Type.TableRow` | Type | type |  | Returns the row type of the table type. |
-| `Type.TableSchema` | Type | table |  | Returns a table containing a description of the columns (i.e. |
-| `Type.Union` | Type | type |  | Returns the union of a list of types. |
+| `Type.AddTableKey` | Type | type | ▶ | Adds a key to the given table type. |
+| `Type.ClosedRecord` | Type | type | ▶ | Returns a closed version of the given record type (or the same type, if it is already closed). |
+| `Type.Facets` | Type | record | ▶ | Returns the facets of a type. |
+| `Type.ForFunction` | Type | type | ▶ | Returns a type that represents functions with specific parameter and return type constraints. |
+| `Type.ForRecord` | Type | type | ▶ | Returns a type that represents records with specific type constraints on fields. |
+| `Type.FunctionParameters` | Type | record | ▶ | Returns a record with field values set to the name of the parameters of a function type, and their values set to their… |
+| `Type.FunctionRequiredParameters` | Type | number | ▶ | Returns a number indicating the minimum number of parameters required to invoke the type of function. |
+| `Type.FunctionReturn` | Type | type | ▶ | Returns a type returned by a function type. |
+| `Type.Is` | Type | logical | ▶ | Determines if a value of the first type is always compatible with the second type. |
+| `Type.IsNullable` | Type | logical | ▶ | Returns true if a type is a nullable type; otherwise, false. |
+| `Type.IsOpenRecord` | Type | logical | ▶ | Returns whether a record type is open. |
+| `Type.ListItem` | Type | type | ▶ | Returns an item type from a list type. |
+| `Type.NonNullable` | Type | type | ▶ | Returns the non nullable type from a type. |
+| `Type.OpenRecord` | Type | type | ▶ | Returns an opened version of the given record type (or the same type, if it is already open). |
+| `Type.RecordFields` | Type | record | ▶ | Returns a record describing the fields of a record type with each field of the returned record type having a correspond… |
+| `Type.ReplaceFacets` | Type | type | ▶ | Replaces the facets of a type. |
+| `Type.ReplaceTableKeys` | Type | type | ▶ | Returns a new table type with all keys replaced by the specified list of keys. |
+| `Type.ReplaceTablePartitionKey` | Type | type | ▶ | Returns a new table type with the partition key replaced by the specified partition key. |
+| `Type.TableColumn` | Type | type | ▶ | Returns the type of a column in a table. |
+| `Type.TableKeys` | Type | list | ▶ | Returns the possibly empty list of keys for the given table type. |
+| `Type.TablePartitionKey` | Type | nullable list | ▶ | Returns the partition key for the given table type if it has one. |
+| `Type.TableRow` | Type | type | ▶ | Returns the row type of the table type. |
+| `Type.TableSchema` | Type | table | ▶ | Returns a table containing a description of the columns (i.e. |
+| `Type.Union` | Type | type | ▶ | Returns the union of a list of types. |
 | `Uri.BuildQueryString` | Uri | text |  | Assemble a record into a URI query string. |
 | `Uri.Combine` | Uri | text |  | Returns an absolute URI that is the combination of the input base URI and relative URI. |
 | `Uri.EscapeDataString` | Uri | text |  | Encodes special characters in accordance with RFC 3986. |

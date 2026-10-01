@@ -4,7 +4,7 @@ category: "Date"
 returns: "nullable number"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Returns the year component of the provided `datetime` value, `dateTime`.
 | Name | Type | Optional |
 |---|---|---|
 | `dateTime` | `any` | no |
+
+**Executed examples (3):** [examples/date/date-year.md](../../examples/date/date-year.md)
 
 ## Examples (engine metadata — not verified here)
 

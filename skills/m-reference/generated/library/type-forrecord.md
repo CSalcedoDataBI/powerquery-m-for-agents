@@ -4,7 +4,7 @@ category: "Type"
 returns: "type"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 4
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns a type that represents records with specific type constraints on fields.
 |---|---|---|
 | `fields` | `record` | no |
 | `open` | `logical` | no |
+
+**Executed examples (4):** [examples/type/type-forrecord.md](../../examples/type/type-forrecord.md)
 
 ## Examples (engine metadata — not verified here)
 

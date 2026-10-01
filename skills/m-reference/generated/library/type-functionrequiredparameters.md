@@ -4,7 +4,7 @@ category: "Type"
 returns: "number"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Returns a number indicating the minimum number of parameters required to invoke 
 | Name | Type | Optional |
 |---|---|---|
 | `type` | `type` | no |
+
+**Executed examples (3):** [examples/type/type-functionrequiredparameters.md](../../examples/type/type-functionrequiredparameters.md)
 
 ## Examples (engine metadata — not verified here)
 

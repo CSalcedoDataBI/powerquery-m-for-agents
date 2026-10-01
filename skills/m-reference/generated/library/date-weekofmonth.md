@@ -4,7 +4,7 @@ category: "Date"
 returns: "nullable number"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -26,6 +26,8 @@ Returns a number from 1 to 6 indicating which week of the month the date `dateTi
 |---|---|---|
 | `dateTime` | `any` | no |
 | `firstDayOfWeek` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/date/date-weekofmonth.md](../../examples/date/date-weekofmonth.md)
 
 ## Examples (engine metadata — not verified here)
 

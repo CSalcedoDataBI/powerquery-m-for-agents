@@ -2376,7 +2376,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.AddMonths",
@@ -2391,7 +2391,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.AddQuarters",
@@ -2406,7 +2406,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.AddWeeks",
@@ -2421,7 +2421,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.AddYears",
@@ -2436,7 +2436,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.Day",
@@ -2451,7 +2451,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.DayOfWeek",
@@ -2466,7 +2466,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.DayOfWeekName",
@@ -2481,7 +2481,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.DayOfYear",
@@ -2496,7 +2496,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.DaysInMonth",
@@ -2511,7 +2511,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.EndOfDay",
@@ -2526,7 +2526,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.EndOfMonth",
@@ -2541,7 +2541,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.EndOfQuarter",
@@ -2556,7 +2556,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.EndOfWeek",
@@ -2571,7 +2571,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.EndOfYear",
@@ -2586,7 +2586,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.From",
@@ -2601,7 +2601,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.FromText",
@@ -2616,7 +2616,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInCurrentDay",
@@ -2631,7 +2631,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInCurrentMonth",
@@ -2646,7 +2646,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInCurrentQuarter",
@@ -2661,7 +2661,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInCurrentWeek",
@@ -2676,7 +2676,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInCurrentYear",
@@ -2691,7 +2691,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInNextDay",
@@ -2706,7 +2706,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInNextMonth",
@@ -2721,7 +2721,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInNextNDays",
@@ -2736,7 +2736,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInNextNMonths",
@@ -2751,7 +2751,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInNextNQuarters",
@@ -2766,7 +2766,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInNextNWeeks",
@@ -2781,7 +2781,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInNextNYears",
@@ -2796,7 +2796,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInNextQuarter",
@@ -2811,7 +2811,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInNextWeek",
@@ -2826,7 +2826,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInNextYear",
@@ -2841,7 +2841,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInPreviousDay",
@@ -2856,7 +2856,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInPreviousMonth",
@@ -2871,7 +2871,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInPreviousNDays",
@@ -2886,7 +2886,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInPreviousNMonths",
@@ -2901,7 +2901,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInPreviousNQuarters",
@@ -2916,7 +2916,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInPreviousNWeeks",
@@ -2931,7 +2931,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInPreviousNYears",
@@ -2946,7 +2946,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInPreviousQuarter",
@@ -2961,7 +2961,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInPreviousWeek",
@@ -2976,7 +2976,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInPreviousYear",
@@ -2991,7 +2991,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsInYearToDate",
@@ -3006,7 +3006,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.IsLeapYear",
@@ -3021,7 +3021,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.Month",
@@ -3036,7 +3036,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.MonthName",
@@ -3051,7 +3051,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.QuarterOfYear",
@@ -3066,7 +3066,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 4
   },
   {
    "name": "Date.StartOfDay",
@@ -3081,7 +3081,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.StartOfMonth",
@@ -3096,7 +3096,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.StartOfQuarter",
@@ -3111,7 +3111,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.StartOfWeek",
@@ -3126,7 +3126,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.StartOfYear",
@@ -3141,7 +3141,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.ToRecord",
@@ -3156,7 +3156,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.ToText",
@@ -3171,7 +3171,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.WeekOfMonth",
@@ -3186,7 +3186,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.WeekOfYear",
@@ -3201,7 +3201,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Date.Year",
@@ -3216,7 +3216,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTime.AddZone",
@@ -3231,7 +3231,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTime.Date",
@@ -3246,7 +3246,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTime.FixedLocalNow",
@@ -3276,7 +3276,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTime.FromFileTime",
@@ -3306,7 +3306,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTime.IsInCurrentHour",
@@ -3321,7 +3321,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTime.IsInCurrentMinute",
@@ -3336,7 +3336,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTime.IsInCurrentSecond",
@@ -3351,7 +3351,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTime.IsInNextHour",
@@ -3366,7 +3366,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTime.IsInNextMinute",
@@ -3381,7 +3381,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTime.IsInNextNHours",
@@ -3396,7 +3396,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTime.IsInNextNMinutes",
@@ -3411,7 +3411,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTime.IsInNextNSeconds",
@@ -3426,7 +3426,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTime.IsInNextSecond",
@@ -3441,7 +3441,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTime.IsInPreviousHour",
@@ -3456,7 +3456,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTime.IsInPreviousMinute",
@@ -3471,7 +3471,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTime.IsInPreviousNHours",
@@ -3486,7 +3486,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTime.IsInPreviousNMinutes",
@@ -3501,7 +3501,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTime.IsInPreviousNSeconds",
@@ -3516,7 +3516,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTime.IsInPreviousSecond",
@@ -3531,7 +3531,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTime.LocalNow",
@@ -3561,7 +3561,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTime.ToRecord",
@@ -3576,7 +3576,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTime.ToText",
@@ -3591,7 +3591,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTimeZone.FixedLocalNow",
@@ -4161,7 +4161,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Duration.From",
@@ -4176,7 +4176,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Duration.FromText",
@@ -4191,7 +4191,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Duration.Hours",
@@ -4206,7 +4206,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Duration.Minutes",
@@ -4221,7 +4221,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Duration.Seconds",
@@ -4236,7 +4236,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Duration.ToRecord",
@@ -4251,7 +4251,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Duration.TotalDays",
@@ -4266,7 +4266,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Duration.TotalHours",
@@ -4281,7 +4281,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Duration.TotalMinutes",
@@ -4296,7 +4296,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Duration.TotalSeconds",
@@ -4311,7 +4311,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Duration.ToText",
@@ -4326,7 +4326,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Dynamics365BusinessCentral.ApiContents",
@@ -4971,7 +4971,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Function.ScalarVector",
@@ -12426,7 +12426,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Time.From",
@@ -12516,7 +12516,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Time.ToRecord",
@@ -12666,7 +12666,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Type.ClosedRecord",
@@ -12681,7 +12681,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Type.Facets",
@@ -12696,7 +12696,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Type.ForFunction",
@@ -12711,7 +12711,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Type.ForRecord",
@@ -12726,7 +12726,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 4
   },
   {
    "name": "Type.FunctionParameters",
@@ -12741,7 +12741,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Type.FunctionRequiredParameters",
@@ -12756,7 +12756,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Type.FunctionReturn",
@@ -12771,7 +12771,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Type.Is",
@@ -12786,7 +12786,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Type.IsNullable",
@@ -12801,7 +12801,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Type.IsOpenRecord",
@@ -12816,7 +12816,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Type.ListItem",
@@ -12831,7 +12831,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Type.NonNullable",
@@ -12846,7 +12846,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Type.OpenRecord",
@@ -12861,7 +12861,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Type.RecordFields",
@@ -12876,7 +12876,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Type.ReplaceFacets",
@@ -12891,7 +12891,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Type.ReplaceTableKeys",
@@ -12906,7 +12906,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Type.ReplaceTablePartitionKey",
@@ -12921,7 +12921,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Type.TableColumn",
@@ -12936,7 +12936,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Type.TableKeys",
@@ -12951,7 +12951,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Type.TablePartitionKey",
@@ -12966,7 +12966,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 2
   },
   {
    "name": "Type.TableRow",
@@ -12981,7 +12981,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Type.TableSchema",
@@ -12996,7 +12996,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Type.Union",
@@ -13011,7 +13011,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Uri.BuildQueryString",

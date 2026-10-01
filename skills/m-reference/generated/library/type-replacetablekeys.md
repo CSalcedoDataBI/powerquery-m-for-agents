@@ -4,7 +4,7 @@ category: "Type"
 returns: "type"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -34,6 +34,8 @@ The specified list of keys is validated to ensure that no more than one primary 
 |---|---|---|
 | `tableType` | `type` | no |
 | `keys` | `list` | no |
+
+**Executed examples (3):** [examples/type/type-replacetablekeys.md](../../examples/type/type-replacetablekeys.md)
 
 ## Examples (engine metadata — not verified here)
 

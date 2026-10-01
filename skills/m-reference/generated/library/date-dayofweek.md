@@ -4,7 +4,7 @@ category: "Date"
 returns: "nullable number"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -28,6 +28,8 @@ Returns a number (from 0 to 6) indicating the day of the week of the provided `d
 |---|---|---|
 | `dateTime` | `any` | no |
 | `firstDayOfWeek` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/date/date-dayofweek.md](../../examples/date/date-dayofweek.md)
 
 ## Examples (engine metadata — not verified here)
 

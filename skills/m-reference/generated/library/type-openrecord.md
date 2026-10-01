@@ -4,7 +4,7 @@ category: "Type"
 returns: "type"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Returns an opened version of the given `record` `type` (or the same type, if it 
 | Name | Type | Optional |
 |---|---|---|
 | `type` | `type` | no |
+
+**Executed examples (3):** [examples/type/type-openrecord.md](../../examples/type/type-openrecord.md)
 
 ## Examples (engine metadata — not verified here)
 

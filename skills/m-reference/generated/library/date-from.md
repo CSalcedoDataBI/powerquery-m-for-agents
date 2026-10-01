@@ -4,7 +4,7 @@ category: "Date"
 returns: "nullable date"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -38,6 +38,8 @@ Returns a date value from the given value.
 |---|---|---|
 | `value` | `any` | no |
 | `culture` | `nullable text` | yes |
+
+**Executed examples (3):** [examples/date/date-from.md](../../examples/date/date-from.md)
 
 ## Examples (engine metadata — not verified here)
 

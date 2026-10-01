@@ -4,7 +4,7 @@ category: "Date"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -28,6 +28,8 @@ Returns the `date`, `datetime`, or `datetimezone` result from adding `numberOfQu
 |---|---|---|
 | `dateTime` | `any` | no |
 | `numberOfQuarters` | `number` | no |
+
+**Executed examples (3):** [examples/date/date-addquarters.md](../../examples/date/date-addquarters.md)
 
 ## Examples (engine metadata — not verified here)
 

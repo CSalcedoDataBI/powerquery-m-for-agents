@@ -20,3 +20,7 @@
 *.parquet   binary
 *.pbix      binary
 *.abf       binary
+# Los scripts de shell corren dentro de contenedores Linux. Con CRLF el shebang queda como
+# "#!/bin/sh" seguido de un retorno de carro y el script deja de encontrarse
+# (lab/drafting/entrypoint.sh: "dsh-run: not found").
+*.sh        text eol=lf

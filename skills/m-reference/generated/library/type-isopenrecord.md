@@ -4,7 +4,7 @@ category: "Type"
 returns: "logical"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Returns a `logical` indicating whether a record `type` is open.
 | Name | Type | Optional |
 |---|---|---|
 | `type` | `type` | no |
+
+**Executed examples (3):** [examples/type/type-isopenrecord.md](../../examples/type/type-isopenrecord.md)
 
 ## Examples (engine metadata — not verified here)
 

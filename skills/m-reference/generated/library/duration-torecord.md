@@ -4,7 +4,7 @@ category: "Duration"
 returns: "record"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ Returns a record containing the parts the duration value, `duration`.
 | Name | Type | Optional |
 |---|---|---|
 | `duration` | `duration` | no |
+
+**Executed examples (3):** [examples/duration/duration-torecord.md](../../examples/duration/duration-torecord.md)
 
 ## Examples (engine metadata — not verified here)
 

@@ -4,7 +4,7 @@ category: "Duration"
 returns: "nullable number"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Returns the seconds portion of `duration`.
 | Name | Type | Optional |
 |---|---|---|
 | `duration` | `nullable duration` | no |
+
+**Executed examples (3):** [examples/duration/duration-seconds.md](../../examples/duration/duration-seconds.md)
 
 ## Examples (engine metadata — not verified here)
 

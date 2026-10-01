@@ -4,7 +4,7 @@ category: "Type"
 returns: "type"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Creates a `function type` from `signature`, a record of `ReturnType` and `Parame
 |---|---|---|
 | `signature` | `record` | no |
 | `min` | `number` | no |
+
+**Executed examples (3):** [examples/type/type-forfunction.md](../../examples/type/type-forfunction.md)
 
 ## Examples (engine metadata — not verified here)
 

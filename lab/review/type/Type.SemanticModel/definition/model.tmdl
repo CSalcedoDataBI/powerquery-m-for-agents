@@ -1,0 +1,111 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Type", "Function.IsDataSource (1)", "Function.IsDataSource (2)", "Function.IsDataSource (3)", "Type.AddTableKey (1)", "Type.AddTableKey (2)", "Type.AddTableKey (3)", "Type.ClosedRecord (1)", "Type.ClosedRecord (2)", "Type.ClosedRecord (3)", "Type.Facets (1)", "Type.Facets (2)", "Type.Facets (3)", "Type.ForFunction (1)", "Type.ForFunction (2)", "Type.ForFunction (3)", "Type.ForRecord (1)", "Type.ForRecord (2)", "Type.ForRecord (3)", "Type.ForRecord (4)", "Type.FunctionParameters (1)", "Type.FunctionParameters (2)", "Type.FunctionParameters (3)", "Type.FunctionRequiredParameters (1)", "Type.FunctionRequiredParameters (2)", "Type.FunctionRequiredParameters (3)", "Type.FunctionReturn (1)", "Type.FunctionReturn (2)", "Type.FunctionReturn (3)", "Type.Is (1)", "Type.Is (2)", "Type.Is (3)", "Type.IsNullable (1)", "Type.IsNullable (2)", "Type.IsNullable (3)", "Type.IsOpenRecord (1)", "Type.IsOpenRecord (2)", "Type.IsOpenRecord (3)", "Type.ListItem (1)", "Type.ListItem (2)", "Type.ListItem (3)", "Type.NonNullable (1)", "Type.NonNullable (2)", "Type.NonNullable (3)", "Type.OpenRecord (1)", "Type.OpenRecord (2)", "Type.OpenRecord (3)", "Type.RecordFields (1)", "Type.RecordFields (2)", "Type.RecordFields (3)", "Type.ReplaceFacets (1)", "Type.ReplaceFacets (2)", "Type.ReplaceFacets (3)", "Type.ReplaceTableKeys (1)", "Type.ReplaceTableKeys (2)", "Type.ReplaceTableKeys (3)", "Type.ReplaceTablePartitionKey (1)", "Type.ReplaceTablePartitionKey (2)", "Type.ReplaceTablePartitionKey (3)", "Type.TableColumn (1)", "Type.TableColumn (2)", "Type.TableColumn (3)", "Type.TableKeys (1)", "Type.TableKeys (2)", "Type.TableKeys (3)", "Type.TablePartitionKey (1)", "Type.TablePartitionKey (2)", "Type.TableRow (1)", "Type.TableRow (2)", "Type.TableRow (3)", "Type.TableSchema (1)", "Type.TableSchema (2)", "Type.TableSchema (3)", "Type.Union (1)", "Type.Union (2)", "Type.Union (3)"]
+
+queryGroup 'Function.IsDataSource'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Type.AddTableKey'
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup 'Type.ClosedRecord'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'Type.Facets'
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup 'Type.ForFunction'
+
+	annotation PBI_QueryGroupOrder = 4
+
+queryGroup 'Type.ForRecord'
+
+	annotation PBI_QueryGroupOrder = 5
+
+queryGroup 'Type.FunctionParameters'
+
+	annotation PBI_QueryGroupOrder = 6
+
+queryGroup 'Type.FunctionRequiredParameters'
+
+	annotation PBI_QueryGroupOrder = 7
+
+queryGroup 'Type.FunctionReturn'
+
+	annotation PBI_QueryGroupOrder = 8
+
+queryGroup 'Type.Is'
+
+	annotation PBI_QueryGroupOrder = 9
+
+queryGroup 'Type.IsNullable'
+
+	annotation PBI_QueryGroupOrder = 10
+
+queryGroup 'Type.IsOpenRecord'
+
+	annotation PBI_QueryGroupOrder = 11
+
+queryGroup 'Type.ListItem'
+
+	annotation PBI_QueryGroupOrder = 12
+
+queryGroup 'Type.NonNullable'
+
+	annotation PBI_QueryGroupOrder = 13
+
+queryGroup 'Type.OpenRecord'
+
+	annotation PBI_QueryGroupOrder = 14
+
+queryGroup 'Type.RecordFields'
+
+	annotation PBI_QueryGroupOrder = 15
+
+queryGroup 'Type.ReplaceFacets'
+
+	annotation PBI_QueryGroupOrder = 16
+
+queryGroup 'Type.ReplaceTableKeys'
+
+	annotation PBI_QueryGroupOrder = 17
+
+queryGroup 'Type.ReplaceTablePartitionKey'
+
+	annotation PBI_QueryGroupOrder = 18
+
+queryGroup 'Type.TableColumn'
+
+	annotation PBI_QueryGroupOrder = 19
+
+queryGroup 'Type.TableKeys'
+
+	annotation PBI_QueryGroupOrder = 20
+
+queryGroup 'Type.TablePartitionKey'
+
+	annotation PBI_QueryGroupOrder = 21
+
+queryGroup 'Type.TableRow'
+
+	annotation PBI_QueryGroupOrder = 22
+
+queryGroup 'Type.TableSchema'
+
+	annotation PBI_QueryGroupOrder = 23
+
+queryGroup 'Type.Union'
+
+	annotation PBI_QueryGroupOrder = 24
+
+ref table Type

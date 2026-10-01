@@ -4,7 +4,7 @@ category: "Type"
 returns: "record"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Returns a record with field values set to the name of the parameters of `type`, 
 | Name | Type | Optional |
 |---|---|---|
 | `type` | `type` | no |
+
+**Executed examples (3):** [examples/type/type-functionparameters.md](../../examples/type/type-functionparameters.md)
 
 ## Examples (engine metadata — not verified here)
 

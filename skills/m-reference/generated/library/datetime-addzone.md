@@ -4,7 +4,7 @@ category: "DateTime"
 returns: "nullable datetimezone"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ Adds timezone information to the `dateTime` value. The timezone information incl
 | `dateTime` | `nullable datetime` | no |
 | `timezoneHours` | `number` | no |
 | `timezoneMinutes` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/datetime/datetime-addzone.md](../../examples/datetime/datetime-addzone.md)
 
 ## Examples (engine metadata — not verified here)
 

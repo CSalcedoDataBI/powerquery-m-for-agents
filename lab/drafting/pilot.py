@@ -33,6 +33,7 @@ import m_blocks  # noqa: E402
 from check_examples import category_slug  # noqa: E402
 
 REF = os.path.join(ROOT, "skills", "m-reference")
+# The first pilot (#21). --categories picks others by their root: "Date,Duration".
 PILOT_CATEGORIES = ["Number.Operations", "Number.Conversion and formatting"]
 # The format the model copies: one page with a single block, one with two.
 MODELS = ["examples/list-information/list-count.md",
@@ -47,7 +48,10 @@ Rules:
 - Start with "# {name}", then one short sentence saying what the examples show.
 - Then one to three ```m blocks. Each block is one M expression on literal values.
 - Show behaviour a reader could get wrong: nulls, optional arguments, edge cases.
-- Use only {name} and simple library functions (Number.*, Text.*, List.*, Record.*).
+- Use only {name} and other library functions that compute on values.
+- Never depend on today's date or the clock. For a function relative to the current
+  day, week, month, quarter or year, use dates far in the past or future (1990, 2200),
+  so the result is the same whatever day the block runs.
 - No data sources: no files, no web, no databases, no #shared.
 - Do NOT write results, ```text blocks or the "<!-- lab: ... -->" line. The blocks are
   run in the real engine afterwards and the results written from that run.
@@ -67,9 +71,15 @@ def load_catalog():
         return json.load(f)
 
 
-def pilot_rows(catalog):
+def pilot_rows(catalog, categories=None):
+    """Library functions of the pilot categories (exact names), or of the category roots in
+    `categories`. A function the safety rule refuses (DateTime.LocalNow) gets no prompt: its
+    page would be refused anyway."""
     rows = [r for r in catalog["functions"]
-            if r.get("kind") == "library" and r.get("category") in PILOT_CATEGORIES]
+            if r.get("kind") == "library"
+            and (r.get("category") in PILOT_CATEGORIES if not categories
+                 else (r.get("category") or "").split(".")[0] in categories)
+            and not m_blocks.unsafe_calls(r["name"], catalog)]
     return sorted(rows, key=lambda r: r["name"])
 
 
@@ -133,7 +143,7 @@ def cmd_prompts(args):
             models.append(strip_results(f.read())[0])
     folder = os.path.join(args.out, "prompts")
     os.makedirs(folder, exist_ok=True)
-    rows = pilot_rows(catalog)
+    rows = pilot_rows(catalog, args.categories)
     for r in rows:
         with open(os.path.join(REF, "generated", "library", r["file"] + ".md"), encoding="utf-8") as f:
             card = f.read()
@@ -163,7 +173,7 @@ def final_text(path):
 
 def cmd_collect(args):
     catalog = load_catalog()
-    by_file = {r["file"]: r for r in pilot_rows(catalog)}
+    by_file = {r["file"]: r for r in pilot_rows(catalog, args.categories)}
     answers = os.path.join(args.out, "answers")
     results = {}
     for name in sorted(os.listdir(answers)) if os.path.isdir(answers) else []:
@@ -261,8 +271,12 @@ def main(argv=None):
     parser.add_argument("command", choices=["prompts", "collect", "report"])
     parser.add_argument("--out", required=True, help="the run's folder (keep it under lab/drafting/out/)")
     parser.add_argument("--force", action="store_true", help="collect: overwrite existing pages")
+    parser.add_argument("--categories", default="",
+                        help="category roots, comma-separated (Date,DateTime,Duration,Type); "
+                             "default: the first pilot's two Number categories")
     args = parser.parse_args(argv)
     args.out = os.path.abspath(args.out)
+    args.categories = [c for c in args.categories.split(",") if c]
     return {"prompts": cmd_prompts, "collect": cmd_collect, "report": cmd_report}[args.command](args)
 
 

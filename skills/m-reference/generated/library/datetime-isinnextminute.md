@@ -4,7 +4,7 @@ category: "DateTime"
 returns: "nullable logical"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ Indicates whether the given datetime value `dateTime` occurs during the next min
 | Name | Type | Optional |
 |---|---|---|
 | `dateTime` | `any` | no |
+
+**Executed examples (3):** [examples/datetime/datetime-isinnextminute.md](../../examples/datetime/datetime-isinnextminute.md)
 
 ## Examples (engine metadata — not verified here)
 

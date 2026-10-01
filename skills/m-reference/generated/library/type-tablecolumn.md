@@ -4,7 +4,7 @@ category: "Type"
 returns: "type"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,3 +24,5 @@ Returns the type of the column `column` in the table type `tableType`.
 |---|---|---|
 | `tableType` | `type` | no |
 | `column` | `text` | no |
+
+**Executed examples (3):** [examples/type/type-tablecolumn.md](../../examples/type/type-tablecolumn.md)

@@ -4,7 +4,7 @@ category: "Date"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ Returns the start of the week that contains `dateTime`.
 |---|---|---|
 | `dateTime` | `any` | no |
 | `firstDayOfWeek` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/date/date-startofweek.md](../../examples/date/date-startofweek.md)
 
 ## Examples (engine metadata — not verified here)
 

@@ -4,7 +4,7 @@ category: "Type"
 returns: "nullable list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 2
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,3 +23,5 @@ Returns the partition key for the given table type if it has one.
 | Name | Type | Optional |
 |---|---|---|
 | `tableType` | `type` | no |
+
+**Executed examples (2):** [examples/type/type-tablepartitionkey.md](../../examples/type/type-tablepartitionkey.md)

@@ -4,7 +4,7 @@ category: "Type"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -31,6 +31,8 @@ Each key is defined using a record in the following form:
 | Name | Type | Optional |
 |---|---|---|
 | `tableType` | `type` | no |
+
+**Executed examples (3):** [examples/type/type-tablekeys.md](../../examples/type/type-tablekeys.md)
 
 ## Examples (engine metadata — not verified here)
 

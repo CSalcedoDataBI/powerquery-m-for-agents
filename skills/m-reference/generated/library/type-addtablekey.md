@@ -4,7 +4,7 @@ category: "Type"
 returns: "type"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,3 +25,5 @@ Adds a key to the given table type.
 | `table` | `type` | no |
 | `columns` | `list` | no |
 | `isPrimary` | `logical` | no |
+
+**Executed examples (3):** [examples/type/type-addtablekey.md](../../examples/type/type-addtablekey.md)

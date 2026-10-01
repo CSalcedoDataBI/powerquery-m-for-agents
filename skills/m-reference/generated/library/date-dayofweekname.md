@@ -4,7 +4,7 @@ category: "Date"
 returns: "nullable text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns the day of the week name for the provided `date`. An optional `culture` 
 |---|---|---|
 | `date` | `any` | no |
 | `culture` | `nullable text` | yes |
+
+**Executed examples (3):** [examples/date/date-dayofweekname.md](../../examples/date/date-dayofweekname.md)
 
 ## Examples (engine metadata — not verified here)
 

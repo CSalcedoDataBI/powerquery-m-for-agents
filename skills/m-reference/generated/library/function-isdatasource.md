@@ -4,7 +4,7 @@ category: "Type"
 returns: "logical"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,3 +23,5 @@ Returns whether or not `function` is considered a data source.
 | Name | Type | Optional |
 |---|---|---|
 | `function` | `function` | no |
+
+**Executed examples (3):** [examples/type/function-isdatasource.md](../../examples/type/function-isdatasource.md)
