@@ -119,18 +119,13 @@ expression 'Binary.FromText (3)' =
 	queryGroup: 'Binary.FromText'
 
 expression 'Binary.InferContentType (1)' =
-		Record.FieldNames(Binary.InferContentType(Text.ToBinary("Name,Age#(lf)Alice,30#(lf)Bob,25")))
+		Binary.InferContentType(Text.ToBinary("Hello, world"))
 	lineageTag: ef6b9054-ff5f-5bac-a2d5-ae5def037b1e
 	queryGroup: 'Binary.InferContentType'
 
 expression 'Binary.InferContentType (2)' =
-		Record.FieldValues(Binary.InferContentType(Text.ToBinary("Hello, world"))){0}
-	lineageTag: b2172b9d-a484-5f4f-bdfe-b29eda88c407
-	queryGroup: 'Binary.InferContentType'
-
-expression 'Binary.InferContentType (3)' =
 		Binary.InferContentType(null)
-	lineageTag: 374a4f30-0a09-539b-b510-df2c92140ff3
+	lineageTag: b2172b9d-a484-5f4f-bdfe-b29eda88c407
 	queryGroup: 'Binary.InferContentType'
 
 expression 'Binary.Length (1)' =
