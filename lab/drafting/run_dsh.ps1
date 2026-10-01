@@ -43,8 +43,8 @@ New-Item -ItemType Directory -Force $answers | Out-Null
 # merely carries the tag - stale, or put there by something else - never receives the key.
 # `docker build -q` prints the digest of an index (image + attestation) that docker may clean
 # up mid-run ("No such image"), so the ID is read back from the tag the build just set.
-docker build -q -t $Image $PSScriptRoot *> $null
-if ($LASTEXITCODE -ne 0) { throw 'docker build failed' }
+$buildLog = docker build -q -t $Image $PSScriptRoot 2>&1
+if ($LASTEXITCODE -ne 0) { throw "docker build failed:`n$($buildLog -join "`n")" }
 $Image = docker image inspect --format '{{.Id}}' $Image
 if ($LASTEXITCODE -ne 0 -or $Image -notmatch '^sha256:[0-9a-f]{64}$') { throw "could not read the built image ID: $Image" }
 
