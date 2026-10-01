@@ -4,7 +4,7 @@ category: "Record.Transformations"
 returns: "record"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -37,6 +37,8 @@ Reorders the fields of a record to match the order of a list of field names.
 | `record` | `record` | no |
 | `fieldOrder` | `list` | no |
 | `missingField` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/record-transformations/record-reorderfields.md](../../examples/record-transformations/record-reorderfields.md)
 
 ## Examples (engine metadata — not verified here)
 

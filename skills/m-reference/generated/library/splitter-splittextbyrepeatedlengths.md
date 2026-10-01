@@ -4,7 +4,7 @@ category: "Splitter"
 returns: "function"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns a function that splits text into a list of text after the specified leng
 |---|---|---|
 | `length` | `number` | no |
 | `startAtEnd` | `nullable logical` | yes |
+
+**Executed examples (3):** [examples/splitter/splitter-splittextbyrepeatedlengths.md](../../examples/splitter/splitter-splittextbyrepeatedlengths.md)
 
 ## Examples (engine metadata — not verified here)
 

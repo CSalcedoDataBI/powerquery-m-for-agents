@@ -1,0 +1,278 @@
+expression 'Binary.ApproximateLength (1)' =
+		Binary.ApproximateLength(null)
+	lineageTag: 3aceab20-42cc-52bb-b7d3-9a3a9bf1a501
+	queryGroup: 'Binary.ApproximateLength'
+
+expression 'Binary.ApproximateLength (2)' =
+		Binary.ApproximateLength(Binary.FromText("", BinaryEncoding.Base64))
+	lineageTag: 7478bbbb-7c2a-5dce-ac78-9d581ee20d52
+	queryGroup: 'Binary.ApproximateLength'
+
+expression 'Binary.ApproximateLength (3)' =
+		Binary.ApproximateLength(Binary.FromText("aGVsbG8=", BinaryEncoding.Base64))
+	lineageTag: 7a293398-a45c-51f0-ac2a-d5b669dbf8de
+	queryGroup: 'Binary.ApproximateLength'
+
+expression 'Binary.Buffer (1)' =
+		Binary.Buffer(null)
+	lineageTag: d3eff72d-72f5-5833-9b42-473bb3980f1f
+	queryGroup: 'Binary.Buffer'
+
+expression 'Binary.Buffer (2)' =
+		Binary.Buffer(Binary.FromList({}))
+	lineageTag: 7b1fa2a7-3c06-5761-94de-dc912b029fa8
+	queryGroup: 'Binary.Buffer'
+
+expression 'Binary.Buffer (3)' =
+		Binary.Buffer(Binary.FromList({0, 0, 255}))
+	lineageTag: cc8bd82b-1b40-5717-9824-6c154a7da4ec
+	queryGroup: 'Binary.Buffer'
+
+expression 'Binary.Combine (1)' =
+		Binary.Combine({Text.ToBinary("ab"), Text.ToBinary("cd")})
+	lineageTag: 1d574cf7-2d14-505f-8314-52619c85dd23
+	queryGroup: 'Binary.Combine'
+
+expression 'Binary.Combine (2)' =
+		Binary.Combine({})
+	lineageTag: ddc9a577-fd44-5b8a-921c-d1a5244cdf77
+	queryGroup: 'Binary.Combine'
+
+expression 'Binary.Combine (3)' =
+		Binary.Combine({Text.ToBinary("a"), null})
+	lineageTag: 47aa33bd-7dbd-59a3-91dd-5659fa58e561
+	queryGroup: 'Binary.Combine'
+
+expression 'Binary.Compress (1)' =
+		Binary.Compress(null, Compression.Deflate)
+	lineageTag: 2e144dd8-334e-5570-9a5a-7eedba5eec07
+	queryGroup: 'Binary.Compress'
+
+expression 'Binary.Compress (2)' =
+		Binary.Compress(#binary({}), Compression.GZip)
+	lineageTag: e543a60e-d140-5843-a740-771233113313
+	queryGroup: 'Binary.Compress'
+
+expression 'Binary.Compress (3)' =
+		Binary.ToList(Binary.Range(Binary.Compress(Text.ToBinary("Power Query"), Compression.GZip), 0, 2))
+	lineageTag: aff67af2-479f-5b43-8300-84efad1dea45
+	queryGroup: 'Binary.Compress'
+
+expression 'Binary.Decompress (1)' =
+		Binary.Decompress(null, Compression.Deflate)
+	lineageTag: 03fa576e-6166-517c-a039-3e2da68d2f5d
+	queryGroup: 'Binary.Decompress'
+
+expression 'Binary.Decompress (2)' =
+		Binary.Decompress(Binary.Compress(#binary({1, 2, 3}), Compression.GZip), Compression.GZip)
+	lineageTag: 23152a31-992b-53b3-bf3d-e19f1021db9d
+	queryGroup: 'Binary.Decompress'
+
+expression 'Binary.Decompress (3)' =
+		try Binary.Decompress(Binary.Compress(#binary({1, 2, 3}), Compression.GZip), Compression.Deflate) otherwise "wrong compression type"
+	lineageTag: ec747f58-01eb-570b-a741-18eefd8cae11
+	queryGroup: 'Binary.Decompress'
+
+expression 'Binary.From (1)' =
+		Binary.From(null)
+	lineageTag: 16300087-4c78-5e65-a5d3-10ef947bc690
+	queryGroup: 'Binary.From'
+
+expression 'Binary.From (2)' =
+		Binary.From("1011", BinaryEncoding.Hex)
+	lineageTag: 4d79a500-6464-52a9-834e-f4baf7b985a5
+	queryGroup: 'Binary.From'
+
+expression 'Binary.From (3)' =
+		Binary.From(Binary.FromText("1011", BinaryEncoding.Hex))
+	lineageTag: 49d4b43f-efa9-5483-a83d-45a7d369251c
+	queryGroup: 'Binary.From'
+
+expression 'Binary.FromList (1)' =
+		Binary.FromList({})
+	lineageTag: 1d2b2fd8-2895-5d8d-8898-d950d8495f88
+	queryGroup: 'Binary.FromList'
+
+expression 'Binary.FromList (2)' =
+		Binary.FromList({0, 255})
+	lineageTag: 36a4a233-a6c7-5652-b9bb-48eb798c52ee
+	queryGroup: 'Binary.FromList'
+
+expression 'Binary.FromList (3)' =
+		Binary.FromList({0, null, 255})
+	lineageTag: fe67ec81-d209-5d13-8827-cf283f6d145c
+	queryGroup: 'Binary.FromList'
+
+expression 'Binary.FromText (1)' =
+		Binary.FromText(null)
+	lineageTag: 3678df3f-ff49-5a96-a6ce-bdb4bb11283f
+	queryGroup: 'Binary.FromText'
+
+expression 'Binary.FromText (2)' =
+		Binary.FromText("1011")
+	lineageTag: 77e7d786-758d-5652-a071-a9541680de8d
+	queryGroup: 'Binary.FromText'
+
+expression 'Binary.FromText (3)' =
+		Binary.FromText("1011", BinaryEncoding.Hex)
+	lineageTag: 37940e6a-2fb8-51ce-99db-998d9661838e
+	queryGroup: 'Binary.FromText'
+
+expression 'Binary.InferContentType (1)' =
+		Record.FieldNames(Binary.InferContentType(Text.ToBinary("Name,Age#(lf)Alice,30#(lf)Bob,25")))
+	lineageTag: ef6b9054-ff5f-5bac-a2d5-ae5def037b1e
+	queryGroup: 'Binary.InferContentType'
+
+expression 'Binary.InferContentType (2)' =
+		Record.FieldValues(Binary.InferContentType(Text.ToBinary("Hello, world"))){0}
+	lineageTag: b2172b9d-a484-5f4f-bdfe-b29eda88c407
+	queryGroup: 'Binary.InferContentType'
+
+expression 'Binary.InferContentType (3)' =
+		Binary.InferContentType(null)
+	lineageTag: 374a4f30-0a09-539b-b510-df2c92140ff3
+	queryGroup: 'Binary.InferContentType'
+
+expression 'Binary.Length (1)' =
+		Binary.Length(null)
+	lineageTag: c712a42d-66c7-5b0d-bf86-0301a9941d46
+	queryGroup: 'Binary.Length'
+
+expression 'Binary.Length (2)' =
+		Binary.Length(Text.ToBinary("Seattle"))
+	lineageTag: 3b78bb06-9de8-5bfe-8bcb-a5a5058b7fbe
+	queryGroup: 'Binary.Length'
+
+expression 'Binary.Length (3)' =
+		Binary.Length(Text.ToBinary(""))
+	lineageTag: cd59fcad-c2a8-5a2b-a459-4db360153835
+	queryGroup: 'Binary.Length'
+
+expression 'Binary.Range (1)' =
+		Binary.Range(#binary({0..10}), 6)
+	lineageTag: b4d268d6-6d3a-5c7e-a57e-793cb5a8e745
+	queryGroup: 'Binary.Range'
+
+expression 'Binary.Range (2)' =
+		Binary.Range(#binary({0..10}), 6, null)
+	lineageTag: 5e1d6fa0-9de4-5671-8f58-1bbf3e7485a1
+	queryGroup: 'Binary.Range'
+
+expression 'Binary.Range (3)' =
+		Binary.Range(#binary({0..10}), 6, 0)
+	lineageTag: 53c89a73-4282-5c22-99f1-511703d44205
+	queryGroup: 'Binary.Range'
+
+expression 'Binary.Split (1)' =
+		Binary.Split(Text.ToBinary("abcde"), 2)
+	lineageTag: aecbfb3f-b83a-53fd-9e70-bf0633df0dec
+	queryGroup: 'Binary.Split'
+
+expression 'Binary.Split (2)' =
+		Binary.Split(Text.ToBinary("abc"), 5)
+	lineageTag: 21a2c41d-4e70-56de-9f97-b0af8df20893
+	queryGroup: 'Binary.Split'
+
+expression 'Binary.Split (3)' =
+		Binary.Split(null, 2)
+	lineageTag: 024f2c48-e197-5bcc-bbdd-77836432f0b3
+	queryGroup: 'Binary.Split'
+
+expression 'Binary.ToList (1)' =
+		Binary.ToList(#binary({0x00, 0x7F, 0xFF}))
+	lineageTag: 4fee2d58-f6e0-58fd-bb6e-f5334f74cce8
+	queryGroup: 'Binary.ToList'
+
+expression 'Binary.ToList (2)' =
+		Binary.ToList(#binary({}))
+	lineageTag: a29e4cc6-ced7-58d8-9cee-db5a11d60eee
+	queryGroup: 'Binary.ToList'
+
+expression 'Binary.ToList (3)' =
+		Binary.ToList(null)
+	lineageTag: a2ba1b6f-badd-5331-bc42-2d9439888ed4
+	queryGroup: 'Binary.ToList'
+
+expression 'Binary.ToText (1)' =
+		Binary.ToText(null)
+	lineageTag: 3e7ebaee-07e3-55ad-b019-cef741317049
+	queryGroup: 'Binary.ToText'
+
+expression 'Binary.ToText (2)' =
+		Binary.ToText(Binary.FromList({72, 105}))
+	lineageTag: bb16e56c-eb64-5938-9305-d848050b260b
+	queryGroup: 'Binary.ToText'
+
+expression 'Binary.ToText (3)' =
+		Binary.ToText(Binary.FromList({72, 105}), BinaryEncoding.Hex)
+	lineageTag: 84d2886a-4c2a-5f2c-b73b-0203c6933a23
+	queryGroup: 'Binary.ToText'
+
+expression 'Binary.View (1)' =
+		Binary.Length(Binary.View(Text.ToBinary("hello"), []))
+	lineageTag: 701632fd-ff80-5014-a2c5-198d13f4b854
+	queryGroup: 'Binary.View'
+
+expression 'Binary.View (2)' =
+		Binary.Length(Binary.View(Text.ToBinary("hello"), [GetLength = () => Number.FromText("not a number")]))
+	lineageTag: b379e724-1da0-50e9-838b-f3c1c6f0c887
+	queryGroup: 'Binary.View'
+
+expression 'Binary.View (3)' =
+		Text.FromBinary(Binary.View(null, [GetLength = () => 12, GetStream = () => Text.ToBinary("hello world!")]))
+	lineageTag: 2c7b8043-b247-513e-b2c4-3a09ca90a434
+	queryGroup: 'Binary.View'
+
+expression 'Binary.ViewError (1)' =
+		Binary.ViewError([Reason = "Expression.Error", Message = "boom", Detail = null])
+	lineageTag: 51c03c00-addb-5082-bfa4-6c3028ed9b2f
+	queryGroup: 'Binary.ViewError'
+
+expression 'Binary.ViewError (2)' =
+		Binary.ViewError([Reason = "Expression.Error", Message = "boom"])
+	lineageTag: 2b7808d4-893a-5662-a571-414c9de5a75d
+	queryGroup: 'Binary.ViewError'
+
+expression 'Binary.ViewError (3)' =
+		Binary.ViewError(null)
+	lineageTag: f29deb14-d95a-55b3-9265-d89a56862e0c
+	queryGroup: 'Binary.ViewError'
+
+expression 'Binary.ViewFunction (1)' =
+		let
+		    Size = Binary.ViewFunction((binary as nullable binary) => if binary = null then 0 else Binary.Length(binary))
+		in
+		    {Size(null), Size(Text.ToBinary("abcdef"))}
+	lineageTag: 94556589-4daf-593b-b424-a47b52f6938d
+	queryGroup: 'Binary.ViewFunction'
+
+expression 'Binary.ViewFunction (2)' =
+		let
+		    Size = Binary.ViewFunction((binary as nullable binary) => if binary = null then 0 else Binary.Length(binary)),
+		    Viewed = Binary.View(
+		        null,
+		        [
+		            GetStream = () => Text.ToBinary("abcdef"),
+		            OnInvoke = (func, args, index) => 99
+		        ]
+		    )
+		in
+		    Size(Viewed)
+	lineageTag: 6b99c711-7fa7-5108-abb4-cfddcf302470
+	queryGroup: 'Binary.ViewFunction'
+
+expression 'Binary.ViewFunction (3)' =
+		let
+		    Size = Binary.ViewFunction((binary as nullable binary) => if binary = null then 0 else Binary.Length(binary)),
+		    Viewed = Binary.View(
+		        null,
+		        [
+		            GetStream = () => Text.ToBinary("abcdef"),
+		            GetLength = () => 6,
+		            OnInvoke = (func, args, index) => error "not handled"
+		        ]
+		    )
+		in
+		    Size(Viewed)
+	lineageTag: 26013b77-09e3-513c-80d5-4a78891e4c2b
+	queryGroup: 'Binary.ViewFunction'

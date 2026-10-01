@@ -4,7 +4,7 @@ category: "Logical"
 returns: "nullable logical"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -29,6 +29,8 @@ If `value` is of any other type, an error is returned.
 | Name | Type | Optional |
 |---|---|---|
 | `value` | `any` | no |
+
+**Executed examples (3):** [examples/logical/logical-from.md](../../examples/logical/logical-from.md)
 
 ## Examples (engine metadata — not verified here)
 

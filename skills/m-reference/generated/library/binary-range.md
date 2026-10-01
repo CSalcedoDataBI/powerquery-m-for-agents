@@ -4,7 +4,7 @@ category: "Binary"
 returns: "binary"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ Returns a subset of the binary value beginning at the offset `binary`. An option
 | `binary` | `binary` | no |
 | `offset` | `number` | no |
 | `count` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/binary/binary-range.md](../../examples/binary/binary-range.md)
 
 ## Examples (engine metadata — not verified here)
 

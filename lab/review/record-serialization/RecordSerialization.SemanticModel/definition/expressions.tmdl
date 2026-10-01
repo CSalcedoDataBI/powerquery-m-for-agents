@@ -1,0 +1,149 @@
+expression 'Geography.FromWellKnownText (1)' =
+		Geography.FromWellKnownText(null)
+	lineageTag: 1f7de9f7-0930-534e-a7fc-679a4df06f37
+	queryGroup: 'Geography.FromWellKnownText'
+
+expression 'Geography.FromWellKnownText (2)' =
+		Geography.FromWellKnownText("  point ( -122.35 47.68 ) ")
+	lineageTag: 8a531cdf-3b3d-5684-ac84-790a9b8d0f81
+	queryGroup: 'Geography.FromWellKnownText'
+
+expression 'Geography.FromWellKnownText (3)' =
+		Geography.FromWellKnownText("LINESTRING (0 0, 1 1, 2 2)")
+	lineageTag: 8ae3948c-e1fc-52d2-b8a8-8097573c1cc2
+	queryGroup: 'Geography.FromWellKnownText'
+
+expression 'Geography.ToWellKnownText (1)' =
+		Geography.ToWellKnownText(null)
+	lineageTag: f5c1d38c-6441-5a25-acd5-ec2ec40d84a4
+	queryGroup: 'Geography.ToWellKnownText'
+
+expression 'Geography.ToWellKnownText (2)' =
+		Geography.ToWellKnownText(GeographyPoint.From(-122.349, 47.651, null, null, 4258))
+	lineageTag: 5b6b443f-1e9d-55b3-844a-87d5fa51d0b0
+	queryGroup: 'Geography.ToWellKnownText'
+
+expression 'Geography.ToWellKnownText (3)' =
+		Geography.ToWellKnownText(GeographyPoint.From(-122.349, 47.651, null, null, 4258), true)
+	lineageTag: 19229249-bcc2-5d32-84a0-dc3e68429b46
+	queryGroup: 'Geography.ToWellKnownText'
+
+expression 'GeographyPoint.From (1)' =
+		GeographyPoint.From(-122.3321, 47.6062)
+	lineageTag: 972f6b66-13ab-58e6-9661-3efcd3619e2c
+	queryGroup: 'GeographyPoint.From'
+
+expression 'GeographyPoint.From (2)' =
+		GeographyPoint.From(-122.3321, 47.6062, null, 5000)
+	lineageTag: eb3e1cc6-7c9f-55ae-9a96-e409b89cc583
+	queryGroup: 'GeographyPoint.From'
+
+expression 'GeographyPoint.From (3)' =
+		GeographyPoint.From(-122.3321, 47.6062, 35, null, 4258)
+	lineageTag: a8556a69-15dc-5e86-9553-ed982e1a6297
+	queryGroup: 'GeographyPoint.From'
+
+expression 'Geometry.FromWellKnownText (1)' =
+		Geometry.FromWellKnownText(null)
+	lineageTag: e5ac24af-5ec0-5872-88be-c154777ef198
+	queryGroup: 'Geometry.FromWellKnownText'
+
+expression 'Geometry.FromWellKnownText (2)' =
+		Geometry.FromWellKnownText("POINT EMPTY")
+	lineageTag: a4577079-072a-51e1-a2ec-f981ee093eb0
+	queryGroup: 'Geometry.FromWellKnownText'
+
+expression 'Geometry.FromWellKnownText (3)' =
+		Geometry.FromWellKnownText("GEOMETRYCOLLECTION (POINT (10 10), LINESTRING (15 15, 20 20))")
+	lineageTag: 6efa78c9-ea69-5697-8b7e-d2ecfb9584d1
+	queryGroup: 'Geometry.FromWellKnownText'
+
+expression 'Geometry.ToWellKnownText (1)' =
+		Geometry.ToWellKnownText(GeometryPoint.From(30, 10, null, null, 4326))
+	lineageTag: 2cef8fb1-e735-52c3-bd15-6490ac159fce
+	queryGroup: 'Geometry.ToWellKnownText'
+
+expression 'Geometry.ToWellKnownText (2)' =
+		Geometry.ToWellKnownText(GeometryPoint.From(30, 10, null, null, 4326), true)
+	lineageTag: 9543672f-a684-5e62-99f9-ff2e9ab77cce
+	queryGroup: 'Geometry.ToWellKnownText'
+
+expression 'Geometry.ToWellKnownText (3)' =
+		Geometry.ToWellKnownText(null)
+	lineageTag: 7946068b-6371-5158-9ac4-2fc5329905d7
+	queryGroup: 'Geometry.ToWellKnownText'
+
+expression 'GeometryPoint.From (1)' =
+		GeometryPoint.From(1, 2)
+	lineageTag: cb73fcd0-2f00-513f-9db1-5ad25e433665
+	queryGroup: 'GeometryPoint.From'
+
+expression 'GeometryPoint.From (2)' =
+		GeometryPoint.From(1, 2, 3, 4, 4326)
+	lineageTag: dfe28ae4-ddb5-5f59-9bec-2061975079ce
+	queryGroup: 'GeometryPoint.From'
+
+expression 'GeometryPoint.From (3)' =
+		GeometryPoint.From(1, 2, null, 4)
+	lineageTag: 45645e8b-f572-58ad-9a31-121f77f463df
+	queryGroup: 'GeometryPoint.From'
+
+expression 'Record.FromList (1)' =
+		Record.FromList({null, "Bob"}, {"CustomerID", "Name"})
+	lineageTag: b34cd36b-d4ad-5498-ad1f-bb77cdf2dba5
+	queryGroup: 'Record.FromList'
+
+expression 'Record.FromList (2)' =
+		Record.FromList({"123-4567", 1}, type [Phone = number, CustomerID = text])
+	lineageTag: 5f760726-2d1b-5312-aafb-57a3e17f94df
+	queryGroup: 'Record.FromList'
+
+expression 'Record.FromList (3)' =
+		Record.FromList({1, 2}, {"ID", "ID"})
+	lineageTag: e42a5a3e-9d00-512f-b4d4-2dab87ea3605
+	queryGroup: 'Record.FromList'
+
+expression 'Record.FromTable (1)' =
+		Record.FromTable(Table.FromRecords({[Name = "CustomerID", Value = 1], [Name = "Phone", Value = null]}))
+	lineageTag: f4bdae6e-f09a-5359-8298-03a281946273
+	queryGroup: 'Record.FromTable'
+
+expression 'Record.FromTable (2)' =
+		Record.FromTable(#table({"Name", "Value"}, {}))
+	lineageTag: 02439e0c-85d6-5542-a7ad-a50f7c327daa
+	queryGroup: 'Record.FromTable'
+
+expression 'Record.FromTable (3)' =
+		Record.FromTable(Table.FromRecords({[Name = "ID", Value = 1], [Name = "ID", Value = 2]}))
+	lineageTag: d1d87195-c70f-5143-8115-4f6b9740ad01
+	queryGroup: 'Record.FromTable'
+
+expression 'Record.ToList (1)' =
+		Record.ToList([A = null, B = 2, C = null])
+	lineageTag: 08fc6e00-761e-58e3-ac74-ad8fb3df7be4
+	queryGroup: 'Record.ToList'
+
+expression 'Record.ToList (2)' =
+		Record.ToList([C = 3, A = 1])
+	lineageTag: 32a7fa95-c9b5-5370-80e9-45bcfe3739d9
+	queryGroup: 'Record.ToList'
+
+expression 'Record.ToList (3)' =
+		Record.ToList([])
+	lineageTag: da37d0dc-bb18-5c8c-9685-919cdaba9133
+	queryGroup: 'Record.ToList'
+
+expression 'Record.ToTable (1)' =
+		Record.ToTable([B = null, A = 1])
+	lineageTag: ef2e471f-0c1b-563a-bde5-e061d5d4a71c
+	queryGroup: 'Record.ToTable'
+
+expression 'Record.ToTable (2)' =
+		Record.ToTable([])
+	lineageTag: dd201405-53b0-53e9-95e0-db2ea8534138
+	queryGroup: 'Record.ToTable'
+
+expression 'Record.ToTable (3)' =
+		Record.ToTable([A = [X = 1], B = 2])
+	lineageTag: 263e510e-862a-57cb-bc2c-b8e4f922f2c3
+	queryGroup: 'Record.ToTable'

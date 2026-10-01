@@ -4,7 +4,7 @@ category: "Record.Selection"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Returns a list of the field values in record `record`.
 | Name | Type | Optional |
 |---|---|---|
 | `record` | `record` | no |
+
+**Executed examples (3):** [examples/record-selection/record-fieldvalues.md](../../examples/record-selection/record-fieldvalues.md)
 
 ## Examples (engine metadata — not verified here)
 

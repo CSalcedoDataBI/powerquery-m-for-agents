@@ -816,7 +816,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Binary.Buffer",
@@ -831,7 +831,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Binary.Combine",
@@ -846,7 +846,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Binary.Compress",
@@ -861,7 +861,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Binary.Decompress",
@@ -876,7 +876,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Binary.From",
@@ -891,7 +891,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Binary.FromList",
@@ -906,7 +906,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Binary.FromText",
@@ -921,7 +921,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Binary.InferContentType",
@@ -936,7 +936,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Binary.Length",
@@ -951,7 +951,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Binary.Range",
@@ -966,7 +966,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Binary.Split",
@@ -981,7 +981,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Binary.ToList",
@@ -996,7 +996,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Binary.ToText",
@@ -1011,7 +1011,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Binary.View",
@@ -1026,7 +1026,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Binary.ViewError",
@@ -1041,7 +1041,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Binary.ViewFunction",
@@ -1056,7 +1056,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "BinaryFormat.7BitEncodedSignedInteger",
@@ -5016,7 +5016,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Geography.ToWellKnownText",
@@ -5031,7 +5031,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "GeographyPoint.From",
@@ -5046,7 +5046,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Geometry.FromWellKnownText",
@@ -5061,7 +5061,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Geometry.ToWellKnownText",
@@ -5076,7 +5076,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "GeometryPoint.From",
@@ -5091,7 +5091,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Github.Contents",
@@ -7131,7 +7131,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Logical.FromText",
@@ -7146,7 +7146,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Logical.ToText",
@@ -7161,7 +7161,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "MailChimp.Collection",
@@ -8751,7 +8751,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Record.Combine",
@@ -8766,7 +8766,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Record.Field",
@@ -8781,7 +8781,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Record.FieldCount",
@@ -8796,7 +8796,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Record.FieldNames",
@@ -8811,7 +8811,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Record.FieldOrDefault",
@@ -8826,7 +8826,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Record.FieldValues",
@@ -8841,7 +8841,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Record.FromList",
@@ -8856,7 +8856,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Record.FromTable",
@@ -8871,7 +8871,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Record.HasFields",
@@ -8886,7 +8886,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Record.RemoveFields",
@@ -8901,7 +8901,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Record.RenameFields",
@@ -8916,7 +8916,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Record.ReorderFields",
@@ -8931,7 +8931,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Record.SelectFields",
@@ -8946,7 +8946,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Record.ToList",
@@ -8961,7 +8961,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Record.ToTable",
@@ -8976,7 +8976,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Record.TransformFields",
@@ -8991,7 +8991,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Replacer.ReplaceText",
@@ -9576,7 +9576,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Splitter.SplitTextByAnyDelimiter",
@@ -9591,7 +9591,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Splitter.SplitTextByCharacterTransition",
@@ -9606,7 +9606,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Splitter.SplitTextByDelimiter",
@@ -9621,7 +9621,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Splitter.SplitTextByEachDelimiter",
@@ -9636,7 +9636,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Splitter.SplitTextByLengths",
@@ -9651,7 +9651,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Splitter.SplitTextByPositions",
@@ -9666,7 +9666,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Splitter.SplitTextByRanges",
@@ -9681,7 +9681,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Splitter.SplitTextByRepeatedLengths",
@@ -9696,7 +9696,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Splitter.SplitTextByWhitespace",
@@ -9711,7 +9711,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Sql.Database",

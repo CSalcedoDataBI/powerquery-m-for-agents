@@ -4,7 +4,7 @@ category: "Binary"
 returns: "nullable binary"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -28,6 +28,8 @@ Compresses a binary value using the given compression type. The result of this c
 |---|---|---|
 | `binary` | `nullable binary` | no |
 | `compressionType` | `number` | no |
+
+**Executed examples (3):** [examples/binary/binary-compress.md](../../examples/binary/binary-compress.md)
 
 ## Examples (engine metadata — not verified here)
 

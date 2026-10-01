@@ -1,0 +1,106 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "table",
+  "position": {
+    "x": 300,
+    "y": 80,
+    "z": 2,
+    "width": 956,
+    "height": 620
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RecordSelection"
+                    }
+                  },
+                  "Property": "Function"
+                }
+              },
+              "queryRef": "RecordSelection.Function",
+              "nativeQueryRef": "Function"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RecordSelection"
+                    }
+                  },
+                  "Property": "Block"
+                }
+              },
+              "queryRef": "RecordSelection.Block",
+              "nativeQueryRef": "Block"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RecordSelection"
+                    }
+                  },
+                  "Property": "Code"
+                }
+              },
+              "queryRef": "RecordSelection.Code",
+              "nativeQueryRef": "Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RecordSelection"
+                    }
+                  },
+                  "Property": "Recorded"
+                }
+              },
+              "queryRef": "RecordSelection.Recorded",
+              "nativeQueryRef": "Recorded"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RecordSelection"
+                    }
+                  },
+                  "Property": "Live"
+                }
+              },
+              "queryRef": "RecordSelection.Live",
+              "nativeQueryRef": "Live"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RecordSelection"
+                    }
+                  },
+                  "Property": "Match"
+                }
+              },
+              "queryRef": "RecordSelection.Match",
+              "nativeQueryRef": "Match"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

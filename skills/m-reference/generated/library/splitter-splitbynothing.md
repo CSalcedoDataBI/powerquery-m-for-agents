@@ -4,7 +4,7 @@ category: "Splitter"
 returns: "function"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -17,3 +17,5 @@ Splitter.SplitByNothing() as function
 ```
 
 Returns a function that does no splitting, returning its argument as a single element list.
+
+**Executed examples (3):** [examples/splitter/splitter-splitbynothing.md](../../examples/splitter/splitter-splitbynothing.md)

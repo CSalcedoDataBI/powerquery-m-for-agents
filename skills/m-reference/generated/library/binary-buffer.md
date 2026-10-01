@@ -4,7 +4,7 @@ category: "Binary"
 returns: "nullable binary"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Buffers the binary value in memory. The result of this call is a stable binary v
 | Name | Type | Optional |
 |---|---|---|
 | `binary` | `nullable binary` | no |
+
+**Executed examples (3):** [examples/binary/binary-buffer.md](../../examples/binary/binary-buffer.md)
 
 ## Examples (engine metadata — not verified here)
 

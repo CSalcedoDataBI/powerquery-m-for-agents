@@ -4,7 +4,7 @@ category: "Record.Transformations"
 returns: "record"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ Returns a record after renaming fields in the input `record` to the new field na
 | `record` | `record` | no |
 | `renames` | `list` | no |
 | `missingField` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/record-transformations/record-renamefields.md](../../examples/record-transformations/record-renamefields.md)
 
 ## Examples (engine metadata — not verified here)
 

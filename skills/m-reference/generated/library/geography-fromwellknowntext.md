@@ -4,7 +4,7 @@ category: "Record.Serialization"
 returns: "nullable record"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,3 +23,5 @@ Translates text representing a geographic value in Well-Known Text (WKT) format 
 | Name | Type | Optional |
 |---|---|---|
 | `input` | `nullable text` | no |
+
+**Executed examples (3):** [examples/record-serialization/geography-fromwellknowntext.md](../../examples/record-serialization/geography-fromwellknowntext.md)

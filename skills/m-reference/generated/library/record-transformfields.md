@@ -4,7 +4,7 @@ category: "Record.Transformations"
 returns: "record"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -30,6 +30,8 @@ In the case of a multiple fields being transformed, `transformOperations` is exp
 | `record` | `record` | no |
 | `transformOperations` | `list` | no |
 | `missingField` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/record-transformations/record-transformfields.md](../../examples/record-transformations/record-transformfields.md)
 
 ## Examples (engine metadata — not verified here)
 

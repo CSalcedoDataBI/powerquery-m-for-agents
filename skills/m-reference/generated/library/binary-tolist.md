@@ -4,7 +4,7 @@ category: "Binary"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,3 +23,5 @@ Converts a binary value into a list of numbers.
 | Name | Type | Optional |
 |---|---|---|
 | `binary` | `binary` | no |
+
+**Executed examples (3):** [examples/binary/binary-tolist.md](../../examples/binary/binary-tolist.md)

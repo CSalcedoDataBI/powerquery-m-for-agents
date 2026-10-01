@@ -4,7 +4,7 @@ category: "Record.Serialization"
 returns: "record"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns a record given a `list` of field values and a set of fields. The `fields
 |---|---|---|
 | `list` | `list` | no |
 | `fields` | `any` | no |
+
+**Executed examples (3):** [examples/record-serialization/record-fromlist.md](../../examples/record-serialization/record-fromlist.md)
 
 ## Examples (engine metadata — not verified here)
 

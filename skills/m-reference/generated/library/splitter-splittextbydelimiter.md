@@ -4,7 +4,7 @@ category: "Splitter"
 returns: "function"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ Returns a function that splits text into a list of text according to the specifi
 | `delimiter` | `text` | no |
 | `quoteStyle` | `nullable number` | yes |
 | `csvStyle` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/splitter/splitter-splittextbydelimiter.md](../../examples/splitter/splitter-splittextbydelimiter.md)
 
 ## Examples (engine metadata — not verified here)
 
