@@ -83,9 +83,9 @@ def categories(catalog, only=""):
 def description(file):
     """The function's description as its card states it - the engine's own documentation, written
     by sync_shared.py from the export - as plain text: the paragraphs between the signature and
-    the first section."""
+    the first section, or the examples link a card with no parameters has in its place."""
     with open(os.path.join(LIBRARY, file + ".md"), encoding="utf-8") as f:
-        body = f.read().split("\n```\n", 1)[1].split("\n## ", 1)[0]
+        body = f.read().split("\n```\n", 1)[1].split("\n## ", 1)[0].split("\n**Executed examples", 1)[0]
     text = " ".join(line.strip() for line in body.splitlines() if line.strip())
     if not text:
         raise SystemExit(f"{file}: its card has no description")
