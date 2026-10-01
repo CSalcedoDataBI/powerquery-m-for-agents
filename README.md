@@ -46,6 +46,9 @@ Routing and conventions: [INDEX.md](INDEX.md).
 /plugin install m@powerquery-m-for-agents
 ```
 
+Needs Claude Code 2.1.142 or later: earlier versions install the plugin and load none of its
+skills (`scripts/check_plugin_manifest.py`).
+
 ## What it runs, sends and downloads
 
 **The plugin itself runs nothing.** It is four skills and nothing else: no hooks, no agents,
@@ -57,7 +60,7 @@ The repository also holds maintainer tools. None runs unless you run it:
 
 | Tool | Runs | Sends | Downloads |
 |---|---|---|---|
-| `skills/m-reference/scripts/sync_shared.py` | Python, standard library only | Nothing | Nothing. Reads `exports/*.json`, writes `generated/` |
+| `skills/m-reference/scripts/sync_shared.py` | Python, standard library only | Nothing | Nothing. Reads `exports/*.json` (in the git repository only, not in the plugin archive), writes `generated/` |
 | `skills/m-reference/scripts/export_shared.pq` | M, pasted into your own Power BI or Excel | Nothing | Nothing. Reads `#shared` |
 | `scripts/*.py` | Python checks, the same ones CI runs | Nothing | Nothing |
 | `lab/runner/`, `lab/shared-export/` | Open Power BI Desktop on this machine; the runner evaluates the example blocks there, limited to functions that compute on values (`scripts/m_blocks.py`) | Nothing | Nothing |
