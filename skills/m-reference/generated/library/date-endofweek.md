@@ -4,7 +4,7 @@ category: "Date"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -29,6 +29,8 @@ This function takes an optional `Day`, `firstDayOfWeek`, to set as the first day
 |---|---|---|
 | `dateTime` | `any` | no |
 | `firstDayOfWeek` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/date/date-endofweek.md](../../examples/date/date-endofweek.md)
 
 ## Examples (engine metadata — not verified here)
 

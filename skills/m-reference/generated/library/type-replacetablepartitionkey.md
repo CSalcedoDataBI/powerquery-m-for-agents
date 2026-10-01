@@ -4,7 +4,7 @@ category: "Type"
 returns: "type"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,3 +24,5 @@ Returns a new table type with the partition key replaced by the specified partit
 |---|---|---|
 | `tableType` | `type` | no |
 | `partitionKey` | `nullable list` | no |
+
+**Executed examples (3):** [examples/type/type-replacetablepartitionkey.md](../../examples/type/type-replacetablepartitionkey.md)

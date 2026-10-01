@@ -4,7 +4,7 @@ category: "Type"
 returns: "record"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Returns a record describing the fields of a record `type`. Each field of the ret
 | Name | Type | Optional |
 |---|---|---|
 | `type` | `type` | no |
+
+**Executed examples (3):** [examples/type/type-recordfields.md](../../examples/type/type-recordfields.md)
 
 ## Examples (engine metadata — not verified here)
 

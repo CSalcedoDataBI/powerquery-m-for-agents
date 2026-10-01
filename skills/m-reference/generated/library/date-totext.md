@@ -4,7 +4,7 @@ category: "Date"
 returns: "nullable text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -31,6 +31,8 @@ To support legacy workflows, `options` and `culture` may also be text values. Th
 | `date` | `nullable date` | no |
 | `options` | `any` | yes |
 | `culture` | `nullable text` | yes |
+
+**Executed examples (3):** [examples/date/date-totext.md](../../examples/date/date-totext.md)
 
 ## Examples (engine metadata — not verified here)
 

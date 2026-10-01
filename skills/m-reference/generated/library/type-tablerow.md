@@ -4,7 +4,7 @@ category: "Type"
 returns: "type"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Returns the row type of the specified table type. The result will always be a re
 | Name | Type | Optional |
 |---|---|---|
 | `table` | `type` | no |
+
+**Executed examples (3):** [examples/type/type-tablerow.md](../../examples/type/type-tablerow.md)
 
 ## Examples (engine metadata — not verified here)
 

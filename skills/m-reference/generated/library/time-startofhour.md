@@ -4,7 +4,7 @@ category: "Date"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns the start of the hour represented by `dateTime`.
 | Name | Type | Optional |
 |---|---|---|
 | `dateTime` | `any` | no |
+
+**Executed examples (3):** [examples/date/time-startofhour.md](../../examples/date/time-startofhour.md)
 
 ## Examples (engine metadata — not verified here)
 

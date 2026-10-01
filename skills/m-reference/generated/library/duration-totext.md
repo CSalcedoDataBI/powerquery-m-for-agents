@@ -4,7 +4,7 @@ category: "Duration"
 returns: "nullable text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -28,6 +28,8 @@ Returns a textual representation in the form "day.hour:mins:sec" of the given du
 |---|---|---|
 | `duration` | `nullable duration` | no |
 | `format` | `nullable text` | yes |
+
+**Executed examples (3):** [examples/duration/duration-totext.md](../../examples/duration/duration-totext.md)
 
 ## Examples (engine metadata — not verified here)
 

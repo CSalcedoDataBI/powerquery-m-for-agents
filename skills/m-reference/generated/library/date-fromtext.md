@@ -4,7 +4,7 @@ category: "Date"
 returns: "nullable date"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -34,6 +34,8 @@ To support legacy workflows, `options` can also be a text value. This has the sa
 |---|---|---|
 | `text` | `nullable text` | no |
 | `options` | `any` | yes |
+
+**Executed examples (3):** [examples/date/date-fromtext.md](../../examples/date/date-fromtext.md)
 
 ## Examples (engine metadata — not verified here)
 

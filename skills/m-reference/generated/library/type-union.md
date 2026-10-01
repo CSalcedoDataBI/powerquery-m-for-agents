@@ -4,7 +4,7 @@ category: "Type"
 returns: "type"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,3 +23,5 @@ Returns the union of the types in `types`.
 | Name | Type | Optional |
 |---|---|---|
 | `types` | `list` | no |
+
+**Executed examples (3):** [examples/type/type-union.md](../../examples/type/type-union.md)

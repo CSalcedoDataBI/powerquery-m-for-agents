@@ -1,0 +1,179 @@
+expression 'Duration.Days (1)' =
+		Duration.Days(#duration(1, 23, 0, 0))
+	lineageTag: faffe16b-1aac-562a-9fdf-879ec1b160ff
+	queryGroup: 'Duration.Days'
+
+expression 'Duration.Days (2)' =
+		Duration.Days(#duration(0, 5, 30, 0))
+	lineageTag: 062e6435-e114-5fb4-be84-824e462dd0ab
+	queryGroup: 'Duration.Days'
+
+expression 'Duration.Days (3)' =
+		Duration.Days(null)
+	lineageTag: cfb62e56-ef08-58c5-8edc-210710deba01
+	queryGroup: 'Duration.Days'
+
+expression 'Duration.From (1)' =
+		Duration.From(2.525)
+	lineageTag: 9fb14408-2199-54c9-8e43-49a7b32649fc
+	queryGroup: 'Duration.From'
+
+expression 'Duration.From (2)' =
+		Duration.From("2.05:55:20.34567")
+	lineageTag: afac64fa-e60e-5438-aa15-25d835833378
+	queryGroup: 'Duration.From'
+
+expression 'Duration.From (3)' =
+		Duration.From(null)
+	lineageTag: 5bd48647-df1f-5e9f-90f3-f46bcde0d208
+	queryGroup: 'Duration.From'
+
+expression 'Duration.FromText (1)' =
+		Duration.FromText(null)
+	lineageTag: 989154c1-5f91-5152-9c5e-5004fd3081a7
+	queryGroup: 'Duration.FromText'
+
+expression 'Duration.FromText (2)' =
+		Duration.FromText("01:02")
+	lineageTag: 9285beee-2c59-5742-a970-65c60bf23b05
+	queryGroup: 'Duration.FromText'
+
+expression 'Duration.FromText (3)' =
+		Duration.FromText("1.01:02:03.5")
+	lineageTag: 50c6eeee-ad33-590b-afe0-c423b93bd7ac
+	queryGroup: 'Duration.FromText'
+
+expression 'Duration.Hours (1)' =
+		Duration.Hours(null)
+	lineageTag: 7784bf64-9527-55fe-bbb0-4d52ded9420e
+	queryGroup: 'Duration.Hours'
+
+expression 'Duration.Hours (2)' =
+		Duration.Hours(#duration(5, 4, 3, 2))
+	lineageTag: daaf8de5-ebae-590a-ba04-fd2b95758dfe
+	queryGroup: 'Duration.Hours'
+
+expression 'Duration.Hours (3)' =
+		Duration.Hours(#duration(0, 25, 0, 0))
+	lineageTag: a3f511ac-5c2e-50fe-83f1-63abbb17f638
+	queryGroup: 'Duration.Hours'
+
+expression 'Duration.Minutes (1)' =
+		Duration.Minutes(null)
+	lineageTag: 8629329a-4874-571b-91c6-b93b79135ce0
+	queryGroup: 'Duration.Minutes'
+
+expression 'Duration.Minutes (2)' =
+		Duration.Minutes(#duration(0, 2, 75, 0))
+	lineageTag: 84cb283f-f8df-544e-a1cd-9e65ac256bdd
+	queryGroup: 'Duration.Minutes'
+
+expression 'Duration.Minutes (3)' =
+		Duration.Minutes(#duration(0, 5, 0, 0))
+	lineageTag: dfbc9108-2ffa-5a2b-b9c6-6bb606bb639c
+	queryGroup: 'Duration.Minutes'
+
+expression 'Duration.Seconds (1)' =
+		Duration.Seconds(null)
+	lineageTag: e357699d-af89-57e0-bf06-99de3c0184f7
+	queryGroup: 'Duration.Seconds'
+
+expression 'Duration.Seconds (2)' =
+		Duration.Seconds(#duration(2, 10, 30, 45))
+	lineageTag: 9e4c263a-c394-57eb-84ba-9ba4f64c199d
+	queryGroup: 'Duration.Seconds'
+
+expression 'Duration.Seconds (3)' =
+		Duration.Seconds(#duration(0, 0, 0, 90))
+	lineageTag: 93a55523-f2d5-52d7-ad53-2b59139a531c
+	queryGroup: 'Duration.Seconds'
+
+expression 'Duration.ToRecord (1)' =
+		Duration.ToRecord(#duration(0, 25, 0, 0))
+	lineageTag: 5c097739-c2f2-5a6b-a6f5-dfb3254d9067
+	queryGroup: 'Duration.ToRecord'
+
+expression 'Duration.ToRecord (2)' =
+		Duration.ToRecord(#duration(0, 0, 0, 1.5))
+	lineageTag: ecdc2693-a333-52c5-9a8f-6b1ae12f2430
+	queryGroup: 'Duration.ToRecord'
+
+expression 'Duration.ToRecord (3)' =
+		Duration.ToRecord(null)
+	lineageTag: 4d5c27cd-accc-5307-bfb7-f0a8f14074f0
+	queryGroup: 'Duration.ToRecord'
+
+expression 'Duration.TotalDays (1)' =
+		Duration.TotalDays(null)
+	lineageTag: fcf8c2f8-52fd-5682-a4c8-1dc6882f1320
+	queryGroup: 'Duration.TotalDays'
+
+expression 'Duration.TotalDays (2)' =
+		Duration.TotalDays(#duration(0, 23, 59, 59))
+	lineageTag: cb7c031e-00cf-58be-9c0c-9bfdd4900b03
+	queryGroup: 'Duration.TotalDays'
+
+expression 'Duration.TotalDays (3)' =
+		Duration.TotalDays(#duration(-2, -12, 0, 0))
+	lineageTag: 97a253e6-e99e-5011-83ad-92fed372c382
+	queryGroup: 'Duration.TotalDays'
+
+expression 'Duration.TotalHours (1)' =
+		Duration.TotalHours(null)
+	lineageTag: 2262381d-a426-5bf6-9f1d-84605647264e
+	queryGroup: 'Duration.TotalHours'
+
+expression 'Duration.TotalHours (2)' =
+		Duration.TotalHours(#duration(2, 3, 0, 0))
+	lineageTag: a16d0fda-ca57-549b-a174-d172934d974b
+	queryGroup: 'Duration.TotalHours'
+
+expression 'Duration.TotalHours (3)' =
+		Duration.TotalHours(#duration(0, 0, 90, 0))
+	lineageTag: ed7fdc13-67b7-5a5b-b959-f8d6552df4b1
+	queryGroup: 'Duration.TotalHours'
+
+expression 'Duration.TotalMinutes (1)' =
+		Duration.TotalMinutes(null)
+	lineageTag: 17055d5f-8b53-5a59-bba2-4c514d0dd999
+	queryGroup: 'Duration.TotalMinutes'
+
+expression 'Duration.TotalMinutes (2)' =
+		Duration.TotalMinutes(#duration(0, 1, 30, 0))
+	lineageTag: 3a4611b4-d255-555c-81a3-ba8113b195ce
+	queryGroup: 'Duration.TotalMinutes'
+
+expression 'Duration.TotalMinutes (3)' =
+		Duration.TotalMinutes(#duration(0, 0, 0, 30))
+	lineageTag: f1143183-d1d0-5a7b-a99c-7ed739c8e055
+	queryGroup: 'Duration.TotalMinutes'
+
+expression 'Duration.TotalSeconds (1)' =
+		Duration.TotalSeconds(#duration(0, 0, 0, 1.5))
+	lineageTag: d9ec5f14-8104-5f2a-9616-865f56a98833
+	queryGroup: 'Duration.TotalSeconds'
+
+expression 'Duration.TotalSeconds (2)' =
+		Duration.TotalSeconds(#duration(0, 25, 0, 0))
+	lineageTag: 70154a8a-6790-5c67-816a-ede8326c7105
+	queryGroup: 'Duration.TotalSeconds'
+
+expression 'Duration.TotalSeconds (3)' =
+		Duration.TotalSeconds(null)
+	lineageTag: c1cf84a4-c847-522e-b21b-0cc43b1451fa
+	queryGroup: 'Duration.TotalSeconds'
+
+expression 'Duration.ToText (1)' =
+		Duration.ToText(null)
+	lineageTag: 0f93965e-c513-517b-af97-9331faf08725
+	queryGroup: 'Duration.ToText'
+
+expression 'Duration.ToText (2)' =
+		Duration.ToText(#duration(0, 5, 6, 7), null)
+	lineageTag: 5296885d-e9bc-5854-bbf0-eed4b18455e5
+	queryGroup: 'Duration.ToText'
+
+expression 'Duration.ToText (3)' =
+		Duration.ToText(#duration(1, 2, 3, 4), "d.hh:mm:ss")
+	lineageTag: 49463a39-0638-5000-82fa-3a8d1b3f718c
+	queryGroup: 'Duration.ToText'

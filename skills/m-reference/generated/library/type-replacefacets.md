@@ -4,7 +4,7 @@ category: "Type"
 returns: "type"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,3 +24,5 @@ Replaces the facets of `type` with the facets contained in the record `facets`.
 |---|---|---|
 | `type` | `type` | no |
 | `facets` | `record` | no |
+
+**Executed examples (3):** [examples/type/type-replacefacets.md](../../examples/type/type-replacefacets.md)

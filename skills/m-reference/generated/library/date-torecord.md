@@ -4,7 +4,7 @@ category: "Date"
 returns: "record"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ Returns a record containing the parts of the given date value, `date`.
 | Name | Type | Optional |
 |---|---|---|
 | `date` | `date` | no |
+
+**Executed examples (3):** [examples/date/date-torecord.md](../../examples/date/date-torecord.md)
 
 ## Examples (engine metadata — not verified here)
 

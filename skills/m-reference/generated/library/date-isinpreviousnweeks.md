@@ -4,7 +4,7 @@ category: "Date"
 returns: "nullable logical"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -28,6 +28,8 @@ Indicates whether the given datetime value `dateTime` occurs during the previous
 |---|---|---|
 | `dateTime` | `any` | no |
 | `weeks` | `number` | no |
+
+**Executed examples (3):** [examples/date/date-isinpreviousnweeks.md](../../examples/date/date-isinpreviousnweeks.md)
 
 ## Examples (engine metadata — not verified here)
 

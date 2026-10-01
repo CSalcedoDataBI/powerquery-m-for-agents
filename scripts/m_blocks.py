@@ -130,7 +130,8 @@ PURE_NAMES = {"Table.WithErrorContext", "Csv.Document", "Json.Document", "Xml.Do
 # zone, its clock, its culture (the reason #shared exports TimeZone.Current as null).
 MACHINE_NAMES = {"DateTime.LocalNow", "DateTime.FixedLocalNow", "DateTimeZone.LocalNow",
                  "DateTimeZone.FixedLocalNow", "DateTimeZone.UtcNow", "DateTimeZone.FixedUtcNow",
-                 "DateTimeZone.ToLocal", "Culture.Current", "TimeZone.Current"}
+                 "DateTimeZone.ToLocal", "Culture.Current", "TimeZone.Current",
+                 "DateTime.FromFileTime", "DateTimeZone.FromFileTime"}
 NEWLINE_RE = re.compile("[\r\n\u0085\u2028\u2029]")
 ESCAPE_RE = re.compile(r"#\(([^()]*)\)")
 SINGLE_ESCAPES = {"cr": chr(13), "lf": chr(10), "tab": chr(9), "#": "#"}

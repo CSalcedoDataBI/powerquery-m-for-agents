@@ -4,7 +4,7 @@ category: "DateTime"
 returns: "nullable date"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Returns the date component of the `dateTime` parameter if the parameter is a `da
 | Name | Type | Optional |
 |---|---|---|
 | `dateTime` | `any` | no |
+
+**Executed examples (3):** [examples/datetime/datetime-date.md](../../examples/datetime/datetime-date.md)
 
 ## Examples (engine metadata — not verified here)
 

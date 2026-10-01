@@ -4,7 +4,7 @@ category: "Duration"
 returns: "nullable duration"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -39,6 +39,8 @@ Returns a duration value from the specified text, `text`. The following formats 
 | Name | Type | Optional |
 |---|---|---|
 | `text` | `nullable text` | no |
+
+**Executed examples (3):** [examples/duration/duration-fromtext.md](../../examples/duration/duration-fromtext.md)
 
 ## Examples (engine metadata — not verified here)
 

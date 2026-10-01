@@ -4,7 +4,7 @@ category: "Date"
 returns: "nullable number"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -28,6 +28,8 @@ Returns a number from 1 to 54 indicating which week of the year the date, `dateT
 |---|---|---|
 | `dateTime` | `any` | no |
 | `firstDayOfWeek` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/date/date-weekofyear.md](../../examples/date/date-weekofyear.md)
 
 ## Examples (engine metadata — not verified here)
 

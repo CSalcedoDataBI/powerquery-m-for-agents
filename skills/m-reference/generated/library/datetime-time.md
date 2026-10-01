@@ -4,7 +4,7 @@ category: "DateTime"
 returns: "nullable time"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Returns the time part of the given datetime value, `dateTime`.
 | Name | Type | Optional |
 |---|---|---|
 | `dateTime` | `any` | no |
+
+**Executed examples (3):** [examples/datetime/datetime-time.md](../../examples/datetime/datetime-time.md)
 
 ## Examples (engine metadata — not verified here)
 

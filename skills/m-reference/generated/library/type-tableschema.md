@@ -4,7 +4,7 @@ category: "Type"
 returns: "table"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,3 +25,5 @@ Refer to the documentation for `Table.Schema` for a description of the resulting
 | Name | Type | Optional |
 |---|---|---|
 | `tableType` | `type` | no |
+
+**Executed examples (3):** [examples/type/type-tableschema.md](../../examples/type/type-tableschema.md)

@@ -4,7 +4,7 @@ category: "Type"
 returns: "logical"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Determines if a value of `type1` is always compatible with `type2`. Parameter `t
 |---|---|---|
 | `type1` | `type` | no |
 | `type2` | `type` | no |
+
+**Executed examples (3):** [examples/type/type-is.md](../../examples/type/type-is.md)
 
 ## Examples (engine metadata — not verified here)
 

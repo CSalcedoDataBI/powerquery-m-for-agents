@@ -4,7 +4,7 @@ category: "Date"
 returns: "nullable number"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 4
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Returns a number from 1 to 4 indicating which quarter of the year the date `date
 | Name | Type | Optional |
 |---|---|---|
 | `dateTime` | `any` | no |
+
+**Executed examples (4):** [examples/date/date-quarterofyear.md](../../examples/date/date-quarterofyear.md)
 
 ## Examples (engine metadata — not verified here)
 
