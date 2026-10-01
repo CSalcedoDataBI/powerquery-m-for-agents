@@ -1,6 +1,6 @@
 ---
 name: m-reference
-description: Use when you need to know whether a Power Query M library function exists, its exact signature and parameter types, what it returns, which hosts have it (Power BI Desktop, Excel, Dataflows Gen2), or which of several similar functions to reach for — and for the M language itself when no single function is in question, such as let/in, each and the underscore, records, lists and tables, types and metadata, try/otherwise/catch, lazy evaluation and streaming. The canonical reference for Power Query M. Triggers on "what does X do in M", "Power Query function signature", "is there an M function to", "Table.Join vs Table.NestedJoin", "does X exist in Excel Power Query", "M syntax", "each _", "try otherwise", "Power Query types".
+description: Use when you need to know whether a Power Query M library function exists, its exact signature and parameter types, what it returns, which hosts have it (Power BI Desktop, Excel, Dataflows Gen2), or which of several similar functions to reach for — and for the M language itself when no single function is in question, such as let/in, each and the underscore, records, lists and tables, types and metadata, try/otherwise/catch, lazy evaluation and streaming. Triggers on "what does X do in M", "Power Query function signature", "is there an M function to", "Table.Join vs Table.NestedJoin", "does X exist in Excel Power Query", "M syntax", "each _", "try otherwise", "Power Query types".
 ---
 
 # M Reference
@@ -11,9 +11,8 @@ exists in the host it names. See
 [the design spec](../../docs/superpowers/specs/2026-09-28-powerquery-m-for-agents-design.md).
 
 > **Status.** `generated/` is built from one export: Power BI Desktop (the host and build are
-> in the header of `catalog.md`). No other host yet, so no card carries ⌂. Executed examples
-> cover every `Text.*`, `List.*` and `Table.*` library function; the ★ and ▶ counts are in
-> `catalog.md`.
+> in the header of `catalog.md`). No other host yet, so no card carries ⌂. Which functions
+> have executed examples is the ▶ flag in `catalog.md`.
 
 ## How to use this
 
@@ -23,9 +22,10 @@ tables, types, `try`/`otherwise`/`catch`, laziness - no function answers. Read
 
 **A question about a function. One hop. Do not read the whole library.**
 
-1. Read **`generated/catalog.md`**. Every library function, one row each: name, category,
-   return type, flags, one-line summary. Looking for a connector (`Snowflake.Databases`,
-   `Stripe.Contents`)? Read **`generated/connectors.md`** instead. A constant or type value
+1. **Search** **`generated/catalog.md`** for the name or its prefix (`Table.Join`, `Text.`);
+   do not read it whole. Every library function has one row: name, category, return type,
+   flags, one-line summary. Looking for a connector (`Snowflake.Databases`,
+   `Stripe.Contents`)? Search **`generated/connectors.md`** instead. A constant or type value
    (`JoinKind.Inner`, `Int64.Type`)? **`generated/constants.md`**, which already holds the
    whole answer: there are no constant cards.
 2. Find the function. Open its card: **`generated/library/<file>.md`** (file naming below).
@@ -35,14 +35,14 @@ tables, types, `try`/`otherwise`/`catch`, laziness - no function answers. Read
 4. Flag **▶** → the card links to **`examples/<category>/<file>.md`**: queries executed in
    this repository's lab, each with the value the engine returned. Prefer these over the
    card's own `## Examples` section, whose stated results nobody ran.
+5. Flag **⌂** → the function is missing from at least one exported host. The card says
+   which ones have it. Check before suggesting it for Excel or a dataflow.
 
 In `concepts/`, `notes/` and `examples/`, the ```` ```text ```` block after each ```` ```m ````
 block is what the engine returned, written by the lab runner, never typed. Results are M
 literals; an error shows as `error: <Reason>: <Message>`.
-5. Flag **⌂** → the function is missing from at least one exported host. The card says
-   which ones have it. Check before suggesting it for Excel or a dataflow.
 
-**A name that is in none of `catalog.md`, `connectors.md` and `constants.md` does not exist
+**A name that matches none of `catalog.md`, `connectors.md` and `constants.md` does not exist
 in any exported host.** Say so rather than offering it. That covers functions, connector
 entry points and constants such as `GroupKind.Local` or `Occurrence.All`. One kind of name is
 **not** covered, so its absence proves nothing:
@@ -53,9 +53,6 @@ entry points and constants such as `GroupKind.Local` or `Occurrence.All`. One ki
 A connector is a function the engine gives no category, under a prefix no library function
 uses. Many carry no description. Data-access functions the engine documents (`Csv.Document`,
 `Web.Contents`, `Sql.Database`, …) are library, in `catalog.md`.
-
-The card section `## Examples (engine metadata — not verified here)` is copied from the
-function's own `Documentation.Examples`. Useful for shape; not evidence.
 
 ## Layout
 
@@ -73,54 +70,11 @@ function's own `Documentation.Examples`. Useful for shape; not evidence.
 | `scripts/export_shared.pq` | The M query that dumps `#shared` (functions and constants) as JSON |
 | `scripts/sync_shared.py` | JSON exports → `generated/` |
 
-Card file names: lower case, dot becomes a dash (`Table.AddColumn` → `table-addcolumn`),
-`#` becomes `hash-` (`#date` → `hash-date`).
+Card file names: lower case, every run of non-alphanumerics becomes one dash
+(`Table.AddColumn` → `table-addcolumn`).
 
-## Regenerating
-
-**Power BI Desktop, automated** (from the repo root, with Desktop closed or open on
-something else — the script only touches the engine it starts):
-
-```bash
-python lab/shared-export/build_pbip.py --host desktop --host-version <Desktop build>
-powershell.exe -ExecutionPolicy Bypass -File lab/shared-export/export_desktop.ps1
-```
-
-**Any other host, by hand:**
-
-1. Paste `scripts/export_shared.pq` into a blank query in the host; set `Host` and
-   `HostVersion`.
-2. Save the resulting JSON (concatenate the `json` chunks in `part` order, or save the chunk
-   table as JSON — the sync accepts both) to `exports/<host>-<version>.json`.
-
-Then report, and write:
-
-```bash
-python skills/m-reference/scripts/sync_shared.py exports/desktop.json exports/excel.json
-python skills/m-reference/scripts/sync_shared.py exports/desktop.json exports/excel.json --write
-```
-
-The first export named wins each card; the rest only contribute `hosts`. Gates: an export
-with fewer than 100 functions, two names mapping to one file, an orphan note, or the count
-moving more than 5% (override with `--accept-count-change`). The new tree is built in a
-scratch directory and swapped in one move.
-
-## Running the examples
-
-Every ```` ```m ```` block under `skills/` is run by `lab/runner/run_examples.py` in Power BI
-Desktop, each block in its own refresh, and its result written below it. Keep one Desktop
-open for the session instead of one per run:
-
-```bash
-python lab/runner/run_examples.py --open
-python lab/runner/run_examples.py --port <port> --write
-python lab/runner/run_examples.py --port <port> --check
-```
-
-The port is the one Desktop's engine listens on (the `powerbi-modeling` MCP lists it as a
-local instance). CI cannot run Desktop; `scripts/check_examples.py` checks there that every
-block has a result, that examples sit under their card's category, and that every dotted
-library name in these pages is in the export or was printed by the engine.
+Regenerating `generated/` or running the lab is maintainer work, in
+[MAINTAINING.md](MAINTAINING.md). Answering a question about M never needs it.
 
 ## Related skills
 
