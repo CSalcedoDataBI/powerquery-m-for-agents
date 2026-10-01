@@ -1,0 +1,120 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "table",
+  "position": {
+    "x": 300,
+    "y": 80,
+    "z": 2,
+    "width": 956,
+    "height": 620
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BinaryFormatsControllingWhatComesNext"
+                    }
+                  },
+                  "Property": "Function"
+                }
+              },
+              "queryRef": "BinaryFormatsControllingWhatComesNext.Function",
+              "nativeQueryRef": "Function"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BinaryFormatsControllingWhatComesNext"
+                    }
+                  },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "BinaryFormatsControllingWhatComesNext.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BinaryFormatsControllingWhatComesNext"
+                    }
+                  },
+                  "Property": "Block"
+                }
+              },
+              "queryRef": "BinaryFormatsControllingWhatComesNext.Block",
+              "nativeQueryRef": "Block"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BinaryFormatsControllingWhatComesNext"
+                    }
+                  },
+                  "Property": "Code"
+                }
+              },
+              "queryRef": "BinaryFormatsControllingWhatComesNext.Code",
+              "nativeQueryRef": "Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BinaryFormatsControllingWhatComesNext"
+                    }
+                  },
+                  "Property": "Recorded"
+                }
+              },
+              "queryRef": "BinaryFormatsControllingWhatComesNext.Recorded",
+              "nativeQueryRef": "Recorded"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BinaryFormatsControllingWhatComesNext"
+                    }
+                  },
+                  "Property": "Live"
+                }
+              },
+              "queryRef": "BinaryFormatsControllingWhatComesNext.Live",
+              "nativeQueryRef": "Live"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BinaryFormatsControllingWhatComesNext"
+                    }
+                  },
+                  "Property": "Match"
+                }
+              },
+              "queryRef": "BinaryFormatsControllingWhatComesNext.Match",
+              "nativeQueryRef": "Match"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

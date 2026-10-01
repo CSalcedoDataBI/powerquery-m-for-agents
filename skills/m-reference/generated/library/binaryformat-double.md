@@ -4,7 +4,7 @@ category: "Binary Formats.Reading numbers"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 4
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,3 +23,5 @@ A binary format that reads an 8-byte IEEE double-precision floating point value.
 | Name | Type | Optional |
 |---|---|---|
 | `binary` | `binary` | no |
+
+**Executed examples (4):** [examples/binary-formats-reading-numbers/binaryformat-double.md](../../examples/binary-formats-reading-numbers/binaryformat-double.md)

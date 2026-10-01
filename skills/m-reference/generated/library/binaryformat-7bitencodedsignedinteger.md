@@ -4,7 +4,7 @@ category: "Binary Formats.Reading numbers"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 4
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,3 +23,5 @@ A binary format that reads a 64-bit signed integer that was encoded using a 7-bi
 | Name | Type | Optional |
 |---|---|---|
 | `binary` | `binary` | no |
+
+**Executed examples (4):** [examples/binary-formats-reading-numbers/binaryformat-7bitencodedsignedinteger.md](../../examples/binary-formats-reading-numbers/binaryformat-7bitencodedsignedinteger.md)

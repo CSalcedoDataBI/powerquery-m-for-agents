@@ -4,7 +4,7 @@ category: "Binary Formats.Controlling what comes next"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 2
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,3 +23,5 @@ A binary format that reads zero bytes and returns null.
 | Name | Type | Optional |
 |---|---|---|
 | `binary` | `binary` | no |
+
+**Executed examples (2):** [examples/binary-formats-controlling-what-comes-next/binaryformat-null.md](../../examples/binary-formats-controlling-what-comes-next/binaryformat-null.md)

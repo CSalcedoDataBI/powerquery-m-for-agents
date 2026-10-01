@@ -1,0 +1,120 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "table",
+  "position": {
+    "x": 300,
+    "y": 80,
+    "z": 2,
+    "width": 956,
+    "height": 620
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BinaryFormatsReadingRecords"
+                    }
+                  },
+                  "Property": "Function"
+                }
+              },
+              "queryRef": "BinaryFormatsReadingRecords.Function",
+              "nativeQueryRef": "Function"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BinaryFormatsReadingRecords"
+                    }
+                  },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "BinaryFormatsReadingRecords.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BinaryFormatsReadingRecords"
+                    }
+                  },
+                  "Property": "Block"
+                }
+              },
+              "queryRef": "BinaryFormatsReadingRecords.Block",
+              "nativeQueryRef": "Block"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BinaryFormatsReadingRecords"
+                    }
+                  },
+                  "Property": "Code"
+                }
+              },
+              "queryRef": "BinaryFormatsReadingRecords.Code",
+              "nativeQueryRef": "Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BinaryFormatsReadingRecords"
+                    }
+                  },
+                  "Property": "Recorded"
+                }
+              },
+              "queryRef": "BinaryFormatsReadingRecords.Recorded",
+              "nativeQueryRef": "Recorded"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BinaryFormatsReadingRecords"
+                    }
+                  },
+                  "Property": "Live"
+                }
+              },
+              "queryRef": "BinaryFormatsReadingRecords.Live",
+              "nativeQueryRef": "Live"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "BinaryFormatsReadingRecords"
+                    }
+                  },
+                  "Property": "Match"
+                }
+              },
+              "queryRef": "BinaryFormatsReadingRecords.Match",
+              "nativeQueryRef": "Match"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

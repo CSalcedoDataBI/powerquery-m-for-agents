@@ -1,0 +1,200 @@
+expression 'BinaryFormat.7BitEncodedSignedInteger (1)' =
+		BinaryFormat.7BitEncodedSignedInteger(#binary({0x40}))
+	lineageTag: 35024a12-489e-58d3-94ee-e0bc4245b0cd
+	queryGroup: 'BinaryFormat.7BitEncodedSignedInteger'
+
+expression 'BinaryFormat.7BitEncodedSignedInteger (2)' =
+		BinaryFormat.7BitEncodedSignedInteger(#binary({0xC0, 0x00}))
+	lineageTag: fc8db8fc-eb77-5c23-b112-36ac5433561b
+	queryGroup: 'BinaryFormat.7BitEncodedSignedInteger'
+
+expression 'BinaryFormat.7BitEncodedSignedInteger (3)' =
+		BinaryFormat.7BitEncodedSignedInteger(#binary({0x01}))
+	lineageTag: b9516bc6-4bc3-5096-b924-f689930a1b6f
+	queryGroup: 'BinaryFormat.7BitEncodedSignedInteger'
+
+expression 'BinaryFormat.7BitEncodedSignedInteger (4)' =
+		BinaryFormat.7BitEncodedSignedInteger(null)
+	lineageTag: f3e77a3c-bf0f-5c0f-a01b-90dec59045fd
+	queryGroup: 'BinaryFormat.7BitEncodedSignedInteger'
+
+expression 'BinaryFormat.7BitEncodedUnsignedInteger (1)' =
+		BinaryFormat.7BitEncodedUnsignedInteger(null)
+	lineageTag: 24d2ad5c-ab8c-5526-9091-dd3dd85dd264
+	queryGroup: 'BinaryFormat.7BitEncodedUnsignedInteger'
+
+expression 'BinaryFormat.7BitEncodedUnsignedInteger (2)' =
+		BinaryFormat.7BitEncodedUnsignedInteger(#binary({0xAC, 0x02}))
+	lineageTag: a2ba20ab-67e5-5208-a5fb-3cc5c039298f
+	queryGroup: 'BinaryFormat.7BitEncodedUnsignedInteger'
+
+expression 'BinaryFormat.7BitEncodedUnsignedInteger (3)' =
+		BinaryFormat.7BitEncodedUnsignedInteger(#binary({0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x01}))
+	lineageTag: 90165d3d-10b8-56c6-8447-ff0c34cdbc3f
+	queryGroup: 'BinaryFormat.7BitEncodedUnsignedInteger'
+
+expression 'BinaryFormat.Byte (1)' =
+		BinaryFormat.Byte(#binary({0xFF, 0x00}))
+	lineageTag: c8a79151-0262-55e5-9d7b-8ced4144ed94
+	queryGroup: 'BinaryFormat.Byte'
+
+expression 'BinaryFormat.Byte (2)' =
+		BinaryFormat.Byte(#binary({}))
+	lineageTag: 91be850e-fdc7-5589-b32c-e4211f31503a
+	queryGroup: 'BinaryFormat.Byte'
+
+expression 'BinaryFormat.Byte (3)' =
+		BinaryFormat.Byte(null)
+	lineageTag: 85d1f673-7124-58ff-b9b7-6ea28c191396
+	queryGroup: 'BinaryFormat.Byte'
+
+expression 'BinaryFormat.Decimal (1)' =
+		BinaryFormat.Decimal(#binary({1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}))
+	lineageTag: f0ec5a61-44ef-51f3-b96d-261f5b62b8f4
+	queryGroup: 'BinaryFormat.Decimal'
+
+expression 'BinaryFormat.Decimal (2)' =
+		BinaryFormat.Decimal(#binary({1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0}))
+	lineageTag: 07d18e84-bcc6-5a2b-9e91-e19f1df4cb9c
+	queryGroup: 'BinaryFormat.Decimal'
+
+expression 'BinaryFormat.Decimal (3)' =
+		BinaryFormat.Decimal(null)
+	lineageTag: 830bb94c-dde5-58e9-8bae-9fc63f5bb06a
+	queryGroup: 'BinaryFormat.Decimal'
+
+expression 'BinaryFormat.Double (1)' =
+		BinaryFormat.Double(#binary({0x3F, 0xF0, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}))
+	lineageTag: 9b6709d4-a0a0-57ac-b883-159f89d85595
+	queryGroup: 'BinaryFormat.Double'
+
+expression 'BinaryFormat.Double (2)' =
+		BinaryFormat.ByteOrder(BinaryFormat.Double, ByteOrder.LittleEndian)(#binary({0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xF0, 0x3F}))
+	lineageTag: 9af28c2b-82e9-5dc8-96f5-8a363ca5b177
+	queryGroup: 'BinaryFormat.Double'
+
+expression 'BinaryFormat.Double (3)' =
+		let
+		    LE = (bytes) => BinaryFormat.ByteOrder(BinaryFormat.Double, ByteOrder.LittleEndian)(Binary.FromList(bytes))
+		in
+		    [
+		        SmallestPositive = LE({1, 0, 0, 0, 0, 0, 0, 0}),
+		        NegativeZero = LE({0, 0, 0, 0, 0, 0, 0, 0x80}),
+		        PositiveInfinity = LE({0, 0, 0, 0, 0, 0, 0xF0, 0x7F}),
+		        NaN = LE({0, 0, 0, 0, 0, 0, 0xF8, 0x7F})
+		    ]
+	lineageTag: d05448a2-4026-5971-a7c1-714b5f54c9d5
+	queryGroup: 'BinaryFormat.Double'
+
+expression 'BinaryFormat.Double (4)' =
+		BinaryFormat.Double(0x3FF0000000000000)
+	lineageTag: 970c888b-1e3c-5cd8-8c0b-3dd874586717
+	queryGroup: 'BinaryFormat.Double'
+
+expression 'BinaryFormat.SignedInteger16 (1)' =
+		BinaryFormat.SignedInteger16(#binary({0xFF, 0xFF}))
+	lineageTag: afc2a544-6bc0-5885-8e87-8d900218006d
+	queryGroup: 'BinaryFormat.SignedInteger16'
+
+expression 'BinaryFormat.SignedInteger16 (2)' =
+		BinaryFormat.List(BinaryFormat.SignedInteger16)(#binary({0x01, 0x00, 0x00, 0x01}))
+	lineageTag: 4a8bd668-8bd3-5a8e-8cf9-0b609815464a
+	queryGroup: 'BinaryFormat.SignedInteger16'
+
+expression 'BinaryFormat.SignedInteger16 (3)' =
+		BinaryFormat.SignedInteger16(#binary({0x7F}))
+	lineageTag: 7a13b502-d4a0-530b-803b-573b37629e68
+	queryGroup: 'BinaryFormat.SignedInteger16'
+
+expression 'BinaryFormat.SignedInteger32 (1)' =
+		BinaryFormat.SignedInteger32(Binary.FromList({255, 255, 255, 255}))
+	lineageTag: cbaf98bb-b9a0-5112-90ad-0c0008874bec
+	queryGroup: 'BinaryFormat.SignedInteger32'
+
+expression 'BinaryFormat.SignedInteger32 (2)' =
+		BinaryFormat.SignedInteger32(Binary.FromList({0, 0, 0}))
+	lineageTag: 3586e289-60d1-5317-9423-00a94c0ce803
+	queryGroup: 'BinaryFormat.SignedInteger32'
+
+expression 'BinaryFormat.SignedInteger32 (3)' =
+		BinaryFormat.SignedInteger32(null)
+	lineageTag: 7e7e8bfc-e975-5de9-a413-6a822d83b1aa
+	queryGroup: 'BinaryFormat.SignedInteger32'
+
+expression 'BinaryFormat.SignedInteger64 (1)' =
+		BinaryFormat.SignedInteger64(#binary({0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x2A}))
+	lineageTag: e732c750-1005-5418-8a40-374baad2c4f9
+	queryGroup: 'BinaryFormat.SignedInteger64'
+
+expression 'BinaryFormat.SignedInteger64 (2)' =
+		BinaryFormat.SignedInteger64(#binary({0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}))
+	lineageTag: da50bde0-2a47-596a-a253-fdd553ee7d56
+	queryGroup: 'BinaryFormat.SignedInteger64'
+
+expression 'BinaryFormat.SignedInteger64 (3)' =
+		BinaryFormat.SignedInteger64(#binary({0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}))
+	lineageTag: 2e002077-0cdf-5c91-91f9-8698ea30ad57
+	queryGroup: 'BinaryFormat.SignedInteger64'
+
+expression 'BinaryFormat.Single (1)' =
+		BinaryFormat.Single(#binary({0x00, 0x00, 0x80, 0x3F}))
+	lineageTag: 96d14c78-a93d-5017-aabc-23fc0c16dab2
+	queryGroup: 'BinaryFormat.Single'
+
+expression 'BinaryFormat.Single (2)' =
+		BinaryFormat.Single(#binary({0x3F, 0x80, 0x00, 0x00}))
+	lineageTag: 2c8920fb-f458-5a3b-827a-cc357bae21c7
+	queryGroup: 'BinaryFormat.Single'
+
+expression 'BinaryFormat.Single (3)' =
+		BinaryFormat.Single(null)
+	lineageTag: bbe3f566-acab-5352-9f34-710fc377416a
+	queryGroup: 'BinaryFormat.Single'
+
+expression 'BinaryFormat.UnsignedInteger16 (1)' =
+		BinaryFormat.UnsignedInteger16(#binary({0x01, 0x00}))
+	lineageTag: 9d2a4c5e-ba03-5f91-a1b3-936761dd16ae
+	queryGroup: 'BinaryFormat.UnsignedInteger16'
+
+expression 'BinaryFormat.UnsignedInteger16 (2)' =
+		BinaryFormat.UnsignedInteger16(#binary({0x01}))
+	lineageTag: c22a93e2-6c89-5750-a5af-d02cf09bc08a
+	queryGroup: 'BinaryFormat.UnsignedInteger16'
+
+expression 'BinaryFormat.UnsignedInteger16 (3)' =
+		BinaryFormat.UnsignedInteger16(null)
+	lineageTag: 81ea2892-8bce-5804-a86f-85bf1f9b581f
+	queryGroup: 'BinaryFormat.UnsignedInteger16'
+
+expression 'BinaryFormat.UnsignedInteger32 (1)' =
+		BinaryFormat.UnsignedInteger32(#binary({0xFF, 0xFF, 0xFF, 0xFF}))
+	lineageTag: de9bcbc9-6cce-54d8-9b50-c7713989a903
+	queryGroup: 'BinaryFormat.UnsignedInteger32'
+
+expression 'BinaryFormat.UnsignedInteger32 (2)' =
+		[
+		    defaultByteOrder = BinaryFormat.UnsignedInteger32(#binary({0x01, 0x00, 0x00, 0x00})),
+		    littleEndian = BinaryFormat.ByteOrder(BinaryFormat.UnsignedInteger32, ByteOrder.LittleEndian)(#binary({0x01, 0x00, 0x00, 0x00}))
+		]
+	lineageTag: 57ad4bfc-4d21-5b16-954c-dc9ea233f619
+	queryGroup: 'BinaryFormat.UnsignedInteger32'
+
+expression 'BinaryFormat.UnsignedInteger32 (3)' =
+		BinaryFormat.UnsignedInteger32(null)
+	lineageTag: b73a3a21-36ea-5cf2-9f61-a5b4be7f2983
+	queryGroup: 'BinaryFormat.UnsignedInteger32'
+
+expression 'BinaryFormat.UnsignedInteger64 (1)' =
+		BinaryFormat.UnsignedInteger64(#binary({0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08}))
+	lineageTag: dc243829-a51f-5c39-bc7a-0c1b649b96a9
+	queryGroup: 'BinaryFormat.UnsignedInteger64'
+
+expression 'BinaryFormat.UnsignedInteger64 (2)' =
+		BinaryFormat.UnsignedInteger64(#binary({0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}))
+	lineageTag: 24258b68-8079-5e1c-9c2d-c6cf1131314f
+	queryGroup: 'BinaryFormat.UnsignedInteger64'
+
+expression 'BinaryFormat.UnsignedInteger64 (3)' =
+		List.Transform({null, #binary({0x01, 0x02, 0x03})}, (b) => (try BinaryFormat.UnsignedInteger64(b) otherwise "invalid binary"))
+	lineageTag: de1727a8-3d76-5a5e-ba0d-960a1cd94788
+	queryGroup: 'BinaryFormat.UnsignedInteger64'

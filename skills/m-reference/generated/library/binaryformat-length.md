@@ -4,7 +4,7 @@ category: "Binary Formats.Limiting input"
 returns: "function"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 4
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns a binary format that limits the amount of data that can be read. Both `B
 |---|---|---|
 | `binaryFormat` | `function` | no |
 | `length` | `any` | no |
+
+**Executed examples (4):** [examples/binary-formats-limiting-input/binaryformat-length.md](../../examples/binary-formats-limiting-input/binaryformat-length.md)
 
 ## Examples (engine metadata — not verified here)
 

@@ -4,7 +4,7 @@ category: "Binary Formats.Reading numbers"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,3 +23,5 @@ A binary format that reads a .NET 16-byte decimal value.
 | Name | Type | Optional |
 |---|---|---|
 | `binary` | `binary` | no |
+
+**Executed examples (3):** [examples/binary-formats-reading-numbers/binaryformat-decimal.md](../../examples/binary-formats-reading-numbers/binaryformat-decimal.md)

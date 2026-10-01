@@ -4,7 +4,7 @@ category: "Binary Formats.Transforming what was read"
 returns: "function"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns a binary format that will transform the values read by another binary fo
 |---|---|---|
 | `binaryFormat` | `function` | no |
 | `function` | `function` | no |
+
+**Executed examples (3):** [examples/binary-formats-transforming-what-was-read/binaryformat-transform.md](../../examples/binary-formats-transforming-what-was-read/binaryformat-transform.md)
 
 ## Examples (engine metadata — not verified here)
 

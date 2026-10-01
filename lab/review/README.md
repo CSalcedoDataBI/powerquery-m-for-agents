@@ -10,6 +10,16 @@ page and the result this Power BI returns after Refresh.
 
 | Batch | Project |
 |---|---|
+| Binary Formats.Controlling byte order | [binary-formats-controlling-byte-order/BinaryFormatsControllingByteOrder.pbip](binary-formats-controlling-byte-order/BinaryFormatsControllingByteOrder.pbip) |
+| Binary Formats.Controlling what comes next | [binary-formats-controlling-what-comes-next/BinaryFormatsControllingWhatComesNext.pbip](binary-formats-controlling-what-comes-next/BinaryFormatsControllingWhatComesNext.pbip) |
+| Binary Formats.Limiting input | [binary-formats-limiting-input/BinaryFormatsLimitingInput.pbip](binary-formats-limiting-input/BinaryFormatsLimitingInput.pbip) |
+| Binary Formats.Reading a group of items | [binary-formats-reading-a-group-of-items/BinaryFormatsReadingAGroupOfItems.pbip](binary-formats-reading-a-group-of-items/BinaryFormatsReadingAGroupOfItems.pbip) |
+| Binary Formats.Reading binary data | [binary-formats-reading-binary-data/BinaryFormatsReadingBinaryData.pbip](binary-formats-reading-binary-data/BinaryFormatsReadingBinaryData.pbip) |
+| Binary Formats.Reading lists | [binary-formats-reading-lists/BinaryFormatsReadingLists.pbip](binary-formats-reading-lists/BinaryFormatsReadingLists.pbip) |
+| Binary Formats.Reading numbers | [binary-formats-reading-numbers/BinaryFormatsReadingNumbers.pbip](binary-formats-reading-numbers/BinaryFormatsReadingNumbers.pbip) |
+| Binary Formats.Reading records | [binary-formats-reading-records/BinaryFormatsReadingRecords.pbip](binary-formats-reading-records/BinaryFormatsReadingRecords.pbip) |
+| Binary Formats.Reading text | [binary-formats-reading-text/BinaryFormatsReadingText.pbip](binary-formats-reading-text/BinaryFormatsReadingText.pbip) |
+| Binary Formats.Transforming what was read | [binary-formats-transforming-what-was-read/BinaryFormatsTransformingWhatWasRead.pbip](binary-formats-transforming-what-was-read/BinaryFormatsTransformingWhatWasRead.pbip) |
 | Binary | [binary/Binary.pbip](binary/Binary.pbip) |
 | Date | [date/Date.pbip](date/Date.pbip) |
 | DateTime | [datetime/DateTime.pbip](datetime/DateTime.pbip) |

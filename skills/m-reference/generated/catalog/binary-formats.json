@@ -13,7 +13,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 4
   },
   {
    "name": "BinaryFormat.7BitEncodedUnsignedInteger",
@@ -28,7 +28,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "BinaryFormat.Binary",
@@ -43,7 +43,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "BinaryFormat.Byte",
@@ -58,7 +58,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "BinaryFormat.ByteOrder",
@@ -73,7 +73,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "BinaryFormat.Choice",
@@ -88,7 +88,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "BinaryFormat.Decimal",
@@ -103,7 +103,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "BinaryFormat.Double",
@@ -118,7 +118,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 4
   },
   {
    "name": "BinaryFormat.Group",
@@ -133,7 +133,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "BinaryFormat.Length",
@@ -148,7 +148,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 4
   },
   {
    "name": "BinaryFormat.List",
@@ -163,7 +163,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "BinaryFormat.Null",
@@ -178,7 +178,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 2
   },
   {
    "name": "BinaryFormat.Record",
@@ -193,7 +193,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "BinaryFormat.SignedInteger16",
@@ -208,7 +208,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "BinaryFormat.SignedInteger32",
@@ -223,7 +223,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "BinaryFormat.SignedInteger64",
@@ -238,7 +238,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "BinaryFormat.Single",
@@ -253,7 +253,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "BinaryFormat.Text",
@@ -268,7 +268,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "BinaryFormat.Transform",
@@ -283,7 +283,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "BinaryFormat.UnsignedInteger16",
@@ -298,7 +298,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "BinaryFormat.UnsignedInteger32",
@@ -313,7 +313,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "BinaryFormat.UnsignedInteger64",
@@ -328,7 +328,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   }
  ]
 }

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "BinaryFormatsReadingAGroupOfItems"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "731c9c35-433d-52b3-9d2f-bcd2233303d4"
+  }
+}
