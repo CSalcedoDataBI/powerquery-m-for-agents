@@ -36,13 +36,21 @@ class Block:
     result_end: int | None
 
 
+_SYNC_SHARED = None
+
+
 def sync_shared():
-    """skills/m-reference/scripts/sync_shared.py, which writes the catalogue and owns its format."""
+    """skills/m-reference/scripts/sync_shared.py, which writes the catalogue and owns its format.
+    Loaded once per process."""
+    global _SYNC_SHARED
+    if _SYNC_SHARED is not None:
+        return _SYNC_SHARED
     import importlib.util
     spec = importlib.util.spec_from_file_location(
         "sync_shared", os.path.join(SKILLS, "m-reference", "scripts", "sync_shared.py"))
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
+    _SYNC_SHARED = module
     return module
 
 

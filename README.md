@@ -66,6 +66,7 @@ The repository also holds maintainer tools. None runs unless you run it:
 | `scripts/*.py` | Python checks, the same ones CI runs | Nothing | Nothing |
 | `lab/runner/`, `lab/shared-export/` | Open Power BI Desktop on this machine; the runner evaluates the example blocks there, limited to functions that compute on values (`scripts/m_blocks.py`) | Nothing | Nothing |
 | `lab/review/build_review.py` | Python; writes the review PBIPs, which you open yourself | Nothing | Nothing |
+| `lab/drafting/pilot.py` (pilot) | Python; writes the prompts, and turns the answers `run_dsh.ps1` saved into example pages | Nothing | Nothing |
 | `lab/drafting/run_dsh.ps1` (pilot, opt-in) | A Docker container with DeepSeek's `dsh` CLI | Each prompt to the DeepSeek API, with `DEEPSEEK_API_KEY` read from your Windows user environment | When the image is built: the `node:24-bookworm-slim` base image, and `@deepseek-ai/dsh` from npm at a pinned version |
 
 ## Not here

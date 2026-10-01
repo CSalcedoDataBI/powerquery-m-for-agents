@@ -33,4 +33,4 @@ exports/*.json export-ignore
 # Las PBIPs de revision (las carpetas de lab/review/) son para leer los ejemplos en Power BI; el agente no las
 # lee. 929 ficheros y ~4 MB, cada una con la pagina de agradecimiento del autor: quedan en el
 # repo y en CI (que trabaja sobre el checkout), fuera del archivo que se envia.
-lab/review/*/** export-ignore
+lab/review/*/ export-ignore
