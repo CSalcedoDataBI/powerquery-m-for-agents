@@ -2,7 +2,7 @@
 
 # Date.StartOfWeek
 
-The examples show null handling, the default Sunday start, and how the optional first day of week changes it.
+The examples show null handling, the default Sunday start, and how the optional first day of week changes it. Without the argument the result follows the query's culture: these results are for en-US, the culture the lab model sets.
 
 ```m
 Date.StartOfWeek(null)

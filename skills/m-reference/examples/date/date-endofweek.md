@@ -14,7 +14,7 @@ Date.EndOfWeek(null)
 null
 ```
 
-With no first-day argument, the week uses the default Sunday.
+With no first-day argument, the week starts on the culture's first day: Sunday for en-US, the culture the lab model sets.
 
 ```m
 Date.EndOfWeek(#date(1990, 1, 1))

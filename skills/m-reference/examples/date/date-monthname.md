@@ -2,7 +2,7 @@
 
 # Date.MonthName
 
-Null dates return null, the culture argument is optional, and datetime values are accepted.
+Null dates return null, the culture argument is optional, and datetime values are accepted. Without the argument the result follows the query's culture: these results are for en-US, the culture the lab model sets.
 
 ```m
 Date.MonthName(null)

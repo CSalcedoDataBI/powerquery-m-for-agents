@@ -12,7 +12,7 @@ Date.DayOfWeekName(null)
 null
 ```
 
-With no culture, the name comes from the default culture.
+With no culture, the name comes from the query's culture: en-US in the lab model.
 
 ```m
 Date.DayOfWeekName(#date(2200, 1, 1))
