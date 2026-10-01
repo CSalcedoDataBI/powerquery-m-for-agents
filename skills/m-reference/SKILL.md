@@ -78,8 +78,5 @@ Regenerating `generated/` or running the lab is maintainer work, in
 
 ## Related skills
 
-- **`m-folding`** — whether a step folds to the source, and what breaks it.
-- **`m-custom-functions`** — writing and documenting your own functions.
-- **`m-iteration`** — `List.Generate`, `List.Accumulate`, buffering, pagination.
 - **Modeling, partitions, TMDL, incremental refresh are not here.** Use the `power-query`
   skill from the [data-goblin plugin](https://github.com/data-goblin/power-bi-agentic-development).

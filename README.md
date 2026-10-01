@@ -33,9 +33,10 @@ So the catalogue is **exported, not scraped**:
 | Skill | For | Status |
 |---|---|---|
 | `m-reference` | Does it exist, what does it take and return, which hosts | ✅ Desktop export · 🚧 more hosts |
-| `m-folding` | Does this step fold, what breaks it, how to verify | 🚧 stub |
-| `m-custom-functions` | Writing and documenting your own functions | 🚧 stub |
-| `m-iteration` | `List.Generate`, `List.Accumulate`, buffering, pagination | 🚧 stub |
+
+Planned, not shipped yet: `m-folding`, `m-custom-functions` and `m-iteration`. Their outlines
+are in [`planned/`](planned/), outside `skills/`, so the plugin does not load them until
+they have content.
 
 Routing and conventions: [INDEX.md](INDEX.md).
 
@@ -51,9 +52,9 @@ skills (`scripts/check_plugin_manifest.py`).
 
 ## What it runs, sends and downloads
 
-**The plugin itself runs nothing.** It is four skills and nothing else: no hooks, no agents,
-no MCP or LSP servers (`claude plugin details` lists those four skills and zero of each).
-The skills are Markdown that Claude reads; installing or using them starts no process,
+**The plugin itself runs nothing.** It is one skill, `m-reference`, and nothing else: no hooks, no agents,
+no MCP or LSP servers (`claude plugin details` lists that one skill and zero of each).
+The skill is Markdown that Claude reads; installing or using it starts no process,
 sends nothing anywhere and downloads nothing.
 
 The repository also holds maintainer tools. None runs unless you run it:

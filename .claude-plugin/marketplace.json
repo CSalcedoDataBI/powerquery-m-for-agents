@@ -10,7 +10,7 @@
     {
       "name": "m",
       "source": "./",
-      "description": "The Power Query M language, agent-native: function cards from #shared with host availability, query folding, custom functions and iteration. Not modeling or TMDL."
+      "description": "The Power Query M language, agent-native: function cards from #shared with host availability, language concepts and executed examples. Not modeling or TMDL."
     }
   ]
 }
