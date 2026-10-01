@@ -71,7 +71,8 @@ uses. Many carry no description. Data-access functions the engine documents (`Cs
 | `scripts/sync_shared.py` | JSON exports → `generated/` |
 
 Card file names: lower case, every run of non-alphanumerics becomes one dash
-(`Table.AddColumn` → `table-addcolumn`).
+(`Table.AddColumn` → `table-addcolumn`); a leading `#` would become `hash-`, though no
+exported name starts with one.
 
 Regenerating `generated/` or running the lab is maintainer work, in
 [MAINTAINING.md](MAINTAINING.md). Answering a question about M never needs it.

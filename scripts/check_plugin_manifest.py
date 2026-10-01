@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
 """Fail if the plugin manifest and the skills on disk disagree.
 
-The skills sit under `skills/`, which is also where the default scan looks, so a wrong
-list is no longer the difference between five skills and none. It is still worth
-checking: `.claude-plugin/plugin.json` names each one by path, and a skill missing from
-that list ships invisible without Claude Code complaining -- the docs are explicit that
-when none of the listed paths exist the default scan runs instead. Before the move to
-`skills/` that fallback found nothing at all, and the resulting plugin installed,
-reported success, and loaded zero skills. It was reproduced before this check existed.
+The skills sit under `skills/`, which is also where the default scan looks. Claude Code
+loads every folder there whatever `.claude-plugin/plugin.json` lists (measured with
+`claude plugin details`: a list naming one skill still loaded four), so the list does not
+decide what ships; the folder does. The check keeps the two equal anyway, because the list
+is what a reviewer reads: a skill on disk and missing from it would ship undeclared. A
+listed path that does not exist is the other failure: Claude Code falls back to the default
+scan instead of failing, and before the move to `skills/` that fallback found nothing, so
+the plugin installed, reported success and loaded zero skills.
+
+The README states the minimum Claude Code version, and this check keeps it equal to
+MIN_CLAUDE_CODE.
 
 Run: python scripts/check_plugin_manifest.py
 """
@@ -83,7 +87,15 @@ def check(root):
 
     for missing in sorted(set(on_disk) - set(listed)):
         errors.append(f"{missing}/SKILL.md exists but is not listed in plugin.json "
-                      f"skills -- it would ship invisible")
+                      f"skills -- Claude Code would load it undeclared (move an unfinished "
+                      f"skill to planned/)")
+
+    readme = os.path.join(root, "README.md")
+    if os.path.isfile(readme):
+        with open(readme, encoding="utf-8") as f:
+            if f"Claude Code {MIN_CLAUDE_CODE} or later" not in f.read():
+                errors.append(f"README.md does not say 'Claude Code {MIN_CLAUDE_CODE} or later', "
+                              f"the floor this check enforces")
 
     # `/plugin install dax@dax-for-agents` is spelled out of these two names. If the entry
     # names a different plugin, the README's install line points at nothing.

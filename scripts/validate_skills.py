@@ -89,14 +89,32 @@ for py in sorted(py_scripts):
         errors.append(f"py_compile failed: {os.path.relpath(py, ROOT)}: {r.stderr.strip()}")
 
 # ---- 3b: no shipped file over 256 KiB ----
-# The plugin directory holds a file over 256 KiB for a reviewer. Nothing under skills/ is
-# meant to: the catalogue for scripts is split by category for exactly this reason.
-for dirpath, _, filenames in os.walk(SKILLS):
-    for name in filenames:
-        path = os.path.join(dirpath, name)
-        if os.path.getsize(path) > 256 * 1024:
-            errors.append(f"{os.path.relpath(path, ROOT)} is {os.path.getsize(path):,} bytes, "
-                          f"over the 256 KiB a plugin file may weigh")
+# The plugin folder is the repo root, so everything git tracks ships unless .gitattributes
+# marks it export-ignore - the same set `git archive` writes. The plugin directory holds a
+# file over 256 KiB for a reviewer; the catalogue is split by category so none is.
+def shipped_files(root):
+    tracked = subprocess.run(["git", "-C", root, "ls-files", "-z"], capture_output=True,
+                             check=True).stdout.decode("utf-8").split("\0")
+    tracked = [t for t in tracked if t]
+    # A folder pattern (lab/review/*/) is reported only for the folder, spelled with its
+    # trailing slash, never for the files inside it - so every parent folder is asked too.
+    folders = sorted({t[:i + 1] for t in tracked for i, c in enumerate(t) if c == "/"})
+    attrs = subprocess.run(["git", "-C", root, "check-attr", "-z", "--stdin", "export-ignore"],
+                           input="\0".join(tracked + folders).encode("utf-8"), capture_output=True,
+                           check=True).stdout.decode("utf-8").split("\0")
+    ignored = {attrs[i] for i in range(0, len(attrs) - 2, 3) if attrs[i + 2] == "set"}
+    return [t for t in tracked if t not in ignored
+            and not any(t[:i + 1] in ignored for i, c in enumerate(t) if c == "/")]
+
+
+try:
+    for rel in shipped_files(ROOT):
+        path = os.path.join(ROOT, rel)
+        if os.path.isfile(path) and os.path.getsize(path) > 256 * 1024:
+            errors.append(f"{rel} is {os.path.getsize(path):,} bytes, over the 256 KiB a "
+                          f"plugin file may weigh (export-ignore it, or split it)")
+except (OSError, subprocess.CalledProcessError) as e:
+    errors.append(f"could not list the shipped files with git: {e}")
 
 # ---- 4: m-reference integrity ----
 REF = os.path.join(SKILLS, "m-reference")

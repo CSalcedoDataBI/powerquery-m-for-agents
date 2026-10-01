@@ -25,12 +25,13 @@
 # (lab/drafting/entrypoint.sh: "dsh-run: not found").
 *.sh        text eol=lf
 
-# Lo que se envia al directorio de plugins es el archivo del repo (git archive / zip de
-# GitHub), y la carpeta del plugin es la raiz. Los exports crudos de #shared son la entrada
-# de sync_shared.py, no algo que el agente lea: quedan en el repo para reproducir cada
-# generacion, pero fuera del archivo que se envia (1,09 MB, sobre el limite de 256 KiB).
+# The plugin folder is the repo root, so what reaches the plugin directory is the repo
+# archive (git archive, or GitHub's zip). The raw #shared exports are input to sync_shared.py,
+# not something the agent reads: they stay in the repo so every generation can be reproduced,
+# and out of the archive (1.09 MB, over the 256 KiB a plugin file may weigh).
 exports/*.json export-ignore
-# Las PBIPs de revision (las carpetas de lab/review/) son para leer los ejemplos en Power BI; el agente no las
-# lee. 929 ficheros y ~4 MB, cada una con la pagina de agradecimiento del autor: quedan en el
-# repo y en CI (que trabaja sobre el checkout), fuera del archivo que se envia.
+# The review PBIPs (the folders under lab/review/) are for reading the examples in Power BI;
+# the agent never reads them. 929 files and about 4 MB, each with the author's thank-you page:
+# they stay in the repo and in CI, which works on the checkout, and out of the archive. The
+# trailing slash drops the folders themselves too, not only their files.
 lab/review/*/ export-ignore
