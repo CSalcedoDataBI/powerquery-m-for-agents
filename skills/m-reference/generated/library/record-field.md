@@ -4,7 +4,7 @@ category: "Record.Selection"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns the value of the specified `field` in the `record`. If the field is not 
 |---|---|---|
 | `record` | `record` | no |
 | `field` | `text` | no |
+
+**Executed examples (3):** [examples/record-selection/record-field.md](../../examples/record-selection/record-field.md)
 
 ## Examples (engine metadata — not verified here)
 

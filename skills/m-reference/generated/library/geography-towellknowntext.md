@@ -4,7 +4,7 @@ category: "Record.Serialization"
 returns: "nullable text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,3 +24,5 @@ Translates a structured geographic point value into its Well-Known Text (WKT) re
 |---|---|---|
 | `input` | `nullable record` | no |
 | `omitSRID` | `nullable logical` | yes |
+
+**Executed examples (3):** [examples/record-serialization/geography-towellknowntext.md](../../examples/record-serialization/geography-towellknowntext.md)

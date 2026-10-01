@@ -4,7 +4,7 @@ category: "Record.Transformations"
 returns: "record"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ Returns a record that removes all the fields specified in list `fields` from the
 | `record` | `record` | no |
 | `fields` | `any` | no |
 | `missingField` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/record-transformations/record-removefields.md](../../examples/record-transformations/record-removefields.md)
 
 ## Examples (engine metadata — not verified here)
 

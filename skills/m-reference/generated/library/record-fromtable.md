@@ -4,7 +4,7 @@ category: "Record.Serialization"
 returns: "record"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Returns a record from a table of records `table` containing field names and valu
 | Name | Type | Optional |
 |---|---|---|
 | `table` | `table` | no |
+
+**Executed examples (3):** [examples/record-serialization/record-fromtable.md](../../examples/record-serialization/record-fromtable.md)
 
 ## Examples (engine metadata — not verified here)
 

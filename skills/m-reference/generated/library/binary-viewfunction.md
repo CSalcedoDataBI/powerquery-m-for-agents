@@ -4,7 +4,7 @@ category: "Binary"
 returns: "function"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -29,3 +29,5 @@ Refer to the published Power Query custom connector documentation for a more com
 | Name | Type | Optional |
 |---|---|---|
 | `function` | `function` | no |
+
+**Executed examples (3):** [examples/binary/binary-viewfunction.md](../../examples/binary/binary-viewfunction.md)

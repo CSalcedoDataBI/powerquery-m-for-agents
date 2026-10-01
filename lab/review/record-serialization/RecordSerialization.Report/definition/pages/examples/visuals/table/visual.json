@@ -1,0 +1,106 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "table",
+  "position": {
+    "x": 300,
+    "y": 80,
+    "z": 2,
+    "width": 956,
+    "height": 620
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RecordSerialization"
+                    }
+                  },
+                  "Property": "Function"
+                }
+              },
+              "queryRef": "RecordSerialization.Function",
+              "nativeQueryRef": "Function"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RecordSerialization"
+                    }
+                  },
+                  "Property": "Block"
+                }
+              },
+              "queryRef": "RecordSerialization.Block",
+              "nativeQueryRef": "Block"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RecordSerialization"
+                    }
+                  },
+                  "Property": "Code"
+                }
+              },
+              "queryRef": "RecordSerialization.Code",
+              "nativeQueryRef": "Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RecordSerialization"
+                    }
+                  },
+                  "Property": "Recorded"
+                }
+              },
+              "queryRef": "RecordSerialization.Recorded",
+              "nativeQueryRef": "Recorded"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RecordSerialization"
+                    }
+                  },
+                  "Property": "Live"
+                }
+              },
+              "queryRef": "RecordSerialization.Live",
+              "nativeQueryRef": "Live"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RecordSerialization"
+                    }
+                  },
+                  "Property": "Match"
+                }
+              },
+              "queryRef": "RecordSerialization.Match",
+              "nativeQueryRef": "Match"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

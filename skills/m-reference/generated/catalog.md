@@ -20,23 +20,23 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `AzureStorage.DataLake` | Accessing data | table |  | Returns a navigational table containing the documents found in the specified container and its subfolders from Azure Da… |
 | `AzureStorage.DataLakeContents` | Accessing data | binary |  | Returns the content of the specified file from an Azure Data Lake Storage filesystem. |
 | `AzureStorage.Tables` | Accessing data | table |  | Returns a navigational table containing the tables found in the specified account from an Azure storage vault. |
-| `Binary.ApproximateLength` | Binary | nullable number |  | Returns the approximate length of the binary. |
-| `Binary.Buffer` | Binary | nullable binary |  | Buffers the binary value in memory. |
-| `Binary.Combine` | Binary | binary |  | Combines a list of binaries into a single binary. |
-| `Binary.Compress` | Binary | nullable binary |  | Compresses a binary value using the given compression type. |
-| `Binary.Decompress` | Binary | nullable binary |  | Decompresses a binary value using the given compression type. |
-| `Binary.From` | Binary | nullable binary |  | Creates a binary from the given value |
-| `Binary.FromList` | Binary | binary |  | Converts a list of numbers into a binary value. |
-| `Binary.FromText` | Binary | nullable binary |  | Decodes data from a text form into binary. |
-| `Binary.InferContentType` | Binary | record |  | Reads the binary stream and tries to determine the content type and format information of the stream. |
-| `Binary.Length` | Binary | nullable number |  | Returns the number of characters. |
-| `Binary.Range` | Binary | binary |  | Returns a subset of the binary value beginning at an offset. |
-| `Binary.Split` | Binary | list |  | Splits the specified binary into a list of binaries using the specified page size. |
-| `Binary.ToList` | Binary | list |  | Converts a binary value into a list of numbers. |
-| `Binary.ToText` | Binary | nullable text |  | Encodes binary data into a text form. |
-| `Binary.View` | Binary | binary |  | Creates or extends a binary with user-defined handlers for query and action operations. |
-| `Binary.ViewError` | Binary | record |  | Creates a modified error record which won't trigger a fallback when raised by a handler defined on a view (via Binary.V… |
-| `Binary.ViewFunction` | Binary | function |  | Creates a function that can be intercepted by a handler defined on a view (via Binary.View). |
+| `Binary.ApproximateLength` | Binary | nullable number | ▶ | Returns the approximate length of the binary. |
+| `Binary.Buffer` | Binary | nullable binary | ▶ | Buffers the binary value in memory. |
+| `Binary.Combine` | Binary | binary | ▶ | Combines a list of binaries into a single binary. |
+| `Binary.Compress` | Binary | nullable binary | ▶ | Compresses a binary value using the given compression type. |
+| `Binary.Decompress` | Binary | nullable binary | ▶ | Decompresses a binary value using the given compression type. |
+| `Binary.From` | Binary | nullable binary | ▶ | Creates a binary from the given value |
+| `Binary.FromList` | Binary | binary | ▶ | Converts a list of numbers into a binary value. |
+| `Binary.FromText` | Binary | nullable binary | ▶ | Decodes data from a text form into binary. |
+| `Binary.InferContentType` | Binary | record | ▶ | Reads the binary stream and tries to determine the content type and format information of the stream. |
+| `Binary.Length` | Binary | nullable number | ▶ | Returns the number of characters. |
+| `Binary.Range` | Binary | binary | ▶ | Returns a subset of the binary value beginning at an offset. |
+| `Binary.Split` | Binary | list | ▶ | Splits the specified binary into a list of binaries using the specified page size. |
+| `Binary.ToList` | Binary | list | ▶ | Converts a binary value into a list of numbers. |
+| `Binary.ToText` | Binary | nullable text | ▶ | Encodes binary data into a text form. |
+| `Binary.View` | Binary | binary | ▶ | Creates or extends a binary with user-defined handlers for query and action operations. |
+| `Binary.ViewError` | Binary | record | ▶ | Creates a modified error record which won't trigger a fallback when raised by a handler defined on a view (via Binary.V… |
+| `Binary.ViewFunction` | Binary | function | ▶ | Creates a function that can be intercepted by a handler defined on a view (via Binary.View). |
 | `BinaryFormat.7BitEncodedSignedInteger` | Binary Formats.Reading numbers | any |  | A binary format that reads a 64-bit signed integer that was encoded using a 7-bit variable-length encoding. |
 | `BinaryFormat.7BitEncodedUnsignedInteger` | Binary Formats.Reading numbers | any |  | A binary format that reads a 64-bit unsigned integer that was encoded using a 7-bit variable-length encoding. |
 | `BinaryFormat.Binary` | Binary Formats.Reading binary data | function |  | Returns a binary format that reads a binary value. |
@@ -228,12 +228,12 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Function.InvokeWithErrorContext` | Values.Implementation | any |  | This function is intended for internal use only. |
 | `Function.IsDataSource` | Type | logical | ▶ | Returns whether or not a particular function is considered a data source. |
 | `Function.ScalarVector` | Function | function |  | Creates a scalar function on top of a vector function, batching multiple invocations. |
-| `Geography.FromWellKnownText` | Record.Serialization | nullable record |  | Translates text representing a geographic value in Well-Known Text (WKT) format into a structured record. |
-| `Geography.ToWellKnownText` | Record.Serialization | nullable text |  | Translates a structured geographic point value into its Well-Known Text (WKT) representation. |
-| `GeographyPoint.From` | Record.Serialization | record |  | Creates a record representing a geographic point from parts. |
-| `Geometry.FromWellKnownText` | Record.Serialization | nullable record |  | Translates text representing a geometric value in Well-Known Text (WKT) format into a structured record. |
-| `Geometry.ToWellKnownText` | Record.Serialization | nullable text |  | Translates a structured geometric point value into its Well-Known Text (WKT) representation. |
-| `GeometryPoint.From` | Record.Serialization | record |  | Creates a record representing a geometric point from parts. |
+| `Geography.FromWellKnownText` | Record.Serialization | nullable record | ▶ | Translates text representing a geographic value in Well-Known Text (WKT) format into a structured record. |
+| `Geography.ToWellKnownText` | Record.Serialization | nullable text | ▶ | Translates a structured geographic point value into its Well-Known Text (WKT) representation. |
+| `GeographyPoint.From` | Record.Serialization | record | ▶ | Creates a record representing a geographic point from parts. |
+| `Geometry.FromWellKnownText` | Record.Serialization | nullable record | ▶ | Translates text representing a geometric value in Well-Known Text (WKT) format into a structured record. |
+| `Geometry.ToWellKnownText` | Record.Serialization | nullable text | ▶ | Translates a structured geometric point value into its Well-Known Text (WKT) representation. |
+| `GeometryPoint.From` | Record.Serialization | record | ▶ | Creates a record representing a geometric point from parts. |
 | `GoogleAnalytics.Accounts` | Accessing data | table |  | Returns Google Analytics accounts. |
 | `Graph.Nodes` | Expression | list |  | This function is intended for internal use only. |
 | `Guid.From` | Text.Conversions from and to text | nullable text |  | Returns a guid value from the given value. |
@@ -329,9 +329,9 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `List.TransformMany` | List.Transformation functions | list | ▶ | Returns a list whose elements are transformed from the input list using specified functions. |
 | `List.Union` | List.Set operations | list | ▶ | Returns the union of the list values found in the input. |
 | `List.Zip` | List.Transformation functions | list | ▶ | Returns a list of lists by combining items at the same position in multiple lists. |
-| `Logical.From` | Logical | nullable logical |  | Creates a logical from the given value. |
-| `Logical.FromText` | Logical | nullable logical |  | Creates a logical value from the text values "true" and "false". |
-| `Logical.ToText` | Logical | nullable text |  | Returns the text "true" or "false" given a logical value. |
+| `Logical.From` | Logical | nullable logical | ▶ | Creates a logical from the given value. |
+| `Logical.FromText` | Logical | nullable logical | ▶ | Creates a logical value from the text values "true" and "false". |
+| `Logical.ToText` | Logical | nullable text | ▶ | Returns the text "true" or "false" given a logical value. |
 | `Module.Versions` | Values.Implementation | record |  | Returns a record of module versions for the current module and its dependencies. |
 | `MySQL.Database` | Accessing data | table |  | Returns a table of SQL tables, views, and stored scalar functions available in a MySQL database. |
 | `Number.Abs` | Number.Operations | nullable number | ▶ | Returns the absolute value of the number. |
@@ -390,23 +390,23 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `PostgreSQL.Database` | Accessing data | table |  | Returns a table of SQL tables and views available in a PostgreSQL database. |
 | `Progress.DataSourceProgress` | Values.Implementation | any |  | This function is intended for internal use only. |
 | `RData.FromBinary` | Accessing data | any |  | Returns a record of data frames from the RData file. |
-| `Record.AddField` | Record.Transformations | record |  | Adds a field to a record. |
-| `Record.Combine` | Record.Transformations | record |  | Combines the records in the given list. |
-| `Record.Field` | Record.Selection | any |  | Returns the value of the specified field in a record. |
-| `Record.FieldCount` | Record.Information | number |  | Returns the number of fields in the record. |
-| `Record.FieldNames` | Record.Selection | list |  | Returns the names of the fields. |
-| `Record.FieldOrDefault` | Record.Selection | any |  | Returns the value of the specified field in a record or the default value if the field is not found. |
-| `Record.FieldValues` | Record.Selection | list |  | Returns a list of the field values. |
-| `Record.FromList` | Record.Serialization | record |  | Returns a record given a list of field values and a set of fields. |
-| `Record.FromTable` | Record.Serialization | record |  | Creates a record from a table of the form {[Name = name, Value = value]}. |
-| `Record.HasFields` | Record.Information | logical |  | Indicates whether the record has the specified fields. |
-| `Record.RemoveFields` | Record.Transformations | record |  | Removes the specified field(s) from the input record. |
-| `Record.RenameFields` | Record.Transformations | record |  | Applies rename(s) from a list in the form { old, new }. |
-| `Record.ReorderFields` | Record.Transformations | record |  | Reorders the record fields to match the order of a list of field names. |
-| `Record.SelectFields` | Record.Selection | record |  | Returns a record that contains only the specified fields. |
-| `Record.ToList` | Record.Serialization | list |  | Returns a list of values containing the field values of the input record. |
-| `Record.ToTable` | Record.Serialization | table |  | Returns a table with each row being a field name and value of the input record. |
-| `Record.TransformFields` | Record.Transformations | record |  | Returns a record after applying specified transformations. |
+| `Record.AddField` | Record.Transformations | record | ▶ | Adds a field to a record. |
+| `Record.Combine` | Record.Transformations | record | ▶ | Combines the records in the given list. |
+| `Record.Field` | Record.Selection | any | ▶ | Returns the value of the specified field in a record. |
+| `Record.FieldCount` | Record.Information | number | ▶ | Returns the number of fields in the record. |
+| `Record.FieldNames` | Record.Selection | list | ▶ | Returns the names of the fields. |
+| `Record.FieldOrDefault` | Record.Selection | any | ▶ | Returns the value of the specified field in a record or the default value if the field is not found. |
+| `Record.FieldValues` | Record.Selection | list | ▶ | Returns a list of the field values. |
+| `Record.FromList` | Record.Serialization | record | ▶ | Returns a record given a list of field values and a set of fields. |
+| `Record.FromTable` | Record.Serialization | record | ▶ | Creates a record from a table of the form {[Name = name, Value = value]}. |
+| `Record.HasFields` | Record.Information | logical | ▶ | Indicates whether the record has the specified fields. |
+| `Record.RemoveFields` | Record.Transformations | record | ▶ | Removes the specified field(s) from the input record. |
+| `Record.RenameFields` | Record.Transformations | record | ▶ | Applies rename(s) from a list in the form { old, new }. |
+| `Record.ReorderFields` | Record.Transformations | record | ▶ | Reorders the record fields to match the order of a list of field names. |
+| `Record.SelectFields` | Record.Selection | record | ▶ | Returns a record that contains only the specified fields. |
+| `Record.ToList` | Record.Serialization | list | ▶ | Returns a list of values containing the field values of the input record. |
+| `Record.ToTable` | Record.Serialization | table | ▶ | Returns a table with each row being a field name and value of the input record. |
+| `Record.TransformFields` | Record.Transformations | record | ▶ | Returns a record after applying specified transformations. |
 | `Replacer.ReplaceText` | Replacer | nullable text |  | Replaces text within the provided input. |
 | `Replacer.ReplaceValue` | Replacer | any |  | Replaces values within the provided input. |
 | `RowExpression.Column` | Table.Table construction | record |  | Returns an abstract syntax tree (AST) that represents access to a column within a row expression. |
@@ -420,16 +420,16 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `SharePoint.Tables` | Accessing data | table |  | Returns a table containing content from a SharePoint List. |
 | `Single.From` | Number.Conversion and formatting | nullable number | ▶ | Creates a Single from the given value. |
 | `Soda.Feed` | Accessing data | table |  | Returns a table from the contents at the specified URL formatted according to the SODA 2.0 API. |
-| `Splitter.SplitByNothing` | Splitter | function |  | Returns a function that does no splitting, returning its argument as a single element list. |
-| `Splitter.SplitTextByAnyDelimiter` | Splitter | function |  | Returns a function that splits text into a list of text at any of the specified delimiters. |
-| `Splitter.SplitTextByCharacterTransition` | Splitter | function |  | Returns a function that splits text into a list of text according to a transition from one kind of character to another. |
-| `Splitter.SplitTextByDelimiter` | Splitter | function |  | Returns a function that splits text into a list of text according to the specified delimiter. |
-| `Splitter.SplitTextByEachDelimiter` | Splitter | function |  | Returns a function that splits text into a list of text at each specified delimiter in sequence. |
-| `Splitter.SplitTextByLengths` | Splitter | function |  | Returns a function that splits text into a list of text by each specified length. |
-| `Splitter.SplitTextByPositions` | Splitter | function |  | Returns a function that splits text into a list of text at each specified position. |
-| `Splitter.SplitTextByRanges` | Splitter | function |  | Returns a function that splits text into a list of text according to the specified offsets and lengths. |
-| `Splitter.SplitTextByRepeatedLengths` | Splitter | function |  | Returns a function that splits text into a list of text after the specified length repeatedly. |
-| `Splitter.SplitTextByWhitespace` | Splitter | function |  | Returns a function that splits text into a list of text at whitespace. |
+| `Splitter.SplitByNothing` | Splitter | function | ▶ | Returns a function that does no splitting, returning its argument as a single element list. |
+| `Splitter.SplitTextByAnyDelimiter` | Splitter | function | ▶ | Returns a function that splits text into a list of text at any of the specified delimiters. |
+| `Splitter.SplitTextByCharacterTransition` | Splitter | function | ▶ | Returns a function that splits text into a list of text according to a transition from one kind of character to another. |
+| `Splitter.SplitTextByDelimiter` | Splitter | function | ▶ | Returns a function that splits text into a list of text according to the specified delimiter. |
+| `Splitter.SplitTextByEachDelimiter` | Splitter | function | ▶ | Returns a function that splits text into a list of text at each specified delimiter in sequence. |
+| `Splitter.SplitTextByLengths` | Splitter | function | ▶ | Returns a function that splits text into a list of text by each specified length. |
+| `Splitter.SplitTextByPositions` | Splitter | function | ▶ | Returns a function that splits text into a list of text at each specified position. |
+| `Splitter.SplitTextByRanges` | Splitter | function | ▶ | Returns a function that splits text into a list of text according to the specified offsets and lengths. |
+| `Splitter.SplitTextByRepeatedLengths` | Splitter | function | ▶ | Returns a function that splits text into a list of text after the specified length repeatedly. |
+| `Splitter.SplitTextByWhitespace` | Splitter | function | ▶ | Returns a function that splits text into a list of text at whitespace. |
 | `Sql.Database` | Accessing data | table |  | Returns a table of SQL tables, views, and stored functions from the SQL Server database. |
 | `Sql.Databases` | Accessing data | table |  | Returns a table of databases on a SQL Server. |
 | `SqlExpression.SchemaFrom` | Values.Implementation | any |  | This function is intended for internal use only. |

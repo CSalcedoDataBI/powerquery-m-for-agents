@@ -4,7 +4,7 @@ category: "Logical"
 returns: "nullable text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Creates a text value from the logical value `logicalValue`, either `true` or `fa
 | Name | Type | Optional |
 |---|---|---|
 | `logicalValue` | `nullable logical` | no |
+
+**Executed examples (3):** [examples/logical/logical-totext.md](../../examples/logical/logical-totext.md)
 
 ## Examples (engine metadata — not verified here)
 

@@ -4,7 +4,7 @@ category: "Record.Information"
 returns: "logical"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ Multiple field values can be specified using a list.
 |---|---|---|
 | `record` | `record` | no |
 | `fields` | `any` | no |
+
+**Executed examples (3):** [examples/record-information/record-hasfields.md](../../examples/record-information/record-hasfields.md)
 
 ## Examples (engine metadata — not verified here)
 

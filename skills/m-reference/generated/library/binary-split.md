@@ -4,7 +4,7 @@ category: "Binary"
 returns: "list"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,3 +25,5 @@ the source binary, the next element of the output list is a binary containing th
 |---|---|---|
 | `binary` | `binary` | no |
 | `pageSize` | `number` | no |
+
+**Executed examples (3):** [examples/binary/binary-split.md](../../examples/binary/binary-split.md)

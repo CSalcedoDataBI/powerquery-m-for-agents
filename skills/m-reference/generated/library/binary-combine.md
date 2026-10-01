@@ -4,7 +4,7 @@ category: "Binary"
 returns: "binary"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,3 +23,5 @@ Combines a list of binaries into a single binary.
 | Name | Type | Optional |
 |---|---|---|
 | `binaries` | `list` | no |
+
+**Executed examples (3):** [examples/binary/binary-combine.md](../../examples/binary/binary-combine.md)

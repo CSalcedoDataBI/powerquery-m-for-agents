@@ -4,7 +4,7 @@ category: "Record.Information"
 returns: "number"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Returns the number of fields in the record `record`.
 | Name | Type | Optional |
 |---|---|---|
 | `record` | `record` | no |
+
+**Executed examples (3):** [examples/record-information/record-fieldcount.md](../../examples/record-information/record-fieldcount.md)
 
 ## Examples (engine metadata — not verified here)
 

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "RecordSelection"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7ae4cd50-c256-5ae2-9b8d-0385b4f3478c"
+  }
+}

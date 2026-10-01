@@ -1,0 +1,96 @@
+expression 'Record.AddField (1)' =
+		Record.AddField([CustomerID = 1, Name = "Bob"], "MiddleName", null)
+	lineageTag: 0639319b-a36e-5bdb-902c-e899ae1cc98f
+	queryGroup: 'Record.AddField'
+
+expression 'Record.AddField (2)' =
+		Record.AddField([CustomerID = 1], "Score", () => 42, true)
+	lineageTag: 6ad0d46b-e877-583d-9c88-4b5161d0f24d
+	queryGroup: 'Record.AddField'
+
+expression 'Record.AddField (3)' =
+		Record.AddField([CustomerID = 1], "Address", [City = "Seattle"])
+	lineageTag: 29293ec9-7ec6-5032-bd90-5450a8f5e72a
+	queryGroup: 'Record.AddField'
+
+expression 'Record.Combine (1)' =
+		Record.Combine({[A = 1, B = null], [C = null]})
+	lineageTag: aadb8f9b-d00f-59d6-bcd8-c959d27f3f85
+	queryGroup: 'Record.Combine'
+
+expression 'Record.Combine (2)' =
+		Record.Combine({})
+	lineageTag: fde3ee96-2792-59df-804a-336af419559a
+	queryGroup: 'Record.Combine'
+
+expression 'Record.Combine (3)' =
+		Record.Combine({[A = 1, B = 2], [B = 3, C = 4]})
+	lineageTag: 13b0c9e5-52fd-5999-bbcc-c513070a75fd
+	queryGroup: 'Record.Combine'
+
+expression 'Record.RemoveFields (1)' =
+		Record.RemoveFields([A = null, B = 1], "A")
+	lineageTag: cca3c1d1-6ec1-58ba-b863-74ee46f5333d
+	queryGroup: 'Record.RemoveFields'
+
+expression 'Record.RemoveFields (2)' =
+		Record.RemoveFields([A = 1, B = 2], "C")
+	lineageTag: 94e22e3f-4e67-5f36-8b57-00d4e5c6b355
+	queryGroup: 'Record.RemoveFields'
+
+expression 'Record.RemoveFields (3)' =
+		Record.RemoveFields([A = 1, B = 2], {"B", "C"}, MissingField.Ignore)
+	lineageTag: 5b527672-524d-5d0f-89db-9e4f598a34ee
+	queryGroup: 'Record.RemoveFields'
+
+expression 'Record.RenameFields (1)' =
+		Record.RenameFields([A = 1, B = null, C = 3], {"B", "Renamed"})
+	lineageTag: b8ba790c-4091-58c5-a125-89059afa0cd6
+	queryGroup: 'Record.RenameFields'
+
+expression 'Record.RenameFields (2)' =
+		Record.RenameFields([Old1 = 1, Old2 = 2, Keep = 3], {{"Old1", "New1"}, {"Old2", "New2"}})
+	lineageTag: d8b7ca0a-3c97-5907-8f66-e7df1b832653
+	queryGroup: 'Record.RenameFields'
+
+expression 'Record.RenameFields (3)' =
+		Record.RenameFields([A = 1, B = 2], {{"A", "X"}, {"Missing", "Y"}}, MissingField.UseNull)
+	lineageTag: b116346d-1912-5cb9-a980-e5eae7fae624
+	queryGroup: 'Record.RenameFields'
+
+expression 'Record.ReorderFields (1)' =
+		Record.ReorderFields([CustomerID = 1, OrderID = 2, Item = "Rod", Price = 3.5], {"Price", "OrderID"})
+	lineageTag: 8c47f0d2-d631-5bbd-bd5c-35037288b3b9
+	queryGroup: 'Record.ReorderFields'
+
+expression 'Record.ReorderFields (2)' =
+		Record.ReorderFields([CustomerID = 3, Phone = "543-7890"], {"Phone", "Purchase", "CustomerID"}, MissingField.UseNull)
+	lineageTag: f163a2ae-ee52-5202-8d6b-bc9483837c99
+	queryGroup: 'Record.ReorderFields'
+
+expression 'Record.ReorderFields (3)' =
+		Record.ReorderFields([A = null, B = 2, C = 3], {"C", "Missing", "A"}, MissingField.Ignore)
+	lineageTag: 0e7776e1-ba3e-5572-a8aa-56c1f52edc25
+	queryGroup: 'Record.ReorderFields'
+
+expression 'Record.TransformFields (1)' =
+		Record.TransformFields([Price = "100", Currency = "usd"], {"Price", Number.FromText})
+	lineageTag: 9262f1cc-5396-5433-a8cb-ca08133fdc0f
+	queryGroup: 'Record.TransformFields'
+
+expression 'Record.TransformFields (2)' =
+		Record.TransformFields(
+		    [Code = "ab-12", Qty = "3", Note = null],
+		    {{"Code", Text.Upper}, {"Qty", Number.FromText}, {"Note", Text.Trim}}
+		)
+	lineageTag: f063cd2e-fd40-57bb-9296-86e1aefdd78f
+	queryGroup: 'Record.TransformFields'
+
+expression 'Record.TransformFields (3)' =
+		Record.TransformFields(
+		    [First = "ada", Last = "lovelace"],
+		    {{"First", Text.Proper}, {"Last", Text.Proper}, {"Title", Text.Proper}},
+		    MissingField.Ignore
+		)
+	lineageTag: e242a2dd-bc3a-5f74-b980-ad37b98ffe47
+	queryGroup: 'Record.TransformFields'

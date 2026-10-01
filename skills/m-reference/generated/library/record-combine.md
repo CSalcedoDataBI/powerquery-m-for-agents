@@ -4,7 +4,7 @@ category: "Record.Transformations"
 returns: "record"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Combines the records in the given `records`. If the `records` contains non-recor
 | Name | Type | Optional |
 |---|---|---|
 | `records` | `list` | no |
+
+**Executed examples (3):** [examples/record-transformations/record-combine.md](../../examples/record-transformations/record-combine.md)
 
 ## Examples (engine metadata — not verified here)
 

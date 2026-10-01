@@ -1,0 +1,29 @@
+expression 'Record.FieldCount (1)' =
+		Record.FieldCount([Name = "Bob", MiddleName = null, Nickname = null])
+	lineageTag: ca2f8e84-d848-541a-b4b3-f3dbc0969146
+	queryGroup: 'Record.FieldCount'
+
+expression 'Record.FieldCount (2)' =
+		Record.FieldCount([])
+	lineageTag: 765d0a2c-f0e1-5db6-a8d3-928afeab501f
+	queryGroup: 'Record.FieldCount'
+
+expression 'Record.FieldCount (3)' =
+		Record.FieldCount([Outer = [Inner1 = 1, Inner2 = 2]])
+	lineageTag: 7417a7e8-b72b-5469-bf3a-7ca0cbdcca80
+	queryGroup: 'Record.FieldCount'
+
+expression 'Record.HasFields (1)' =
+		Record.HasFields([CustomerID = null, Name = "Bob"], "CustomerID")
+	lineageTag: ef2ca214-165b-5b27-bc38-adc723ed41e7
+	queryGroup: 'Record.HasFields'
+
+expression 'Record.HasFields (2)' =
+		Record.HasFields([CustomerID = 1, Name = "Bob"], {"CustomerID", "Address"})
+	lineageTag: e9543235-c1ae-59a8-b926-3eefe5476e96
+	queryGroup: 'Record.HasFields'
+
+expression 'Record.HasFields (3)' =
+		Record.HasFields([Name = "Bob"], "name")
+	lineageTag: 7e564d34-b85c-5dc9-9487-24f23c9bce1e
+	queryGroup: 'Record.HasFields'

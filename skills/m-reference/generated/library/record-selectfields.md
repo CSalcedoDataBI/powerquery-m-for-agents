@@ -4,7 +4,7 @@ category: "Record.Selection"
 returns: "record"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -25,6 +25,8 @@ Returns a record which includes only the fields specified in list `fields` from 
 | `record` | `record` | no |
 | `fields` | `any` | no |
 | `missingField` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/record-selection/record-selectfields.md](../../examples/record-selection/record-selectfields.md)
 
 ## Examples (engine metadata — not verified here)
 

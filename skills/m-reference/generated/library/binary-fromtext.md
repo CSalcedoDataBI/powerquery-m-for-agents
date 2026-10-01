@@ -4,7 +4,7 @@ category: "Binary"
 returns: "nullable binary"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -29,6 +29,8 @@ The following `BinaryEncoding` values may be used for `encoding`.
 |---|---|---|
 | `text` | `nullable text` | no |
 | `encoding` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/binary/binary-fromtext.md](../../examples/binary/binary-fromtext.md)
 
 ## Examples (engine metadata — not verified here)
 
