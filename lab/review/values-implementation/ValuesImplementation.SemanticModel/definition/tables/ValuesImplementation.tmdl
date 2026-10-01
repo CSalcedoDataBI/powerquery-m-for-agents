@@ -14,6 +14,12 @@ table ValuesImplementation
 		summarizeBy: none
 		sourceColumn: Function
 
+	column Description
+		dataType: string
+		lineageTag: 1559b71d-1d43-5a7c-8e4e-f22996c221b4
+		summarizeBy: none
+		sourceColumn: Description
+
 	column Block
 		dataType: int64
 		lineageTag: 3efae0f0-8f80-5ae9-9db5-c569cc06751f
@@ -232,7 +238,7 @@ table ValuesImplementation
 				            )
 				        in
 				            Result,
-				    Pages = #table(type table [seq = Int64.Type, Function = text, Block = Int64.Type, Code = text, Recorded = text], {{0, "Table.WithErrorContext", 1, "try Table.WithErrorContext(error ""boom"", ""my context"")", "[HasError = true, Error = [Reason = ""Expression.Error"", Message = ""boom"", Detail = null, #""Message.Format"" = ""boom"", #""Message.Parameters"" = null, ErrorCode = null]]"}}),
+				    Pages = #table(type table [seq = Int64.Type, Function = text, Description = text, Block = Int64.Type, Code = text, Recorded = text], {{0, "Table.WithErrorContext", "This function is intended for internal use only.", 1, "try Table.WithErrorContext(error ""boom"", ""my context"")", "[HasError = true, Error = [Reason = ""Expression.Error"", Message = ""boom"", Detail = null, #""Message.Format"" = ""boom"", #""Message.Parameters"" = null, ErrorCode = null]]"}}),
 				    Joined = Table.NestedJoin(Pages, "seq", Table.TransformColumns(Live, {{"id", Number.From}}), "id", "L", JoinKind.LeftOuter),
 				    Expanded = Table.ExpandTableColumn(Joined, "L", {"result"}, {"Live"}),
 				    Matched = Table.AddColumn(Expanded, "Match", each if [Live] = [Recorded] then "yes" else "NO", type text),

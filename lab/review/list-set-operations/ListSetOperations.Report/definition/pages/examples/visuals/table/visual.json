@@ -36,6 +36,20 @@
                       "Entity": "ListSetOperations"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "ListSetOperations.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ListSetOperations"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

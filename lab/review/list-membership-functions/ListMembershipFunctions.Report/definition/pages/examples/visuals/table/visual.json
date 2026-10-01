@@ -36,6 +36,20 @@
                       "Entity": "ListMembershipFunctions"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "ListMembershipFunctions.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ListMembershipFunctions"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

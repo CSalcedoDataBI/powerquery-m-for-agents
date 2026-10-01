@@ -36,6 +36,20 @@
                       "Entity": "ListInformation"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "ListInformation.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ListInformation"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

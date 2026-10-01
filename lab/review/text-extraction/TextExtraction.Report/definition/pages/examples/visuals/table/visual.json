@@ -36,6 +36,20 @@
                       "Entity": "TextExtraction"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "TextExtraction.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TextExtraction"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

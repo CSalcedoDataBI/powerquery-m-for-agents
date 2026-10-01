@@ -14,6 +14,12 @@ table TextInformation
 		summarizeBy: none
 		sourceColumn: Function
 
+	column Description
+		dataType: string
+		lineageTag: 8a38b9a7-ac6d-5217-ba35-1b7c7e3db0e7
+		summarizeBy: none
+		sourceColumn: Description
+
 	column Block
 		dataType: int64
 		lineageTag: f4ea1c6b-5189-5a30-a4cc-7e1b5ecc73a1
@@ -232,7 +238,7 @@ table TextInformation
 				            )
 				        in
 				            Result,
-				    Pages = #table(type table [seq = Int64.Type, Function = text, Block = Int64.Type, Code = text, Recorded = text], {{0, "Text.Length", 1, "{Text.Length(""abc""), Text.Length(null)}", "{3, null}"}}),
+				    Pages = #table(type table [seq = Int64.Type, Function = text, Description = text, Block = Int64.Type, Code = text, Recorded = text], {{0, "Text.Length", "Returns the number of characters in the text text.", 1, "{Text.Length(""abc""), Text.Length(null)}", "{3, null}"}}),
 				    Joined = Table.NestedJoin(Pages, "seq", Table.TransformColumns(Live, {{"id", Number.From}}), "id", "L", JoinKind.LeftOuter),
 				    Expanded = Table.ExpandTableColumn(Joined, "L", {"result"}, {"Live"}),
 				    Matched = Table.AddColumn(Expanded, "Match", each if [Live] = [Recorded] then "yes" else "NO", type text),

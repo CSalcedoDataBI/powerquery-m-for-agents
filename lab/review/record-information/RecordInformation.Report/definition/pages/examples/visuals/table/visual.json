@@ -36,6 +36,20 @@
                       "Entity": "RecordInformation"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "RecordInformation.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RecordInformation"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

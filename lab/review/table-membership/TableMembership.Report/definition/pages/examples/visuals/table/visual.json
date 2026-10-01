@@ -36,6 +36,20 @@
                       "Entity": "TableMembership"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "TableMembership.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TableMembership"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

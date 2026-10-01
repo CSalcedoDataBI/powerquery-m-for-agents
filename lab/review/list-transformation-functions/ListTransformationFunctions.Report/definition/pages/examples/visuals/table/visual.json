@@ -36,6 +36,20 @@
                       "Entity": "ListTransformationFunctions"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "ListTransformationFunctions.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ListTransformationFunctions"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

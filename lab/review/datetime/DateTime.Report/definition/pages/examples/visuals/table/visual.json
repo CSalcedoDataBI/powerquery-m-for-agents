@@ -36,6 +36,20 @@
                       "Entity": "DateTime"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "DateTime.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DateTime"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

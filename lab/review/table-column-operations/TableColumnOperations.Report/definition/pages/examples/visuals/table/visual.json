@@ -36,6 +36,20 @@
                       "Entity": "TableColumnOperations"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "TableColumnOperations.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TableColumnOperations"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

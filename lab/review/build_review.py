@@ -33,11 +33,12 @@ from build_pbip import json_text, project_files, tmdl_source  # noqa: E402
 from check_examples import category_slug  # noqa: E402
 
 EXAMPLES = os.path.join(ROOT, "skills", "m-reference", "examples")
+LIBRARY = os.path.join(ROOT, "skills", "m-reference", "generated", "library")
 CATALOG = os.path.join(ROOT, "skills", "m-reference", "generated", "catalog.json")
 RUNNER = os.path.join(ROOT, "lab", "runner", "runner.pq")
 THANK_YOU = os.path.join(HERE, "thank-you")
 GENERATOR = "lab/review/build_review.py from the example pages"
-COLUMNS = [("seq", "int64"), ("Function", "string"), ("Block", "int64"), ("Code", "string"),
+COLUMNS = [("seq", "int64"), ("Function", "string"), ("Description", "string"), ("Block", "int64"), ("Code", "string"),
            ("Recorded", "string"), ("Live", "string"), ("Match", "string")]
 DENEB = "deneb7E15AEF80B9E4D4F8E12924291ECE89A"
 SCHEMA = "https://developer.microsoft.com/json-schemas/fabric/item/report/definition"
@@ -75,8 +76,20 @@ def categories(catalog, only=""):
             with open(os.path.join(path, name), encoding="utf-8") as f:
                 blocks = m_blocks.find_blocks(f.read())
             if blocks:
-                found.setdefault(row["category"], []).append((row["name"], blocks))
+                found.setdefault(row["category"], []).append((row["name"], blocks, description(row["file"])))
     return found
+
+
+def description(file):
+    """The function's description as its card states it - the engine's own documentation, written
+    by sync_shared.py from the export - as plain text: the paragraphs between the signature and
+    the first section, or the examples link a card with no parameters has in its place."""
+    with open(os.path.join(LIBRARY, file + ".md"), encoding="utf-8") as f:
+        body = f.read().split("\n```\n", 1)[1].split("\n## ", 1)[0].split("\n**Executed examples", 1)[0]
+    text = " ".join(line.strip() for line in body.splitlines() if line.strip())
+    if not text:
+        raise SystemExit(f"{file}: its card has no description")
+    return text.replace("`", "")
 
 
 def partition(rows, allowed):
@@ -84,15 +97,16 @@ def partition(rows, allowed):
     with open(RUNNER, encoding="utf-8") as f:
         runner = f.read()
     cases = ", ".join("{" + m_text(str(i)) + ", " + m_text(code) + "}"
-                      for i, (_, _, code, _) in enumerate(rows))
+                      for i, (_, _, _, code, _) in enumerate(rows))
     runner = runner.replace("    Cases = {},", "    Cases = {" + cases + "},", 1)
     runner = runner.replace("    Allowed = {},", "    Allowed = {" + ", ".join(m_text(n) for n in allowed) + "},", 1)
-    listed = ", ".join("{" + ", ".join([str(i), m_text(fn), str(b + 1), m_text(code), m_text(rec or "")]) + "}"
-                       for i, (fn, b, code, rec) in enumerate(rows))
+    listed = ", ".join("{" + ", ".join([str(i), m_text(fn), m_text(desc), str(b + 1), m_text(code),
+                                        m_text(rec or "")]) + "}"
+                       for i, (fn, desc, b, code, rec) in enumerate(rows))
     return (
         "let\n"
         "    Live = \n" + "\n".join("        " + line for line in runner.splitlines()) + ",\n"
-        "    Pages = #table(type table [seq = Int64.Type, Function = text, Block = Int64.Type, "
+        "    Pages = #table(type table [seq = Int64.Type, Function = text, Description = text, Block = Int64.Type, "
         "Code = text, Recorded = text], {" + listed + "}),\n"
         "    Joined = Table.NestedJoin(Pages, \"seq\", Table.TransformColumns(Live, {{\"id\", Number.From}}), "
         "\"id\", \"L\", JoinKind.LeftOuter),\n"
@@ -129,7 +143,7 @@ def examples_page(name, category, count):
                    "objects": {"data": [{"properties": {"mode": literal("'Basic'")}}]}},
         "table": {"visualType": "tableEx", "position": {"x": 300, "y": 80, "z": 2, "width": 956, "height": 620},
                   "query": {"queryState": {"Values": {"projections": [
-                      field(name, c) for c in ("Function", "Block", "Code", "Recorded", "Live", "Match")]}}}},
+                      field(name, c) for c in ("Function", "Description", "Block", "Code", "Recorded", "Live", "Match")]}}}},
     }
     files = {}
     for vid, v in visuals.items():
@@ -173,7 +187,7 @@ def example_queries(name, functions):
     Table.AddColumn would shadow the library function in this file, so the block number goes in
     the name: 'Table.AddColumn (1)'."""
     expressions, groups, order = [], [], [name]
-    for g, (fn, blocks) in enumerate(functions):
+    for g, (fn, blocks, _) in enumerate(functions):
         groups.append(f"queryGroup {quoted(fn)}\n\n\tannotation PBI_QueryGroupOrder = {g}\n")
         for b, block in enumerate(blocks):
             query = f"{fn} ({b + 1})"
@@ -193,7 +207,8 @@ def example_queries(name, functions):
 
 def project(category, functions, allowed):
     name = project_name(category)
-    rows = [(fn, b, block.code, block.result) for fn, blocks in functions for b, block in enumerate(blocks)]
+    rows = [(fn, desc, b, block.code, block.result)
+            for fn, blocks, desc in functions for b, block in enumerate(blocks)]
     ids = {"generator": GENERATOR, "model": guid(name, "model"), "report": guid(name, "report"),
            "table": guid(name, "table"), "columns": [guid(name, c) for c, _ in COLUMNS]}
     files = project_files(name, tmdl_source(partition(rows, allowed)), COLUMNS, ids)

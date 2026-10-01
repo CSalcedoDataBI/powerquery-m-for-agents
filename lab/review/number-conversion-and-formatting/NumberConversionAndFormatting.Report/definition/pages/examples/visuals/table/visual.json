@@ -36,6 +36,20 @@
                       "Entity": "NumberConversionAndFormatting"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "NumberConversionAndFormatting.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NumberConversionAndFormatting"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

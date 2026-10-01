@@ -36,6 +36,20 @@
                       "Entity": "ListNumerics"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "ListNumerics.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ListNumerics"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

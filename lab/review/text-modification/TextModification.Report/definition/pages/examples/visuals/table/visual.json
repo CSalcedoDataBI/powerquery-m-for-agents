@@ -36,6 +36,20 @@
                       "Entity": "TextModification"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "TextModification.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TextModification"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

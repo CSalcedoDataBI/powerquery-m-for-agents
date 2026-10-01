@@ -36,6 +36,20 @@
                       "Entity": "ListOrdering"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "ListOrdering.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ListOrdering"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

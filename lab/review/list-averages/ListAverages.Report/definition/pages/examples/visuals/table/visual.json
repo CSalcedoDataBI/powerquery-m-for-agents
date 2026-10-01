@@ -36,6 +36,20 @@
                       "Entity": "ListAverages"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "ListAverages.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ListAverages"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

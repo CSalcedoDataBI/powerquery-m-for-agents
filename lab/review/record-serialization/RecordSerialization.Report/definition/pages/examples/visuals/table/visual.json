@@ -36,6 +36,20 @@
                       "Entity": "RecordSerialization"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "RecordSerialization.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RecordSerialization"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

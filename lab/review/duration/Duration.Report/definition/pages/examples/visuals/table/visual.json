@@ -36,6 +36,20 @@
                       "Entity": "Duration"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "Duration.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Duration"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

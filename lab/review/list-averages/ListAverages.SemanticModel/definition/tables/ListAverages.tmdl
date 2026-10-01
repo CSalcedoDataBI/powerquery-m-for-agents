@@ -14,6 +14,12 @@ table ListAverages
 		summarizeBy: none
 		sourceColumn: Function
 
+	column Description
+		dataType: string
+		lineageTag: f4213fd3-3f16-545d-b769-373fc8b2aada
+		summarizeBy: none
+		sourceColumn: Description
+
 	column Block
 		dataType: int64
 		lineageTag: fc25f5af-9205-5015-8010-93ed62737921
@@ -232,7 +238,7 @@ table ListAverages
 				            )
 				        in
 				            Result,
-				    Pages = #table(type table [seq = Int64.Type, Function = text, Block = Int64.Type, Code = text, Recorded = text], {{0, "List.Average", 1, "{List.Average({1, 2, null, 6}), List.Average({})}", "{3, null}"}, {1, "List.Mode", 1, "List.Mode({1, 2, 2, 3})", "2"}, {2, "List.Modes", 1, "List.Modes({1, 1, 2, 2, 3})", "{1, 2}"}, {3, "List.StandardDeviation", 1, "List.StandardDeviation({2, 4, 4, 4, 5, 5, 7, 9})", "2.1380899352993952"}}),
+				    Pages = #table(type table [seq = Int64.Type, Function = text, Description = text, Block = Int64.Type, Code = text, Recorded = text], {{0, "List.Average", "Returns the average value for the items in the list, list. The result is given in the same datatype as the values in the list. Only works with number, date, time, datetime, datetimezone and duration values. If the list is empty null is returned.", 1, "{List.Average({1, 2, null, 6}), List.Average({})}", "{3, null}"}, {1, "List.Mode", "Returns the item that appears most frequently in list. If the list is empty an error is raised. If multiple items appear with the same maximum frequency, the last one is chosen. An optional comparison criteria value, equationCriteria, can be specified to control equality testing.", 1, "List.Mode({1, 2, 2, 3})", "2"}, {2, "List.Modes", "Returns the items that appear most frequently in list. If the list is empty an error is raised. If multiple items appear with the same maximum frequency, all of them are returned. An optional comparison criteria value, equationCriteria, can be specified to control equality testing.", 1, "List.Modes({1, 1, 2, 2, 3})", "{1, 2}"}, {3, "List.StandardDeviation", "Returns a sample based estimate of the standard deviation of the values in the list, numbersList. If numbersList is a list of numbers, a number is returned. An error is raised on an empty list or a list of items that is not type number.", 1, "List.StandardDeviation({2, 4, 4, 4, 5, 5, 7, 9})", "2.1380899352993952"}}),
 				    Joined = Table.NestedJoin(Pages, "seq", Table.TransformColumns(Live, {{"id", Number.From}}), "id", "L", JoinKind.LeftOuter),
 				    Expanded = Table.ExpandTableColumn(Joined, "L", {"result"}, {"Live"}),
 				    Matched = Table.AddColumn(Expanded, "Match", each if [Live] = [Recorded] then "yes" else "NO", type text),

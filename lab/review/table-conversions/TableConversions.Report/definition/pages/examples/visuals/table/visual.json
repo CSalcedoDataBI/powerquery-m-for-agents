@@ -36,6 +36,20 @@
                       "Entity": "TableConversions"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "TableConversions.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TableConversions"
+                    }
+                  },
                   "Property": "Block"
                 }
               },
