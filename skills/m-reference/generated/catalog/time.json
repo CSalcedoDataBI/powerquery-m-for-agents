@@ -1,0 +1,109 @@
+{
+ "functions": [
+  {
+   "name": "Time.From",
+   "file": "time-from",
+   "kind": "library",
+   "category": "Time",
+   "returns": "nullable time",
+   "signature": "Time.From(value as any, optional culture as nullable text) as nullable time",
+   "summary": "Creates a time from the given value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Time.FromText",
+   "file": "time-fromtext",
+   "kind": "library",
+   "category": "Time",
+   "returns": "nullable time",
+   "signature": "Time.FromText(text as nullable text, optional options as any) as nullable time",
+   "summary": "Creates a Time from local and universal, and custom Time formats.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Time.Hour",
+   "file": "time-hour",
+   "kind": "library",
+   "category": "Time",
+   "returns": "nullable number",
+   "signature": "Time.Hour(dateTime as any) as nullable number",
+   "summary": "Returns the hour component.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Time.Minute",
+   "file": "time-minute",
+   "kind": "library",
+   "category": "Time",
+   "returns": "nullable number",
+   "signature": "Time.Minute(dateTime as any) as nullable number",
+   "summary": "Returns the minute component.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Time.Second",
+   "file": "time-second",
+   "kind": "library",
+   "category": "Time",
+   "returns": "nullable number",
+   "signature": "Time.Second(dateTime as any) as nullable number",
+   "summary": "Returns the second component.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Time.ToRecord",
+   "file": "time-torecord",
+   "kind": "library",
+   "category": "Time",
+   "returns": "record",
+   "signature": "Time.ToRecord(time as time) as record",
+   "summary": "Returns a record containing the Time value's parts.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Time.ToText",
+   "file": "time-totext",
+   "kind": "library",
+   "category": "Time",
+   "returns": "nullable text",
+   "signature": "Time.ToText(time as nullable time, optional options as any, optional culture as nullable text) as nullable text",
+   "summary": "Returns a textual representation of the time value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  }
+ ]
+}

@@ -67,8 +67,7 @@ Rules:
 
 
 def load_catalog():
-    with open(os.path.join(REF, "generated", "catalog.json"), encoding="utf-8") as f:
-        return json.load(f)
+    return m_blocks.load_catalog(REF)
 
 
 def pilot_rows(catalog, categories=None):

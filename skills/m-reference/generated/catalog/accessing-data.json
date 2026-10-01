@@ -1,0 +1,1024 @@
+{
+ "functions": [
+  {
+   "name": "Access.Database",
+   "file": "access-database",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Access.Database(database as binary, optional options as nullable record) as table",
+   "summary": "Returns a structural representation of an Access database.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AccessControlEntry.ConditionToIdentities",
+   "file": "accesscontrolentry-conditiontoidentities",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "list",
+   "signature": "AccessControlEntry.ConditionToIdentities(identityProvider as function, condition as function) as list",
+   "summary": "Returns a list of identities that the condition will accept.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "ActiveDirectory.Domains",
+   "file": "activedirectory-domains",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "ActiveDirectory.Domains(optional forestRootDomainName as nullable text) as table",
+   "summary": "Returns a list of Active Directory domains in the same forest as the specified domain or of the current machine's domai…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AdobeAnalytics.Cubes",
+   "file": "adobeanalytics-cubes",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "AdobeAnalytics.Cubes(optional options as nullable record) as table",
+   "summary": "Returns the report suites in Adobe Analytics.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AdoDotNet.DataSource",
+   "file": "adodotnet-datasource",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "AdoDotNet.DataSource(providerName as text, connectionString as any, optional options as nullable record) as table",
+   "summary": "Returns the schema collection for an ADO.NET data source.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AdoDotNet.Query",
+   "file": "adodotnet-query",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "AdoDotNet.Query(providerName as text, connectionString as any, query as text, optional options as nullable record) as table",
+   "summary": "Returns the result of running a native query on an ADO.NET data source.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AnalysisServices.Database",
+   "file": "analysisservices-database",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "AnalysisServices.Database(server as text, database as text, optional options as nullable record) as table",
+   "summary": "Returns a table of multidimensional cubes or tabular models from the Analysis Services database.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AnalysisServices.Databases",
+   "file": "analysisservices-databases",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "AnalysisServices.Databases(server as text, optional options as nullable record) as table",
+   "summary": "Returns the Analysis Services databases on a particular host.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AzureStorage.BlobContents",
+   "file": "azurestorage-blobcontents",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "binary",
+   "signature": "AzureStorage.BlobContents(url as text, optional options as nullable record) as binary",
+   "summary": "Returns the content of the specified blob from an Azure storage vault.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AzureStorage.Blobs",
+   "file": "azurestorage-blobs",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "AzureStorage.Blobs(account as text, optional options as nullable record) as table",
+   "summary": "Returns a navigational table containing the containers found in the specified account from an Azure storage vault.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AzureStorage.DataLake",
+   "file": "azurestorage-datalake",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "AzureStorage.DataLake(endpoint as text, optional options as nullable record) as table",
+   "summary": "Returns a navigational table containing the documents found in the specified container and its subfolders from Azure Da…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AzureStorage.DataLakeContents",
+   "file": "azurestorage-datalakecontents",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "binary",
+   "signature": "AzureStorage.DataLakeContents(url as text, optional options as nullable record) as binary",
+   "summary": "Returns the content of the specified file from an Azure Data Lake Storage filesystem.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "AzureStorage.Tables",
+   "file": "azurestorage-tables",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "AzureStorage.Tables(account as text, optional options as nullable record) as table",
+   "summary": "Returns a navigational table containing the tables found in the specified account from an Azure storage vault.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Cdm.Contents",
+   "file": "cdm-contents",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Cdm.Contents(table as table) as table",
+   "summary": "Cdm.Contents",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Csv.Document",
+   "file": "csv-document",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Csv.Document(source as any, optional columns as any, optional delimiter as any, optional extraValues as nullable number, optional encoding as nullable number) as table",
+   "summary": "Returns the contents of the CSV document as a table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DB2.Database",
+   "file": "db2-database",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "DB2.Database(server as text, database as text, optional options as nullable record) as table",
+   "summary": "Returns a table of SQL tables and views available in a Db2 database.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DeltaLake.Metadata",
+   "file": "deltalake-metadata",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "DeltaLake.Metadata(table as table) as table",
+   "summary": "Given a Delta Lake table, returns the log entries for that table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DeltaLake.Table",
+   "file": "deltalake-table",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "any",
+   "signature": "DeltaLake.Table(directory as table, optional options as nullable record) as any",
+   "summary": "Returns the contents of the Delta Lake table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Essbase.Cubes",
+   "file": "essbase-cubes",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Essbase.Cubes(url as text, optional options as nullable record) as table",
+   "summary": "Returns the cubes in an Essbase instance grouped by Essbase server.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Excel.CurrentWorkbook",
+   "file": "excel-currentworkbook",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Excel.CurrentWorkbook() as table",
+   "summary": "Returns the contents of the current Excel workbook.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Excel.Workbook",
+   "file": "excel-workbook",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Excel.Workbook(workbook as binary, optional useHeaders as any, optional delayTypes as nullable logical) as table",
+   "summary": "Returns the contents of the Excel workbook.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Exchange.Contents",
+   "file": "exchange-contents",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Exchange.Contents(optional mailboxAddress as nullable text) as table",
+   "summary": "Returns a table of contents from a Microsoft Exchange account.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "File.Contents",
+   "file": "file-contents",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "binary",
+   "signature": "File.Contents(path as text, optional options as nullable record) as binary",
+   "summary": "Returns the contents of the specified file as binary.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Folder.Contents",
+   "file": "folder-contents",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Folder.Contents(path as text, optional options as nullable record) as table",
+   "summary": "Returns a table containing the properties and contents of the files and folders found in the specified folder.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Folder.Files",
+   "file": "folder-files",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Folder.Files(path as text, optional options as nullable record) as table",
+   "summary": "Returns a table containing the properties and contents of the files found in the specified folder and subfolders.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "GoogleAnalytics.Accounts",
+   "file": "googleanalytics-accounts",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "GoogleAnalytics.Accounts(optional options as nullable record) as table",
+   "summary": "Returns Google Analytics accounts.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Hdfs.Contents",
+   "file": "hdfs-contents",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Hdfs.Contents(url as text) as table",
+   "summary": "Returns a table containing the properties and contents of the files and folders found in the specified folder from a Ha…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Hdfs.Files",
+   "file": "hdfs-files",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Hdfs.Files(url as text) as table",
+   "summary": "Returns a table containing the properties and contents of the files found in the specified folder and subfolders from a…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "HdInsight.Containers",
+   "file": "hdinsight-containers",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "HdInsight.Containers(account as text) as table",
+   "summary": "Returns a navigational table containing the containers found in the specified account from an Azure storage vault.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "HdInsight.Contents",
+   "file": "hdinsight-contents",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "HdInsight.Contents(account as text) as table",
+   "summary": "Returns a navigational table containing the containers found in the specified account from an Azure storage vault.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "HdInsight.Files",
+   "file": "hdinsight-files",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "HdInsight.Files(account as text, containerName as text) as table",
+   "summary": "Returns a table containing the properties and contents of the blobs found in the specified container from an Azure stor…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Html.Table",
+   "file": "html-table",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Html.Table(html as any, columnNameSelectorPairs as list, optional options as nullable record) as table",
+   "summary": "Returns a table containing the results of running the specified CSS selectors against the provided HTML.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Identity.From",
+   "file": "identity-from",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "record",
+   "signature": "Identity.From(identityProvider as function, value as any) as record",
+   "summary": "Creates an identity.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Identity.IsMemberOf",
+   "file": "identity-ismemberof",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "logical",
+   "signature": "Identity.IsMemberOf(identity as record, collection as record) as logical",
+   "summary": "Determines whether an identity is a member of an identity collection.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "IdentityProvider.Default",
+   "file": "identityprovider-default",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "any",
+   "signature": "IdentityProvider.Default() as any",
+   "summary": "The default identity provider for the current host.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Informix.Database",
+   "file": "informix-database",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Informix.Database(server as text, database as text, optional options as nullable record) as table",
+   "summary": "Returns a table of SQL tables and views available in an Informix database.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Json.Document",
+   "file": "json-document",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "any",
+   "signature": "Json.Document(jsonText as any, optional encoding as nullable number) as any",
+   "summary": "Returns the content of the JSON document.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "MySQL.Database",
+   "file": "mysql-database",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "MySQL.Database(server as text, database as text, optional options as nullable record) as table",
+   "summary": "Returns a table of SQL tables, views, and stored scalar functions available in a MySQL database.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "OData.Feed",
+   "file": "odata-feed",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "any",
+   "signature": "OData.Feed(serviceUri as text, optional headers as nullable record, optional options as any) as any",
+   "summary": "Returns a table of OData feeds offered by an OData service.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Odbc.DataSource",
+   "file": "odbc-datasource",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Odbc.DataSource(connectionString as any, optional options as nullable record) as table",
+   "summary": "Returns a table of SQL tables and views from the ODBC data source.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Odbc.InferOptions",
+   "file": "odbc-inferoptions",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "record",
+   "signature": "Odbc.InferOptions(connectionString as any) as record",
+   "summary": "Returns the result of trying to infer SQL capabilities for an ODBC driver.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Odbc.Query",
+   "file": "odbc-query",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Odbc.Query(connectionString as any, query as text, optional options as nullable record) as table",
+   "summary": "Returns the result of running a native query on an ODBC data source.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "OleDb.DataSource",
+   "file": "oledb-datasource",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "OleDb.DataSource(connectionString as any, optional options as nullable record) as table",
+   "summary": "Returns a table of SQL tables and views from the OLE DB data source.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "OleDb.Query",
+   "file": "oledb-query",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "OleDb.Query(connectionString as any, query as text, optional options as nullable record) as table",
+   "summary": "Returns the result of running a native query on an OLE DB data source.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Oracle.Database",
+   "file": "oracle-database",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Oracle.Database(server as text, optional options as nullable record) as table",
+   "summary": "Returns a table of SQL tables and views from the Oracle database.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Parquet.Document",
+   "file": "parquet-document",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "any",
+   "signature": "Parquet.Document(binary as binary, optional options as nullable record) as any",
+   "summary": "Returns the contents of the Parquet document as a table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Parquet.Metadata",
+   "file": "parquet-metadata",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "any",
+   "signature": "Parquet.Metadata(binary as binary) as any",
+   "summary": "This function is intended for internal use only.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Pdf.Tables",
+   "file": "pdf-tables",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Pdf.Tables(pdf as binary, optional options as nullable record) as table",
+   "summary": "Returns any tables found in a PDF file.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "PostgreSQL.Database",
+   "file": "postgresql-database",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "PostgreSQL.Database(server as text, database as text, optional options as nullable record) as table",
+   "summary": "Returns a table of SQL tables and views available in a PostgreSQL database.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "RData.FromBinary",
+   "file": "rdata-frombinary",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "any",
+   "signature": "RData.FromBinary(stream as binary) as any",
+   "summary": "Returns a record of data frames from the RData file.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Salesforce.Data",
+   "file": "salesforce-data",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Salesforce.Data(optional loginUrl as any, optional options as nullable record) as table",
+   "summary": "Returns the objects from the Salesforce account.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Salesforce.Reports",
+   "file": "salesforce-reports",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Salesforce.Reports(optional loginUrl as nullable text, optional options as nullable record) as table",
+   "summary": "Returns the reports from the Salesforce account.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SapBusinessWarehouse.Cubes",
+   "file": "sapbusinesswarehouse-cubes",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "SapBusinessWarehouse.Cubes(server as text, systemNumberOrSystemId as text, clientId as text, optional optionsOrLogonGroup as any, optional options as nullable record) as table",
+   "summary": "Returns the InfoCubes and queries in an SAP Business Warehouse system grouped by InfoArea.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SapHana.Database",
+   "file": "saphana-database",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "SapHana.Database(server as text, optional options as nullable record) as table",
+   "summary": "Returns the packages in an SAP HANA database.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SharePoint.Contents",
+   "file": "sharepoint-contents",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "SharePoint.Contents(url as text, optional options as nullable record) as table",
+   "summary": "Returns a table containing content from a SharePoint site.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SharePoint.Files",
+   "file": "sharepoint-files",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "SharePoint.Files(url as text, optional options as nullable record) as table",
+   "summary": "Returns a table containing documents from a SharePoint site.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "SharePoint.Tables",
+   "file": "sharepoint-tables",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "SharePoint.Tables(url as text, optional options as nullable record) as table",
+   "summary": "Returns a table containing content from a SharePoint List.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Soda.Feed",
+   "file": "soda-feed",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Soda.Feed(url as text) as table",
+   "summary": "Returns a table from the contents at the specified URL formatted according to the SODA 2.0 API.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Sql.Database",
+   "file": "sql-database",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Sql.Database(server as text, database as text, optional options as nullable record) as table",
+   "summary": "Returns a table of SQL tables, views, and stored functions from the SQL Server database.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Sql.Databases",
+   "file": "sql-databases",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Sql.Databases(server as text, optional options as nullable record) as table",
+   "summary": "Returns a table of databases on a SQL Server.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Sybase.Database",
+   "file": "sybase-database",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Sybase.Database(server as text, database as text, optional options as nullable record) as table",
+   "summary": "Returns a table of SQL tables and views available in a Sybase database.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Teradata.Database",
+   "file": "teradata-database",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Teradata.Database(server as text, optional options as nullable record) as table",
+   "summary": "Returns a table of SQL tables and views from the Teradata database.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Web.BrowserContents",
+   "file": "web-browsercontents",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "text",
+   "signature": "Web.BrowserContents(url as text, optional options as nullable record) as text",
+   "summary": "Returns the HTML for the specified URL, as viewed by a web browser.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Web.Contents",
+   "file": "web-contents",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "binary",
+   "signature": "Web.Contents(url as text, optional options as nullable record) as binary",
+   "summary": "Returns the contents downloaded from the url as binary.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Web.Headers",
+   "file": "web-headers",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "record",
+   "signature": "Web.Headers(url as text, optional options as nullable record) as record",
+   "summary": "Returns the HTTP headers downloaded from the url as a record value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Web.Page",
+   "file": "web-page",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Web.Page(html as any) as table",
+   "summary": "Returns the contents of the HTML document broken into its constituent structures, as well as a representation of the fu…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Xml.Document",
+   "file": "xml-document",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Xml.Document(contents as any, optional encoding as nullable number) as table",
+   "summary": "Returns the contents of the XML document as a hierarchical table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Xml.Tables",
+   "file": "xml-tables",
+   "kind": "library",
+   "category": "Accessing data",
+   "returns": "table",
+   "signature": "Xml.Tables(contents as any, optional options as nullable record, optional encoding as nullable number) as table",
+   "summary": "Returns the contents of the XML document as a nested collection of flattened tables.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  }
+ ]
+}

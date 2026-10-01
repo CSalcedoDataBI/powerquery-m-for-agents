@@ -88,10 +88,38 @@ for py in sorted(py_scripts):
     if r.returncode != 0:
         errors.append(f"py_compile failed: {os.path.relpath(py, ROOT)}: {r.stderr.strip()}")
 
+# ---- 3b: no shipped file over 256 KiB ----
+# The plugin folder is the repo root, so everything git tracks ships unless .gitattributes
+# marks it export-ignore - the same set `git archive` writes. The plugin directory holds a
+# file over 256 KiB for a reviewer; the catalogue is split by category so none is.
+def shipped_files(root):
+    tracked = subprocess.run(["git", "-C", root, "ls-files", "-z"], capture_output=True,
+                             check=True).stdout.decode("utf-8").split("\0")
+    tracked = [t for t in tracked if t]
+    # A folder pattern (lab/review/*/) is reported only for the folder, spelled with its
+    # trailing slash, never for the files inside it - so every parent folder is asked too.
+    folders = sorted({t[:i + 1] for t in tracked for i, c in enumerate(t) if c == "/"})
+    attrs = subprocess.run(["git", "-C", root, "check-attr", "-z", "--stdin", "export-ignore"],
+                           input="\0".join(tracked + folders).encode("utf-8"), capture_output=True,
+                           check=True).stdout.decode("utf-8").split("\0")
+    ignored = {attrs[i] for i in range(0, len(attrs) - 2, 3) if attrs[i + 2] == "set"}
+    return [t for t in tracked if t not in ignored
+            and not any(t[:i + 1] in ignored for i, c in enumerate(t) if c == "/")]
+
+
+try:
+    for rel in shipped_files(ROOT):
+        path = os.path.join(ROOT, rel)
+        if os.path.isfile(path) and os.path.getsize(path) > 256 * 1024:
+            errors.append(f"{rel} is {os.path.getsize(path):,} bytes, over the 256 KiB a "
+                          f"plugin file may weigh (export-ignore it, or split it)")
+except (OSError, subprocess.CalledProcessError) as e:
+    errors.append(f"could not list the shipped files with git: {e}")
+
 # ---- 4: m-reference integrity ----
 REF = os.path.join(SKILLS, "m-reference")
 GEN = os.path.join(REF, "generated")
-cat_json = os.path.join(GEN, "catalog.json")
+cat_dir = os.path.join(GEN, "catalog")
 lib_dir = os.path.join(GEN, "library")
 notes_dir = os.path.join(REF, "notes")
 
@@ -110,10 +138,12 @@ notes = stems(notes_dir)
 for orphan in sorted(notes - cards):
     errors.append(f"m-reference/notes/{orphan}.md has no generated/library/{orphan}.md")
 
-if os.path.exists(cat_json):
+if os.path.isdir(cat_dir):
     try:
-        with open(cat_json, encoding="utf-8") as f:
-            cat = json.load(f)
+        import m_blocks
+        cat = m_blocks.load_catalog(REF)
+        if cat is None:
+            raise ValueError("generated/catalog/index.json is missing")
         rows = {fn.get("file") for fn in cat.get("functions", [])}
         for missing in sorted(rows - cards):
             errors.append(f"catalog lists '{missing}' but generated/library/{missing}.md is missing")
@@ -135,19 +165,19 @@ if os.path.exists(cat_json):
             path = os.path.join(GEN, index)
             if not os.path.exists(path):
                 if names:
-                    errors.append(f"generated/{index} is missing but catalog.json has "
+                    errors.append(f"generated/{index} is missing but the catalogue has "
                                   f"{len(names)} entries for it - run the sync")
                 continue
             with open(path, encoding="utf-8") as f:
                 listed = set(re.findall(r"^\| `([^`]+)` \|", f.read(), re.M))
             for missing in sorted(names - listed):
-                errors.append(f"generated/{index} does not list '{missing}' from catalog.json")
+                errors.append(f"generated/{index} does not list '{missing}' from the catalogue")
             for extra in sorted(listed - names):
-                errors.append(f"generated/{index} lists '{extra}', which catalog.json puts elsewhere")
-    except (json.JSONDecodeError, AttributeError, TypeError) as e:
-        errors.append(f"m-reference/generated/catalog.json is not readable: {e}")
+                errors.append(f"generated/{index} lists '{extra}', which the catalogue puts elsewhere")
+    except (OSError, ValueError, KeyError, AttributeError, TypeError) as e:
+        errors.append(f"m-reference/generated/catalog/ is not readable: {e}")
 elif cards:
-    errors.append("generated/library/ has cards but generated/catalog.json is missing - run the sync")
+    errors.append("generated/library/ has cards but generated/catalog/ is missing - run the sync")
 
 # ---- report ----
 if errors:

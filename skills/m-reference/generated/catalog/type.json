@@ -1,0 +1,379 @@
+{
+ "functions": [
+  {
+   "name": "Function.IsDataSource",
+   "file": "function-isdatasource",
+   "kind": "library",
+   "category": "Type",
+   "returns": "logical",
+   "signature": "Function.IsDataSource(function as function) as logical",
+   "summary": "Returns whether or not a particular function is considered a data source.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Type.AddTableKey",
+   "file": "type-addtablekey",
+   "kind": "library",
+   "category": "Type",
+   "returns": "type",
+   "signature": "Type.AddTableKey(table as type, columns as list, isPrimary as logical) as type",
+   "summary": "Adds a key to the given table type.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Type.ClosedRecord",
+   "file": "type-closedrecord",
+   "kind": "library",
+   "category": "Type",
+   "returns": "type",
+   "signature": "Type.ClosedRecord(type as type) as type",
+   "summary": "Returns a closed version of the given record type (or the same type, if it is already closed).",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Type.Facets",
+   "file": "type-facets",
+   "kind": "library",
+   "category": "Type",
+   "returns": "record",
+   "signature": "Type.Facets(type as type) as record",
+   "summary": "Returns the facets of a type.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Type.ForFunction",
+   "file": "type-forfunction",
+   "kind": "library",
+   "category": "Type",
+   "returns": "type",
+   "signature": "Type.ForFunction(signature as record, min as number) as type",
+   "summary": "Returns a type that represents functions with specific parameter and return type constraints.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Type.ForRecord",
+   "file": "type-forrecord",
+   "kind": "library",
+   "category": "Type",
+   "returns": "type",
+   "signature": "Type.ForRecord(fields as record, open as logical) as type",
+   "summary": "Returns a type that represents records with specific type constraints on fields.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 4
+  },
+  {
+   "name": "Type.FunctionParameters",
+   "file": "type-functionparameters",
+   "kind": "library",
+   "category": "Type",
+   "returns": "record",
+   "signature": "Type.FunctionParameters(type as type) as record",
+   "summary": "Returns a record with field values set to the name of the parameters of a function type, and their values set to their…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Type.FunctionRequiredParameters",
+   "file": "type-functionrequiredparameters",
+   "kind": "library",
+   "category": "Type",
+   "returns": "number",
+   "signature": "Type.FunctionRequiredParameters(type as type) as number",
+   "summary": "Returns a number indicating the minimum number of parameters required to invoke the type of function.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Type.FunctionReturn",
+   "file": "type-functionreturn",
+   "kind": "library",
+   "category": "Type",
+   "returns": "type",
+   "signature": "Type.FunctionReturn(type as type) as type",
+   "summary": "Returns a type returned by a function type.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Type.Is",
+   "file": "type-is",
+   "kind": "library",
+   "category": "Type",
+   "returns": "logical",
+   "signature": "Type.Is(type1 as type, type2 as type) as logical",
+   "summary": "Determines if a value of the first type is always compatible with the second type.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Type.IsNullable",
+   "file": "type-isnullable",
+   "kind": "library",
+   "category": "Type",
+   "returns": "logical",
+   "signature": "Type.IsNullable(type as type) as logical",
+   "summary": "Returns true if a type is a nullable type; otherwise, false.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Type.IsOpenRecord",
+   "file": "type-isopenrecord",
+   "kind": "library",
+   "category": "Type",
+   "returns": "logical",
+   "signature": "Type.IsOpenRecord(type as type) as logical",
+   "summary": "Returns whether a record type is open.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Type.ListItem",
+   "file": "type-listitem",
+   "kind": "library",
+   "category": "Type",
+   "returns": "type",
+   "signature": "Type.ListItem(type as type) as type",
+   "summary": "Returns an item type from a list type.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Type.NonNullable",
+   "file": "type-nonnullable",
+   "kind": "library",
+   "category": "Type",
+   "returns": "type",
+   "signature": "Type.NonNullable(type as type) as type",
+   "summary": "Returns the non nullable type from a type.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Type.OpenRecord",
+   "file": "type-openrecord",
+   "kind": "library",
+   "category": "Type",
+   "returns": "type",
+   "signature": "Type.OpenRecord(type as type) as type",
+   "summary": "Returns an opened version of the given record type (or the same type, if it is already open).",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Type.RecordFields",
+   "file": "type-recordfields",
+   "kind": "library",
+   "category": "Type",
+   "returns": "record",
+   "signature": "Type.RecordFields(type as type) as record",
+   "summary": "Returns a record describing the fields of a record type with each field of the returned record type having a correspond…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Type.ReplaceFacets",
+   "file": "type-replacefacets",
+   "kind": "library",
+   "category": "Type",
+   "returns": "type",
+   "signature": "Type.ReplaceFacets(type as type, facets as record) as type",
+   "summary": "Replaces the facets of a type.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Type.ReplaceTableKeys",
+   "file": "type-replacetablekeys",
+   "kind": "library",
+   "category": "Type",
+   "returns": "type",
+   "signature": "Type.ReplaceTableKeys(tableType as type, keys as list) as type",
+   "summary": "Returns a new table type with all keys replaced by the specified list of keys.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Type.ReplaceTablePartitionKey",
+   "file": "type-replacetablepartitionkey",
+   "kind": "library",
+   "category": "Type",
+   "returns": "type",
+   "signature": "Type.ReplaceTablePartitionKey(tableType as type, partitionKey as nullable list) as type",
+   "summary": "Returns a new table type with the partition key replaced by the specified partition key.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Type.TableColumn",
+   "file": "type-tablecolumn",
+   "kind": "library",
+   "category": "Type",
+   "returns": "type",
+   "signature": "Type.TableColumn(tableType as type, column as text) as type",
+   "summary": "Returns the type of a column in a table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Type.TableKeys",
+   "file": "type-tablekeys",
+   "kind": "library",
+   "category": "Type",
+   "returns": "list",
+   "signature": "Type.TableKeys(tableType as type) as list",
+   "summary": "Returns the possibly empty list of keys for the given table type.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Type.TablePartitionKey",
+   "file": "type-tablepartitionkey",
+   "kind": "library",
+   "category": "Type",
+   "returns": "nullable list",
+   "signature": "Type.TablePartitionKey(tableType as type) as nullable list",
+   "summary": "Returns the partition key for the given table type if it has one.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 2
+  },
+  {
+   "name": "Type.TableRow",
+   "file": "type-tablerow",
+   "kind": "library",
+   "category": "Type",
+   "returns": "type",
+   "signature": "Type.TableRow(table as type) as type",
+   "summary": "Returns the row type of the table type.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Type.TableSchema",
+   "file": "type-tableschema",
+   "kind": "library",
+   "category": "Type",
+   "returns": "table",
+   "signature": "Type.TableSchema(tableType as type) as table",
+   "summary": "Returns a table containing a description of the columns (i.e.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Type.Union",
+   "file": "type-union",
+   "kind": "library",
+   "category": "Type",
+   "returns": "type",
+   "signature": "Type.Union(types as list) as type",
+   "summary": "Returns the union of a list of types.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  }
+ ]
+}

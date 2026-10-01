@@ -34,7 +34,6 @@ from check_examples import category_slug  # noqa: E402
 
 EXAMPLES = os.path.join(ROOT, "skills", "m-reference", "examples")
 LIBRARY = os.path.join(ROOT, "skills", "m-reference", "generated", "library")
-CATALOG = os.path.join(ROOT, "skills", "m-reference", "generated", "catalog.json")
 RUNNER = os.path.join(ROOT, "lab", "runner", "runner.pq")
 THANK_YOU = os.path.join(HERE, "thank-you")
 GENERATOR = "lab/review/build_review.py from the example pages"
@@ -243,8 +242,7 @@ def main(argv=None):
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--only", default="")
     args = parser.parse_args(argv)
-    with open(CATALOG, encoding="utf-8") as f:
-        catalog = json.load(f)
+    catalog = m_blocks.load_catalog()
     allowed = m_blocks.allowed_names(catalog)
     stale = []
     for category, functions in categories(catalog, args.only).items():

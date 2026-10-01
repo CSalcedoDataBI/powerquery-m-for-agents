@@ -1,0 +1,334 @@
+{
+ "functions": [
+  {
+   "name": "BinaryFormat.7BitEncodedSignedInteger",
+   "file": "binaryformat-7bitencodedsignedinteger",
+   "kind": "library",
+   "category": "Binary Formats.Reading numbers",
+   "returns": "any",
+   "signature": "BinaryFormat.7BitEncodedSignedInteger(binary as binary) as any",
+   "summary": "A binary format that reads a 64-bit signed integer that was encoded using a 7-bit variable-length encoding.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BinaryFormat.7BitEncodedUnsignedInteger",
+   "file": "binaryformat-7bitencodedunsignedinteger",
+   "kind": "library",
+   "category": "Binary Formats.Reading numbers",
+   "returns": "any",
+   "signature": "BinaryFormat.7BitEncodedUnsignedInteger(binary as binary) as any",
+   "summary": "A binary format that reads a 64-bit unsigned integer that was encoded using a 7-bit variable-length encoding.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BinaryFormat.Binary",
+   "file": "binaryformat-binary",
+   "kind": "library",
+   "category": "Binary Formats.Reading binary data",
+   "returns": "function",
+   "signature": "BinaryFormat.Binary(optional length as any) as function",
+   "summary": "Returns a binary format that reads a binary value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BinaryFormat.Byte",
+   "file": "binaryformat-byte",
+   "kind": "library",
+   "category": "Binary Formats.Reading numbers",
+   "returns": "any",
+   "signature": "BinaryFormat.Byte(binary as binary) as any",
+   "summary": "A binary format that reads an 8-bit unsigned integer.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BinaryFormat.ByteOrder",
+   "file": "binaryformat-byteorder",
+   "kind": "library",
+   "category": "Binary Formats.Controlling byte order",
+   "returns": "function",
+   "signature": "BinaryFormat.ByteOrder(binaryFormat as function, byteOrder as number) as function",
+   "summary": "Returns a binary format with the byte order specified by a function.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BinaryFormat.Choice",
+   "file": "binaryformat-choice",
+   "kind": "library",
+   "category": "Binary Formats.Controlling what comes next",
+   "returns": "function",
+   "signature": "BinaryFormat.Choice(binaryFormat as function, chooseFunction as function, optional type as nullable type, optional combineFunction as nullable function) as function",
+   "summary": "Returns a binary format that chooses the next binary format based on a value that has already been read.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BinaryFormat.Decimal",
+   "file": "binaryformat-decimal",
+   "kind": "library",
+   "category": "Binary Formats.Reading numbers",
+   "returns": "any",
+   "signature": "BinaryFormat.Decimal(binary as binary) as any",
+   "summary": "A binary format that reads a .NET 16-byte decimal value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BinaryFormat.Double",
+   "file": "binaryformat-double",
+   "kind": "library",
+   "category": "Binary Formats.Reading numbers",
+   "returns": "any",
+   "signature": "BinaryFormat.Double(binary as binary) as any",
+   "summary": "A binary format that reads an 8-byte IEEE double-precision floating point value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BinaryFormat.Group",
+   "file": "binaryformat-group",
+   "kind": "library",
+   "category": "Binary Formats.Reading a group of items",
+   "returns": "function",
+   "signature": "BinaryFormat.Group(binaryFormat as function, group as list, optional extra as nullable function, optional lastKey as any) as function",
+   "summary": "Returns a binary format that reads a group of items.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BinaryFormat.Length",
+   "file": "binaryformat-length",
+   "kind": "library",
+   "category": "Binary Formats.Limiting input",
+   "returns": "function",
+   "signature": "BinaryFormat.Length(binaryFormat as function, length as any) as function",
+   "summary": "Returns a binary format that limits the amount of data that can be read.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BinaryFormat.List",
+   "file": "binaryformat-list",
+   "kind": "library",
+   "category": "Binary Formats.Reading lists",
+   "returns": "function",
+   "signature": "BinaryFormat.List(binaryFormat as function, optional countOrCondition as any) as function",
+   "summary": "Returns a binary format that reads a sequence of items and returns a list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BinaryFormat.Null",
+   "file": "binaryformat-null",
+   "kind": "library",
+   "category": "Binary Formats.Controlling what comes next",
+   "returns": "any",
+   "signature": "BinaryFormat.Null(binary as binary) as any",
+   "summary": "A binary format that reads zero bytes and returns null.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BinaryFormat.Record",
+   "file": "binaryformat-record",
+   "kind": "library",
+   "category": "Binary Formats.Reading records",
+   "returns": "function",
+   "signature": "BinaryFormat.Record(record as record) as function",
+   "summary": "Returns a binary format that reads a record.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BinaryFormat.SignedInteger16",
+   "file": "binaryformat-signedinteger16",
+   "kind": "library",
+   "category": "Binary Formats.Reading numbers",
+   "returns": "any",
+   "signature": "BinaryFormat.SignedInteger16(binary as binary) as any",
+   "summary": "A binary format that reads a 16-bit signed integer.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BinaryFormat.SignedInteger32",
+   "file": "binaryformat-signedinteger32",
+   "kind": "library",
+   "category": "Binary Formats.Reading numbers",
+   "returns": "any",
+   "signature": "BinaryFormat.SignedInteger32(binary as binary) as any",
+   "summary": "A binary format that reads a 32-bit signed integer.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BinaryFormat.SignedInteger64",
+   "file": "binaryformat-signedinteger64",
+   "kind": "library",
+   "category": "Binary Formats.Reading numbers",
+   "returns": "any",
+   "signature": "BinaryFormat.SignedInteger64(binary as binary) as any",
+   "summary": "A binary format that reads a 64-bit signed integer.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BinaryFormat.Single",
+   "file": "binaryformat-single",
+   "kind": "library",
+   "category": "Binary Formats.Reading numbers",
+   "returns": "any",
+   "signature": "BinaryFormat.Single(binary as binary) as any",
+   "summary": "A binary format that reads a 4-byte IEEE single-precision floating point value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BinaryFormat.Text",
+   "file": "binaryformat-text",
+   "kind": "library",
+   "category": "Binary Formats.Reading text",
+   "returns": "function",
+   "signature": "BinaryFormat.Text(length as any, optional encoding as nullable number) as function",
+   "summary": "Returns a binary format that reads a text value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BinaryFormat.Transform",
+   "file": "binaryformat-transform",
+   "kind": "library",
+   "category": "Binary Formats.Transforming what was read",
+   "returns": "function",
+   "signature": "BinaryFormat.Transform(binaryFormat as function, function as function) as function",
+   "summary": "Returns a binary format that will transform the values read by another binary format.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BinaryFormat.UnsignedInteger16",
+   "file": "binaryformat-unsignedinteger16",
+   "kind": "library",
+   "category": "Binary Formats.Reading numbers",
+   "returns": "any",
+   "signature": "BinaryFormat.UnsignedInteger16(binary as binary) as any",
+   "summary": "A binary format that reads a 16-bit unsigned integer.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BinaryFormat.UnsignedInteger32",
+   "file": "binaryformat-unsignedinteger32",
+   "kind": "library",
+   "category": "Binary Formats.Reading numbers",
+   "returns": "any",
+   "signature": "BinaryFormat.UnsignedInteger32(binary as binary) as any",
+   "summary": "A binary format that reads a 32-bit unsigned integer.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "BinaryFormat.UnsignedInteger64",
+   "file": "binaryformat-unsignedinteger64",
+   "kind": "library",
+   "category": "Binary Formats.Reading numbers",
+   "returns": "any",
+   "signature": "BinaryFormat.UnsignedInteger64(binary as binary) as any",
+   "summary": "A binary format that reads a 64-bit unsigned integer.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  }
+ ]
+}

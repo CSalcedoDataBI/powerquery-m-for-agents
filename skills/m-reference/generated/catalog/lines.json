@@ -1,0 +1,64 @@
+{
+ "functions": [
+  {
+   "name": "Lines.FromBinary",
+   "file": "lines-frombinary",
+   "kind": "library",
+   "category": "Lines",
+   "returns": "list",
+   "signature": "Lines.FromBinary(binary as binary, optional quoteStyle as any, optional includeLineSeparators as nullable logical, optional encoding as nullable number) as list",
+   "summary": "Converts a binary value to a list of text values split at lines breaks.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Lines.FromText",
+   "file": "lines-fromtext",
+   "kind": "library",
+   "category": "Lines",
+   "returns": "list",
+   "signature": "Lines.FromText(text as text, optional quoteStyle as any, optional includeLineSeparators as nullable logical) as list",
+   "summary": "Converts a text value to a list of text values split at lines breaks.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Lines.ToBinary",
+   "file": "lines-tobinary",
+   "kind": "library",
+   "category": "Lines",
+   "returns": "binary",
+   "signature": "Lines.ToBinary(lines as list, optional lineSeparator as nullable text, optional encoding as nullable number, optional includeByteOrderMark as nullable logical) as binary",
+   "summary": "Converts a list of text into a binary value using the specified encoding and lineSeparator.The specified lineSeparator…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Lines.ToText",
+   "file": "lines-totext",
+   "kind": "library",
+   "category": "Lines",
+   "returns": "text",
+   "signature": "Lines.ToText(lines as list, optional lineSeparator as nullable text) as text",
+   "summary": "Converts a list of text into a single text.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  }
+ ]
+}

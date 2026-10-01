@@ -1,0 +1,1759 @@
+{
+ "functions": [
+  {
+   "name": "ItemExpression.From",
+   "file": "itemexpression-from",
+   "kind": "library",
+   "category": "Table.Table construction",
+   "returns": "record",
+   "signature": "ItemExpression.From(function as function) as record",
+   "summary": "Returns the abstract syntax tree (AST) for the body of a function.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "RowExpression.Column",
+   "file": "rowexpression-column",
+   "kind": "library",
+   "category": "Table.Table construction",
+   "returns": "record",
+   "signature": "RowExpression.Column(columnName as text) as record",
+   "summary": "Returns an abstract syntax tree (AST) that represents access to a column within a row expression.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "RowExpression.From",
+   "file": "rowexpression-from",
+   "kind": "library",
+   "category": "Table.Table construction",
+   "returns": "record",
+   "signature": "RowExpression.From(function as function) as record",
+   "summary": "Returns the abstract syntax tree (AST) for the body of a function.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Table.AddColumn",
+   "file": "table-addcolumn",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.AddColumn(table as table, newColumnName as text, columnGenerator as function, optional columnType as nullable type) as table",
+   "summary": "Adds a column with the specified name.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": true,
+   "examples": 1
+  },
+  {
+   "name": "Table.AddFuzzyClusterColumn",
+   "file": "table-addfuzzyclustercolumn",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.AddFuzzyClusterColumn(table as table, columnName as text, newColumnName as text, optional options as nullable record) as table",
+   "summary": "Adds a new column with representative values obtained by fuzzy grouping values of the specified column in the table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 2
+  },
+  {
+   "name": "Table.AddIndexColumn",
+   "file": "table-addindexcolumn",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.AddIndexColumn(table as table, newColumnName as text, optional initialValue as nullable number, optional increment as nullable number, optional columnType as nullable type) as table",
+   "summary": "Appends a column with explicit position values.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.AddJoinColumn",
+   "file": "table-addjoincolumn",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.AddJoinColumn(table1 as table, key1 as any, table2 as any, key2 as any, newColumnName as text) as table",
+   "summary": "Performs a join between tables on supplied columns and produces the join result in a new column.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.AddKey",
+   "file": "table-addkey",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.AddKey(table as table, columns as list, isPrimary as logical) as table",
+   "summary": "Adds a key to a table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.AddRankColumn",
+   "file": "table-addrankcolumn",
+   "kind": "library",
+   "category": "Table.Ordering",
+   "returns": "table",
+   "signature": "Table.AddRankColumn(table as table, newColumnName as text, comparisonCriteria as any, optional options as nullable record) as table",
+   "summary": "Appends a column with the ranking of one or more other columns.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.AggregateTableColumn",
+   "file": "table-aggregatetablecolumn",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.AggregateTableColumn(table as table, column as text, aggregations as list) as table",
+   "summary": "Aggregates a column of tables into multiple columns in the containing table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.AlternateRows",
+   "file": "table-alternaterows",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "table",
+   "signature": "Table.AlternateRows(table as table, offset as number, skip as number, take as number) as table",
+   "summary": "Keeps the initial offset then alternates taking and skipping the following rows.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ApproximateRowCount",
+   "file": "table-approximaterowcount",
+   "kind": "library",
+   "category": "Table.Information",
+   "returns": "number",
+   "signature": "Table.ApproximateRowCount(table as table) as number",
+   "summary": "Returns the approximate number of rows in the table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.Buffer",
+   "file": "table-buffer",
+   "kind": "library",
+   "category": "Table.Other",
+   "returns": "table",
+   "signature": "Table.Buffer(table as table, optional options as nullable record) as table",
+   "summary": "Buffers a table in memory, isolating it from external changes during evaluation.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ClearDown",
+   "file": "table-cleardown",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.ClearDown(table as table, columns as list) as table",
+   "summary": "Clears repeating sets of column values.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.Column",
+   "file": "table-column",
+   "kind": "library",
+   "category": "Table.Column operations",
+   "returns": "list",
+   "signature": "Table.Column(table as table, column as text) as list",
+   "summary": "Returns a specified column of data from the table as a list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ColumnCount",
+   "file": "table-columncount",
+   "kind": "library",
+   "category": "Table.Information",
+   "returns": "number",
+   "signature": "Table.ColumnCount(table as table) as number",
+   "summary": "Returns the number of columns in the table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ColumnNames",
+   "file": "table-columnnames",
+   "kind": "library",
+   "category": "Table.Column operations",
+   "returns": "list",
+   "signature": "Table.ColumnNames(table as table) as list",
+   "summary": "Returns the column names as a list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ColumnsOfType",
+   "file": "table-columnsoftype",
+   "kind": "library",
+   "category": "Table.Column operations",
+   "returns": "list",
+   "signature": "Table.ColumnsOfType(table as table, listOfTypes as list) as list",
+   "summary": "Returns a list with the names of the columns that match the specified types.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.Combine",
+   "file": "table-combine",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "table",
+   "signature": "Table.Combine(tables as list, optional columns as any) as table",
+   "summary": "Returns a table that is the result of merging a list of tables.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.CombineColumns",
+   "file": "table-combinecolumns",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.CombineColumns(table as table, sourceColumns as list, combiner as function, column as text) as table",
+   "summary": "Combines the specified columns into a new column using the specified combiner function.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.CombineColumnsToRecord",
+   "file": "table-combinecolumnstorecord",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.CombineColumnsToRecord(table as table, newColumnName as text, sourceColumns as list, optional options as nullable record) as table",
+   "summary": "Combines the specified columns into a new record-valued column where each record has field names and values correspondi…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ConformToPageReader",
+   "file": "table-conformtopagereader",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.ConformToPageReader(table as table, shapingFunction as function) as table",
+   "summary": "This function is intended for internal use only.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.Contains",
+   "file": "table-contains",
+   "kind": "library",
+   "category": "Table.Membership",
+   "returns": "logical",
+   "signature": "Table.Contains(table as table, row as record, optional equationCriteria as any) as logical",
+   "summary": "Indicates whether the specified record appears as a row in the table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ContainsAll",
+   "file": "table-containsall",
+   "kind": "library",
+   "category": "Table.Membership",
+   "returns": "logical",
+   "signature": "Table.ContainsAll(table as table, rows as list, optional equationCriteria as any) as logical",
+   "summary": "Indicates whether all of the specified records appear as rows in the table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ContainsAny",
+   "file": "table-containsany",
+   "kind": "library",
+   "category": "Table.Membership",
+   "returns": "logical",
+   "signature": "Table.ContainsAny(table as table, rows as list, optional equationCriteria as any) as logical",
+   "summary": "Indicates whether any of the specified records appear as rows in the table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.DemoteHeaders",
+   "file": "table-demoteheaders",
+   "kind": "library",
+   "category": "Table.Column operations",
+   "returns": "table",
+   "signature": "Table.DemoteHeaders(table as table) as table",
+   "summary": "Demotes the column headers to the first row of values.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.Distinct",
+   "file": "table-distinct",
+   "kind": "library",
+   "category": "Table.Membership",
+   "returns": "table",
+   "signature": "Table.Distinct(table as table, optional equationCriteria as any) as table",
+   "summary": "Removes duplicate rows from the table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": true,
+   "examples": 1
+  },
+  {
+   "name": "Table.DuplicateColumn",
+   "file": "table-duplicatecolumn",
+   "kind": "library",
+   "category": "Table.Column operations",
+   "returns": "table",
+   "signature": "Table.DuplicateColumn(table as table, columnName as text, newColumnName as text, optional columnType as nullable type) as table",
+   "summary": "Duplicates a column with the specified name.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ExpandListColumn",
+   "file": "table-expandlistcolumn",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.ExpandListColumn(table as table, column as text) as table",
+   "summary": "Given a column of lists in a table, create a copy of a row for each value in its list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ExpandRecordColumn",
+   "file": "table-expandrecordcolumn",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.ExpandRecordColumn(table as table, column as text, fieldNames as list, optional newColumnNames as nullable list) as table",
+   "summary": "Expands a column of records into columns with each of the values.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ExpandTableColumn",
+   "file": "table-expandtablecolumn",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.ExpandTableColumn(table as table, column as text, columnNames as list, optional newColumnNames as nullable list) as table",
+   "summary": "Expands a column of records or a column of tables into multiple columns in the containing table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.FillDown",
+   "file": "table-filldown",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.FillDown(table as table, columns as list) as table",
+   "summary": "Propagates the value of a previous cell to the null-valued cells below in the column.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.FillUp",
+   "file": "table-fillup",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.FillUp(table as table, columns as list) as table",
+   "summary": "Propagates the value of a cell to the null-valued cells above in the column.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.FilterWithDataTable",
+   "file": "table-filterwithdatatable",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "any",
+   "signature": "Table.FilterWithDataTable(table as table, dataTableIdentifier as text) as any",
+   "summary": "This function is intended for internal use only.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Table.FindText",
+   "file": "table-findtext",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "table",
+   "signature": "Table.FindText(table as table, text as text) as table",
+   "summary": "Returns all the rows that contain the given text in the table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.First",
+   "file": "table-first",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "any",
+   "signature": "Table.First(table as table, optional default as any) as any",
+   "summary": "Returns the first row or a specified default value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.FirstN",
+   "file": "table-firstn",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "table",
+   "signature": "Table.FirstN(table as table, countOrCondition as any) as table",
+   "summary": "Returns the first count rows specified.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.FirstValue",
+   "file": "table-firstvalue",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "any",
+   "signature": "Table.FirstValue(table as table, optional default as any) as any",
+   "summary": "Returns the first column of the first row of the table or a specified default value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.FromColumns",
+   "file": "table-fromcolumns",
+   "kind": "library",
+   "category": "Table.Table construction",
+   "returns": "table",
+   "signature": "Table.FromColumns(lists as list, optional columns as any) as table",
+   "summary": "Creates a table from a list of columns and specified values.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.FromList",
+   "file": "table-fromlist",
+   "kind": "library",
+   "category": "Table.Table construction",
+   "returns": "table",
+   "signature": "Table.FromList(list as list, optional splitter as nullable function, optional columns as any, optional default as any, optional extraValues as nullable number) as table",
+   "summary": "Converts a list into a table by applying the specified splitting function to each item in the list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.FromPartitions",
+   "file": "table-frompartitions",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "table",
+   "signature": "Table.FromPartitions(partitionColumn as text, partitions as list, optional partitionColumnType as nullable type) as table",
+   "summary": "Returns a table that is the result of combining a set of partitioned tables.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.FromRecords",
+   "file": "table-fromrecords",
+   "kind": "library",
+   "category": "Table.Table construction",
+   "returns": "table",
+   "signature": "Table.FromRecords(records as list, optional columns as any, optional missingField as nullable number) as table",
+   "summary": "Converts a list of records into a table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.FromRows",
+   "file": "table-fromrows",
+   "kind": "library",
+   "category": "Table.Table construction",
+   "returns": "table",
+   "signature": "Table.FromRows(rows as list, optional columns as any) as table",
+   "summary": "Creates a table from a list of row values and optional columns.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.FromValue",
+   "file": "table-fromvalue",
+   "kind": "library",
+   "category": "Table.Table construction",
+   "returns": "table",
+   "signature": "Table.FromValue(value as any, optional options as nullable record) as table",
+   "summary": "Creates a table with a column from the provided value(s).",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.FuzzyGroup",
+   "file": "table-fuzzygroup",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.FuzzyGroup(table as table, key as any, aggregatedColumns as list, optional options as nullable record) as table",
+   "summary": "Groups rows in the table based on fuzzy matching of keys.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 2
+  },
+  {
+   "name": "Table.FuzzyJoin",
+   "file": "table-fuzzyjoin",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.FuzzyJoin(table1 as table, key1 as any, table2 as table, key2 as any, optional joinKind as nullable number, optional joinOptions as nullable record) as table",
+   "summary": "Joins the rows from the two tables that fuzzy match based on the given keys.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 2
+  },
+  {
+   "name": "Table.FuzzyNestedJoin",
+   "file": "table-fuzzynestedjoin",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.FuzzyNestedJoin(table1 as table, key1 as any, table2 as table, key2 as any, newColumnName as text, optional joinKind as nullable number, optional joinOptions as nullable record) as table",
+   "summary": "Performs a fuzzy join between tables on supplied columns and produces the join result in a new column.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 2
+  },
+  {
+   "name": "Table.Group",
+   "file": "table-group",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.Group(table as table, key as any, aggregatedColumns as list, optional groupKind as nullable number, optional comparer as nullable function) as table",
+   "summary": "Groups rows in the table that have the same key.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.HasColumns",
+   "file": "table-hascolumns",
+   "kind": "library",
+   "category": "Table.Column operations",
+   "returns": "logical",
+   "signature": "Table.HasColumns(table as table, columns as any) as logical",
+   "summary": "Indicates whether the table contains the specified column(s).",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.InsertRows",
+   "file": "table-insertrows",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "table",
+   "signature": "Table.InsertRows(table as table, offset as number, rows as list) as table",
+   "summary": "Inserts a list of rows into the table at the specified position.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.IsDistinct",
+   "file": "table-isdistinct",
+   "kind": "library",
+   "category": "Table.Membership",
+   "returns": "logical",
+   "signature": "Table.IsDistinct(table as table, optional comparisonCriteria as any) as logical",
+   "summary": "Indicates whether the table contains only distinct rows (no duplicates).",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.IsEmpty",
+   "file": "table-isempty",
+   "kind": "library",
+   "category": "Table.Information",
+   "returns": "logical",
+   "signature": "Table.IsEmpty(table as table) as logical",
+   "summary": "Indicates whether the table contains any rows.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.Join",
+   "file": "table-join",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.Join(table1 as table, key1 as any, table2 as table, key2 as any, optional joinKind as nullable number, optional joinAlgorithm as nullable number, optional keyEqualityComparers as nullable list) as table",
+   "summary": "Joins the rows from the two tables that match based on the given keys.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": true,
+   "examples": 1
+  },
+  {
+   "name": "Table.Keys",
+   "file": "table-keys",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "list",
+   "signature": "Table.Keys(table as table) as list",
+   "summary": "Returns the keys of the specified table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.Last",
+   "file": "table-last",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "any",
+   "signature": "Table.Last(table as table, optional default as any) as any",
+   "summary": "Returns the last row or a specified default value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.LastN",
+   "file": "table-lastn",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "table",
+   "signature": "Table.LastN(table as table, countOrCondition as any) as table",
+   "summary": "Returns the last specified number of rows.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.MatchesAllRows",
+   "file": "table-matchesallrows",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "logical",
+   "signature": "Table.MatchesAllRows(table as table, condition as function) as logical",
+   "summary": "Indicates whether all the rows in the table meet the given condition.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.MatchesAnyRows",
+   "file": "table-matchesanyrows",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "logical",
+   "signature": "Table.MatchesAnyRows(table as table, condition as function) as logical",
+   "summary": "Indicates whether any the rows in the table meet the given condition.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.Max",
+   "file": "table-max",
+   "kind": "library",
+   "category": "Table.Ordering",
+   "returns": "any",
+   "signature": "Table.Max(table as table, comparisonCriteria as any, optional default as any) as any",
+   "summary": "Returns the largest row or default value using the given criteria.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.MaxN",
+   "file": "table-maxn",
+   "kind": "library",
+   "category": "Table.Ordering",
+   "returns": "table",
+   "signature": "Table.MaxN(table as table, comparisonCriteria as any, countOrCondition as any) as table",
+   "summary": "Returns the largest row(s) using the given criteria.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.Min",
+   "file": "table-min",
+   "kind": "library",
+   "category": "Table.Ordering",
+   "returns": "any",
+   "signature": "Table.Min(table as table, comparisonCriteria as any, optional default as any) as any",
+   "summary": "Returns the smallest row or a default value using the given criteria.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.MinN",
+   "file": "table-minn",
+   "kind": "library",
+   "category": "Table.Ordering",
+   "returns": "table",
+   "signature": "Table.MinN(table as table, comparisonCriteria as any, countOrCondition as any) as table",
+   "summary": "Returns the smallest row(s) using the given criteria.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.NestedJoin",
+   "file": "table-nestedjoin",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.NestedJoin(table1 as table, key1 as any, table2 as any, key2 as any, newColumnName as text, optional joinKind as nullable number, optional keyEqualityComparers as nullable list) as table",
+   "summary": "Performs a join between tables on supplied columns and produces the join result in a new column.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.Partition",
+   "file": "table-partition",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "list",
+   "signature": "Table.Partition(table as table, column as text, groups as number, hash as function) as list",
+   "summary": "Partitions the table into a list of tables based on the number of groups and column specified.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.PartitionKey",
+   "file": "table-partitionkey",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "nullable list",
+   "signature": "Table.PartitionKey(table as table) as nullable list",
+   "summary": "Returns the partition key of the specified table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.PartitionValues",
+   "file": "table-partitionvalues",
+   "kind": "library",
+   "category": "Table.Information",
+   "returns": "table",
+   "signature": "Table.PartitionValues(table as table) as table",
+   "summary": "Returns information about how a table is partitioned.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.Pivot",
+   "file": "table-pivot",
+   "kind": "library",
+   "category": "Table.Column operations",
+   "returns": "table",
+   "signature": "Table.Pivot(table as table, pivotValues as list, attributeColumn as text, valueColumn as text, optional aggregationFunction as nullable function) as table",
+   "summary": "Given a pair of columns representing attribute-value pairs, rotates the data in the attribute column into a column head…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.PositionOf",
+   "file": "table-positionof",
+   "kind": "library",
+   "category": "Table.Membership",
+   "returns": "any",
+   "signature": "Table.PositionOf(table as table, row as record, optional occurrence as any, optional equationCriteria as any) as any",
+   "summary": "Returns the position or positions of the row within the table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.PositionOfAny",
+   "file": "table-positionofany",
+   "kind": "library",
+   "category": "Table.Membership",
+   "returns": "any",
+   "signature": "Table.PositionOfAny(table as table, rows as list, optional occurrence as nullable number, optional equationCriteria as any) as any",
+   "summary": "Returns the position or positions of any of the specified rows within the table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.PrefixColumns",
+   "file": "table-prefixcolumns",
+   "kind": "library",
+   "category": "Table.Column operations",
+   "returns": "table",
+   "signature": "Table.PrefixColumns(table as table, prefix as text) as table",
+   "summary": "Returns a table where the columns have all been prefixed with the given text.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.Profile",
+   "file": "table-profile",
+   "kind": "library",
+   "category": "Table.Information",
+   "returns": "table",
+   "signature": "Table.Profile(table as table, optional additionalAggregates as nullable list) as table",
+   "summary": "Returns a profile of the columns of a table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.PromoteHeaders",
+   "file": "table-promoteheaders",
+   "kind": "library",
+   "category": "Table.Column operations",
+   "returns": "table",
+   "signature": "Table.PromoteHeaders(table as table, optional options as nullable record) as table",
+   "summary": "Promotes the first row of values as the new column headers (i.e.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.Range",
+   "file": "table-range",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "table",
+   "signature": "Table.Range(table as table, offset as number, optional count as nullable number) as table",
+   "summary": "Returns the rows beginning at the specified offset.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.RemoveColumns",
+   "file": "table-removecolumns",
+   "kind": "library",
+   "category": "Table.Column operations",
+   "returns": "table",
+   "signature": "Table.RemoveColumns(table as table, columns as any, optional missingField as nullable number) as table",
+   "summary": "Removes the specified columns.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.RemoveFirstN",
+   "file": "table-removefirstn",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "table",
+   "signature": "Table.RemoveFirstN(table as table, optional countOrCondition as any) as table",
+   "summary": "Returns a table with the first count rows skipped.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.RemoveLastN",
+   "file": "table-removelastn",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "table",
+   "signature": "Table.RemoveLastN(table as table, optional countOrCondition as any) as table",
+   "summary": "Returns a table with the last N rows removed.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.RemoveMatchingRows",
+   "file": "table-removematchingrows",
+   "kind": "library",
+   "category": "Table.Membership",
+   "returns": "table",
+   "signature": "Table.RemoveMatchingRows(table as table, rows as list, optional equationCriteria as any) as table",
+   "summary": "Removes all occurrences of the specified rows from the table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.RemoveRows",
+   "file": "table-removerows",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "table",
+   "signature": "Table.RemoveRows(table as table, offset as number, optional count as nullable number) as table",
+   "summary": "Removes the specified number of rows.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.RemoveRowsWithErrors",
+   "file": "table-removerowswitherrors",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "table",
+   "signature": "Table.RemoveRowsWithErrors(table as table, optional columns as nullable list) as table",
+   "summary": "Returns a table with the rows removed from the input table that contain an error in at least one of the cells.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.RenameColumns",
+   "file": "table-renamecolumns",
+   "kind": "library",
+   "category": "Table.Column operations",
+   "returns": "table",
+   "signature": "Table.RenameColumns(table as table, renames as list, optional missingField as nullable number) as table",
+   "summary": "Applies rename(s) of the form {old, new}.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ReorderColumns",
+   "file": "table-reordercolumns",
+   "kind": "library",
+   "category": "Table.Column operations",
+   "returns": "table",
+   "signature": "Table.ReorderColumns(table as table, columnOrder as list, optional missingField as nullable number) as table",
+   "summary": "Returns a table with the columns in the specified order.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.Repeat",
+   "file": "table-repeat",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "table",
+   "signature": "Table.Repeat(table as table, count as number) as table",
+   "summary": "Repeats the rows of the tables a specified number of times.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ReplaceErrorValues",
+   "file": "table-replaceerrorvalues",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.ReplaceErrorValues(table as table, errorReplacement as list) as table",
+   "summary": "Replaces the error values in the specified columns with the corresponding specified value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ReplaceKeys",
+   "file": "table-replacekeys",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.ReplaceKeys(table as table, keys as list) as table",
+   "summary": "Replaces the keys of the specified table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ReplaceMatchingRows",
+   "file": "table-replacematchingrows",
+   "kind": "library",
+   "category": "Table.Membership",
+   "returns": "table",
+   "signature": "Table.ReplaceMatchingRows(table as table, replacements as list, optional equationCriteria as any) as table",
+   "summary": "Replaces all the specified rows with the provided row(s).",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ReplacePartitionKey",
+   "file": "table-replacepartitionkey",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.ReplacePartitionKey(table as table, partitionKey as nullable list) as table",
+   "summary": "Replaces the partition key of the specified table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ReplaceRelationshipIdentity",
+   "file": "table-replacerelationshipidentity",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "any",
+   "signature": "Table.ReplaceRelationshipIdentity(value as any, identity as text) as any",
+   "summary": "This function is intended for internal use only.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ReplaceRows",
+   "file": "table-replacerows",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "table",
+   "signature": "Table.ReplaceRows(table as table, offset as number, count as number, rows as list) as table",
+   "summary": "Replaces the specified range of rows with the provided row(s).",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ReplaceValue",
+   "file": "table-replacevalue",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.ReplaceValue(table as table, oldValue as any, newValue as any, replacer as function, columnsToSearch as list) as table",
+   "summary": "Replaces one value with another in the specified columns.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ReverseRows",
+   "file": "table-reverserows",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "table",
+   "signature": "Table.ReverseRows(table as table) as table",
+   "summary": "Returns a table with the rows in reverse order.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.RowCount",
+   "file": "table-rowcount",
+   "kind": "library",
+   "category": "Table.Information",
+   "returns": "number",
+   "signature": "Table.RowCount(table as table) as number",
+   "summary": "Returns the number of rows in the table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.Schema",
+   "file": "table-schema",
+   "kind": "library",
+   "category": "Table.Information",
+   "returns": "table",
+   "signature": "Table.Schema(table as table) as table",
+   "summary": "Returns a table containing a description of the columns (i.e.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.SelectColumns",
+   "file": "table-selectcolumns",
+   "kind": "library",
+   "category": "Table.Column operations",
+   "returns": "table",
+   "signature": "Table.SelectColumns(table as table, columns as any, optional missingField as nullable number) as table",
+   "summary": "Returns a table with only the specified columns.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.SelectRows",
+   "file": "table-selectrows",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "table",
+   "signature": "Table.SelectRows(table as table, condition as function) as table",
+   "summary": "Selects the rows that meet the condition function.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.SelectRowsWithErrors",
+   "file": "table-selectrowswitherrors",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "table",
+   "signature": "Table.SelectRowsWithErrors(table as table, optional columns as nullable list) as table",
+   "summary": "Returns a table with only those rows of the input table that contain an error in at least one of the cells.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.SingleRow",
+   "file": "table-singlerow",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "record",
+   "signature": "Table.SingleRow(table as table) as record",
+   "summary": "Returns the single row in the table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.Skip",
+   "file": "table-skip",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "table",
+   "signature": "Table.Skip(table as table, optional countOrCondition as any) as table",
+   "summary": "Returns a table with the first count rows skipped.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.Sort",
+   "file": "table-sort",
+   "kind": "library",
+   "category": "Table.Ordering",
+   "returns": "table",
+   "signature": "Table.Sort(table as table, comparisonCriteria as any) as table",
+   "summary": "Sorts the table using one or more column names and comparison criteria.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.Split",
+   "file": "table-split",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "list",
+   "signature": "Table.Split(table as table, pageSize as number) as list",
+   "summary": "Splits the specified table into a list of tables using the specified page size.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.SplitAt",
+   "file": "table-splitat",
+   "kind": "library",
+   "category": "Table.Row operations",
+   "returns": "list",
+   "signature": "Table.SplitAt(table as table, count as number) as list",
+   "summary": "Returns a list containing the first count rows specified and the remaining rows.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.SplitColumn",
+   "file": "table-splitcolumn",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.SplitColumn(table as table, sourceColumn as text, splitter as function, optional columnNamesOrNumber as any, optional default as any, optional extraColumns as any) as table",
+   "summary": "Splits the specified column into a set of additional columns using the specified splitter function.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.StopFolding",
+   "file": "table-stopfolding",
+   "kind": "library",
+   "category": "Table.Other",
+   "returns": "table",
+   "signature": "Table.StopFolding(table as table) as table",
+   "summary": "Prevents any downstream operations from being run against the original source of the data.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ToColumns",
+   "file": "table-tocolumns",
+   "kind": "library",
+   "category": "Table.Conversions",
+   "returns": "list",
+   "signature": "Table.ToColumns(table as table) as list",
+   "summary": "Creates a list of nested lists of column values from a table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ToList",
+   "file": "table-tolist",
+   "kind": "library",
+   "category": "Table.Conversions",
+   "returns": "list",
+   "signature": "Table.ToList(table as table, optional combiner as nullable function) as list",
+   "summary": "Converts a table into a list by applying the specified combining function to each row of values in the table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ToRecords",
+   "file": "table-torecords",
+   "kind": "library",
+   "category": "Table.Conversions",
+   "returns": "list",
+   "signature": "Table.ToRecords(table as table) as list",
+   "summary": "Converts a table to a list of records.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ToRows",
+   "file": "table-torows",
+   "kind": "library",
+   "category": "Table.Conversions",
+   "returns": "list",
+   "signature": "Table.ToRows(table as table) as list",
+   "summary": "Creates a list of nested lists of row values from a table.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.TransformColumnNames",
+   "file": "table-transformcolumnnames",
+   "kind": "library",
+   "category": "Table.Column operations",
+   "returns": "table",
+   "signature": "Table.TransformColumnNames(table as table, nameGenerator as function, optional options as nullable record) as table",
+   "summary": "Transforms column names by using the given function.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.TransformColumns",
+   "file": "table-transformcolumns",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.TransformColumns(table as table, transformOperations as list, optional defaultTransformation as nullable function, optional missingField as nullable number) as table",
+   "summary": "Transforms the values of one or more columns.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.TransformColumnTypes",
+   "file": "table-transformcolumntypes",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.TransformColumnTypes(table as table, typeTransformations as list, optional culture as any) as table",
+   "summary": "Applies type transformation(s) of the form { column, type } using a specific culture.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": true,
+   "examples": 1
+  },
+  {
+   "name": "Table.TransformRows",
+   "file": "table-transformrows",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "list",
+   "signature": "Table.TransformRows(table as table, transform as function) as list",
+   "summary": "Transforms the rows of the table using the specified transform function.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.Transpose",
+   "file": "table-transpose",
+   "kind": "library",
+   "category": "Table.Transformation",
+   "returns": "table",
+   "signature": "Table.Transpose(table as table, optional columns as any) as table",
+   "summary": "Makes columns into rows and rows into columns.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.Unpivot",
+   "file": "table-unpivot",
+   "kind": "library",
+   "category": "Table.Column operations",
+   "returns": "table",
+   "signature": "Table.Unpivot(table as table, pivotColumns as list, attributeColumn as text, valueColumn as text) as table",
+   "summary": "Translates a set of columns in a table into attribute-value pairs.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.UnpivotOtherColumns",
+   "file": "table-unpivotothercolumns",
+   "kind": "library",
+   "category": "Table.Column operations",
+   "returns": "table",
+   "signature": "Table.UnpivotOtherColumns(table as table, pivotColumns as list, attributeColumn as text, valueColumn as text) as table",
+   "summary": "Translates all columns other than a specified set into attribute-value pairs.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.View",
+   "file": "table-view",
+   "kind": "library",
+   "category": "Table.Table construction",
+   "returns": "table",
+   "signature": "Table.View(table as nullable table, handlers as record) as table",
+   "summary": "Creates or extends a table with user-defined handlers for query and action operations.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ViewError",
+   "file": "table-viewerror",
+   "kind": "library",
+   "category": "Table.Table construction",
+   "returns": "record",
+   "signature": "Table.ViewError(errorRecord as record) as record",
+   "summary": "Creates a modified error record which won't trigger a fallback when raised by a handler defined on a view (via Table.Vi…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Table.ViewFunction",
+   "file": "table-viewfunction",
+   "kind": "library",
+   "category": "Table.Table construction",
+   "returns": "function",
+   "signature": "Table.ViewFunction(function as function) as function",
+   "summary": "Creates a function that can be intercepted by a handler defined on a view (via Table.View).",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "Tables.GetRelationships",
+   "file": "tables-getrelationships",
+   "kind": "library",
+   "category": "Table.Information",
+   "returns": "table",
+   "signature": "Tables.GetRelationships(tables as table, optional dataColumn as nullable text) as table",
+   "summary": "Gets the relationships among a set of tables.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  }
+ ]
+}

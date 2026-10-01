@@ -1,0 +1,349 @@
+{
+ "functions": [
+  {
+   "name": "Geography.FromWellKnownText",
+   "file": "geography-fromwellknowntext",
+   "kind": "library",
+   "category": "Record.Serialization",
+   "returns": "nullable record",
+   "signature": "Geography.FromWellKnownText(input as nullable text) as nullable record",
+   "summary": "Translates text representing a geographic value in Well-Known Text (WKT) format into a structured record.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Geography.ToWellKnownText",
+   "file": "geography-towellknowntext",
+   "kind": "library",
+   "category": "Record.Serialization",
+   "returns": "nullable text",
+   "signature": "Geography.ToWellKnownText(input as nullable record, optional omitSRID as nullable logical) as nullable text",
+   "summary": "Translates a structured geographic point value into its Well-Known Text (WKT) representation.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "GeographyPoint.From",
+   "file": "geographypoint-from",
+   "kind": "library",
+   "category": "Record.Serialization",
+   "returns": "record",
+   "signature": "GeographyPoint.From(longitude as number, latitude as number, optional z as nullable number, optional m as nullable number, optional srid as nullable number) as record",
+   "summary": "Creates a record representing a geographic point from parts.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Geometry.FromWellKnownText",
+   "file": "geometry-fromwellknowntext",
+   "kind": "library",
+   "category": "Record.Serialization",
+   "returns": "nullable record",
+   "signature": "Geometry.FromWellKnownText(input as nullable text) as nullable record",
+   "summary": "Translates text representing a geometric value in Well-Known Text (WKT) format into a structured record.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Geometry.ToWellKnownText",
+   "file": "geometry-towellknowntext",
+   "kind": "library",
+   "category": "Record.Serialization",
+   "returns": "nullable text",
+   "signature": "Geometry.ToWellKnownText(input as nullable record, optional omitSRID as nullable logical) as nullable text",
+   "summary": "Translates a structured geometric point value into its Well-Known Text (WKT) representation.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "GeometryPoint.From",
+   "file": "geometrypoint-from",
+   "kind": "library",
+   "category": "Record.Serialization",
+   "returns": "record",
+   "signature": "GeometryPoint.From(x as number, y as number, optional z as nullable number, optional m as nullable number, optional srid as nullable number) as record",
+   "summary": "Creates a record representing a geometric point from parts.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Record.AddField",
+   "file": "record-addfield",
+   "kind": "library",
+   "category": "Record.Transformations",
+   "returns": "record",
+   "signature": "Record.AddField(record as record, fieldName as text, value as any, optional delayed as nullable logical) as record",
+   "summary": "Adds a field to a record.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Record.Combine",
+   "file": "record-combine",
+   "kind": "library",
+   "category": "Record.Transformations",
+   "returns": "record",
+   "signature": "Record.Combine(records as list) as record",
+   "summary": "Combines the records in the given list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Record.Field",
+   "file": "record-field",
+   "kind": "library",
+   "category": "Record.Selection",
+   "returns": "any",
+   "signature": "Record.Field(record as record, field as text) as any",
+   "summary": "Returns the value of the specified field in a record.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Record.FieldCount",
+   "file": "record-fieldcount",
+   "kind": "library",
+   "category": "Record.Information",
+   "returns": "number",
+   "signature": "Record.FieldCount(record as record) as number",
+   "summary": "Returns the number of fields in the record.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Record.FieldNames",
+   "file": "record-fieldnames",
+   "kind": "library",
+   "category": "Record.Selection",
+   "returns": "list",
+   "signature": "Record.FieldNames(record as record) as list",
+   "summary": "Returns the names of the fields.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Record.FieldOrDefault",
+   "file": "record-fieldordefault",
+   "kind": "library",
+   "category": "Record.Selection",
+   "returns": "any",
+   "signature": "Record.FieldOrDefault(record as nullable record, field as text, optional defaultValue as any) as any",
+   "summary": "Returns the value of the specified field in a record or the default value if the field is not found.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Record.FieldValues",
+   "file": "record-fieldvalues",
+   "kind": "library",
+   "category": "Record.Selection",
+   "returns": "list",
+   "signature": "Record.FieldValues(record as record) as list",
+   "summary": "Returns a list of the field values.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Record.FromList",
+   "file": "record-fromlist",
+   "kind": "library",
+   "category": "Record.Serialization",
+   "returns": "record",
+   "signature": "Record.FromList(list as list, fields as any) as record",
+   "summary": "Returns a record given a list of field values and a set of fields.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Record.FromTable",
+   "file": "record-fromtable",
+   "kind": "library",
+   "category": "Record.Serialization",
+   "returns": "record",
+   "signature": "Record.FromTable(table as table) as record",
+   "summary": "Creates a record from a table of the form {[Name = name, Value = value]}.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Record.HasFields",
+   "file": "record-hasfields",
+   "kind": "library",
+   "category": "Record.Information",
+   "returns": "logical",
+   "signature": "Record.HasFields(record as record, fields as any) as logical",
+   "summary": "Indicates whether the record has the specified fields.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Record.RemoveFields",
+   "file": "record-removefields",
+   "kind": "library",
+   "category": "Record.Transformations",
+   "returns": "record",
+   "signature": "Record.RemoveFields(record as record, fields as any, optional missingField as nullable number) as record",
+   "summary": "Removes the specified field(s) from the input record.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Record.RenameFields",
+   "file": "record-renamefields",
+   "kind": "library",
+   "category": "Record.Transformations",
+   "returns": "record",
+   "signature": "Record.RenameFields(record as record, renames as list, optional missingField as nullable number) as record",
+   "summary": "Applies rename(s) from a list in the form { old, new }.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Record.ReorderFields",
+   "file": "record-reorderfields",
+   "kind": "library",
+   "category": "Record.Transformations",
+   "returns": "record",
+   "signature": "Record.ReorderFields(record as record, fieldOrder as list, optional missingField as nullable number) as record",
+   "summary": "Reorders the record fields to match the order of a list of field names.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Record.SelectFields",
+   "file": "record-selectfields",
+   "kind": "library",
+   "category": "Record.Selection",
+   "returns": "record",
+   "signature": "Record.SelectFields(record as record, fields as any, optional missingField as nullable number) as record",
+   "summary": "Returns a record that contains only the specified fields.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Record.ToList",
+   "file": "record-tolist",
+   "kind": "library",
+   "category": "Record.Serialization",
+   "returns": "list",
+   "signature": "Record.ToList(record as record) as list",
+   "summary": "Returns a list of values containing the field values of the input record.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Record.ToTable",
+   "file": "record-totable",
+   "kind": "library",
+   "category": "Record.Serialization",
+   "returns": "table",
+   "signature": "Record.ToTable(record as record) as table",
+   "summary": "Returns a table with each row being a field name and value of the input record.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Record.TransformFields",
+   "file": "record-transformfields",
+   "kind": "library",
+   "category": "Record.Transformations",
+   "returns": "record",
+   "signature": "Record.TransformFields(record as record, transformOperations as list, optional missingField as nullable number) as record",
+   "summary": "Returns a record after applying specified transformations.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  }
+ ]
+}

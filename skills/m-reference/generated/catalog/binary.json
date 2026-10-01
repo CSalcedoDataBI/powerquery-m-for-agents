@@ -1,0 +1,259 @@
+{
+ "functions": [
+  {
+   "name": "Binary.ApproximateLength",
+   "file": "binary-approximatelength",
+   "kind": "library",
+   "category": "Binary",
+   "returns": "nullable number",
+   "signature": "Binary.ApproximateLength(binary as nullable binary) as nullable number",
+   "summary": "Returns the approximate length of the binary.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Binary.Buffer",
+   "file": "binary-buffer",
+   "kind": "library",
+   "category": "Binary",
+   "returns": "nullable binary",
+   "signature": "Binary.Buffer(binary as nullable binary) as nullable binary",
+   "summary": "Buffers the binary value in memory.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Binary.Combine",
+   "file": "binary-combine",
+   "kind": "library",
+   "category": "Binary",
+   "returns": "binary",
+   "signature": "Binary.Combine(binaries as list) as binary",
+   "summary": "Combines a list of binaries into a single binary.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Binary.Compress",
+   "file": "binary-compress",
+   "kind": "library",
+   "category": "Binary",
+   "returns": "nullable binary",
+   "signature": "Binary.Compress(binary as nullable binary, compressionType as number) as nullable binary",
+   "summary": "Compresses a binary value using the given compression type.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Binary.Decompress",
+   "file": "binary-decompress",
+   "kind": "library",
+   "category": "Binary",
+   "returns": "nullable binary",
+   "signature": "Binary.Decompress(binary as nullable binary, compressionType as number) as nullable binary",
+   "summary": "Decompresses a binary value using the given compression type.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Binary.From",
+   "file": "binary-from",
+   "kind": "library",
+   "category": "Binary",
+   "returns": "nullable binary",
+   "signature": "Binary.From(value as any, optional encoding as nullable number) as nullable binary",
+   "summary": "Creates a binary from the given value",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Binary.FromList",
+   "file": "binary-fromlist",
+   "kind": "library",
+   "category": "Binary",
+   "returns": "binary",
+   "signature": "Binary.FromList(list as list) as binary",
+   "summary": "Converts a list of numbers into a binary value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Binary.FromText",
+   "file": "binary-fromtext",
+   "kind": "library",
+   "category": "Binary",
+   "returns": "nullable binary",
+   "signature": "Binary.FromText(text as nullable text, optional encoding as nullable number) as nullable binary",
+   "summary": "Decodes data from a text form into binary.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Binary.InferContentType",
+   "file": "binary-infercontenttype",
+   "kind": "library",
+   "category": "Binary",
+   "returns": "record",
+   "signature": "Binary.InferContentType(source as binary) as record",
+   "summary": "Reads the binary stream and tries to determine the content type and format information of the stream.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 2
+  },
+  {
+   "name": "Binary.Length",
+   "file": "binary-length",
+   "kind": "library",
+   "category": "Binary",
+   "returns": "nullable number",
+   "signature": "Binary.Length(binary as nullable binary) as nullable number",
+   "summary": "Returns the number of characters.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Binary.Range",
+   "file": "binary-range",
+   "kind": "library",
+   "category": "Binary",
+   "returns": "binary",
+   "signature": "Binary.Range(binary as binary, offset as number, optional count as nullable number) as binary",
+   "summary": "Returns a subset of the binary value beginning at an offset.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Binary.Split",
+   "file": "binary-split",
+   "kind": "library",
+   "category": "Binary",
+   "returns": "list",
+   "signature": "Binary.Split(binary as binary, pageSize as number) as list",
+   "summary": "Splits the specified binary into a list of binaries using the specified page size.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Binary.ToList",
+   "file": "binary-tolist",
+   "kind": "library",
+   "category": "Binary",
+   "returns": "list",
+   "signature": "Binary.ToList(binary as binary) as list",
+   "summary": "Converts a binary value into a list of numbers.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Binary.ToText",
+   "file": "binary-totext",
+   "kind": "library",
+   "category": "Binary",
+   "returns": "nullable text",
+   "signature": "Binary.ToText(binary as nullable binary, optional encoding as nullable number) as nullable text",
+   "summary": "Encodes binary data into a text form.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Binary.View",
+   "file": "binary-view",
+   "kind": "library",
+   "category": "Binary",
+   "returns": "binary",
+   "signature": "Binary.View(binary as nullable binary, handlers as record) as binary",
+   "summary": "Creates or extends a binary with user-defined handlers for query and action operations.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Binary.ViewError",
+   "file": "binary-viewerror",
+   "kind": "library",
+   "category": "Binary",
+   "returns": "record",
+   "signature": "Binary.ViewError(errorRecord as record) as record",
+   "summary": "Creates a modified error record which won't trigger a fallback when raised by a handler defined on a view (via Binary.V…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Binary.ViewFunction",
+   "file": "binary-viewfunction",
+   "kind": "library",
+   "category": "Binary",
+   "returns": "function",
+   "signature": "Binary.ViewFunction(function as function) as function",
+   "summary": "Creates a function that can be intercepted by a handler defined on a view (via Binary.View).",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  }
+ ]
+}

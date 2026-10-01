@@ -1,0 +1,184 @@
+{
+ "functions": [
+  {
+   "name": "Duration.Days",
+   "file": "duration-days",
+   "kind": "library",
+   "category": "Duration",
+   "returns": "nullable number",
+   "signature": "Duration.Days(duration as nullable duration) as nullable number",
+   "summary": "Returns the days portion of a duration.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Duration.From",
+   "file": "duration-from",
+   "kind": "library",
+   "category": "Duration",
+   "returns": "nullable duration",
+   "signature": "Duration.From(value as any) as nullable duration",
+   "summary": "Creates a duration from the given value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Duration.FromText",
+   "file": "duration-fromtext",
+   "kind": "library",
+   "category": "Duration",
+   "returns": "nullable duration",
+   "signature": "Duration.FromText(text as nullable text) as nullable duration",
+   "summary": "Returns a duration value from textual elapsed time forms (d.h:m:s).",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Duration.Hours",
+   "file": "duration-hours",
+   "kind": "library",
+   "category": "Duration",
+   "returns": "nullable number",
+   "signature": "Duration.Hours(duration as nullable duration) as nullable number",
+   "summary": "Returns the hours portion of a duration.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Duration.Minutes",
+   "file": "duration-minutes",
+   "kind": "library",
+   "category": "Duration",
+   "returns": "nullable number",
+   "signature": "Duration.Minutes(duration as nullable duration) as nullable number",
+   "summary": "Returns the minutes portion of a duration.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Duration.Seconds",
+   "file": "duration-seconds",
+   "kind": "library",
+   "category": "Duration",
+   "returns": "nullable number",
+   "signature": "Duration.Seconds(duration as nullable duration) as nullable number",
+   "summary": "Returns the seconds portion of a duration.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Duration.ToRecord",
+   "file": "duration-torecord",
+   "kind": "library",
+   "category": "Duration",
+   "returns": "record",
+   "signature": "Duration.ToRecord(duration as duration) as record",
+   "summary": "Returns a record containing the parts of the duration.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Duration.TotalDays",
+   "file": "duration-totaldays",
+   "kind": "library",
+   "category": "Duration",
+   "returns": "nullable number",
+   "signature": "Duration.TotalDays(duration as nullable duration) as nullable number",
+   "summary": "Returns the total days this duration spans.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Duration.TotalHours",
+   "file": "duration-totalhours",
+   "kind": "library",
+   "category": "Duration",
+   "returns": "nullable number",
+   "signature": "Duration.TotalHours(duration as nullable duration) as nullable number",
+   "summary": "Returns the total hours this duration spans.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Duration.TotalMinutes",
+   "file": "duration-totalminutes",
+   "kind": "library",
+   "category": "Duration",
+   "returns": "nullable number",
+   "signature": "Duration.TotalMinutes(duration as nullable duration) as nullable number",
+   "summary": "Returns the total minutes this duration spans.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Duration.TotalSeconds",
+   "file": "duration-totalseconds",
+   "kind": "library",
+   "category": "Duration",
+   "returns": "nullable number",
+   "signature": "Duration.TotalSeconds(duration as nullable duration) as nullable number",
+   "summary": "Returns the total seconds this duration spans.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Duration.ToText",
+   "file": "duration-totext",
+   "kind": "library",
+   "category": "Duration",
+   "returns": "nullable text",
+   "signature": "Duration.ToText(duration as nullable duration, optional format as nullable text) as nullable text",
+   "summary": "Returns the text of the form \"d.h:m:s\".",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  }
+ ]
+}

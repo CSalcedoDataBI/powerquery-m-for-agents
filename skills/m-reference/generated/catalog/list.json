@@ -1,0 +1,1069 @@
+{
+ "functions": [
+  {
+   "name": "List.Accumulate",
+   "file": "list-accumulate",
+   "kind": "library",
+   "category": "List.Transformation functions",
+   "returns": "any",
+   "signature": "List.Accumulate(list as list, seed as any, accumulator as function) as any",
+   "summary": "Accumulates a summary value from the items in the list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.AllTrue",
+   "file": "list-alltrue",
+   "kind": "library",
+   "category": "List.Membership functions",
+   "returns": "logical",
+   "signature": "List.AllTrue(list as list) as logical",
+   "summary": "Returns true if all expressions are true.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Alternate",
+   "file": "list-alternate",
+   "kind": "library",
+   "category": "List.Selection",
+   "returns": "list",
+   "signature": "List.Alternate(list as list, count as number, optional repeatInterval as nullable number, optional offset as nullable number) as list",
+   "summary": "Returns a list comprised of all the odd numbered offset elements in a list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.AnyTrue",
+   "file": "list-anytrue",
+   "kind": "library",
+   "category": "List.Membership functions",
+   "returns": "logical",
+   "signature": "List.AnyTrue(list as list) as logical",
+   "summary": "Returns true if any expression is true.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Average",
+   "file": "list-average",
+   "kind": "library",
+   "category": "List.Averages",
+   "returns": "any",
+   "signature": "List.Average(list as list, optional precision as nullable number) as any",
+   "summary": "Returns the average of the values.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Buffer",
+   "file": "list-buffer",
+   "kind": "library",
+   "category": "List.Selection",
+   "returns": "list",
+   "signature": "List.Buffer(list as list) as list",
+   "summary": "Buffers a list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Combine",
+   "file": "list-combine",
+   "kind": "library",
+   "category": "List.Transformation functions",
+   "returns": "list",
+   "signature": "List.Combine(lists as list) as list",
+   "summary": "Returns a single list by combining multiple lists.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.ConformToPageReader",
+   "file": "list-conformtopagereader",
+   "kind": "library",
+   "category": "List.Transformation functions",
+   "returns": "table",
+   "signature": "List.ConformToPageReader(list as list, optional options as nullable record) as table",
+   "summary": "This function is intended for internal use only.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Contains",
+   "file": "list-contains",
+   "kind": "library",
+   "category": "List.Membership functions",
+   "returns": "logical",
+   "signature": "List.Contains(list as list, value as any, optional equationCriteria as any) as logical",
+   "summary": "Indicates whether the list contains the value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.ContainsAll",
+   "file": "list-containsall",
+   "kind": "library",
+   "category": "List.Membership functions",
+   "returns": "logical",
+   "signature": "List.ContainsAll(list as list, values as list, optional equationCriteria as any) as logical",
+   "summary": "Indicates where a list includes all the values in another list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.ContainsAny",
+   "file": "list-containsany",
+   "kind": "library",
+   "category": "List.Membership functions",
+   "returns": "logical",
+   "signature": "List.ContainsAny(list as list, values as list, optional equationCriteria as any) as logical",
+   "summary": "Indicates where a list includes any of the values in another list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Count",
+   "file": "list-count",
+   "kind": "library",
+   "category": "List.Information",
+   "returns": "number",
+   "signature": "List.Count(list as list) as number",
+   "summary": "Returns the number of items in the list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Covariance",
+   "file": "list-covariance",
+   "kind": "library",
+   "category": "List.Numerics",
+   "returns": "nullable number",
+   "signature": "List.Covariance(numberList1 as list, numberList2 as list) as nullable number",
+   "summary": "Returns the covariance between the two lists of numbers.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Dates",
+   "file": "list-dates",
+   "kind": "library",
+   "category": "List.Generators",
+   "returns": "list",
+   "signature": "List.Dates(start as date, count as number, step as duration) as list",
+   "summary": "Generates a list of date values given an initial value, count, and incremental duration value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.DateTimes",
+   "file": "list-datetimes",
+   "kind": "library",
+   "category": "List.Generators",
+   "returns": "list",
+   "signature": "List.DateTimes(start as datetime, count as number, step as duration) as list",
+   "summary": "Generates a list of datetime values given an initial value, count, and incremental duration value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.DateTimeZones",
+   "file": "list-datetimezones",
+   "kind": "library",
+   "category": "List.Generators",
+   "returns": "list",
+   "signature": "List.DateTimeZones(start as datetimezone, count as number, step as duration) as list",
+   "summary": "Generates a list of datetimezone values given an initial value, count, and incremental duration value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Difference",
+   "file": "list-difference",
+   "kind": "library",
+   "category": "List.Set operations",
+   "returns": "list",
+   "signature": "List.Difference(list1 as list, list2 as list, optional equationCriteria as any) as list",
+   "summary": "Returns the difference of the two given lists.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Distinct",
+   "file": "list-distinct",
+   "kind": "library",
+   "category": "List.Selection",
+   "returns": "list",
+   "signature": "List.Distinct(list as list, optional equationCriteria as any) as list",
+   "summary": "Returns a list of values with duplicates removed.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Durations",
+   "file": "list-durations",
+   "kind": "library",
+   "category": "List.Generators",
+   "returns": "list",
+   "signature": "List.Durations(start as duration, count as number, step as duration) as list",
+   "summary": "Generates a list of duration values given an initial value, count, and incremental duration value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.FindText",
+   "file": "list-findtext",
+   "kind": "library",
+   "category": "List.Selection",
+   "returns": "list",
+   "signature": "List.FindText(list as list, text as text) as list",
+   "summary": "Returns a list of values (including record fields) that contain the specified text.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.First",
+   "file": "list-first",
+   "kind": "library",
+   "category": "List.Selection",
+   "returns": "any",
+   "signature": "List.First(list as list, optional defaultValue as any) as any",
+   "summary": "Returns the first value of the list or the specified default if empty.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.FirstN",
+   "file": "list-firstn",
+   "kind": "library",
+   "category": "List.Selection",
+   "returns": "any",
+   "signature": "List.FirstN(list as list, countOrCondition as any) as any",
+   "summary": "Returns the first set of items in the list by specifying how many items to return or a qualifying condition.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Generate",
+   "file": "list-generate",
+   "kind": "library",
+   "category": "List.Generators",
+   "returns": "list",
+   "signature": "List.Generate(initial as function, condition as function, next as function, optional selector as nullable function) as list",
+   "summary": "Generates a list of values.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.InsertRange",
+   "file": "list-insertrange",
+   "kind": "library",
+   "category": "List.Selection",
+   "returns": "list",
+   "signature": "List.InsertRange(list as list, index as number, values as list) as list",
+   "summary": "Inserts values into a list at the given index.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Intersect",
+   "file": "list-intersect",
+   "kind": "library",
+   "category": "List.Set operations",
+   "returns": "list",
+   "signature": "List.Intersect(lists as list, optional equationCriteria as any) as list",
+   "summary": "Returns the intersection of the list values found in the input.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.IsDistinct",
+   "file": "list-isdistinct",
+   "kind": "library",
+   "category": "List.Selection",
+   "returns": "logical",
+   "signature": "List.IsDistinct(list as list, optional equationCriteria as any) as logical",
+   "summary": "Indicates whether there are duplicates in the list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.IsEmpty",
+   "file": "list-isempty",
+   "kind": "library",
+   "category": "List.Information",
+   "returns": "logical",
+   "signature": "List.IsEmpty(list as list) as logical",
+   "summary": "Returns true if the list is empty.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Last",
+   "file": "list-last",
+   "kind": "library",
+   "category": "List.Selection",
+   "returns": "any",
+   "signature": "List.Last(list as list, optional defaultValue as any) as any",
+   "summary": "Returns the last value of the list or the specified default if empty.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.LastN",
+   "file": "list-lastn",
+   "kind": "library",
+   "category": "List.Selection",
+   "returns": "any",
+   "signature": "List.LastN(list as list, optional countOrCondition as any) as any",
+   "summary": "Returns a list of the last item or items in the specified list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.MatchesAll",
+   "file": "list-matchesall",
+   "kind": "library",
+   "category": "List.Selection",
+   "returns": "logical",
+   "signature": "List.MatchesAll(list as list, condition as function) as logical",
+   "summary": "Returns true if the condition function is satisfied by all values in the list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.MatchesAny",
+   "file": "list-matchesany",
+   "kind": "library",
+   "category": "List.Selection",
+   "returns": "logical",
+   "signature": "List.MatchesAny(list as list, condition as function) as logical",
+   "summary": "Returns true if the condition function is satisfied by any value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Max",
+   "file": "list-max",
+   "kind": "library",
+   "category": "List.Ordering",
+   "returns": "any",
+   "signature": "List.Max(list as list, optional default as any, optional comparisonCriteria as any, optional includeNulls as nullable logical) as any",
+   "summary": "Returns the maximum value or the default value for an empty list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.MaxN",
+   "file": "list-maxn",
+   "kind": "library",
+   "category": "List.Ordering",
+   "returns": "list",
+   "signature": "List.MaxN(list as list, countOrCondition as any, optional comparisonCriteria as any, optional includeNulls as nullable logical) as list",
+   "summary": "Returns the maximum value(s) in the list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Median",
+   "file": "list-median",
+   "kind": "library",
+   "category": "List.Ordering",
+   "returns": "any",
+   "signature": "List.Median(list as list, optional comparisonCriteria as any) as any",
+   "summary": "Returns the median value in the list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Min",
+   "file": "list-min",
+   "kind": "library",
+   "category": "List.Ordering",
+   "returns": "any",
+   "signature": "List.Min(list as list, optional default as any, optional comparisonCriteria as any, optional includeNulls as nullable logical) as any",
+   "summary": "Returns the minimum value or the default value for an empty list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.MinN",
+   "file": "list-minn",
+   "kind": "library",
+   "category": "List.Ordering",
+   "returns": "list",
+   "signature": "List.MinN(list as list, countOrCondition as any, optional comparisonCriteria as any, optional includeNulls as nullable logical) as list",
+   "summary": "Returns the minimum value(s) in the list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Mode",
+   "file": "list-mode",
+   "kind": "library",
+   "category": "List.Averages",
+   "returns": "any",
+   "signature": "List.Mode(list as list, optional equationCriteria as any) as any",
+   "summary": "Returns the most frequent value in the list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Modes",
+   "file": "list-modes",
+   "kind": "library",
+   "category": "List.Averages",
+   "returns": "list",
+   "signature": "List.Modes(list as list, optional equationCriteria as any) as list",
+   "summary": "Returns a list of the most frequent values in the list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.NonNullCount",
+   "file": "list-nonnullcount",
+   "kind": "library",
+   "category": "List.Information",
+   "returns": "number",
+   "signature": "List.NonNullCount(list as list) as number",
+   "summary": "Returns the number of non-null items in the list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Numbers",
+   "file": "list-numbers",
+   "kind": "library",
+   "category": "List.Generators",
+   "returns": "list",
+   "signature": "List.Numbers(start as number, count as number, optional increment as nullable number) as list",
+   "summary": "Returns a list of numbers given an initial value, count, and optional increment value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Percentile",
+   "file": "list-percentile",
+   "kind": "library",
+   "category": "List.Ordering",
+   "returns": "any",
+   "signature": "List.Percentile(list as list, percentiles as any, optional options as nullable record) as any",
+   "summary": "Returns one or more sample percentiles corresponding to the given probabilities.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.PositionOf",
+   "file": "list-positionof",
+   "kind": "library",
+   "category": "List.Membership functions",
+   "returns": "any",
+   "signature": "List.PositionOf(list as list, value as any, optional occurrence as nullable number, optional equationCriteria as any) as any",
+   "summary": "Returns the offset(s) of a value in a list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.PositionOfAny",
+   "file": "list-positionofany",
+   "kind": "library",
+   "category": "List.Membership functions",
+   "returns": "any",
+   "signature": "List.PositionOfAny(list as list, values as list, optional occurrence as nullable number, optional equationCriteria as any) as any",
+   "summary": "Returns the first offset of a value in a list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Positions",
+   "file": "list-positions",
+   "kind": "library",
+   "category": "List.Selection",
+   "returns": "list",
+   "signature": "List.Positions(list as list) as list",
+   "summary": "Returns a list of offsets for the input.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Product",
+   "file": "list-product",
+   "kind": "library",
+   "category": "List.Numerics",
+   "returns": "nullable number",
+   "signature": "List.Product(numbersList as list, optional precision as nullable number) as nullable number",
+   "summary": "Returns the product of the numbers in the list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Random",
+   "file": "list-random",
+   "kind": "library",
+   "category": "List.Generators",
+   "returns": "list",
+   "signature": "List.Random(count as number, optional seed as nullable number) as list",
+   "summary": "Returns a list of random numbers.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Range",
+   "file": "list-range",
+   "kind": "library",
+   "category": "List.Selection",
+   "returns": "list",
+   "signature": "List.Range(list as list, offset as number, optional count as nullable number) as list",
+   "summary": "Returns a subset of the list beginning at an offset.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.RemoveFirstN",
+   "file": "list-removefirstn",
+   "kind": "library",
+   "category": "List.Transformation functions",
+   "returns": "list",
+   "signature": "List.RemoveFirstN(list as list, optional countOrCondition as any) as list",
+   "summary": "Returns a list that skips the specified number of elements at the beginning of the list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.RemoveItems",
+   "file": "list-removeitems",
+   "kind": "library",
+   "category": "List.Transformation functions",
+   "returns": "list",
+   "signature": "List.RemoveItems(list1 as list, list2 as list) as list",
+   "summary": "Removes items from list1 that are present in list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.RemoveLastN",
+   "file": "list-removelastn",
+   "kind": "library",
+   "category": "List.Transformation functions",
+   "returns": "list",
+   "signature": "List.RemoveLastN(list as list, optional countOrCondition as any) as list",
+   "summary": "Returns a list that removes the specified number of elements from the end of the list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.RemoveMatchingItems",
+   "file": "list-removematchingitems",
+   "kind": "library",
+   "category": "List.Transformation functions",
+   "returns": "list",
+   "signature": "List.RemoveMatchingItems(list1 as list, list2 as list, optional equationCriteria as any) as list",
+   "summary": "Removes all occurrences of the input values.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.RemoveNulls",
+   "file": "list-removenulls",
+   "kind": "library",
+   "category": "List.Transformation functions",
+   "returns": "list",
+   "signature": "List.RemoveNulls(list as list) as list",
+   "summary": "Removes all \"null\" values from the specified list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.RemoveRange",
+   "file": "list-removerange",
+   "kind": "library",
+   "category": "List.Transformation functions",
+   "returns": "list",
+   "signature": "List.RemoveRange(list as list, index as number, optional count as nullable number) as list",
+   "summary": "Removes count number of values starting at the specified position.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Repeat",
+   "file": "list-repeat",
+   "kind": "library",
+   "category": "List.Transformation functions",
+   "returns": "list",
+   "signature": "List.Repeat(list as list, count as number) as list",
+   "summary": "Returns a list that is count repetitions of the original list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.ReplaceMatchingItems",
+   "file": "list-replacematchingitems",
+   "kind": "library",
+   "category": "List.Transformation functions",
+   "returns": "list",
+   "signature": "List.ReplaceMatchingItems(list as list, replacements as list, optional equationCriteria as any) as list",
+   "summary": "Applies each replacement of { old, new }.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.ReplaceRange",
+   "file": "list-replacerange",
+   "kind": "library",
+   "category": "List.Transformation functions",
+   "returns": "list",
+   "signature": "List.ReplaceRange(list as list, index as number, count as number, replaceWith as list) as list",
+   "summary": "Replaces count number of values starting at position with the replacement values.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.ReplaceValue",
+   "file": "list-replacevalue",
+   "kind": "library",
+   "category": "List.Transformation functions",
+   "returns": "list",
+   "signature": "List.ReplaceValue(list as list, oldValue as any, newValue as any, replacer as function) as list",
+   "summary": "Searches a list for the specified value and replaces it.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Reverse",
+   "file": "list-reverse",
+   "kind": "library",
+   "category": "List.Transformation functions",
+   "returns": "list",
+   "signature": "List.Reverse(list as list) as list",
+   "summary": "Reverses the order of values in the list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Select",
+   "file": "list-select",
+   "kind": "library",
+   "category": "List.Selection",
+   "returns": "list",
+   "signature": "List.Select(list as list, selection as function) as list",
+   "summary": "Returns a list of values that match the condition.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Single",
+   "file": "list-single",
+   "kind": "library",
+   "category": "List.Selection",
+   "returns": "any",
+   "signature": "List.Single(list as list) as any",
+   "summary": "Returns the one list item for a list of length one, otherwise raises an error.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.SingleOrDefault",
+   "file": "list-singleordefault",
+   "kind": "library",
+   "category": "List.Selection",
+   "returns": "any",
+   "signature": "List.SingleOrDefault(list as list, optional default as any) as any",
+   "summary": "Returns the one list item for a list of length one and the default value for an empty list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Skip",
+   "file": "list-skip",
+   "kind": "library",
+   "category": "List.Selection",
+   "returns": "list",
+   "signature": "List.Skip(list as list, optional countOrCondition as any) as list",
+   "summary": "Returns a list that skips the specified number of elements at the beginning of the list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Sort",
+   "file": "list-sort",
+   "kind": "library",
+   "category": "List.Ordering",
+   "returns": "list",
+   "signature": "List.Sort(list as list, optional comparisonCriteria as any) as list",
+   "summary": "Sorts a list of data according to the criteria specified.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Split",
+   "file": "list-split",
+   "kind": "library",
+   "category": "List.Transformation functions",
+   "returns": "list",
+   "signature": "List.Split(list as list, pageSize as number) as list",
+   "summary": "Splits the specified list into a list of lists using the specified page size.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.StandardDeviation",
+   "file": "list-standarddeviation",
+   "kind": "library",
+   "category": "List.Averages",
+   "returns": "nullable number",
+   "signature": "List.StandardDeviation(numbersList as list) as nullable number",
+   "summary": "Returns a sample based estimate of the standard deviation.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Sum",
+   "file": "list-sum",
+   "kind": "library",
+   "category": "List.Addition",
+   "returns": "any",
+   "signature": "List.Sum(list as list, optional precision as nullable number) as any",
+   "summary": "Returns the sum of the items in the list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Times",
+   "file": "list-times",
+   "kind": "library",
+   "category": "List.Generators",
+   "returns": "list",
+   "signature": "List.Times(start as time, count as number, step as duration) as list",
+   "summary": "Generates a list of time values given an initial value, count, and incremental duration value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Transform",
+   "file": "list-transform",
+   "kind": "library",
+   "category": "List.Transformation functions",
+   "returns": "list",
+   "signature": "List.Transform(list as list, transform as function) as list",
+   "summary": "Returns a new list of values computed from this list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.TransformMany",
+   "file": "list-transformmany",
+   "kind": "library",
+   "category": "List.Transformation functions",
+   "returns": "list",
+   "signature": "List.TransformMany(list as list, collectionTransform as function, resultTransform as function) as list",
+   "summary": "Returns a list whose elements are transformed from the input list using specified functions.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Union",
+   "file": "list-union",
+   "kind": "library",
+   "category": "List.Set operations",
+   "returns": "list",
+   "signature": "List.Union(lists as list, optional equationCriteria as any) as list",
+   "summary": "Returns the union of the list values found in the input.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  },
+  {
+   "name": "List.Zip",
+   "file": "list-zip",
+   "kind": "library",
+   "category": "List.Transformation functions",
+   "returns": "list",
+   "signature": "List.Zip(lists as list) as list",
+   "summary": "Returns a list of lists by combining items at the same position in multiple lists.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 1
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "functions": [
+  {
+   "name": "Value.VersionIdentity",
+   "file": "value-versionidentity",
+   "kind": "library",
+   "category": "Action",
+   "returns": "any",
+   "signature": "Value.VersionIdentity(value as any) as any",
+   "summary": "Returns the version identity of the value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Value.Versions",
+   "file": "value-versions",
+   "kind": "library",
+   "category": "Action",
+   "returns": "table",
+   "signature": "Value.Versions(value as any) as table",
+   "summary": "Returns a navigation table containing the available versions of the value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "WebAction.Request",
+   "file": "webaction-request",
+   "kind": "library",
+   "category": "Action",
+   "returns": "any",
+   "signature": "WebAction.Request(method as text, url as text, optional options as nullable record) as any",
+   "summary": "Creates an action that, when executed, will return the results of performing an HTTP request as a binary value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  }
+ ]
+}

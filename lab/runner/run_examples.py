@@ -78,9 +78,7 @@ CASES_DIR = os.path.join(BUILD, "cases")
 
 
 def load_catalog():
-    with open(os.path.join(ROOT, "skills", "m-reference", "generated", "catalog.json"),
-              encoding="utf-8") as f:
-        return json.load(f)
+    return m_blocks.load_catalog()
 
 
 def query_text(cases):

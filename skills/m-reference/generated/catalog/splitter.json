@@ -1,0 +1,154 @@
+{
+ "functions": [
+  {
+   "name": "Splitter.SplitByNothing",
+   "file": "splitter-splitbynothing",
+   "kind": "library",
+   "category": "Splitter",
+   "returns": "function",
+   "signature": "Splitter.SplitByNothing() as function",
+   "summary": "Returns a function that does no splitting, returning its argument as a single element list.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Splitter.SplitTextByAnyDelimiter",
+   "file": "splitter-splittextbyanydelimiter",
+   "kind": "library",
+   "category": "Splitter",
+   "returns": "function",
+   "signature": "Splitter.SplitTextByAnyDelimiter(delimiters as list, optional quoteStyle as nullable number, optional startAtEnd as nullable logical) as function",
+   "summary": "Returns a function that splits text into a list of text at any of the specified delimiters.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Splitter.SplitTextByCharacterTransition",
+   "file": "splitter-splittextbycharactertransition",
+   "kind": "library",
+   "category": "Splitter",
+   "returns": "function",
+   "signature": "Splitter.SplitTextByCharacterTransition(before as any, after as any) as function",
+   "summary": "Returns a function that splits text into a list of text according to a transition from one kind of character to another.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Splitter.SplitTextByDelimiter",
+   "file": "splitter-splittextbydelimiter",
+   "kind": "library",
+   "category": "Splitter",
+   "returns": "function",
+   "signature": "Splitter.SplitTextByDelimiter(delimiter as text, optional quoteStyle as nullable number, optional csvStyle as nullable number) as function",
+   "summary": "Returns a function that splits text into a list of text according to the specified delimiter.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Splitter.SplitTextByEachDelimiter",
+   "file": "splitter-splittextbyeachdelimiter",
+   "kind": "library",
+   "category": "Splitter",
+   "returns": "function",
+   "signature": "Splitter.SplitTextByEachDelimiter(delimiters as list, optional quoteStyle as nullable number, optional startAtEnd as nullable logical) as function",
+   "summary": "Returns a function that splits text into a list of text at each specified delimiter in sequence.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Splitter.SplitTextByLengths",
+   "file": "splitter-splittextbylengths",
+   "kind": "library",
+   "category": "Splitter",
+   "returns": "function",
+   "signature": "Splitter.SplitTextByLengths(lengths as list, optional startAtEnd as nullable logical) as function",
+   "summary": "Returns a function that splits text into a list of text by each specified length.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Splitter.SplitTextByPositions",
+   "file": "splitter-splittextbypositions",
+   "kind": "library",
+   "category": "Splitter",
+   "returns": "function",
+   "signature": "Splitter.SplitTextByPositions(positions as list, optional startAtEnd as nullable logical) as function",
+   "summary": "Returns a function that splits text into a list of text at each specified position.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Splitter.SplitTextByRanges",
+   "file": "splitter-splittextbyranges",
+   "kind": "library",
+   "category": "Splitter",
+   "returns": "function",
+   "signature": "Splitter.SplitTextByRanges(ranges as list, optional startAtEnd as nullable logical) as function",
+   "summary": "Returns a function that splits text into a list of text according to the specified offsets and lengths.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Splitter.SplitTextByRepeatedLengths",
+   "file": "splitter-splittextbyrepeatedlengths",
+   "kind": "library",
+   "category": "Splitter",
+   "returns": "function",
+   "signature": "Splitter.SplitTextByRepeatedLengths(length as number, optional startAtEnd as nullable logical) as function",
+   "summary": "Returns a function that splits text into a list of text after the specified length repeatedly.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Splitter.SplitTextByWhitespace",
+   "file": "splitter-splittextbywhitespace",
+   "kind": "library",
+   "category": "Splitter",
+   "returns": "function",
+   "signature": "Splitter.SplitTextByWhitespace(optional quoteStyle as nullable number) as function",
+   "summary": "Returns a function that splits text into a list of text at whitespace.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  }
+ ]
+}

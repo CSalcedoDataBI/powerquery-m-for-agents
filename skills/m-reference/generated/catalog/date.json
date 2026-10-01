@@ -1,0 +1,889 @@
+{
+ "functions": [
+  {
+   "name": "Date.AddDays",
+   "file": "date-adddays",
+   "kind": "library",
+   "category": "Date",
+   "returns": "any",
+   "signature": "Date.AddDays(dateTime as any, numberOfDays as number) as any",
+   "summary": "Adds the specified days to the date.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.AddMonths",
+   "file": "date-addmonths",
+   "kind": "library",
+   "category": "Date",
+   "returns": "any",
+   "signature": "Date.AddMonths(dateTime as any, numberOfMonths as number) as any",
+   "summary": "Adds the specified months to the date.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.AddQuarters",
+   "file": "date-addquarters",
+   "kind": "library",
+   "category": "Date",
+   "returns": "any",
+   "signature": "Date.AddQuarters(dateTime as any, numberOfQuarters as number) as any",
+   "summary": "Adds the specified quarters to the date.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.AddWeeks",
+   "file": "date-addweeks",
+   "kind": "library",
+   "category": "Date",
+   "returns": "any",
+   "signature": "Date.AddWeeks(dateTime as any, numberOfWeeks as number) as any",
+   "summary": "Adds the specified weeks to the date.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.AddYears",
+   "file": "date-addyears",
+   "kind": "library",
+   "category": "Date",
+   "returns": "any",
+   "signature": "Date.AddYears(dateTime as any, numberOfYears as number) as any",
+   "summary": "Adds the specified years to the date.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.Day",
+   "file": "date-day",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable number",
+   "signature": "Date.Day(dateTime as any) as nullable number",
+   "summary": "Returns the day component.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.DayOfWeek",
+   "file": "date-dayofweek",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable number",
+   "signature": "Date.DayOfWeek(dateTime as any, optional firstDayOfWeek as nullable number) as nullable number",
+   "summary": "Returns a number (from 0 to 6) indicating the day of the week of the provided value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.DayOfWeekName",
+   "file": "date-dayofweekname",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable text",
+   "signature": "Date.DayOfWeekName(date as any, optional culture as nullable text) as nullable text",
+   "summary": "Returns the day of the week name.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.DayOfYear",
+   "file": "date-dayofyear",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable number",
+   "signature": "Date.DayOfYear(dateTime as any) as nullable number",
+   "summary": "Returns a number from 1 to 366 representing the day of the year.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.DaysInMonth",
+   "file": "date-daysinmonth",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable number",
+   "signature": "Date.DaysInMonth(dateTime as any) as nullable number",
+   "summary": "Returns a number from 28 to 31 indicating the number of days in the month.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.EndOfDay",
+   "file": "date-endofday",
+   "kind": "library",
+   "category": "Date",
+   "returns": "any",
+   "signature": "Date.EndOfDay(dateTime as any) as any",
+   "summary": "Returns the end of the day.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.EndOfMonth",
+   "file": "date-endofmonth",
+   "kind": "library",
+   "category": "Date",
+   "returns": "any",
+   "signature": "Date.EndOfMonth(dateTime as any) as any",
+   "summary": "Returns the end of the month.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.EndOfQuarter",
+   "file": "date-endofquarter",
+   "kind": "library",
+   "category": "Date",
+   "returns": "any",
+   "signature": "Date.EndOfQuarter(dateTime as any) as any",
+   "summary": "Returns the end of the quarter.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.EndOfWeek",
+   "file": "date-endofweek",
+   "kind": "library",
+   "category": "Date",
+   "returns": "any",
+   "signature": "Date.EndOfWeek(dateTime as any, optional firstDayOfWeek as nullable number) as any",
+   "summary": "Returns the end of the week.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.EndOfYear",
+   "file": "date-endofyear",
+   "kind": "library",
+   "category": "Date",
+   "returns": "any",
+   "signature": "Date.EndOfYear(dateTime as any) as any",
+   "summary": "Returns the end of the year.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.From",
+   "file": "date-from",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable date",
+   "signature": "Date.From(value as any, optional culture as nullable text) as nullable date",
+   "summary": "Creates a date from the given value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.FromText",
+   "file": "date-fromtext",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable date",
+   "signature": "Date.FromText(text as nullable text, optional options as any) as nullable date",
+   "summary": "Creates a Date from local, universal, and custom Date formats.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInCurrentDay",
+   "file": "date-isincurrentday",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInCurrentDay(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this date occurs during the current day, as determined by the current date and time on the system.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInCurrentMonth",
+   "file": "date-isincurrentmonth",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInCurrentMonth(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this date occurs during the current month, as determined by the current date and time on the system.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInCurrentQuarter",
+   "file": "date-isincurrentquarter",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInCurrentQuarter(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this date occurs during the current quarter, as determined by the current date and time on the system.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInCurrentWeek",
+   "file": "date-isincurrentweek",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInCurrentWeek(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this date occurs during the current week, as determined by the current date and time on the system.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInCurrentYear",
+   "file": "date-isincurrentyear",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInCurrentYear(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this date occurs during the current year, as determined by the current date and time on the system.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInNextDay",
+   "file": "date-isinnextday",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInNextDay(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this date occurs during the next day, as determined by the current date and time on the system.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInNextMonth",
+   "file": "date-isinnextmonth",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInNextMonth(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this date occurs during the next month, as determined by the current date and time on the system.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInNextNDays",
+   "file": "date-isinnextndays",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInNextNDays(dateTime as any, days as number) as nullable logical",
+   "summary": "Indicates whether this date occurs during the next number of days, as determined by the current date and time on the sy…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInNextNMonths",
+   "file": "date-isinnextnmonths",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInNextNMonths(dateTime as any, months as number) as nullable logical",
+   "summary": "Indicates whether this date occurs during the next number of months, as determined by the current date and time on the…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInNextNQuarters",
+   "file": "date-isinnextnquarters",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInNextNQuarters(dateTime as any, quarters as number) as nullable logical",
+   "summary": "Indicates whether this date occurs during the next number of quarters, as determined by the current date and time on th…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInNextNWeeks",
+   "file": "date-isinnextnweeks",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInNextNWeeks(dateTime as any, weeks as number) as nullable logical",
+   "summary": "Indicates whether this date occurs during the next number of weeks, as determined by the current date and time on the s…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInNextNYears",
+   "file": "date-isinnextnyears",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInNextNYears(dateTime as any, years as number) as nullable logical",
+   "summary": "Indicates whether this date occurs during the next number of years, as determined by the current date and time on the s…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInNextQuarter",
+   "file": "date-isinnextquarter",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInNextQuarter(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this date occurs during the next quarter, as determined by the current date and time on the system.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInNextWeek",
+   "file": "date-isinnextweek",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInNextWeek(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this date occurs during the next week, as determined by the current date and time on the system.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInNextYear",
+   "file": "date-isinnextyear",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInNextYear(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this date occurs during the next year, as determined by the current date and time on the system.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInPreviousDay",
+   "file": "date-isinpreviousday",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInPreviousDay(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this date occurs during the previous day, as determined by the current date and time on the system.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInPreviousMonth",
+   "file": "date-isinpreviousmonth",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInPreviousMonth(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this date occurs during the previous month, as determined by the current date and time on the system.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInPreviousNDays",
+   "file": "date-isinpreviousndays",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInPreviousNDays(dateTime as any, days as number) as nullable logical",
+   "summary": "Indicates whether this date occurs during the previous number of days, as determined by the current date and time on th…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInPreviousNMonths",
+   "file": "date-isinpreviousnmonths",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInPreviousNMonths(dateTime as any, months as number) as nullable logical",
+   "summary": "Indicates whether this date occurs during the previous number of months, as determined by the current date and time on…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInPreviousNQuarters",
+   "file": "date-isinpreviousnquarters",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInPreviousNQuarters(dateTime as any, quarters as number) as nullable logical",
+   "summary": "Indicates whether this date occurs during the previous number of quarters, as determined by the current date and time o…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInPreviousNWeeks",
+   "file": "date-isinpreviousnweeks",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInPreviousNWeeks(dateTime as any, weeks as number) as nullable logical",
+   "summary": "Indicates whether this date occurs during the previous number of weeks, as determined by the current date and time on t…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInPreviousNYears",
+   "file": "date-isinpreviousnyears",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInPreviousNYears(dateTime as any, years as number) as nullable logical",
+   "summary": "Indicates whether this date occurs during the previous number of years, as determined by the current date and time on t…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInPreviousQuarter",
+   "file": "date-isinpreviousquarter",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInPreviousQuarter(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this date occurs during the previous quarter, as determined by the current date and time on the syste…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInPreviousWeek",
+   "file": "date-isinpreviousweek",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInPreviousWeek(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this date occurs during the previous week, as determined by the current date and time on the system.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInPreviousYear",
+   "file": "date-isinpreviousyear",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInPreviousYear(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this date occurs during the previous year, as determined by the current date and time on the system.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsInYearToDate",
+   "file": "date-isinyeartodate",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsInYearToDate(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this date occurs during the current year and is on or before the current day, as determined by the cu…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.IsLeapYear",
+   "file": "date-isleapyear",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable logical",
+   "signature": "Date.IsLeapYear(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this date falls in a leap year.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.Month",
+   "file": "date-month",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable number",
+   "signature": "Date.Month(dateTime as any) as nullable number",
+   "summary": "Returns the month component.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.MonthName",
+   "file": "date-monthname",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable text",
+   "signature": "Date.MonthName(date as any, optional culture as nullable text) as nullable text",
+   "summary": "Returns the name of the month component.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.QuarterOfYear",
+   "file": "date-quarterofyear",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable number",
+   "signature": "Date.QuarterOfYear(dateTime as any) as nullable number",
+   "summary": "Returns a number indicating which quarter of the year the date falls in.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 4
+  },
+  {
+   "name": "Date.StartOfDay",
+   "file": "date-startofday",
+   "kind": "library",
+   "category": "Date",
+   "returns": "any",
+   "signature": "Date.StartOfDay(dateTime as any) as any",
+   "summary": "Returns the start of the day.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.StartOfMonth",
+   "file": "date-startofmonth",
+   "kind": "library",
+   "category": "Date",
+   "returns": "any",
+   "signature": "Date.StartOfMonth(dateTime as any) as any",
+   "summary": "Returns the start of the month.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.StartOfQuarter",
+   "file": "date-startofquarter",
+   "kind": "library",
+   "category": "Date",
+   "returns": "any",
+   "signature": "Date.StartOfQuarter(dateTime as any) as any",
+   "summary": "Returns the start of the quarter.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.StartOfWeek",
+   "file": "date-startofweek",
+   "kind": "library",
+   "category": "Date",
+   "returns": "any",
+   "signature": "Date.StartOfWeek(dateTime as any, optional firstDayOfWeek as nullable number) as any",
+   "summary": "Returns the start of the week.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.StartOfYear",
+   "file": "date-startofyear",
+   "kind": "library",
+   "category": "Date",
+   "returns": "any",
+   "signature": "Date.StartOfYear(dateTime as any) as any",
+   "summary": "Returns the start of the year.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.ToRecord",
+   "file": "date-torecord",
+   "kind": "library",
+   "category": "Date",
+   "returns": "record",
+   "signature": "Date.ToRecord(date as date) as record",
+   "summary": "Returns a record containing parts of the date value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.ToText",
+   "file": "date-totext",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable text",
+   "signature": "Date.ToText(date as nullable date, optional options as any, optional culture as nullable text) as nullable text",
+   "summary": "Returns a textual representation of the date value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.WeekOfMonth",
+   "file": "date-weekofmonth",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable number",
+   "signature": "Date.WeekOfMonth(dateTime as any, optional firstDayOfWeek as nullable number) as nullable number",
+   "summary": "Returns a number from 1 to 6 indicating which week of the month this date falls in.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.WeekOfYear",
+   "file": "date-weekofyear",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable number",
+   "signature": "Date.WeekOfYear(dateTime as any, optional firstDayOfWeek as nullable number) as nullable number",
+   "summary": "Returns a number from 1 to 54 indicating which week of the year this date falls in.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Date.Year",
+   "file": "date-year",
+   "kind": "library",
+   "category": "Date",
+   "returns": "nullable number",
+   "signature": "Date.Year(dateTime as any) as nullable number",
+   "summary": "Returns the year component.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Time.EndOfHour",
+   "file": "time-endofhour",
+   "kind": "library",
+   "category": "Date",
+   "returns": "any",
+   "signature": "Time.EndOfHour(dateTime as any) as any",
+   "summary": "Returns the end of the hour.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "Time.StartOfHour",
+   "file": "time-startofhour",
+   "kind": "library",
+   "category": "Date",
+   "returns": "any",
+   "signature": "Time.StartOfHour(dateTime as any) as any",
+   "summary": "Returns the start of the hour.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  }
+ ]
+}

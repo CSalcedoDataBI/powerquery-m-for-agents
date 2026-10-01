@@ -1,0 +1,379 @@
+{
+ "functions": [
+  {
+   "name": "DateTime.AddZone",
+   "file": "datetime-addzone",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "nullable datetimezone",
+   "signature": "DateTime.AddZone(dateTime as nullable datetime, timezoneHours as number, optional timezoneMinutes as nullable number) as nullable datetimezone",
+   "summary": "Adds timezone information to the datetime value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "DateTime.Date",
+   "file": "datetime-date",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "nullable date",
+   "signature": "DateTime.Date(dateTime as any) as nullable date",
+   "summary": "Returns the date component of the given date, datetime, or datetimezone value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "DateTime.FixedLocalNow",
+   "file": "datetime-fixedlocalnow",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "datetime",
+   "signature": "DateTime.FixedLocalNow() as datetime",
+   "summary": "Returns the current date and time in the local timezone.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DateTime.From",
+   "file": "datetime-from",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "nullable datetime",
+   "signature": "DateTime.From(value as any, optional culture as nullable text) as nullable datetime",
+   "summary": "Creates a datetime from the given value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "DateTime.FromFileTime",
+   "file": "datetime-fromfiletime",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "nullable datetime",
+   "signature": "DateTime.FromFileTime(fileTime as nullable number) as nullable datetime",
+   "summary": "Creates a datetime from a 64 bits long number.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DateTime.FromText",
+   "file": "datetime-fromtext",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "nullable datetime",
+   "signature": "DateTime.FromText(text as nullable text, optional options as any) as nullable datetime",
+   "summary": "Creates a datetimezone from local and universal datetime formats.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "DateTime.IsInCurrentHour",
+   "file": "datetime-isincurrenthour",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "nullable logical",
+   "signature": "DateTime.IsInCurrentHour(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this datetime occurs during the current hour, as determined by the current date and time on the syste…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "DateTime.IsInCurrentMinute",
+   "file": "datetime-isincurrentminute",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "nullable logical",
+   "signature": "DateTime.IsInCurrentMinute(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this datetime occurs during the current minute, as determined by the current date and time on the sys…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "DateTime.IsInCurrentSecond",
+   "file": "datetime-isincurrentsecond",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "nullable logical",
+   "signature": "DateTime.IsInCurrentSecond(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this datetime occurs during the current second, as determined by the current date and time on the sys…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "DateTime.IsInNextHour",
+   "file": "datetime-isinnexthour",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "nullable logical",
+   "signature": "DateTime.IsInNextHour(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this datetime occurs during the next hour, as determined by the current date and time on the system.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "DateTime.IsInNextMinute",
+   "file": "datetime-isinnextminute",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "nullable logical",
+   "signature": "DateTime.IsInNextMinute(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this datetime occurs during the next minute, as determined by the current date and time on the system.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "DateTime.IsInNextNHours",
+   "file": "datetime-isinnextnhours",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "nullable logical",
+   "signature": "DateTime.IsInNextNHours(dateTime as any, hours as number) as nullable logical",
+   "summary": "Indicates whether this datetime occurs during the next number of hours, as determined by the current date and time on t…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "DateTime.IsInNextNMinutes",
+   "file": "datetime-isinnextnminutes",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "nullable logical",
+   "signature": "DateTime.IsInNextNMinutes(dateTime as any, minutes as number) as nullable logical",
+   "summary": "Indicates whether this datetime occurs during the next number of minutes, as determined by the current date and time on…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "DateTime.IsInNextNSeconds",
+   "file": "datetime-isinnextnseconds",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "nullable logical",
+   "signature": "DateTime.IsInNextNSeconds(dateTime as any, seconds as number) as nullable logical",
+   "summary": "Indicates whether this datetime occurs during the next number of seconds, as determined by the current date and time on…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "DateTime.IsInNextSecond",
+   "file": "datetime-isinnextsecond",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "nullable logical",
+   "signature": "DateTime.IsInNextSecond(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this datetime occurs during the next second, as determined by the current date and time on the system.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "DateTime.IsInPreviousHour",
+   "file": "datetime-isinprevioushour",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "nullable logical",
+   "signature": "DateTime.IsInPreviousHour(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this datetime occurs during the previous hour, as determined by the current date and time on the syst…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "DateTime.IsInPreviousMinute",
+   "file": "datetime-isinpreviousminute",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "nullable logical",
+   "signature": "DateTime.IsInPreviousMinute(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this datetime occurs during the previous minute, as determined by the current date and time on the sy…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "DateTime.IsInPreviousNHours",
+   "file": "datetime-isinpreviousnhours",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "nullable logical",
+   "signature": "DateTime.IsInPreviousNHours(dateTime as any, hours as number) as nullable logical",
+   "summary": "Indicates whether this datetime occurs during the previous number of hours, as determined by the current date and time…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "DateTime.IsInPreviousNMinutes",
+   "file": "datetime-isinpreviousnminutes",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "nullable logical",
+   "signature": "DateTime.IsInPreviousNMinutes(dateTime as any, minutes as number) as nullable logical",
+   "summary": "Indicates whether this datetime occurs during the previous number of minutes, as determined by the current date and tim…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "DateTime.IsInPreviousNSeconds",
+   "file": "datetime-isinpreviousnseconds",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "nullable logical",
+   "signature": "DateTime.IsInPreviousNSeconds(dateTime as any, seconds as number) as nullable logical",
+   "summary": "Indicates whether this datetime occurs during the previous number of seconds, as determined by the current date and tim…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "DateTime.IsInPreviousSecond",
+   "file": "datetime-isinprevioussecond",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "nullable logical",
+   "signature": "DateTime.IsInPreviousSecond(dateTime as any) as nullable logical",
+   "summary": "Indicates whether this datetime occurs during the previous second, as determined by the current date and time on the sy…",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "DateTime.LocalNow",
+   "file": "datetime-localnow",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "datetime",
+   "signature": "DateTime.LocalNow() as datetime",
+   "summary": "Returns the current date and time in the local timezone.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DateTime.Time",
+   "file": "datetime-time",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "nullable time",
+   "signature": "DateTime.Time(dateTime as any) as nullable time",
+   "summary": "Returns the time part of the given datetime value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "DateTime.ToRecord",
+   "file": "datetime-torecord",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "record",
+   "signature": "DateTime.ToRecord(dateTime as datetime) as record",
+   "summary": "Returns a record containing the datetime value's parts.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  },
+  {
+   "name": "DateTime.ToText",
+   "file": "datetime-totext",
+   "kind": "library",
+   "category": "DateTime",
+   "returns": "nullable text",
+   "signature": "DateTime.ToText(dateTime as nullable datetime, optional options as any, optional culture as nullable text) as nullable text",
+   "summary": "Returns a textual representation of the datetime value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 3
+  }
+ ]
+}

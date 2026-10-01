@@ -1,0 +1,229 @@
+{
+ "functions": [
+  {
+   "name": "DateTimeZone.FixedLocalNow",
+   "file": "datetimezone-fixedlocalnow",
+   "kind": "library",
+   "category": "DateTimeZone",
+   "returns": "datetimezone",
+   "signature": "DateTimeZone.FixedLocalNow() as datetimezone",
+   "summary": "Returns the current date & time in the local timezone.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DateTimeZone.FixedUtcNow",
+   "file": "datetimezone-fixedutcnow",
+   "kind": "library",
+   "category": "DateTimeZone",
+   "returns": "datetimezone",
+   "signature": "DateTimeZone.FixedUtcNow() as datetimezone",
+   "summary": "Returns the current date and time in UTC (the GMT timezone).",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DateTimeZone.From",
+   "file": "datetimezone-from",
+   "kind": "library",
+   "category": "DateTimeZone",
+   "returns": "nullable datetimezone",
+   "signature": "DateTimeZone.From(value as any, optional culture as nullable text) as nullable datetimezone",
+   "summary": "Creates a datetimezone from the given value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DateTimeZone.FromFileTime",
+   "file": "datetimezone-fromfiletime",
+   "kind": "library",
+   "category": "DateTimeZone",
+   "returns": "nullable datetimezone",
+   "signature": "DateTimeZone.FromFileTime(fileTime as nullable number) as nullable datetimezone",
+   "summary": "Creates a datetimezone from a 64 bits long number.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DateTimeZone.FromText",
+   "file": "datetimezone-fromtext",
+   "kind": "library",
+   "category": "DateTimeZone",
+   "returns": "nullable datetimezone",
+   "signature": "DateTimeZone.FromText(text as nullable text, optional options as any) as nullable datetimezone",
+   "summary": "Creates a datetimezone from local, universal, and custom datetimezone formats.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DateTimeZone.LocalNow",
+   "file": "datetimezone-localnow",
+   "kind": "library",
+   "category": "DateTimeZone",
+   "returns": "datetimezone",
+   "signature": "DateTimeZone.LocalNow() as datetimezone",
+   "summary": "Returns the current date & time in the local timezone.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DateTimeZone.RemoveZone",
+   "file": "datetimezone-removezone",
+   "kind": "library",
+   "category": "DateTimeZone",
+   "returns": "nullable datetime",
+   "signature": "DateTimeZone.RemoveZone(dateTimeZone as nullable datetimezone) as nullable datetime",
+   "summary": "Removes timezone information from the given datetimezone value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DateTimeZone.SwitchZone",
+   "file": "datetimezone-switchzone",
+   "kind": "library",
+   "category": "DateTimeZone",
+   "returns": "nullable datetimezone",
+   "signature": "DateTimeZone.SwitchZone(dateTimeZone as nullable datetimezone, timezoneHours as number, optional timezoneMinutes as nullable number) as nullable datetimezone",
+   "summary": "Changes the timezone of the value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DateTimeZone.ToLocal",
+   "file": "datetimezone-tolocal",
+   "kind": "library",
+   "category": "DateTimeZone",
+   "returns": "nullable datetimezone",
+   "signature": "DateTimeZone.ToLocal(dateTimeZone as nullable datetimezone) as nullable datetimezone",
+   "summary": "Converts the timezone component to the local timezone.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DateTimeZone.ToRecord",
+   "file": "datetimezone-torecord",
+   "kind": "library",
+   "category": "DateTimeZone",
+   "returns": "record",
+   "signature": "DateTimeZone.ToRecord(dateTimeZone as datetimezone) as record",
+   "summary": "Returns a record containing the datetimezone value's parts.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DateTimeZone.ToText",
+   "file": "datetimezone-totext",
+   "kind": "library",
+   "category": "DateTimeZone",
+   "returns": "nullable text",
+   "signature": "DateTimeZone.ToText(dateTimeZone as nullable datetimezone, optional options as any, optional culture as nullable text) as nullable text",
+   "summary": "Returns a textual representation of the datetimezone value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DateTimeZone.ToUtc",
+   "file": "datetimezone-toutc",
+   "kind": "library",
+   "category": "DateTimeZone",
+   "returns": "nullable datetimezone",
+   "signature": "DateTimeZone.ToUtc(dateTimeZone as nullable datetimezone) as nullable datetimezone",
+   "summary": "Converts the timezone component to UTC timezone.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DateTimeZone.UtcNow",
+   "file": "datetimezone-utcnow",
+   "kind": "library",
+   "category": "DateTimeZone",
+   "returns": "datetimezone",
+   "signature": "DateTimeZone.UtcNow() as datetimezone",
+   "summary": "Returns the current date and time in UTC (the GMT timezone).",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DateTimeZone.ZoneHours",
+   "file": "datetimezone-zonehours",
+   "kind": "library",
+   "category": "DateTimeZone",
+   "returns": "nullable number",
+   "signature": "DateTimeZone.ZoneHours(dateTimeZone as nullable datetimezone) as nullable number",
+   "summary": "Gets the timezone hour of the value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "DateTimeZone.ZoneMinutes",
+   "file": "datetimezone-zoneminutes",
+   "kind": "library",
+   "category": "DateTimeZone",
+   "returns": "nullable number",
+   "signature": "DateTimeZone.ZoneMinutes(dateTimeZone as nullable datetimezone) as nullable number",
+   "summary": "Gets the timezone minutes of the value.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  }
+ ]
+}

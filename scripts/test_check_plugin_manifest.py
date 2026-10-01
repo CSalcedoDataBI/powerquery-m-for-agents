@@ -181,11 +181,10 @@ class TheRealRepo(unittest.TestCase):
         errors = check(ROOT)
         self.assertEqual(errors, [], "\n".join(errors or []))
 
-    def test_the_four_skills_are_the_ones_shipped(self):
-        self.assertEqual(skill_dirs(ROOT), ["skills/m-custom-functions",
-                                            "skills/m-folding",
-                                            "skills/m-iteration",
-                                            "skills/m-reference"])
+    def test_only_m_reference_ships(self):
+        # The stubs wait in planned/: Claude Code loads every folder under skills/,
+        # whatever plugin.json lists (measured with `claude plugin details`).
+        self.assertEqual(skill_dirs(ROOT), ["skills/m-reference"])
 
 
 if __name__ == "__main__":

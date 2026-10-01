@@ -1,0 +1,64 @@
+{
+ "functions": [
+  {
+   "name": "Uri.BuildQueryString",
+   "file": "uri-buildquerystring",
+   "kind": "library",
+   "category": "Uri",
+   "returns": "text",
+   "signature": "Uri.BuildQueryString(query as record) as text",
+   "summary": "Assemble a record into a URI query string.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Uri.Combine",
+   "file": "uri-combine",
+   "kind": "library",
+   "category": "Uri",
+   "returns": "text",
+   "signature": "Uri.Combine(baseUri as text, relativeUri as text) as text",
+   "summary": "Returns an absolute URI that is the combination of the input base URI and relative URI.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Uri.EscapeDataString",
+   "file": "uri-escapedatastring",
+   "kind": "library",
+   "category": "Uri",
+   "returns": "text",
+   "signature": "Uri.EscapeDataString(data as text) as text",
+   "summary": "Encodes special characters in accordance with RFC 3986.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  },
+  {
+   "name": "Uri.Parts",
+   "file": "uri-parts",
+   "kind": "library",
+   "category": "Uri",
+   "returns": "record",
+   "signature": "Uri.Parts(absoluteUri as text) as record",
+   "summary": "Returns the parts of the input absolute URI as a record.",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0
+  }
+ ]
+}
