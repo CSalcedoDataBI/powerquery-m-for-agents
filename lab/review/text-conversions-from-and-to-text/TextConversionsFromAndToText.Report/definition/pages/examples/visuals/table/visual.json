@@ -36,6 +36,20 @@
                       "Entity": "TextConversionsFromAndToText"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "TextConversionsFromAndToText.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TextConversionsFromAndToText"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

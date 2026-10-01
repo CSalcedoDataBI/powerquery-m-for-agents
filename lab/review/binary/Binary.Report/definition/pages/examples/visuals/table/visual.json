@@ -36,6 +36,20 @@
                       "Entity": "Binary"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "Binary.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Binary"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

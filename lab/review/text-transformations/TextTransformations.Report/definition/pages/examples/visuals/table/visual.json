@@ -36,6 +36,20 @@
                       "Entity": "TextTransformations"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "TextTransformations.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TextTransformations"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

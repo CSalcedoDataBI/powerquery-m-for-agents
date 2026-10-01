@@ -4,8 +4,16 @@ One Power BI project per example category, to read the executed examples in Powe
 of in Markdown. The example pages stay the source of truth; these projects are generated from
 them.
 
+The table on the first page shows, for each block, the function's description as the engine
+documents it (from its card under `generated/library/`), the code, the result recorded on the
+page and the result this Power BI returns after Refresh.
+
 | Batch | Project |
 |---|---|
+| Binary | [binary/Binary.pbip](binary/Binary.pbip) |
+| Date | [date/Date.pbip](date/Date.pbip) |
+| DateTime | [datetime/DateTime.pbip](datetime/DateTime.pbip) |
+| Duration | [duration/Duration.pbip](duration/Duration.pbip) |
 | List.Addition | [list-addition/ListAddition.pbip](list-addition/ListAddition.pbip) |
 | List.Averages | [list-averages/ListAverages.pbip](list-averages/ListAverages.pbip) |
 | List.Generators | [list-generators/ListGenerators.pbip](list-generators/ListGenerators.pbip) |
@@ -16,8 +24,14 @@ them.
 | List.Selection | [list-selection/ListSelection.pbip](list-selection/ListSelection.pbip) |
 | List.Set operations | [list-set-operations/ListSetOperations.pbip](list-set-operations/ListSetOperations.pbip) |
 | List.Transformation functions | [list-transformation-functions/ListTransformationFunctions.pbip](list-transformation-functions/ListTransformationFunctions.pbip) |
+| Logical | [logical/Logical.pbip](logical/Logical.pbip) |
 | Number.Conversion and formatting | [number-conversion-and-formatting/NumberConversionAndFormatting.pbip](number-conversion-and-formatting/NumberConversionAndFormatting.pbip) |
 | Number.Operations | [number-operations/NumberOperations.pbip](number-operations/NumberOperations.pbip) |
+| Record.Information | [record-information/RecordInformation.pbip](record-information/RecordInformation.pbip) |
+| Record.Selection | [record-selection/RecordSelection.pbip](record-selection/RecordSelection.pbip) |
+| Record.Serialization | [record-serialization/RecordSerialization.pbip](record-serialization/RecordSerialization.pbip) |
+| Record.Transformations | [record-transformations/RecordTransformations.pbip](record-transformations/RecordTransformations.pbip) |
+| Splitter | [splitter/Splitter.pbip](splitter/Splitter.pbip) |
 | Table.Column operations | [table-column-operations/TableColumnOperations.pbip](table-column-operations/TableColumnOperations.pbip) |
 | Table.Conversions | [table-conversions/TableConversions.pbip](table-conversions/TableConversions.pbip) |
 | Table.Information | [table-information/TableInformation.pbip](table-information/TableInformation.pbip) |
@@ -34,6 +48,7 @@ them.
 | Text.Membership | [text-membership/TextMembership.pbip](text-membership/TextMembership.pbip) |
 | Text.Modification | [text-modification/TextModification.pbip](text-modification/TextModification.pbip) |
 | Text.Transformations | [text-transformations/TextTransformations.pbip](text-transformations/TextTransformations.pbip) |
+| Type | [type/Type.pbip](type/Type.pbip) |
 | Values.Implementation | [values-implementation/ValuesImplementation.pbip](values-implementation/ValuesImplementation.pbip) |
 
 ## How to review

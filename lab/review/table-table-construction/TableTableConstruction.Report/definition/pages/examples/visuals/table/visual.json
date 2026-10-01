@@ -36,6 +36,20 @@
                       "Entity": "TableTableConstruction"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "TableTableConstruction.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TableTableConstruction"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

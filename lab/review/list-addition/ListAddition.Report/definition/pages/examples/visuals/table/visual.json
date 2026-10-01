@@ -36,6 +36,20 @@
                       "Entity": "ListAddition"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "ListAddition.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ListAddition"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

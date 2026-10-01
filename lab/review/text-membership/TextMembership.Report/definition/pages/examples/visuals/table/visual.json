@@ -36,6 +36,20 @@
                       "Entity": "TextMembership"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "TextMembership.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TextMembership"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

@@ -36,6 +36,20 @@
                       "Entity": "Date"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "Date.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Date"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

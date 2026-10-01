@@ -14,6 +14,12 @@ table TableConversions
 		summarizeBy: none
 		sourceColumn: Function
 
+	column Description
+		dataType: string
+		lineageTag: c6879781-2db6-50f5-83c4-a665ffd0de8f
+		summarizeBy: none
+		sourceColumn: Description
+
 	column Block
 		dataType: int64
 		lineageTag: 09d07d81-2839-5a71-8df5-c324130e5f4f
@@ -232,7 +238,7 @@ table TableConversions
 				            )
 				        in
 				            Result,
-				    Pages = #table(type table [seq = Int64.Type, Function = text, Block = Int64.Type, Code = text, Recorded = text], {{0, "Table.ToColumns", 1, "let#(lf)    T = #table(type table [Name = text, Qty = Int64.Type], {{""a"", 1}, {""b"", 2}, {""a"", 3}})#(lf)in#(lf)    Table.ToColumns(T)", "{{""a"", ""b"", ""a""}, {1, 2, 3}}"}, {1, "Table.ToList", 1, "Table.ToList(#table({""a"", ""b""}, {{""x"", ""y""}, {""z"", ""w""}}), Combiner.CombineTextByDelimiter(""|""))", "{""x|y"", ""z|w""}"}, {2, "Table.ToRecords", 1, "let#(lf)    T = #table(type table [Name = text, Qty = Int64.Type], {{""a"", 1}, {""b"", 2}, {""a"", 3}})#(lf)in#(lf)    Table.ToRecords(T)", "{[Name = ""a"", Qty = 1], [Name = ""b"", Qty = 2], [Name = ""a"", Qty = 3]}"}, {3, "Table.ToRows", 1, "let#(lf)    T = #table(type table [Name = text, Qty = Int64.Type], {{""a"", 1}, {""b"", 2}, {""a"", 3}})#(lf)in#(lf)    Table.ToRows(T)", "{{""a"", 1}, {""b"", 2}, {""a"", 3}}"}}),
+				    Pages = #table(type table [seq = Int64.Type, Function = text, Description = text, Block = Int64.Type, Code = text, Recorded = text], {{0, "Table.ToColumns", "Creates a list of nested lists from the table, table. Each list item is an inner list that contains the column values.", 1, "let#(lf)    T = #table(type table [Name = text, Qty = Int64.Type], {{""a"", 1}, {""b"", 2}, {""a"", 3}})#(lf)in#(lf)    Table.ToColumns(T)", "{{""a"", ""b"", ""a""}, {1, 2, 3}}"}, {1, "Table.ToList", "Converts a table into a list by applying the specified combining function to each row of values in the table.", 1, "Table.ToList(#table({""a"", ""b""}, {{""x"", ""y""}, {""z"", ""w""}}), Combiner.CombineTextByDelimiter(""|""))", "{""x|y"", ""z|w""}"}, {2, "Table.ToRecords", "Converts a table, table, to a list of records.", 1, "let#(lf)    T = #table(type table [Name = text, Qty = Int64.Type], {{""a"", 1}, {""b"", 2}, {""a"", 3}})#(lf)in#(lf)    Table.ToRecords(T)", "{[Name = ""a"", Qty = 1], [Name = ""b"", Qty = 2], [Name = ""a"", Qty = 3]}"}, {3, "Table.ToRows", "Creates a list of nested lists from the table, table. Each list item is an inner list that contains the row values.", 1, "let#(lf)    T = #table(type table [Name = text, Qty = Int64.Type], {{""a"", 1}, {""b"", 2}, {""a"", 3}})#(lf)in#(lf)    Table.ToRows(T)", "{{""a"", 1}, {""b"", 2}, {""a"", 3}}"}}),
 				    Joined = Table.NestedJoin(Pages, "seq", Table.TransformColumns(Live, {{"id", Number.From}}), "id", "L", JoinKind.LeftOuter),
 				    Expanded = Table.ExpandTableColumn(Joined, "L", {"result"}, {"Live"}),
 				    Matched = Table.AddColumn(Expanded, "Match", each if [Live] = [Recorded] then "yes" else "NO", type text),

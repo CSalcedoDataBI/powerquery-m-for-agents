@@ -36,6 +36,20 @@
                       "Entity": "NumberOperations"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "NumberOperations.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "NumberOperations"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

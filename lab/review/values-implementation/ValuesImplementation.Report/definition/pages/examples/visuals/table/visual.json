@@ -36,6 +36,20 @@
                       "Entity": "ValuesImplementation"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "ValuesImplementation.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ValuesImplementation"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

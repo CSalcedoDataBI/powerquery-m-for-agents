@@ -36,6 +36,20 @@
                       "Entity": "Logical"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "Logical.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Logical"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

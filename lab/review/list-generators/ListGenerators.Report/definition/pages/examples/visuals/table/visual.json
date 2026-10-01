@@ -36,6 +36,20 @@
                       "Entity": "ListGenerators"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "ListGenerators.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ListGenerators"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

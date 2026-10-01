@@ -36,6 +36,20 @@
                       "Entity": "Splitter"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "Splitter.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Splitter"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

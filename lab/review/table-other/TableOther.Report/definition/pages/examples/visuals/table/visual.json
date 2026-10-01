@@ -36,6 +36,20 @@
                       "Entity": "TableOther"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "TableOther.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "TableOther"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

@@ -14,6 +14,12 @@ table ListNumerics
 		summarizeBy: none
 		sourceColumn: Function
 
+	column Description
+		dataType: string
+		lineageTag: b0905022-87cc-59cd-bbd6-a1d7e2f4d8c8
+		summarizeBy: none
+		sourceColumn: Description
+
 	column Block
 		dataType: int64
 		lineageTag: 1e9878ce-c7dd-5977-8ae8-03c36cdeee22
@@ -232,7 +238,7 @@ table ListNumerics
 				            )
 				        in
 				            Result,
-				    Pages = #table(type table [seq = Int64.Type, Function = text, Block = Int64.Type, Code = text, Recorded = text], {{0, "List.Covariance", 1, "List.Covariance({1, 2, 3}, {1, 2, 4})", "0.99999999999999911"}, {1, "List.Product", 1, "List.Product({2, 3, 4})", "24"}}),
+				    Pages = #table(type table [seq = Int64.Type, Function = text, Description = text, Block = Int64.Type, Code = text, Recorded = text], {{0, "List.Covariance", "Returns the covariance between two lists, numberList1 and numberList2. numberList1 and numberList2 must contain the same number of number values.", 1, "List.Covariance({1, 2, 3}, {1, 2, 4})", "0.99999999999999911"}, {1, "List.Product", "Returns the product of the non-null numbers in the list, numbersList. Returns null if there are no non-null values in the list.", 1, "List.Product({2, 3, 4})", "24"}}),
 				    Joined = Table.NestedJoin(Pages, "seq", Table.TransformColumns(Live, {{"id", Number.From}}), "id", "L", JoinKind.LeftOuter),
 				    Expanded = Table.ExpandTableColumn(Joined, "L", {"result"}, {"Live"}),
 				    Matched = Table.AddColumn(Expanded, "Match", each if [Live] = [Recorded] then "yes" else "NO", type text),

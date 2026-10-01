@@ -36,6 +36,20 @@
                       "Entity": "ListSelection"
                     }
                   },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "ListSelection.Description",
+              "nativeQueryRef": "Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ListSelection"
+                    }
+                  },
                   "Property": "Block"
                 }
               },

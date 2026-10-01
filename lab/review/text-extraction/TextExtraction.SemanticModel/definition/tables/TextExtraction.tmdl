@@ -14,6 +14,12 @@ table TextExtraction
 		summarizeBy: none
 		sourceColumn: Function
 
+	column Description
+		dataType: string
+		lineageTag: cec61af3-6791-571e-8b2a-99d10ddbfb3f
+		summarizeBy: none
+		sourceColumn: Description
+
 	column Block
 		dataType: int64
 		lineageTag: 89832cf3-aec8-58ce-8866-3789884dc210
@@ -232,7 +238,7 @@ table TextExtraction
 				            )
 				        in
 				            Result,
-				    Pages = #table(type table [seq = Int64.Type, Function = text, Block = Int64.Type, Code = text, Recorded = text], {{0, "Text.At", 1, "Text.At(""Hello"", 1)", """e"""}, {1, "Text.End", 1, "Text.End(""Hello"", 2)", """lo"""}, {2, "Text.Middle", 1, "{Text.Middle(""Hello"", 1, 3), Text.Middle(""Hello"", 3, 10), Text.Middle(""Hello"", 10, 2)}", "{""ell"", ""lo"", """"}"}, {3, "Text.Range", 1, "{Text.Range(""Hello"", 1, 3), Text.Range(""Hello"", 10)}", "{""ell"", error: Expression.Error: The 'offset' argument is out of range. | Detail: 10}"}, {4, "Text.Start", 1, "Text.Start(""Hello"", 2)", """He"""}}),
+				    Pages = #table(type table [seq = Int64.Type, Function = text, Description = text, Block = Int64.Type, Code = text, Recorded = text], {{0, "Text.At", "Returns the character in the text value, text at position index. The first character in the text is at position 0.", 1, "Text.At(""Hello"", 1)", """e"""}, {1, "Text.End", "Returns a text value that is the last count characters of the text value text.", 1, "Text.End(""Hello"", 2)", """lo"""}, {2, "Text.Middle", "Returns count characters, or through the end of text; at the offset start.", 1, "{Text.Middle(""Hello"", 1, 3), Text.Middle(""Hello"", 3, 10), Text.Middle(""Hello"", 10, 2)}", "{""ell"", ""lo"", """"}"}, {3, "Text.Range", "Returns the substring from the text text found at the offset offset. An optional parameter, count, can be included to specify how many characters to return. Raises an error if there aren't enough characters.", 1, "{Text.Range(""Hello"", 1, 3), Text.Range(""Hello"", 10)}", "{""ell"", error: Expression.Error: The 'offset' argument is out of range. | Detail: 10}"}, {4, "Text.Start", "Returns the first count characters of text as a text value.", 1, "Text.Start(""Hello"", 2)", """He"""}}),
 				    Joined = Table.NestedJoin(Pages, "seq", Table.TransformColumns(Live, {{"id", Number.From}}), "id", "L", JoinKind.LeftOuter),
 				    Expanded = Table.ExpandTableColumn(Joined, "L", {"result"}, {"Live"}),
 				    Matched = Table.AddColumn(Expanded, "Match", each if [Live] = [Recorded] then "yes" else "NO", type text),

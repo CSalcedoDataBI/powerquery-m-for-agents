@@ -14,6 +14,12 @@ table TextModification
 		summarizeBy: none
 		sourceColumn: Function
 
+	column Description
+		dataType: string
+		lineageTag: 3babdd16-28c6-54f9-8d74-bf1e9df50863
+		summarizeBy: none
+		sourceColumn: Description
+
 	column Block
 		dataType: int64
 		lineageTag: f29f3a92-c8a3-5ad7-aac7-2abbd819a564
@@ -232,7 +238,7 @@ table TextModification
 				            )
 				        in
 				            Result,
-				    Pages = #table(type table [seq = Int64.Type, Function = text, Block = Int64.Type, Code = text, Recorded = text], {{0, "Text.Insert", 1, "Text.Insert(""ABD"", 2, ""C"")", """ABCD"""}, {1, "Text.Remove", 1, "Text.Remove(""a-b_c"", {""-"", ""_""})", """abc"""}, {2, "Text.RemoveRange", 1, "Text.RemoveRange(""ABCDEF"", 2, 2)", """ABEF"""}, {3, "Text.Replace", 1, "Text.Replace(""a.b.c"", ""."", ""-"")", """a-b-c"""}, {4, "Text.ReplaceRange", 1, "Text.ReplaceRange(""ABCDEF"", 2, 2, ""xyz"")", """ABxyzEF"""}, {5, "Text.Select", 1, "Text.Select(""a1b2c3"", {""0""..""9""})", """123"""}}),
+				    Pages = #table(type table [seq = Int64.Type, Function = text, Description = text, Block = Int64.Type, Code = text, Recorded = text], {{0, "Text.Insert", "Returns the result of inserting text value newText into the text value text at position offset. Positions start at number 0.", 1, "Text.Insert(""ABD"", 2, ""C"")", """ABCD"""}, {1, "Text.Remove", "Returns a copy of the text value text with all the characters from removeChars removed.", 1, "Text.Remove(""a-b_c"", {""-"", ""_""})", """abc"""}, {2, "Text.RemoveRange", "Returns a copy of the text value text with all the characters from position offset removed. An optional parameter, count can by used to specify the number of characters to remove. The default value of count is 1. Position values start at 0.", 1, "Text.RemoveRange(""ABCDEF"", 2, 2)", """ABEF"""}, {3, "Text.Replace", "Returns the result of replacing all occurrences of text value old in text value text with text value new. This function is case sensitive.", 1, "Text.Replace(""a.b.c"", ""."", ""-"")", """a-b-c"""}, {4, "Text.ReplaceRange", "Returns the result of removing a number of characters, count, from text value text beginning at position offset and then inserting the text value newText at the same position in text.", 1, "Text.ReplaceRange(""ABCDEF"", 2, 2, ""xyz"")", """ABxyzEF"""}, {5, "Text.Select", "Returns a copy of the text value text with all the characters not in selectChars removed.", 1, "Text.Select(""a1b2c3"", {""0""..""9""})", """123"""}}),
 				    Joined = Table.NestedJoin(Pages, "seq", Table.TransformColumns(Live, {{"id", Number.From}}), "id", "L", JoinKind.LeftOuter),
 				    Expanded = Table.ExpandTableColumn(Joined, "L", {"result"}, {"Live"}),
 				    Matched = Table.AddColumn(Expanded, "Match", each if [Live] = [Recorded] then "yes" else "NO", type text),
