@@ -69,6 +69,7 @@ _DEFINED_RE = re.compile(r"\s*=(?![=>])")
 _CALL_RE = re.compile(r"\s*\(")
 _BINDING_START_RE = re.compile(r"(?:^|[\[,]|\blet|\boptional)\s*$")
 _PAIRS = {")": "(", "]": "[", "}": "{"}
+_FIELD_ACCESS_RE = re.compile(r"\[[^\[\]=,]*\]")
 
 
 def _innermost_open(code, pos):
@@ -124,7 +125,9 @@ def _names(text):
         bare, quoted = m_blocks.scan(span)
         # A field access such as [Sales.Amount] is a column name, not a library name. A
         # lookup in the environment, #shared[Text.Left], is a library name and is kept.
-        bare = re.sub(r"(?<!#shared)(?<!#sections)\[[^\[\]=,]*\]", " ", bare)
+        bare = _FIELD_ACCESS_RE.sub(
+            lambda m: m.group(0) if bare[:m.start()].rstrip().endswith(
+                ("#shared", "#sections")) else " ", bare)
         found = []
         for m in m_blocks.DOTTED_RE.finditer(bare):
             # A name being DEFINED is not a library name: a record field
@@ -445,6 +448,12 @@ def main(argv):
         report(saved["records"], names)
         return 0
 
+    if args.resume and (args.limit or args.regime) and args.out and os.path.exists(args.out):
+        # The run file is rewritten from the selected questions only, so a filtered resume
+        # would drop every saved answer outside the filter.
+        print("ERROR: --resume rewrites the whole run file; it cannot be combined with "
+              "--limit or --regime. Resume the full bank, or write to another --out.")
+        return 2
     other = other_model(args.out, args.model) if args.resume else None
     if other:
         # One run file is one model: mixing two would break the A/B's premise silently.

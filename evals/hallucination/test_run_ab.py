@@ -77,6 +77,8 @@ class CounterTest(unittest.TestCase):
     def test_environment_lookup_is_a_library_name(self):
         code = "```m\n#shared[Text.Left]\n```"
         self.assertEqual(run_ab.invented(code, NAMES), ["Text.Left"])
+        spaced = "```m\n#shared [ Text.Left ]\n```"
+        self.assertEqual(run_ab.invented(spaced, NAMES), ["Text.Left"])
         quoted = '```m\n#shared[#"Text.Left"]\n```'
         self.assertEqual(run_ab.invented(quoted, NAMES), ["Text.Left"])
 
@@ -103,6 +105,9 @@ class CounterTest(unittest.TestCase):
         self.assertIsNone(run_ab.other_model(path, "claude-a"))
         # main stops before any API call (and before reading a key).
         self.assertEqual(run_ab.main(["--model", "claude-b", "--out", path, "--resume"]), 2)
+        # A filtered resume would rewrite the file without the other answers.
+        self.assertEqual(run_ab.main(["--model", "claude-a", "--out", path, "--resume",
+                                      "--limit", "1"]), 2)
 
     def test_unclosed_fence_is_still_code(self):
         self.assertEqual(run_ab.invented("```m\nText.Left(x, 1)", NAMES), ["Text.Left"])
