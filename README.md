@@ -95,7 +95,7 @@ from the MIT-licensed standard library of
 examples carry no stated licence, so the cards do not quote them (#1); each card links its
 Microsoft Learn page instead, when that page exists.
 
-The raw engine exports in [`exports/`](exports/) are the engine's output as it returns it, so
-they do hold those long descriptions and examples: © Microsoft, kept only so every catalogue
-can be regenerated from its exact input. They are in the git repository, not in the plugin
-archive, and nothing generated from them quotes those texts.
+The raw engine exports in [`exports/`](exports/) keep the documentation text the engine
+returns, so they do hold those long descriptions and examples: © Microsoft, kept only so
+every catalogue can be regenerated from its exact input. They are in the git repository, not
+in the plugin archive, and no card quotes those long descriptions or examples.

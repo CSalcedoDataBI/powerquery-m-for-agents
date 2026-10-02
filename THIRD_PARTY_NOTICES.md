@@ -15,11 +15,12 @@ was written in this repository.
 
 ## Raw engine exports: Microsoft Power Query documentation
 
-The raw exports `exports/<host>-<version>.json` hold the engine's `#shared` as the host
-returns it, including the documentation text Microsoft ships inside the engine
+The raw exports `exports/<host>-<version>.json`, written by `export_shared.pq` from the
+engine's `#shared`, include the documentation text Microsoft ships inside the engine
 (`description`, `longDescription`, `examples`). That text is © Microsoft Corporation. It is
-kept unedited as the reproducible input of the catalogue, is not part of the plugin archive,
-and is not quoted by any card. See [`exports/README.md`](exports/README.md).
+kept as the engine returns it, as the reproducible input of the catalogue, and is not part
+of the plugin archive. The cards do not quote the long descriptions or the examples; their
+one-line descriptions come from the MIT file above. See [`exports/README.md`](exports/README.md).
 
 ```
 MIT License

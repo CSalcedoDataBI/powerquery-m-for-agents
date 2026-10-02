@@ -42,9 +42,11 @@ párrafo largo y no trae ejemplos. Para 551 funciones, su línea es idéntica a 
 ## Adenda 2026-10-02: los exports en bruto
 
 La auditoría del historial antes de publicar (#13) mostró que `exports/<host>-<version>.json`
-sigue guardando, tal cual los devuelve el motor, los textos que las fichas dejaron de citar
-(`description`, `longDescription` y `examples`). El README decía que «no se copian», y eso
-solo era cierto para las fichas.
+(la salida de `export_shared.pq`) sigue guardando, tal cual los devuelve el motor, los textos
+de documentación de Microsoft (`description`, `longDescription` y `examples`). El README
+decía que el párrafo largo y los ejemplos «no se copian», y eso solo era cierto para las
+fichas. La línea corta de las fichas sale del archivo MIT, aunque en muchas funciones
+coincida palabra por palabra con `description`.
 
 Decisión del mantenedor: el export se queda como está, porque es la entrada reproducible del
 catálogo, y se cita como © Microsoft en `exports/README.md`, en `THIRD_PARTY_NOTICES.md` y en
