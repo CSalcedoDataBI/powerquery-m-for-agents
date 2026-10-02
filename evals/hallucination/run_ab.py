@@ -66,6 +66,7 @@ HASH_LITERALS = frozenset({
 })
 _HASH_RE = re.compile(r"(?<![\w#])#([A-Za-z]\w*)\b")
 _DEFINED_RE = re.compile(r"\s*=(?![=>])")
+_CALL_RE = re.compile(r"\s*\(")
 
 
 def catalog_names(directory=CATALOG_DIR):
@@ -100,41 +101,57 @@ def code_spans(text):
     return fenced + _INLINE.findall(rest)
 
 
-def used_names(text):
-    """Every distinct library-shaped name in the answer's code, in order of appearance:
-    dotted names, and # literals written as `#name`."""
-    seen, out = set(), []
+def _names(text):
+    """(name, called) for every distinct library-shaped name in the answer's code, in order
+    of appearance: dotted names, and # literals written as `#name`. `called` is whether any
+    use of it is followed by `(`."""
+    seen, out = {}, []
     for span in code_spans(text):
-        # Quoted identifiers are dropped, unlike in check_examples: in an answer, #"..." is a
-        # step or column name the model chose (#"Sales.Amount"), not a library call.
-        bare, _quoted = m_blocks.scan(span)
+        bare, quoted = m_blocks.scan(span)
         # A field access such as [Sales.Amount] is a column name, not a library name.
         bare = re.sub(r"\[[^\[\]=,]*\]", " ", bare)
-        # A name being DEFINED is not a library name either: a record field
-        # (meta [Documentation.Name = "..."], the documented way to describe a custom
-        # function) or a let variable. A dotted name followed by `=` (not `=>`) is one.
-        found = [m.group(1) for m in m_blocks.DOTTED_RE.finditer(bare)
-                 if not _DEFINED_RE.match(bare, m.end())]
-        found += ["#" + h for h in _HASH_RE.findall(bare)]
-        for name in found:
+        found = []
+        for m in m_blocks.DOTTED_RE.finditer(bare):
+            # A name being DEFINED is not a library name: a record field
+            # (meta [Documentation.Name = "..."]) or a let variable. A dotted name followed
+            # by `=` (not `=>`) is one.
+            if _DEFINED_RE.match(bare, m.end()):
+                continue
+            found.append((m.group(1), bool(_CALL_RE.match(bare, m.end()))))
+        # A quoted identifier is usually a step or column name the model chose
+        # (#"Sales.Amount"), but one that is CALLED, #"Text.Left"(x, 1), is a library name
+        # written in quotes and counts like the bare form.
+        for q in quoted:
+            if m_blocks.DOTTED_RE.fullmatch(q) and re.search(
+                    r'#"' + re.escape(q) + r'"\s*\(', span):
+                found.append((q, True))
+        found += [("#" + h, True) for h in _HASH_RE.findall(bare)]
+        for name, called in found:
             if name not in seen:
-                seen.add(name)
-                out.append(name)
+                seen[name] = len(out)
+                out.append((name, called))
+            elif called:
+                out[seen[name]] = (name, True)
     return out
+
+
+def used_names(text):
+    """Every distinct library-shaped name in the answer's code, in order of appearance."""
+    return [name for name, _ in _names(text)]
 
 
 # Documentation.Name, Documentation.Examples...: the metadata record fields that document a
 # function, read by export_shared.pq from every function type. No #shared member has this
-# prefix, so a model writing one (often in prose backticks) is naming a field, not inventing
-# a library function. This eval measures library names only.
+# prefix, so a model writing one that it does not CALL (often in prose backticks) is naming
+# a field. A called one, Documentation.Add(fn), is an invented function and counts.
 METADATA_PREFIXES = ("Documentation.",)
 
 
 def invented(text, names):
     """The names used in code that are neither in the export nor M syntax."""
     bad = []
-    for name in used_names(text):
-        if name.startswith(METADATA_PREFIXES):
+    for name, called in _names(text):
+        if name.startswith(METADATA_PREFIXES) and not called:
             continue
         if name.startswith("#"):
             if name[1:] not in HASH_LITERALS:

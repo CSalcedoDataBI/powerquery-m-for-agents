@@ -66,6 +66,10 @@ class CounterTest(unittest.TestCase):
                 '  s = "Text.Right"\nin s\n```')
         self.assertEqual(run_ab.invented(code, NAMES), [])
 
+    def test_called_quoted_identifier_counts(self):
+        code = '```m\n#"Text.Left"(x, 1) & #"Text.Start"(x, 1)\n```'
+        self.assertEqual(run_ab.invented(code, NAMES), ["Text.Left"])
+
     def test_field_access_is_not_a_library_name(self):
         code = "```m\neach [Sales.Amount] * 2\n```"
         self.assertEqual(run_ab.invented(code, NAMES), [])
@@ -77,7 +81,10 @@ class CounterTest(unittest.TestCase):
         # A metadata field named in prose is a field, not a function.
         self.assertEqual(run_ab.invented("Set `Documentation.Name`.", NAMES), [])
         self.assertFalse([n for n in NAMES if n.startswith(run_ab.METADATA_PREFIXES)])
-        # ...but a made-up name used as a value still counts.
+        # A CALLED Documentation.* name is an invented function.
+        self.assertEqual(run_ab.invented("```m\nDocumentation.Add(fn)\n```", NAMES),
+                         ["Documentation.Add"])
+        # ...and a made-up name used as a value still counts.
         self.assertEqual(run_ab.invented("```m\n[x = Foo.Bar(1)]\n```", NAMES), ["Foo.Bar"])
 
     def test_hash_literals(self):
