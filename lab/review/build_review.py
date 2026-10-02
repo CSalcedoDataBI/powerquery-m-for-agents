@@ -8,9 +8,9 @@
 A batch is added with --only; after that it is rebuilt with the rest, and CI checks it.
 
 The example pages under skills/m-reference/examples/<category>/ stay the source of truth: this
-only turns them into a Power BI project. Open it, Refresh, and the first page lists every
+only turns them into a Power BI project. Open it, Refresh, and the Examples page lists every
 block with the result its page records, the result the engine returns now, and whether they
-match. The last page is the author's "Thank You!!" page (lab/review/thank-you/).
+match. The first page, which the report opens on, is the author's "Thank You!!" page (lab/review/thank-you/).
 
 Refresh evaluates each block the way lab/runner does: runner.pq renders the value, over only
 the members of #shared that m_blocks.allowed_names allows. Blocks are the checked pages of this
@@ -232,7 +232,7 @@ def project(category, functions, allowed):
     files[rp + "definition/report.json"] = json_text(report)
     files[rp + "definition/pages/pages.json"] = json_text({
         "$schema": f"{SCHEMA}/pagesMetadata/1.0.0/schema.json",
-        "pageOrder": ["examples", "thankyou"], "activePageName": "examples"})
+        "pageOrder": ["thankyou", "examples"], "activePageName": "thankyou"})
     for rel, text in {**examples_page(name, category, len(rows)), **thank_you_page(name)}.items():
         files[rp + rel] = text
     return category_slug(category), files

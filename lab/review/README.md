@@ -4,7 +4,7 @@ One Power BI project per example category, to read the executed examples in Powe
 of in Markdown. The example pages stay the source of truth; these projects are generated from
 them.
 
-The table on the first page shows, for each block, the function's description as the engine
+The table on the Examples page shows, for each block, the function's description as the engine
 documents it (from its card under `generated/library/`), the code, the result recorded on the
 page and the result this Power BI returns after Refresh.
 
@@ -70,7 +70,7 @@ page and the result this Power BI returns after Refresh.
 3. A `NO` in Match means the page and the engine disagree: rerun
    `python lab/runner/run_examples.py --port <port> --write` and read the diff.
 
-The last page, **Thank You!!**, is the author's page (`thank-you/`, copied from the Deneb labs).
+The first page, **Thank You!!**, is the author's page and the one each report opens on (`thank-you/`, copied from the Deneb labs). The Examples page comes second.
 
 ## How it works
 
