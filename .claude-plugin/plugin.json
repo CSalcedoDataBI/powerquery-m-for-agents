@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
-  "name": "m",
+  "name": "powerquery-m-for-agents",
   "displayName": "Power Query M for agents",
   "version": "0.1.0",
   "description": "The Power Query M language, agent-native. Every library function exported from the engine's own #shared, with its signature, parameter types, return type and the hosts that have it (Power BI Desktop, Excel, Dataflows Gen2), and the language itself (let/in, each, records, lists, tables, types, errors). Annotated with field notes and examples executed in a runnable lab. Not modeling or TMDL - that is data-goblin's power-query skill.",
