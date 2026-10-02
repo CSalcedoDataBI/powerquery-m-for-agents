@@ -70,6 +70,7 @@ _CALL_RE = re.compile(r"\s*\(")
 _BINDING_START_RE = re.compile(r"(?:^|[\[,]|\blet|\boptional)\s*$")
 _PAIRS = {")": "(", "]": "[", "}": "{"}
 _FIELD_ACCESS_RE = re.compile(r"\[[^\[\]=,]*\]")
+_QUOTED_RE = re.compile(r'#"((?:[^"]|"")*)"')
 
 
 def _innermost_open(code, pos):
@@ -146,14 +147,23 @@ def _names(text):
         # A quoted identifier is usually a step or column name the model chose
         # (#"Sales.Amount"), but one that is CALLED, #"Text.Left"(x, 1), is a library name
         # written in quotes and counts like the bare form.
-        # So is one looked up in the environment, #shared[#"Text.Left"].
-        for q in quoted:
+        # So is one looked up in the environment, #shared[#"Text.Left"]. One the answer binds
+        # itself, let #"Foo.Bar" = ..., is its own name, as for the bare form. Read from the
+        # raw span, by position, and unescaped: #"Text#(002E)Left" is Text.Left.
+        for qm in _QUOTED_RE.finditer(span):
+            q = m_blocks.unescape(qm.group(1).replace('""', '"'))
             if not m_blocks.DOTTED_RE.fullmatch(q):
                 continue
-            quoted_q = r'#"' + re.escape(q) + r'"'
-            if re.search(quoted_q + r"\s*\(", span):
+            before = span[:qm.start()].rstrip()
+            if (_DEFINED_RE.match(span, qm.end())
+                    and _BINDING_START_RE.search(span[max(0, qm.start() - 40):qm.start()])):
+                if _innermost_open(span, qm.start()) != "[":
+                    defined.add(q)
+                continue
+            if _CALL_RE.match(span, qm.end()):
                 found.append((q, True))
-            elif re.search(r"#(?:shared|sections)\s*\[\s*" + quoted_q, span):
+            elif before.endswith("[") and before[:-1].rstrip().endswith(
+                    ("#shared", "#sections")):
                 found.append((q, False))
         found += [("#" + h, True) for h in _HASH_RE.findall(bare)]
         for name, called in found:

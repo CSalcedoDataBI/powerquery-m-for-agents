@@ -69,6 +69,12 @@ class CounterTest(unittest.TestCase):
     def test_called_quoted_identifier_counts(self):
         code = '```m\n#"Text.Left"(x, 1) & #"Text.Start"(x, 1)\n```'
         self.assertEqual(run_ab.invented(code, NAMES), ["Text.Left"])
+        escaped = '```m\n#"Text#(002E)Left"(x, 1)\n```'
+        self.assertEqual(run_ab.invented(escaped, NAMES), ["Text.Left"])
+
+    def test_quoted_local_function_is_the_models_own(self):
+        code = '```m\nlet #"Foo.Bar" = (x) => x in #"Foo.Bar"(1)\n```'
+        self.assertEqual(run_ab.invented(code, NAMES), [])
 
     def test_field_access_is_not_a_library_name(self):
         code = "```m\neach [Sales.Amount] * 2\n```"
