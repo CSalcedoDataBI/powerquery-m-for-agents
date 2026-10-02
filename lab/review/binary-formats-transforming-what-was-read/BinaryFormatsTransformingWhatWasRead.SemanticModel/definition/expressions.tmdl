@@ -1,0 +1,14 @@
+expression 'BinaryFormat.Transform (1)' =
+		BinaryFormat.Transform(BinaryFormat.Byte, (x) => x + 1)(#binary({1}))
+	lineageTag: d0c6db74-2035-5de5-b19d-84a230a9fe1f
+	queryGroup: 'BinaryFormat.Transform'
+
+expression 'BinaryFormat.Transform (2)' =
+		BinaryFormat.Transform(BinaryFormat.List(BinaryFormat.Byte, 2), List.Sum)(#binary({1, 2, 3}))
+	lineageTag: be1b6808-388f-5e2e-a6e6-e2b6c3da4af9
+	queryGroup: 'BinaryFormat.Transform'
+
+expression 'BinaryFormat.Transform (3)' =
+		BinaryFormat.Transform(BinaryFormat.Byte, (x) => null)(#binary({1}))
+	lineageTag: 9b7e1c62-cbeb-5f42-8a44-445d1481dbe6
+	queryGroup: 'BinaryFormat.Transform'

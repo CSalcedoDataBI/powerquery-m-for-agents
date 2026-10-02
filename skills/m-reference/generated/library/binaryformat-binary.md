@@ -4,7 +4,7 @@ category: "Binary Formats.Reading binary data"
 returns: "function"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,3 +23,5 @@ Returns a binary format that reads a binary value. If `length` is specified, the
 | Name | Type | Optional |
 |---|---|---|
 | `length` | `any` | yes |
+
+**Executed examples (3):** [examples/binary-formats-reading-binary-data/binaryformat-binary.md](../../examples/binary-formats-reading-binary-data/binaryformat-binary.md)

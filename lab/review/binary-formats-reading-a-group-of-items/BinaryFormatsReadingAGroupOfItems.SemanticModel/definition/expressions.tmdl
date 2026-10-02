@@ -1,0 +1,47 @@
+expression 'BinaryFormat.Group (1)' =
+		let
+		    b = #binary({2, 22, 1, 11, 2, 33}),
+		    f = BinaryFormat.Group(
+		        BinaryFormat.Byte,
+		        {
+		            {1, BinaryFormat.Byte, BinaryOccurrence.Required},
+		            {2, BinaryFormat.Byte, BinaryOccurrence.Repeating, null, (list) => List.Sum(list)}
+		        }
+		    )
+		in
+		    f(b)
+	lineageTag: e9b11133-099a-5565-b9b5-3637e3351823
+	queryGroup: 'BinaryFormat.Group'
+
+expression 'BinaryFormat.Group (2)' =
+		let
+		    b = #binary({1, 11}),
+		    f = BinaryFormat.Group(
+		        BinaryFormat.Byte,
+		        {
+		            {1, BinaryFormat.Byte, BinaryOccurrence.Required},
+		            {2, BinaryFormat.Byte, BinaryOccurrence.Optional},
+		            {3, BinaryFormat.Byte, BinaryOccurrence.Repeating},
+		            {4, BinaryFormat.Byte, BinaryOccurrence.Optional, 123, (v) => v + 1000}
+		        }
+		    )
+		in
+		    f(b)
+	lineageTag: 31ede6c7-963c-55d3-961f-8bb7dcede83b
+	queryGroup: 'BinaryFormat.Group'
+
+expression 'BinaryFormat.Group (3)' =
+		let
+		    b = #binary({1, 11, 9, 99, 2, 22}),
+		    f = BinaryFormat.Group(
+		        BinaryFormat.Byte,
+		        {
+		            {1, BinaryFormat.Byte, BinaryOccurrence.Optional},
+		            {2, BinaryFormat.Byte, BinaryOccurrence.Optional}
+		        },
+		        (key) => if key < 10 then BinaryFormat.Byte else BinaryFormat.UnsignedInteger16
+		    )
+		in
+		    f(b)
+	lineageTag: 6eadc242-d2fc-56e1-afff-0cfd43b71458
+	queryGroup: 'BinaryFormat.Group'

@@ -4,7 +4,7 @@ category: "Binary Formats.Reading text"
 returns: "function"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,6 +24,8 @@ Returns a binary format that reads a text value. The `length` specifies the numb
 |---|---|---|
 | `length` | `any` | no |
 | `encoding` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/binary-formats-reading-text/binaryformat-text.md](../../examples/binary-formats-reading-text/binaryformat-text.md)
 
 ## Examples (engine metadata — not verified here)
 

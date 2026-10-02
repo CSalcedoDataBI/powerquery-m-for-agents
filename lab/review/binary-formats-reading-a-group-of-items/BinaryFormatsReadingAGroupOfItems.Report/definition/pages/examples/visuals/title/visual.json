@@ -1,0 +1,35 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "title",
+  "position": {
+    "x": 24,
+    "y": 12,
+    "z": 0,
+    "width": 1232,
+    "height": 56
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Binary Formats.Reading a group of items - 3 examples. Refresh to run them in this Power BI.",
+                    "textStyle": {
+                      "fontSize": "18pt",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

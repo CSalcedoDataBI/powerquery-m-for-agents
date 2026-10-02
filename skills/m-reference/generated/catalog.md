@@ -37,28 +37,28 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Binary.View` | Binary | binary | ▶ | Creates or extends a binary with user-defined handlers for query and action operations. |
 | `Binary.ViewError` | Binary | record | ▶ | Creates a modified error record which won't trigger a fallback when raised by a handler defined on a view (via Binary.V… |
 | `Binary.ViewFunction` | Binary | function | ▶ | Creates a function that can be intercepted by a handler defined on a view (via Binary.View). |
-| `BinaryFormat.7BitEncodedSignedInteger` | Binary Formats.Reading numbers | any |  | A binary format that reads a 64-bit signed integer that was encoded using a 7-bit variable-length encoding. |
-| `BinaryFormat.7BitEncodedUnsignedInteger` | Binary Formats.Reading numbers | any |  | A binary format that reads a 64-bit unsigned integer that was encoded using a 7-bit variable-length encoding. |
-| `BinaryFormat.Binary` | Binary Formats.Reading binary data | function |  | Returns a binary format that reads a binary value. |
-| `BinaryFormat.Byte` | Binary Formats.Reading numbers | any |  | A binary format that reads an 8-bit unsigned integer. |
-| `BinaryFormat.ByteOrder` | Binary Formats.Controlling byte order | function |  | Returns a binary format with the byte order specified by a function. |
-| `BinaryFormat.Choice` | Binary Formats.Controlling what comes next | function |  | Returns a binary format that chooses the next binary format based on a value that has already been read. |
-| `BinaryFormat.Decimal` | Binary Formats.Reading numbers | any |  | A binary format that reads a .NET 16-byte decimal value. |
-| `BinaryFormat.Double` | Binary Formats.Reading numbers | any |  | A binary format that reads an 8-byte IEEE double-precision floating point value. |
-| `BinaryFormat.Group` | Binary Formats.Reading a group of items | function |  | Returns a binary format that reads a group of items. |
-| `BinaryFormat.Length` | Binary Formats.Limiting input | function |  | Returns a binary format that limits the amount of data that can be read. |
-| `BinaryFormat.List` | Binary Formats.Reading lists | function |  | Returns a binary format that reads a sequence of items and returns a list. |
-| `BinaryFormat.Null` | Binary Formats.Controlling what comes next | any |  | A binary format that reads zero bytes and returns null. |
-| `BinaryFormat.Record` | Binary Formats.Reading records | function |  | Returns a binary format that reads a record. |
-| `BinaryFormat.SignedInteger16` | Binary Formats.Reading numbers | any |  | A binary format that reads a 16-bit signed integer. |
-| `BinaryFormat.SignedInteger32` | Binary Formats.Reading numbers | any |  | A binary format that reads a 32-bit signed integer. |
-| `BinaryFormat.SignedInteger64` | Binary Formats.Reading numbers | any |  | A binary format that reads a 64-bit signed integer. |
-| `BinaryFormat.Single` | Binary Formats.Reading numbers | any |  | A binary format that reads a 4-byte IEEE single-precision floating point value. |
-| `BinaryFormat.Text` | Binary Formats.Reading text | function |  | Returns a binary format that reads a text value. |
-| `BinaryFormat.Transform` | Binary Formats.Transforming what was read | function |  | Returns a binary format that will transform the values read by another binary format. |
-| `BinaryFormat.UnsignedInteger16` | Binary Formats.Reading numbers | any |  | A binary format that reads a 16-bit unsigned integer. |
-| `BinaryFormat.UnsignedInteger32` | Binary Formats.Reading numbers | any |  | A binary format that reads a 32-bit unsigned integer. |
-| `BinaryFormat.UnsignedInteger64` | Binary Formats.Reading numbers | any |  | A binary format that reads a 64-bit unsigned integer. |
+| `BinaryFormat.7BitEncodedSignedInteger` | Binary Formats.Reading numbers | any | ▶ | A binary format that reads a 64-bit signed integer that was encoded using a 7-bit variable-length encoding. |
+| `BinaryFormat.7BitEncodedUnsignedInteger` | Binary Formats.Reading numbers | any | ▶ | A binary format that reads a 64-bit unsigned integer that was encoded using a 7-bit variable-length encoding. |
+| `BinaryFormat.Binary` | Binary Formats.Reading binary data | function | ▶ | Returns a binary format that reads a binary value. |
+| `BinaryFormat.Byte` | Binary Formats.Reading numbers | any | ▶ | A binary format that reads an 8-bit unsigned integer. |
+| `BinaryFormat.ByteOrder` | Binary Formats.Controlling byte order | function | ▶ | Returns a binary format with the byte order specified by a function. |
+| `BinaryFormat.Choice` | Binary Formats.Controlling what comes next | function | ▶ | Returns a binary format that chooses the next binary format based on a value that has already been read. |
+| `BinaryFormat.Decimal` | Binary Formats.Reading numbers | any | ▶ | A binary format that reads a .NET 16-byte decimal value. |
+| `BinaryFormat.Double` | Binary Formats.Reading numbers | any | ▶ | A binary format that reads an 8-byte IEEE double-precision floating point value. |
+| `BinaryFormat.Group` | Binary Formats.Reading a group of items | function | ▶ | Returns a binary format that reads a group of items. |
+| `BinaryFormat.Length` | Binary Formats.Limiting input | function | ▶ | Returns a binary format that limits the amount of data that can be read. |
+| `BinaryFormat.List` | Binary Formats.Reading lists | function | ▶ | Returns a binary format that reads a sequence of items and returns a list. |
+| `BinaryFormat.Null` | Binary Formats.Controlling what comes next | any | ▶ | A binary format that reads zero bytes and returns null. |
+| `BinaryFormat.Record` | Binary Formats.Reading records | function | ▶ | Returns a binary format that reads a record. |
+| `BinaryFormat.SignedInteger16` | Binary Formats.Reading numbers | any | ▶ | A binary format that reads a 16-bit signed integer. |
+| `BinaryFormat.SignedInteger32` | Binary Formats.Reading numbers | any | ▶ | A binary format that reads a 32-bit signed integer. |
+| `BinaryFormat.SignedInteger64` | Binary Formats.Reading numbers | any | ▶ | A binary format that reads a 64-bit signed integer. |
+| `BinaryFormat.Single` | Binary Formats.Reading numbers | any | ▶ | A binary format that reads a 4-byte IEEE single-precision floating point value. |
+| `BinaryFormat.Text` | Binary Formats.Reading text | function | ▶ | Returns a binary format that reads a text value. |
+| `BinaryFormat.Transform` | Binary Formats.Transforming what was read | function | ▶ | Returns a binary format that will transform the values read by another binary format. |
+| `BinaryFormat.UnsignedInteger16` | Binary Formats.Reading numbers | any | ▶ | A binary format that reads a 16-bit unsigned integer. |
+| `BinaryFormat.UnsignedInteger32` | Binary Formats.Reading numbers | any | ▶ | A binary format that reads a 32-bit unsigned integer. |
+| `BinaryFormat.UnsignedInteger64` | Binary Formats.Reading numbers | any | ▶ | A binary format that reads a 64-bit unsigned integer. |
 | `Byte.From` | Number.Conversion and formatting | nullable number | ▶ | Creates an 8-bit integer from the given value. |
 | `Cdm.Contents` | Accessing data | table |  | Cdm.Contents |
 | `Cdm.MapToEntity` | Cdm | table |  | Returns a table with columns mapped to the attributes of an entity in the Common Data Model, including data types. |

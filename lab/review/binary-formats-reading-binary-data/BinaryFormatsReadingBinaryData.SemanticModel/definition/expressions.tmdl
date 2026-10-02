@@ -1,0 +1,21 @@
+expression 'BinaryFormat.Binary (1)' =
+		[
+		    Omitted = BinaryFormat.Binary()(#binary({0x01, 0x02, 0x03})),
+		    NullLength = BinaryFormat.Binary(null)(#binary({0x01, 0x02, 0x03})),
+		    ZeroLength = BinaryFormat.Binary(0)(#binary({0x01, 0x02, 0x03}))
+		]
+	lineageTag: 8c90f8e7-ae0b-5642-bd4d-99861fb05fa5
+	queryGroup: 'BinaryFormat.Binary'
+
+expression 'BinaryFormat.Binary (2)' =
+		BinaryFormat.Binary(2)(#binary({0x01, 0x02, 0x03, 0x04}))
+	lineageTag: 8100912e-a3e1-5efc-b05b-5a7d6373a50c
+	queryGroup: 'BinaryFormat.Binary'
+
+expression 'BinaryFormat.Binary (3)' =
+		[
+		    TwoBytes = BinaryFormat.Binary(BinaryFormat.Byte)(#binary({0x02, 0x0A, 0x0B, 0x0C})),
+		    ZeroBytes = BinaryFormat.Binary(BinaryFormat.Byte)(#binary({0x00, 0x0A}))
+		]
+	lineageTag: 7b5bbc78-0b62-5b7b-9547-516f0291a343
+	queryGroup: 'BinaryFormat.Binary'

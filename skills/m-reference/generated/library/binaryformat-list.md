@@ -4,7 +4,7 @@ category: "Binary Formats.Reading lists"
 returns: "function"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -29,6 +29,8 @@ Returns a binary format that reads a sequence of items and returns a `list`. The
 |---|---|---|
 | `binaryFormat` | `function` | no |
 | `countOrCondition` | `any` | yes |
+
+**Executed examples (3):** [examples/binary-formats-reading-lists/binaryformat-list.md](../../examples/binary-formats-reading-lists/binaryformat-list.md)
 
 ## Examples (engine metadata — not verified here)
 

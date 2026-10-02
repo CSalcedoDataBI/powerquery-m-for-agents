@@ -4,7 +4,7 @@ category: "Binary Formats.Reading records"
 returns: "function"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -23,6 +23,8 @@ Returns a binary format that reads a record. The `record` parameter specifies th
 | Name | Type | Optional |
 |---|---|---|
 | `record` | `record` | no |
+
+**Executed examples (3):** [examples/binary-formats-reading-records/binaryformat-record.md](../../examples/binary-formats-reading-records/binaryformat-record.md)
 
 ## Examples (engine metadata — not verified here)
 

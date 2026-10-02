@@ -4,7 +4,7 @@ category: "Binary Formats.Controlling what comes next"
 returns: "function"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -42,6 +42,8 @@ The optional `type` parameter indicates the type of binary format that will be r
 | `chooseFunction` | `function` | no |
 | `type` | `nullable type` | yes |
 | `combineFunction` | `nullable function` | yes |
+
+**Executed examples (3):** [examples/binary-formats-controlling-what-comes-next/binaryformat-choice.md](../../examples/binary-formats-controlling-what-comes-next/binaryformat-choice.md)
 
 ## Examples (engine metadata — not verified here)
 

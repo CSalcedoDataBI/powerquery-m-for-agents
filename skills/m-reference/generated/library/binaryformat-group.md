@@ -4,7 +4,7 @@ category: "Binary Formats.Reading a group of items"
 returns: "function"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -44,6 +44,8 @@ The `group` parameter specifies a list of item definitions. Each item definition
 | `group` | `list` | no |
 | `extra` | `nullable function` | yes |
 | `lastKey` | `any` | yes |
+
+**Executed examples (3):** [examples/binary-formats-reading-a-group-of-items/binaryformat-group.md](../../examples/binary-formats-reading-a-group-of-items/binaryformat-group.md)
 
 ## Examples (engine metadata — not verified here)
 

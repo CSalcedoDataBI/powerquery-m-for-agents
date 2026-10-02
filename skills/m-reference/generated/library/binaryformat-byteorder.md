@@ -4,7 +4,7 @@ category: "Binary Formats.Controlling byte order"
 returns: "function"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -24,3 +24,5 @@ Returns a binary format with the byte order specified by `binaryFormat`. The def
 |---|---|---|
 | `binaryFormat` | `function` | no |
 | `byteOrder` | `number` | no |
+
+**Executed examples (3):** [examples/binary-formats-controlling-byte-order/binaryformat-byteorder.md](../../examples/binary-formats-controlling-byte-order/binaryformat-byteorder.md)
