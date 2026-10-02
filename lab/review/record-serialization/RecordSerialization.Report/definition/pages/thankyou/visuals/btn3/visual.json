@@ -19,7 +19,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Newsletter en LinkedIn'"
+                  "Value": "'Blog'"
                 }
               }
             },
@@ -62,7 +62,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Newsletter en LinkedIn'"
+                  "Value": "'Blog'"
                 }
               }
             },
@@ -207,7 +207,7 @@
             "webUrl": {
               "expr": {
                 "Literal": {
-                  "Value": "'https://www.linkedin.com/build-relation/newsletter'"
+                  "Value": "'https://csalcedodatabi.com/blog/'"
                 }
               }
             }
