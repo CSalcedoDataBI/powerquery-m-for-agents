@@ -77,6 +77,18 @@ class CounterTest(unittest.TestCase):
     def test_environment_lookup_is_a_library_name(self):
         code = "```m\n#shared[Text.Left]\n```"
         self.assertEqual(run_ab.invented(code, NAMES), ["Text.Left"])
+        quoted = '```m\n#shared[#"Text.Left"]\n```'
+        self.assertEqual(run_ab.invented(quoted, NAMES), ["Text.Left"])
+
+    def test_comparison_is_a_use_not_a_definition(self):
+        code = "```m\nif Foo.Bar = null then 1 else 2\n```"
+        self.assertEqual(run_ab.invented(code, NAMES), ["Foo.Bar"])
+        let = "```m\nlet\n    Foo.Bar = 1,\n    Baz.Qux = 2\nin Baz.Qux\n```"
+        # Variables the model defined, then used: its own names, not library inventions.
+        self.assertEqual(run_ab.invented(let, NAMES), [])
+
+    def test_unclosed_fence_is_still_code(self):
+        self.assertEqual(run_ab.invented("```m\nText.Left(x, 1)", NAMES), ["Text.Left"])
 
     def test_defined_field_names_are_not_library_names(self):
         code = ('```m\nfn meta [\n  Documentation.Name = "Add",\n'

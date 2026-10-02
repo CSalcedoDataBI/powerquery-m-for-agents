@@ -67,6 +67,7 @@ HASH_LITERALS = frozenset({
 _HASH_RE = re.compile(r"(?<![\w#])#([A-Za-z]\w*)\b")
 _DEFINED_RE = re.compile(r"\s*=(?![=>])")
 _CALL_RE = re.compile(r"\s*\(")
+_BINDING_START_RE = re.compile(r"(?:^|[\[,]|\blet)\s*$")
 
 
 def catalog_names(directory=CATALOG_DIR):
@@ -85,7 +86,8 @@ def catalog_names(directory=CATALOG_DIR):
     return names, rows
 
 
-_FENCE = re.compile(r"```[^\n]*\n(.*?)```", re.S)
+# An unclosed fence (a truncated answer) runs to the end of the text: still code.
+_FENCE = re.compile(r"```[^\n]*\n(.*?)(?:```|\Z)", re.S)
 _INLINE = re.compile(r"`([^`\n]+)`")
 
 
@@ -105,7 +107,7 @@ def _names(text):
     """(name, called) for every distinct library-shaped name in the answer's code, in order
     of appearance: dotted names, and # literals written as `#name`. `called` is whether any
     use of it is followed by `(`."""
-    seen, out = {}, []
+    seen, out, defined = {}, [], set()
     for span in code_spans(text):
         bare, quoted = m_blocks.scan(span)
         # A field access such as [Sales.Amount] is a column name, not a library name. A
@@ -114,18 +116,26 @@ def _names(text):
         found = []
         for m in m_blocks.DOTTED_RE.finditer(bare):
             # A name being DEFINED is not a library name: a record field
-            # (meta [Documentation.Name = "..."]) or a let variable. A dotted name followed
-            # by `=` (not `=>`) is one.
-            if _DEFINED_RE.match(bare, m.end()):
+            # (meta [Documentation.Name = "..."]) or a let variable. That is a dotted name
+            # followed by `=` (not `=>`) AND opening a binding: right after `[`, `,` or
+            # `let`. `if Foo.Bar = null` is a comparison, and Foo.Bar is used, not defined.
+            if (_DEFINED_RE.match(bare, m.end())
+                    and _BINDING_START_RE.search(bare[max(0, m.start() - 40):m.start()])):
+                defined.add(m.group(1))
                 continue
             found.append((m.group(1), bool(_CALL_RE.match(bare, m.end()))))
         # A quoted identifier is usually a step or column name the model chose
         # (#"Sales.Amount"), but one that is CALLED, #"Text.Left"(x, 1), is a library name
         # written in quotes and counts like the bare form.
+        # So is one looked up in the environment, #shared[#"Text.Left"].
         for q in quoted:
-            if m_blocks.DOTTED_RE.fullmatch(q) and re.search(
-                    r'#"' + re.escape(q) + r'"\s*\(', span):
+            if not m_blocks.DOTTED_RE.fullmatch(q):
+                continue
+            quoted_q = r'#"' + re.escape(q) + r'"'
+            if re.search(quoted_q + r"\s*\(", span):
                 found.append((q, True))
+            elif re.search(r"#(?:shared|sections)\s*\[\s*" + quoted_q, span):
+                found.append((q, False))
         found += [("#" + h, True) for h in _HASH_RE.findall(bare)]
         for name, called in found:
             if name not in seen:
@@ -133,7 +143,9 @@ def _names(text):
                 out.append((name, called))
             elif called:
                 out[seen[name]] = (name, True)
-    return out
+    # A name the answer itself binds (a let variable called Foo.Bar) is the model's own,
+    # wherever it is used, so it is no library name.
+    return [(name, called) for name, called in out if name not in defined]
 
 
 def used_names(text):
