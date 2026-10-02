@@ -66,6 +66,68 @@ HASH_LITERALS = frozenset({
 })
 _HASH_RE = re.compile(r"(?<![\w#])#([A-Za-z]\w*)\b")
 _DEFINED_RE = re.compile(r"\s*=(?![=>])")
+_CALL_RE = re.compile(r"\s*\(")
+_BINDING_START_RE = re.compile(r"(?:^|[\[,]|\blet|\boptional)\s*$")
+_PAIRS = {")": "(", "]": "[", "}": "{"}
+_FIELD_ACCESS_RE = re.compile(r"\[[^\[\]=,]*\]")
+_QUOTED_RE = re.compile(r'#"((?:[^"]|"")*)"')
+
+
+def _mask(code):
+    """`code` with comments and text literals replaced by spaces, same length, quoted
+    identifiers (#"...") kept. The rules are m_blocks.scan's: nested /* */, // to any
+    M new-line, "" as an escaped quote, #!"..." as text."""
+    out, i, n = list(code), 0, len(code)
+
+    def blank(a, b):
+        for k in range(a, min(b, n)):
+            if out[k] not in "\r\n":
+                out[k] = " "
+
+    while i < n:
+        if code.startswith("//", i):
+            m = m_blocks.NEWLINE_RE.search(code, i)
+            end = m.start() if m else n
+            blank(i, end)
+            i = end
+        elif code.startswith("/*", i):
+            depth, k = 1, i + 2
+            while k < n and depth:
+                if code.startswith("/*", k):
+                    depth, k = depth + 1, k + 2
+                elif code.startswith("*/", k):
+                    depth, k = depth - 1, k + 2
+                else:
+                    k += 1
+            blank(i, k)
+            i = k
+        elif code[i] == '"' or code.startswith('#"', i) or code.startswith('#!"', i):
+            ident = code.startswith('#"', i)
+            k = i + (2 if ident else 3 if code[i] == "#" else 1)
+            while k < n:
+                if code[k] == '"':
+                    if code.startswith('""', k):
+                        k += 2
+                        continue
+                    break
+                k += 1
+            if not ident:
+                blank(i, k + 1)
+            i = k + 1
+        else:
+            i += 1
+    return "".join(out)
+
+
+def _innermost_open(code, pos):
+    """The innermost bracket still open at `pos` ("[", "(", "{"), or "" at top level."""
+    stack = []
+    for ch in code[:pos]:
+        if ch in "([{":
+            stack.append(ch)
+        elif ch in _PAIRS and stack and stack[-1] == _PAIRS[ch]:
+            stack.pop()
+    return stack[-1] if stack else ""
 
 
 def catalog_names(directory=CATALOG_DIR):
@@ -84,7 +146,8 @@ def catalog_names(directory=CATALOG_DIR):
     return names, rows
 
 
-_FENCE = re.compile(r"```[^\n]*\n(.*?)```", re.S)
+# An unclosed fence (a truncated answer) runs to the end of the text: still code.
+_FENCE = re.compile(r"```[^\n]*\n(.*?)(?:```|\Z)", re.S)
 _INLINE = re.compile(r"`([^`\n]+)`")
 
 
@@ -100,41 +163,91 @@ def code_spans(text):
     return fenced + _INLINE.findall(rest)
 
 
-def used_names(text):
-    """Every distinct library-shaped name in the answer's code, in order of appearance:
-    dotted names, and # literals written as `#name`."""
-    seen, out = set(), []
+def _names(text):
+    """(name, called) for every distinct library-shaped name in the answer's code, in order
+    of appearance: dotted names, and # literals written as `#name`. `called` is whether any
+    use of it is followed by `(`."""
+    seen, out, defined = {}, [], set()
     for span in code_spans(text):
-        # Quoted identifiers are dropped, unlike in check_examples: in an answer, #"..." is a
-        # step or column name the model chose (#"Sales.Amount"), not a library call.
-        bare, _quoted = m_blocks.scan(span)
-        # A field access such as [Sales.Amount] is a column name, not a library name.
-        bare = re.sub(r"\[[^\[\]=,]*\]", " ", bare)
-        # A name being DEFINED is not a library name either: a record field
-        # (meta [Documentation.Name = "..."], the documented way to describe a custom
-        # function) or a let variable. A dotted name followed by `=` (not `=>`) is one.
-        found = [m.group(1) for m in m_blocks.DOTTED_RE.finditer(bare)
-                 if not _DEFINED_RE.match(bare, m.end())]
-        found += ["#" + h for h in _HASH_RE.findall(bare)]
-        for name in found:
+        bare, quoted = m_blocks.scan(span)
+        # A field access such as [Sales.Amount] is a column name, not a library name. A
+        # lookup in the environment, #shared[Text.Left], is a library name and is kept.
+        bare = _FIELD_ACCESS_RE.sub(
+            lambda m: m.group(0) if bare[:m.start()].rstrip().endswith(
+                ("#shared", "#sections")) else " ", bare)
+        found = []
+        for m in m_blocks.DOTTED_RE.finditer(bare):
+            # A name being DEFINED is not a library name: a record field
+            # (meta [Documentation.Name = "..."]) or a let variable. That is a dotted name
+            # followed by `=` (not `=>`) AND opening a binding: right after `[`, `,` or
+            # `let`. `if Foo.Bar = null` is a comparison, and Foo.Bar is used, not defined.
+            # Inside ( ) or { } a comma separates arguments or items, so `Foo.Bar = null`
+            # there is a comparison: only at top level (let) or in [ ] is it a binding.
+            opened = _innermost_open(bare, m.start())
+            if (_DEFINED_RE.match(bare, m.end()) and opened in ("", "[")
+                    and _BINDING_START_RE.search(bare[max(0, m.start() - 40):m.start()])):
+                # A let variable is the model's own name everywhere it is used; a record
+                # field is skipped only where it is defined, so a later Foo.Bar(1) of the
+                # same spelling still counts.
+                if opened != "[":
+                    defined.add(m.group(1))
+                continue
+            found.append((m.group(1), bool(_CALL_RE.match(bare, m.end()))))
+        # A quoted identifier is usually a step or column name the model chose
+        # (#"Sales.Amount"), but one that is CALLED, #"Text.Left"(x, 1), is a library name
+        # written in quotes and counts like the bare form.
+        # A quoted identifier is the same name as the bare form: #"Text.Left"(x) and
+        # #"Text#(002E)Left" are Text.Left. Read by position from a copy of the span with
+        # comments and text literals masked, then unescaped. Bound by the answer itself
+        # (a step called #"Sales.Amount") it is the model's own name, as for the bare form;
+        # a field access [#"Sales.Amount"] is a column.
+        masked = _mask(span)
+        for qm in _QUOTED_RE.finditer(masked):
+            q = m_blocks.unescape(qm.group(1).replace('""', '"'))
+            if not m_blocks.DOTTED_RE.fullmatch(q):
+                continue
+            before = masked[:qm.start()].rstrip()
+            opened = _innermost_open(masked, qm.start())
+            if (_DEFINED_RE.match(masked, qm.end()) and opened in ("", "[")
+                    and _BINDING_START_RE.search(masked[max(0, qm.start() - 40):qm.start()])):
+                if opened != "[":
+                    defined.add(q)
+                continue
+            environment = before.endswith("[") and before[:-1].rstrip().endswith(
+                ("#shared", "#sections"))
+            if (before.endswith("[") and not environment
+                    and re.match(r"\s*\]", masked[qm.end():])):
+                continue
+            found.append((q, bool(_CALL_RE.match(masked, qm.end()))))
+        found += [("#" + h, True) for h in _HASH_RE.findall(bare)]
+        for name, called in found:
             if name not in seen:
-                seen.add(name)
-                out.append(name)
-    return out
+                seen[name] = len(out)
+                out.append((name, called))
+            elif called:
+                out[seen[name]] = (name, True)
+    # A name the answer itself binds (a let variable called Foo.Bar) is the model's own,
+    # wherever it is used, so it is no library name.
+    return [(name, called) for name, called in out if name not in defined]
+
+
+def used_names(text):
+    """Every distinct library-shaped name in the answer's code, in order of appearance."""
+    return [name for name, _ in _names(text)]
 
 
 # Documentation.Name, Documentation.Examples...: the metadata record fields that document a
 # function, read by export_shared.pq from every function type. No #shared member has this
-# prefix, so a model writing one (often in prose backticks) is naming a field, not inventing
-# a library function. This eval measures library names only.
+# prefix, so a model writing one that it does not CALL (often in prose backticks) is naming
+# a field. A called one, Documentation.Add(fn), is an invented function and counts.
 METADATA_PREFIXES = ("Documentation.",)
 
 
 def invented(text, names):
     """The names used in code that are neither in the export nor M syntax."""
     bad = []
-    for name in used_names(text):
-        if name.startswith(METADATA_PREFIXES):
+    for name, called in _names(text):
+        if name.startswith(METADATA_PREFIXES) and not called:
             continue
         if name.startswith("#"):
             if name[1:] not in HASH_LITERALS:
@@ -250,7 +363,8 @@ def answered(rec):
     arm went quiet. A model that refuses a question (stop_reason "refusal": Sonnet 5.5 does,
     on Expression.Evaluate) answered neither arm in any useful sense, so the pair is dropped
     and counted on its own line instead."""
-    return all((rec[arm].get("text") or "").strip() for arm in ("A", "B"))
+    return all((rec[arm].get("text") or "").strip()
+               and rec[arm].get("stop_reason") != "refusal" for arm in ("A", "B"))
 
 
 def summarise(records, names):
@@ -278,10 +392,10 @@ def silent(records):
 
 
 def refusals(records):
-    """The empty answers the provider marked as a refusal, as `id arm` strings."""
+    """The answers the provider marked as a refusal, empty or with a refusal message, as
+    `id arm` strings."""
     return [f"{r['id']} {arm}" for r in records for arm in ("A", "B")
-            if not (r[arm].get("text") or "").strip()
-            and r[arm].get("stop_reason") == "refusal"]
+            if r[arm].get("stop_reason") == "refusal"]
 
 
 def report(records, names):
@@ -359,6 +473,18 @@ def already_answered(path):
             if finished(r.get("A")) and finished(r.get("B"))}
 
 
+def other_model(path, model):
+    """The model a run file was written by, when it is not `model`; else None."""
+    if not path or not os.path.exists(path):
+        return None
+    try:
+        with open(path, encoding="utf-8") as f:
+            saved = json.load(f).get("model")
+    except (OSError, ValueError):
+        return None
+    return saved if saved and saved != model else None
+
+
 def load_questions(path=QUESTIONS):
     with open(path, encoding="utf-8") as f:
         return yaml.safe_load(f)["questions"]
@@ -385,6 +511,19 @@ def main(argv):
               f"(model {saved.get('model', '?')}) - no API calls.")
         report(saved["records"], names)
         return 0
+
+    if args.resume and (args.limit or args.regime) and args.out and os.path.exists(args.out):
+        # The run file is rewritten from the selected questions only, so a filtered resume
+        # would drop every saved answer outside the filter.
+        print("ERROR: --resume rewrites the whole run file; it cannot be combined with "
+              "--limit or --regime. Resume the full bank, or write to another --out.")
+        return 2
+    other = other_model(args.out, args.model) if args.resume else None
+    if other:
+        # One run file is one model: mixing two would break the A/B's premise silently.
+        print(f"ERROR: {args.out} holds answers from {other}, not {args.model}. Resume it "
+              f"with --model {other}, or write to another --out.")
+        return 2
 
     questions = load_questions()
     if args.regime:

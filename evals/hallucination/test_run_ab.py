@@ -66,9 +66,71 @@ class CounterTest(unittest.TestCase):
                 '  s = "Text.Right"\nin s\n```')
         self.assertEqual(run_ab.invented(code, NAMES), [])
 
+    def test_called_quoted_identifier_counts(self):
+        code = '```m\n#"Text.Left"(x, 1) & #"Text.Start"(x, 1)\n```'
+        self.assertEqual(run_ab.invented(code, NAMES), ["Text.Left"])
+        escaped = '```m\n#"Text#(002E)Left"(x, 1)\n```'
+        self.assertEqual(run_ab.invented(escaped, NAMES), ["Text.Left"])
+
+    def test_quoted_names_in_comments_and_text_do_not_count(self):
+        code = ('```m\n// #"Foo.Bar"()\n/* #"Foo.Baz"() */\nx = "#""Foo.Qux""()"\n```')
+        self.assertEqual(run_ab.invented(code, NAMES), [])
+
+    def test_quoted_reference_counts_unless_bound_or_a_field(self):
+        ref = '```m\nlet f = #"Foo.Bar" in f(1)\n```'
+        self.assertEqual(run_ab.invented(ref, NAMES), ["Foo.Bar"])
+        step = '```m\nlet #"Sales.Amount" = 1 in #"Sales.Amount"\n```'
+        self.assertEqual(run_ab.invented(step, NAMES), [])
+        field = '```m\neach [#"Sales.Amount"] * 2\n```'
+        self.assertEqual(run_ab.invented(field, NAMES), [])
+
+    def test_quoted_local_function_is_the_models_own(self):
+        code = '```m\nlet #"Foo.Bar" = (x) => x in #"Foo.Bar"(1)\n```'
+        self.assertEqual(run_ab.invented(code, NAMES), [])
+
     def test_field_access_is_not_a_library_name(self):
         code = "```m\neach [Sales.Amount] * 2\n```"
         self.assertEqual(run_ab.invented(code, NAMES), [])
+
+    def test_environment_lookup_is_a_library_name(self):
+        code = "```m\n#shared[Text.Left]\n```"
+        self.assertEqual(run_ab.invented(code, NAMES), ["Text.Left"])
+        spaced = "```m\n#shared [ Text.Left ]\n```"
+        self.assertEqual(run_ab.invented(spaced, NAMES), ["Text.Left"])
+        quoted = '```m\n#shared[#"Text.Left"]\n```'
+        self.assertEqual(run_ab.invented(quoted, NAMES), ["Text.Left"])
+
+    def test_comparison_is_a_use_not_a_definition(self):
+        code = "```m\nif Foo.Bar = null then 1 else 2\n```"
+        self.assertEqual(run_ab.invented(code, NAMES), ["Foo.Bar"])
+        args = "```m\nList.AnyTrue({Foo.Bar = null, Baz.Qux = null})\n```"
+        self.assertEqual(run_ab.invented(args, NAMES), ["Foo.Bar", "Baz.Qux"])
+        let = "```m\nlet\n    Foo.Bar = 1,\n    Baz.Qux = 2\nin Baz.Qux\n```"
+        # Variables the model defined, then used: its own names, not library inventions.
+        self.assertEqual(run_ab.invented(let, NAMES), [])
+
+    def test_record_field_does_not_hide_a_later_call(self):
+        code = "```m\nlet\n  r = [Foo.Bar = 1],\n  x = Foo.Bar(1)\nin x\n```"
+        self.assertEqual(run_ab.invented(code, NAMES), ["Foo.Bar"])
+        typed = "```m\ntype [optional Sales.Amount = number]\n```"
+        self.assertEqual(run_ab.invented(typed, NAMES), [])
+
+    def test_resume_refuses_another_model(self):
+        import json
+        import tempfile
+        path = os.path.join(tempfile.mkdtemp(), "run.json")
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump({"model": "claude-a", "records": []}, f)
+        self.assertEqual(run_ab.other_model(path, "claude-b"), "claude-a")
+        self.assertIsNone(run_ab.other_model(path, "claude-a"))
+        # main stops before any API call (and before reading a key).
+        self.assertEqual(run_ab.main(["--model", "claude-b", "--out", path, "--resume"]), 2)
+        # A filtered resume would rewrite the file without the other answers.
+        self.assertEqual(run_ab.main(["--model", "claude-a", "--out", path, "--resume",
+                                      "--limit", "1"]), 2)
+
+    def test_unclosed_fence_is_still_code(self):
+        self.assertEqual(run_ab.invented("```m\nText.Left(x, 1)", NAMES), ["Text.Left"])
 
     def test_defined_field_names_are_not_library_names(self):
         code = ('```m\nfn meta [\n  Documentation.Name = "Add",\n'
@@ -77,7 +139,10 @@ class CounterTest(unittest.TestCase):
         # A metadata field named in prose is a field, not a function.
         self.assertEqual(run_ab.invented("Set `Documentation.Name`.", NAMES), [])
         self.assertFalse([n for n in NAMES if n.startswith(run_ab.METADATA_PREFIXES)])
-        # ...but a made-up name used as a value still counts.
+        # A CALLED Documentation.* name is an invented function.
+        self.assertEqual(run_ab.invented("```m\nDocumentation.Add(fn)\n```", NAMES),
+                         ["Documentation.Add"])
+        # ...and a made-up name used as a value still counts.
         self.assertEqual(run_ab.invented("```m\n[x = Foo.Bar(1)]\n```", NAMES), ["Foo.Bar"])
 
     def test_hash_literals(self):
@@ -107,6 +172,10 @@ class PairingTest(unittest.TestCase):
         s = run_ab.summarise(records, NAMES)["core"]
         self.assertEqual((s["n"], s["dropped"], s["A"], s["B"]), (1, 1, 1, 0))
         self.assertEqual(run_ab.refusals(records), ["q B"])
+
+    def test_refusal_with_text_is_dropped(self):
+        records = [self.rec("ok", "I can't help with that.", None, "refusal")]
+        self.assertEqual(run_ab.summarise(records, NAMES)["core"]["dropped"], 1)
 
     def test_resume_reasks_empty_without_reason_keeps_refusal(self):
         import json

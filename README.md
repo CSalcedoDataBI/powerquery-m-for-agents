@@ -52,7 +52,11 @@ smaller and cheaper ones.
 
 Sonnet 5.5 refuses some questions outright (evaluating text as M with `Expression.Evaluate`,
 waiting between web calls), and DeepSeek V4-Pro sometimes spends its whole budget reasoning;
-those questions are left out of that model's row rather than scored as zero. Every answer is
+those questions are left out of that model's row rather than scored as zero. Arm B is given
+the function rows of the question's category, not the constants (`ByteOrder.BigEndian`,
+`TraceLevel.Information`), which live in their own file; several inventions above are
+misspelled constants, so the "with it" column understates what the full reference gives.
+Every answer is
 in [`evals/hallucination/runs/`](evals/hallucination/runs/), and
 `python evals/hallucination/run_ab.py --replay <file>` recounts any of them with no API call.
 `scripts/check_eval_claims.py` checks this table against those files in CI.
