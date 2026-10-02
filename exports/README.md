@@ -24,7 +24,7 @@ carries the documentation text Microsoft ships inside the engine: `description`,
 returns it, with this attribution, only as the reproducible input of the catalogue.
 
 `sync_shared.py` reads none of those three fields. The cards do not quote the long
-descriptions or the examples, and link Microsoft Learn for them. Their one-line descriptions
+descriptions or the examples, and link Microsoft Learn for them when that page exists. Their one-line descriptions
 come from the MIT file above; for many functions that line is word for word the same as the
 export's `description`, but the MIT file is where the cards take it from
 ([ADR](../docs/decisions/2026-10-01-textos-con-licencia.md)).
