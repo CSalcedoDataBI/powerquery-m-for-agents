@@ -44,7 +44,7 @@ Routing and conventions: [INDEX.md](INDEX.md).
 
 ```bash
 /plugin marketplace add CSalcedoDataBI/powerquery-m-for-agents
-/plugin install m@powerquery-m-for-agents
+/plugin install powerquery-m-for-agents@powerquery-m-for-agents
 ```
 
 Needs Claude Code 2.1.142 or later: earlier versions install the plugin and load none of its

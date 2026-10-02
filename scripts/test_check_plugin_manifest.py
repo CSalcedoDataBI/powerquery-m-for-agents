@@ -16,14 +16,14 @@ from check_plugin_manifest import check, main, skill_dirs  # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 PLUGIN = {
-    "name": "m",
+    "name": "powerquery-m-for-agents",
     "version": "0.1.0",
     "skills": ["./skills/alpha-skill", "./skills/beta-skill"],
 }
 MARKET = {
     "name": "powerquery-m-for-agents",
     "owner": {"name": "someone"},
-    "plugins": [{"name": "m", "source": "./", "description": "x"}],
+    "plugins": [{"name": "powerquery-m-for-agents", "source": "./", "description": "x"}],
 }
 
 
@@ -117,7 +117,7 @@ class SkillsList(unittest.TestCase):
 
 
 class TheTwoNames(unittest.TestCase):
-    """`/plugin install m@powerquery-m-for-agents` se deletrea con estos dos nombres."""
+    """`/plugin install powerquery-m-for-agents@powerquery-m-for-agents` is spelled with these two names."""
 
     def test_a_plugin_name_absent_from_the_marketplace_fails(self):
         with Fixture(plugin=deep(PLUGIN, name="other")) as f:

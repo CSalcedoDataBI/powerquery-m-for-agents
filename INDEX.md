@@ -36,8 +36,10 @@ Same as [dax-for-agents](https://github.com/CSalcedoDataBI/dax-for-agents/blob/m
    (third person, starts with **"Use when …"**).
 3. **Token-efficient:** `SKILL.md` is short; the detail lives in files read on demand.
 4. **Cross-link by name** (`` `m-reference` ``), never by path.
-5. **The `m-` prefix stays.** Installed, the skill is `m:m-reference`; the planned ones will be
-   `m:m-folding`, `m:m-custom-functions` and `m:m-iteration`.
+5. **The `m-` prefix stays.** The plugin is `powerquery-m-for-agents`, so installed the skill
+   is `powerquery-m-for-agents:m-reference`; the planned ones will be
+   `powerquery-m-for-agents:m-folding`, `powerquery-m-for-agents:m-custom-functions` and
+   `powerquery-m-for-agents:m-iteration`.
 6. **Every skill is listed by path in `.claude-plugin/plugin.json`**, checked by
    `scripts/check_plugin_manifest.py`.
 7. **A skill ships only when it has content.** Claude Code loads every folder under `skills/`

@@ -8,7 +8,7 @@
   },
   "plugins": [
     {
-      "name": "m",
+      "name": "powerquery-m-for-agents",
       "source": "./",
       "description": "The Power Query M language, agent-native: function cards from #shared with host availability, language concepts and executed examples. Not modeling or TMDL."
     }
