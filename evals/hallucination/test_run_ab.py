@@ -87,6 +87,23 @@ class CounterTest(unittest.TestCase):
         # Variables the model defined, then used: its own names, not library inventions.
         self.assertEqual(run_ab.invented(let, NAMES), [])
 
+    def test_record_field_does_not_hide_a_later_call(self):
+        code = "```m\nlet\n  r = [Foo.Bar = 1],\n  x = Foo.Bar(1)\nin x\n```"
+        self.assertEqual(run_ab.invented(code, NAMES), ["Foo.Bar"])
+        typed = "```m\ntype [optional Sales.Amount = number]\n```"
+        self.assertEqual(run_ab.invented(typed, NAMES), [])
+
+    def test_resume_refuses_another_model(self):
+        import json
+        import tempfile
+        path = os.path.join(tempfile.mkdtemp(), "run.json")
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump({"model": "claude-a", "records": []}, f)
+        self.assertEqual(run_ab.other_model(path, "claude-b"), "claude-a")
+        self.assertIsNone(run_ab.other_model(path, "claude-a"))
+        # main stops before any API call (and before reading a key).
+        self.assertEqual(run_ab.main(["--model", "claude-b", "--out", path, "--resume"]), 2)
+
     def test_unclosed_fence_is_still_code(self):
         self.assertEqual(run_ab.invented("```m\nText.Left(x, 1)", NAMES), ["Text.Left"])
 

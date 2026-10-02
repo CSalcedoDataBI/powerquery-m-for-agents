@@ -67,7 +67,19 @@ HASH_LITERALS = frozenset({
 _HASH_RE = re.compile(r"(?<![\w#])#([A-Za-z]\w*)\b")
 _DEFINED_RE = re.compile(r"\s*=(?![=>])")
 _CALL_RE = re.compile(r"\s*\(")
-_BINDING_START_RE = re.compile(r"(?:^|[\[,]|\blet)\s*$")
+_BINDING_START_RE = re.compile(r"(?:^|[\[,]|\blet|\boptional)\s*$")
+_PAIRS = {")": "(", "]": "[", "}": "{"}
+
+
+def _innermost_open(code, pos):
+    """The innermost bracket still open at `pos` ("[", "(", "{"), or "" at top level."""
+    stack = []
+    for ch in code[:pos]:
+        if ch in "([{":
+            stack.append(ch)
+        elif ch in _PAIRS and stack and stack[-1] == _PAIRS[ch]:
+            stack.pop()
+    return stack[-1] if stack else ""
 
 
 def catalog_names(directory=CATALOG_DIR):
@@ -121,7 +133,11 @@ def _names(text):
             # `let`. `if Foo.Bar = null` is a comparison, and Foo.Bar is used, not defined.
             if (_DEFINED_RE.match(bare, m.end())
                     and _BINDING_START_RE.search(bare[max(0, m.start() - 40):m.start()])):
-                defined.add(m.group(1))
+                # A let variable is the model's own name everywhere it is used; a record
+                # field is skipped only where it is defined, so a later Foo.Bar(1) of the
+                # same spelling still counts.
+                if _innermost_open(bare, m.start()) != "[":
+                    defined.add(m.group(1))
                 continue
             found.append((m.group(1), bool(_CALL_RE.match(bare, m.end()))))
         # A quoted identifier is usually a step or column name the model chose
@@ -390,6 +406,18 @@ def already_answered(path):
             if finished(r.get("A")) and finished(r.get("B"))}
 
 
+def other_model(path, model):
+    """The model a run file was written by, when it is not `model`; else None."""
+    if not path or not os.path.exists(path):
+        return None
+    try:
+        with open(path, encoding="utf-8") as f:
+            saved = json.load(f).get("model")
+    except (OSError, ValueError):
+        return None
+    return saved if saved and saved != model else None
+
+
 def load_questions(path=QUESTIONS):
     with open(path, encoding="utf-8") as f:
         return yaml.safe_load(f)["questions"]
@@ -416,6 +444,13 @@ def main(argv):
               f"(model {saved.get('model', '?')}) - no API calls.")
         report(saved["records"], names)
         return 0
+
+    other = other_model(args.out, args.model) if args.resume else None
+    if other:
+        # One run file is one model: mixing two would break the A/B's premise silently.
+        print(f"ERROR: {args.out} holds answers from {other}, not {args.model}. Resume it "
+              f"with --model {other}, or write to another --out.")
+        return 2
 
     questions = load_questions()
     if args.regime:
