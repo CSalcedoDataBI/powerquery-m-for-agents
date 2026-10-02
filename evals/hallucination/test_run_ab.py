@@ -74,6 +74,10 @@ class CounterTest(unittest.TestCase):
         code = "```m\neach [Sales.Amount] * 2\n```"
         self.assertEqual(run_ab.invented(code, NAMES), [])
 
+    def test_environment_lookup_is_a_library_name(self):
+        code = "```m\n#shared[Text.Left]\n```"
+        self.assertEqual(run_ab.invented(code, NAMES), ["Text.Left"])
+
     def test_defined_field_names_are_not_library_names(self):
         code = ('```m\nfn meta [\n  Documentation.Name = "Add",\n'
                 '  Documentation.Examples = {}\n]\n```')
@@ -114,6 +118,10 @@ class PairingTest(unittest.TestCase):
         s = run_ab.summarise(records, NAMES)["core"]
         self.assertEqual((s["n"], s["dropped"], s["A"], s["B"]), (1, 1, 1, 0))
         self.assertEqual(run_ab.refusals(records), ["q B"])
+
+    def test_refusal_with_text_is_dropped(self):
+        records = [self.rec("ok", "I can't help with that.", None, "refusal")]
+        self.assertEqual(run_ab.summarise(records, NAMES)["core"]["dropped"], 1)
 
     def test_resume_reasks_empty_without_reason_keeps_refusal(self):
         import json

@@ -108,8 +108,9 @@ def _names(text):
     seen, out = {}, []
     for span in code_spans(text):
         bare, quoted = m_blocks.scan(span)
-        # A field access such as [Sales.Amount] is a column name, not a library name.
-        bare = re.sub(r"\[[^\[\]=,]*\]", " ", bare)
+        # A field access such as [Sales.Amount] is a column name, not a library name. A
+        # lookup in the environment, #shared[Text.Left], is a library name and is kept.
+        bare = re.sub(r"(?<!#shared)(?<!#sections)\[[^\[\]=,]*\]", " ", bare)
         found = []
         for m in m_blocks.DOTTED_RE.finditer(bare):
             # A name being DEFINED is not a library name: a record field
@@ -267,7 +268,8 @@ def answered(rec):
     arm went quiet. A model that refuses a question (stop_reason "refusal": Sonnet 5.5 does,
     on Expression.Evaluate) answered neither arm in any useful sense, so the pair is dropped
     and counted on its own line instead."""
-    return all((rec[arm].get("text") or "").strip() for arm in ("A", "B"))
+    return all((rec[arm].get("text") or "").strip()
+               and rec[arm].get("stop_reason") != "refusal" for arm in ("A", "B"))
 
 
 def summarise(records, names):
@@ -295,10 +297,10 @@ def silent(records):
 
 
 def refusals(records):
-    """The empty answers the provider marked as a refusal, as `id arm` strings."""
+    """The answers the provider marked as a refusal, empty or with a refusal message, as
+    `id arm` strings."""
     return [f"{r['id']} {arm}" for r in records for arm in ("A", "B")
-            if not (r[arm].get("text") or "").strip()
-            and r[arm].get("stop_reason") == "refusal"]
+            if r[arm].get("stop_reason") == "refusal"]
 
 
 def report(records, names):
