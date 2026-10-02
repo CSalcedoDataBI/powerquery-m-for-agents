@@ -72,6 +72,18 @@ class CounterTest(unittest.TestCase):
         escaped = '```m\n#"Text#(002E)Left"(x, 1)\n```'
         self.assertEqual(run_ab.invented(escaped, NAMES), ["Text.Left"])
 
+    def test_quoted_names_in_comments_and_text_do_not_count(self):
+        code = ('```m\n// #"Foo.Bar"()\n/* #"Foo.Baz"() */\nx = "#""Foo.Qux""()"\n```')
+        self.assertEqual(run_ab.invented(code, NAMES), [])
+
+    def test_quoted_reference_counts_unless_bound_or_a_field(self):
+        ref = '```m\nlet f = #"Foo.Bar" in f(1)\n```'
+        self.assertEqual(run_ab.invented(ref, NAMES), ["Foo.Bar"])
+        step = '```m\nlet #"Sales.Amount" = 1 in #"Sales.Amount"\n```'
+        self.assertEqual(run_ab.invented(step, NAMES), [])
+        field = '```m\neach [#"Sales.Amount"] * 2\n```'
+        self.assertEqual(run_ab.invented(field, NAMES), [])
+
     def test_quoted_local_function_is_the_models_own(self):
         code = '```m\nlet #"Foo.Bar" = (x) => x in #"Foo.Bar"(1)\n```'
         self.assertEqual(run_ab.invented(code, NAMES), [])

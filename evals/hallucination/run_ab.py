@@ -73,6 +73,52 @@ _FIELD_ACCESS_RE = re.compile(r"\[[^\[\]=,]*\]")
 _QUOTED_RE = re.compile(r'#"((?:[^"]|"")*)"')
 
 
+def _mask(code):
+    """`code` with comments and text literals replaced by spaces, same length, quoted
+    identifiers (#"...") kept. The rules are m_blocks.scan's: nested /* */, // to any
+    M new-line, "" as an escaped quote, #!"..." as text."""
+    out, i, n = list(code), 0, len(code)
+
+    def blank(a, b):
+        for k in range(a, min(b, n)):
+            if out[k] not in "\r\n":
+                out[k] = " "
+
+    while i < n:
+        if code.startswith("//", i):
+            m = m_blocks.NEWLINE_RE.search(code, i)
+            end = m.start() if m else n
+            blank(i, end)
+            i = end
+        elif code.startswith("/*", i):
+            depth, k = 1, i + 2
+            while k < n and depth:
+                if code.startswith("/*", k):
+                    depth, k = depth + 1, k + 2
+                elif code.startswith("*/", k):
+                    depth, k = depth - 1, k + 2
+                else:
+                    k += 1
+            blank(i, k)
+            i = k
+        elif code[i] == '"' or code.startswith('#"', i) or code.startswith('#!"', i):
+            ident = code.startswith('#"', i)
+            k = i + (2 if ident else 3 if code[i] == "#" else 1)
+            while k < n:
+                if code[k] == '"':
+                    if code.startswith('""', k):
+                        k += 2
+                        continue
+                    break
+                k += 1
+            if not ident:
+                blank(i, k + 1)
+            i = k + 1
+        else:
+            i += 1
+    return "".join(out)
+
+
 def _innermost_open(code, pos):
     """The innermost bracket still open at `pos` ("[", "(", "{"), or "" at top level."""
     stack = []
@@ -147,24 +193,28 @@ def _names(text):
         # A quoted identifier is usually a step or column name the model chose
         # (#"Sales.Amount"), but one that is CALLED, #"Text.Left"(x, 1), is a library name
         # written in quotes and counts like the bare form.
-        # So is one looked up in the environment, #shared[#"Text.Left"]. One the answer binds
-        # itself, let #"Foo.Bar" = ..., is its own name, as for the bare form. Read from the
-        # raw span, by position, and unescaped: #"Text#(002E)Left" is Text.Left.
-        for qm in _QUOTED_RE.finditer(span):
+        # A quoted identifier is the same name as the bare form: #"Text.Left"(x) and
+        # #"Text#(002E)Left" are Text.Left. Read by position from a copy of the span with
+        # comments and text literals masked, then unescaped. Bound by the answer itself
+        # (a step called #"Sales.Amount") it is the model's own name, as for the bare form;
+        # a field access [#"Sales.Amount"] is a column.
+        masked = _mask(span)
+        for qm in _QUOTED_RE.finditer(masked):
             q = m_blocks.unescape(qm.group(1).replace('""', '"'))
             if not m_blocks.DOTTED_RE.fullmatch(q):
                 continue
-            before = span[:qm.start()].rstrip()
-            if (_DEFINED_RE.match(span, qm.end())
-                    and _BINDING_START_RE.search(span[max(0, qm.start() - 40):qm.start()])):
-                if _innermost_open(span, qm.start()) != "[":
+            before = masked[:qm.start()].rstrip()
+            if (_DEFINED_RE.match(masked, qm.end())
+                    and _BINDING_START_RE.search(masked[max(0, qm.start() - 40):qm.start()])):
+                if _innermost_open(masked, qm.start()) != "[":
                     defined.add(q)
                 continue
-            if _CALL_RE.match(span, qm.end()):
-                found.append((q, True))
-            elif before.endswith("[") and before[:-1].rstrip().endswith(
-                    ("#shared", "#sections")):
-                found.append((q, False))
+            environment = before.endswith("[") and before[:-1].rstrip().endswith(
+                ("#shared", "#sections"))
+            if (before.endswith("[") and not environment
+                    and re.match(r"\s*\]", masked[qm.end():])):
+                continue
+            found.append((q, bool(_CALL_RE.match(masked, qm.end()))))
         found += [("#" + h, True) for h in _HASH_RE.findall(bare)]
         for name, called in found:
             if name not in seen:
