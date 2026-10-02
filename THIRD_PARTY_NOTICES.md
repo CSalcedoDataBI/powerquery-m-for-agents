@@ -13,6 +13,14 @@ Everything else in the cards is either a fact read from the engine's `#shared` (
 signatures, parameter and return types, categories, the hosts that have a function) or
 was written in this repository.
 
+## Raw engine exports: Microsoft Power Query documentation
+
+The raw exports `exports/<host>-<version>.json` hold the engine's `#shared` as the host
+returns it, including the documentation text Microsoft ships inside the engine
+(`description`, `longDescription`, `examples`). That text is © Microsoft Corporation. It is
+kept unedited as the reproducible input of the catalogue, is not part of the plugin archive,
+and is not quoted by any card. See [`exports/README.md`](exports/README.md).
+
 ```
 MIT License
 

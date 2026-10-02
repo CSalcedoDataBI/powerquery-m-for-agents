@@ -38,3 +38,16 @@ párrafo largo y no trae ejemplos. Para 551 funciones, su línea es idéntica a 
 - `sync_shared.py` lee dos entradas nuevas de `exports/`: el archivo de Microsoft, fijado a
   un commit, y `learn-links.json`.
 - Este era el bloqueo para hacer público el repositorio (#13).
+
+## Adenda 2026-10-02: los exports en bruto
+
+La auditoría del historial antes de publicar (#13) mostró que `exports/<host>-<version>.json`
+sigue guardando, tal cual los devuelve el motor, los textos que las fichas dejaron de citar
+(`description`, `longDescription` y `examples`). El README decía que «no se copian», y eso
+solo era cierto para las fichas.
+
+Decisión del mantenedor: el export se queda como está, porque es la entrada reproducible del
+catálogo, y se cita como © Microsoft en `exports/README.md`, en `THIRD_PARTY_NOTICES.md` y en
+el README. La frase del README se corrige para decir lo que es cierto: las fichas no citan
+esos textos y el export en bruto sí los contiene. Queda fuera del archivo del plugin
+(`export-ignore`) y `sync_shared.py` no los lee.

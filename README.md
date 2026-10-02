@@ -92,5 +92,10 @@ MIT © CSalcedoDataBI. The one-line function and constant descriptions are Micro
 from the MIT-licensed standard library of
 [microsoft/vscode-powerquery](https://github.com/microsoft/vscode-powerquery): see
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The engine's own long descriptions and
-examples carry no stated licence, so they are not copied (#1); each card links its Microsoft
-Learn page instead, when that page exists.
+examples carry no stated licence, so the cards do not quote them (#1); each card links its
+Microsoft Learn page instead, when that page exists.
+
+The raw engine exports in [`exports/`](exports/) are the engine's output as it returns it, so
+they do hold those long descriptions and examples: © Microsoft, kept only so every catalogue
+can be regenerated from its exact input. They are in the git repository, not in the plugin
+archive, and nothing generated from them quotes those texts.
