@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Cdm.MapToEntity(table as table, columnDefinitions as any, optional defaultType as nullable type, optional defaultCdmClass as nullable text) as table
 ```
 
-Returns a table with columns mapped to the attributes of an entity in the Common Data Model, including data types. Columns from the entity definition will be added if not mapped, and any unmapped columns will be removed.
-
 ## Parameters
 
 | Name | Type | Optional |

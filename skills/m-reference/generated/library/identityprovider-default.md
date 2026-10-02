@@ -17,3 +17,7 @@ IdentityProvider.Default() as any
 ```
 
 The default identity provider for the current host.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/identityprovider-default)

@@ -18,9 +18,9 @@ Json.Document(jsonText as any, optional encoding as nullable number) as any
 
 Returns the content of the JSON document.
 
-- `jsonText`: The content of the JSON document. The value of this parameter can be text or a binary value returned by a function like `File.Contents`.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `encoding`: A `TextEncoding.Type` that specifies the encoding used in the JSON document. If `encoding` is omitted, UTF8 is used.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/json-document)
 
 ## Parameters
 
@@ -28,73 +28,3 @@ Returns the content of the JSON document.
 |---|---|---|
 | `jsonText` | `any` | no |
 | `encoding` | `nullable number` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Returns the content of the specified JSON text as a record.
-
-```m
-let
-    Source = "{
-        ""project"": ""Contosoware"",
-        ""description"": ""A comprehensive initiative aimed at enhancing digital presence."",
-        ""components"": [
-            ""Website Development"",
-            ""CRM Implementation"",
-            ""Mobile Application""
-        ]
-    }",
-    jsonDocument = Json.Document(Source)
-in
-    jsonDocument
-```
-
-Stated result:
-
-```m
-[
-    project = "Contosoware",
-    description = "A comprehensive initiative aimed at enhancing digital presence."
-    components =
-    {
-        "Website Development",
-        "CRM Implementation",
-        "Mobile Application"
-    }
-]
-```
-
-Returns the content of a local JSON file.
-
-```m
-let
-    Source = Json.Document(
-        File.Contents("C:\test-examples\JSON\Contosoware.json")
-    )
-in
-    Source
-```
-
-Stated result:
-
-```m
-A record, list, or primitive value representing the JSON data contained in the file
-```
-
-Returns the content of an online UTF16 encoded JSON file.
-
-```m
-let
-    Source = Json.Document(
-        Web.Contents("htts://contoso.com/products/Contosoware.json"),
-        TextEncoding.Utf16)
-    )
-in
-    Source
-```
-
-Stated result:
-
-```m
-A record, list, or primitive value representing the JSON UTF16 data contained in the file
-```

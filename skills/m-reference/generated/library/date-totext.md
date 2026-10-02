@@ -16,13 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.ToText(date as nullable date, optional options as any, optional culture as nullable text) as nullable text
 ```
 
-Returns a textual representation of `date`. An optional `record` parameter, `options`, may be provided to specify additional properties. `culture` is only used for legacy workflows. The `record` can contain the following fields:
+Returns a textual representation of the date value.
 
-- `Format`: A `text` value indicating the format to use. For more details, go to https://go.microsoft.com/fwlink/?linkid=2180104 and https://go.microsoft.com/fwlink/?linkid=2180105. Omitting this field or providing `null` will result in formatting the date using the default defined by `Culture`.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `Culture`: When `Format` is not null, `Culture` controls some format specifiers. For example, in `"en-US"` `"MMM"` is `"Jan", "Feb", "Mar", ...`, while in `"ru-RU"` `"MMM"` is `"янв", "фев", "мар", ...`. When `Format` is `null`, `Culture` controls the default format to use. When `Culture` is `null` or omitted, `Culture.Current` is used.
-
-To support legacy workflows, `options` and `culture` may also be text values. This has the same behavior as if `options = [Format = options, Culture = culture]`.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-totext)
 
 ## Parameters
 
@@ -33,41 +31,3 @@ To support legacy workflows, `options` and `culture` may also be text values. Th
 | `culture` | `nullable text` | yes |
 
 **Executed examples (3):** [examples/date/date-totext.md](../../examples/date/date-totext.md)
-
-## Examples (engine metadata — not verified here)
-
-Convert `#date(2010, 12, 31)` into a `text` value. *Result output may vary depending on current culture.*
-
-```m
-Date.ToText(#date(2010, 12, 31))
-```
-
-Stated result:
-
-```m
-"12/31/2010"
-```
-
-Convert using a custom format and the German culture.
-
-```m
-Date.ToText(#date(2010, 12, 31), [Format="dd MMM yyyy", Culture="de-DE"])
-```
-
-Stated result:
-
-```m
-"31 Dez 2010"
-```
-
-Find the year in the Hijri calendar that corresponds to January 1st, 2000 in the Gregorian calendar.
-
-```m
-Date.ToText(#date(2000, 1, 1), [Format="yyyy", Culture="ar-SA"])
-```
-
-Stated result:
-
-```m
-"1420"
-```

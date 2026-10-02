@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 GeographyPoint.From(longitude as number, latitude as number, optional z as nullable number, optional m as nullable number, optional srid as nullable number) as record
 ```
 
-Creates a record representing a geographic point from its constituent parts, such as longitude, latitude, and if present, elevation (Z) and measure (M). An optional spatial reference identifier (SRID) can be given if different from the default value (4326).
+Creates a record representing a geographic point from parts.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/geographypoint-from)
 
 ## Parameters
 

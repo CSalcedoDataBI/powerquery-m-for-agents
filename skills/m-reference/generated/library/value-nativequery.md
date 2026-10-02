@@ -16,17 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Value.NativeQuery(target as any, query as text, optional parameters as any, optional options as nullable record) as any
 ```
 
-Evaluates `query` against `target` using the parameters specified in `parameters` and the options specified in `options`.
+Evaluates a query against a target.
 
-The output of the query is defined by `target`.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-`target` provides the context for the operation described by `query`.
-
-`query` describes the query to be executed against `target`. `query` is expressed in a manner specific to `target` (for example, a T-SQL statement).
-
-The optional `parameters` value may contain either a list or record as appropriate to supply the parameter values expected by `query`.
-
-The optional `options` record may contain options that affect the evaluation behavior of `query` against `target`. These options are specific to `target`.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/value-nativequery)
 
 ## Parameters
 

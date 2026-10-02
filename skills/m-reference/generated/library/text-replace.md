@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.Replace(text as nullable text, old as text, new as text) as nullable text
 ```
 
-Returns the result of replacing all occurrences of text value `old` in text value `text` with text value `new`. This function is case sensitive.
+Replaces all occurrences of the given substring in the text.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-replace)
 
 ## Parameters
 
@@ -27,17 +31,3 @@ Returns the result of replacing all occurrences of text value `old` in text valu
 | `new` | `text` | no |
 
 **Executed examples (1):** [examples/text-modification/text-replace.md](../../examples/text-modification/text-replace.md)
-
-## Examples (engine metadata — not verified here)
-
-Replace every occurrence of "the" in a sentence with "a".
-
-```m
-Text.Replace("the quick brown fox jumps over the lazy dog", "the", "a")
-```
-
-Stated result:
-
-```m
-"a quick brown fox jumps over a lazy dog"
-```

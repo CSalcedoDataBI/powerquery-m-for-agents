@@ -15,13 +15,3 @@ source: "#shared \u2014 desktop 2.157.879.0"
 ```m
 SurveyMonkey.Contents() as table
 ```
-
-A Navigation table showing all the surveys in the account related to the input access token.
-
-## Examples (engine metadata — not verified here)
-
-Returns the navigation table.
-
-```m
-SurveyMonkey.Contents()
-```

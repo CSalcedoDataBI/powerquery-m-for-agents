@@ -16,5 +16,8 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DateTimeZone.LocalNow() as datetimezone
 ```
 
-Returns a `datetimezone` value set to the current date and time on the system.
-The returned value contains timezone information representing the local timezone.
+Returns the current date & time in the local timezone.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/datetimezone-localnow)

@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 VSTS.Views(url as text, project as text, areaPath as nullable text, optional options as nullable record) as table
 ```
 
-Returns a table of OData feeds offered by Azure DevOps.
-
 ## Parameters
 
 | Name | Type | Optional |

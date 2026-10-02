@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.Select(text as nullable text, selectChars as any) as nullable text
 ```
 
-Returns a copy of the text value `text` with all the characters not in `selectChars` removed.
+Selects all occurrences of the given character or list of characters from the input text value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-select)
 
 ## Parameters
 
@@ -26,17 +30,3 @@ Returns a copy of the text value `text` with all the characters not in `selectCh
 | `selectChars` | `any` | no |
 
 **Executed examples (1):** [examples/text-modification/text-select.md](../../examples/text-modification/text-select.md)
-
-## Examples (engine metadata — not verified here)
-
-Select all characters in the range of 'a' to 'z' from the text value.
-
-```m
-Text.Select("a,b;c", {"a".."z"})
-```
-
-Stated result:
-
-```m
-"abc"
-```

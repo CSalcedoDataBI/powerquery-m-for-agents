@@ -18,6 +18,10 @@ Splitter.SplitTextByAnyDelimiter(delimiters as list, optional quoteStyle as null
 
 Returns a function that splits text into a list of text at any of the specified delimiters.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/splitter-splittextbyanydelimiter)
+
 ## Parameters
 
 | Name | Type | Optional |
@@ -27,32 +31,3 @@ Returns a function that splits text into a list of text at any of the specified 
 | `startAtEnd` | `nullable logical` | yes |
 
 **Executed examples (3):** [examples/splitter/splitter-splittextbyanydelimiter.md](../../examples/splitter/splitter-splittextbyanydelimiter.md)
-
-## Examples (engine metadata — not verified here)
-
-Split the input by comma or semicolon, ignoring quotes and quoted delimiters and starting from the beginning of the input.
-
-```m
-Splitter.SplitTextByAnyDelimiter({",", ";"}, QuoteStyle.Csv)("a,b;""c,d;e"",f")
-```
-
-Stated result:
-
-```m
-{"a", "b", "c,d;e", "f"}
-```
-
-Split the input by comma or semicolon, ignoring quotes and quoted delimiters and starting from the end of the input.
-
-```m
-let
-    startAtEnd = true
-in
-    Splitter.SplitTextByAnyDelimiter({",", ";"}, QuoteStyle.Csv, startAtEnd)("a,""b;c,d")
-```
-
-Stated result:
-
-```m
-{"a,b", "c", "d"}
-```

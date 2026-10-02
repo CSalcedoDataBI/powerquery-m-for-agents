@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DateTime.IsInPreviousMinute(dateTime as any) as nullable logical
 ```
 
-Indicates whether the given datetime value `dateTime` occurs during the previous minute, as determined by the current date and time on the system. Note that this function will return false when passed a value that occurs within the current minute.
+Indicates whether this datetime occurs during the previous minute, as determined by the current date and time on the system. Note that this function will return false when passed a value that occurs within the current minute.
 
-- `dateTime`: A `datetime`, or `datetimezone` value to be evaluated.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/datetime-isinpreviousminute)
 
 ## Parameters
 
@@ -27,17 +29,3 @@ Indicates whether the given datetime value `dateTime` occurs during the previous
 | `dateTime` | `any` | no |
 
 **Executed examples (3):** [examples/datetime/datetime-isinpreviousminute.md](../../examples/datetime/datetime-isinpreviousminute.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if the minute before the current system time is in the previous minute.
-
-```m
-DateTime.IsInPreviousMinute(DateTime.FixedLocalNow() - #duration(0, 0, 1, 0))
-```
-
-Stated result:
-
-```m
-true
-```

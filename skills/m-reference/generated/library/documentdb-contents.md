@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DocumentDB.Contents(url as text, optional database as nullable text, optional collection as nullable text, optional options as nullable record) as table
 ```
 
-Returns a table of Azure Cosmos DB databases at `url`. If `database` is specified, a table of collections will be returned instead. Additionally, if the field `Query` is specified in the `options` record the results of the query being executed on either the specified database and/or collection will be returned.
-
 ## Parameters
 
 | Name | Type | Optional |

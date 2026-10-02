@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 BinaryFormat.Length(binaryFormat as function, length as any) as function
 ```
 
-Returns a binary format that limits the amount of data that can be read. Both `BinaryFormat.List` and `BinaryFormat.Binary` can be used to read until end of the data. `BinaryFormat.Length` can be used to limit the number of bytes that are read. The `binaryFormat` parameter specifies the binary format to limit. The `length` parameter specifies the number of bytes to read. The `length` parameter may either be a number value, or a binary format value that specifies the format of the length value that appears that precedes the value being read.
+Returns a binary format that limits the amount of data that can be read.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/binaryformat-length)
 
 ## Parameters
 
@@ -26,43 +30,3 @@ Returns a binary format that limits the amount of data that can be read. Both `B
 | `length` | `any` | no |
 
 **Executed examples (4):** [examples/binary-formats-limiting-input/binaryformat-length.md](../../examples/binary-formats-limiting-input/binaryformat-length.md)
-
-## Examples (engine metadata — not verified here)
-
-Limit the number of bytes read to 2 when reading a list of bytes.
-
-```m
-let
-    binaryData = #binary({1, 2, 3}),
-    listFormat = BinaryFormat.Length(
-        BinaryFormat.List(BinaryFormat.Byte),
-        2
-    )
-in
-    listFormat(binaryData)
-```
-
-Stated result:
-
-```m
-{1, 2}
-```
-
-Limit the number of byte read when reading a list of bytes to the byte value preceding the list.
-
-```m
-let
-    binaryData = #binary({1, 2, 3}),
-    listFormat = BinaryFormat.Length(
-        BinaryFormat.List(BinaryFormat.Byte),
-        BinaryFormat.Byte
-    )
-in
-    listFormat(binaryData)
-```
-
-Stated result:
-
-```m
-{2}
-```

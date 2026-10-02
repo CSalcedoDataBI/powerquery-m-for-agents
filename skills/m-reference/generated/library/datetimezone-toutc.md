@@ -16,25 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DateTimeZone.ToUtc(dateTimeZone as nullable datetimezone) as nullable datetimezone
 ```
 
-Changes timezone information of the datetime value `dateTimeZone` to the UTC or Universal Time timezone information.
-If `dateTimeZone` does not have a timezone component, the UTC timezone information is added.
+Converts the timezone component to UTC timezone.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/datetimezone-toutc)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `dateTimeZone` | `nullable datetimezone` | no |
-
-## Examples (engine metadata — not verified here)
-
-Change timezone information for #datetimezone(2010, 12, 31, 11, 56, 02, 7, 30) to UTC timezone.
-
-```m
-DateTimeZone.ToUtc(#datetimezone(2010, 12, 31, 11, 56, 02, 7, 30))
-```
-
-Stated result:
-
-```m
-#datetimezone(2010, 12, 31, 4, 26, 2, 0, 0)
-```

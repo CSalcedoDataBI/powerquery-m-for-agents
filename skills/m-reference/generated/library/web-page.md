@@ -18,6 +18,10 @@ Web.Page(html as any) as table
 
 Returns the contents of the HTML document broken into its constituent structures, as well as a representation of the full document and its text after removing tags.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/web-page)
+
 ## Parameters
 
 | Name | Type | Optional |

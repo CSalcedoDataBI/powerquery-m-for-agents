@@ -16,13 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DateTime.ToText(dateTime as nullable datetime, optional options as any, optional culture as nullable text) as nullable text
 ```
 
-Returns a textual representation of `dateTime`. An optional `record` parameter, `options`, may be provided to specify additional properties. `culture` is only used for legacy workflows. The `record` can contain the following fields:
+Returns a textual representation of the datetime value.
 
-- `Format`: A `text` value indicating the format to use. For more details, go to https://go.microsoft.com/fwlink/?linkid=2180104 and https://go.microsoft.com/fwlink/?linkid=2180105. Omitting this field or providing `null` will result in formatting the date using the default defined by `Culture`.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `Culture`: When `Format` is not null, `Culture` controls some format specifiers. For example, in `"en-US"` `"MMM"` is `"Jan", "Feb", "Mar", ...`, while in `"ru-RU"` `"MMM"` is `"янв", "фев", "мар", ...`. When `Format` is `null`, `Culture` controls the default format to use. When `Culture` is `null` or omitted, `Culture.Current` is used.
-
-To support legacy workflows, `options` and `culture` may also be text values. This has the same behavior as if `options = [Format = options, Culture = culture]`.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/datetime-totext)
 
 ## Parameters
 
@@ -33,41 +31,3 @@ To support legacy workflows, `options` and `culture` may also be text values. Th
 | `culture` | `nullable text` | yes |
 
 **Executed examples (3):** [examples/datetime/datetime-totext.md](../../examples/datetime/datetime-totext.md)
-
-## Examples (engine metadata — not verified here)
-
-Convert `#datetime(2010, 12, 31, 01, 30, 25)` into a `text` value. *Result output may vary depending on current culture.*
-
-```m
-DateTime.ToText(#datetime(2010, 12, 31, 01, 30, 25))
-```
-
-Stated result:
-
-```m
-"12/31/2010 1:30:25 AM"
-```
-
-Convert using a custom format and the German culture.
-
-```m
-DateTime.ToText(#datetime(2010, 12, 30, 2, 4, 50.36973), [Format="dd MMM yyyy HH:mm:ss.ffffff", Culture="de-DE"])
-```
-
-Stated result:
-
-```m
-"30 Dez 2010 02:04:50.369730"
-```
-
-Convert using the ISO 8601 pattern.
-
-```m
-DateTime.ToText(#datetime(2000, 2, 8, 3, 45, 12),[Format="yyyy-MM-dd'T'HH:mm:ss'Z'", Culture="en-US"])
-```
-
-Stated result:
-
-```m
-"2000-02-08T03:45:12Z"
-```

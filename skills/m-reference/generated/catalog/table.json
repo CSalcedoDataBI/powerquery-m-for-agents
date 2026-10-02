@@ -202,7 +202,7 @@
    "category": "Table.Transformation",
    "returns": "table",
    "signature": "Table.ClearDown(table as table, columns as list) as table",
-   "summary": "Clears repeating sets of column values.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -637,7 +637,7 @@
    "category": "Table.Table construction",
    "returns": "table",
    "signature": "Table.FromRows(rows as list, optional columns as any) as table",
-   "summary": "Creates a table from a list of row values and optional columns.",
+   "summary": "Creates a table from a list of row values and optional columns",
    "hosts": [
     "desktop"
    ],
@@ -967,7 +967,7 @@
    "category": "Table.Transformation",
    "returns": "nullable list",
    "signature": "Table.PartitionKey(table as table) as nullable list",
-   "summary": "Returns the partition key of the specified table.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1282,7 +1282,7 @@
    "category": "Table.Transformation",
    "returns": "table",
    "signature": "Table.ReplacePartitionKey(table as table, partitionKey as nullable list) as table",
-   "summary": "Replaces the partition key of the specified table.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1507,7 +1507,7 @@
    "category": "Table.Transformation",
    "returns": "table",
    "signature": "Table.SplitColumn(table as table, sourceColumn as text, splitter as function, optional columnNamesOrNumber as any, optional default as any, optional extraColumns as any) as table",
-   "summary": "Splits the specified column into a set of additional columns using the specified splitter function.",
+   "summary": "Splits the specified columns into a set of additional columns using the specified splitter function.",
    "hosts": [
     "desktop"
    ],
@@ -1717,7 +1717,7 @@
    "category": "Table.Table construction",
    "returns": "record",
    "signature": "Table.ViewError(errorRecord as record) as record",
-   "summary": "Creates a modified error record which won't trigger a fallback when raised by a handler defined on a view (via Table.Vi…",
+   "summary": "Creates a modified error record which won't trigger a fallback when thrown by a handler defined on a view (via Table.Vi…",
    "hosts": [
     "desktop"
    ],

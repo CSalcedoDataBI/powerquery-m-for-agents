@@ -18,6 +18,10 @@ Table.Keys(table as table) as list
 
 Returns the keys of the specified table.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-keys)
+
 ## Parameters
 
 | Name | Type | Optional |
@@ -25,25 +29,3 @@ Returns the keys of the specified table.
 | `table` | `table` | no |
 
 **Executed examples (1):** [examples/table-transformation/table-keys.md](../../examples/table-transformation/table-keys.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the list of keys for a table.
-
-```m
-let
-    table = Table.FromRecords({
-        [Id = 1, Name = "Hello There"],
-        [Id = 2, Name = "Good Bye"]
-    }),
-    tableWithKeys = Table.AddKey(table, {"Id"}, true),
-    keys = Table.Keys(tableWithKeys)
-in
-    keys
-```
-
-Stated result:
-
-```m
-{[Columns = {"Id"}, Primary = true]}
-```

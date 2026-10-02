@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.FromPartitions(partitionColumn as text, partitions as list, optional partitionColumnType as nullable type) as table
 ```
 
-Returns a table that is the result of combining a set of partitioned tables, `partitions`. `partitionColumn` is the name of the column to add. The type of the column defaults to `any`, but can be specified by `partitionColumnType`.
+Returns a table that is the result of combining a set of partitioned tables.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-frompartitions)
 
 ## Parameters
 
@@ -27,74 +31,3 @@ Returns a table that is the result of combining a set of partitioned tables, `pa
 | `partitionColumnType` | `nullable type` | yes |
 
 **Executed examples (1):** [examples/table-row-operations/table-frompartitions.md](../../examples/table-row-operations/table-frompartitions.md)
-
-## Examples (engine metadata — not verified here)
-
-Find item type from the list `{number}`.
-
-```m
-Table.FromPartitions(
-    "Year",
-    {
-        {
-            1994,
-            Table.FromPartitions(
-                "Month",
-                {
-                    {
-                        "Jan",
-                        Table.FromPartitions(
-                            "Day",
-                            {
-                                {1, #table({"Foo"}, {{"Bar"}})},
-                                {2, #table({"Foo"}, {{"Bar"}})}
-                            }
-                        )
-                    },
-                    {
-                        "Feb",
-                        Table.FromPartitions(
-                            "Day",
-                            {
-                                {3, #table({"Foo"}, {{"Bar"}})},
-                                {4, #table({"Foo"}, {{"Bar"}})}
-                            }
-                        )
-                    }
-                }
-            )
-        }
-    }
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [
-        Foo = "Bar",
-        Day = 1,
-        Month = "Jan",
-        Year = 1994
-    ],
-    [
-        Foo = "Bar",
-        Day = 2,
-        Month = "Jan",
-        Year = 1994
-    ],
-    [
-        Foo = "Bar",
-        Day = 3,
-        Month = "Feb",
-        Year = 1994
-    ],
-    [
-        Foo = "Bar",
-        Day = 4,
-        Month = "Feb",
-        Year = 1994
-    ]
-})
-```

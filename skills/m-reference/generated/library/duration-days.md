@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Duration.Days(duration as nullable duration) as nullable number
 ```
 
-Returns the days portion of `duration`.
+Returns the days portion of a duration.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/duration-days)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns the days portion of `duration`.
 | `duration` | `nullable duration` | no |
 
 **Executed examples (3):** [examples/duration/duration-days.md](../../examples/duration/duration-days.md)
-
-## Examples (engine metadata — not verified here)
-
-Extract the number of days between two dates.
-
-```m
-Duration.Days(#date(2022, 3, 4) - #date(2022, 2, 25))
-```
-
-Stated result:
-
-```m
-7
-```

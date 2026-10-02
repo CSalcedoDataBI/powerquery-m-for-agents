@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 ZendeskData.Contents(url as text, optional options as nullable record) as table
 ```
 
-Returns a table with relevant Zendesk data.
-
 ## Parameters
 
 | Name | Type | Optional |

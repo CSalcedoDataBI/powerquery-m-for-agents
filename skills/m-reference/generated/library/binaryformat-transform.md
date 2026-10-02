@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 BinaryFormat.Transform(binaryFormat as function, function as function) as function
 ```
 
-Returns a binary format that will transform the values read by another binary format. The `binaryFormat` parameter specifies the binary format that will be used to read the value. The `function` is invoked with the value read, and returns the transformed value.
+Returns a binary format that will transform the values read by another binary format.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/binaryformat-transform)
 
 ## Parameters
 
@@ -26,24 +30,3 @@ Returns a binary format that will transform the values read by another binary fo
 | `function` | `function` | no |
 
 **Executed examples (3):** [examples/binary-formats-transforming-what-was-read/binaryformat-transform.md](../../examples/binary-formats-transforming-what-was-read/binaryformat-transform.md)
-
-## Examples (engine metadata — not verified here)
-
-Read a byte and add one to it.
-
-```m
-let
-    binaryData = #binary({1}),
-    transformFormat = BinaryFormat.Transform(
-        BinaryFormat.Byte,
-        (x) => x + 1
-    )
-in
-    transformFormat(binaryData)
-```
-
-Stated result:
-
-```m
-2
-```

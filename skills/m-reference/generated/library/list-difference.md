@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Difference(list1 as list, list2 as list, optional equationCriteria as any) as list
 ```
 
-Returns the items in list `list1` that do not appear in list `list2`. Duplicate values are supported.
-An optional equation criteria value, `equationCriteria`, can be specified to control equality testing.
+Returns the difference of the two given lists.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-difference)
 
 ## Parameters
 
@@ -28,29 +31,3 @@ An optional equation criteria value, `equationCriteria`, can be specified to con
 | `equationCriteria` | `any` | yes |
 
 **Executed examples (1):** [examples/list-set-operations/list-difference.md](../../examples/list-set-operations/list-difference.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the items in list {1, 2, 3, 4, 5} that do not appear in {4, 5, 3}.
-
-```m
-List.Difference({1, 2, 3, 4, 5}, {4, 5, 3})
-```
-
-Stated result:
-
-```m
-{1, 2}
-```
-
-Find the items in the list {1, 2} that do not appear in {1, 2, 3}.
-
-```m
-List.Difference({1, 2}, {1, 2, 3})
-```
-
-Stated result:
-
-```m
-{}
-```

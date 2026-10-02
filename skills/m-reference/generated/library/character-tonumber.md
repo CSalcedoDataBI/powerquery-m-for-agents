@@ -16,38 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Character.ToNumber(character as nullable text) as nullable number
 ```
 
-Returns the number equivalent of the `character`.
+Converts a character to a number value.
 
-The result will be the 21-bit Unicode code point represented by the provided character or surrogate pair.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/character-tonumber)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `character` | `nullable text` | no |
-
-## Examples (engine metadata — not verified here)
-
-Convert a character to its equivalent number value.
-
-```m
-Character.ToNumber("#(tab)")
-```
-
-Stated result:
-
-```m
-9
-```
-
-Convert the UTF-16 surrogate pair for the "grinning face" emoticon to its equivalent hexadecimal code point.
-
-```m
-Number.ToText(Character.ToNumber("#(0001F600)"), "X")
-```
-
-Stated result:
-
-```m
-"1F600"
-```

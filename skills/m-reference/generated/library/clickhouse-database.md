@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 ClickHouse.Database(server as text, port as number, optional database as nullable text, optional options as nullable record) as table
 ```
 
-ClickHouse ODBC connector for Power Query
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -26,11 +24,3 @@ ClickHouse ODBC connector for Power Query
 | `port` | `number` | no |
 | `database` | `nullable text` | yes |
 | `options` | `nullable record` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Returns a navigation table with list of play.clickhouse.com tables, that can be folded
-
-```m
-ClickHouse.Database("https://play.clickhouse.com")
-```

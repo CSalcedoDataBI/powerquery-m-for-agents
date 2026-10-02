@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Cube.MeasureProperties(cube as table) as table
 ```
 
-Returns a table containing the set of available properties for measures that are expanded in the cube.
+Returns a table containing the set of available measure properties that are expanded in the cube.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/cube-measureproperties)
 
 ## Parameters
 

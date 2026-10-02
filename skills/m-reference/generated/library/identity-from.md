@@ -18,6 +18,10 @@ Identity.From(identityProvider as function, value as any) as record
 
 Creates an identity.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/identity-from)
+
 ## Parameters
 
 | Name | Type | Optional |

@@ -16,20 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.Contains(text as nullable text, substring as text, optional comparer as nullable function) as nullable logical
 ```
 
-Detects whether `text` contains the value `substring`. Returns true if the value is found. This function doesn't support wildcards or regular expressions.
+Returns whether the text contains the substring.
 
-The optional argument `comparer` can be used to specify case-insensitive or culture and locale-aware comparisons.
-The following built-in comparers are available in the formula language:
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `Comparer.Ordinal`: Used to perform a case-sensitive ordinal comparison
-
-- `Comparer.OrdinalIgnoreCase`: Used to perform a case-insensitive ordinal comparison
-
-- `Comparer.FromCulture`: Used to perform a culture-aware comparison
-
-If the first argument is null, this function returns null.
-
-All characters are treated literally. For example, "DR", " DR", "DR ", and " DR " aren't considered equal to each other.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-contains)
 
 ## Parameters
 
@@ -40,74 +31,3 @@ All characters are treated literally. For example, "DR", " DR", "DR ", and " DR 
 | `comparer` | `nullable function` | yes |
 
 **Executed examples (1):** [examples/text-membership/text-contains.md](../../examples/text-membership/text-contains.md)
-
-## Examples (engine metadata — not verified here)
-
-Find if the text "Hello World" contains "Hello".
-
-```m
-Text.Contains("Hello World", "Hello")
-```
-
-Stated result:
-
-```m
-true
-```
-
-Find if the text "Hello World" contains "hello".
-
-```m
-Text.Contains("Hello World", "hello")
-```
-
-Stated result:
-
-```m
-false
-```
-
-Find if the text "Hello World" contains "hello", using a case-insensitive comparer.
-
-```m
-Text.Contains("Hello World", "hello", Comparer.OrdinalIgnoreCase)
-```
-
-Stated result:
-
-```m
-true
-```
-
-Find the rows in a table that contain either "A-" or "7" in the account code.
-
-```m
-let
-    Source = #table(type table [Account Code = text, Posted Date = date, Sales = number],
-    {
-        {"US-2004", #date(2023,1,20), 580},
-        {"CA-8843", #date(2023,7,18), 280},
-        {"PA-1274", #date(2022,1,12), 90},
-        {"PA-4323", #date(2023,4,14), 187},
-        {"US-1200", #date(2022,12,14), 350},
-        {"PTY-507", #date(2023,6,4), 110}
-    }),
-    #"Filtered rows" = Table.SelectRows(
-        Source,
-        each Text.Contains([Account Code], "A-") or
-            Text.Contains([Account Code], "7"))
-in
-    #"Filtered rows"
-```
-
-Stated result:
-
-```m
-#table(type table [Account Code = text, Posted Date = date, Sales = number],
-{
-    {"CA-8843", #date(2023,7,18), 280},
-    {"PA-1274", #date(2022,1,12), 90},
-    {"PA-4323", #date(2023,4,14), 187},
-    {"PTY-507", #date(2023,6,4), 110}
-})
-```

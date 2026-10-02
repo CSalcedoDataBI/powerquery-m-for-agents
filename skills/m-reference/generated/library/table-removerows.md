@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.RemoveRows(table as table, offset as number, optional count as nullable number) as table
 ```
 
-Removes `count` of rows from the beginning of the `table`, starting at the `offset` specified. A default count of 1 is used if the `count` parameter isn't provided.
+Removes the specified number of rows.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-removerows)
 
 ## Parameters
 
@@ -27,77 +31,3 @@ Removes `count` of rows from the beginning of the `table`, starting at the `offs
 | `count` | `nullable number` | yes |
 
 **Executed examples (1):** [examples/table-row-operations/table-removerows.md](../../examples/table-row-operations/table-removerows.md)
-
-## Examples (engine metadata — not verified here)
-
-Remove the first row from the table.
-
-```m
-Table.RemoveRows(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-        [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-    }),
-    0
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-    [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-    [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-})
-```
-
-Remove the row at position 1 from the table.
-
-```m
-Table.RemoveRows(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-        [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-    }),
-    1
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-    [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-    [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-})
-```
-
-Remove two rows starting at position 1 from the table.
-
-```m
-Table.RemoveRows(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-        [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-    }),
-    1,
-    2
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-    [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-})
-```

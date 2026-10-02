@@ -277,7 +277,7 @@
    "category": "Type",
    "returns": "type",
    "signature": "Type.ReplaceTablePartitionKey(tableType as type, partitionKey as nullable list) as type",
-   "summary": "Returns a new table type with the partition key replaced by the specified partition key.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -322,7 +322,7 @@
    "category": "Type",
    "returns": "nullable list",
    "signature": "Type.TablePartitionKey(tableType as type) as nullable list",
-   "summary": "Returns the partition key for the given table type if it has one.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],

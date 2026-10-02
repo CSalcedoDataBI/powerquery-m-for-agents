@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Dynamics365BusinessCentralOnPremises.Contents(url as text, optional company as nullable text) as table
 ```
 
-Returns a table with relevant Dynamics 365 Business Central (on-premises) data.
-
 ## Parameters
 
 | Name | Type | Optional |

@@ -18,46 +18,12 @@ Expression.Constant(value as any) as text
 
 Returns the M source code representation of a constant value.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/expression-constant)
+
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `value` | `any` | no |
-
-## Examples (engine metadata — not verified here)
-
-Get the M source code representation of a number value.
-
-```m
-Expression.Constant(123)
-```
-
-Stated result:
-
-```m
-"123"
-```
-
-Get the M source code representation of a date value.
-
-```m
-Expression.Constant(#date(2035, 01, 02))
-```
-
-Stated result:
-
-```m
-"#date(2035, 1, 2)"
-```
-
-Get the M source code representation of a text value.
-
-```m
-Expression.Constant("abc")
-```
-
-Stated result:
-
-```m
-"""abc"""
-```

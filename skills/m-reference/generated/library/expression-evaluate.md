@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Expression.Evaluate(document as text, optional environment as nullable record) as any
 ```
 
-Returns the result of evaluating an M expression `document`, with the available identifiers that can be referenced defined by `environment`.
+Returns the result of evaluating an M expression.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/expression-evaluate)
 
 ## Parameters
 
@@ -24,41 +28,3 @@ Returns the result of evaluating an M expression `document`, with the available 
 |---|---|---|
 | `document` | `text` | no |
 | `environment` | `nullable record` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Evaluate a simple sum.
-
-```m
-Expression.Evaluate("1 + 1")
-```
-
-Stated result:
-
-```m
-2
-```
-
-Evaluate a more complex sum.
-
-```m
-Expression.Evaluate("List.Sum({1, 2, 3})", [List.Sum = List.Sum])
-```
-
-Stated result:
-
-```m
-6
-```
-
-Evaluate the concatenation of a text value with an identifier.
-
-```m
-Expression.Evaluate(Expression.Constant("""abc") & " & " & Expression.Identifier("x"), [x = "def"""])
-```
-
-Stated result:
-
-```m
-"""abcdef"""
-```

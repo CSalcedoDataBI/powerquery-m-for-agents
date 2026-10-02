@@ -16,24 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Odbc.InferOptions(connectionString as any) as record
 ```
 
-Returns the result of trying to infer SQL capbabilities with the connection string `connectionString` using ODBC. `connectionString` can be text or a record of property value pairs. Property values can either be text or number.
+Returns the result of trying to infer SQL capabilities for an ODBC driver.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/odbc-inferoptions)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `connectionString` | `any` | no |
-
-## Examples (engine metadata — not verified here)
-
-Return the inferred SQL capabilities for a connection string.
-
-```m
-Odbc.InferOptions("dsn=your_dsn")
-```
-
-Stated result:
-
-```m
-record
-```

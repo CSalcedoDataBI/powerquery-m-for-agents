@@ -16,17 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.EndsWith(text as nullable text, substring as text, optional comparer as nullable function) as nullable logical
 ```
 
-Indicates whether the given text, `text`, ends with the specified value, `substring`. The indication is case sensitive.
+Indicates whether the text ends in the specified value.
 
-`comparer` is a `Comparer` which is used to control the comparison. Comparers can be used to provide case-insensitive or culture and locale-aware comparisons.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-The following built-in comparers are available in the formula language:
-
-- `Comparer.Ordinal`: Used to perform an exact ordinal comparison
-
-- `Comparer.OrdinalIgnoreCase`: Used to perform an exact ordinal case-insensitive comparison
-
-- `Comparer.FromCulture`: Used to perform a culture-aware comparison
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-endswith)
 
 ## Parameters
 
@@ -37,29 +31,3 @@ The following built-in comparers are available in the formula language:
 | `comparer` | `nullable function` | yes |
 
 **Executed examples (1):** [examples/text-membership/text-endswith.md](../../examples/text-membership/text-endswith.md)
-
-## Examples (engine metadata — not verified here)
-
-Check if "Hello, World" ends with "world".
-
-```m
-Text.EndsWith("Hello, World", "world")
-```
-
-Stated result:
-
-```m
-false
-```
-
-Check if "Hello, World" ends with "World".
-
-```m
-Text.EndsWith("Hello, World", "World")
-```
-
-Stated result:
-
-```m
-true
-```

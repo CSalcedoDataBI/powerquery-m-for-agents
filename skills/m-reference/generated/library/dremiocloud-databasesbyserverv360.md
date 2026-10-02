@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DremioCloud.DatabasesByServerV360(server as text, optional projectId as nullable text, optional engine as nullable text, optional routingTag as nullable text, optional routingQueue as nullable text, optional encryption as nullable text) as table
 ```
 
-Returns a table listing the datasets on the specified server on Dremio Cloud. This will be the same list as shown in Power BI Navigator. See https://docs.microsoft.com/en-us/powerquery-m/odbc-datasource
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -28,17 +26,3 @@ Returns a table listing the datasets on the specified server on Dremio Cloud. Th
 | `routingTag` | `nullable text` | yes |
 | `routingQueue` | `nullable text` | yes |
 | `encryption` | `nullable text` | yes |
-
-## Examples (engine metadata — not verified here)
-
-How to return the list of datasets on a server on Dremio Cloud.
-
-```m
-DremioCloud.DatabasesByServerV360("sql.dremio.cloud:443")
-```
-
-Stated result:
-
-```m
-A table listing the datasets on a server.
-```

@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Value.NullableEquals(value1 as any, value2 as any, optional precision as nullable number) as nullable logical
 ```
 
-Returns null if either argument `value1` or `value2` is null, otherwise equivalent to Value.Equals.
+Returns whether two values are equal.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/value-nullableequals)
 
 ## Parameters
 

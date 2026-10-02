@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Single(list as list) as any
 ```
 
-If there is only one item in the list `list`, returns that item.
-If there is more than one item or the list is empty, the function raises an error.
+Returns the one list item for a list of length one, otherwise throws an exception.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-single)
 
 ## Parameters
 
@@ -26,29 +29,3 @@ If there is more than one item or the list is empty, the function raises an erro
 | `list` | `list` | no |
 
 **Executed examples (1):** [examples/list-selection/list-single.md](../../examples/list-selection/list-single.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the single value in the list {1}.
-
-```m
-List.Single({1})
-```
-
-Stated result:
-
-```m
-1
-```
-
-Find the single value in the list {1, 2, 3}.
-
-```m
-List.Single({1, 2, 3})
-```
-
-Stated result:
-
-```m
-[Expression.Error] There were too many elements in the enumeration to complete the operation.
-```

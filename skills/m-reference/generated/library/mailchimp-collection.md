@@ -16,37 +16,9 @@ source: "#shared \u2014 desktop 2.157.879.0"
 MailChimp.Collection(path as text, optional entityName as nullable text) as table
 ```
 
-Makes a call to the MailChimp API and returns the resulting dataset as a table. Automatically pages through all results. Optional entityName parameter can be used for API endpoints where the root endpoint and main entityName in JSON response do not match.
-
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `path` | `text` | no |
 | `entityName` | `nullable text` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Pulls a table of data from the MailChimp API's lists endpoint.
-
-```m
-MailChimp.Collection("lists")
-```
-
-Stated result:
-
-```m
-A table with list data.
-```
-
-Pulls a table of data from the MailChimp API's campaign-folders endpoint.
-
-```m
-MailChimp.Collection("campaign-folders", "folders")
-```
-
-Stated result:
-
-```m
-A table with campaign-folders data.
-```

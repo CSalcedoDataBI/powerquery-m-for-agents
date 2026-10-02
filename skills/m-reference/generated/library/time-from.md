@@ -16,18 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Time.From(value as any, optional culture as nullable text) as nullable time
 ```
 
-Returns a `time` value from the given `value`. An optional `culture` may also be provided (for example, "en-US").
-If the given `value` is `null`, `Time.From` returns `null`. If the given `value` is `time`, `value` is returned. Values of the following types can be converted to a `time` value:
+Creates a time from the given value.
 
-- `text`: A `time` value from textual representation. Refer to `Time.FromText` for details.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `datetime`: The time component of the `value`.
-
-- `datetimezone`: The time component of the local datetime equivalent of `value`.
-
-- `number`: A `time` equivalent to the number of fractional days expressed by `value`. If `value` is negative or greater or equal to 1, an error is returned.
-
-If `value` is of any other type, an error is returned.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/time-from)
 
 ## Parameters
 
@@ -35,29 +28,3 @@ If `value` is of any other type, an error is returned.
 |---|---|---|
 | `value` | `any` | no |
 | `culture` | `nullable text` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Convert `0.7575` to a `time` value.
-
-```m
-Time.From(0.7575)
-```
-
-Stated result:
-
-```m
-#time(18, 10, 48)
-```
-
-Convert `#datetime(1899, 12, 30, 06, 45, 12)` to a `time` value.
-
-```m
-Time.From(#datetime(1899, 12, 30, 06, 45, 12))
-```
-
-Stated result:
-
-```m
-#time(06, 45, 12)
-```

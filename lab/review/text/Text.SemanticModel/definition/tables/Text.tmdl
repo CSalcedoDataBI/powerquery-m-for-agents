@@ -238,7 +238,7 @@ table Text
 				            )
 				        in
 				            Result,
-				    Pages = #table(type table [seq = Int64.Type, Function = text, Description = text, Block = Int64.Type, Code = text, Recorded = text], {{0, "Text.InferNumberType", "Infers the granular number type (Int64.Type, Double.Type, and so on) of text. An error is raised if text is not a number. An optional culture may also be provided (for example, ""en-US"").", 1, "{Text.InferNumberType(""42""), Text.InferNumberType(""1.5"")}", "{type number, type number}"}}),
+				    Pages = #table(type table [seq = Int64.Type, Function = text, Description = text, Block = Int64.Type, Code = text, Recorded = text], {{0, "Text.InferNumberType", "Infers the granular number type (Int64.Type, Double.Type, and so on) of a number encoded in text.", 1, "{Text.InferNumberType(""42""), Text.InferNumberType(""1.5"")}", "{type number, type number}"}}),
 				    Joined = Table.NestedJoin(Pages, "seq", Table.TransformColumns(Live, {{"id", Number.From}}), "id", "L", JoinKind.LeftOuter),
 				    Expanded = Table.ExpandTableColumn(Joined, "L", {"result"}, {"Live"}),
 				    Matched = Table.AddColumn(Expanded, "Match", each if [Live] = [Recorded] then "yes" else "NO", type text),

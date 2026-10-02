@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Exasol.Database(server as text, encrypted as text) as table
 ```
 
-Exasol
-
 ## Parameters
 
 | Name | Type | Optional |

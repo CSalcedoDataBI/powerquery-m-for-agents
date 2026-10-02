@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Sum(list as list, optional precision as nullable number) as any
 ```
 
-Returns the sum of the non-null values in the list, `list`. Returns null if there are no non-null values in the list.
+Returns the sum of the items in the list.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-sum)
 
 ## Parameters
 
@@ -26,17 +30,3 @@ Returns the sum of the non-null values in the list, `list`. Returns null if ther
 | `precision` | `nullable number` | yes |
 
 **Executed examples (1):** [examples/list-addition/list-sum.md](../../examples/list-addition/list-sum.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the sum of the numbers in the list `{1, 2, 3}`.
-
-```m
-List.Sum({1, 2, 3})
-```
-
-Stated result:
-
-```m
-6
-```

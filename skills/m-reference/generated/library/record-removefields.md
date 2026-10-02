@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Record.RemoveFields(record as record, fields as any, optional missingField as nullable number) as record
 ```
 
-Returns a record that removes all the fields specified in list `fields` from the input `record`. If the field specified does not exist, an error is raised.
+Removes the specified field(s) from the input record.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/record-removefields)
 
 ## Parameters
 
@@ -27,29 +31,3 @@ Returns a record that removes all the fields specified in list `fields` from the
 | `missingField` | `nullable number` | yes |
 
 **Executed examples (3):** [examples/record-transformations/record-removefields.md](../../examples/record-transformations/record-removefields.md)
-
-## Examples (engine metadata — not verified here)
-
-Remove the field "Price" from the record.
-
-```m
-Record.RemoveFields([CustomerID = 1, Item = "Fishing rod", Price = 18.00], "Price")
-```
-
-Stated result:
-
-```m
-[CustomerID = 1, Item = "Fishing rod"]
-```
-
-Remove the fields "Price" and "Item" from the record.
-
-```m
-Record.RemoveFields([CustomerID = 1, Item = "Fishing rod", Price = 18.00], {"Price", "Item"})
-```
-
-Stated result:
-
-```m
-[CustomerID = 1]
-```

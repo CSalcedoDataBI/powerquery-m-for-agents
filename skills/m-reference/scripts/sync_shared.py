@@ -19,6 +19,14 @@ categorised function shares. The core library documents its category; connectors
 as extensions mostly do not. "Accessing data" (Csv.Document, Web.Contents, ...) is a
 documented library category, so it stays in catalog.md.
 
+Every text a card quotes has a licence. Names, signatures, types, categories and hosts are
+facts read from #shared. The one-line descriptions come from Microsoft's MIT-licensed
+standard library file (vscode-powerquery, kept as exports/vscode-powerquery-standard-enUs.json;
+THIRD_PARTY_NOTICES.md at the repo root); a function or constant that file does not describe
+gets no description. The engine's own long descriptions and examples, which carry no stated
+licence, are not copied (#1). A card links its Microsoft Learn page when
+exports/learn-links.json, written by lab/shared-export/learn_links.py, says the page exists.
+
 The non-function members of #shared (GroupKind.Local, JoinKind.Inner, Int64.Type, ...)
 go to constants.md, merged across hosts the same way. They have no cards: one row says it
 all. An export taken before the query exported constants simply contributes none.
@@ -140,15 +148,43 @@ def truncate(text, limit):
     return text.replace("|", "\\|")
 
 
-def summary(fn):
-    text = clean_text(fn.get("description") or fn.get("longDescription"))
-    text = re.sub(r"\s+", " ", text)
+def summary(description):
+    text = re.sub(r"\s+", " ", clean_text(description))
     return truncate(re.split(r"(?<=\.)\s", text, maxsplit=1)[0], SUMMARY_CHARS)
 
 
-def constant_summary(const):
-    return truncate(re.sub(r"\s+", " ", clean_text(const.get("description"))),
-                    CONSTANT_SUMMARY_CHARS)
+def constant_summary(description):
+    return truncate(re.sub(r"\s+", " ", clean_text(description)), CONSTANT_SUMMARY_CHARS)
+
+
+REPO = os.path.dirname(os.path.dirname(REF))
+DESCRIPTIONS = os.path.join(REPO, "exports", "vscode-powerquery-standard-enUs.json")
+LEARN_LINKS = os.path.join(REPO, "exports", "learn-links.json")
+NOTICE = "THIRD_PARTY_NOTICES.md"
+
+
+def load_descriptions(path):
+    """{name: description} from Microsoft's standard library file (MIT). Empty when the file
+    is absent: then nothing is described, rather than something described without a licence."""
+    if not path or not os.path.isfile(path):
+        return {}
+    with open(path, encoding="utf-8-sig") as f:
+        entries = json.load(f)
+    out = {}
+    for entry in entries:
+        text = ((entry.get("documentation") or {}).get("description") or "").strip()
+        if entry.get("name") and text:
+            out[entry["name"]] = text
+    return out
+
+
+def load_learn_links(path):
+    """(base URL, {card file}) for the functions whose Microsoft Learn page was checked."""
+    if not path or not os.path.isfile(path):
+        return "", set()
+    with open(path, encoding="utf-8") as f:
+        data = json.load(f)
+    return data.get("base", ""), set(data.get("files", []))
 
 
 def stems(directory):
@@ -185,7 +221,7 @@ def merge(exports, min_functions):
     return hosts, merged
 
 
-def merge_constants(exports):
+def merge_constants(exports, descriptions=None):
     """Constants merged like functions: first export wins, `hosts` lists every export that
     has it. Only exports that carry a `constants` list count as hosts here, so an export
     taken before constants were exported does not flag every constant as partial."""
@@ -204,14 +240,14 @@ def merge_constants(exports):
             "name": name,
             "type": const.get("type") or "any",
             "value": const.get("value"),
-            "summary": constant_summary(const),
+            "summary": constant_summary((descriptions or {}).get(name)),
             "hosts": const_hosts,
             "partialHosts": len(const_hosts) < len(carrying),
         })
     return rows
 
 
-def build_rows(ref, hosts, merged):
+def build_rows(ref, hosts, merged, descriptions=None):
     notes = stems(os.path.join(ref, "notes"))
     prefixes = library_prefixes(entry["fn"] for entry in merged.values())
     rows = []
@@ -226,7 +262,7 @@ def build_rows(ref, hosts, merged):
             "category": category,
             "returns": fn.get("returns") or "any",
             "signature": signature(fn),
-            "summary": summary(fn),
+            "summary": summary((descriptions or {}).get(name)),
             "hosts": fn_hosts,
             "partialHosts": len(fn_hosts) < len(hosts),
             "notes": file in notes,
@@ -243,7 +279,7 @@ def flags(row):
            ("⌂" if row["partialHosts"] else "")
 
 
-def render_card(row, fn, exports_meta):
+def render_card(row, fn, exports_meta, description="", learn_url=""):
     source = ", ".join(f"{m['host']} {m.get('hostVersion') or ''}".strip() for m in exports_meta)
     lines = [
         "---",
@@ -265,9 +301,12 @@ def render_card(row, fn, exports_meta):
         "```",
         "",
     ]
-    description = clean_text(fn.get("longDescription") or fn.get("description"))
+    description = clean_text(description)
     if description:
-        lines += [description, ""]
+        lines += [description, "",
+                  f"*Description: Microsoft, MIT ([{NOTICE}](../../../../{NOTICE})).*", ""]
+    if learn_url:
+        lines += [f"Reference: [Microsoft Learn]({learn_url})", ""]
     if row["partialHosts"]:
         lines += [f"> **Not available everywhere.** Present in: {', '.join(row['hosts'])}.", ""]
     params = fn.get("parameters") or []
@@ -281,15 +320,6 @@ def render_card(row, fn, exports_meta):
     if row["examples"]:
         path = f"../../examples/{category_slug(row['category'])}/{row['file']}.md"
         lines += [f"**Executed examples ({row['examples']}):** [{path.lstrip('./')}]({path})", ""]
-    examples = [e for e in fn.get("examples") or [] if e.get("code")]
-    if examples:
-        lines += ["## Examples (engine metadata — not verified here)", ""]
-        for e in examples:
-            if e.get("description"):
-                lines += [clean_text(e["description"]), ""]
-            lines += ["```m", e["code"].strip(), "```", ""]
-            if e.get("result"):
-                lines += ["Stated result:", "", "```m", e["result"].strip(), "```", ""]
     return "\n".join(lines).rstrip() + "\n"
 
 
@@ -311,7 +341,8 @@ def render_catalog_md(rows, exports_meta, n_connectors=0, n_constants=0):
         "# M function catalogue",
         "",
         f"{len(rows)} library functions from `#shared` ({source_text(exports_meta)}). "
-        "Flags: ★ field note · ▶ executed examples · ⌂ not in every host.",
+        "Flags: ★ field note · ▶ executed examples · ⌂ not in every host. "
+        f"Summaries: Microsoft, MIT (`{NOTICE}`); empty where Microsoft's file has none.",
     ]
     if elsewhere:
         lines.append("Not listed here: " + "; ".join(elsewhere) + ".")
@@ -332,14 +363,14 @@ def render_connectors_md(rows, exports_meta):
         "",
         f"{len(rows)} connector functions from `#shared` ({source_text(exports_meta)}): "
         "functions the engine gives no category, from a prefix no library function uses. "
-        "Many carry no description. Flags as in `catalog.md`.",
+        "No licensed description exists for them, so none is given. Flags as in `catalog.md`.",
         CARD_HINT,
         "",
-        "| Function | Connector | Returns | Flags | Summary |",
-        "|---|---|---|---|---|",
+        "| Function | Connector | Returns | Flags |",
+        "|---|---|---|---|",
     ]
-    lines += [f"| `{r['name']}` | {r['category']} | {r['returns']} | "
-              f"{flags(r)} | {r['summary']} |" for r in rows]
+    lines += [f"| `{r['name']}` | {r['category']} | {r['returns']} | {flags(r)} |"
+              for r in rows]
     return "\n".join(lines) + "\n"
 
 
@@ -351,7 +382,7 @@ def render_constants_md(rows, exports_meta):
         "values, type values and numeric constants. `Value` is the member as text (en-US); "
         "empty when it is not a primitive, such as a type, or when it is a machine setting "
         "such as `Culture.Current`. ⌂ = not in every host. "
-        "They have no cards.",
+        f"They have no cards. Summaries: Microsoft, MIT (`{NOTICE}`).",
         "",
         "| Name | Type | Value | Flags | Summary |",
         "|---|---|---|---|---|",
@@ -433,13 +464,15 @@ def previous_count(generated):
 
 
 def sync(export_paths, ref=REF, write=False, accept_count_change=False,
-         min_functions=MIN_FUNCTIONS):
+         min_functions=MIN_FUNCTIONS, descriptions=None, learn=("", frozenset())):
     exports = [load_export(p) for p in export_paths]
     hosts, merged = merge(exports, min_functions)
-    rows = build_rows(ref, hosts, merged)
+    descriptions = descriptions or {}
+    learn_base, learn_files = learn
+    rows = build_rows(ref, hosts, merged, descriptions)
     library_rows = [r for r in rows if r["kind"] == "library"]
     connector_rows = [r for r in rows if r["kind"] == "connector"]
-    constants = merge_constants(exports)
+    constants = merge_constants(exports, descriptions)
     generated = os.path.join(ref, "generated")
 
     before = previous_count(generated)
@@ -468,7 +501,9 @@ def sync(export_paths, ref=REF, write=False, accept_count_change=False,
     for row in rows:
         with open(os.path.join(library, f"{row['file']}.md"), "w", encoding="utf-8",
                   newline="\n") as f:
-            f.write(render_card(row, merged[row["name"]]["fn"], exports_meta))
+            f.write(render_card(row, merged[row["name"]]["fn"], exports_meta,
+                                descriptions.get(row["name"], ""),
+                                learn_base + row["file"] if row["file"] in learn_files else ""))
     indexes = {
         "catalog.md": render_catalog_md(library_rows, exports_meta,
                                         len(connector_rows), len(constants)),
@@ -499,11 +534,17 @@ def main(argv=None):
     parser.add_argument("--write", action="store_true", help="replace generated/")
     parser.add_argument("--accept-count-change", action="store_true")
     parser.add_argument("--min-functions", type=int, default=MIN_FUNCTIONS)
+    parser.add_argument("--descriptions", default=DESCRIPTIONS,
+                        help="Microsoft's MIT standard library file (vscode-powerquery)")
+    parser.add_argument("--learn-links", default=LEARN_LINKS,
+                        help="the Learn pages checked by lab/shared-export/learn_links.py")
     args = parser.parse_args(argv)
     try:
         print(sync(args.exports, write=args.write,
                    accept_count_change=args.accept_count_change,
-                   min_functions=args.min_functions))
+                   min_functions=args.min_functions,
+                   descriptions=load_descriptions(args.descriptions),
+                   learn=load_learn_links(args.learn_links)))
     except GateError as e:
         print(f"SYNC REFUSED: {e}", file=sys.stderr)
         return 1

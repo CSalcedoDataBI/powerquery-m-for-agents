@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Split(list as list, pageSize as number) as list
 ```
 
-Splits `list` into a list of lists where the first element of the output list is a list containing the first `pageSize` elements from
-the source list, the next element of the output list is a list containing the next `pageSize` elements from the source list, and so on.
+Splits the specified list into a list of lists using the specified page size.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-split)
 
 ## Parameters
 

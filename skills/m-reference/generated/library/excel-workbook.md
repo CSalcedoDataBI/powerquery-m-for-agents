@@ -18,17 +18,9 @@ Excel.Workbook(workbook as binary, optional useHeaders as any, optional delayTyp
 
 Returns the contents of the Excel workbook.
 
-- `useHeaders` can be null, a logical (true/false) value indicating whether the first row of each returned table should be treated as a header, or an options record. Default: false.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `delayTypes` can be null or a logical (true/false) value indicating whether the columns of each returned table should be left untyped. Default: false.
-
-If a record is specified for `useHeaders` (and `delayTypes` is null), the following record fields may be provided:
-
-- `UseHeaders`: Can be null or a logical (true/false) value indicating whether the first row of each returned table should be treated as a header. Default: false.
-
-- `DelayTypes`: Can be null or a logical (true/false) value indicating whether the columns of each returned table should be left untyped. Default: false.
-
-- `InferSheetDimensions`: Can be null or a logical (true/false) value indicating whether the area of a worksheet that contains data should be inferred by reading the worksheet itself, rather than by reading the dimensions metadata from the file. This can be useful in cases where the dimensions metadata is incorrect. Note that this option is only supported for Open XML Excel files, not for legacy Excel files. Default: false.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/excel-workbook)
 
 ## Parameters
 
@@ -37,22 +29,3 @@ If a record is specified for `useHeaders` (and `delayTypes` is null), the follow
 | `workbook` | `binary` | no |
 | `useHeaders` | `any` | yes |
 | `delayTypes` | `nullable logical` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Return the contents of Sheet1 from an Excel workbook.
-
-```m
-Excel.Workbook(File.Contents("C:\Book1.xlsx"), null, true){[Item="Sheet1"]}[Data]
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [Column1 = "ID", Column2 = "Name", Column3 = "Phone"],
-    [Column1 = 1, Column2 = "Bob", Column3 = "123-4567"],
-    [Column1 = 3, Column2 = "Pam", Column3 = "543-7890"],
-    [Column1 = 2, Column2 = "Jim", Column3 = "987-6543"]
-})
-```

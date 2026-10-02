@@ -16,21 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 AnalysisServices.Database(server as text, database as text, optional options as nullable record) as table
 ```
 
-Returns a table of multidimensional cubes or tabular models from the Analysis Services database `database` on server `server`. An optional record parameter, `options`, may be specified to control the following options:
+Returns a table of multidimensional cubes or tabular models from the Analysis Services database.
 
-- `Query` : A native MDX query used to retrieve data.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `TypedMeasureColumns` : A logical value indicating if the types specified in the multidimensional or tabular model will be used for the types of the added measure columns. When set to false, the type "number" will be used for all measure columns. The default value for this option is false.
-
-- `Culture` : A culture name specifying the culture for the data. This corresponds to the 'Locale Identifier' connection string property.
-
-- `CommandTimeout` : A duration that controls how long the server-side query is allowed to run before it is canceled. The default value is driver-dependent.
-
-- `ConnectionTimeout` : A duration that controls how long to wait before abandoning an attempt to make a connection to the server. The default value is driver-dependent.
-
-- `SubQueries` : A number (0, 1 or 2) that sets the value of the "SubQueries" property in the connection string. This controls the behavior of calculated members on subselects or subcubes. (The default value is 2).
-
-- `Implementation`
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/analysisservices-database)
 
 ## Parameters
 

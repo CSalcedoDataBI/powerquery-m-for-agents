@@ -16,36 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.IsEven(number as number) as logical
 ```
 
-Indicates if the value, `number`, is even by returning `true` if it is even, `false` otherwise.
+Indicates if the value is even.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-iseven)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `number` | `number` | no |
-
-## Examples (engine metadata — not verified here)
-
-Check if 625 is an even number.
-
-```m
-Number.IsEven(625)
-```
-
-Stated result:
-
-```m
-false
-```
-
-Check if 82 is an even number.
-
-```m
-Number.IsEven(82)
-```
-
-Stated result:
-
-```m
-true
-```

@@ -18,6 +18,10 @@ BinaryFormat.SignedInteger32(binary as binary) as any
 
 A binary format that reads a 32-bit signed integer.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/binaryformat-signedinteger32)
+
 ## Parameters
 
 | Name | Type | Optional |

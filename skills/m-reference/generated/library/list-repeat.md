@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Repeat(list as list, count as number) as list
 ```
 
-Returns a list that is `count` repetitions of the original list, `list`.
+Returns a list that is count repetitions of the original list.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-repeat)
 
 ## Parameters
 
@@ -26,17 +30,3 @@ Returns a list that is `count` repetitions of the original list, `list`.
 | `count` | `number` | no |
 
 **Executed examples (1):** [examples/list-transformation-functions/list-repeat.md](../../examples/list-transformation-functions/list-repeat.md)
-
-## Examples (engine metadata — not verified here)
-
-Create a list that has {1, 2} repeated 3 times.
-
-```m
-List.Repeat({1, 2}, 3)
-```
-
-Stated result:
-
-```m
-{1, 2, 1, 2, 1, 2}
-```

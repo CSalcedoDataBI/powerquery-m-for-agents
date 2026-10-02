@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.MatchesAll(list as list, condition as function) as logical
 ```
 
-Returns `true` if the condition function is satisfied by all values in the list, otherwise returns `false`.
+Returns true if the condition function is satisfied by all values in the list.
 
-- `list`: The list containing the values to check.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `condition`: The condition to check against the values in the list.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-matchesall)
 
 ## Parameters
 
@@ -30,61 +30,3 @@ Returns `true` if the condition function is satisfied by all values in the list,
 | `condition` | `function` | no |
 
 **Executed examples (1):** [examples/list-selection/list-matchesall.md](../../examples/list-selection/list-matchesall.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if all the values in the list {11, 12, 13} are greater than 10.
-
-```m
-List.MatchesAll({11, 12, 13}, each _  > 10)
-```
-
-Stated result:
-
-```m
-true
-```
-
-Determine if all the values in the list {1, 2, 3} are greater than 10.
-
-```m
-List.MatchesAll({1, 2, 3}, each _  > 10)
-```
-
-Stated result:
-
-```m
-false
-```
-
-Determine if all the text values in the list contain "anna" while ignoring case.
-
-```m
-let
-    Source = {"Savannah", "Annabelle", "Annals", "wannabe", "MANNA"},
-    Result = List.MatchesAll(Source, each Text.Contains(_, "anna", Comparer.OrdinalIgnoreCase))
-in
-    Result
-```
-
-Stated result:
-
-```m
-true
-```
-
-Determine if all the dates contain the year 2021.
-
-```m
-let
-    Source = {#date(2021, 11, 28), #date(2021, 1, 14), #date(2021, 12, 31), #date(2021, 7, 6)},
-    Result = List.MatchesAll(Source, each Date.Year(_) = 2021)
-in
-    Result
-```
-
-Stated result:
-
-```m
-true
-```

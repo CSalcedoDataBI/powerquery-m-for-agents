@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Kyligence.Database(Server as text, Port as text, Project as text, optional options as nullable record) as table
 ```
 
-Connect your Kyligence
-
 ## Parameters
 
 | Name | Type | Optional |

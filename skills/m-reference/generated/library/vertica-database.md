@@ -16,13 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Vertica.Database(server as text, database as text, optional options as nullable record) as table
 ```
 
-Returns a table of schemas available on the server named by the `server` parameter in the database named by the `database` parameter.
-An optional record parameter, `options`, may be provided to specify additional properties. The record can contain the following fields:
-
-- `ConnectionTimeout`: A duration which controls how long to wait before abandoning an attempt to make a connection to the server. The default value is driver-dependent.
-
-- `CommandTimeout`: A duration which controls how long the server-side query is allowed to run before it is canceled. The default value is driver dependent.
-
 ## Parameters
 
 | Name | Type | Optional |

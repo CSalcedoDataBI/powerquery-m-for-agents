@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.DayOfWeek(dateTime as any, optional firstDayOfWeek as nullable number) as nullable number
 ```
 
-Returns a number (from 0 to 6) indicating the day of the week of the provided `dateTime`.
+Returns a number (from 0 to 6) indicating the day of the week of the provided value.
 
-- `dateTime`: A `date`, `datetime`, or `datetimezone` value.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `firstDayOfWeek`: A `Day` value indicating which day should be considered the first day of the week. Allowed values are Day.Sunday, Day.Monday, Day.Tuesday, Day.Wednesday, Day.Thursday, Day.Friday, or Day.Saturday. If unspecified, a culture-dependent default is used.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-dayofweek)
 
 ## Parameters
 
@@ -30,29 +30,3 @@ Returns a number (from 0 to 6) indicating the day of the week of the provided `d
 | `firstDayOfWeek` | `nullable number` | yes |
 
 **Executed examples (3):** [examples/date/date-dayofweek.md](../../examples/date/date-dayofweek.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the day of the week represented by Monday, February 21st, 2011, treating Sunday as the first day of the week.
-
-```m
-Date.DayOfWeek(#date(2011, 02, 21), Day.Sunday)
-```
-
-Stated result:
-
-```m
-1
-```
-
-Get the day of the week represented by Monday, February 21st, 2011, treating Monday as the first day of the week.
-
-```m
-Date.DayOfWeek(#date(2011, 02, 21), Day.Monday)
-```
-
-Stated result:
-
-```m
-0
-```

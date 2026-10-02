@@ -16,23 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Duration.FromText(text as nullable text) as nullable duration
 ```
 
-Returns a duration value from the specified text, `text`. The following formats can be parsed by this function:
+Returns a duration value from textual elapsed time forms (d.h:m:s).
 
-- (-)hh:mm(:ss(.ff))
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- (-)ddd(.hh:mm(:ss(.ff)))
-
-(All ranges are inclusive)
-
-- ddd: Number of days.
-
-- hh: Number of hours, between 0 and 23.
-
-- mm: Number of minutes, between 0 and 59.
-
-- ss: Number of seconds, between 0 and 59.
-
-- ff: Fraction of seconds, between 0 and 9999999.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/duration-fromtext)
 
 ## Parameters
 
@@ -41,17 +29,3 @@ Returns a duration value from the specified text, `text`. The following formats 
 | `text` | `nullable text` | no |
 
 **Executed examples (3):** [examples/duration/duration-fromtext.md](../../examples/duration/duration-fromtext.md)
-
-## Examples (engine metadata — not verified here)
-
-Convert `"2.05:55:20"` into a `duration` value.
-
-```m
-Duration.FromText("2.05:55:20")
-```
-
-Stated result:
-
-```m
-#duration(2, 5, 55, 20)
-```

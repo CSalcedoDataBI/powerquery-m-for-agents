@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Record.Field(record as record, field as text) as any
 ```
 
-Returns the value of the specified `field` in the `record`. If the field is not found, an error is raised.
+Returns the value of the specified field in a record.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/record-field)
 
 ## Parameters
 
@@ -26,17 +30,3 @@ Returns the value of the specified `field` in the `record`. If the field is not 
 | `field` | `text` | no |
 
 **Executed examples (3):** [examples/record-selection/record-field.md](../../examples/record-selection/record-field.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the value of field "CustomerID" in the record.
-
-```m
-Record.Field([CustomerID = 1, Name = "Bob", Phone = "123-4567"], "CustomerID")
-```
-
-Stated result:
-
-```m
-1
-```

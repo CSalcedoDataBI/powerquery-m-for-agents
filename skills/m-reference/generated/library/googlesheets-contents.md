@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 GoogleSheets.Contents(url as text) as table
 ```
 
-Imports data from GoogleSheets
-
 ## Parameters
 
 | Name | Type | Optional |

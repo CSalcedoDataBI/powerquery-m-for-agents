@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 HexagonSmartApi.Typecast(typecastTarget as any, outputType as text) as function
 ```
 
-Function to return a table representing an OData entity typecast from the target entity. The target is a table with column with select list attribute, or an individual table row or an individual record with select list attribute.
-
 ## Parameters
 
 | Name | Type | Optional |

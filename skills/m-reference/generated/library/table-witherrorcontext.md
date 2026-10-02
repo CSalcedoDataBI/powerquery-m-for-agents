@@ -18,6 +18,10 @@ Table.WithErrorContext(value as any, context as text) as any
 
 This function is intended for internal use only.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-witherrorcontext)
+
 ## Parameters
 
 | Name | Type | Optional |

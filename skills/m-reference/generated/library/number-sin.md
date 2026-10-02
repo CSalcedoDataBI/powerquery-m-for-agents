@@ -16,24 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.Sin(number as nullable number) as nullable number
 ```
 
-Returns the sine of `number`.
+Returns the sine of the number.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-sin)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `number` | `nullable number` | no |
-
-## Examples (engine metadata — not verified here)
-
-Find the sine of the angle 0.
-
-```m
-Number.Sin(0)
-```
-
-Stated result:
-
-```m
-0
-```

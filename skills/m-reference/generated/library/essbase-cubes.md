@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Essbase.Cubes(url as text, optional options as nullable record) as table
 ```
 
-Returns a table of cubes grouped by Essbase server from an Essbase instance at APS server `url`. An optional record parameter, `options`, may be specified to control the following options:
+Returns the cubes in an Essbase instance grouped by Essbase server.
 
-- `CommandTimeout` : A duration that controls how long the server-side query is allowed to run before it is canceled. The default value is ten minutes.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/essbase-cubes)
 
 ## Parameters
 

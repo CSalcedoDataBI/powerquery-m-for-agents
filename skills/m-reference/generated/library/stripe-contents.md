@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Stripe.Contents(method as text, optional query as nullable record, optional pageLimit as nullable number) as table
 ```
 
-Makes a call to the Stripe API at https://api.stripe.com/v1/`method`, with optional record `query` passed as additional parameters and optional `pageLimit` as a limit on the number of API requests. Most recent data is returned first. If `pageLimit` is not specified, all data is returned. Stripe Version 2015-10-16 is used.
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -25,29 +23,3 @@ Makes a call to the Stripe API at https://api.stripe.com/v1/`method`, with optio
 | `method` | `text` | no |
 | `query` | `nullable record` | yes |
 | `pageLimit` | `nullable number` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Returns all charges data
-
-```m
-Stripe.Contents("charges")
-```
-
-Stated result:
-
-```m
-A table with all charges data for the current Stripe account
-```
-
-Returns one page of charges data
-
-```m
-Stripe.Contents("charges", [], 1)
-```
-
-Stated result:
-
-```m
-A table with the most recent charges data for the current Stripe account
-```

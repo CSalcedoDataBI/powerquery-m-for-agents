@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.Middle(text as nullable text, start as number, optional count as nullable number) as nullable text
 ```
 
-Returns `count` characters, or through the end of `text`; at the offset `start`.
+Returns the substring up to a specific length.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-middle)
 
 ## Parameters
 
@@ -27,41 +31,3 @@ Returns `count` characters, or through the end of `text`; at the offset `start`.
 | `count` | `nullable number` | yes |
 
 **Executed examples (1):** [examples/text-extraction/text-middle.md](../../examples/text-extraction/text-middle.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the substring from the text "Hello World" starting at index 6 spanning 5 characters.
-
-```m
-Text.Middle("Hello World", 6, 5)
-```
-
-Stated result:
-
-```m
-"World"
-```
-
-Find the substring from the text "Hello World" starting at index 6 through the end.
-
-```m
-Text.Middle("Hello World", 6, 20)
-```
-
-Stated result:
-
-```m
-"World"
-```
-
-Find the substring from the text "Hello World" starting at index 0 spanning 2 characters.
-
-```m
-Text.Middle("Hello World", 0, 2)
-```
-
-Stated result:
-
-```m
-"He"
-```

@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Count(list as list) as number
 ```
 
-Returns the number of items in the specified list.
+Returns the number of items in the list.
 
-- `list`: The list to examine.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-count)
 
 ## Parameters
 
@@ -27,59 +29,3 @@ Returns the number of items in the specified list.
 | `list` | `list` | no |
 
 **Executed examples (1):** [examples/list-information/list-count.md](../../examples/list-information/list-count.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the number of values in the list {1, 2, 3}.
-
-```m
-List.Count({1, 2, 3})
-```
-
-Stated result:
-
-```m
-3
-```
-
-Find the number of times red appears in a list of colors, ignoring case.
-
-```m
-let
-    colors = {"Red", "Blue", "GREEN", "red", "Yellow", "RED"},
-    redCount = List.Count(
-        List.Select(colors, each Text.Lower(_) = "red")
-    )
-in
-    redCount
-```
-
-Stated result:
-
-```m
-3
-```
-
-Find the number of customers in a list who purchased more than $100.
-
-```m
-let
-    customers = {
-        [CustomerID = 101, CustomerName = "Alice", AmountPurchased = 150],
-        [CustomerID = 102, CustomerName = "Bob", AmountPurchased = 75],
-        [CustomerID = 103, CustomerName = "Carol", AmountPurchased = 50],
-        [CustomerID = 104, CustomerName = "Dave", AmountPurchased = 90],
-        [CustomerID = 105, CustomerName = "Eve", AmountPurchased = 120]
-    },
-    highValueCustomerCount = List.Count(
-        List.Select(customers, each [AmountPurchased] > 100)
-    )
-in
-    highValueCustomerCount
-```
-
-Stated result:
-
-```m
-2
-```

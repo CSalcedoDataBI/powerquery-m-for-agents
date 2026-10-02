@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 PlanviewEnterprise.CallQueryService(url as text, database as text, sqlQueryString as text) as table
 ```
 
-Returns a table with Planview Portfolios data.
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -25,17 +23,3 @@ Returns a table with Planview Portfolios data.
 | `url` | `text` | no |
 | `database` | `text` | no |
 | `sqlQueryString` | `text` | no |
-
-## Examples (engine metadata — not verified here)
-
-Returns a table with Planview Portfolios data.
-
-```m
-PlanviewEnterprise.CallQueryService("https://contoso.com/planview", "pve", "select * from PV_Table")
-```
-
-Stated result:
-
-```m
-A table of Planview Portfolios data about database pve
-```

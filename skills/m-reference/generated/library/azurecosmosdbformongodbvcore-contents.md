@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 AzureCosmosDBForMongoDBvCore.Contents(baseURL as text, optional database as nullable text, optional collection as nullable text) as table
 ```
 
-Azure Cosmos DB for MongoDB vCore
-
 ## Parameters
 
 | Name | Type | Optional |

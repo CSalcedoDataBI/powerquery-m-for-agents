@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.Format(formatString as text, arguments as any, optional culture as nullable text) as text
 ```
 
-Returns formatted text that is created by applying `arguments` from a list or record to a format string `formatString`. An optional `culture` may also be provided (for example, "en-US").
+Returns formatted text from a format string and arguments.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-format)
 
 ## Parameters
 
@@ -27,38 +31,3 @@ Returns formatted text that is created by applying `arguments` from a list or re
 | `culture` | `nullable text` | yes |
 
 **Executed examples (1):** [examples/text-conversions-from-and-to-text/text-format.md](../../examples/text-conversions-from-and-to-text/text-format.md)
-
-## Examples (engine metadata — not verified here)
-
-Format a list of numbers.
-
-```m
-Text.Format("#{0}, #{1}, and #{2}.", {17, 7, 22})
-```
-
-Stated result:
-
-```m
-"17, 7, and 22."
-```
-
-Format different data types from a record according to United States English culture.
-
-```m
-Text.Format(
-    "The time for the #[distance] km run held in #[city] on #[date] was #[duration].",
-    [
-        city = "Seattle",
-        date = #date(2015, 3, 10),
-        duration = #duration(0, 0, 54, 40),
-        distance = 10
-    ],
-    "en-US"
-)
-```
-
-Stated result:
-
-```m
-"The time for the 10 km run held in Seattle on 3/10/2015 was 00:54:40."
-```

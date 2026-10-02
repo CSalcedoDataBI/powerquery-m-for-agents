@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Cherwell.SavedSearches(API URL as text, Client ID as text, optional Locale as nullable text, optional Saved Search URL as nullable text) as table
 ```
 
-Returns the results of a Saved Search from a Cherwell Service Management REST API (requires CSM version 10.2 or later).
-
 ## Parameters
 
 | Name | Type | Optional |

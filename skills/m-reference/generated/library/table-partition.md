@@ -16,16 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.Partition(table as table, column as text, groups as number, hash as function) as list
 ```
 
-Partitions the `table` into a list of `groups` number of tables, based on the value of the `column` and a `hash` function.
-The `hash` function is applied to the value of the `column` row to obtain a hash value for the row. The hash value modulo `groups` determines in which of the returned tables the row will be placed.
+Partitions the table into a list of tables based on the number of groups and column specified.
 
-- `table`: The table to partition.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `column`: The column to hash to determine which returned table the row is in.
-
-- `groups`: The number of tables the input table will be partitioned into.
-
-- `hash`: The function applied to obtain a hash value.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-partition)
 
 ## Parameters
 
@@ -37,36 +32,3 @@ The `hash` function is applied to the value of the `column` row to obtain a hash
 | `hash` | `function` | no |
 
 **Executed examples (1):** [examples/table-row-operations/table-partition.md](../../examples/table-row-operations/table-partition.md)
-
-## Examples (engine metadata — not verified here)
-
-Partition the table `({[a = 2, b = 4], [a = 6, b = 8], [a = 2, b = 4], [a = 1, b = 4]})` into 2 tables on column [a], using the value of the columns as the hash function.
-
-```m
-Table.Partition(
-    Table.FromRecords({
-        [a = 2, b = 4],
-        [a = 1, b = 4],
-        [a = 2, b = 4],
-        [a = 1, b = 4]
-    }),
-    "a",
-    2,
-    each _
-)
-```
-
-Stated result:
-
-```m
-{
-    Table.FromRecords({
-        [a = 2, b = 4],
-        [a = 2, b = 4]
-    }),
-    Table.FromRecords({
-        [a = 1, b = 4],
-        [a = 1, b = 4]
-    })
-}
-```

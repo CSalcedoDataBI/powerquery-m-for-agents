@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.Trim(text as nullable text, optional trim as any) as nullable text
 ```
 
-Returns the result of removing all leading and trailing characters from the specified `text`. By default, all the leading and trailing whitespace characters are removed.
+Removes all the specified leading and trailing characters.
 
-- `text`: The text from which the leading and trailing characters are to be removed.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `trim`: Overrides the whitespace characters that are trimmed by default. This parameter can either be a single character or a list of single characters. Each leading and trailing trim operation stops when a non-trimmed character is encountered.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-trim)
 
 ## Parameters
 
@@ -30,67 +30,3 @@ Returns the result of removing all leading and trailing characters from the spec
 | `trim` | `any` | yes |
 
 **Executed examples (1):** [examples/text-transformations/text-trim.md](../../examples/text-transformations/text-trim.md)
-
-## Examples (engine metadata — not verified here)
-
-Remove leading and trailing whitespace from " a b c d ".
-
-```m
-Text.Trim("     a b c d    ")
-```
-
-Stated result:
-
-```m
-"a b c d"
-```
-
-Remove leading and trailing zeroes from the text representation of a number.
-
-```m
-Text.Trim("0000056.4200", "0")
-```
-
-Stated result:
-
-```m
-"56.42"
-```
-
-Remove the leading and trailing brackets from an HTML tag.
-
-```m
-Text.Trim("<div/>", {"<", ">", "/"})
-```
-
-Stated result:
-
-```m
-"div"
-```
-
-Remove the special characters used around the pending sales status.
-
-```m
-let
-    Source = #table(type table [Home Sale = text, Sales Date = date, Sales Status = text],
-    {
-        {"1620 Ferris Way", #date(2024, 8, 22), "##@@Pending@@##"},
-        {"757 1st Ave. S.", #date(2024, 3, 15), "Sold"},
-        {"22303 Fillmore", #date(2024, 10, 2), "##@@Pending@@##"}
-    }),
-    #"Trimmed Status" = Table.TransformColumns(Source, {"Sales Status", each Text.Trim(_, {"#", "@"})})
-in
-    #"Trimmed Status"
-```
-
-Stated result:
-
-```m
-#table(type table [Home Sale = text, Sales Date = date, Sales Status = text],
-{
-    {"1620 Ferris Way", #date(2024, 8, 22), "Pending"},
-    {"757 1st Ave. S.", #date(2024, 3, 15), "Sold"},
-    {"22303 Fillmore", #date(2024, 10, 2), "Pending"}
-})
-```

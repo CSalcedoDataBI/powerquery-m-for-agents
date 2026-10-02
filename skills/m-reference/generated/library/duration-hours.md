@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Duration.Hours(duration as nullable duration) as nullable number
 ```
 
-Returns the hours portion of `duration`.
+Returns the hours portion of a duration.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/duration-hours)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns the hours portion of `duration`.
 | `duration` | `nullable duration` | no |
 
 **Executed examples (3):** [examples/duration/duration-hours.md](../../examples/duration/duration-hours.md)
-
-## Examples (engine metadata — not verified here)
-
-Extract the hours from a duration value.
-
-```m
-Duration.Hours(#duration(5, 4, 3, 2))
-```
-
-Stated result:
-
-```m
-4
-```

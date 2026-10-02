@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Double.From(value as any, optional culture as nullable text) as nullable number
 ```
 
-Returns a Double `number` value from the given `value`. If the given `value` is `null`, `Double.From` returns `null`. If the given `value` is `number` within the range of Double, `value` is returned, otherwise an error is returned. If `value` is of any other type, it will first be converted to a `number` using `Number.FromText`. An optional `culture` may also be provided (for example, "en-US").
+Creates a Double from the given value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/double-from)
 
 ## Parameters
 
@@ -26,17 +30,3 @@ Returns a Double `number` value from the given `value`. If the given `value` is 
 | `culture` | `nullable text` | yes |
 
 **Executed examples (3):** [examples/number-conversion-and-formatting/double-from.md](../../examples/number-conversion-and-formatting/double-from.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the Double `number` value of `"4"`.
-
-```m
-Double.From("4.5")
-```
-
-Stated result:
-
-```m
-4.5
-```

@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.Lower(text as nullable text, optional culture as nullable text) as nullable text
 ```
 
-Returns the result of converting all characters in `text` to lowercase. An optional `culture` may also be provided (for example, "en-US").
+Converts all characters to lowercase.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-lower)
 
 ## Parameters
 
@@ -26,17 +30,3 @@ Returns the result of converting all characters in `text` to lowercase. An optio
 | `culture` | `nullable text` | yes |
 
 **Executed examples (1):** [examples/text-transformations/text-lower.md](../../examples/text-transformations/text-lower.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the lowercase version of "AbCd".
-
-```m
-Text.Lower("AbCd")
-```
-
-Stated result:
-
-```m
-"abcd"
-```

@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.RemoveNulls(list as list) as list
 ```
 
-Removes all occurrences of "null" values in the `list`. If there are no 'null' values in the list, the original list is returned.
+Removes all "null" values from the specified list.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-removenulls)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Removes all occurrences of "null" values in the `list`. If there are no 'null' v
 | `list` | `list` | no |
 
 **Executed examples (1):** [examples/list-transformation-functions/list-removenulls.md](../../examples/list-transformation-functions/list-removenulls.md)
-
-## Examples (engine metadata — not verified here)
-
-Remove the "null" values from the list {1, 2, 3, null, 4, 5, null, 6}.
-
-```m
-List.RemoveNulls({1, 2, 3, null, 4, 5, null, 6})
-```
-
-Stated result:
-
-```m
-{1, 2, 3, 4, 5, 6}
-```

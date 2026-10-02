@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 CCHTagetik.Contents4(URL as text, Database as text, optional options as nullable record) as table
 ```
 
-Wolters Kluwer CCH Tagetik
-
 ## Parameters
 
 | Name | Type | Optional |

@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Duration.TotalMinutes(duration as nullable duration) as nullable number
 ```
 
-Returns the total minutes spanned by `duration`.
+Returns the total minutes this duration spans.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/duration-totalminutes)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns the total minutes spanned by `duration`.
 | `duration` | `nullable duration` | no |
 
 **Executed examples (3):** [examples/duration/duration-totalminutes.md](../../examples/duration/duration-totalminutes.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the total minutes spanned by a duration value.
-
-```m
-Duration.TotalMinutes(#duration(5, 4, 3, 2))
-```
-
-Stated result:
-
-```m
-7443.0333333333338
-```

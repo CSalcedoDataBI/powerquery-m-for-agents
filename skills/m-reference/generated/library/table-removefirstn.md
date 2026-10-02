@@ -16,14 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.RemoveFirstN(table as table, optional countOrCondition as any) as table
 ```
 
-Returns a table that does not contain the first specified number of rows, `countOrCondition`, of the table `table`.
-The number of rows removed depends on the optional parameter `countOrCondition`.
+Returns a table with the first count rows skipped.
 
-- If `countOrCondition` is omitted only the first row is removed.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- If `countOrCondition` is a number, that many rows (starting at the top) will be removed.
-
-- If `countOrCondition` is a condition, the rows that meet the condition will be removed until a row does not meet the condition.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-removefirstn)
 
 ## Parameters
 
@@ -33,75 +30,3 @@ The number of rows removed depends on the optional parameter `countOrCondition`.
 | `countOrCondition` | `any` | yes |
 
 **Executed examples (1):** [examples/table-row-operations/table-removefirstn.md](../../examples/table-row-operations/table-removefirstn.md)
-
-## Examples (engine metadata — not verified here)
-
-Remove the first row of the table.
-
-```m
-Table.RemoveFirstN(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-        [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-    }),
-    1
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-    [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-    [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-})
-```
-
-Remove the first two rows of the table.
-
-```m
-Table.RemoveFirstN(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-        [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-    }),
-    2
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-    [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-})
-```
-
-Remove the first rows where [CustomerID] <=2 of the table.
-
-```m
-Table.RemoveFirstN(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-        [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-    }),
-    each [CustomerID] <= 2
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-    [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-})
-```

@@ -16,15 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Max(list as list, optional default as any, optional comparisonCriteria as any, optional includeNulls as nullable logical) as any
 ```
 
-Returns the maximum item in the list or the optional default value if the list is empty.
+Returns the maximum value or the default value for an empty list.
 
-- `list`: The list of values.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `default`: (Optional) The value to return if the list is empty.
-
-- `comparisonCriteria`: (Optional) A function that's used to transform the values before they're compared. If this parameter is `null`, then the values are compared without any transformation.
-
-- `includeNulls`: (Optional) Indicates whether `null` values in the list should be included in determining the maximum item. The default value is `true`.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-max)
 
 ## Parameters
 
@@ -36,61 +32,3 @@ Returns the maximum item in the list or the optional default value if the list i
 | `includeNulls` | `nullable logical` | yes |
 
 **Executed examples (1):** [examples/list-ordering/list-max.md](../../examples/list-ordering/list-max.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the maximum value in the specified list.
-
-```m
-List.Max({1, 4, 7, 3, -2, 5}, 1)
-```
-
-Stated result:
-
-```m
-7
-```
-
-Find the maximum value in the specified list or return -1 if it's empty.
-
-```m
-List.Max({}, -1)
-```
-
-Stated result:
-
-```m
--1
-```
-
-Find the item in a list of text values that's last alphabetically. If the list is empty, return "none".
-
-```m
-let
-    Source = {"boy", "dog", "girl", "zebra", "cat", "mouse", "rabbit"},
-    MaxText = List.Max(Source, "none")
-in
-    MaxText
-```
-
-Stated result:
-
-```m
-"zebra"
-```
-
-Find the most recent date from a list of German dates. If the list is empty, return January 1, 2000.
-
-```m
-let
-    Source = {"12.02.2024", "15.05.2025", "10.10.2021", "16.01.2025", "30.12.2022"},
-    MaxDate = List.Max(Source, #date(2000, 1, 1), each Date.FromText(_, [Culture = "de-DE"]))
-in
-    MaxDate
-```
-
-Stated result:
-
-```m
-"15.05.2025"
-```

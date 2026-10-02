@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.AllTrue(list as list) as logical
 ```
 
-Returns true if all expressions in the list `list` are true.
+Returns true if all expressions are true.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-alltrue)
 
 ## Parameters
 
@@ -25,29 +29,3 @@ Returns true if all expressions in the list `list` are true.
 | `list` | `list` | no |
 
 **Executed examples (1):** [examples/list-membership-functions/list-alltrue.md](../../examples/list-membership-functions/list-alltrue.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if all the expressions in the list {true, true, 2 > 0} are true.
-
-```m
-List.AllTrue({true, true, 2 > 0})
-```
-
-Stated result:
-
-```m
-true
-```
-
-Determine if all the expressions in the list {true, true, 2 < 0} are true.
-
-```m
-List.AllTrue({true, false, 2 < 0})
-```
-
-Stated result:
-
-```m
-false
-```

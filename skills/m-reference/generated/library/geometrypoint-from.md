@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 GeometryPoint.From(x as number, y as number, optional z as nullable number, optional m as nullable number, optional srid as nullable number) as record
 ```
 
-Creates a record representing a geometric point from its constituent parts, such as X coordinate, Y coordinate, and if present, Z coordinate and measure (M). An optional spatial reference identifier (SRID) can be given if different from the default value (0).
+Creates a record representing a geometric point from parts.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/geometrypoint-from)
 
 ## Parameters
 

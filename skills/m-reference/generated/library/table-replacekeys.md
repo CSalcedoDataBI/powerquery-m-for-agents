@@ -18,6 +18,10 @@ Table.ReplaceKeys(table as table, keys as list) as table
 
 Replaces the keys of the specified table.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-replacekeys)
+
 ## Parameters
 
 | Name | Type | Optional |
@@ -26,28 +30,3 @@ Replaces the keys of the specified table.
 | `keys` | `list` | no |
 
 **Executed examples (1):** [examples/table-transformation/table-replacekeys.md](../../examples/table-transformation/table-replacekeys.md)
-
-## Examples (engine metadata — not verified here)
-
-Replace the existing keys of a table.
-
-```m
-let
-    table = Table.FromRecords({
-        [Id = 1, Name = "Hello There"],
-        [Id = 2, Name = "Good Bye"]
-    }),
-    tableWithKeys = Table.AddKey(table, {"Id"}, true),
-    resultTable = Table.ReplaceKeys(tableWithKeys, {[Columns = {"Id"}, Primary = false]})
-in
-    resultTable
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [Id = 1, Name = "Hello There"],
-    [Id = 2, Name = "Good Bye"]
-})
-```

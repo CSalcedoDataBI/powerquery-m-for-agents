@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.ReplaceMatchingRows(table as table, replacements as list, optional equationCriteria as any) as table
 ```
 
-Replaces all the specified rows in the `table` with the provided ones. The rows to replace and the replacements are specified in `replacements`, using {old, new} formatting.
-An optional `equationCriteria` parameter may be specified to control comparison between the rows of the table.
+Replaces all the specified rows with the provided row(s).
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-replacematchingrows)
 
 ## Parameters
 
@@ -28,33 +31,3 @@ An optional `equationCriteria` parameter may be specified to control comparison 
 | `equationCriteria` | `any` | yes |
 
 **Executed examples (1):** [examples/table-membership/table-replacematchingrows.md](../../examples/table-membership/table-replacematchingrows.md)
-
-## Examples (engine metadata — not verified here)
-
-Replace the rows [a = 1, b = 2] and [a = 2, b = 3] with [a = -1, b = -2],[a = -2, b = -3] in the table.
-
-```m
-Table.ReplaceMatchingRows(
-    Table.FromRecords({
-        [a = 1, b = 2],
-        [a = 2, b = 3],
-        [a = 3, b = 4],
-        [a = 1, b = 2]
-    }),
-    {
-        {[a = 1, b = 2], [a = -1, b = -2]},
-        {[a = 2, b = 3], [a = -2, b = -3]}
-    }
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [a = -1, b = -2],
-    [a = -2, b = -3],
-    [a = 3, b = 4],
-    [a = -1, b = -2]
-})
-```

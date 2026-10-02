@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 WorkforceDimensions.Contents(configurationServer as text, workForceDimensionsServer as text, symbolicPeriod as text, optional startDate as nullable date, optional endDate as nullable date) as text
 ```
 
-Configuration to access OAuth server as well as default date range settigns.
-
 ## Parameters
 
 | Name | Type | Optional |

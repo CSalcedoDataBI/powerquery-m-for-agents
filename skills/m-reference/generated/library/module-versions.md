@@ -17,3 +17,7 @@ Module.Versions() as record
 ```
 
 Returns a record of module versions for the current module and its dependencies.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/module-versions)

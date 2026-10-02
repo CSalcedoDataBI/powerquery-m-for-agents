@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.Repeat(table as table, count as number) as table
 ```
 
-Returns a table with the rows from the input `table` repeated the specified `count` times.
+Repeats the rows of the tables a specified number of times.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-repeat)
 
 ## Parameters
 
@@ -26,28 +30,3 @@ Returns a table with the rows from the input `table` repeated the specified `cou
 | `count` | `number` | no |
 
 **Executed examples (1):** [examples/table-row-operations/table-repeat.md](../../examples/table-row-operations/table-repeat.md)
-
-## Examples (engine metadata — not verified here)
-
-Repeat the rows in the table two times.
-
-```m
-Table.Repeat(
-    Table.FromRecords({
-        [a = 1, b = "hello"],
-        [a = 3, b = "world"]
-    }),
-    2
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [a = 1, b = "hello"],
-    [a = 3, b = "world"],
-    [a = 1, b = "hello"],
-    [a = 3, b = "world"]
-})
-```

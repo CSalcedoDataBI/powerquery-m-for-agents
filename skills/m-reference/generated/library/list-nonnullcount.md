@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.NonNullCount(list as list) as number
 ```
 
-Returns the number of non-null items in the list `list`.
+Returns the number of non-null items in the list.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-nonnullcount)
 
 ## Parameters
 

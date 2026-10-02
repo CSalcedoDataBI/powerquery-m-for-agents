@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.Combine(tables as list, optional columns as any) as table
 ```
 
-Returns a table that is the result of merging a list of tables, `tables`. The resulting table will have a row type structure defined by `columns` or by a union of the input types if `columns` is not specified.
+Returns a table that is the result of merging a list of tables.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-combine)
 
 ## Parameters
 
@@ -26,68 +30,3 @@ Returns a table that is the result of merging a list of tables, `tables`. The re
 | `columns` | `any` | yes |
 
 **Executed examples (1):** [examples/table-row-operations/table-combine.md](../../examples/table-row-operations/table-combine.md)
-
-## Examples (engine metadata — not verified here)
-
-Merge the three tables together.
-
-```m
-Table.Combine({
-    Table.FromRecords({[CustomerID = 1, Name = "Bob", Phone = "123-4567"]}),
-    Table.FromRecords({[CustomerID = 2, Name = "Jim", Phone = "987-6543"]}),
-    Table.FromRecords({[CustomerID = 3, Name = "Paul", Phone = "543-7890"]})
-})
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-    [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-    [CustomerID = 3, Name = "Paul", Phone = "543-7890"]
-})
-```
-
-Merge three tables with different structures.
-
-```m
-Table.Combine({
-    Table.FromRecords({[Name = "Bob", Phone = "123-4567"]}),
-    Table.FromRecords({[Fax = "987-6543", Phone = "838-7171"]}),
-    Table.FromRecords({[Cell = "543-7890"]})
-})
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [Name = "Bob", Phone = "123-4567", Fax = null, Cell = null],
-    [Name = null, Phone = "838-7171", Fax = "987-6543", Cell = null],
-    [Name = null, Phone = null, Fax = null, Cell = "543-7890"]
-})
-```
-
-Merge two tables and project onto the given type.
-
-```m
-Table.Combine(
-    {
-        Table.FromRecords({[Name = "Bob", Phone = "123-4567"]}),
-        Table.FromRecords({[Fax = "987-6543", Phone = "838-7171"]}),
-        Table.FromRecords({[Cell = "543-7890"]})
-    },
-    {"CustomerID", "Name"}
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [CustomerID = null, Name = "Bob"],
-    [CustomerID = null, Name = null],
-    [CustomerID = null, Name = null]
-})
-```

@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 IntersystemsHealthInsight.Database(host as text, port as number, namespace as text, ssl as text, hideSystemTables as text) as table
 ```
 
-InterSystems Health Insight
-
 ## Parameters
 
 | Name | Type | Optional |

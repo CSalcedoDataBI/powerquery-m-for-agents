@@ -15,5 +15,3 @@ source: "#shared \u2014 desktop 2.157.879.0"
 ```m
 Wrike.Contents() as table
 ```
-
-Shared function and first entry point to Connector. Display initial Navigation hierarchy.

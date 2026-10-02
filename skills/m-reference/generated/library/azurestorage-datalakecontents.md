@@ -16,13 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 AzureStorage.DataLakeContents(url as text, optional options as nullable record) as binary
 ```
 
-Returns the content of the file at the URL, `url`, from an Azure Data Lake Storage filesystem. `options` may be specified to control the following options:
+Returns the content of the specified file from an Azure Data Lake Storage filesystem.
 
-- `BlockSize` : The number of bytes to read before waiting on the data consumer. The default value is 4 MB.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `RequestSize` : The number of bytes to try to read in a single HTTP request to the server. The default value is 4 MB.
-
-- `ConcurrentRequests` : The ConcurrentRequests option supports faster download of data by specifying the number of requests to be made in parallel, at the cost of memory utilization. The memory required is (ConcurrentRequest * RequestSize). The default value is 16.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/azurestorage-datalakecontents)
 
 ## Parameters
 

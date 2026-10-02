@@ -16,13 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Time.FromText(text as nullable text, optional options as any) as nullable time
 ```
 
-Creates a `time` value from a textual representation, `text`. An optional `record` parameter, `options`, may be provided to specify additional properties. The `record` can contain the following fields:
+Creates a Time from local and universal, and custom Time formats.
 
-- `Format`: A `text` value indicating the format to use. For more details, go to https://go.microsoft.com/fwlink/?linkid=2180104 and https://go.microsoft.com/fwlink/?linkid=2180105. Omitting this field or providing `null` will result in parsing the time using a best effort.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `Culture`: When `Format` is not null, `Culture` controls some format specifiers. For example, in `"en-US"` `"tt"` is `"AM" or "PM"`, while in `"ar-EG"` `"tt"` is `"ص" or "م"`. When `Format` is `null`, `Culture` controls the default format to use. When `Culture` is `null` or omitted, `Culture.Current` is used.
-
-To support legacy workflows, `options` may also be a text value. This has the same behavior as if `options = [Format = null, Culture = options]`.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/time-fromtext)
 
 ## Parameters
 
@@ -30,41 +28,3 @@ To support legacy workflows, `options` may also be a text value. This has the sa
 |---|---|---|
 | `text` | `nullable text` | no |
 | `options` | `any` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Convert `"10:12:31am"` into a Time value.
-
-```m
-Time.FromText("10:12:31am")
-```
-
-Stated result:
-
-```m
-#time(10, 12, 31)
-```
-
-Convert `"1012"` into a Time value.
-
-```m
-Time.FromText("1012")
-```
-
-Stated result:
-
-```m
-#time(10, 12, 00)
-```
-
-Convert `"10"` into a Time value.
-
-```m
-Time.FromText("10")
-```
-
-Stated result:
-
-```m
-#time(10, 00, 00)
-```

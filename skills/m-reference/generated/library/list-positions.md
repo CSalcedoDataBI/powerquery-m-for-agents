@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Positions(list as list) as list
 ```
 
-Returns a list of offsets for the specified input list.
+Returns a list of offsets for the input.
 
-- `list`: The input list.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-When using `List.Transform` to change a list, the list of positions can be used to give the transform access to the position.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-positions)
 
 ## Parameters
 
@@ -29,49 +29,3 @@ When using `List.Transform` to change a list, the list of positions can be used 
 | `list` | `list` | no |
 
 **Executed examples (1):** [examples/list-selection/list-positions.md](../../examples/list-selection/list-positions.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the offsets of values in the list {1, 2, 3, 4, null, 5}.
-
-```m
-List.Positions({1, 2, 3, 4, null, 5})
-```
-
-Stated result:
-
-```m
-{0, 1, 2, 3, 4, 5}
-```
-
-Create a table that assigns an ID to each customer based on the customer's position in the list.
-
-```m
-let
-    customers = {"Alice", "Bob", "Charlie", "Diana"},
-    resultTable =
-        Table.FromRecords(
-            List.Transform(
-                List.Positions(customers),
-                each [
-                    IDNumber = _ + 1,   // Make it 1-based
-                    CustomerName = customers{_}
-                ]
-            ),
-            type table [IDNumber = Int64.Type, CustomerName = text]
-        )
-in
-    resultTable
-```
-
-Stated result:
-
-```m
-#table (type table[IDNumber = Int64.Type, CustomerName = text],
-{
-    {1, "Alice"},
-    {2, "Bob"},
-    {3, "Charlie"},
-    {4, "Diana"}
-})
-```

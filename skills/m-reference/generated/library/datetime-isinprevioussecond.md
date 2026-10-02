@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DateTime.IsInPreviousSecond(dateTime as any) as nullable logical
 ```
 
-Indicates whether the given datetime value `dateTime` occurs during the previous second, as determined by the current date and time on the system. Note that this function will return false when passed a value that occurs within the current second.
+Indicates whether this datetime occurs during the previous second, as determined by the current date and time on the system. Note that this function will return false when passed a value that occurs within the current second.
 
-- `dateTime`: A `datetime`, or `datetimezone` value to be evaluated.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/datetime-isinprevioussecond)
 
 ## Parameters
 
@@ -27,17 +29,3 @@ Indicates whether the given datetime value `dateTime` occurs during the previous
 | `dateTime` | `any` | no |
 
 **Executed examples (3):** [examples/datetime/datetime-isinprevioussecond.md](../../examples/datetime/datetime-isinprevioussecond.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if the second before the current system time is in the previous second.
-
-```m
-DateTime.IsInPreviousSecond(DateTime.FixedLocalNow() - #duration(0, 0, 0, 1))
-```
-
-Stated result:
-
-```m
-true
-```

@@ -16,30 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Time.ToRecord(time as time) as record
 ```
 
-Returns a record containing the parts of the given Time value, `time`.
+Returns a record containing the Time value's parts.
 
-- `time`: A `time` value for from which the record of its parts is to be calculated.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/time-torecord)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `time` | `time` | no |
-
-## Examples (engine metadata — not verified here)
-
-Convert the `#time(11, 56, 2)` value into a record containing Time values.
-
-```m
-Time.ToRecord(#time(11, 56, 2))
-```
-
-Stated result:
-
-```m
-[
-      Hour = 11,
-      Minute = 56,
-      Second = 2
-]
-```

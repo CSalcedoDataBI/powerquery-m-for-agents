@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Product(numbersList as list, optional precision as nullable number) as nullable number
 ```
 
-Returns the product of the non-null numbers in the list, `numbersList`. Returns null if there are no non-null values in the list.
+Returns the product of the numbers in the list.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-product)
 
 ## Parameters
 
@@ -26,17 +30,3 @@ Returns the product of the non-null numbers in the list, `numbersList`. Returns 
 | `precision` | `nullable number` | yes |
 
 **Executed examples (1):** [examples/list-numerics/list-product.md](../../examples/list-numerics/list-product.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the product of the numbers in the list `{1, 2, 3, 3, 4, 5, 5}`.
-
-```m
-List.Product({1, 2, 3, 3, 4, 5, 5})
-```
-
-Stated result:
-
-```m
-1800
-```

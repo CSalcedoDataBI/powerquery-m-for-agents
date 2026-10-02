@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Record.ToList(record as record) as list
 ```
 
-Returns a list of values containing the field values from the input `record`.
+Returns a list of values containing the field values of the input record.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/record-tolist)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns a list of values containing the field values from the input `record`.
 | `record` | `record` | no |
 
 **Executed examples (3):** [examples/record-serialization/record-tolist.md](../../examples/record-serialization/record-tolist.md)
-
-## Examples (engine metadata — not verified here)
-
-Extract the field values from a record.
-
-```m
-Record.ToList([A = 1, B = 2, C = 3])
-```
-
-Stated result:
-
-```m
-{1, 2, 3}
-```

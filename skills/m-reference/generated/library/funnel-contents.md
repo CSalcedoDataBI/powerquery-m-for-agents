@@ -15,5 +15,3 @@ source: "#shared \u2014 desktop 2.157.879.0"
 ```m
 Funnel.Contents() as table
 ```
-
-Returns a navigation table to help the user navigate their Workspaces and respective Data Shares.

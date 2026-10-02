@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Last(list as list, optional defaultValue as any) as any
 ```
 
-Returns the last item in the specified list, or the optional default value if the list is empty.
+Returns the last value of the list or the specified default if empty.
 
-- `list`: The list to examine.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `defaultValue`: (Optional) The default value to return if the list is empty. If the list is empty and a default value isn't specified, the function returns `null`.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-last)
 
 ## Parameters
 
@@ -30,29 +30,3 @@ Returns the last item in the specified list, or the optional default value if th
 | `defaultValue` | `any` | yes |
 
 **Executed examples (1):** [examples/list-selection/list-last.md](../../examples/list-selection/list-last.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the last value in the list {1, 2, 3}.
-
-```m
-List.Last({1, 2, 3})
-```
-
-Stated result:
-
-```m
-3
-```
-
-Find the last value in the list {} or -1 if it empty.
-
-```m
-List.Last({}, -1)
-```
-
-Stated result:
-
-```m
--1
-```

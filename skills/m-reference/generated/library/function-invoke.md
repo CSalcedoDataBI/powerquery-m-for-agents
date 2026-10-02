@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Function.Invoke(function as function, args as list) as any
 ```
 
-Invokes the given function using the specified list of arguments and returns the result.
+Invokes the given function
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/function-invoke)
 
 ## Parameters
 
@@ -24,17 +28,3 @@ Invokes the given function using the specified list of arguments and returns the
 |---|---|---|
 | `function` | `function` | no |
 | `args` | `list` | no |
-
-## Examples (engine metadata — not verified here)
-
-Invokes Record.FieldNames with one argument [A=1,B=2].
-
-```m
-Function.Invoke(Record.FieldNames, {[A = 1, B = 2]})
-```
-
-Stated result:
-
-```m
-{"A", "B"}
-```

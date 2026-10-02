@@ -17,3 +17,7 @@ Diagnostics.CorrelationId() as nullable text
 ```
 
 Returns an opaque identifier to correlate incoming requests with outgoing ones.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/diagnostics-correlationid)

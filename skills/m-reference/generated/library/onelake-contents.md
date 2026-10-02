@@ -16,25 +16,9 @@ source: "#shared \u2014 desktop 2.157.879.0"
 OneLake.Contents(path as text, optional options as nullable record) as table
 ```
 
-Access files and folders in OneLake items in Microsoft Fabric
-
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `path` | `text` | no |
 | `options` | `nullable record` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Returns a list of Folders/Files in the Workspace and artifact
-
-```m
-OneLake.Contents("/85599f29-c009-4253-b53b-c3ba6e4afa97/fec0346d-3fa4-48c2-b3f3-714f5caa5f08/Files/path")
-```
-
-Stated result:
-
-```m
-Returns a table of Folders/Files in the Workspace and artifact
-```

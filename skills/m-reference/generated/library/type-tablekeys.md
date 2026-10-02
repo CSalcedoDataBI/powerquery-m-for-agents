@@ -18,13 +18,9 @@ Type.TableKeys(tableType as type) as list
 
 Returns the possibly empty list of keys for the given table type.
 
-Each key is defined using a record in the following form:
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
--
-`Columns`: a list of the column names that define the key
-
--
-`Primary`: `true` if the key is the table's primary key; otherwise, `false`
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/type-tablekeys)
 
 ## Parameters
 
@@ -33,22 +29,3 @@ Each key is defined using a record in the following form:
 | `tableType` | `type` | no |
 
 **Executed examples (3):** [examples/type/type-tablekeys.md](../../examples/type/type-tablekeys.md)
-
-## Examples (engine metadata — not verified here)
-
-Return the key information for a table type.
-
-```m
-let
-    BaseType = type table [ID = number, Name = text],
-    AddKey = Type.AddTableKey(BaseType, {"ID"}, true),
-    DetailsOfKeys = Type.TableKeys(AddKey)
-in
-    DetailsOfKeys
-```
-
-Stated result:
-
-```m
-{[Columns = {"ID"}, Primary = true]}
-```

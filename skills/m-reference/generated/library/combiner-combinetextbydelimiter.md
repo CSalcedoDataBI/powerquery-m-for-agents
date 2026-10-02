@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Combiner.CombineTextByDelimiter(delimiter as text, optional quoteStyle as nullable number) as function
 ```
 
-Returns a function that combines a list of text values into a single text value using the specified delimiter.
+Returns a function that combines a list of text using the specified delimiter.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/combiner-combinetextbydelimiter)
 
 ## Parameters
 
@@ -24,44 +28,3 @@ Returns a function that combines a list of text values into a single text value 
 |---|---|---|
 | `delimiter` | `text` | no |
 | `quoteStyle` | `nullable number` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Combine a list of text values using a semicolon delimiter.
-
-```m
-Combiner.CombineTextByDelimiter(";")({"a", "b", "c"})
-```
-
-Stated result:
-
-```m
-"a;b;c"
-```
-
-Combine the text of two columns using a comma delimiter and CSV-style quoting.
-
-```m
-let
-    Source = #table(
-        type table [Column1 = text, Column2 = text],
-        {{"a", "b"}, {"c", "d,e,f"}}
-    ),
-    Merged = Table.CombineColumns(
-        Source,
-        {"Column1", "Column2"},
-        Combiner.CombineTextByDelimiter(",", QuoteStyle.Csv),
-        "Merged"
-    )
-in
-    Merged
-```
-
-Stated result:
-
-```m
-#table(
-    type table [Merged = text],
-    {{"a,b"}, {"c,""d,e,f"""}}
-)
-```

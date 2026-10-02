@@ -16,13 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Alternate(list as list, count as number, optional repeatInterval as nullable number, optional offset as nullable number) as list
 ```
 
-Returns a list comprised of all the odd numbered offset elements in a list. Alternates between taking and skipping values from the list `list` depending on the parameters.
+Returns a list comprised of all the odd numbered offset elements in a list.
 
-- `count`: Specifies number of values that are skipped each time.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `repeatInterval`: An optional repeat interval to indicate how many values are added in between the skipped values.
-
-- `offset`: An option offset parameter to begin skipping the values at the initial offset.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-alternate)
 
 ## Parameters
 
@@ -34,53 +32,3 @@ Returns a list comprised of all the odd numbered offset elements in a list. Alte
 | `offset` | `nullable number` | yes |
 
 **Executed examples (1):** [examples/list-selection/list-alternate.md](../../examples/list-selection/list-alternate.md)
-
-## Examples (engine metadata — not verified here)
-
-Create a list from {1..10} that skips the first number.
-
-```m
-List.Alternate({1..10}, 1)
-```
-
-Stated result:
-
-```m
-{2, 3, 4, 5, 6, 7, 8, 9, 10}
-```
-
-Create a list from {1..10} that skips every other number.
-
-```m
-List.Alternate({1..10}, 1, 1)
-```
-
-Stated result:
-
-```m
-{2, 4, 6, 8, 10}
-```
-
-Create a list from {1..10} that starts at 1 and skips every other number.
-
-```m
-List.Alternate({1..10}, 1, 1, 1)
-```
-
-Stated result:
-
-```m
-{1, 3, 5, 7, 9}
-```
-
-Create a list from {1..10} that starts at 1, skips one value, keeps two values, and so on.
-
-```m
-List.Alternate({1..10}, 1, 2, 1)
-```
-
-Stated result:
-
-```m
-{1, 3, 4, 6, 7, 9, 10}
-```

@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 FabricSql.Contents(optional options as nullable record) as table
 ```
 
-Imports data from SQL database Instance in Fabric
-
 ## Parameters
 
 | Name | Type | Optional |

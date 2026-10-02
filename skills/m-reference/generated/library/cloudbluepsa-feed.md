@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 CloudBluePSA.Feed(url as text, filter as text) as table
 ```
 
-This function will resolve the page limitation issue and will retrieve and combine all pages of data returned by the API endpoint in an efficient manner.
-
 ## Parameters
 
 | Name | Type | Optional |

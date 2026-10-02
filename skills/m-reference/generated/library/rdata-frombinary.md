@@ -18,6 +18,10 @@ RData.FromBinary(stream as binary) as any
 
 Returns a record of data frames from the RData file.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/rdata-frombinary)
+
 ## Parameters
 
 | Name | Type | Optional |

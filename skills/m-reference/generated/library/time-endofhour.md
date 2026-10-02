@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Time.EndOfHour(dateTime as any) as any
 ```
 
-Returns the end of the hour represented by `dateTime`, including fractional seconds. Time zone information is preserved.
+Returns the end of the hour.
 
-- `dateTime`: A `time`, `datetime`, or `datetimezone` value from which the end of the hour is calculated.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/time-endofhour)
 
 ## Parameters
 
@@ -27,29 +29,3 @@ Returns the end of the hour represented by `dateTime`, including fractional seco
 | `dateTime` | `any` | no |
 
 **Executed examples (3):** [examples/date/time-endofhour.md](../../examples/date/time-endofhour.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the end of the hour for 5/14/2011 05:00:00 PM.
-
-```m
-Time.EndOfHour(#datetime(2011, 5, 14, 17, 0, 0))
-```
-
-Stated result:
-
-```m
-#datetime(2011, 5, 14, 17, 59, 59.9999999)
-```
-
-Get the end of the hour for 5/17/2011 05:00:00 PM -7:00.
-
-```m
-Time.EndOfHour(#datetimezone(2011, 5, 17, 5, 0, 0, -7, 0))
-```
-
-Stated result:
-
-```m
-#datetimezone(2011, 5, 17, 5, 59, 59.9999999, -7, 0)
-```

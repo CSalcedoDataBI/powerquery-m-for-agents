@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.ReplaceErrorValues(table as table, errorReplacement as list) as table
 ```
 
-Replaces the error values in the specified columns of the `table` with the new values in the `errorReplacement` list. The format of the list is {{column1, value1}, ...}. There may only be one replacement value per column, specifying the column more than once will result in an error.
+Replaces the error values in the specified columns with the corresponding specified value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-replaceerrorvalues)
 
 ## Parameters
 
@@ -26,41 +30,3 @@ Replaces the error values in the specified columns of the `table` with the new v
 | `errorReplacement` | `list` | no |
 
 **Executed examples (1):** [examples/table-transformation/table-replaceerrorvalues.md](../../examples/table-transformation/table-replaceerrorvalues.md)
-
-## Examples (engine metadata — not verified here)
-
-Replace the error value with the text "world" in the table.
-
-```m
-Table.ReplaceErrorValues(
-    Table.FromRows({{1, "hello"}, {3, ...}}, {"A", "B"}),
-    {"B", "world"}
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [A = 1, B = "hello"],
-    [A = 3, B = "world"]
-})
-```
-
-Replace the error value in column A with the text "hello" and in column B with the text "world" in the table.
-
-```m
-Table.ReplaceErrorValues(
-    Table.FromRows({{..., ...}, {1, 2}}, {"A", "B"}),
-    {{"A", "hello"}, {"B", "world"}}
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [A = "hello", B = "world"],
-    [A = 1, B = 2]
-})
-```

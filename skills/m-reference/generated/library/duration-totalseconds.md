@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Duration.TotalSeconds(duration as nullable duration) as nullable number
 ```
 
-Returns the total seconds spanned by `duration`.
+Returns the total seconds this duration spans.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/duration-totalseconds)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns the total seconds spanned by `duration`.
 | `duration` | `nullable duration` | no |
 
 **Executed examples (3):** [examples/duration/duration-totalseconds.md](../../examples/duration/duration-totalseconds.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the total seconds spanned by a duration value.
-
-```m
-Duration.TotalSeconds(#duration(5, 4, 3, 2))
-```
-
-Stated result:
-
-```m
-446582
-```

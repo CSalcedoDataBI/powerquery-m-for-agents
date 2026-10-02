@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 File.Contents(path as text, optional options as nullable record) as binary
 ```
 
-Returns the contents of the file, `path`, as binary. The `options` parameter is currently intended for internal use only.
+Returns the contents of the specified file as binary.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/file-contents)
 
 ## Parameters
 

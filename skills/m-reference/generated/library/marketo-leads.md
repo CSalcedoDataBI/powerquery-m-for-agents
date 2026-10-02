@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Marketo.Leads(url as text, leadIds as list, optional options as any) as table
 ```
 
-Makes a call to the Marketo REST API endpoint at `url`/rest/v1/leads.json. All leads in list `leadIds` are returned.
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -25,17 +23,3 @@ Makes a call to the Marketo REST API endpoint at `url`/rest/v1/leads.json. All l
 | `url` | `text` | no |
 | `leadIds` | `list` | no |
 | `options` | `any` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Pulls the details for three leads
-
-```m
-Marketo.Leads("https://100-AAA-999.mktorest.com/rest", {50, 2343, 88498})
-```
-
-Stated result:
-
-```m
-A table with details for the supplied leads
-```

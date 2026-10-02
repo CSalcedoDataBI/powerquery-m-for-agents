@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Tenforce.Contents(ApplicationUrl as text, ListId as text, DataType as text) as table
 ```
 
-Selection data
-
 ## Parameters
 
 | Name | Type | Optional |

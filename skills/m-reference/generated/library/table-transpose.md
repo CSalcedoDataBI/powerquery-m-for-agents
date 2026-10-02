@@ -18,6 +18,10 @@ Table.Transpose(table as table, optional columns as any) as table
 
 Makes columns into rows and rows into columns.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-transpose)
+
 ## Parameters
 
 | Name | Type | Optional |
@@ -26,26 +30,3 @@ Makes columns into rows and rows into columns.
 | `columns` | `any` | yes |
 
 **Executed examples (1):** [examples/table-transformation/table-transpose.md](../../examples/table-transformation/table-transpose.md)
-
-## Examples (engine metadata — not verified here)
-
-Make the rows of the table of name-value pairs into columns.
-
-```m
-Table.Transpose(
-    Table.FromRecords({
-        [Name = "Full Name", Value = "Fred"],
-        [Name = "Age", Value = 42],
-        [Name = "Country", Value = "UK"]
-    })
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [Column1 = "Full Name", Column2 = "Age", Column3 = "Country"],
-    [Column1 = "Fred", Column2 = 42, Column3 = "UK"]
-})
-```

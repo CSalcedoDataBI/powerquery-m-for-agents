@@ -16,23 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.StartsWith(text as nullable text, substring as text, optional comparer as nullable function) as nullable logical
 ```
 
-Returns true if text value `text` starts with text value `substring`.
+Indicates whether the text starts with a specified value.
 
-- `text`: A `text` value which is to be searched.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `substring`: A `text` value which is the substring to be searched for in `text`.
-
-- `comparer`: *(Optional)* A `Comparer` used for controlling the comparison. For example, `Comparer.OrdinalIgnoreCase` may be used to perform case-insensitive searches.
-
-`comparer` is a `Comparer` which is used to control the comparison. Comparers can be used to provide case-insensitive or culture and locale-aware comparisons.
-
-The following built-in comparers are available in the formula language:
-
-- `Comparer.Ordinal`: Used to perform an exact ordinal comparison.
-
-- `Comparer.OrdinalIgnoreCase`: Used to perform an exact ordinal case-insensitive comparison.
-
-- `Comparer.FromCulture`: Used to perform a culture-aware comparison.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-startswith)
 
 ## Parameters
 
@@ -43,41 +31,3 @@ The following built-in comparers are available in the formula language:
 | `comparer` | `nullable function` | yes |
 
 **Executed examples (1):** [examples/text-membership/text-startswith.md](../../examples/text-membership/text-startswith.md)
-
-## Examples (engine metadata — not verified here)
-
-Check if the text "Hello, World" starts with the text "hello".
-
-```m
-Text.StartsWith("Hello, World", "hello")
-```
-
-Stated result:
-
-```m
-false
-```
-
-Check if the text "Hello, World" starts with the text "Hello".
-
-```m
-Text.StartsWith("Hello, World", "Hello")
-```
-
-Stated result:
-
-```m
-true
-```
-
-Ignoring case, check if the text "Hello, World" starts with the text "hello".
-
-```m
-Text.StartsWith("Hello, World", "hello", Comparer.OrdinalIgnoreCase)
-```
-
-Stated result:
-
-```m
-true
-```

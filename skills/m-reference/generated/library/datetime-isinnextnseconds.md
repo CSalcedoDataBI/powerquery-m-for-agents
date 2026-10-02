@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DateTime.IsInNextNSeconds(dateTime as any, seconds as number) as nullable logical
 ```
 
-Indicates whether the given datetime value `dateTime` occurs during the next number of seconds, as determined by the current date and time on the system. Note that this function will return false when passed a value that occurs within the current second.
+Indicates whether this datetime occurs during the next number of seconds, as determined by the current date and time on the system. Note that this function will return false when passed a value that occurs within the current second.
 
-- `dateTime`: A `datetime`, or `datetimezone` value to be evaluated.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `seconds`: The number of seconds.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/datetime-isinnextnseconds)
 
 ## Parameters
 
@@ -30,17 +30,3 @@ Indicates whether the given datetime value `dateTime` occurs during the next num
 | `seconds` | `number` | no |
 
 **Executed examples (3):** [examples/datetime/datetime-isinnextnseconds.md](../../examples/datetime/datetime-isinnextnseconds.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if the second after the current system time is in the next two seconds.
-
-```m
-DateTime.IsInNextNSeconds(DateTime.FixedLocalNow() + #duration(0, 0, 0, 2), 2)
-```
-
-Stated result:
-
-```m
-true
-```

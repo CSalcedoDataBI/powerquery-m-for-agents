@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 MarkLogicODBC.Contents(server as text, port as number) as table
 ```
 
-Returns the list of tables returned from the ODBC driver
-
 ## Parameters
 
 | Name | Type | Optional |

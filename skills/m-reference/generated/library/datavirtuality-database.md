@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DataVirtuality.Database(server as text, database as text, optional options as nullable record) as table
 ```
 
-Data Virtuality LDW
-
 ## Parameters
 
 | Name | Type | Optional |

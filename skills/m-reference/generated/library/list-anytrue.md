@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.AnyTrue(list as list) as logical
 ```
 
-Returns true if any expression in the list `list` is true.
+Returns true if any expression is true.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-anytrue)
 
 ## Parameters
 
@@ -25,29 +29,3 @@ Returns true if any expression in the list `list` is true.
 | `list` | `list` | no |
 
 **Executed examples (1):** [examples/list-membership-functions/list-anytrue.md](../../examples/list-membership-functions/list-anytrue.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if any of the expressions in the list {true, false, 2 > 0} are true.
-
-```m
-List.AnyTrue({true, false, 2>0})
-```
-
-Stated result:
-
-```m
-true
-```
-
-Determine if any of the expressions in the list {2 = 0, false, 2 < 0} are true.
-
-```m
-List.AnyTrue({2 = 0, false, 2 < 0})
-```
-
-Stated result:
-
-```m
-false
-```

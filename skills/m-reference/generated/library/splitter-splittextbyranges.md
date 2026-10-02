@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Splitter.SplitTextByRanges(ranges as list, optional startAtEnd as nullable logical) as function
 ```
 
-Returns a function that splits text into a list of text according to the specified offsets and lengths. A null length indicates that all remaining input should be included.
+Returns a function that splits text into a list of text according to the specified offsets and lengths.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/splitter-splittextbyranges)
 
 ## Parameters
 
@@ -26,44 +30,3 @@ Returns a function that splits text into a list of text according to the specifi
 | `startAtEnd` | `nullable logical` | yes |
 
 **Executed examples (3):** [examples/splitter/splitter-splittextbyranges.md](../../examples/splitter/splitter-splittextbyranges.md)
-
-## Examples (engine metadata — not verified here)
-
-Split the input by the specified position and length pairs, starting from the beginning of the input. Note that the ranges in this example overlap.
-
-```m
-Splitter.SplitTextByRanges({{0, 4}, {2, 10}})("codelimiter")
-```
-
-Stated result:
-
-```m
-{"code", "delimiter"}
-```
-
-Split the input by the specified position and length pairs, starting from the end of the input.
-
-```m
-let
-    startAtEnd = true
-in
-    Splitter.SplitTextByRanges({{0, 5}, {6, 2}}, startAtEnd)("RedmondWA?98052")
-```
-
-Stated result:
-
-```m
-{"WA", "98052"}
-```
-
-Split the input into a fixed-length postal code followed by a variable-length city name.
-
-```m
-Splitter.SplitTextByRanges({{0, 5}, {5, null}})("98052Redmond")
-```
-
-Stated result:
-
-```m
-{"98052", "Redmond"}
-```

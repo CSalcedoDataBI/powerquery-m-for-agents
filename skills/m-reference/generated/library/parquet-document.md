@@ -16,10 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Parquet.Document(binary as binary, optional options as nullable record) as any
 ```
 
-Returns the contents of the Parquet document as a table. Options include:
-
-- `TypeMapping` : A text value that controls the default type mapping when reading and writing files. The default value is null and attempts to preserve as much fidelity as possible to the original type. A value of "Sql" will produce results most compatible with Sql Server.
-
 ## Parameters
 
 | Name | Type | Optional |

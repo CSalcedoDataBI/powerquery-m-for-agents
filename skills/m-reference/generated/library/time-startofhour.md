@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Time.StartOfHour(dateTime as any) as any
 ```
 
-Returns the start of the hour represented by `dateTime`.
-`dateTime` must be a `time`, `datetime` or `datetimezone` value.
+Returns the start of the hour.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/time-startofhour)
 
 ## Parameters
 
@@ -26,17 +29,3 @@ Returns the start of the hour represented by `dateTime`.
 | `dateTime` | `any` | no |
 
 **Executed examples (3):** [examples/date/time-startofhour.md](../../examples/date/time-startofhour.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the start of the hour for October 10th, 2011, 8:10:32AM.
-
-```m
-Time.StartOfHour(#datetime(2011, 10, 10, 8, 10, 32))
-```
-
-Stated result:
-
-```m
-#datetime(2011, 10, 10, 8, 0, 0)
-```

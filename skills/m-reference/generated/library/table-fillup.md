@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.FillUp(table as table, columns as list) as table
 ```
 
-Returns a table from the `table` specified where the value of the next cell is propagated to the null-valued cells above in the `columns` specified.
+Propagates the value of a cell to the null-valued cells above in the column.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-fillup)
 
 ## Parameters
 
@@ -26,28 +30,3 @@ Returns a table from the `table` specified where the value of the next cell is p
 | `columns` | `list` | no |
 
 **Executed examples (1):** [examples/table-transformation/table-fillup.md](../../examples/table-transformation/table-fillup.md)
-
-## Examples (engine metadata — not verified here)
-
-Return a table with the null values in column [Column2] filled with the value below them from the table.
-
-```m
-Table.FillUp(
-    Table.FromRecords({
-        [Column1 = 1, Column2 = 2],
-        [Column1 = 3, Column2 = null],
-        [Column1 = 5, Column2 = 3]
-    }),
-    {"Column2"}
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [Column1 = 1, Column2 = 2],
-    [Column1 = 3, Column2 = 3],
-    [Column1 = 5, Column2 = 3]
-})
-```

@@ -18,39 +18,13 @@ Value.RemoveMetadata(value as any, optional metaValue as any) as any
 
 Strips the input of metadata.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/value-removemetadata)
+
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `value` | `any` | no |
 | `metaValue` | `any` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Remove all metadata from a text value.
-
-```m
-Value.Metadata(
-    Value.RemoveMetadata("abc" meta [a = 1, b = 2])
-)
-```
-
-Stated result:
-
-```m
-[]
-```
-
-Remove only one field of metadata from a text value.
-
-```m
-Value.Metadata(
-    Value.RemoveMetadata("abc" meta [a = 1, b = 2], {"a"})
-)
-```
-
-Stated result:
-
-```m
-[b = 2]
-```

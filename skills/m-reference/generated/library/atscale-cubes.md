@@ -16,27 +16,9 @@ source: "#shared \u2014 desktop 2.157.879.0"
 AtScale.Cubes(server as text, optional options as nullable record) as table
 ```
 
-Returns cube data from AtScale on server `server`. An optional record parameter, `options`, may be specified to control the following options:
-
-- `TypedMeasureColumns`: A logical value indicating if the types specified in the multidimensional or tabular model will be used for the types of the added measure columns. When set to false, the type "number" will be used for all measure columns. The default value for this option is false.
-
-- `CommandTimeout`: A duration (in seconds) which controls how long the server-side query is allowed to run before it is canceled. The default value is driver-dependent.
-
-- `ConnectionTimeout`: A duration (in seconds) which controls how long to wait before abandoning an attempt to make a connection to the server. The default value is driver-dependent.
-
-The record parameter is specified as [option1 = value1, option2 = value2...].
-
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `server` | `text` | no |
 | `options` | `nullable record` | yes |
-
-## Examples (engine metadata — not verified here)
-
-List the cube data in an AtScale cube.
-
-```m
-AtScale.Cubes("https://contoso.atscale.com:10502/xmla/...")
-```

@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.RandomBetween(bottom as number, top as number) as number
 ```
 
-Returns a random number between `bottom` and `top`.
+Returns a random number between two numbers.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-randombetween)
 
 ## Parameters
 
@@ -24,17 +28,3 @@ Returns a random number between `bottom` and `top`.
 |---|---|---|
 | `bottom` | `number` | no |
 | `top` | `number` | no |
-
-## Examples (engine metadata — not verified here)
-
-Get a random number between 1 and 5.
-
-```m
-Number.RandomBetween(1, 5)
-```
-
-Stated result:
-
-```m
-2.546797
-```

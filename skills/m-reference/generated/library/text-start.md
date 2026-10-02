@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.Start(text as nullable text, count as number) as nullable text
 ```
 
-Returns the first `count` characters of `text` as a text value.
+Returns the start of the text.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-start)
 
 ## Parameters
 
@@ -26,51 +30,3 @@ Returns the first `count` characters of `text` as a text value.
 | `count` | `number` | no |
 
 **Executed examples (1):** [examples/text-extraction/text-start.md](../../examples/text-extraction/text-start.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the first 5 characters of "Hello, World".
-
-```m
-Text.Start("Hello, World", 5)
-```
-
-Stated result:
-
-```m
-"Hello"
-```
-
-Use the first four characters of the first name and the first three characters of the last name to create an individual's email address.
-
-```m
-let
-    Source = #table(type table [First Name = text, Last Name = text],
-    {
-        {"Douglas", "Elis"},
-        {"Ana", "Jorayew"},
-        {"Rada", "Mihaylova"}
-    }),
-    EmailAddress = Table.AddColumn(
-        Source,
-        "Email Address",
-        each Text.Combine({
-            Text.Start([First Name], 4),
-            Text.Start([Last Name], 3),
-            "@contoso.com"
-        })
-    )
-in
-    EmailAddress
-```
-
-Stated result:
-
-```m
-#table(type table [First Name = text, Last Name = text, Email Address = text],
-{
-    {"Douglas", "Elis", "DougEli@contoso.com"},
-    {"Ana", "Jorayew", "AnaJor@contoso.com"},
-    {"Rada", "Mihaylova", "RadaMih@contoso.com"}
-})
-```

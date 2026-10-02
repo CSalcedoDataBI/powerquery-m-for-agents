@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Exchange.Contents(optional mailboxAddress as nullable text) as table
 ```
 
-Returns a table of contents from the Microsoft Exchange account `mailboxAddress`. If `mailboxAddress` is not specified, the default account for the credential will be used.
+Returns a table of contents from a Microsoft Exchange account.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/exchange-contents)
 
 ## Parameters
 

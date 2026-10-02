@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Record.AddField(record as record, fieldName as text, value as any, optional delayed as nullable logical) as record
 ```
 
-Adds a field to a record `record`, given the name of the field `fieldName` and the value `value`.
+Adds a field to a record.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/record-addfield)
 
 ## Parameters
 
@@ -28,17 +32,3 @@ Adds a field to a record `record`, given the name of the field `fieldName` and t
 | `delayed` | `nullable logical` | yes |
 
 **Executed examples (3):** [examples/record-transformations/record-addfield.md](../../examples/record-transformations/record-addfield.md)
-
-## Examples (engine metadata — not verified here)
-
-Add the field Address to the record.
-
-```m
-Record.AddField([CustomerID = 1, Name = "Bob", Phone = "123-4567"], "Address", "123 Main St.")
-```
-
-Stated result:
-
-```m
-[CustomerID = 1, Name = "Bob", Phone = "123-4567", Address = "123 Main St."]
-```

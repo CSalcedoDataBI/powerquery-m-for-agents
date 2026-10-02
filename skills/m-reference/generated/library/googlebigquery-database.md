@@ -16,28 +16,8 @@ source: "#shared \u2014 desktop 2.157.879.0"
 GoogleBigQuery.Database(optional options as nullable record) as table
 ```
 
-Returns a table listing the available projects in Google BigQuery. An optional record parameter, `options`, may be specified to control the following options:
-
-- `ConnectionTimeout`: A duration which controls how long to wait before abandoning an attempt to make a connection to the server. The default value is ODBC Connection Timeout value.
-
-- `CommandTimeout`: A duration which controls how long the server-side query is allowed to run before it is canceled.
-
-- `BillingProject`: Billing project id. The default value is the first available project.
-
-- `UseStorageApi`: Specifies whether to use the BigQuery Storage API for large result sets. The default value is true to use Storage API. Set to false to not use Storage API
-
-The record parameter is specified as [option1 = value1, option2 = value2...].
-
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `options` | `nullable record` | yes |
-
-## Examples (engine metadata — not verified here)
-
-List the available projects in Google BigQuery
-
-```m
-GoogleBigQuery.Database()
-```

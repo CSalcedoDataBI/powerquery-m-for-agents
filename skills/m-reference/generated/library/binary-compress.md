@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Binary.Compress(binary as nullable binary, compressionType as number) as nullable binary
 ```
 
-Compresses a binary value using the given compression type. The result of this call is a compressed copy of the input. Compression types include:
+Compresses a binary value using the given compression type.
 
-- `Compression.GZip`
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `Compression.Deflate`
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/binary-compress)
 
 ## Parameters
 
@@ -30,17 +30,3 @@ Compresses a binary value using the given compression type. The result of this c
 | `compressionType` | `number` | no |
 
 **Executed examples (3):** [examples/binary/binary-compress.md](../../examples/binary/binary-compress.md)
-
-## Examples (engine metadata — not verified here)
-
-Compress the binary value.
-
-```m
-Binary.Compress(Binary.FromList(List.Repeat({10}, 1000)), Compression.Deflate)
-```
-
-Stated result:
-
-```m
-#binary({227, 226, 26, 5, 163, 96, 20, 12, 119, 0, 0})
-```

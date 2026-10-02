@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.Log(number as nullable number, optional base as nullable number) as nullable number
 ```
 
-Returns the logarithm of a number, `number`, to the specified `base` base. If `base` is not specified, the default value is Number.E.
-If `number` is null `Number.Log` returns null.
+Returns the logarithm of the number to the specified base (default e).
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-log)
 
 ## Parameters
 
@@ -27,29 +30,3 @@ If `number` is null `Number.Log` returns null.
 | `base` | `nullable number` | yes |
 
 **Executed examples (3):** [examples/number-operations/number-log.md](../../examples/number-operations/number-log.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the base 10 logarithm of 2.
-
-```m
-Number.Log(2, 10)
-```
-
-Stated result:
-
-```m
-0.3010299956639812
-```
-
-Get the base e logarithm of 2.
-
-```m
-Number.Log(2)
-```
-
-Stated result:
-
-```m
-0.69314718055994529
-```

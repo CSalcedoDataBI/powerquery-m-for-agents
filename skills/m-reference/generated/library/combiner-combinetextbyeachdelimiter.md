@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Combiner.CombineTextByEachDelimiter(delimiters as list, optional quoteStyle as nullable number) as function
 ```
 
-Returns a function that combines a list of text values into a single text value using a sequence of delimiters.
+Returns a function that combines a list of text using a sequence of delimiters.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/combiner-combinetextbyeachdelimiter)
 
 ## Parameters
 
@@ -24,17 +28,3 @@ Returns a function that combines a list of text values into a single text value 
 |---|---|---|
 | `delimiters` | `list` | no |
 | `quoteStyle` | `nullable number` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Combine a list of text values using a sequence of delimiters.
-
-```m
-Combiner.CombineTextByEachDelimiter({"=", "+"})({"a", "b", "c"})
-```
-
-Stated result:
-
-```m
-"a=b+c"
-```

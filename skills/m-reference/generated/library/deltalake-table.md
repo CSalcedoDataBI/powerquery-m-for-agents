@@ -16,7 +16,7 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DeltaLake.Table(directory as table, optional options as nullable record) as any
 ```
 
-Returns the contents of the Delta Lake table.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/deltalake-table)
 
 ## Parameters
 

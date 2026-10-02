@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.PositionOfAny(text as text, characters as list, optional occurrence as nullable number) as any
 ```
 
-Returns the first position of any character in the list `characters` that is found in `text`.
-An optional parameter `occurrence` may be used to specify which occurrence position to return.
+Returns the first position in the text value of any listed character (-1 if not found).
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-positionofany)
 
 ## Parameters
 
@@ -28,29 +31,3 @@ An optional parameter `occurrence` may be used to specify which occurrence posit
 | `occurrence` | `nullable number` | yes |
 
 **Executed examples (1):** [examples/text-membership/text-positionofany.md](../../examples/text-membership/text-positionofany.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the first position of "W" or "H" in text "Hello, World!".
-
-```m
-Text.PositionOfAny("Hello, World!", {"H", "W"})
-```
-
-Stated result:
-
-```m
-0
-```
-
-Find all the positions of "W" or "H" in text "Hello, World!".
-
-```m
-Text.PositionOfAny("Hello, World!", {"H", "W"}, Occurrence.All)
-```
-
-Stated result:
-
-```m
-{0, 7}
-```

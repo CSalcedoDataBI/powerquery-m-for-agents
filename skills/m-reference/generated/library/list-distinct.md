@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Distinct(list as list, optional equationCriteria as any) as list
 ```
 
-Returns a list that contains all the values in the specified list with duplicates removed. If the specified list is empty, the result is an empty list.
+Returns a list of values with duplicates removed.
 
-- `list`: The list from which distinct values are extracted.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `equationCriteria`: (Optional) Specifies how equality is determined when comparing values. This parameter can be a key selector function, a comparer function, or a list containing both a key selector and a comparer.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-distinct)
 
 ## Parameters
 
@@ -30,84 +30,3 @@ Returns a list that contains all the values in the specified list with duplicate
 | `equationCriteria` | `any` | yes |
 
 **Executed examples (1):** [examples/list-selection/list-distinct.md](../../examples/list-selection/list-distinct.md)
-
-## Examples (engine metadata — not verified here)
-
-Remove the duplicates from the list {1, 1, 2, 3, 3, 3}.
-
-```m
-List.Distinct({1, 1, 2, 3, 3, 3})
-```
-
-Stated result:
-
-```m
-{1, 2, 3}
-```
-
-Starting at the end of the list, select the fruits that have a unique text length.
-
-```m
-let
-    Source = {"Apple", "Banana", "Cherry", "Date", "Fig"},
-    Result = List.Distinct(List.Reverse(Source), each Text.Length(_))
-in
-    Result
-```
-
-Stated result:
-
-```m
-{"Fig", "Date", "Cherry", "Apple"}
-```
-
-Starting at the beginning of the list, select the unique fruits while ignoring case.
-
-```m
-let
-    Source = {"apple", "Pear", "aPPle", "banana", "ORANGE", "pear", "Banana", "Cherry"},
-    Result = List.Distinct(Source, Comparer.OrdinalIgnoreCase)
-in
-    Result
-```
-
-Stated result:
-
-```m
-{"apple", "Pear", "banana", "ORANGE", "Cherry"}
-```
-
-Extract from a list of lists the first lists with unique country names while ignoring case. Place the extracted lists in the rows of a new table.
-
-```m
-let
-    Source = {
-        {"USA", #date(2023, 8, 1), 567},
-        {"canada", #date(2023, 8, 1), 254},
-        {"Usa", #date(2023, 7, 1), 450},
-        {"CANADA", #date(2023, 6, 1), 357},
-        {"Panama", #date(2023, 6, 2), 20},
-        {"panama", #date(2023, 7, 1), 40}
-    },
-    DistinctByCountry = List.Distinct(
-        Source,
-        {each _{0}, Comparer.OrdinalIgnoreCase}
-    ),
-    ToTable = Table.FromRows(DistinctByCountry, {"Country", "Date", "Value"}),
-    ChangeTypes = Table.TransformColumnTypes(
-        ToTable, {{"Country", type text}, {"Date", type date}, {"Value", Int64.Type}}
-    )
-in
-    ChangeTypes
-```
-
-Stated result:
-
-```m
-#table(type table[Country = text, Date = date, Value = Int64.Type],
-{
-    {"USA", #date(2023, 8, 1), 567},
-    {"canada", #date(2023, 8, 1), 254},
-    {"Panama", #date(2023, 6, 2), 20}
-})
-```

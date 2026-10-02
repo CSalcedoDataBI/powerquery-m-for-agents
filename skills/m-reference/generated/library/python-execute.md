@@ -16,19 +16,9 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Python.Execute(script as text, optional arguments as nullable record) as table
 ```
 
-Executes Python script and returns data frames
-
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `script` | `text` | no |
 | `arguments` | `nullable record` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Executes Python script and returns data frames
-
-```m
-Python.Execute("a = pandas.DataFrame(dataset[dataset.columns[0]])", [dataset=#"Source"])
-```

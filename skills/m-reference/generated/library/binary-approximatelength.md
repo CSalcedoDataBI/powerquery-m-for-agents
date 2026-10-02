@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Binary.ApproximateLength(binary as nullable binary) as nullable number
 ```
 
-Returns the approximate length of `binary`, or an error if the data source doesn't support an approximate length.
+Returns the approximate length of the binary.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/binary-approximatelength)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns the approximate length of `binary`, or an error if the data source doesn
 | `binary` | `nullable binary` | no |
 
 **Executed examples (3):** [examples/binary/binary-approximatelength.md](../../examples/binary/binary-approximatelength.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the approximate length of the binary value.
-
-```m
-Binary.ApproximateLength(Binary.FromText("i45WMlSKjQUA", BinaryEncoding.Base64))
-```
-
-Stated result:
-
-```m
-9
-```

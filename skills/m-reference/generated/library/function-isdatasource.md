@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Function.IsDataSource(function as function) as logical
 ```
 
-Returns whether or not `function` is considered a data source.
+Returns whether or not a particular function is considered a data source.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/function-isdatasource)
 
 ## Parameters
 

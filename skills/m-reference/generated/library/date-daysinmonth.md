@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.DaysInMonth(dateTime as any) as nullable number
 ```
 
-Returns the number of daysin the month in the `date`, `datetime`, or `datetimezone` value `dateTime`.
+Returns a number from 28 to 31 indicating the number of days in the month.
 
-- `dateTime`: A `date`, `datetime`, or `datetimezone` value for which the number of days in the month is returned.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-daysinmonth)
 
 ## Parameters
 
@@ -27,17 +29,3 @@ Returns the number of daysin the month in the `date`, `datetime`, or `datetimezo
 | `dateTime` | `any` | no |
 
 **Executed examples (3):** [examples/date/date-daysinmonth.md](../../examples/date/date-daysinmonth.md)
-
-## Examples (engine metadata — not verified here)
-
-Number of days in the month December as represented by `#date(2011, 12, 01)`.
-
-```m
-Date.DaysInMonth(#date(2011, 12, 01))
-```
-
-Stated result:
-
-```m
-31
-```

@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.FindText(list as list, text as text) as list
 ```
 
-Returns a list of the values from the list `list` which contained the value `text`.
+Returns a list of values (including record fields) that contain the specified text.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-findtext)
 
 ## Parameters
 
@@ -26,17 +30,3 @@ Returns a list of the values from the list `list` which contained the value `tex
 | `text` | `text` | no |
 
 **Executed examples (1):** [examples/list-selection/list-findtext.md](../../examples/list-selection/list-findtext.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the text values in the list {"a", "b", "ab"} that match "a".
-
-```m
-List.FindText({"a", "b", "ab"}, "a")
-```
-
-Stated result:
-
-```m
-{"a", "ab"}
-```

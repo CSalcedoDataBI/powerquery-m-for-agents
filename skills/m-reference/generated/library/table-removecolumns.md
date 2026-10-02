@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.RemoveColumns(table as table, columns as any, optional missingField as nullable number) as table
 ```
 
-Removes the specified `columns` from the `table` provided.
-If the specified column doesn't exist, an error is raised unless the optional parameter `missingField` specifies an alternative behavior (for example, `MissingField.UseNull` or `MissingField.Ignore`).
+Removes the specified columns.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-removecolumns)
 
 ## Parameters
 
@@ -28,35 +31,3 @@ If the specified column doesn't exist, an error is raised unless the optional pa
 | `missingField` | `nullable number` | yes |
 
 **Executed examples (1):** [examples/table-column-operations/table-removecolumns.md](../../examples/table-column-operations/table-removecolumns.md)
-
-## Examples (engine metadata — not verified here)
-
-Remove column [Phone] from the table.
-
-```m
-Table.RemoveColumns(
-    Table.FromRecords({[CustomerID = 1, Name = "Bob", Phone = "123-4567"]}),
-    "Phone"
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({[CustomerID = 1, Name = "Bob"]})
-```
-
-Try to remove a non-existent column from the table.
-
-```m
-Table.RemoveColumns(
-    Table.FromRecords({[CustomerID = 1, Name = "Bob", Phone = "123-4567"]}),
-    "Address"
-)
-```
-
-Stated result:
-
-```m
-[Expression.Error] The column 'Address' of the table wasn't found.
-```

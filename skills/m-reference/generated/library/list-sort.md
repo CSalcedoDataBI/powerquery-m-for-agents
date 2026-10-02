@@ -16,22 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Sort(list as list, optional comparisonCriteria as any) as list
 ```
 
-Sorts a list of data, `list`, according to the optional criteria specified.
-An optional parameter, `comparisonCriteria`, can be specified as the comparison criterion. This can take the following values:
+Sorts a list of data according to the criteria specified.
 
-- To control the order, the comparison criterion can be an Order enum value. (`Order.Descending`, `Order.Ascending`).
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- To compute a key to be used for sorting, a function of 1 argument can be used.
-
-- To both select a key and control order, comparison criterion can be a list containing the key and order (`{each 1 / _, Order.Descending}`).
-
-- To completely control the comparison, a function of 2 arguments can be used (such as Value.Compare). This function will be passed two items from the list (any two items, in any order). The function should return one of the following values:
-
-- `-1`: The first item is less than the second item.
-
-- `0`: The items are equal.
-
-- `1`: The first item is greater than the second item.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-sort)
 
 ## Parameters
 
@@ -41,41 +30,3 @@ An optional parameter, `comparisonCriteria`, can be specified as the comparison 
 | `comparisonCriteria` | `any` | yes |
 
 **Executed examples (1):** [examples/list-ordering/list-sort.md](../../examples/list-ordering/list-sort.md)
-
-## Examples (engine metadata — not verified here)
-
-Sort the list {2, 3, 1}.
-
-```m
-List.Sort({2, 3, 1})
-```
-
-Stated result:
-
-```m
-{1, 2, 3}
-```
-
-Sort the list {2, 3, 1} in descending order.
-
-```m
-List.Sort({2, 3, 1}, Order.Descending)
-```
-
-Stated result:
-
-```m
-{3, 2, 1}
-```
-
-Sort the list {2, 3, 1} in descending order using the Value.Compare method.
-
-```m
-List.Sort({2, 3, 1}, (x, y) => Value.Compare(1/x, 1/y))
-```
-
-Stated result:
-
-```m
-{3, 2, 1}
-```

@@ -16,36 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.IsNaN(number as number) as logical
 ```
 
-Indicates if the value is NaN (Not a number). Returns `true` if `number` is equivalent to `Number.NaN`, `false` otherwise.
+Indicates if the value is NaN (Not a number).
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-isnan)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `number` | `number` | no |
-
-## Examples (engine metadata — not verified here)
-
-Check if 0 divided by 0 is NaN.
-
-```m
-Number.IsNaN(0/0)
-```
-
-Stated result:
-
-```m
-true
-```
-
-Check if 1 divided by 0 is NaN.
-
-```m
-Number.IsNaN(1/0)
-```
-
-Stated result:
-
-```m
-false
-```

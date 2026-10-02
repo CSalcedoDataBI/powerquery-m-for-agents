@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.EndOfYear(dateTime as any) as any
 ```
 
-Returns the end of the year that contains `dateTime`, including fractional seconds. Time zone information is preserved.
+Returns the end of the year.
 
-- `dateTime`: A `date`, `datetime`, or `datetimezone` value from which the end of the year is calculated.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-endofyear)
 
 ## Parameters
 
@@ -27,29 +29,3 @@ Returns the end of the year that contains `dateTime`, including fractional secon
 | `dateTime` | `any` | no |
 
 **Executed examples (3):** [examples/date/date-endofyear.md](../../examples/date/date-endofyear.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the end of the year for 5/14/2011 05:00:00 PM.
-
-```m
-Date.EndOfYear(#datetime(2011, 5, 14, 17, 0, 0))
-```
-
-Stated result:
-
-```m
-#datetime(2011, 12, 31, 23, 59, 59.9999999)
-```
-
-Get the end of hour for 5/17/2011 05:00:00 PM -7:00.
-
-```m
-Date.EndOfYear(#datetimezone(2011, 5, 17, 5, 0, 0, -7, 0))
-```
-
-Stated result:
-
-```m
-#datetimezone(2011, 12, 31, 23, 59, 59.9999999, -7, 0)
-```

@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.SingleRow(table as table) as record
 ```
 
-Returns the single row in the one row `table`. If the `table` has more than one row, an error is raised.
+Returns the single row in the table.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-singlerow)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns the single row in the one row `table`. If the `table` has more than one 
 | `table` | `table` | no |
 
 **Executed examples (1):** [examples/table-row-operations/table-singlerow.md](../../examples/table-row-operations/table-singlerow.md)
-
-## Examples (engine metadata — not verified here)
-
-Return the single row in the table.
-
-```m
-Table.SingleRow(Table.FromRecords({[CustomerID = 1, Name = "Bob", Phone = "123-4567"]}))
-```
-
-Stated result:
-
-```m
-[CustomerID = 1, Name = "Bob", Phone = "123-4567"]
-```

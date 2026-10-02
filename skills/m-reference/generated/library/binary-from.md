@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Binary.From(value as any, optional encoding as nullable number) as nullable binary
 ```
 
-Returns a `binary` value from the given `value`. If the given `value` is `null`, `Binary.From` returns `null`. If the given `value` is `binary`, `value` is returned. Values of the following types can be converted to a `binary` value:
+Creates a binary from the given value
 
-- `text`: A `binary` value from the text representation. Refer to `Binary.FromText` for details.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-If `value` is of any other type, an error is returned.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/binary-from)
 
 ## Parameters
 
@@ -30,17 +30,3 @@ If `value` is of any other type, an error is returned.
 | `encoding` | `nullable number` | yes |
 
 **Executed examples (3):** [examples/binary/binary-from.md](../../examples/binary/binary-from.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the `binary` value of `"1011"`.
-
-```m
-Binary.From("1011")
-```
-
-Stated result:
-
-```m
-Binary.FromText("1011", BinaryEncoding.Base64)
-```

@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.Clean(text as nullable text) as nullable text
 ```
 
-Returns a text value with all control characters of `text` removed.
+Returns the text value with all control characters removed.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-clean)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns a text value with all control characters of `text` removed.
 | `text` | `nullable text` | no |
 
 **Executed examples (1):** [examples/text-transformations/text-clean.md](../../examples/text-transformations/text-clean.md)
-
-## Examples (engine metadata — not verified here)
-
-Remove line feeds and other control characters from a text value.
-
-```m
-Text.Clean("ABC#(lf)D")
-```
-
-Stated result:
-
-```m
-"ABCD"
-```

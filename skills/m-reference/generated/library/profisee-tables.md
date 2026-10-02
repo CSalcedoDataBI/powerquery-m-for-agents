@@ -16,24 +16,8 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Profisee.Tables(url as text) as table
 ```
 
-Navigation Table returning Profisee entities.
-
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `url` | `text` | no |
-
-## Examples (engine metadata — not verified here)
-
-Returns a navigational table containing all profisee entities that contains data for each entity.
-
-```m
-Profisee.Tables("https://12345.com/profisee")
-```
-
-Stated result:
-
-```m
-#table({"Name", "Data", "ItemKind", "ItemName"}, {{"ABCCode", "Table", "Table", "Table"}})
-```

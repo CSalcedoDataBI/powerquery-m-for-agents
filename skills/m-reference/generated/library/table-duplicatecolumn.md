@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.DuplicateColumn(table as table, columnName as text, newColumnName as text, optional columnType as nullable type) as table
 ```
 
-Duplicate the column named `columnName` to the table `table`. The values and type for the column `newColumnName` are copied from column `columnName`.
+Duplicates a column with the specified name. Values and type are copied from the source column.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-duplicatecolumn)
 
 ## Parameters
 
@@ -28,27 +32,3 @@ Duplicate the column named `columnName` to the table `table`. The values and typ
 | `columnType` | `nullable type` | yes |
 
 **Executed examples (1):** [examples/table-column-operations/table-duplicatecolumn.md](../../examples/table-column-operations/table-duplicatecolumn.md)
-
-## Examples (engine metadata — not verified here)
-
-Duplicate the column "a" to a column named "copied column" in the table `({[a = 1, b = 2], [a = 3, b = 4]})`.
-
-```m
-Table.DuplicateColumn(
-    Table.FromRecords({
-        [a = 1, b = 2],
-        [a = 3, b = 4]
-    }),
-    "a",
-    "copied column"
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [a = 1, b = 2, #"copied column" = 1],
-    [a = 3, b = 4, #"copied column" = 3]
-})
-```

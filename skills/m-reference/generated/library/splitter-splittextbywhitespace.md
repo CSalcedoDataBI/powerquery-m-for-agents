@@ -18,6 +18,10 @@ Splitter.SplitTextByWhitespace(optional quoteStyle as nullable number) as functi
 
 Returns a function that splits text into a list of text at whitespace.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/splitter-splittextbywhitespace)
+
 ## Parameters
 
 | Name | Type | Optional |
@@ -25,17 +29,3 @@ Returns a function that splits text into a list of text at whitespace.
 | `quoteStyle` | `nullable number` | yes |
 
 **Executed examples (3):** [examples/splitter/splitter-splittextbywhitespace.md](../../examples/splitter/splitter-splittextbywhitespace.md)
-
-## Examples (engine metadata — not verified here)
-
-Split the input by whitespace characters, treating quotes like any other character.
-
-```m
-Splitter.SplitTextByWhitespace(QuoteStyle.None)("a b#(tab)c")
-```
-
-Stated result:
-
-```m
-{"a", "b", "c"}
-```

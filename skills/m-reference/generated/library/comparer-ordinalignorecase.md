@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Comparer.OrdinalIgnoreCase(x as any, y as any) as number
 ```
 
-Returns a case-insensitive comparer function which uses Ordinal rules to compare the provided values `x` and `y`.
+Returns a case-insensitive comparer function which uses Ordinal rules to compare values.
 
-A comparer function accepts two arguments and returns -1, 0, or 1 based on whether the first value is less than, equal to, or greater than the second.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/comparer-ordinalignorecase)
 
 ## Parameters
 
@@ -26,17 +28,3 @@ A comparer function accepts two arguments and returns -1, 0, or 1 based on wheth
 |---|---|---|
 | `x` | `any` | no |
 | `y` | `any` | no |
-
-## Examples (engine metadata — not verified here)
-
-Using case-insensitive Ordinal rules, compare "Abc" with "abc". Note "Abc" is less than "abc" using `Comparer.Ordinal`.
-
-```m
-Comparer.OrdinalIgnoreCase("Abc", "abc")
-```
-
-Stated result:
-
-```m
-0
-```

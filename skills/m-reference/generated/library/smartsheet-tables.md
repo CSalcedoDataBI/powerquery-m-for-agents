@@ -15,19 +15,3 @@ source: "#shared \u2014 desktop 2.157.879.0"
 ```m
 Smartsheet.Tables() as table
 ```
-
-Returns a nested table of available sheets, reports, folders, and workspaces from the Smartsheet API.
-
-## Examples (engine metadata — not verified here)
-
-Returns sheets, folders, reports, and workspaces available at the top level of the Smartsheet hierarchy
-
-```m
-Smartsheet.Tables()
-```
-
-Stated result:
-
-```m
-A table of folders, reports, and workspaces from the top level of the Smartsheet hierarchy
-```

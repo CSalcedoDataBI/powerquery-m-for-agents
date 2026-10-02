@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 inwink.ScopeContents(customerId as text, scope as text, scopeId as text) as table
 ```
 
-inwink data
-
 ## Parameters
 
 | Name | Type | Optional |

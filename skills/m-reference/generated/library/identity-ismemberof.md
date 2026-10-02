@@ -18,6 +18,10 @@ Identity.IsMemberOf(identity as record, collection as record) as logical
 
 Determines whether an identity is a member of an identity collection.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/identity-ismemberof)
+
 ## Parameters
 
 | Name | Type | Optional |

@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DataWorld.Dataset(owner as text, id as text, optional query as nullable text) as table
 ```
 
-Retrieves a dataset from Data.World
-
 ## Parameters
 
 | Name | Type | Optional |

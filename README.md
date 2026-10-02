@@ -88,5 +88,9 @@ python -m unittest discover -s skills/m-reference/scripts -t skills/m-reference/
 
 ## License
 
-MIT © CSalcedoDataBI. The licence of the function descriptions exported from `#shared` is
-an open question, and the repository will not go public until it is answered (spec §9).
+MIT © CSalcedoDataBI. The one-line function and constant descriptions are Microsoft's,
+from the MIT-licensed standard library of
+[microsoft/vscode-powerquery](https://github.com/microsoft/vscode-powerquery): see
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The engine's own long descriptions and
+examples carry no stated licence, so they are not copied (#1); each card links its Microsoft
+Learn page instead, when that page exists.

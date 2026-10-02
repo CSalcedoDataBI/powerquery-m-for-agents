@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Cube.CollapseAndRemoveColumns(cube as table, columnNames as list) as table
 ```
 
-Changes the dimensional granularity of the filter context for the `cube` by collapsing the attributes mapped to the specified columns `columnNames`. The columns are also removed from the tabular view of the cube.
+Changes the dimensional granularity of the filter context for the cube by collapsing the attributes mapped to the specified columns.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/cube-collapseandremovecolumns)
 
 ## Parameters
 

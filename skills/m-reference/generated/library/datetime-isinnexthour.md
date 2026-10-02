@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DateTime.IsInNextHour(dateTime as any) as nullable logical
 ```
 
-Indicates whether the given datetime value `dateTime` occurs during the next hour, as determined by the current date and time on the system. Note that this function will return false when passed a value that occurs within the current hour.
+Indicates whether this datetime occurs during the next hour, as determined by the current date and time on the system. Note that this function will return false when passed a value that occurs within the current hour.
 
-- `dateTime`: A `datetime`, or `datetimezone` value to be evaluated.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/datetime-isinnexthour)
 
 ## Parameters
 
@@ -27,17 +29,3 @@ Indicates whether the given datetime value `dateTime` occurs during the next hou
 | `dateTime` | `any` | no |
 
 **Executed examples (3):** [examples/datetime/datetime-isinnexthour.md](../../examples/datetime/datetime-isinnexthour.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if the hour after the current system time is in the next hour.
-
-```m
-DateTime.IsInNextHour(DateTime.FixedLocalNow() + #duration(0, 1, 0, 0))
-```
-
-Stated result:
-
-```m
-true
-```

@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Combiner.CombineTextByPositions(positions as list, optional template as nullable text) as function
 ```
 
-Returns a function that combines a list of text values into a single text value using the specified output positions.
+Returns a function that combines a list of text using the specified output positions.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/combiner-combinetextbypositions)
 
 ## Parameters
 
@@ -24,17 +28,3 @@ Returns a function that combines a list of text values into a single text value 
 |---|---|---|
 | `positions` | `list` | no |
 | `template` | `nullable text` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Combine a list of text values by placing them in the output at the specified positions.
-
-```m
-Combiner.CombineTextByPositions({0, 5, 10})({"abc", "def", "ghi"})
-```
-
-Stated result:
-
-```m
-"abc  def  ghi"
-```

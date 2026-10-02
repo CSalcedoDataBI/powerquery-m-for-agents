@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.IsDistinct(table as table, optional comparisonCriteria as any) as logical
 ```
 
-Indicates whether the `table` contains only distinct rows (no duplicates). Returns `true` if the rows are distinct, `false` otherwise.
-An optional parameter, `comparisonCriteria`, specifies which columns of the table are tested for duplication. If `comparisonCriteria` is not specified, all columns are tested.
+Indicates whether the table contains only distinct rows (no duplicates).
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-isdistinct)
 
 ## Parameters
 
@@ -27,44 +30,3 @@ An optional parameter, `comparisonCriteria`, specifies which columns of the tabl
 | `comparisonCriteria` | `any` | yes |
 
 **Executed examples (1):** [examples/table-membership/table-isdistinct.md](../../examples/table-membership/table-isdistinct.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if the table is distinct.
-
-```m
-Table.IsDistinct(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-        [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-    })
-)
-```
-
-Stated result:
-
-```m
-true
-```
-
-Determine if the table is distinct in column.
-
-```m
-Table.IsDistinct(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-        [CustomerID = 5, Name = "Bob", Phone = "232-1550"]
-    }),
-    "Name"
-)
-```
-
-Stated result:
-
-```m
-false
-```

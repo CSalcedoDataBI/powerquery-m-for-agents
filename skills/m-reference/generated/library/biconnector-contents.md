@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 BIConnector.Contents(dsnname as text) as table
 ```
 
-Enter connection information
-
 ## Parameters
 
 | Name | Type | Optional |

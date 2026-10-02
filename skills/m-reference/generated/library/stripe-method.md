@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Stripe.Method(method as text, additionalParameters as record, ColumnNames as list) as table
 ```
 
-Makes a call to the Stripe API at https://api.stripe.com/v1/`method`, with record `additionalParameters` passed as additional parameters and list `ColumnNames` of expected column names. Stripe Version 2015-10-16 is used.
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -25,29 +23,3 @@ Makes a call to the Stripe API at https://api.stripe.com/v1/`method`, with recor
 | `method` | `text` | no |
 | `additionalParameters` | `record` | no |
 | `ColumnNames` | `list` | no |
-
-## Examples (engine metadata — not verified here)
-
-Returns a table with events created after November 1, 2015
-
-```m
-Stripe.Method("events", [#"created[gte]"=1446374329], {"id", "livemode", "created", "type", "data", "object", "pending_webhooks", "request", "api_version"})
-```
-
-Stated result:
-
-```m
-A table with the specified events for the current Stripe account
-```
-
-Returns a table with all SKUs
-
-```m
-Stripe.Method("skus", [], {"id", "created", "updated", "object", "livemode", "product", "image", "active", "price", "currency", "inventory", "attributes", "metadata", "package_dimensions"})
-```
-
-Stated result:
-
-```m
-A table with all SKUs for the current Stripe account
-```

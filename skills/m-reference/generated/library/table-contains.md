@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.Contains(table as table, row as record, optional equationCriteria as any) as logical
 ```
 
-Indicates whether the specified record, `row`, appears as a row in the `table`.
-An optional parameter `equationCriteria` may be specified to control comparison between the rows of the table.
+Indicates whether the specified record appears as a row in the table.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-contains)
 
 ## Parameters
 
@@ -28,66 +31,3 @@ An optional parameter `equationCriteria` may be specified to control comparison 
 | `equationCriteria` | `any` | yes |
 
 **Executed examples (1):** [examples/table-membership/table-contains.md](../../examples/table-membership/table-contains.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if the table contains the row.
-
-```m
-Table.Contains(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-        [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-    }),
-    [Name = "Bob"]
-)
-```
-
-Stated result:
-
-```m
-true
-```
-
-Determine if the table contains the row.
-
-```m
-Table.Contains(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-        [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-    }),
-    [Name = "Ted"]
-)
-```
-
-Stated result:
-
-```m
-false
-```
-
-Determine if the table contains the row comparing only the column [Name].
-
-```m
-Table.Contains(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-        [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-    }),
-    [CustomerID = 4, Name = "Bob"],
-    "Name"
-)
-```
-
-Stated result:
-
-```m
-true
-```

@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Mode(list as list, optional equationCriteria as any) as any
 ```
 
-Returns the item that appears most frequently in `list`. If the list is empty an error is raised. If multiple items appear with the same maximum frequency, the last one is chosen.
-An optional comparison criteria value, `equationCriteria`, can be specified to control equality testing.
+Returns the most frequent value in the list.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-mode)
 
 ## Parameters
 
@@ -27,29 +30,3 @@ An optional comparison criteria value, `equationCriteria`, can be specified to c
 | `equationCriteria` | `any` | yes |
 
 **Executed examples (1):** [examples/list-averages/list-mode.md](../../examples/list-averages/list-mode.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the item that appears most frequently in the list `{"A", 1, 2, 3, 3, 4, 5}`.
-
-```m
-List.Mode({"A", 1, 2, 3, 3, 4, 5})
-```
-
-Stated result:
-
-```m
-3
-```
-
-Find the item that appears most frequently in the list `{"A", 1, 2, 3, 3, 4, 5, 5}`.
-
-```m
-List.Mode({"A", 1, 2, 3, 3, 4, 5, 5})
-```
-
-Stated result:
-
-```m
-5
-```

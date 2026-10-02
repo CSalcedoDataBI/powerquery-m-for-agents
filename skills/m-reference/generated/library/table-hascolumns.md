@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.HasColumns(table as table, columns as any) as logical
 ```
 
-Indicates whether the `table` contains the specified column(s), `columns`. Returns `true` if the table contains the column(s), `false` otherwise.
+Indicates whether the table contains the specified column(s).
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-hascolumns)
 
 ## Parameters
 
@@ -26,45 +30,3 @@ Indicates whether the `table` contains the specified column(s), `columns`. Retur
 | `columns` | `any` | no |
 
 **Executed examples (1):** [examples/table-column-operations/table-hascolumns.md](../../examples/table-column-operations/table-hascolumns.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if the table has the column [Name].
-
-```m
-Table.HasColumns(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-        [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-    }),
-    "Name"
-)
-```
-
-Stated result:
-
-```m
-true
-```
-
-Find if the table has the column [Name] and [PhoneNumber].
-
-```m
-Table.HasColumns(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-        [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-    }),
-    {"Name", "PhoneNumber"}
-)
-```
-
-Stated result:
-
-```m
-false
-```

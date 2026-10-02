@@ -16,7 +16,7 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.ReplacePartitionKey(table as table, partitionKey as nullable list) as table
 ```
 
-Replaces the partition key of the specified table.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-replacepartitionkey)
 
 ## Parameters
 

@@ -16,24 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Uri.BuildQueryString(query as record) as text
 ```
 
-Assemble the record `query` into a URI query string, escaping characters as necessary.
+Assemble a record into a URI query string.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/uri-buildquerystring)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `query` | `record` | no |
-
-## Examples (engine metadata — not verified here)
-
-Encode a query string which contains some special characters.
-
-```m
-Uri.BuildQueryString([a = "1", b = "+$"])
-```
-
-Stated result:
-
-```m
-"a=1&b=%2B%24"
-```

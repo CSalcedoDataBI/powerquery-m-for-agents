@@ -16,4 +16,4 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Excel.CurrentWorkbook() as table
 ```
 
-Returns the contents of the current Excel workbook. It returns tables, named ranges, and dynamic arrays. Unlike `Excel.Workbook`, it does not return sheets.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/excel-currentworkbook)

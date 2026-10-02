@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.IsEmpty(table as table) as logical
 ```
 
-Indicates whether the `table` contains any rows. Returns `true` if there are no rows (i.e. the table is empty), `false` otherwise.
+Indicates whether the table contains any rows.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-isempty)
 
 ## Parameters
 
@@ -25,35 +29,3 @@ Indicates whether the `table` contains any rows. Returns `true` if there are no 
 | `table` | `table` | no |
 
 **Executed examples (1):** [examples/table-information/table-isempty.md](../../examples/table-information/table-isempty.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if the table is empty.
-
-```m
-Table.IsEmpty(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"]
-    })
-)
-```
-
-Stated result:
-
-```m
-false
-```
-
-Determine if the table `({})` is empty.
-
-```m
-Table.IsEmpty(Table.FromRecords({}))
-```
-
-Stated result:
-
-```m
-true
-```

@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 OneLake.SqlAnalytics(workspace as text, database as text, artifactType as text, optional options as nullable record) as table
 ```
 
-Imports data from the SQL Analytics endpoint of a Fabric Item
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -26,17 +24,3 @@ Imports data from the SQL Analytics endpoint of a Fabric Item
 | `database` | `text` | no |
 | `artifactType` | `text` | no |
 | `options` | `nullable record` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Returns a list of Tables from the Fabric SQL Analytics endpoint
-
-```m
-OneLake.SqlAnalytics("85599f29-c009-4253-b53b-c3ba6e4afa97", "mySqlAnalyticsDatabase", "Lakehouse")
-```
-
-Stated result:
-
-```m
-Returns a table of Tables from the Fabric SQL Analytics endpoint
-```

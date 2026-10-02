@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Buffer(list as list) as list
 ```
 
-Buffers the list `list` in memory. The result of this call is a stable list.
+Buffers a list.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-buffer)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Buffers the list `list` in memory. The result of this call is a stable list.
 | `list` | `list` | no |
 
 **Executed examples (1):** [examples/list-selection/list-buffer.md](../../examples/list-selection/list-buffer.md)
-
-## Examples (engine metadata — not verified here)
-
-Create a stable copy of the list {1..10}.
-
-```m
-List.Buffer({1..10})
-```
-
-Stated result:
-
-```m
-{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-```

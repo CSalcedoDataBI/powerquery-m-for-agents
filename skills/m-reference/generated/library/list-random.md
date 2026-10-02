@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Random(count as number, optional seed as nullable number) as list
 ```
 
-Returns a list of random numbers between 0 and 1, given the number of values to generate and an optional seed value.
+Returns a list of random numbers.
 
-- `count`: The number of random values to generate.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `seed`: *(Optional)* A numeric value used to seed the random number generator. If omitted a unique list of random numbers is generated each time you call the function. If you specify the seed value with a number every call to the function generates the same list of random numbers.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-random)
 
 ## Parameters
 
@@ -30,29 +30,3 @@ Returns a list of random numbers between 0 and 1, given the number of values to 
 | `seed` | `nullable number` | yes |
 
 **Executed examples (1):** [examples/list-generators/list-random.md](../../examples/list-generators/list-random.md)
-
-## Examples (engine metadata — not verified here)
-
-Create a list of 3 random numbers.
-
-```m
-List.Random(3)
-```
-
-Stated result:
-
-```m
-{0.992332, 0.132334, 0.023592}
-```
-
-Create a list of 3 random numbers, specifying seed value.
-
-```m
-List.Random(3, 2)
-```
-
-Stated result:
-
-```m
-{0.883002, 0.245344, 0.723212}
-```

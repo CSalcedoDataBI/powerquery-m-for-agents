@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.StartOfWeek(dateTime as any, optional firstDayOfWeek as nullable number) as any
 ```
 
-Returns the start of the week that contains `dateTime`.
-`dateTime` must be a `date`, `datetime`, or `datetimezone` value.
+Returns the start of the week.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-startofweek)
 
 ## Parameters
 
@@ -27,31 +30,3 @@ Returns the start of the week that contains `dateTime`.
 | `firstDayOfWeek` | `nullable number` | yes |
 
 **Executed examples (3):** [examples/date/date-startofweek.md](../../examples/date/date-startofweek.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the start of the week for Tuesday, October 11th, 2011.
-
-```m
-Date.StartOfWeek(#datetime(2011, 10, 11, 8, 10, 32))
-```
-
-Stated result:
-
-```m
-// Sunday, October 9th, 2011
-#datetime(2011, 10, 9, 0, 0, 0)
-```
-
-Find the start of the week for Tuesday, October 11th, 2011, using Monday as the start of the week.
-
-```m
-Date.StartOfWeek(#datetime(2011, 10, 11, 8, 10, 32), Day.Monday)
-```
-
-Stated result:
-
-```m
-// Monday, October 10th, 2011
-#datetime(2011, 10, 10, 0, 0, 0)
-```

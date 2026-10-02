@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Synapse.Contents(optional option as nullable record) as table
 ```
 
-PQ Connector for Azure Synapse Analytics workspace
-
 ## Parameters
 
 | Name | Type | Optional |

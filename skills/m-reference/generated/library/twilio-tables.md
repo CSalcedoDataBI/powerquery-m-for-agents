@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Twilio.Tables(historyMonths as number) as table
 ```
 
-Returns a table with relevant Twilio data.
-
 ## Parameters
 
 | Name | Type | Optional |

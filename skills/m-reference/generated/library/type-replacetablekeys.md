@@ -18,15 +18,9 @@ Type.ReplaceTableKeys(tableType as type, keys as list) as type
 
 Returns a new table type with all keys replaced by the specified list of keys.
 
-Each key is defined using a record in the following form:
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
--
-`Columns`: a list of the column names that define the key
-
--
-`Primary`: `true` if the key is the table's primary key; otherwise, `false`
-
-The specified list of keys is validated to ensure that no more than one primary key is defined and that all key column names exist on the table type.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/type-replacetablekeys)
 
 ## Parameters
 
@@ -36,48 +30,3 @@ The specified list of keys is validated to ensure that no more than one primary 
 | `keys` | `list` | no |
 
 **Executed examples (3):** [examples/type/type-replacetablekeys.md](../../examples/type/type-replacetablekeys.md)
-
-## Examples (engine metadata — not verified here)
-
-Replace the key information on a table type.
-
-```m
-let
-    BaseType = type table [ID = number, FirstName = text, LastName = text],
-    KeysAdded = Type.ReplaceTableKeys(
-        BaseType,
-        {
-            [Columns = {"ID"}, Primary = true],
-            [Columns = {"FirstName", "LastName"}, Primary = false]
-        }
-    ),
-    DetailsOfKeys = Type.TableKeys(KeysAdded)
-in
-    DetailsOfKeys
-```
-
-Stated result:
-
-```m
-{
-    [Columns = {"ID"}, Primary = true],
-    [Columns = {"FirstName", "LastName"}, Primary = false]
-}
-```
-
-Clear the key information previously defined on a table type.
-
-```m
-let
-    TypeWithKey = Type.AddTableKey(type table [ID = number, Name = text], {"ID"}, true),
-    KeyRemoved = Type.ReplaceTableKeys(TypeWithKey, {}),
-    DetailsOfKeys = Type.TableKeys(KeyRemoved)
-in
-    DetailsOfKeys
-```
-
-Stated result:
-
-```m
-{}
-```

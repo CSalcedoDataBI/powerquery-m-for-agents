@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.AddQuarters(dateTime as any, numberOfQuarters as number) as any
 ```
 
-Returns the `date`, `datetime`, or `datetimezone` result from adding `numberOfQuarters` quarters to the `datetime` value `dateTime`.
+Adds the specified quarters to the date.
 
-- `dateTime`: The `date`, `datetime`, or `datetimezone` value to which quarters are being added.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `numberOfQuarters`: The number of quarters to add.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-addquarters)
 
 ## Parameters
 
@@ -30,17 +30,3 @@ Returns the `date`, `datetime`, or `datetimezone` result from adding `numberOfQu
 | `numberOfQuarters` | `number` | no |
 
 **Executed examples (3):** [examples/date/date-addquarters.md](../../examples/date/date-addquarters.md)
-
-## Examples (engine metadata — not verified here)
-
-Add 1 quarter to the `date`, `datetime`, or `datetimezone` value representing the date 5/14/2011.
-
-```m
-Date.AddQuarters(#date(2011, 5, 14), 1)
-```
-
-Stated result:
-
-```m
-#date(2011, 8, 14)
-```

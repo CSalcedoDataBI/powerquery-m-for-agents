@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Dates(start as date, count as number, step as duration) as list
 ```
 
-Returns a list of `date` values of size `count`, starting at `start`. The given increment, `step`, is a `duration` value that is added to every value.
+Generates a list of date values given an initial value, count, and incremental duration value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-dates)
 
 ## Parameters
 
@@ -27,23 +31,3 @@ Returns a list of `date` values of size `count`, starting at `start`. The given 
 | `step` | `duration` | no |
 
 **Executed examples (1):** [examples/list-generators/list-dates.md](../../examples/list-generators/list-dates.md)
-
-## Examples (engine metadata — not verified here)
-
-Create a list of 5 values starting from New Year's Eve (#date(2011, 12, 31)) incrementing by 1 day (#duration(1, 0, 0, 0)).
-
-```m
-List.Dates(#date(2011, 12, 31), 5, #duration(1, 0, 0, 0))
-```
-
-Stated result:
-
-```m
-{
-    #date(2011, 12, 31),
-    #date(2012, 1, 1),
-    #date(2012, 1, 2),
-    #date(2012, 1, 3),
-    #date(2012, 1, 4)
-}
-```

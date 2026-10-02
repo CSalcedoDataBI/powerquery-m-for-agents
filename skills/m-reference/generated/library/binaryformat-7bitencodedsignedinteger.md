@@ -18,6 +18,10 @@ BinaryFormat.7BitEncodedSignedInteger(binary as binary) as any
 
 A binary format that reads a 64-bit signed integer that was encoded using a 7-bit variable-length encoding.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/binaryformat-7bitencodedsignedinteger)
+
 ## Parameters
 
 | Name | Type | Optional |

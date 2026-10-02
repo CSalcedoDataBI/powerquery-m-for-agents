@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.IsInPreviousNYears(dateTime as any, years as number) as nullable logical
 ```
 
-Indicates whether the given datetime value `dateTime` occurs during the previous number of years, as determined by the current date and time on the system. Note that this function will return false when passed a value that occurs within the current year.
+Indicates whether this date occurs during the previous number of years, as determined by the current date and time on the system. Note that this function will return false when passed a value that occurs within the current year.
 
-- `dateTime`: A `date`, `datetime`, or `datetimezone` value to be evaluated.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `years`: The number of years.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-isinpreviousnyears)
 
 ## Parameters
 
@@ -30,17 +30,3 @@ Indicates whether the given datetime value `dateTime` occurs during the previous
 | `years` | `number` | no |
 
 **Executed examples (3):** [examples/date/date-isinpreviousnyears.md](../../examples/date/date-isinpreviousnyears.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if the year before the current system time is in the previous two years.
-
-```m
-Date.IsInPreviousNYears(Date.AddYears(DateTime.FixedLocalNow(), -1), 2)
-```
-
-Stated result:
-
-```m
-true
-```

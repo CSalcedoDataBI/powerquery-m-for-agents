@@ -1,6 +1,6 @@
 # M constants
 
-201 non-function members of `#shared` (`desktop` 2.157.879.0): enum values, type values and numeric constants. `Value` is the member as text (en-US); empty when it is not a primitive, such as a type, or when it is a machine setting such as `Culture.Current`. ⌂ = not in every host. They have no cards.
+201 non-function members of `#shared` (`desktop` 2.157.879.0): enum values, type values and numeric constants. `Value` is the member as text (en-US); empty when it is not a primitive, such as a type, or when it is a machine setting such as `Culture.Current`. ⌂ = not in every host. They have no cards. Summaries: Microsoft, MIT (`THIRD_PARTY_NOTICES.md`).
 
 | Name | Type | Value | Flags | Summary |
 |---|---|---|---|---|
@@ -25,7 +25,7 @@
 | `ByteOrder.BigEndian` | number | `1` |  | A possible value for the `byteOrder` parameter in `BinaryFormat.ByteOrder`. The most significant byte appears first in Big Endian byte order. |
 | `ByteOrder.LittleEndian` | number | `0` |  | A possible value for the `byteOrder` parameter in `BinaryFormat.ByteOrder`. The least significant byte appears first in Little Endian byte order. |
 | `ByteOrder.Type` | type |  |  | Specifies the byte order. |
-| `Certificate.Type` | type |  |  | The type that represents a pkcs8 Certificate Text. |
+| `Certificate.Type` | type |  |  |  |
 | `Character.Type` | type |  |  | The type that represents all characters. |
 | `Compression.Brotli` | number | `3` |  | The compressed data is in the 'Brotli' format. |
 | `Compression.Deflate` | number | `1` |  | The compressed data is in the 'Deflate' format. |
@@ -37,7 +37,7 @@
 | `Compression.Zstandard` | number | `5` |  | The compressed data is in the 'Zstandard' format. |
 | `CsvStyle.QuoteAfterDelimiter` | number | `0` |  | Quotes in a field are only significant immediately following the delimiter. |
 | `CsvStyle.QuoteAlways` | number | `1` |  | Quotes in a field are always significant regardless of where they appear. |
-| `CsvStyle.Type` | type |  |  | Specifies the significance of quotes in CSV documents. |
+| `CsvStyle.Type` | type |  |  | Specifies the significance of quotes in Csv documents. |
 | `Culture.Current` | text |  |  | Returns the name of the current culture for the application. |
 | `Currency.Type` | type |  |  | The type that represents currency value. |
 | `Date.Type` | type |  |  | The type that represents all date values. |
@@ -61,13 +61,13 @@
 | `ExtraValues.List` | number | `0` |  | If the splitter function returns more columns than the table expects, they should be collected into a list. |
 | `ExtraValues.Type` | type |  |  | Specifies the expected action for extra values in a row that contains columns more than expected. |
 | `Function.Type` | type |  |  | The type that represents all functions. |
-| `GroupKind.Global` | number | `1` |  | A global group is formed from all rows in an input table with the same key value. Note that only a single global group is produced for a given key value. |
-| `GroupKind.Local` | number | `0` |  | A local group is formed from a consecutive sequence of rows from an input table with the same key value. Note that multiple local groups may be produced with the same key value. |
+| `GroupKind.Global` | number | `1` |  | A global group is formed from all rows in an input table with the same key value. |
+| `GroupKind.Local` | number | `0` |  | A local group is formed from a consecutive sequence of rows from an input table with the same key value. |
 | `GroupKind.Type` | type |  |  | Specifies the kind of grouping. |
 | `Guid.Type` | type |  |  | The type that represents a Guid value. |
 | `HiveProtocol.HTTP` | number | `2` |  |  |
 | `HiveProtocol.Standard` | number | `1` |  |  |
-| `HiveProtocol.Type` | type |  |  | HiveProtocolEnum |
+| `HiveProtocol.Type` | type |  |  |  |
 | `Identity.Type` | type |  |  | An identity represents a user, group, device, or other identifiable thing. |
 | `IdentityProvider.Type` | type |  |  | Defines a scope in which identities are created and compared. |
 | `Int16.Type` | type |  |  | The type that represents signed 16 bit integer. |
@@ -103,11 +103,11 @@
 | `LimitClauseKind.Type` | type |  |  | Describes the type of limit clause supported by the SQL dialect used by this data source. |
 | `List.Type` | type |  |  | The type that represents all lists. |
 | `Logical.Type` | type |  |  | The type that represents all logical values. |
-| `MissingField.Error` | number | `0` |  | Indicates that missing fields should result in an error. (This is the default value.) |
-| `MissingField.Ignore` | number | `1` |  | Indicates that missing fields should be ignored. |
+| `MissingField.Error` | number | `0` |  | An optional parameter in record and table functions indicating that missing fields should result in an error. (This is the default parameter value.) |
+| `MissingField.Ignore` | number | `1` |  | An optional parameter in record and table functions indicating that missing fields should be ignored. |
 | `MissingField.Type` | type |  |  | Specifies the expected action for missing values in a row that contains columns less than expected. |
-| `MissingField.UseNull` | number | `2` |  | Indicates that missing fields should be included as null values. |
-| `None.Type` | type |  |  | None.Type |
+| `MissingField.UseNull` | number | `2` |  | An optional parameter in record and table functions indicating that missing fields should be included as null values. |
+| `None.Type` | type |  |  |  |
 | `Null.Type` | type |  |  | The type that represents null. |
 | `Number.E` | number | `2.7182818284590451` |  | A constant value that represents e. |
 | `Number.Epsilon` | number | `4.94065645841247E-324` |  | A constant value that represents the smallest positive number a floating-point number can hold. |
@@ -137,8 +137,8 @@
 | `PercentileMode.SqlDisc` | number | `3` |  | When interpolating values for `List.Percentile`, use a method compatible with SQL Server's `PERCENTILE_DISC`. |
 | `PercentileMode.Type` | type |  |  | Specifies the percentile mode type. |
 | `PowerPoint.Presentation` | null |  |  |  |
-| `Precision.Decimal` | number | `1` |  | An optional parameter for the built-in arithmetic operators to specify decimal precision. |
-| `Precision.Double` | number | `0` |  | An optional parameter for the built-in arithmetic operators to specify double precision. |
+| `Precision.Decimal` | number | `1` |  | An optional parameter for the built-in arthimetic operators to specify decimal precision. |
+| `Precision.Double` | number | `0` |  | An optional parameter for the built-in arthimetic operators to specify double precision. |
 | `Precision.Type` | type |  |  | Specifies the precision of comparison. |
 | `QuoteStyle.Csv` | number | `1` |  | Quote characters indicate the start of a quoted string. Nested quotes are indicated by two quote characters. |
 | `QuoteStyle.None` | number | `0` |  | Quote characters have no significance. |
@@ -178,7 +178,7 @@
 | `SparkProtocol.Azure` | number | `1` |  |  |
 | `SparkProtocol.HTTP` | number | `2` |  |  |
 | `SparkProtocol.Standard` | number | `0` |  |  |
-| `SparkProtocol.Type` | type |  |  | The protocol to use when connecting to an instance of Spark. |
+| `SparkProtocol.Type` | type |  |  |  |
 | `Table.Type` | type |  |  | The type that represents all tables. |
 | `Text.Type` | type |  |  | The type that represents all text values. |
 | `TextEncoding.Ascii` | number | `20127` |  | Use to choose the ASCII binary form. |

@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.End(text as nullable text, count as number) as nullable text
 ```
 
-Returns a `text` value that is the last `count` characters of the `text` value `text`.
+Returns the last characters of the text.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-end)
 
 ## Parameters
 
@@ -26,17 +30,3 @@ Returns a `text` value that is the last `count` characters of the `text` value `
 | `count` | `number` | no |
 
 **Executed examples (1):** [examples/text-extraction/text-end.md](../../examples/text-extraction/text-end.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the last 5 characters of the text "Hello, World".
-
-```m
-Text.End("Hello, World", 5)
-```
-
-Stated result:
-
-```m
-"World"
-```

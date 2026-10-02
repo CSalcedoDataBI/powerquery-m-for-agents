@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Type.ListItem(type as type) as type
 ```
 
-Returns an item type from a list `type`.
+Returns an item type from a list type.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/type-listitem)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns an item type from a list `type`.
 | `type` | `type` | no |
 
 **Executed examples (3):** [examples/type/type-listitem.md](../../examples/type/type-listitem.md)
-
-## Examples (engine metadata — not verified here)
-
-Find item type from the list `{number}`.
-
-```m
-Type.ListItem(type {number})
-```
-
-Stated result:
-
-```m
-type number
-```

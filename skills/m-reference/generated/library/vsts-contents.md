@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 VSTS.Contents(url as text, optional options as nullable record) as binary
 ```
 
-Returns the contents downloaded from the Azure DevOps Analytics Service url as a binary value. This function uses global credentials for all the accessible organization.
-
 ## Parameters
 
 | Name | Type | Optional |

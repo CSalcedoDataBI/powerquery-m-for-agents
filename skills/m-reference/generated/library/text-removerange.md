@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.RemoveRange(text as nullable text, offset as number, optional count as nullable number) as nullable text
 ```
 
-Returns a copy of the text value `text` with all the characters from position `offset` removed.
-An optional parameter, `count` can by used to specify the number of characters to remove. The default value of `count` is 1. Position values start at 0.
+Removes a count of characters starting at the given offset
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-removerange)
 
 ## Parameters
 
@@ -28,29 +31,3 @@ An optional parameter, `count` can by used to specify the number of characters t
 | `count` | `nullable number` | yes |
 
 **Executed examples (1):** [examples/text-modification/text-removerange.md](../../examples/text-modification/text-removerange.md)
-
-## Examples (engine metadata — not verified here)
-
-Remove 1 character from the text value "ABEFC" at position 2.
-
-```m
-Text.RemoveRange("ABEFC", 2)
-```
-
-Stated result:
-
-```m
-"ABFC"
-```
-
-Remove two characters from the text value "ABEFC" starting at position 2.
-
-```m
-Text.RemoveRange("ABEFC", 2, 2)
-```
-
-Stated result:
-
-```m
-"ABC"
-```

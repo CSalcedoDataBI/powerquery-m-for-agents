@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Vena.Contents(source as text, optional modelQuery as nullable text, optional apiVersion as nullable text) as table
 ```
 
-Vena
-
 ## Parameters
 
 | Name | Type | Optional |

@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Cube.ReplaceDimensions(cube as table, dimensions as any) as table
 ```
 
-Replaces the set of dimensions returned by `Cube.Dimensions`.
-For example, this function can be used to add an ID column to a dimension attribute, so that the data source can group on the ID rather than the displayed value.
+Replaces the set of dimensions returned by Cube.Dimensions.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/cube-replacedimensions)
 
 ## Parameters
 

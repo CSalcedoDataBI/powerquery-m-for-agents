@@ -16,21 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.TransformColumnTypes(table as table, typeTransformations as list, optional culture as any) as table
 ```
 
-Returns a table by applying the transform operations to the specified columns using an optional culture.
+Applies type transformation(s) of the form { column, type } using a specific culture.
 
-- `table`: The input table to transform.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `typeTransformations`: The type transformations to apply. The format for a single transformation is { column name, type value }. A list of transformations can be used to change the types of more than one column at a time. If a column doesn't exist, an error is raised.
-
-- `culture`: (Optional) The culture to use when transforming the column types (for example, "en-US"). If a record is specified for `culture`, it can contain the following fields:
-
-- `Culture`: The culture to use when transforming the column types (for example, "en-US").
-
-- `MissingField`: If a column doesn't exist, an error is raised unless this field provides an alternative behavior (for example, `MissingField.UseNull` or `MissingField.Ignore`).
-
-The type value in the `typeTransformations` parameter can be `any`, all of the `number` types, `text`, all of the `date`, `time`, `datetime`, `datetimezone`, and `duration` types, `logical`, or `binary`. The `list`, `record`, `table`, or `function` types aren't valid for this parameter.
-
-For each column listed in `typeTransformations`, the ".From" method corresponding to the specified type value is normally used to perform the transformation. For example, if a `Currency.Type` type value is given for a column, the transformation function `Currency.From` is applied to each value in that column.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-transformcolumntypes)
 
 ## Parameters
 
@@ -43,133 +33,3 @@ For each column listed in `typeTransformations`, the ".From" method correspondin
 **Field note:** [`notes/table-transformcolumntypes.md`](../../notes/table-transformcolumntypes.md)
 
 **Executed examples (1):** [examples/table-transformation/table-transformcolumntypes.md](../../examples/table-transformation/table-transformcolumntypes.md)
-
-## Examples (engine metadata — not verified here)
-
-Transform the number values in the first column to text values.
-
-```m
-let
-    Source = #table(type table [a = number, b = number],
-    {
-        {1, 2},
-        {3, 4}
-    }),
-    #"Transform Column" = Table.TransformColumnTypes(
-        Source,
-        {"a", type text}
-    )
-in
-    #"Transform Column"
-```
-
-Stated result:
-
-```m
-#table(type table [a = text, b = number],
-{
-    {"1", 2},
-    {"3", 4}
-})
-```
-
-Transform the dates in the table to their French text equivalents.
-
-```m
-let
-    Source = #table(type table [Company ID = text, Country = text, Date = date],
-    {
-        {"JS-464", "USA", #date(2024, 3, 24)},
-        {"LT-331", "France", #date(2024, 10, 5)},
-        {"XE-100", "USA", #date(2024, 5, 21)},
-        {"RT-430", "Germany", #date(2024, 1,18)},
-        {"LS-005", "France", #date(2023, 12, 31)},
-        {"UW-220", "Germany", #date(2024, 2, 25)}
-    }),
-    #"Transform Column" = Table.TransformColumnTypes(
-        Source,
-        {"Date", type text},
-        "fr-FR"
-    )
-in
-    #"Transform Column"
-```
-
-Stated result:
-
-```m
-#table(type table [Company ID = text, Country = text, Date = text],
-{
-    {"JS-464", "USA", "24/03/2024"},
-    {"LT-331", "France", "05/10/2024"},
-    {"XE-100", "USA", "21/05/2024"},
-    {"RT-430", "Germany", "18/01/2024"},
-    {"LS-005", "France", "31/12/2023"},
-    {"UW-220", "Germany", "25/02/2024"}
-})
-```
-
-Transform the dates in the table to their German text equivalents, and the values in the table to percentages.
-
-```m
-let
-    Source = #table(type table [Date = date, Customer ID = text, Value = number],
-    {
-        {#date(2024, 3, 12), "134282", .24368},
-        {#date(2024, 5, 30), "44343", .03556},
-        {#date(2023, 12, 14), "22", .3834}
-    }),
-    #"Transform Columns" = Table.TransformColumnTypes(
-        Source,
-        {{"Date", type text}, {"Value", Percentage.Type}},
-        "de-DE")
-in
-    #"Transform Columns"
-```
-
-Stated result:
-
-```m
-#table(type table [Date = text, Customer ID = text, Value = Percentage.Type],
-{
-    {"12.03.2024", "134282", .24368},
-    {"30.05.2024", "44343", .03556},
-    {"14.12.2023", "22", .3834}
-})
-```
-
-Apply transformations with a record value for `culture`.
-
-```m
-let
-    Source = #table(type table [Company ID = text, Country = text, Date = date],
-    {
-        {"JS-464", "USA", #date(2024, 3, 24)},
-        {"LT-331", "France", #date(2024, 10, 5)},
-        {"XE-100", "USA", #date(2024, 5, 21)},
-        {"RT-430", "Germany", #date(2024, 1,18)},
-        {"LS-005", "France", #date(2023, 12, 31)},
-        {"UW-220", "Germany", #date(2024, 2, 25)}
-    }),
-    #"Transform Column" = Table.TransformColumnTypes(
-        Source,
-        {{"Date", type text}, {"NewColumn", type number}},
-        [Culture="fr-FR", MissingField=MissingField.UseNull]
-    )
-in
-    #"Transform Column"
-```
-
-Stated result:
-
-```m
-#table(type table [Company ID = text, Country = text, Date = text, NewColumn = number],
-{
-    {"JS-464", "USA", "24/03/2024", null},
-    {"LT-331", "France", "05/10/2024", null},
-    {"XE-100", "USA", "21/05/2024", null},
-    {"RT-430", "Germany", "18/01/2024", null},
-    {"LS-005", "France", "31/12/2023", null},
-    {"UW-220", "Germany", "25/02/2024", null}
-})
-```

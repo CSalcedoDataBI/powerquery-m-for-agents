@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.MinN(table as table, comparisonCriteria as any, countOrCondition as any) as table
 ```
 
-Returns the smallest row(s) in the `table`, given the `comparisonCriteria`. After the rows are sorted, the `countOrCondition` parameter must be specified to further filter the result. Note the sorting algorithm cannot guarantee a fixed sorted result. The `countOrCondition` parameter can take multiple forms:
+Returns the smallest row(s) using the given criteria.
 
-- If a number is specified, a list of up to `countOrCondition` items in ascending order is returned.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- If a condition is specified, a list of items that initially meet the condition is returned. Once an item fails the condition, no further items are considered.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-minn)
 
 ## Parameters
 
@@ -31,48 +31,3 @@ Returns the smallest row(s) in the `table`, given the `comparisonCriteria`. Afte
 | `countOrCondition` | `any` | no |
 
 **Executed examples (1):** [examples/table-ordering/table-minn.md](../../examples/table-ordering/table-minn.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the row with the smallest value in column [a] with the condition [a] < 3, in the table. The rows are sorted before the filter is applied.
-
-```m
-Table.MinN(
-    Table.FromRecords({
-        [a = 2, b = 4],
-        [a = 0, b = 0],
-        [a = 6, b = 4]
-    }),
-    "a",
-    each [a] < 3
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [a = 0, b = 0],
-    [a = 2, b = 4]
-})
-```
-
-Find the row with the smallest value in column [a] with the condition [b] < 0, in the table. The rows are sorted before the filter is applied.
-
-```m
-Table.MinN(
-    Table.FromRecords({
-        [a = 2, b = 4],
-        [a = 8, b = 0],
-        [a = 6, b = 2]
-    }),
-    "a",
-    each [b] < 0
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({})
-```

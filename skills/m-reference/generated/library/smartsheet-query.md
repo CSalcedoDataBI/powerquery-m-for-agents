@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Smartsheet.Query(endpoint as text, args as text, headers as record) as any
 ```
 
-Makes a call to the Smartsheet 2.0 REST API at the specified endpoint and returns results as a JSON record.
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -25,17 +23,3 @@ Makes a call to the Smartsheet 2.0 REST API at the specified endpoint and return
 | `endpoint` | `text` | no |
 | `args` | `text` | no |
 | `headers` | `record` | no |
-
-## Examples (engine metadata — not verified here)
-
-Pulls data from the sheets Smartsheet API endpoint with additional arguments specified
-
-```m
-Smartsheet.Content("sheets", "include=ownerInfo&includeAll=true", [])
-```
-
-Stated result:
-
-```m
-A table with sheets information as returned by the Smartsheet API
-```

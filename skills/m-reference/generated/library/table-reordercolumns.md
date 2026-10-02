@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.ReorderColumns(table as table, columnOrder as list, optional missingField as nullable number) as table
 ```
 
-Returns a table from the input `table`, with the columns in the order specified by `columnOrder`. Columns that are not specified in the list will not be reordered.
-If the column doesn't exist, an error is raised unless the optional parameter `missingField` specifies an alternative (eg. `MissingField.UseNull` or `MissingField.Ignore`).
+Returns a table with the columns in the specified order.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-reordercolumns)
 
 ## Parameters
 
@@ -28,36 +31,3 @@ If the column doesn't exist, an error is raised unless the optional parameter `m
 | `missingField` | `nullable number` | yes |
 
 **Executed examples (1):** [examples/table-column-operations/table-reordercolumns.md](../../examples/table-column-operations/table-reordercolumns.md)
-
-## Examples (engine metadata — not verified here)
-
-Switch the order of the columns [Phone] and [Name] in the table.
-
-```m
-Table.ReorderColumns(
-    Table.FromRecords({[CustomerID = 1, Phone = "123-4567", Name = "Bob"]}),
-    {"Name", "Phone"}
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({[CustomerID = 1, Name = "Bob", Phone = "123-4567"]})
-```
-
-Switch the order of the columns [Phone] and [Address] or use "MissingField.Ignore" in the table. It doesn't change the table because column [Address] doesn't exist.
-
-```m
-Table.ReorderColumns(
-    Table.FromRecords({[CustomerID = 1, Name = "Bob", Phone = "123-4567"]}),
-    {"Phone", "Address"},
-    MissingField.Ignore
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({[CustomerID = 1, Name = "Bob", Phone = "123-4567"]})
-```

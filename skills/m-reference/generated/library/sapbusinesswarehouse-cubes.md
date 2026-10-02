@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 SapBusinessWarehouse.Cubes(server as text, systemNumberOrSystemId as text, clientId as text, optional optionsOrLogonGroup as any, optional options as nullable record) as table
 ```
 
-Returns a table of InfoCubes and queries grouped by InfoArea from an SAP Business Warehouse instance at server `server` with system number `systemNumberOrSystemId` and Client ID `clientId`. An optional record parameter, `optionsOrLogonGroup`, may be specified to control the following options:
+Returns the InfoCubes and queries in an SAP Business Warehouse system grouped by InfoArea.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/sapbusinesswarehouse-cubes)
 
 ## Parameters
 

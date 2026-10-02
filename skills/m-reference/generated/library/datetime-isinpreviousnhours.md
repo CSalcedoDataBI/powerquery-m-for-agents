@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DateTime.IsInPreviousNHours(dateTime as any, hours as number) as nullable logical
 ```
 
-Indicates whether the given datetime value `dateTime` occurs during the previous number of hours, as determined by the current date and time on the system. Note that this function will return false when passed a value that occurs within the current hour.
+Indicates whether this datetime occurs during the previous number of hours, as determined by the current date and time on the system. Note that this function will return false when passed a value that occurs within the current hour.
 
-- `dateTime`: A `datetime`, or `datetimezone` value to be evaluated.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `hours`: The number of hours.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/datetime-isinpreviousnhours)
 
 ## Parameters
 
@@ -30,17 +30,3 @@ Indicates whether the given datetime value `dateTime` occurs during the previous
 | `hours` | `number` | no |
 
 **Executed examples (3):** [examples/datetime/datetime-isinpreviousnhours.md](../../examples/datetime/datetime-isinpreviousnhours.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if the hour before the current system time is in the previous two hours.
-
-```m
-DateTime.IsInPreviousNHours(DateTime.FixedLocalNow() - #duration(0, 2, 0, 0), 2)
-```
-
-Stated result:
-
-```m
-true
-```

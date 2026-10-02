@@ -18,6 +18,10 @@ Value.Expression(value as any) as nullable record
 
 Returns an abstract syntax tree (AST) that represents the value's expression.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/value-expression)
+
 ## Parameters
 
 | Name | Type | Optional |

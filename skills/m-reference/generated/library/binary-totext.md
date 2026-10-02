@@ -16,12 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Binary.ToText(binary as nullable binary, optional encoding as nullable number) as nullable text
 ```
 
-Returns the result of converting a binary list of numbers `binary` into a text value. Optionally, `encoding` may be specified to indicate the encoding to be used in the text value produced
-The following `BinaryEncoding` values may be used for `encoding`.
+Encodes binary data into a text form.
 
-- `BinaryEncoding.Base64`: Base 64 encoding
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `BinaryEncoding.Hex`: Hex encoding
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/binary-totext)
 
 ## Parameters
 

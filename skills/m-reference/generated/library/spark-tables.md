@@ -16,9 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Spark.Tables(server as text, protocol as number, optional options as nullable record) as table
 ```
 
-Returns a table listing the tables on the Spark cluster `host` using `protocol`. Valid protocols are:
-SparkProtocol.Standard, SparkProtocol.Azure, SparkProtocol.HTTP
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -26,11 +23,3 @@ SparkProtocol.Standard, SparkProtocol.Azure, SparkProtocol.HTTP
 | `server` | `text` | no |
 | `protocol` | `number` | no |
 | `options` | `nullable record` | yes |
-
-## Examples (engine metadata — not verified here)
-
-List the tables in an Azure Spark instance.
-
-```m
-Spark.Tables("contoso.azurehdinsight.net", SparkProtocol.Azure)
-```

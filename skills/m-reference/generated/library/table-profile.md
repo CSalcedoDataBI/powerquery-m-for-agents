@@ -16,23 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.Profile(table as table, optional additionalAggregates as nullable list) as table
 ```
 
-Returns a profile for the columns in `table`.
+Returns a profile of the columns of a table.
 
-The following information is returned for each column (when applicable):
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- minimum
-
-- maximum
-
-- average
-
-- standard deviation
-
-- count
-
-- null count
-
-- distinct count
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-profile)
 
 ## Parameters
 

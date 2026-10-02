@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.Permutations(setSize as nullable number, permutationSize as nullable number) as nullable number
 ```
 
-Returns the number of permutations that can be generated from a number of items, `setSize`, with a specified permutation size, `permutationSize`.
+Returns the number of permutations.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-permutations)
 
 ## Parameters
 
@@ -26,17 +30,3 @@ Returns the number of permutations that can be generated from a number of items,
 | `permutationSize` | `nullable number` | no |
 
 **Executed examples (3):** [examples/number-operations/number-permutations.md](../../examples/number-operations/number-permutations.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the number of permutations from a total of 5 items in groups of 3.
-
-```m
-Number.Permutations(5, 3)
-```
-
-Stated result:
-
-```m
-60
-```

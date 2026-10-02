@@ -16,24 +16,8 @@ source: "#shared \u2014 desktop 2.157.879.0"
 TeamDesk.Database(url as text) as table
 ```
 
-Connects to TeamDesk database and let you select a table and a view to retrieve the data from.
-
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `url` | `text` | no |
-
-## Examples (engine metadata — not verified here)
-
-Connect to sample TeamDesk database
-
-```m
-TeamDesk.Database("https://www.teamdesk.net/secure/db/57692")
-```
-
-Stated result:
-
-```m
-Navigation table
-```

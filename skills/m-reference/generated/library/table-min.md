@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.Min(table as table, comparisonCriteria as any, optional default as any) as any
 ```
 
-Returns the smallest row in the `table`, given the `comparisonCriteria`. If the table is empty, the optional `default` value is returned.
+Returns the smallest row or a default value using the given criteria.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-min)
 
 ## Parameters
 
@@ -27,35 +31,3 @@ Returns the smallest row in the `table`, given the `comparisonCriteria`. If the 
 | `default` | `any` | yes |
 
 **Executed examples (1):** [examples/table-ordering/table-min.md](../../examples/table-ordering/table-min.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the row with the smallest value in column [a] in the table.
-
-```m
-Table.Min(
-    Table.FromRecords({
-        [a = 2, b = 4],
-        [a = 6, b = 8]
-    }),
-    "a"
-)
-```
-
-Stated result:
-
-```m
-[a = 2, b = 4]
-```
-
-Find the row with the smallest value in column [a] in the table. Return -1 if empty.
-
-```m
-Table.Min(#table({"a"}, {}), "a", -1)
-```
-
-Stated result:
-
-```m
--1
-```

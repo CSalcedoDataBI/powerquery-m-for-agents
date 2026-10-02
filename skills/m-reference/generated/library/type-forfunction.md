@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Type.ForFunction(signature as record, min as number) as type
 ```
 
-Creates a `function type` from `signature`, a record of `ReturnType` and `Parameters`, and `min`, the minimum number of arguments required to invoke the function.
+Returns a type that represents functions with specific parameter and return type constraints.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/type-forfunction)
 
 ## Parameters
 
@@ -26,17 +30,3 @@ Creates a `function type` from `signature`, a record of `ReturnType` and `Parame
 | `min` | `number` | no |
 
 **Executed examples (3):** [examples/type/type-forfunction.md](../../examples/type/type-forfunction.md)
-
-## Examples (engine metadata — not verified here)
-
-Creates the type for a function that takes a number parameter named X and returns a number.
-
-```m
-Type.ForFunction([ReturnType = type number, Parameters = [X = type number]], 1)
-```
-
-Stated result:
-
-```m
-type function (X as number) as number
-```

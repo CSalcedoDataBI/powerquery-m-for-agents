@@ -16,60 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Guid.From(value as nullable text) as nullable text
 ```
 
-Returns a `Guid.Type` value from the given `value`. If the given `value` is `null`, `Guid.From` returns `null`. A check will be performed to determine if the given `value` is in an acceptable format. Acceptable formats provided in the examples.
+Returns a guid value from the given value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/guid-from)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `value` | `nullable text` | no |
-
-## Examples (engine metadata — not verified here)
-
-The Guid can be provided as 32 contiguous hexadecimal digits.
-
-```m
-Guid.From("05FE1DADC8C24F3BA4C2D194116B4967")
-```
-
-Stated result:
-
-```m
-"05fe1dad-c8c2-4f3b-a4c2-d194116b4967"
-```
-
-The Guid can be provided as 32 hexadecimal digits separated by hyphens into blocks of 8-4-4-4-12.
-
-```m
-Guid.From("05FE1DAD-C8C2-4F3B-A4C2-D194116B4967")
-```
-
-Stated result:
-
-```m
-"05fe1dad-c8c2-4f3b-a4c2-d194116b4967"
-```
-
-The Guid can be provided as 32 hexadecimal digits separated by hyphens and enclosed in braces.
-
-```m
-Guid.From("{05FE1DAD-C8C2-4F3B-A4C2-D194116B4967}")
-```
-
-Stated result:
-
-```m
-"05fe1dad-c8c2-4f3b-a4c2-d194116b4967"
-```
-
-The Guid can be provided as 32 hexadecimal digits separated by hyphens and enclosed by parentheses.
-
-```m
-Guid.From("(05FE1DAD-C8C2-4F3B-A4C2-D194116B4967)")
-```
-
-Stated result:
-
-```m
-"05fe1dad-c8c2-4f3b-a4c2-d194116b4967"
-```

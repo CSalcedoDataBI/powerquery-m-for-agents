@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.ContainsAny(table as table, rows as list, optional equationCriteria as any) as logical
 ```
 
-Indicates whether any the specified records in the list of records `rows`, appear as rows in the `table`.
-An optional parameter `equationCriteria` may be specified to control comparison between the rows of the table.
+Indicates whether any of the specified records appear as rows in the table.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-containsany)
 
 ## Parameters
 
@@ -28,69 +31,3 @@ An optional parameter `equationCriteria` may be specified to control comparison 
 | `equationCriteria` | `any` | yes |
 
 **Executed examples (1):** [examples/table-membership/table-containsany.md](../../examples/table-membership/table-containsany.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if the table `({[a = 1, b = 2], [a = 3, b = 4]})` contains the rows `[a = 1, b = 2]` or `[a = 3, b = 5]`.
-
-```m
-Table.ContainsAny(
-    Table.FromRecords({
-        [a = 1, b = 2],
-        [a = 3, b = 4]
-    }),
-    {
-        [a = 1, b = 2],
-        [a = 3, b = 5]
-    }
-)
-```
-
-Stated result:
-
-```m
-true
-```
-
-Determine if the table `({[a = 1, b = 2], [a = 3, b = 4]})` contains the rows `[a = 1, b = 3]` or `[a = 3, b = 5]`.
-
-```m
-Table.ContainsAny(
-    Table.FromRecords({
-        [a = 1, b = 2],
-        [a = 3, b = 4]
-    }),
-    {
-        [a = 1, b = 3],
-        [a = 3, b = 5]
-    }
-)
-```
-
-Stated result:
-
-```m
-false
-```
-
-Determine if the table `(Table.FromRecords({[a = 1, b = 2], [a = 3, b = 4]}))` contains the rows `[a = 1, b = 3]` or `[a = 3, b = 5]` comparing only the column [a].
-
-```m
-Table.ContainsAny(
-    Table.FromRecords({
-        [a = 1, b = 2],
-        [a = 3, b = 4]
-    }),
-    {
-        [a = 1, b = 3],
-        [a = 3, b = 5]
-    },
-    "a"
-)
-```
-
-Stated result:
-
-```m
-true
-```

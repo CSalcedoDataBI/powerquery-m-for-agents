@@ -18,6 +18,10 @@ Lines.ToBinary(lines as list, optional lineSeparator as nullable text, optional 
 
 Converts a list of text into a binary value using the specified encoding and lineSeparator.The specified lineSeparator is appended to each line. If not specified then the carriage return and line feed characters are used.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/lines-tobinary)
+
 ## Parameters
 
 | Name | Type | Optional |

@@ -16,24 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Time.Hour(dateTime as any) as nullable number
 ```
 
-Returns the hour component of the provided `time`, `datetime`, or `datetimezone` value, `dateTime`.
+Returns the hour component.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/time-hour)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `dateTime` | `any` | no |
-
-## Examples (engine metadata — not verified here)
-
-Find the hour in #datetime(2011, 12, 31, 9, 15, 36).
-
-```m
-Time.Hour(#datetime(2011, 12, 31, 9, 15, 36))
-```
-
-Stated result:
-
-```m
-9
-```

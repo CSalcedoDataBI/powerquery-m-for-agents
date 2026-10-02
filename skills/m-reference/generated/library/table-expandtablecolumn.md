@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.ExpandTableColumn(table as table, column as text, columnNames as list, optional newColumnNames as nullable list) as table
 ```
 
-Expands tables in `table`[`column`] into multiple rows and columns. `columnNames` is used to select the columns to expand from the inner table. Specify `newColumnNames` to avoid conflicts between existing columns and new columns.
+Expands a column of records or a column of tables into multiple columns in the containing table.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-expandtablecolumn)
 
 ## Parameters
 
@@ -28,33 +32,3 @@ Expands tables in `table`[`column`] into multiple rows and columns. `columnNames
 | `newColumnNames` | `nullable list` | yes |
 
 **Executed examples (1):** [examples/table-transformation/table-expandtablecolumn.md](../../examples/table-transformation/table-expandtablecolumn.md)
-
-## Examples (engine metadata — not verified here)
-
-Expand table columns in `[a]` in the table `({[t = {[a=1, b=2, c=3], [a=2,b=4,c=6]}, b = 2]})` into 3 columns `[t.a]`, `[t.b]` and `[t.c]`.
-
-```m
-Table.ExpandTableColumn(
-    Table.FromRecords({
-        [
-            t = Table.FromRecords({
-                [a = 1, b = 2, c = 3],
-                [a = 2, b = 4, c = 6]
-            }),
-            b = 2
-        ]
-    }),
-    "t",
-    {"a", "b", "c"},
-    {"t.a", "t.b", "t.c"}
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [t.a = 1, t.b = 2, t.c = 3, b = 2],
-    [t.a = 2, t.b = 4, t.c = 6, b = 2]
-})
-```

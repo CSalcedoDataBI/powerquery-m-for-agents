@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.NestedJoin(table1 as table, key1 as any, table2 as any, key2 as any, newColumnName as text, optional joinKind as nullable number, optional keyEqualityComparers as nullable list) as table
 ```
 
-Joins the rows of `table1` with the rows of `table2` based on the equality of the values of the key columns selected by `key1` (for `table1`) and `key2` (for `table2`). The results are entered into the column named `newColumnName`.
+Performs a join between tables on supplied columns and produces the join result in a new column.
 
-The optional `joinKind` specifies the kind of join to perform. By default, a left outer join is performed if a `joinKind` is not specified.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-An optional set of `keyEqualityComparers` may be included to specify how to compare the key columns. This feature is currently intended for internal use only.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-nestedjoin)
 
 ## Parameters
 
@@ -35,34 +35,3 @@ An optional set of `keyEqualityComparers` may be included to specify how to comp
 | `keyEqualityComparers` | `nullable list` | yes |
 
 **Executed examples (1):** [examples/table-transformation/table-nestedjoin.md](../../examples/table-transformation/table-nestedjoin.md)
-
-## Examples (engine metadata — not verified here)
-
-Join two tables using a single key column.
-
-```m
-Table.NestedJoin(
-    Table.FromRecords({
-        [CustomerToCall = 1],
-        [CustomerToCall = 3]
-    }),
-    {"CustomerToCall"},
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-        [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-    }),
-    {"CustomerID"},
-    "CustomerDetails"
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [CustomerToCall = 1, CustomerDetails = Table.FromRecords({[CustomerID = 1, Name = "Bob", Phone = "123-4567"]})],
-    [CustomerToCall = 3, CustomerDetails = Table.FromRecords({[CustomerID = 3, Name = "Paul", Phone = "543-7890"]})]
-})
-```

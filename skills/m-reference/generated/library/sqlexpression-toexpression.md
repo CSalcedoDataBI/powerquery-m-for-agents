@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 SqlExpression.ToExpression(sql as text, environment as record) as text
 ```
 
-Converts the provided `sql` query to M code, with the available identifiers defined by `environment`. This function is intended for internal use only.
+Converts the provided SQL query to M code. This function is intended for internal use only.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/sqlexpression-toexpression)
 
 ## Parameters
 

@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.IsEmpty(list as list) as logical
 ```
 
-Returns `true` if the list, `list`, contains no values (length 0). If the list contains values (length > 0), returns `false`.
+Returns true if the list is empty.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-isempty)
 
 ## Parameters
 
@@ -25,29 +29,3 @@ Returns `true` if the list, `list`, contains no values (length 0). If the list c
 | `list` | `list` | no |
 
 **Executed examples (1):** [examples/list-information/list-isempty.md](../../examples/list-information/list-isempty.md)
-
-## Examples (engine metadata — not verified here)
-
-Find if the list {} is empty.
-
-```m
-List.IsEmpty({})
-```
-
-Stated result:
-
-```m
-true
-```
-
-Find if the list {1, 2} is empty.
-
-```m
-List.IsEmpty({1, 2})
-```
-
-Stated result:
-
-```m
-false
-```

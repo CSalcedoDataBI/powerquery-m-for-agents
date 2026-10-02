@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.Sinh(number as nullable number) as nullable number
 ```
 
-Returns the hyperbolic sine of `number`.
+Returns the hyperbolic sine of the number.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-sinh)
 
 ## Parameters
 

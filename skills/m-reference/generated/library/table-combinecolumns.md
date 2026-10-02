@@ -18,6 +18,10 @@ Table.CombineColumns(table as table, sourceColumns as list, combiner as function
 
 Combines the specified columns into a new column using the specified combiner function.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-combinecolumns)
+
 ## Parameters
 
 | Name | Type | Optional |
@@ -28,22 +32,3 @@ Combines the specified columns into a new column using the specified combiner fu
 | `column` | `text` | no |
 
 **Executed examples (1):** [examples/table-transformation/table-combinecolumns.md](../../examples/table-transformation/table-combinecolumns.md)
-
-## Examples (engine metadata — not verified here)
-
-Combine the last and first names into a new column, separated by a comma.
-
-```m
-Table.CombineColumns(
-    Table.FromRecords({[FirstName = "Bob", LastName = "Smith"]}),
-    {"LastName", "FirstName"},
-    Combiner.CombineTextByDelimiter(",", QuoteStyle.None),
-    "FullName"
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({[FullName = "Smith,Bob"]})
-```

@@ -16,13 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DateTimeZone.ToText(dateTimeZone as nullable datetimezone, optional options as any, optional culture as nullable text) as nullable text
 ```
 
-Returns a textual representation of `dateTimeZone`. An optional `record` parameter, `options`, may be provided to specify additional properties. `culture` is only used for legacy workflows. The `record` can contain the following fields:
+Returns a textual representation of the datetimezone value.
 
-- `Format`: A `text` value indicating the format to use. For more details, go to https://go.microsoft.com/fwlink/?linkid=2180104 and https://go.microsoft.com/fwlink/?linkid=2180105. Omitting this field or providing `null` will result in formatting the date using the default defined by `Culture`.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `Culture`: When `Format` is not null, `Culture` controls some format specifiers. For example, in `"en-US"` `"MMM"` is `"Jan", "Feb", "Mar", ...`, while in `"ru-RU"` `"MMM"` is `"янв", "фев", "мар", ...`. When `Format` is `null`, `Culture` controls the default format to use. When `Culture` is `null` or omitted, `Culture.Current` is used.
-
-To support legacy workflows, `options` and `culture` may also be text values. This has the same behavior as if `options = [Format = options, Culture = culture]`.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/datetimezone-totext)
 
 ## Parameters
 
@@ -31,41 +29,3 @@ To support legacy workflows, `options` and `culture` may also be text values. Th
 | `dateTimeZone` | `nullable datetimezone` | no |
 | `options` | `any` | yes |
 | `culture` | `nullable text` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Convert `#datetimezone(2010, 12, 31, 01, 30, 25, 2, 0)` into a `text` value. *Result output may vary depending on current culture.*
-
-```m
-DateTimeZone.ToText(#datetimezone(2010, 12, 31, 01, 30, 25, 2, 0))
-```
-
-Stated result:
-
-```m
-"12/31/2010 1:30:25 AM +02:00"
-```
-
-Convert using a custom format and the German culture.
-
-```m
-DateTimeZone.ToText(#datetimezone(2010, 12, 30, 2, 4, 50.36973, -8,0), [Format="dd MMM yyyy HH:mm:ss.ffffff zzz", Culture="de-DE"])
-```
-
-Stated result:
-
-```m
-"30 Dez 2010 02:04:50.369730 -08:00"
-```
-
-Convert using the ISO 8601 pattern.
-
-```m
-DateTimeZone.ToText(#datetimezone(2000, 2, 8, 3, 45, 12, 2, 0),[Format="O", Culture="en-US"])
-```
-
-Stated result:
-
-```m
-"2000-02-08T03:45:12.0000000+02:00"
-```

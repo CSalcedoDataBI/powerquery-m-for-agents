@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Denodo.Contents(DSN as text, optional debug as nullable logical, optional options as nullable record) as table
 ```
 
-The Denodo Connector allows you to connect to Denodo's VDP server from PowerBI
-
 ## Parameters
 
 | Name | Type | Optional |

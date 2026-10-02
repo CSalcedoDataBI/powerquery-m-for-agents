@@ -18,6 +18,10 @@ BinaryFormat.Byte(binary as binary) as any
 
 A binary format that reads an 8-bit unsigned integer.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/binaryformat-byte)
+
 ## Parameters
 
 | Name | Type | Optional |

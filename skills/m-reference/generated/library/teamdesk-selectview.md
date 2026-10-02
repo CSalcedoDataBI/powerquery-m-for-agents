@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 TeamDesk.SelectView(url as text, optional table as nullable text, optional view as nullable text, optional filter as nullable text) as table
 ```
 
-Retrieves the data from provided table and view. You can also apply an additional filter for results.
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -26,41 +24,3 @@ Retrieves the data from provided table and view. You can also apply an additiona
 | `table` | `nullable text` | yes |
 | `view` | `nullable text` | yes |
 | `filter` | `nullable text` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Retrieve all meetings from List All view
-
-```m
-TeamDesk.SelectView("https://www.teamdesk.net/secure/db/57692", "Meeting", "List All")
-```
-
-Stated result:
-
-```m
-#table(
-	{ "Starter", "Start Date", "Participants" },
-	{
-		{ ""Joe"", #date(2018, 10, 12), 10 },
-		// ...
-	}
-)
-```
-
-Retrieve today's meetings from List All view
-
-```m
-TeamDesk.SelectView("https://www.teamdesk.net/secure/db/57692", "Meeting", "List All", "[Start Date] = Today()")
-```
-
-Stated result:
-
-```m
-#table(
-	{ "Starter", "Start Date", "Participants" },
-	{
-		{ ""Joe"", #date(2018, 10, 12), 10 },
-		// ...
-	}
-)
-```

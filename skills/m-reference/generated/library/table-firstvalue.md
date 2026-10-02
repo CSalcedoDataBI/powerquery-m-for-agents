@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.FirstValue(table as table, optional default as any) as any
 ```
 
-Returns the first column of the first row of the table `table` or a specified default value.
+Returns the first column of the first row of the table or a specified default value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-firstvalue)
 
 ## Parameters
 

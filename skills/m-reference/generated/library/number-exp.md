@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.Exp(number as nullable number) as nullable number
 ```
 
-Returns the result of raising e to the power of `number` (exponential function).
+Raises e to the given power.
 
-- `number`: A `number` for which the exponential function is to be calculated. If `number` is null, `Number.Exp` returns null.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-exp)
 
 ## Parameters
 
@@ -27,17 +29,3 @@ Returns the result of raising e to the power of `number` (exponential function).
 | `number` | `nullable number` | no |
 
 **Executed examples (3):** [examples/number-operations/number-exp.md](../../examples/number-operations/number-exp.md)
-
-## Examples (engine metadata — not verified here)
-
-Raise e to the power of 3.
-
-```m
-Number.Exp(3)
-```
-
-Stated result:
-
-```m
-20.085536923187668
-```

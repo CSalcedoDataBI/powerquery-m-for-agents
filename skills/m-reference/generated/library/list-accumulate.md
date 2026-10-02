@@ -16,13 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Accumulate(list as list, seed as any, accumulator as function) as any
 ```
 
-Accumulates a summary value from the items in the specified list using the accumulator.
+Accumulates a summary value from the items in the list.
 
-- `list`: The list to iterate.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `seed`: An initial accumulated value.
-
-- `accumulator`: A function that takes the current state and the current item and returns the new state.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-accumulate)
 
 ## Parameters
 
@@ -33,76 +31,3 @@ Accumulates a summary value from the items in the specified list using the accum
 | `accumulator` | `function` | no |
 
 **Executed examples (1):** [examples/list-transformation-functions/list-accumulate.md](../../examples/list-transformation-functions/list-accumulate.md)
-
-## Examples (engine metadata — not verified here)
-
-Accumulates the summary value from the items in the list.
-
-```m
-let
-    Source = List.Accumulate(
-        {1, 2, 3, 4, 5},
-        0,
-        (runningSum, nextNumber) => runningSum + nextNumber
-    )
-in
-    Source
-```
-
-Stated result:
-
-```m
-15
-```
-
-Concatenate each word in the list with a space between, but don't include a space at the beginning.
-
-```m
-let
-    Source = List.Accumulate(
-        {"The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog."},
-        null,
-        (fullTextSoFar, nextPart) =>
-            Text.Combine({fullTextSoFar, nextPart}, " ")
-    )
-in
-    Source
-```
-
-Stated result:
-
-```m
-"The quick brown fox jumps over the lazy dog."
-```
-
-Build a list of process completion times from a start date and a list of process run times.
-
-```m
-let
-    #"Process Duration" =
-    {
-        #duration(0,1,0,0),
-        #duration(0,2,0,0),
-        #duration(0,3,0,0)
-    },
-    #"Start Time" = #datetime(2025, 9, 8, 19, 0, 0),
-    #"Process Timeline" = List.Accumulate(
-        #"Process Duration",
-        {#"Start Time"},
-        (accumulatedTimes, nextDuration) =>
-            accumulatedTimes & {List.Last(accumulatedTimes) + nextDuration}
-    )
-in
-    #"Process Timeline"
-```
-
-Stated result:
-
-```m
-{
-    #datetime(2025, 9, 8, 19, 0, 0),
-    #datetime(2025, 9, 8, 20, 0, 0),
-    #datetime(2025, 9, 8, 22, 0, 0),
-    #datetime(2025, 9, 9, 1, 0, 0)
-}
-```

@@ -202,7 +202,7 @@
    "category": "Accessing data",
    "returns": "table",
    "signature": "Cdm.Contents(table as table) as table",
-   "summary": "Cdm.Contents",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -247,7 +247,7 @@
    "category": "Accessing data",
    "returns": "table",
    "signature": "DeltaLake.Metadata(table as table) as table",
-   "summary": "Given a Delta Lake table, returns the log entries for that table.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -262,7 +262,7 @@
    "category": "Accessing data",
    "returns": "any",
    "signature": "DeltaLake.Table(directory as table, optional options as nullable record) as any",
-   "summary": "Returns the contents of the Delta Lake table.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -292,7 +292,7 @@
    "category": "Accessing data",
    "returns": "table",
    "signature": "Excel.CurrentWorkbook() as table",
-   "summary": "Returns the contents of the current Excel workbook.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -682,7 +682,7 @@
    "category": "Accessing data",
    "returns": "any",
    "signature": "Parquet.Document(binary as binary, optional options as nullable record) as any",
-   "summary": "Returns the contents of the Parquet document as a table.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -697,7 +697,7 @@
    "category": "Accessing data",
    "returns": "any",
    "signature": "Parquet.Metadata(binary as binary) as any",
-   "summary": "This function is intended for internal use only.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -712,7 +712,7 @@
    "category": "Accessing data",
    "returns": "table",
    "signature": "Pdf.Tables(pdf as binary, optional options as nullable record) as table",
-   "summary": "Returns any tables found in a PDF file.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],

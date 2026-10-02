@@ -232,7 +232,7 @@
    "category": "Binary",
    "returns": "record",
    "signature": "Binary.ViewError(errorRecord as record) as record",
-   "summary": "Creates a modified error record which won't trigger a fallback when raised by a handler defined on a view (via Binary.V…",
+   "summary": "Creates a modified error record which won't trigger a fallback when thrown by a handler defined on a view (via Binary.V…",
    "hosts": [
     "desktop"
    ],

@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.EndOfQuarter(dateTime as any) as any
 ```
 
-Returns the end of the quarter that contains `dateTime`. Time zone information is preserved.
+Returns the end of the quarter.
 
-- `dateTime`: A `date`, `datetime`, or `datetimezone` value from which the end of the quarter is calculated.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-endofquarter)
 
 ## Parameters
 
@@ -27,17 +29,3 @@ Returns the end of the quarter that contains `dateTime`. Time zone information i
 | `dateTime` | `any` | no |
 
 **Executed examples (3):** [examples/date/date-endofquarter.md](../../examples/date/date-endofquarter.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the end of the quarter for October 10th, 2011, 8:00AM.
-
-```m
-Date.EndOfQuarter(#datetime(2011, 10, 10, 8, 0, 0))
-```
-
-Stated result:
-
-```m
-#datetime(2011, 12, 31, 23, 59, 59.9999999)
-```

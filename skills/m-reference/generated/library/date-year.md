@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.Year(dateTime as any) as nullable number
 ```
 
-Returns the year component of the provided `datetime` value, `dateTime`.
+Returns the year component.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-year)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns the year component of the provided `datetime` value, `dateTime`.
 | `dateTime` | `any` | no |
 
 **Executed examples (3):** [examples/date/date-year.md](../../examples/date/date-year.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the year in #datetime(2011, 12, 31, 9, 15, 36).
-
-```m
-Date.Year(#datetime(2011, 12, 31, 9, 15, 36))
-```
-
-Stated result:
-
-```m
-2011
-```

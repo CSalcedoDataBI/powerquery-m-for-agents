@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Transform(list as list, transform as function) as list
 ```
 
-Returns a new list of values by applying the transform function `transform` to the list, `list`.
+Returns a new list of values computed from this list.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-transform)
 
 ## Parameters
 
@@ -26,17 +30,3 @@ Returns a new list of values by applying the transform function `transform` to t
 | `transform` | `function` | no |
 
 **Executed examples (1):** [examples/list-transformation-functions/list-transform.md](../../examples/list-transformation-functions/list-transform.md)
-
-## Examples (engine metadata — not verified here)
-
-Add 1 to each value in the list {1, 2}.
-
-```m
-List.Transform({1, 2}, each _ + 1)
-```
-
-Stated result:
-
-```m
-{2, 3}
-```

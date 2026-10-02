@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.SplitAt(table as table, count as number) as list
 ```
 
-Returns a list containing two tables: a table with the first N rows of `table` (as specified by `count`) and a table containing the remaining rows of `table`.
+Returns a list containing the first count rows specified and the remaining rows.
 
-If the tables of the resulting list are enumerated exactly once and in order, the function will enumerate `table` only once.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-splitat)
 
 ## Parameters
 
@@ -28,20 +30,3 @@ If the tables of the resulting list are enumerated exactly once and in order, th
 | `count` | `number` | no |
 
 **Executed examples (1):** [examples/table-row-operations/table-splitat.md](../../examples/table-row-operations/table-splitat.md)
-
-## Examples (engine metadata — not verified here)
-
-Return the first two rows of the table and the remaining rows of the table.
-
-```m
-Table.SplitAt(#table({"a", "b", "c"}, {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}), 2)
-```
-
-Stated result:
-
-```m
-{
-    #table({"a", "b", "c"}, {{1, 2, 3}, {4, 5, 6}}),
-    #table({"a", "b", "c"}, {{7, 8, 9}})
-}
-```

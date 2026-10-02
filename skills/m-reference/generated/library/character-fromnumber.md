@@ -16,50 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Character.FromNumber(number as nullable number) as nullable text
 ```
 
-Returns the character equivalent of the number.
+Converts a number to a text character.
 
-The provided `number` should be a 21-bit Unicode code point.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/character-fromnumber)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `number` | `nullable number` | no |
-
-## Examples (engine metadata — not verified here)
-
-Convert a number to its equivalent character value.
-
-```m
-Character.FromNumber(9)
-```
-
-Stated result:
-
-```m
-"#(tab)"
-```
-
-Convert a character to a number and back again.
-
-```m
-Character.FromNumber(Character.ToNumber("A"))
-```
-
-Stated result:
-
-```m
-"A"
-```
-
-Convert the hexadecimal code point for the "grinning face" emoticon to its equivalent UTF-16 surrogate pair.
-
-```m
-Character.FromNumber(0x1F600)
-```
-
-Stated result:
-
-```m
-"#(0001F600)"
-```

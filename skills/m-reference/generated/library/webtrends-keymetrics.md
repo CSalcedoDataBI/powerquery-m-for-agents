@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Webtrends.KeyMetrics(ProfileId as text, optional startDate as nullable date, optional endDate as nullable date) as table
 ```
 
-Makes a call to the Webtrends KeyMetrics endpoint and returns all data as a table.
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -25,17 +23,3 @@ Makes a call to the Webtrends KeyMetrics endpoint and returns all data as a tabl
 | `ProfileId` | `text` | no |
 | `startDate` | `nullable date` | yes |
 | `endDate` | `nullable date` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Pulls a table of key metrics for tenant 98765 in last 30 days
-
-```m
-Webtrends.KeyMetrics("98765")
-```
-
-Stated result:
-
-```m
-A table of key metrics
-```

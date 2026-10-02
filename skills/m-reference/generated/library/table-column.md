@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.Column(table as table, column as text) as list
 ```
 
-Returns the column of data specified by `column` from the table `table` as a list.
+Returns a specified column of data from the table as a list.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-column)
 
 ## Parameters
 
@@ -26,25 +30,3 @@ Returns the column of data specified by `column` from the table `table` as a lis
 | `column` | `text` | no |
 
 **Executed examples (1):** [examples/table-column-operations/table-column.md](../../examples/table-column-operations/table-column.md)
-
-## Examples (engine metadata — not verified here)
-
-Returns the values from the [Name] column in the table.
-
-```m
-Table.Column(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-        [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-    }),
-    "Name"
-)
-```
-
-Stated result:
-
-```m
-{"Bob", "Jim", "Paul", "Ringo"}
-```

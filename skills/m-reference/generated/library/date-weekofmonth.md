@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.WeekOfMonth(dateTime as any, optional firstDayOfWeek as nullable number) as nullable number
 ```
 
-Returns a number from 1 to 6 indicating which week of the month the date `dateTime` falls in.
+Returns a number from 1 to 6 indicating which week of the month this date falls in.
 
-- `dateTime`: A `datetime` value for which the week-of-the-month is determined.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-weekofmonth)
 
 ## Parameters
 
@@ -28,17 +30,3 @@ Returns a number from 1 to 6 indicating which week of the month the date `dateTi
 | `firstDayOfWeek` | `nullable number` | yes |
 
 **Executed examples (3):** [examples/date/date-weekofmonth.md](../../examples/date/date-weekofmonth.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine which week of March the 15th falls on in 2011.
-
-```m
-Date.WeekOfMonth(#date(2011, 03, 15))
-```
-
-Stated result:
-
-```m
-3
-```

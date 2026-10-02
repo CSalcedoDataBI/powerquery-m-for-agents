@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.FillDown(table as table, columns as list) as table
 ```
 
-Returns a table from the `table` specified where the value of a previous cell is propagated to the null-valued cells below in the `columns` specified.
+Propagates the value of a previous cell to the null-valued cells below in the column.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-filldown)
 
 ## Parameters
 
@@ -26,34 +30,3 @@ Returns a table from the `table` specified where the value of a previous cell is
 | `columns` | `list` | no |
 
 **Executed examples (1):** [examples/table-transformation/table-filldown.md](../../examples/table-transformation/table-filldown.md)
-
-## Examples (engine metadata — not verified here)
-
-Return a table with the null values in column [Place] filled with the value above them from the table.
-
-```m
-Table.FillDown(
-    Table.FromRecords({
-        [Place = 1, Name = "Bob"],
-        [Place = null, Name = "John"],
-        [Place = 2, Name = "Brad"],
-        [Place = 3, Name = "Mark"],
-        [Place = null, Name = "Tom"],
-        [Place = null, Name = "Adam"]
-    }),
-    {"Place"}
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [Place = 1, Name = "Bob"],
-    [Place = 1, Name = "John"],
-    [Place = 2, Name = "Brad"],
-    [Place = 3, Name = "Mark"],
-    [Place = 3, Name = "Tom"],
-    [Place = 3, Name = "Adam"]
-})
-```

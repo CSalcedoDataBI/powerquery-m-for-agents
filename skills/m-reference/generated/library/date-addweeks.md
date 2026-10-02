@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.AddWeeks(dateTime as any, numberOfWeeks as number) as any
 ```
 
-Returns the `date`, `datetime`, or `datetimezone` result from adding `numberOfWeeks` weeks to the `datetime` value `dateTime`.
+Adds the specified weeks to the date.
 
-- `dateTime`: The `date`, `datetime`, or `datetimezone` value to which weeks are being added.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `numberOfWeeks`: The number of weeks to add.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-addweeks)
 
 ## Parameters
 
@@ -30,17 +30,3 @@ Returns the `date`, `datetime`, or `datetimezone` result from adding `numberOfWe
 | `numberOfWeeks` | `number` | no |
 
 **Executed examples (3):** [examples/date/date-addweeks.md](../../examples/date/date-addweeks.md)
-
-## Examples (engine metadata — not verified here)
-
-Add 2 weeks to the `date`, `datetime`, or `datetimezone` value representing the date 5/14/2011.
-
-```m
-Date.AddWeeks(#date(2011, 5, 14), 2)
-```
-
-Stated result:
-
-```m
-#date(2011, 5, 28)
-```

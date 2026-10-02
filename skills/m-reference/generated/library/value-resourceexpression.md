@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Value.ResourceExpression(value as any) as any
 ```
 
-Value.ResourceExpression
-
 ## Parameters
 
 | Name | Type | Optional |

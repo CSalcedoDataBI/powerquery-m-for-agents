@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.QuarterOfYear(dateTime as any) as nullable number
 ```
 
-Returns a number from 1 to 4 indicating which quarter of the year the date `dateTime` falls in. `dateTime` can be a `date`, `datetime`, or `datetimezone` value.
+Returns a number indicating which quarter of the year the date falls in.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-quarterofyear)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns a number from 1 to 4 indicating which quarter of the year the date `date
 | `dateTime` | `any` | no |
 
 **Executed examples (4):** [examples/date/date-quarterofyear.md](../../examples/date/date-quarterofyear.md)
-
-## Examples (engine metadata — not verified here)
-
-Find which quarter of the year the date #date(2011, 12, 31) falls in.
-
-```m
-Date.QuarterOfYear(#date(2011, 12, 31))
-```
-
-Stated result:
-
-```m
-4
-```

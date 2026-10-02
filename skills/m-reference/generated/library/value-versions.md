@@ -16,7 +16,7 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Value.Versions(value as any) as table
 ```
 
-Returns a navigation table containing the available versions of the `value`.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/value-versions)
 
 ## Parameters
 

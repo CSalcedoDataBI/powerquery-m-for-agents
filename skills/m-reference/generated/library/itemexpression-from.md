@@ -16,55 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 ItemExpression.From(function as function) as record
 ```
 
-Returns the abstract syntax tree (AST) for the body of `function`, normalized into an *item expression*:
+Returns the abstract syntax tree (AST) for the body of a function.
 
-- The function must be a 1-argument lambda.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- All references to the function parameter are replaced with `ItemExpression.Item`.
-
-- The AST will be simplified to contain only nodes of the kinds:
-
-- `Constant`
-
-- `Invocation`
-
-- `Unary`
-
-- `Binary`
-
-- `If`
-
-- `FieldAccess`
-
-An error is raised if an item expression AST cannot be returned for the body of `function`.
-
-This function is identical to `RowExpression.From`.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/itemexpression-from)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `function` | `function` | no |
-
-## Examples (engine metadata — not verified here)
-
-Returns the AST for the body of the function `each _ <> null`.
-
-```m
-ItemExpression.From(each _ <> null)
-```
-
-Stated result:
-
-```m
-[
-    Kind = "Binary",
-    Operator = "NotEquals",
-    Left = ItemExpression.Item,
-    Right =
-    [
-        Kind = "Constant",
-        Value = null
-    ]
-]
-```

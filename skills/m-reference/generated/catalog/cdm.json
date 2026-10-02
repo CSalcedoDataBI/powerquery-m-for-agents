@@ -7,7 +7,7 @@
    "category": "Cdm",
    "returns": "table",
    "signature": "Cdm.MapToEntity(table as table, columnDefinitions as any, optional defaultType as nullable type, optional defaultCdmClass as nullable text) as table",
-   "summary": "Returns a table with columns mapped to the attributes of an entity in the Common Data Model, including data types.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],

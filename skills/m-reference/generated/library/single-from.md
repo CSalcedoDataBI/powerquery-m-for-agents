@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Single.From(value as any, optional culture as nullable text) as nullable number
 ```
 
-Returns a Single `number` value from the given `value`. If the given `value` is `null`, `Single.From` returns `null`. If the given `value` is `number` within the range of Single, `value` is returned, otherwise an error is returned. If `value` is of any other type, it will first be converted to a `number` using `Number.FromText`. An optional `culture` may also be provided (for example, "en-US").
+Creates a Single from the given value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/single-from)
 
 ## Parameters
 
@@ -26,17 +30,3 @@ Returns a Single `number` value from the given `value`. If the given `value` is 
 | `culture` | `nullable text` | yes |
 
 **Executed examples (3):** [examples/number-conversion-and-formatting/single-from.md](../../examples/number-conversion-and-formatting/single-from.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the Single `number` value of `"1.5"`.
-
-```m
-Single.From("1.5")
-```
-
-Stated result:
-
-```m
-1.5
-```

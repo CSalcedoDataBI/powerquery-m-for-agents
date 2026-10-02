@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Parquet.Metadata(binary as binary) as any
 ```
 
-This function is intended for internal use only.
-
 ## Parameters
 
 | Name | Type | Optional |

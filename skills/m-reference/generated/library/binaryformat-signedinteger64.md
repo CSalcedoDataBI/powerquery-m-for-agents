@@ -18,6 +18,10 @@ BinaryFormat.SignedInteger64(binary as binary) as any
 
 A binary format that reads a 64-bit signed integer.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/binaryformat-signedinteger64)
+
 ## Parameters
 
 | Name | Type | Optional |

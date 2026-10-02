@@ -16,12 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Binary.FromText(text as nullable text, optional encoding as nullable number) as nullable binary
 ```
 
-Returns the result of converting text value `text` to a binary (list of `number`). `encoding` may be specified to indicate the encoding used in the text value.
-The following `BinaryEncoding` values may be used for `encoding`.
+Decodes data from a text form into binary.
 
-- `BinaryEncoding.Base64`: Base 64 encoding
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `BinaryEncoding.Hex`: Hex encoding
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/binary-fromtext)
 
 ## Parameters
 
@@ -31,29 +30,3 @@ The following `BinaryEncoding` values may be used for `encoding`.
 | `encoding` | `nullable number` | yes |
 
 **Executed examples (3):** [examples/binary/binary-fromtext.md](../../examples/binary/binary-fromtext.md)
-
-## Examples (engine metadata — not verified here)
-
-Decode "1011" into binary.
-
-```m
-Binary.FromText("1011")
-```
-
-Stated result:
-
-```m
-Binary.FromText("1011", BinaryEncoding.Base64)
-```
-
-Decode "1011" into binary with Hex encoding.
-
-```m
-Binary.FromText("1011", BinaryEncoding.Hex)
-```
-
-Stated result:
-
-```m
-Binary.FromText("EBE=", BinaryEncoding.Base64)
-```

@@ -18,6 +18,10 @@ BinaryFormat.Double(binary as binary) as any
 
 A binary format that reads an 8-byte IEEE double-precision floating point value.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/binaryformat-double)
+
 ## Parameters
 
 | Name | Type | Optional |

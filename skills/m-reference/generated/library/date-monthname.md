@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.MonthName(date as any, optional culture as nullable text) as nullable text
 ```
 
-Returns the name of the month component for the provided `date`. An optional `culture` may also be provided (for example, "en-US").
+Returns the name of the month component.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-monthname)
 
 ## Parameters
 
@@ -26,17 +30,3 @@ Returns the name of the month component for the provided `date`. An optional `cu
 | `culture` | `nullable text` | yes |
 
 **Executed examples (3):** [examples/date/date-monthname.md](../../examples/date/date-monthname.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the month name.
-
-```m
-Date.MonthName(#datetime(2011, 12, 31, 5, 0, 0), "en-US")
-```
-
-Stated result:
-
-```m
-"December"
-```

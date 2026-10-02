@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Logical.ToText(logicalValue as nullable logical) as nullable text
 ```
 
-Creates a text value from the logical value `logicalValue`, either `true` or `false`. If `logicalValue` is not a logical value, an error is raised.
+Returns the text "true" or "false" given a logical value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/logical-totext)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Creates a text value from the logical value `logicalValue`, either `true` or `fa
 | `logicalValue` | `nullable logical` | no |
 
 **Executed examples (3):** [examples/logical/logical-totext.md](../../examples/logical/logical-totext.md)
-
-## Examples (engine metadata — not verified here)
-
-Create a text value from the logical `true`.
-
-```m
-Logical.ToText(true)
-```
-
-Stated result:
-
-```m
-"true"
-```

@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Type.OpenRecord(type as type) as type
 ```
 
-Returns an opened version of the given `record` `type` (or the same type, if it is already opened).
+Returns an opened version of the given record type (or the same type, if it is already open).
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/type-openrecord)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns an opened version of the given `record` `type` (or the same type, if it 
 | `type` | `type` | no |
 
 **Executed examples (3):** [examples/type/type-openrecord.md](../../examples/type/type-openrecord.md)
-
-## Examples (engine metadata — not verified here)
-
-Create an opened version of `type [ A = number]`.
-
-```m
-Type.OpenRecord(type [A = number])
-```
-
-Stated result:
-
-```m
-type [A = number, ...]
-```

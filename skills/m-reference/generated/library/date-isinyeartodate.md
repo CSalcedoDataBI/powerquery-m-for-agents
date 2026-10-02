@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.IsInYearToDate(dateTime as any) as nullable logical
 ```
 
-Indicates whether the given datetime value `dateTime` occurs during the current year and is on or before the current day, as determined by the current date and time on the system.
+Indicates whether this date occurs during the current year and is on or before the current day, as determined by the current date and time on the system.
 
-- `dateTime`: A `date`, `datetime`, or `datetimezone` value to be evaluated.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-isinyeartodate)
 
 ## Parameters
 
@@ -27,17 +29,3 @@ Indicates whether the given datetime value `dateTime` occurs during the current 
 | `dateTime` | `any` | no |
 
 **Executed examples (3):** [examples/date/date-isinyeartodate.md](../../examples/date/date-isinyeartodate.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if the current system time is in the year to date.
-
-```m
-Date.IsInYearToDate(DateTime.FixedLocalNow())
-```
-
-Stated result:
-
-```m
-true
-```

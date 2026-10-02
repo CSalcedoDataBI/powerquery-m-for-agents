@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DataLake.Contents(url as text, optional options as nullable record) as table
 ```
 
-Returns a table containing a row for each folder and file found at `url` from Azure Data Lake Storage Gen1. Each row contains properties of the folder or file and a link to its content.
-
 ## Parameters
 
 | Name | Type | Optional |

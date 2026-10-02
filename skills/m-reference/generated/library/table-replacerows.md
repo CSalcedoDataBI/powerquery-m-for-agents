@@ -16,15 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.ReplaceRows(table as table, offset as number, count as number, rows as list) as table
 ```
 
-Replaces a specified number of rows, `count`, in the input `table` with the specified `rows`, beginning after the `offset`. The `rows` parameter is a list of records.
+Replaces the specified range of rows with the provided row(s).
 
-- `table`: The table where the replacement is performed.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `offset`: The number of rows to skip before making the replacement.
-
-- `count`: The number of rows to replace.
-
-- `rows`: The list of row records to insert into the `table` at the location specified by the `offset`.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-replacerows)
 
 ## Parameters
 
@@ -36,33 +32,3 @@ Replaces a specified number of rows, `count`, in the input `table` with the spec
 | `rows` | `list` | no |
 
 **Executed examples (1):** [examples/table-row-operations/table-replacerows.md](../../examples/table-row-operations/table-replacerows.md)
-
-## Examples (engine metadata — not verified here)
-
-Starting at position 1, replace 3 rows.
-
-```m
-Table.ReplaceRows(
-    Table.FromRecords({
-        [Column1 = 1],
-        [Column1 = 2],
-        [Column1 = 3],
-        [Column1 = 4],
-        [Column1 = 5]
-    }),
-    1,
-    3,
-    {[Column1 = 6], [Column1 = 7]}
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [Column1 = 1],
-    [Column1 = 6],
-    [Column1 = 7],
-    [Column1 = 5]
-})
-```

@@ -16,19 +16,9 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Impala.Database(server as text, optional options as nullable record) as table
 ```
 
-Import data from an Impala cluster `server`. If a port wasn't specified, the default port 21050 will be used.
-
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `server` | `text` | no |
 | `options` | `nullable record` | yes |
-
-## Examples (engine metadata — not verified here)
-
-List the tables in an Impala cluster.
-
-```m
-Impala.Database("localhost:21050")
-```

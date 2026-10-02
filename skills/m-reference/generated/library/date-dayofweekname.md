@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.DayOfWeekName(date as any, optional culture as nullable text) as nullable text
 ```
 
-Returns the day of the week name for the provided `date`. An optional `culture` may also be provided (for example, "en-US").
+Returns the day of the week name.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-dayofweekname)
 
 ## Parameters
 
@@ -26,17 +30,3 @@ Returns the day of the week name for the provided `date`. An optional `culture` 
 | `culture` | `nullable text` | yes |
 
 **Executed examples (3):** [examples/date/date-dayofweekname.md](../../examples/date/date-dayofweekname.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the day of the week name.
-
-```m
-Date.DayOfWeekName(#date(2011, 12, 31), "en-US")
-```
-
-Stated result:
-
-```m
-"Saturday"
-```

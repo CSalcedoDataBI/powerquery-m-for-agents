@@ -16,13 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Logical.From(value as any) as nullable logical
 ```
 
-Returns a `logical` value from the given `value`. If the given `value` is `null`, `Logical.From` returns `null`. If the given `value` is `logical`, `value` is returned. Values of the following types can be converted to a `logical` value:
+Creates a logical from the given value.
 
-- `text`: A `logical` value from the text value, either `"true"` or `"false"`. Refer to `Logical.FromText` for details.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `number`: `false` if `value` equals `0`, `true` otherwise.
-
-If `value` is of any other type, an error is returned.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/logical-from)
 
 ## Parameters
 
@@ -31,17 +29,3 @@ If `value` is of any other type, an error is returned.
 | `value` | `any` | no |
 
 **Executed examples (3):** [examples/logical/logical-from.md](../../examples/logical/logical-from.md)
-
-## Examples (engine metadata — not verified here)
-
-Convert `2` to a `logical` value.
-
-```m
-Logical.From(2)
-```
-
-Stated result:
-
-```m
-true
-```

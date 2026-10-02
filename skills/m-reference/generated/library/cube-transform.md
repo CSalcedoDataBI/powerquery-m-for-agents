@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Cube.Transform(cube as table, transforms as list) as table
 ```
 
-Applies the list cube functions, `transforms`, on the `cube`.
+Applies a list of cube functions.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/cube-transform)
 
 ## Parameters
 

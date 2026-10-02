@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Type.RecordFields(type as type) as record
 ```
 
-Returns a record describing the fields of a record `type`. Each field of the returned record type has a corresponding name and a value, in the form of a record `[ Type = type, Optional = logical ]`.
+Returns a record describing the fields of a record type with each field of the returned record type having a corresponding name and a value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/type-recordfields)
 
 ## Parameters
 
@@ -25,20 +29,3 @@ Returns a record describing the fields of a record `type`. Each field of the ret
 | `type` | `type` | no |
 
 **Executed examples (3):** [examples/type/type-recordfields.md](../../examples/type/type-recordfields.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the name and value of the record `[ A = number, optional B = any]`.
-
-```m
-Type.RecordFields(type [A = number, optional B = any])
-```
-
-Stated result:
-
-```m
-[
-    A = [Type = type number, Optional = false],
-    B = [Type = type any, Optional = true]
-]
-```

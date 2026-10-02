@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 BI360.Contents(Url as text) as table
 ```
 
-Retrieves a Navigation Table populated with the enabled tables for a given token
-
 ## Parameters
 
 | Name | Type | Optional |

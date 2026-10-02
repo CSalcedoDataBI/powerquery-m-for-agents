@@ -16,25 +16,9 @@ source: "#shared \u2014 desktop 2.157.879.0"
 SmartsheetGlobal.Contents(region as text, optional options as nullable record) as table
 ```
 
-Returns a nested table of available sheets, reports, folders, and workspaces from the Smartsheet API.
-
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `region` | `text` | no |
 | `options` | `nullable record` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Returns sheets, folders, reports, and workspaces available at the top level of the Smartsheet hierarchy
-
-```m
-SmartsheetGlobal.Contents("US")
-```
-
-Stated result:
-
-```m
-A table of folders, reports, and workspaces from the top level of the Smartsheet hierarchy
-```

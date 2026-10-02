@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.CombineColumnsToRecord(table as table, newColumnName as text, sourceColumns as list, optional options as nullable record) as table
 ```
 
-Combines the specified columns of `table` into a new record-valued column named `newColumnName` where each record has field names and values corresponding to the column names and values of the columns that were combined. If a record is specified for `options`, the following options may be provided:
+Combines the specified columns into a new record-valued column where each record has field names and values corresponding to the column names and values of the columns that were combined.
 
-- `DisplayNameColumn`: When specified as text, indicates that the given column name should be treated as the display name of the record. This need not be one of the columns in the record itself.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `TypeName`: When specified as text, supplies a logical type name for the resulting record which can be used during data load to drive behavior by the loading environment.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-combinecolumnstorecord)
 
 ## Parameters
 

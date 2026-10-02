@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 AzureCostManagement.Tables(scope as text, scopeValue as text, numberOfMonths as number, optional options as nullable record) as table
 ```
 
-Azure Cost Management
-
 ## Parameters
 
 | Name | Type | Optional |

@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.ToRecord(date as date) as record
 ```
 
-Returns a record containing the parts of the given date value, `date`.
+Returns a record containing parts of the date value.
 
-- `date`: A `date` value for from which the record of its parts is to be calculated.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-torecord)
 
 ## Parameters
 
@@ -27,21 +29,3 @@ Returns a record containing the parts of the given date value, `date`.
 | `date` | `date` | no |
 
 **Executed examples (3):** [examples/date/date-torecord.md](../../examples/date/date-torecord.md)
-
-## Examples (engine metadata — not verified here)
-
-Convert the `#date(2011, 12, 31)` value into a record containing parts from the date value.
-
-```m
-Date.ToRecord(#date(2011, 12, 31))
-```
-
-Stated result:
-
-```m
-[
-      Year = 2011,
-      Month = 12,
-      Day = 31
-]
-```

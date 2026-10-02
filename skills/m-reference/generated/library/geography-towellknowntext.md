@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Geography.ToWellKnownText(input as nullable record, optional omitSRID as nullable logical) as nullable text
 ```
 
-Translates a structured geographic point value into its Well-Known Text (WKT) representation as defined by the Open Geospatial Consortium (OGC), also the serialization format used by many databases including SQL Server.
+Translates a structured geographic point value into its Well-Known Text (WKT) representation.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/geography-towellknowntext)
 
 ## Parameters
 

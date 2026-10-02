@@ -86,10 +86,13 @@ class Sync(unittest.TestCase):
         self.assertIn("1 connector entry points are in `connectors.md`", catalog_md)
 
     def test_constants_index(self):
-        self.run_sync(DESKTOP)
+        # Constant descriptions come from Microsoft's MIT file, never from the engine.
+        self.run_sync(DESKTOP, descriptions={
+            "JoinKind.Inner": "A possible kind of join. The inner join contains a row for each match.",
+            "Int64.Type": "A 64-bit integer | pipe."})
         md = self.generated("constants.md")
         self.assertIn("| `JoinKind.Inner` | number | `0` |", md)
-        # The row keeps the sentence after the enum's shared first one.
+        # The row keeps the sentence after the shared first one.
         self.assertIn("inner join contains a row", md)
         self.assertIn("| `Int64.Type` | type |  |", md)
         self.assertIn("64-bit integer \\| pipe", md)
@@ -114,6 +117,21 @@ class Sync(unittest.TestCase):
             self.assertEqual({s.catalog_part(r) for r in rows}, {part})
         self.assertEqual(on_disk, len(names))
         self.assertTrue(catalog["constants"])
+
+    def test_cards_quote_only_licensed_text(self):
+        # Option B of #1: the description is Microsoft's MIT text or nothing; the engine's
+        # own examples are not copied; a Learn link only for a page that was checked.
+        self.run_sync(DESKTOP, descriptions={"Table.AddColumn": "Adds a column named newColumnName."},
+                      learn=("https://learn.example/", {"table-addcolumn"}))
+        card = self.generated("library/table-addcolumn.md")
+        self.assertIn("Adds a column named newColumnName.", card)
+        self.assertIn("*Description: Microsoft, MIT", card)
+        self.assertIn("Reference: [Microsoft Learn](https://learn.example/table-addcolumn)", card)
+        self.assertNotIn("Examples (engine metadata", card)
+        undescribed = self.generated("library/list-sum.md")
+        self.assertNotIn("Description: Microsoft", undescribed)
+        self.assertNotIn("Microsoft Learn", undescribed)
+        self.assertNotIn("Examples (engine metadata", undescribed)
 
     def test_export_without_constants_does_not_flag_them_partial(self):
         # excel-fixture predates the constants export: it contributes no hosts to them.

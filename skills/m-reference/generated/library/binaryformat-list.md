@@ -16,12 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 BinaryFormat.List(binaryFormat as function, optional countOrCondition as any) as function
 ```
 
-Returns a binary format that reads a sequence of items and returns a `list`. The `binaryFormat` parameter specifies the binary format of each item. There are three ways to determine the number of items read:
+Returns a binary format that reads a sequence of items and returns a list.
 
-- If the `countOrCondition` is not specified, then the binary format will read until there are no more items.
-- If the `countOrCondition` is a number, then the binary format will read that many items.
-- If the `countOrCondition` is a function, then that function will be invoked for each item read. The function returns true to continue, and false to stop reading items. The final item is included in the list.
-- If the `countOrCondition` is a binary format, then the count of items is expected to precede the list, and the specified format is used to read the count.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/binaryformat-list)
 
 ## Parameters
 
@@ -31,53 +30,3 @@ Returns a binary format that reads a sequence of items and returns a `list`. The
 | `countOrCondition` | `any` | yes |
 
 **Executed examples (3):** [examples/binary-formats-reading-lists/binaryformat-list.md](../../examples/binary-formats-reading-lists/binaryformat-list.md)
-
-## Examples (engine metadata — not verified here)
-
-Read bytes until the end of the data.
-
-```m
-let
-    binaryData = #binary({1, 2, 3}),
-    listFormat = BinaryFormat.List(BinaryFormat.Byte)
-in
-    listFormat(binaryData)
-```
-
-Stated result:
-
-```m
-{1, 2, 3}
-```
-
-Read two bytes.
-
-```m
-let
-    binaryData = #binary({1, 2, 3}),
-    listFormat = BinaryFormat.List(BinaryFormat.Byte, 2)
-in
-    listFormat(binaryData)
-```
-
-Stated result:
-
-```m
-{1, 2}
-```
-
-Read bytes until the byte value is greater than or equal to two.
-
-```m
-let
-    binaryData = #binary({1, 2, 3}),
-    listFormat = BinaryFormat.List(BinaryFormat.Byte, (x) => x < 2)
-in
-    listFormat(binaryData)
-```
-
-Stated result:
-
-```m
-{1, 2}
-```

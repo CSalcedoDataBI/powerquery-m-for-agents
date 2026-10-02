@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Cube.AttributeMemberProperty(attribute as any, propertyName as text) as any
 ```
 
-Returns the property `propertyName` of dimension attribute `attribute`.
+Returns a property of a dimension attribute.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/cube-attributememberproperty)
 
 ## Parameters
 

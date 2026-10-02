@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.FirstN(table as table, countOrCondition as any) as table
 ```
 
-Returns the first row(s) of the table `table`, depending on the value of `countOrCondition`:
+Returns the first count rows specified.
 
-- If `countOrCondition` is a number, that many rows (starting at the top) will be returned.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- If `countOrCondition` is a condition, the rows that meet the condition will be returned until a row does not meet the condition.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-firstn)
 
 ## Parameters
 
@@ -30,49 +30,3 @@ Returns the first row(s) of the table `table`, depending on the value of `countO
 | `countOrCondition` | `any` | no |
 
 **Executed examples (1):** [examples/table-row-operations/table-firstn.md](../../examples/table-row-operations/table-firstn.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the first two rows of the table.
-
-```m
-Table.FirstN(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"]
-    }),
-    2
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-    [CustomerID = 2, Name = "Jim", Phone = "987-6543"]
-})
-```
-
-Find the first rows where [a] > 0 in the table.
-
-```m
-Table.FirstN(
-    Table.FromRecords({
-        [a = 1, b = 2],
-        [a = 3, b = 4],
-        [a = -5, b = -6]
-    }),
-    each [a] > 0
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [a = 1, b = 2],
-    [a = 3, b = 4]
-})
-```

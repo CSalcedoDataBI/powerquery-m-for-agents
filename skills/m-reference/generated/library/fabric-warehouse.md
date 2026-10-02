@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Fabric.Warehouse(optional options as nullable record) as table
 ```
 
-Imports data from Warehouse
-
 ## Parameters
 
 | Name | Type | Optional |

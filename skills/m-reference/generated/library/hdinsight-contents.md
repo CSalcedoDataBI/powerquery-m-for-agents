@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 HdInsight.Contents(account as text) as table
 ```
 
-Returns a navigational table containing a row for each container found at the account URL, `account`, from an Azure storage vault. Each row contains a link to the container blobs.
+Returns a navigational table containing the containers found in the specified account from an Azure storage vault.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/hdinsight-contents)
 
 ## Parameters
 

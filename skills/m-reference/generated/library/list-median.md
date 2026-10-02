@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Median(list as list, optional comparisonCriteria as any) as any
 ```
 
-Returns the median item of the list `list`. This function returns `null` if the list contains no non-`null` values.
-If there is an even number of items, the function chooses the smaller of the two median items unless the list is
-comprised entirely of datetimes, durations, numbers or times, in which case it returns the average of the two items.
+Returns the median value in the list.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-median)
 
 ## Parameters
 
@@ -28,17 +30,3 @@ comprised entirely of datetimes, durations, numbers or times, in which case it r
 | `comparisonCriteria` | `any` | yes |
 
 **Executed examples (1):** [examples/list-ordering/list-median.md](../../examples/list-ordering/list-median.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the median of the list `{5, 3, 1, 7, 9}`.
-
-```m
-List.Median({5, 3, 1, 7, 9})
-```
-
-Stated result:
-
-```m
-5
-```

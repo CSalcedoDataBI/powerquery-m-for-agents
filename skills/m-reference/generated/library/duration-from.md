@@ -16,15 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Duration.From(value as any) as nullable duration
 ```
 
-Returns a duration value from the given value.
+Creates a duration from the given value.
 
-- `value`: The value from which the duration is derived. If the given `value` is `null`, this function returns `null`. If the given `value` is a `duration`, `value` is returned. Values of the following types can be converted to a `duration` value:
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `text`: A `duration` value from textual elapsed time forms (d.h:m:s). Refer to `Duration.FromText` for details.
-
-- `number`: A `duration` equivalent to the number of whole and fractional days expressed by `value`.
-
-If `value` is of any other type, an error is returned.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/duration-from)
 
 ## Parameters
 
@@ -33,29 +29,3 @@ If `value` is of any other type, an error is returned.
 | `value` | `any` | no |
 
 **Executed examples (3):** [examples/duration/duration-from.md](../../examples/duration/duration-from.md)
-
-## Examples (engine metadata — not verified here)
-
-Convert `2.525` into a `duration` value.
-
-```m
-Duration.From(2.525)
-```
-
-Stated result:
-
-```m
-#duration(2, 12, 36, 0)
-```
-
-Convert the text value `"2.05:55:20.34567"` into a `duration` value.
-
-```m
-Duration.From("2.05:55:20.34567")
-```
-
-Stated result:
-
-```m
-#duration(2, 5, 55, 20.3456700)
-```

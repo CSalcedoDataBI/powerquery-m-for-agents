@@ -18,6 +18,10 @@ Type.ForRecord(fields as record, open as logical) as type
 
 Returns a type that represents records with specific type constraints on fields.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/type-forrecord)
+
 ## Parameters
 
 | Name | Type | Optional |
@@ -26,26 +30,3 @@ Returns a type that represents records with specific type constraints on fields.
 | `open` | `logical` | no |
 
 **Executed examples (4):** [examples/type/type-forrecord.md](../../examples/type/type-forrecord.md)
-
-## Examples (engine metadata — not verified here)
-
-Dynamically generate a table type.
-
-```m
-let
-    columnNames = {"Name", "Score"},
-    columnTypes = {type text, type number},
-    rowColumnTypes = List.Transform(columnTypes, (t) => [Type = t, Optional = false]),
-    rowType = Type.ForRecord(Record.FromList(rowColumnTypes, columnNames), false)
-in
-    #table(type table rowType, {{"Betty", 90.3}, {"Carl", 89.5}})
-```
-
-Stated result:
-
-```m
-#table(
-    type table [Name = text, Score = number],
-    {{"Betty", 90.3}, {"Carl", 89.5}}
-)
-```

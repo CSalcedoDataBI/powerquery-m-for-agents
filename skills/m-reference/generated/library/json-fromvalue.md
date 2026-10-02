@@ -16,23 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Json.FromValue(value as any, optional encoding as nullable number) as binary
 ```
 
-Produces a JSON representation of a given value `value` with a text encoding specified by `encoding`. If `encoding` is omitted, UTF8 is used. Values are represented as follows:
+Produces a JSON representation of a given value.
 
-- Null, text and logical values are represented as the corresponding JSON types
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- Numbers are represented as numbers in JSON, except that `#infinity`, `-#infinity` and `#nan` are converted to null
-
-- Lists are represented as JSON arrays
-
-- Records are represented as JSON objects
-
-- Tables are represented as an array of objects
-
-- Dates, times, datetimes, datetimezones, and durations are represented as ISO-8601 text
-
-- Binary values are represented as base-64 encoded text
-
-- Types and functions produce an error
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/json-fromvalue)
 
 ## Parameters
 
@@ -40,17 +28,3 @@ Produces a JSON representation of a given value `value` with a text encoding spe
 |---|---|---|
 | `value` | `any` | no |
 | `encoding` | `nullable number` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Convert a complex value to JSON.
-
-```m
-Text.FromBinary(Json.FromValue([A = {1, true, "3"}, B = #date(2012, 3, 25)]))
-```
-
-Stated result:
-
-```m
-"{""A"":[1,true,""3""],""B"":""2012-03-25""}"
-```

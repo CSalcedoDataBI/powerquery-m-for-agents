@@ -16,12 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Record.TransformFields(record as record, transformOperations as list, optional missingField as nullable number) as record
 ```
 
-Returns a record after applying transformations specified in list `transformOperations` to `record`.
-One or more fields may be transformed at a given time.
+Returns a record after applying specified transformations.
 
-In the case of a single field being transformed, `transformOperations` is expected to be a list with two items. The first item in `transformOperations` specifies a field name, and the second item in `transformOperations` specifies the function to be used for transformation. For example, `{"Quantity", Number.FromText}`
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-In the case of a multiple fields being transformed, `transformOperations` is expected to be a list of lists, where each inner list is a pair of field name and transformation operation. For example, `{{"Quantity",Number.FromText},{"UnitPrice", Number.FromText}}`
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/record-transformfields)
 
 ## Parameters
 
@@ -32,35 +31,3 @@ In the case of a multiple fields being transformed, `transformOperations` is exp
 | `missingField` | `nullable number` | yes |
 
 **Executed examples (3):** [examples/record-transformations/record-transformfields.md](../../examples/record-transformations/record-transformfields.md)
-
-## Examples (engine metadata — not verified here)
-
-Convert "Price" field to number.
-
-```m
-Record.TransformFields(
-    [OrderID = 1, CustomerID = 1, Item = "Fishing rod", Price = "100.0"],
-    {"Price", Number.FromText}
-)
-```
-
-Stated result:
-
-```m
-[OrderID = 1, CustomerID = 1, Item = "Fishing rod", Price = 100]
-```
-
-Convert "OrderID" and "Price" fields to numbers.
-
-```m
-Record.TransformFields(
-    [OrderID = "1", CustomerID = 1, Item = "Fishing rod", Price = "100.0"],
-    {{"OrderID", Number.FromText}, {"Price", Number.FromText}}
-)
-```
-
-Stated result:
-
-```m
-[OrderID = 1, CustomerID = 1, Item = "Fishing rod", Price = 100]
-```

@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Lakehouse.Contents(optional options as nullable record) as table
 ```
 
-Connect to all the Lakehouses you have access to, and choose the entities you'd like to use
-
 ## Parameters
 
 | Name | Type | Optional |

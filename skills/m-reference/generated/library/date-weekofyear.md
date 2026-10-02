@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.WeekOfYear(dateTime as any, optional firstDayOfWeek as nullable number) as nullable number
 ```
 
-Returns a number from 1 to 54 indicating which week of the year the date, `dateTime`, falls in.
+Returns a number from 1 to 54 indicating which week of the year this date falls in.
 
-- `dateTime`: A `datetime` value for which the week-of-the-year is determined.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `firstDayOfWeek`: An optional `Day.Type` value that indicates which day is considered the start of a new week (for example, `Day.Sunday`). If unspecified, a culture-dependent default is used.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-weekofyear)
 
 ## Parameters
 
@@ -30,29 +30,3 @@ Returns a number from 1 to 54 indicating which week of the year the date, `dateT
 | `firstDayOfWeek` | `nullable number` | yes |
 
 **Executed examples (3):** [examples/date/date-weekofyear.md](../../examples/date/date-weekofyear.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine which week of the year contains March 27th, 2011.
-
-```m
-Date.WeekOfYear(#date(2011, 03, 27))
-```
-
-Stated result:
-
-```m
-14
-```
-
-Determine which week of the year contains March 27th, 2011, using Monday as the start of the week.
-
-```m
-Date.WeekOfYear(#date(2011, 03, 27), Day.Monday)
-```
-
-Stated result:
-
-```m
-13
-```

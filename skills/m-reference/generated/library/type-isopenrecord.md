@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Type.IsOpenRecord(type as type) as logical
 ```
 
-Returns a `logical` indicating whether a record `type` is open.
+Returns whether a record type is open.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/type-isopenrecord)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns a `logical` indicating whether a record `type` is open.
 | `type` | `type` | no |
 
 **Executed examples (3):** [examples/type/type-isopenrecord.md](../../examples/type/type-isopenrecord.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if the record `type [ A = number, ...]` is open.
-
-```m
-Type.IsOpenRecord(type [A = number, ...])
-```
-
-Stated result:
-
-```m
-true
-```

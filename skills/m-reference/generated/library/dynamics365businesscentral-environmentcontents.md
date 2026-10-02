@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Dynamics365BusinessCentral.EnvironmentContents(optional environment as nullable text, optional company as nullable text) as table
 ```
 
-Returns a table with relevant Dynamics 365 Business Central data.
-
 ## Parameters
 
 | Name | Type | Optional |

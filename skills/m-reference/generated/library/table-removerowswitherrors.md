@@ -18,6 +18,10 @@ Table.RemoveRowsWithErrors(table as table, optional columns as nullable list) as
 
 Returns a table with the rows removed from the input table that contain an error in at least one of the cells. If a columns list is specified, then only the cells in the specified columns are inspected for errors.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-removerowswitherrors)
+
 ## Parameters
 
 | Name | Type | Optional |
@@ -26,26 +30,3 @@ Returns a table with the rows removed from the input table that contain an error
 | `columns` | `nullable list` | yes |
 
 **Executed examples (1):** [examples/table-row-operations/table-removerowswitherrors.md](../../examples/table-row-operations/table-removerowswitherrors.md)
-
-## Examples (engine metadata — not verified here)
-
-Remove error value from first row.
-
-```m
-Table.RemoveRowsWithErrors(
-    Table.FromRecords({
-        [Column1 = ...],
-        [Column1 = 2],
-        [Column1 = 3]
-    })
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [Column1 = 2],
-    [Column1 = 3]
-})
-```

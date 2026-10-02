@@ -16,19 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.SplitColumn(table as table, sourceColumn as text, splitter as function, optional columnNamesOrNumber as any, optional default as any, optional extraColumns as any) as table
 ```
 
-Splits the specified column into a set of additional columns using the specified splitter function.
+Splits the specified columns into a set of additional columns using the specified splitter function.
 
-- `table`: The table containing the column to split.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `sourceColumn`: The name of the column to split.
-
-- `splitter`: The splitter function used to split the column (for example, `Splitter.SplitTextByDelimiter` or `Splitter.SplitTextByPosition`).
-
-- `columnNamesOrNumber`: Either a list of new column names to create, or the number of new columns.
-
-- `default`: Overrides the value used when there aren't enough split values to fill all of the new columns. The default for this parameter is `null`.
-
-- `extraColumns`: Specifies what to do if there might be more split values than the number of new columns. You can pass an `ExtraValues.Type` enumeration value to this parameter. The default is `ExtraValues.Ignore`.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-splitcolumn)
 
 ## Parameters
 
@@ -42,135 +34,3 @@ Splits the specified column into a set of additional columns using the specified
 | `extraColumns` | `any` | yes |
 
 **Executed examples (1):** [examples/table-transformation/table-splitcolumn.md](../../examples/table-transformation/table-splitcolumn.md)
-
-## Examples (engine metadata — not verified here)
-
-Split the name column into first name and last name.
-
-```m
-let
-    Source = #table(type table[CustomerID = number, Name = text, Phone = text],
-    {
-        {1, "Bob White", "123-4567"},
-        {2, "Jim Smith", "987-6543"},
-        {3, "Paul", "543-7890"},
-        {4, "Cristina Best", "232-1550"}
-    }),
-    SplitColumns = Table.SplitColumn(
-        Source,
-        "Name",
-        Splitter.SplitTextByDelimiter(" "))
-in
-    SplitColumns
-```
-
-Stated result:
-
-```m
-#table(type table[CustomerID = number, Name.1 = text, Name.2 = text, Phone = text],
-{
-    {1, "Bob", "White", "123-4567"},
-    {2, "Jim", "Smith", "987-6543"},
-    {3, "Paul", null, "543-7890"},
-    {4, "Cristina", "Best", "232-1550"}
-})
-```
-
-Split the name column into first name and last name, then rename the new columns.
-
-```m
-let
-    Source = #table(type table[CustomerID = number, Name = text, Phone = text],
-    {
-        {1, "Bob White", "123-4567"},
-        {2, "Jim Smith", "987-6543"},
-        {3, "Paul", "543-7890"},
-        {4, "Cristina Best", "232-1550"}
-    }),
-    SplitColumns = Table.SplitColumn(
-        Source,
-        "Name",
-        Splitter.SplitTextByDelimiter(" "),
-        {"First Name", "Last Name"})
-in
-    SplitColumns
-```
-
-Stated result:
-
-```m
-#table(type table[CustomerID = number, First Name = text, Last Name = text, Phone = text],
-{
-    {1, "Bob", "White", "123-4567"},
-    {2, "Jim", "Smith", "987-6543"},
-    {3, "Paul", null, "543-7890"},
-    {4, "Cristina", "Best", "232-1550"}
-})
-```
-
-Split the name column into first name and last name, rename the new columns, and fill in any blanks with "-No Entry-".
-
-```m
-let
-    Source = #table(type table[CustomerID = number, Name = text, Phone = text],
-    {
-        {1, "Bob White", "123-4567"},
-        {2, "Jim Smith", "987-6543"},
-        {3, "Paul", "543-7890"},
-        {4, "Cristina Best", "232-1550"}
-    }),
-    SplitColumns = Table.SplitColumn(
-        Source,
-        "Name",
-        Splitter.SplitTextByDelimiter(" "),
-        {"First Name", "Last Name"},
-        "-No Entry-")
-in
-    SplitColumns
-```
-
-Stated result:
-
-```m
-#table(type table[CustomerID = number, First Name = text, Last Name = text, Phone = text],
-{
-    {1, "Bob", "White", "123-4567"},
-    {2, "Jim", "Smith", "987-6543"},
-    {3, "Paul", "-No Entry-", "543-7890"},
-    {4, "Cristina", "Best", "232-1550"}
-})
-```
-
-Split the name column into first name and last name, then rename the new columns. Because there might be more values than the number of available columns, make the last name column a list that includes all values after the first name.
-
-```m
-let
-    Source = #table(type table[CustomerID = number, Name = text, Phone = text],
-    {
-        {1, "Bob White", "123-4567"},
-        {2, "Jim Smith", "987-6543"},
-        {3, "Paul Green", "543-7890"},
-        {4, "Cristina J. Best", "232-1550"}
-    }),
-    SplitColumns = Table.SplitColumn(
-        Source,
-        "Name",
-        Splitter.SplitTextByDelimiter(" "),
-        {"First Name", "Last Name"},
-        null,
-        ExtraValues.List)
-in
-    SplitColumns
-```
-
-Stated result:
-
-```m
-#table(type table[CustomerID = number, First Name = text, Last Name = text, Phone = text],
-{
-    {1, "Bob", {"White"}, "123-4567"},
-    {2, "Jim", {"Smith"}, "987-6543"},
-    {3, "Paul", {"Green"}, "543-7890"},
-    {4, "Cristina", {"J.", "Best"}, "232-1550"}
-})
-```

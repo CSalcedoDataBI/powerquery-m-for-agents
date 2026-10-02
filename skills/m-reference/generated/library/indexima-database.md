@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Indexima.Database(server as text, port as number, optional ODBCdriver as nullable text, optional options as nullable record) as table
 ```
 
-Connection to Indexima Data Hub
-
 ## Parameters
 
 | Name | Type | Optional |

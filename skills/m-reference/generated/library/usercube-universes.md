@@ -16,24 +16,8 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Usercube.Universes(serverUrl as text) as table
 ```
 
-Provides data from a Usercube instance
-
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `serverUrl` | `text` | no |
-
-## Examples (engine metadata — not verified here)
-
-Returns the universe data defined in the Usercube database.
-
-```m
-Usercube.Universes("https://mycompany.usercube.com")
-```
-
-Stated result:
-
-```m
-Navigation table containing Usercube's universes
-```

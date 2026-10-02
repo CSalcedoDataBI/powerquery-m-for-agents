@@ -16,24 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Time.Second(dateTime as any) as nullable number
 ```
 
-Returns the second component of the provided `time`, `datetime`, or `datetimezone` value, `dateTime`.
+Returns the second component.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/time-second)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `dateTime` | `any` | no |
-
-## Examples (engine metadata — not verified here)
-
-Find the second value from a datetime value.
-
-```m
-Time.Second(#datetime(2011, 12, 31, 9, 15, 36.5))
-```
-
-Stated result:
-
-```m
-36.5
-```

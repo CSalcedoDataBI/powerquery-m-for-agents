@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.DemoteHeaders(table as table) as table
 ```
 
-Demotes the column headers (i.e. column names) to the first row of values. The default column names are "Column1", "Column2" and so on.
+Demotes the column headers to the first row of values.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-demoteheaders)
 
 ## Parameters
 
@@ -25,26 +29,3 @@ Demotes the column headers (i.e. column names) to the first row of values. The d
 | `table` | `table` | no |
 
 **Executed examples (1):** [examples/table-column-operations/table-demoteheaders.md](../../examples/table-column-operations/table-demoteheaders.md)
-
-## Examples (engine metadata — not verified here)
-
-Demote the first row of values in the table.
-
-```m
-Table.DemoteHeaders(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"]
-    })
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [Column1 = "CustomerID", Column2 = "Name", Column3 = "Phone"],
-    [Column1 = 1, Column2 = "Bob", Column3 = "123-4567"],
-    [Column1 = 2, Column2 = "Jim", Column3 = "987-6543"]
-})
-```

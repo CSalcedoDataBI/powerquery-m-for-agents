@@ -33,8 +33,7 @@ tables, types, `try`/`otherwise`/`catch`, laziness - no function answers. Read
 3. Flag **★** → also read **`notes/<file>.md`**: field knowledge not in the engine metadata,
    each claim next to the query that shows it.
 4. Flag **▶** → the card links to **`examples/<category>/<file>.md`**: queries executed in
-   this repository's lab, each with the value the engine returned. Prefer these over the
-   card's own `## Examples` section, whose stated results nobody ran.
+   this repository's lab, each with the value the engine returned.
 5. Flag **⌂** → the function is missing from at least one exported host. The card says
    which ones have it. Check before suggesting it for Excel or a dataflow.
 
@@ -51,7 +50,9 @@ entry points and constants such as `GroupKind.Local` or `Occurrence.All`. One ki
   syntax, not library members.
 
 A connector is a function the engine gives no category, under a prefix no library function
-uses. Many carry no description. Data-access functions the engine documents (`Csv.Document`,
+uses. Connectors carry no description: only Microsoft's MIT-licensed text is quoted, and it
+does not cover them. A card's one-line description, when it has one, is that text; its
+Microsoft Learn link, when it has one, is the full documentation. Data-access functions the engine documents (`Csv.Document`,
 `Web.Contents`, `Sql.Database`, …) are library, in `catalog.md`.
 
 ## Layout

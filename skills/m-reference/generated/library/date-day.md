@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.Day(dateTime as any) as nullable number
 ```
 
-Returns the day component of a `date`, `datetime`, or `datetimezone` value.
+Returns the day component.
 
-- `dateTime`: A `date`, `datetime`, or `datetimezone` value from which the day component is extracted.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-day)
 
 ## Parameters
 
@@ -27,17 +29,3 @@ Returns the day component of a `date`, `datetime`, or `datetimezone` value.
 | `dateTime` | `any` | no |
 
 **Executed examples (3):** [examples/date/date-day.md](../../examples/date/date-day.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the day component of a `date`, `datetime`, or `datetimezone` value representing the date and time of 5/14/2011 05:00:00 PM.
-
-```m
-Date.Day(#datetime(2011, 5, 14, 17, 0, 0))
-```
-
-Stated result:
-
-```m
-14
-```

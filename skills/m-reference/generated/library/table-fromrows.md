@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.FromRows(rows as list, optional columns as any) as table
 ```
 
-Creates a table from the list `rows` where each element of the list is an inner list that contains the column values for a single row. An optional list of column names, a table type, or a number of columns could be provided for `columns`.
+Creates a table from a list of row values and optional columns
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-fromrows)
 
 ## Parameters
 
@@ -26,47 +30,3 @@ Creates a table from the list `rows` where each element of the list is an inner 
 | `columns` | `any` | yes |
 
 **Executed examples (1):** [examples/table-table-construction/table-fromrows.md](../../examples/table-table-construction/table-fromrows.md)
-
-## Examples (engine metadata — not verified here)
-
-Return a table with column [CustomerID] with values {1, 2}, column [Name] with values {"Bob", "Jim"}, and column [Phone] with values {"123-4567", "987-6543"}.
-
-```m
-Table.FromRows(
-    {
-        {1, "Bob", "123-4567"},
-        {2, "Jim", "987-6543"}
-    },
-    {"CustomerID", "Name", "Phone"}
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-    [CustomerID = 2, Name = "Jim", Phone = "987-6543"]
-})
-```
-
-Return a table with column [CustomerID] with values {1, 2}, column [Name] with values {"Bob", "Jim"}, and column [Phone] with values {"123-4567", "987-6543"}, where [CustomerID] is number type, and [Name] and [Phone] are text types.
-
-```m
-Table.FromRows(
-    {
-        {1, "Bob", "123-4567"},
-        {2, "Jim", "987-6543"}
-    },
-    type table [CustomerID = number, Name = text, Phone = text]
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-    [CustomerID = 2, Name = "Jim", Phone = "987-6543"]
-})
-```

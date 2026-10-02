@@ -16,24 +16,8 @@ source: "#shared \u2014 desktop 2.157.879.0"
 SumTotal.ODataFeed(url as text) as table
 ```
 
-SumTotal's Custom connector connects to SumTotal's external facing OData API service to pull data from data warehousing database . Filter expand, slice and create customer visuals and reports based on data returned from the OData feed
-
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `url` | `text` | no |
-
-## Examples (engine metadata — not verified here)
-
-Returns a table with specified entity data
-
-```m
-SumTotal.ODataFeed('https://host.sumtotalystems.com/?rowVersionId=0')
-```
-
-Stated result:
-
-```m
-Source{[Name='{OData Entity chosen}']}[Data]
-```

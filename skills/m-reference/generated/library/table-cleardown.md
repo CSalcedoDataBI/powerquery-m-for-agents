@@ -16,7 +16,7 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.ClearDown(table as table, columns as list) as table
 ```
 
-Replaces the specified `columns` with null when all their values are repeated from the previous row.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-cleardown)
 
 ## Parameters
 
@@ -26,32 +26,3 @@ Replaces the specified `columns` with null when all their values are repeated fr
 | `columns` | `list` | no |
 
 **Executed examples (1):** [examples/table-transformation/table-cleardown.md](../../examples/table-transformation/table-cleardown.md)
-
-## Examples (engine metadata — not verified here)
-
-Clear the Region and Place columns when they're both repeated.
-
-```m
-Table.ClearDown(
-    Table.FromRecords({
-        [Region = "West", Place = 1, Name = "Bob"],
-        [Region = "West", Place = 1, Name = "John"],
-        [Region = "West", Place = 2, Name = "Brad"],
-        [Region = "East", Place = 3, Name = "Mark"],
-        [Region = "East", Place = 3, Name = "Tom"]
-    }),
-    {"Region", "Place"}
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [Region = "West", Place = 1, Name = "Bob"],
-    [Region = null, Place = null, Name = "John"],
-    [Region = "West", Place = 2, Name = "Brad"],
-    [Region = "East", Place = 3, Name = "Mark"],
-    [Region = null, Place = null, Name = "Tom"]
-})
-```

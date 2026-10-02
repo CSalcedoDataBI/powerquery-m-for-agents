@@ -427,7 +427,7 @@
    "category": "List.Selection",
    "returns": "any",
    "signature": "List.LastN(list as list, optional countOrCondition as any) as any",
-   "summary": "Returns a list of the last item or items in the specified list.",
+   "summary": "Returns the last value in the list.",
    "hosts": [
     "desktop"
    ],
@@ -892,7 +892,7 @@
    "category": "List.Selection",
    "returns": "any",
    "signature": "List.Single(list as list) as any",
-   "summary": "Returns the one list item for a list of length one, otherwise raises an error.",
+   "summary": "Returns the one list item for a list of length one, otherwise throws an exception.",
    "hosts": [
     "desktop"
    ],

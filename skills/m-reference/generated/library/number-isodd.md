@@ -16,36 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.IsOdd(number as number) as logical
 ```
 
-Indicates if the value is odd. Returns `true` if `number` is an odd number, `false` otherwise.
+Indicates if the value is odd.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-isodd)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `number` | `number` | no |
-
-## Examples (engine metadata — not verified here)
-
-Check if 625 is an odd number.
-
-```m
-Number.IsOdd(625)
-```
-
-Stated result:
-
-```m
-true
-```
-
-Check if 82 is an odd number.
-
-```m
-Number.IsOdd(82)
-```
-
-Stated result:
-
-```m
-false
-```

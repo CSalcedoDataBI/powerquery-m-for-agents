@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.BitwiseShiftLeft(number1 as nullable number, number2 as nullable number) as nullable number
 ```
 
-Returns the result of performing a bitwise shift to the left on `number1`, by the specified number of bits `number2`.
+Shifts the bits set to the left.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-bitwiseshiftleft)
 
 ## Parameters
 

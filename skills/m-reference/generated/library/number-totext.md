@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.ToText(number as nullable number, optional format as nullable text, optional culture as nullable text) as nullable text
 ```
 
-Converts the numeric value `number` to a text value according to the format specified by `format`.
+Converts the given number to text.
 
-The format is a text value indicating how the number should be converted. For more details on the supported format values, go to https://go.microsoft.com/fwlink/?linkid=2241210 and https://go.microsoft.com/fwlink/?linkid=2240884.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-An optional `culture` may also be provided (for example, "en-US") to control the culture-dependent behavior of `format`.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-totext)
 
 ## Parameters
 
@@ -31,41 +31,3 @@ An optional `culture` may also be provided (for example, "en-US") to control the
 | `culture` | `nullable text` | yes |
 
 **Executed examples (3):** [examples/number-conversion-and-formatting/number-totext.md](../../examples/number-conversion-and-formatting/number-totext.md)
-
-## Examples (engine metadata — not verified here)
-
-Convert a number to text without specifying a format.
-
-```m
-Number.ToText(4)
-```
-
-Stated result:
-
-```m
-"4"
-```
-
-Convert a number to exponential format.
-
-```m
-Number.ToText(4, "e")
-```
-
-Stated result:
-
-```m
-"4.000000e+000"
-```
-
-Convert a number to percentage format with only one decimal place.
-
-```m
-Number.ToText(-0.1234, "P1")
-```
-
-Stated result:
-
-```m
-"-12.3 %"
-```

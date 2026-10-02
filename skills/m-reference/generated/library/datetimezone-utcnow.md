@@ -18,16 +18,6 @@ DateTimeZone.UtcNow() as datetimezone
 
 Returns the current date and time in UTC (the GMT timezone).
 
-## Examples (engine metadata — not verified here)
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-Get the current date & time in UTC.
-
-```m
-DateTimeZone.UtcNow()
-```
-
-Stated result:
-
-```m
-#datetimezone(2011, 8, 16, 23, 34, 37.745, 0, 0)
-```
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/datetimezone-utcnow)

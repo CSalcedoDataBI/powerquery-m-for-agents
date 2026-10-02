@@ -18,6 +18,10 @@ Splitter.SplitTextByRepeatedLengths(length as number, optional startAtEnd as nul
 
 Returns a function that splits text into a list of text after the specified length repeatedly.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/splitter-splittextbyrepeatedlengths)
+
 ## Parameters
 
 | Name | Type | Optional |
@@ -26,32 +30,3 @@ Returns a function that splits text into a list of text after the specified leng
 | `startAtEnd` | `nullable logical` | yes |
 
 **Executed examples (3):** [examples/splitter/splitter-splittextbyrepeatedlengths.md](../../examples/splitter/splitter-splittextbyrepeatedlengths.md)
-
-## Examples (engine metadata — not verified here)
-
-Repeatedly split the input into chunks of three characters, starting from the beginning of the input.
-
-```m
-Splitter.SplitTextByRepeatedLengths(3)("12345678")
-```
-
-Stated result:
-
-```m
-{"123", "456", "78"}
-```
-
-Repeatedly split the input into chunks of three characters, starting from the end of the input.
-
-```m
-let
-    startAtEnd = true
-in
-    Splitter.SplitTextByRepeatedLengths(3, startAtEnd)("87654321")
-```
-
-Stated result:
-
-```m
-{"87", "654", "321"}
-```

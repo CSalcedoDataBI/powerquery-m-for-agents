@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.FromValue(value as any, optional options as nullable record) as table
 ```
 
-Creates a table with a column containing the provided value or list of values, `value`. An optional record parameter, `options`, may be specified to control the following options:
+Creates a table with a column from the provided value(s).
 
-- `DefaultColumnName`: The column name used when constructing a table from a list or scalar value.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-fromvalue)
 
 ## Parameters
 
@@ -28,45 +30,3 @@ Creates a table with a column containing the provided value or list of values, `
 | `options` | `nullable record` | yes |
 
 **Executed examples (1):** [examples/table-table-construction/table-fromvalue.md](../../examples/table-table-construction/table-fromvalue.md)
-
-## Examples (engine metadata — not verified here)
-
-Create a table from the value 1.
-
-```m
-Table.FromValue(1)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({[Value = 1]})
-```
-
-Create a table from the list.
-
-```m
-Table.FromValue({1, "Bob", "123-4567"})
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [Value = 1],
-    [Value = "Bob"],
-    [Value = "123-4567"]
-})
-```
-
-Create a table from the value 1, with a custom column name.
-
-```m
-Table.FromValue(1, [DefaultColumnName = "MyValue"])
-```
-
-Stated result:
-
-```m
-Table.FromRecords({[MyValue = 1]})
-```
