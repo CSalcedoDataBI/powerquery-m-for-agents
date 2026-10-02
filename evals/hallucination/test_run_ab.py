@@ -103,6 +103,8 @@ class CounterTest(unittest.TestCase):
     def test_comparison_is_a_use_not_a_definition(self):
         code = "```m\nif Foo.Bar = null then 1 else 2\n```"
         self.assertEqual(run_ab.invented(code, NAMES), ["Foo.Bar"])
+        args = "```m\nList.AnyTrue({Foo.Bar = null, Baz.Qux = null})\n```"
+        self.assertEqual(run_ab.invented(args, NAMES), ["Foo.Bar", "Baz.Qux"])
         let = "```m\nlet\n    Foo.Bar = 1,\n    Baz.Qux = 2\nin Baz.Qux\n```"
         # Variables the model defined, then used: its own names, not library inventions.
         self.assertEqual(run_ab.invented(let, NAMES), [])

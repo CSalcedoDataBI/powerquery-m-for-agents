@@ -181,12 +181,15 @@ def _names(text):
             # (meta [Documentation.Name = "..."]) or a let variable. That is a dotted name
             # followed by `=` (not `=>`) AND opening a binding: right after `[`, `,` or
             # `let`. `if Foo.Bar = null` is a comparison, and Foo.Bar is used, not defined.
-            if (_DEFINED_RE.match(bare, m.end())
+            # Inside ( ) or { } a comma separates arguments or items, so `Foo.Bar = null`
+            # there is a comparison: only at top level (let) or in [ ] is it a binding.
+            opened = _innermost_open(bare, m.start())
+            if (_DEFINED_RE.match(bare, m.end()) and opened in ("", "[")
                     and _BINDING_START_RE.search(bare[max(0, m.start() - 40):m.start()])):
                 # A let variable is the model's own name everywhere it is used; a record
                 # field is skipped only where it is defined, so a later Foo.Bar(1) of the
                 # same spelling still counts.
-                if _innermost_open(bare, m.start()) != "[":
+                if opened != "[":
                     defined.add(m.group(1))
                 continue
             found.append((m.group(1), bool(_CALL_RE.match(bare, m.end()))))
@@ -204,9 +207,10 @@ def _names(text):
             if not m_blocks.DOTTED_RE.fullmatch(q):
                 continue
             before = masked[:qm.start()].rstrip()
-            if (_DEFINED_RE.match(masked, qm.end())
+            opened = _innermost_open(masked, qm.start())
+            if (_DEFINED_RE.match(masked, qm.end()) and opened in ("", "[")
                     and _BINDING_START_RE.search(masked[max(0, qm.start() - 40):qm.start()])):
-                if _innermost_open(masked, qm.start()) != "[":
+                if opened != "[":
                     defined.add(q)
                 continue
             environment = before.endswith("[") and before[:-1].rstrip().endswith(
