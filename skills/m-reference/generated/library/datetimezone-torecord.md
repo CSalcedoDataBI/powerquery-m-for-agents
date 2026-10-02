@@ -16,35 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DateTimeZone.ToRecord(dateTimeZone as datetimezone) as record
 ```
 
-Returns a record containing the parts of the given datetimezone value, `dateTimeZone`.
+Returns a record containing the datetimezone value's parts.
 
-- `dateTimeZone`: A `datetimezone` value for from which the record of its parts is to be calculated.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/datetimezone-torecord)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `dateTimeZone` | `datetimezone` | no |
-
-## Examples (engine metadata — not verified here)
-
-Convert the `#datetimezone(2011, 12, 31, 11, 56, 2, 8, 0)` value into a record containing Date, Time, and Zone values.
-
-```m
-DateTimeZone.ToRecord(#datetimezone(2011, 12, 31, 11, 56, 2, 8, 0))
-```
-
-Stated result:
-
-```m
-[
-      Year = 2011,
-      Month = 12,
-      Day = 31,
-      Hour = 11,
-      Minute = 56,
-      Second = 2,
-      ZoneHours = 8,
-      ZoneMinutes = 0
-]
-```

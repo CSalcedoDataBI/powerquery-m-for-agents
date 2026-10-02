@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Cube.AttributeMemberId(attribute as any) as any
 ```
 
-Returns the unique member identifier from a member property value. `attribute`. Returns null for any other values.
+Returns the unique member identifier from members property value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/cube-attributememberid)
 
 ## Parameters
 

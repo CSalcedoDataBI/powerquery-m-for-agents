@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Record.FieldOrDefault(record as nullable record, field as text, optional defaultValue as any) as any
 ```
 
-Returns the value of the specified field `field` in the record `record`. If the field is not found, the optional `defaultValue` is returned.
+Returns the value of the specified field in a record or the default value if the field is not found.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/record-fieldordefault)
 
 ## Parameters
 
@@ -27,29 +31,3 @@ Returns the value of the specified field `field` in the record `record`. If the 
 | `defaultValue` | `any` | yes |
 
 **Executed examples (3):** [examples/record-selection/record-fieldordefault.md](../../examples/record-selection/record-fieldordefault.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the value of field "Phone" in the record, or return null if it doesn't exist.
-
-```m
-Record.FieldOrDefault([CustomerID = 1, Name = "Bob"], "Phone")
-```
-
-Stated result:
-
-```m
-null
-```
-
-Find the value of field "Phone" in the record, or return the default if it doesn't exist.
-
-```m
-Record.FieldOrDefault([CustomerID = 1, Name = "Bob"], "Phone", "123-4567")
-```
-
-Stated result:
-
-```m
-"123-4567"
-```

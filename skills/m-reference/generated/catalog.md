@@ -1,6 +1,6 @@
 # M function catalogue
 
-659 library functions from `#shared` (`desktop` 2.157.879.0). Flags: ★ field note · ▶ executed examples · ⌂ not in every host.
+659 library functions from `#shared` (`desktop` 2.157.879.0). Flags: ★ field note · ▶ executed examples · ⌂ not in every host. Summaries: Microsoft, MIT (`THIRD_PARTY_NOTICES.md`); empty where Microsoft's file has none.
 Not listed here: 273 connector entry points are in `connectors.md`; 201 constants and type values in `constants.md`.
 Open one card: `library/<file>.md`, where <file> is the name in lower case with every run of non-alphanumerics as one dash (`Table.AddColumn` -> `table-addcolumn`).
 
@@ -35,7 +35,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Binary.ToList` | Binary | list | ▶ | Converts a binary value into a list of numbers. |
 | `Binary.ToText` | Binary | nullable text | ▶ | Encodes binary data into a text form. |
 | `Binary.View` | Binary | binary | ▶ | Creates or extends a binary with user-defined handlers for query and action operations. |
-| `Binary.ViewError` | Binary | record | ▶ | Creates a modified error record which won't trigger a fallback when raised by a handler defined on a view (via Binary.V… |
+| `Binary.ViewError` | Binary | record | ▶ | Creates a modified error record which won't trigger a fallback when thrown by a handler defined on a view (via Binary.V… |
 | `Binary.ViewFunction` | Binary | function | ▶ | Creates a function that can be intercepted by a handler defined on a view (via Binary.View). |
 | `BinaryFormat.7BitEncodedSignedInteger` | Binary Formats.Reading numbers | any | ▶ | A binary format that reads a 64-bit signed integer that was encoded using a 7-bit variable-length encoding. |
 | `BinaryFormat.7BitEncodedUnsignedInteger` | Binary Formats.Reading numbers | any | ▶ | A binary format that reads a 64-bit unsigned integer that was encoded using a 7-bit variable-length encoding. |
@@ -60,8 +60,8 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `BinaryFormat.UnsignedInteger32` | Binary Formats.Reading numbers | any | ▶ | A binary format that reads a 32-bit unsigned integer. |
 | `BinaryFormat.UnsignedInteger64` | Binary Formats.Reading numbers | any | ▶ | A binary format that reads a 64-bit unsigned integer. |
 | `Byte.From` | Number.Conversion and formatting | nullable number | ▶ | Creates an 8-bit integer from the given value. |
-| `Cdm.Contents` | Accessing data | table |  | Cdm.Contents |
-| `Cdm.MapToEntity` | Cdm | table |  | Returns a table with columns mapped to the attributes of an entity in the Common Data Model, including data types. |
+| `Cdm.Contents` | Accessing data | table |  |  |
+| `Cdm.MapToEntity` | Cdm | table |  |  |
 | `Character.FromNumber` | Text.Conversions from and to text | nullable text |  | Converts a number to a text character. |
 | `Character.ToNumber` | Text.Conversions from and to text | nullable number |  | Converts a character to a number value. |
 | `Combiner.CombineTextByDelimiter` | Combiner | function |  | Returns a function that combines a list of text using the specified delimiter. |
@@ -74,7 +74,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Comparer.Ordinal` | Comparer | number |  | Returns a comparer function which uses Ordinal rules to compare values. |
 | `Comparer.OrdinalIgnoreCase` | Comparer | number |  | Returns a case-insensitive comparer function which uses Ordinal rules to compare values. |
 | `Csv.Document` | Accessing data | table |  | Returns the contents of the CSV document as a table. |
-| `Cube.AddAndExpandDimensionColumn` | Cube | table |  | Merges the specified dimension table into the cube's filter context and changes the dimensional granularity of the filt… |
+| `Cube.AddAndExpandDimensionColumn` | Cube | table |  | Merges the specified dimension table into the cube’s filter context and changes the dimensional granularity of the filt… |
 | `Cube.AddMeasureColumn` | Cube | table |  | Adds a column to the cube that contains the results of the measure applied in the row context of each row. |
 | `Cube.ApplyParameter` | Cube | table |  | Returns a cube after applying a parameter to it. |
 | `Cube.AttributeMemberId` | Cube | any |  | Returns the unique member identifier from members property value. |
@@ -187,11 +187,11 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `DateTimeZone.ToUtc` | DateTimeZone | nullable datetimezone |  | Converts the timezone component to UTC timezone. |
 | `DateTimeZone.UtcNow` | DateTimeZone | datetimezone |  | Returns the current date and time in UTC (the GMT timezone). |
 | `DateTimeZone.ZoneHours` | DateTimeZone | nullable number |  | Gets the timezone hour of the value. |
-| `DateTimeZone.ZoneMinutes` | DateTimeZone | nullable number |  | Gets the timezone minutes of the value. |
+| `DateTimeZone.ZoneMinutes` | DateTimeZone | nullable number |  | Gets the timezone minute of the value. |
 | `DB2.Database` | Accessing data | table |  | Returns a table of SQL tables and views available in a Db2 database. |
 | `Decimal.From` | Number.Conversion and formatting | nullable number | ▶ | Creates a Decimal from the given value. |
-| `DeltaLake.Metadata` | Accessing data | table |  | Given a Delta Lake table, returns the log entries for that table. |
-| `DeltaLake.Table` | Accessing data | any |  | Returns the contents of the Delta Lake table. |
+| `DeltaLake.Metadata` | Accessing data | table |  |  |
+| `DeltaLake.Table` | Accessing data | any |  |  |
 | `Diagnostics.ActivityId` | Diagnostics | nullable text |  | Returns an opaque identifier for the currently-running evaluation. |
 | `Diagnostics.CorrelationId` | Diagnostics | nullable text |  | Returns an opaque identifier to correlate incoming requests with outgoing ones. |
 | `Diagnostics.Trace` | Diagnostics | any |  | Writes a trace entry, if tracing is enabled, and returns the value. |
@@ -209,10 +209,10 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Duration.TotalMinutes` | Duration | nullable number | ▶ | Returns the total minutes this duration spans. |
 | `Duration.TotalSeconds` | Duration | nullable number | ▶ | Returns the total seconds this duration spans. |
 | `Duration.ToText` | Duration | nullable text | ▶ | Returns the text of the form "d.h:m:s". |
-| `Embedded.Value` | Values.Implementation | any |  | This function is intended for internal use only. |
-| `Error.Record` | Error | record |  | Returns an error record from the provided text values for reason, message, detail, and error code. |
+| `Embedded.Value` | Values.Implementation | any |  | Accesses a value by name in an embedded mashup. |
+| `Error.Record` | Error | record |  | Returns an error record from the provided text values for reason, message, detail and error code. |
 | `Essbase.Cubes` | Accessing data | table |  | Returns the cubes in an Essbase instance grouped by Essbase server. |
-| `Excel.CurrentWorkbook` | Accessing data | table |  | Returns the contents of the current Excel workbook. |
+| `Excel.CurrentWorkbook` | Accessing data | table |  |  |
 | `Excel.ShapeTable` | Values.Implementation | any |  | This function is intended for internal use only. |
 | `Excel.Workbook` | Accessing data | table |  | Returns the contents of the Excel workbook. |
 | `Exchange.Contents` | Accessing data | table |  | Returns a table of contents from a Microsoft Exchange account. |
@@ -222,8 +222,8 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `File.Contents` | Accessing data | binary |  | Returns the contents of the specified file as binary. |
 | `Folder.Contents` | Accessing data | table |  | Returns a table containing the properties and contents of the files and folders found in the specified folder. |
 | `Folder.Files` | Accessing data | table |  | Returns a table containing the properties and contents of the files found in the specified folder and subfolders. |
-| `Function.From` | Function | function |  | Creates a function with a specific parameter signature on top of a function that takes a single list argument. |
-| `Function.Invoke` | Function | any |  | Invokes the given function. |
+| `Function.From` | Function | function |  | Creates a function with a specific parameter signature on top of a function that takes a single list argument |
+| `Function.Invoke` | Function | any |  | Invokes the given function |
 | `Function.InvokeAfter` | Function | any |  | Invokes the given function after the specified duration has passed. |
 | `Function.InvokeWithErrorContext` | Values.Implementation | any |  | This function is intended for internal use only. |
 | `Function.IsDataSource` | Type | logical | ▶ | Returns whether or not a particular function is considered a data source. |
@@ -286,7 +286,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `List.IsDistinct` | List.Selection | logical | ▶ | Indicates whether there are duplicates in the list. |
 | `List.IsEmpty` | List.Information | logical | ▶ | Returns true if the list is empty. |
 | `List.Last` | List.Selection | any | ▶ | Returns the last value of the list or the specified default if empty. |
-| `List.LastN` | List.Selection | any | ▶ | Returns a list of the last item or items in the specified list. |
+| `List.LastN` | List.Selection | any | ▶ | Returns the last value in the list. |
 | `List.MatchesAll` | List.Selection | logical | ▶ | Returns true if the condition function is satisfied by all values in the list. |
 | `List.MatchesAny` | List.Selection | logical | ▶ | Returns true if the condition function is satisfied by any value. |
 | `List.Max` | List.Ordering | any | ▶ | Returns the maximum value or the default value for an empty list. |
@@ -317,7 +317,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `List.ReplaceValue` | List.Transformation functions | list | ▶ | Searches a list for the specified value and replaces it. |
 | `List.Reverse` | List.Transformation functions | list | ▶ | Reverses the order of values in the list. |
 | `List.Select` | List.Selection | list | ▶ | Returns a list of values that match the condition. |
-| `List.Single` | List.Selection | any | ▶ | Returns the one list item for a list of length one, otherwise raises an error. |
+| `List.Single` | List.Selection | any | ▶ | Returns the one list item for a list of length one, otherwise throws an exception. |
 | `List.SingleOrDefault` | List.Selection | any | ▶ | Returns the one list item for a list of length one and the default value for an empty list. |
 | `List.Skip` | List.Selection | list | ▶ | Returns a list that skips the specified number of elements at the beginning of the list. |
 | `List.Sort` | List.Ordering | list | ▶ | Sorts a list of data according to the criteria specified. |
@@ -383,9 +383,9 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `OleDb.DataSource` | Accessing data | table |  | Returns a table of SQL tables and views from the OLE DB data source. |
 | `OleDb.Query` | Accessing data | table |  | Returns the result of running a native query on an OLE DB data source. |
 | `Oracle.Database` | Accessing data | table |  | Returns a table of SQL tables and views from the Oracle database. |
-| `Parquet.Document` | Accessing data | any |  | Returns the contents of the Parquet document as a table. |
-| `Parquet.Metadata` | Accessing data | any |  | This function is intended for internal use only. |
-| `Pdf.Tables` | Accessing data | table |  | Returns any tables found in a PDF file. |
+| `Parquet.Document` | Accessing data | any |  |  |
+| `Parquet.Metadata` | Accessing data | any |  |  |
+| `Pdf.Tables` | Accessing data | table |  |  |
 | `Percentage.From` | Number.Conversion and formatting | nullable number | ▶ | Returns a percentage value from the given value. |
 | `PostgreSQL.Database` | Accessing data | table |  | Returns a table of SQL tables and views available in a PostgreSQL database. |
 | `Progress.DataSourceProgress` | Values.Implementation | any |  | This function is intended for internal use only. |
@@ -402,7 +402,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Record.HasFields` | Record.Information | logical | ▶ | Indicates whether the record has the specified fields. |
 | `Record.RemoveFields` | Record.Transformations | record | ▶ | Removes the specified field(s) from the input record. |
 | `Record.RenameFields` | Record.Transformations | record | ▶ | Applies rename(s) from a list in the form { old, new }. |
-| `Record.ReorderFields` | Record.Transformations | record | ▶ | Reorders the record fields to match the order of a list of field names. |
+| `Record.ReorderFields` | Record.Transformations | record | ▶ | Reorders the field(s) specified into the new order. |
 | `Record.SelectFields` | Record.Selection | record | ▶ | Returns a record that contains only the specified fields. |
 | `Record.ToList` | Record.Serialization | list | ▶ | Returns a list of values containing the field values of the input record. |
 | `Record.ToTable` | Record.Serialization | table | ▶ | Returns a table with each row being a field name and value of the input record. |
@@ -445,7 +445,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Table.AlternateRows` | Table.Row operations | table | ▶ | Keeps the initial offset then alternates taking and skipping the following rows. |
 | `Table.ApproximateRowCount` | Table.Information | number | ▶ | Returns the approximate number of rows in the table. |
 | `Table.Buffer` | Table.Other | table | ▶ | Buffers a table in memory, isolating it from external changes during evaluation. |
-| `Table.ClearDown` | Table.Transformation | table | ▶ | Clears repeating sets of column values. |
+| `Table.ClearDown` | Table.Transformation | table | ▶ |  |
 | `Table.Column` | Table.Column operations | list | ▶ | Returns a specified column of data from the table as a list. |
 | `Table.ColumnCount` | Table.Information | number | ▶ | Returns the number of columns in the table. |
 | `Table.ColumnNames` | Table.Column operations | list | ▶ | Returns the column names as a list. |
@@ -474,7 +474,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Table.FromList` | Table.Table construction | table | ▶ | Converts a list into a table by applying the specified splitting function to each item in the list. |
 | `Table.FromPartitions` | Table.Row operations | table | ▶ | Returns a table that is the result of combining a set of partitioned tables. |
 | `Table.FromRecords` | Table.Table construction | table | ▶ | Converts a list of records into a table. |
-| `Table.FromRows` | Table.Table construction | table | ▶ | Creates a table from a list of row values and optional columns. |
+| `Table.FromRows` | Table.Table construction | table | ▶ | Creates a table from a list of row values and optional columns |
 | `Table.FromValue` | Table.Table construction | table | ▶ | Creates a table with a column from the provided value(s). |
 | `Table.FuzzyGroup` | Table.Transformation | table | ▶ | Groups rows in the table based on fuzzy matching of keys. |
 | `Table.FuzzyJoin` | Table.Transformation | table | ▶ | Joins the rows from the two tables that fuzzy match based on the given keys. |
@@ -496,7 +496,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Table.MinN` | Table.Ordering | table | ▶ | Returns the smallest row(s) using the given criteria. |
 | `Table.NestedJoin` | Table.Transformation | table | ▶ | Performs a join between tables on supplied columns and produces the join result in a new column. |
 | `Table.Partition` | Table.Row operations | list | ▶ | Partitions the table into a list of tables based on the number of groups and column specified. |
-| `Table.PartitionKey` | Table.Transformation | nullable list | ▶ | Returns the partition key of the specified table. |
+| `Table.PartitionKey` | Table.Transformation | nullable list | ▶ |  |
 | `Table.PartitionValues` | Table.Information | table | ▶ | Returns information about how a table is partitioned. |
 | `Table.Pivot` | Table.Column operations | table | ▶ | Given a pair of columns representing attribute-value pairs, rotates the data in the attribute column into a column head… |
 | `Table.PositionOf` | Table.Membership | any | ▶ | Returns the position or positions of the row within the table. |
@@ -517,7 +517,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Table.ReplaceErrorValues` | Table.Transformation | table | ▶ | Replaces the error values in the specified columns with the corresponding specified value. |
 | `Table.ReplaceKeys` | Table.Transformation | table | ▶ | Replaces the keys of the specified table. |
 | `Table.ReplaceMatchingRows` | Table.Membership | table | ▶ | Replaces all the specified rows with the provided row(s). |
-| `Table.ReplacePartitionKey` | Table.Transformation | table | ▶ | Replaces the partition key of the specified table. |
+| `Table.ReplacePartitionKey` | Table.Transformation | table | ▶ |  |
 | `Table.ReplaceRelationshipIdentity` | Table.Transformation | any | ▶ | This function is intended for internal use only. |
 | `Table.ReplaceRows` | Table.Row operations | table | ▶ | Replaces the specified range of rows with the provided row(s). |
 | `Table.ReplaceValue` | Table.Transformation | table | ▶ | Replaces one value with another in the specified columns. |
@@ -532,7 +532,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Table.Sort` | Table.Ordering | table | ▶ | Sorts the table using one or more column names and comparison criteria. |
 | `Table.Split` | Table.Transformation | list | ▶ | Splits the specified table into a list of tables using the specified page size. |
 | `Table.SplitAt` | Table.Row operations | list | ▶ | Returns a list containing the first count rows specified and the remaining rows. |
-| `Table.SplitColumn` | Table.Transformation | table | ▶ | Splits the specified column into a set of additional columns using the specified splitter function. |
+| `Table.SplitColumn` | Table.Transformation | table | ▶ | Splits the specified columns into a set of additional columns using the specified splitter function. |
 | `Table.StopFolding` | Table.Other | table | ▶ | Prevents any downstream operations from being run against the original source of the data. |
 | `Table.ToColumns` | Table.Conversions | list | ▶ | Creates a list of nested lists of column values from a table. |
 | `Table.ToList` | Table.Conversions | list | ▶ | Converts a table into a list by applying the specified combining function to each row of values in the table. |
@@ -546,15 +546,15 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Table.Unpivot` | Table.Column operations | table | ▶ | Translates a set of columns in a table into attribute-value pairs. |
 | `Table.UnpivotOtherColumns` | Table.Column operations | table | ▶ | Translates all columns other than a specified set into attribute-value pairs. |
 | `Table.View` | Table.Table construction | table | ▶ | Creates or extends a table with user-defined handlers for query and action operations. |
-| `Table.ViewError` | Table.Table construction | record | ▶ | Creates a modified error record which won't trigger a fallback when raised by a handler defined on a view (via Table.Vi… |
+| `Table.ViewError` | Table.Table construction | record | ▶ | Creates a modified error record which won't trigger a fallback when thrown by a handler defined on a view (via Table.Vi… |
 | `Table.ViewFunction` | Table.Table construction | function | ▶ | Creates a function that can be intercepted by a handler defined on a view (via Table.View). |
 | `Table.WithErrorContext` | Values.Implementation | any | ▶ | This function is intended for internal use only. |
 | `Tables.GetRelationships` | Table.Information | table |  | Gets the relationships among a set of tables. |
 | `Teradata.Database` | Accessing data | table |  | Returns a table of SQL tables and views from the Teradata database. |
-| `Text.AfterDelimiter` | Text.Transformations | any | ▶ | Text.AfterDelimiter |
+| `Text.AfterDelimiter` | Text.Transformations | any | ▶ |  |
 | `Text.At` | Text.Extraction | nullable text | ▶ | Returns the character at the specified position. |
-| `Text.BeforeDelimiter` | Text.Transformations | any | ▶ | Text.BeforeDelimiter |
-| `Text.BetweenDelimiters` | Text.Transformations | any | ▶ | Text.BetweenDelimiters |
+| `Text.BeforeDelimiter` | Text.Transformations | any | ▶ |  |
+| `Text.BetweenDelimiters` | Text.Transformations | any | ▶ |  |
 | `Text.Clean` | Text.Transformations | nullable text | ▶ | Returns the text value with all control characters removed. |
 | `Text.Combine` | Text.Transformations | text | ▶ | Concatenates a list of text values into one text value. |
 | `Text.Contains` | Text.Membership | nullable logical | ▶ | Returns whether the text contains the substring. |
@@ -580,7 +580,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Text.Repeat` | Text.Transformations | nullable text | ▶ | Returns a text value composed of the input text repeated a specified number of times. |
 | `Text.Replace` | Text.Modification | nullable text | ▶ | Replaces all occurrences of the given substring in the text. |
 | `Text.ReplaceRange` | Text.Modification | nullable text | ▶ | Removes a range of characters and inserts a new value at a specified position. |
-| `Text.Reverse` | Text.Transformations | nullable text | ▶ | Text.Reverse |
+| `Text.Reverse` | Text.Transformations | nullable text | ▶ |  |
 | `Text.Select` | Text.Modification | nullable text | ▶ | Selects all occurrences of the given character or list of characters from the input text value. |
 | `Text.Split` | Text.Transformations | list | ▶ | Splits text into a list of text values based upon a specified delimiter. |
 | `Text.SplitAny` | Text.Transformations | list | ▶ | Returns a list of text values, split on any of the characters in the delimiter. |
@@ -618,10 +618,10 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Type.RecordFields` | Type | record | ▶ | Returns a record describing the fields of a record type with each field of the returned record type having a correspond… |
 | `Type.ReplaceFacets` | Type | type | ▶ | Replaces the facets of a type. |
 | `Type.ReplaceTableKeys` | Type | type | ▶ | Returns a new table type with all keys replaced by the specified list of keys. |
-| `Type.ReplaceTablePartitionKey` | Type | type | ▶ | Returns a new table type with the partition key replaced by the specified partition key. |
+| `Type.ReplaceTablePartitionKey` | Type | type | ▶ |  |
 | `Type.TableColumn` | Type | type | ▶ | Returns the type of a column in a table. |
 | `Type.TableKeys` | Type | list | ▶ | Returns the possibly empty list of keys for the given table type. |
-| `Type.TablePartitionKey` | Type | nullable list | ▶ | Returns the partition key for the given table type if it has one. |
+| `Type.TablePartitionKey` | Type | nullable list | ▶ |  |
 | `Type.TableRow` | Type | type | ▶ | Returns the row type of the table type. |
 | `Type.TableSchema` | Type | table | ▶ | Returns a table containing a description of the columns (i.e. |
 | `Type.Union` | Type | type | ▶ | Returns the union of a list of types. |
@@ -631,7 +631,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Uri.Parts` | Uri | record |  | Returns the parts of the input absolute URI as a record. |
 | `Value.Add` | Values.Arithmetic operations | any |  | Returns the sum of the two values. |
 | `Value.Alternates` | Expression | any |  | Expresses alternate query plans. |
-| `Value.As` | Values.Types | any |  | Returns the value if it's compatible with the specified type. |
+| `Value.As` | Values.Types | any |  | Returns the value if it is compatible with the specified type. |
 | `Value.Compare` | Values | number |  | Returns -1, 0, or 1 based on whether the first value is less than, equal to, or greater than the second. |
 | `Value.Divide` | Values.Arithmetic operations | any |  | Returns the result of dividing the first value by the second. |
 | `Value.Equals` | Values | logical |  | Returns whether two values are equal. |
@@ -648,16 +648,16 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Value.RemoveMetadata` | Metadata | any |  | Strips the input of metadata. |
 | `Value.ReplaceMetadata` | Metadata | any |  | Replaces the input's metadata information. |
 | `Value.ReplaceType` | Values.Types | any |  | Replaces the value's type. |
-| `Value.ResourceExpression` | Value | any |  | Value.ResourceExpression |
+| `Value.ResourceExpression` | Value | any |  |  |
 | `Value.Subtract` | Values.Arithmetic operations | any |  | Returns the difference of the two values. |
 | `Value.Traits` | Expression | table |  | This function is intended for internal use only. |
 | `Value.Type` | Values | type |  | Returns the type of the given value. |
-| `Value.VersionIdentity` | Action | any |  | Returns the version identity of the value. |
-| `Value.Versions` | Action | table |  | Returns a navigation table containing the available versions of the value. |
+| `Value.VersionIdentity` | Action | any |  |  |
+| `Value.Versions` | Action | table |  |  |
 | `Value.ViewError` | Values.Implementation | record |  | This function is intended for internal use only. |
 | `Value.ViewFunction` | Values.Implementation | function |  | This function is intended for internal use only. |
-| `Variable.Value` | Values.Implementation | any |  | Returns the value of the specified variable. |
-| `Variable.ValueOrDefault` | Values.Implementation | any |  | Returns the value of the specified variable or the default value if the variable is not defined. |
+| `Variable.Value` | Values.Implementation | any |  | This function is intended for internal use only. |
+| `Variable.ValueOrDefault` | Values.Implementation | any |  |  |
 | `Web.BrowserContents` | Accessing data | text |  | Returns the HTML for the specified URL, as viewed by a web browser. |
 | `Web.Contents` | Accessing data | binary |  | Returns the contents downloaded from the url as binary. |
 | `Web.Headers` | Accessing data | record |  | Returns the HTTP headers downloaded from the url as a record value. |

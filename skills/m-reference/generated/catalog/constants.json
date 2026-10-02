@@ -214,7 +214,7 @@
    "name": "Certificate.Type",
    "type": "type",
    "value": null,
-   "summary": "The type that represents a pkcs8 Certificate Text.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -334,7 +334,7 @@
    "name": "CsvStyle.Type",
    "type": "type",
    "value": null,
-   "summary": "Specifies the significance of quotes in CSV documents.",
+   "summary": "Specifies the significance of quotes in Csv documents.",
    "hosts": [
     "desktop"
    ],
@@ -574,7 +574,7 @@
    "name": "GroupKind.Global",
    "type": "number",
    "value": "1",
-   "summary": "A global group is formed from all rows in an input table with the same key value. Note that only a single global group is produced for a given key value.",
+   "summary": "A global group is formed from all rows in an input table with the same key value.",
    "hosts": [
     "desktop"
    ],
@@ -584,7 +584,7 @@
    "name": "GroupKind.Local",
    "type": "number",
    "value": "0",
-   "summary": "A local group is formed from a consecutive sequence of rows from an input table with the same key value. Note that multiple local groups may be produced with the same key value.",
+   "summary": "A local group is formed from a consecutive sequence of rows from an input table with the same key value.",
    "hosts": [
     "desktop"
    ],
@@ -634,7 +634,7 @@
    "name": "HiveProtocol.Type",
    "type": "type",
    "value": null,
-   "summary": "HiveProtocolEnum",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -994,7 +994,7 @@
    "name": "MissingField.Error",
    "type": "number",
    "value": "0",
-   "summary": "Indicates that missing fields should result in an error. (This is the default value.)",
+   "summary": "An optional parameter in record and table functions indicating that missing fields should result in an error. (This is the default parameter value.)",
    "hosts": [
     "desktop"
    ],
@@ -1004,7 +1004,7 @@
    "name": "MissingField.Ignore",
    "type": "number",
    "value": "1",
-   "summary": "Indicates that missing fields should be ignored.",
+   "summary": "An optional parameter in record and table functions indicating that missing fields should be ignored.",
    "hosts": [
     "desktop"
    ],
@@ -1024,7 +1024,7 @@
    "name": "MissingField.UseNull",
    "type": "number",
    "value": "2",
-   "summary": "Indicates that missing fields should be included as null values.",
+   "summary": "An optional parameter in record and table functions indicating that missing fields should be included as null values.",
    "hosts": [
     "desktop"
    ],
@@ -1034,7 +1034,7 @@
    "name": "None.Type",
    "type": "type",
    "value": null,
-   "summary": "None.Type",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1334,7 +1334,7 @@
    "name": "Precision.Decimal",
    "type": "number",
    "value": "1",
-   "summary": "An optional parameter for the built-in arithmetic operators to specify decimal precision.",
+   "summary": "An optional parameter for the built-in arthimetic operators to specify decimal precision.",
    "hosts": [
     "desktop"
    ],
@@ -1344,7 +1344,7 @@
    "name": "Precision.Double",
    "type": "number",
    "value": "0",
-   "summary": "An optional parameter for the built-in arithmetic operators to specify double precision.",
+   "summary": "An optional parameter for the built-in arthimetic operators to specify double precision.",
    "hosts": [
     "desktop"
    ],
@@ -1744,7 +1744,7 @@
    "name": "SparkProtocol.Type",
    "type": "type",
    "value": null,
-   "summary": "The protocol to use when connecting to an instance of Spark.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],

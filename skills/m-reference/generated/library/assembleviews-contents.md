@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 AssembleViews.Contents(resourceUrl as text, optional viewAtDate as any) as table
 ```
 
-Access views created within Assemble Insight
-
 ## Parameters
 
 | Name | Type | Optional |

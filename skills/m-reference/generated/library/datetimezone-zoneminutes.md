@@ -16,26 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DateTimeZone.ZoneMinutes(dateTimeZone as nullable datetimezone) as nullable number
 ```
 
-Returns the time zone minutes component of a `datetimezone` value.
+Gets the timezone minute of the value.
 
-- `dateTimeZone`: A `datetimezone` value from which the time zone minutes component is extracted. If `dateTimeZone` is `null`, the function returns `null`.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/datetimezone-zoneminutes)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `dateTimeZone` | `nullable datetimezone` | no |
-
-## Examples (engine metadata — not verified here)
-
-Get the time zone minutes component of the specified `datetimezone` value.
-
-```m
-DateTimeZone.ZoneMinutes(#datetimezone(2024, 4, 28, 13, 24, 22, 7, 30))
-```
-
-Stated result:
-
-```m
-30
-```

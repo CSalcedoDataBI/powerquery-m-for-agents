@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.First(list as list, optional defaultValue as any) as any
 ```
 
-Returns the first item in the list `list`, or the optional default value, `defaultValue`, if the list is empty.
-If the list is empty and a default value is not specified, the function returns `null`.
+Returns the first value of the list or the specified default if empty.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-first)
 
 ## Parameters
 
@@ -27,29 +30,3 @@ If the list is empty and a default value is not specified, the function returns 
 | `defaultValue` | `any` | yes |
 
 **Executed examples (1):** [examples/list-selection/list-first.md](../../examples/list-selection/list-first.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the first value in the list {1, 2, 3}.
-
-```m
-List.First({1, 2, 3})
-```
-
-Stated result:
-
-```m
-1
-```
-
-Find the first value in the list {}. If the list is empty, return -1.
-
-```m
-List.First({}, -1)
-```
-
-Stated result:
-
-```m
--1
-```

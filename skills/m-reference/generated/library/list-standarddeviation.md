@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.StandardDeviation(numbersList as list) as nullable number
 ```
 
-Returns a sample based estimate of the standard deviation of the values in the list, `numbersList`.
-If `numbersList` is a list of numbers, a number is returned.
-An error is raised on an empty list or a list of items that is not type `number`.
+Returns a sample based estimate of the standard deviation.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-standarddeviation)
 
 ## Parameters
 
@@ -27,17 +29,3 @@ An error is raised on an empty list or a list of items that is not type `number`
 | `numbersList` | `list` | no |
 
 **Executed examples (1):** [examples/list-averages/list-standarddeviation.md](../../examples/list-averages/list-standarddeviation.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the standard deviation of the numbers 1 through 5.
-
-```m
-List.StandardDeviation({1..5})
-```
-
-Stated result:
-
-```m
-1.5811388300841898
-```

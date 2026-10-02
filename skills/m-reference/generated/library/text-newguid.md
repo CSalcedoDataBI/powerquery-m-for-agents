@@ -18,4 +18,8 @@ Text.NewGuid() as text
 
 Returns a new, random globally unique identifier (GUID).
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-newguid)
+
 **Executed examples (1):** [examples/text-conversions-from-and-to-text/text-newguid.md](../../examples/text-conversions-from-and-to-text/text-newguid.md)

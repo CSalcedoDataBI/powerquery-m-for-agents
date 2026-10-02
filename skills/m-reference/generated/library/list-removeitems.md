@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.RemoveItems(list1 as list, list2 as list) as list
 ```
 
-Removes all occurrences of the given values in the `list2` from `list1`. If the values in `list2` don't exist in `list1`, the original list is returned.
+Removes items from list1 that are present in list.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-removeitems)
 
 ## Parameters
 
@@ -26,17 +30,3 @@ Removes all occurrences of the given values in the `list2` from `list1`. If the 
 | `list2` | `list` | no |
 
 **Executed examples (1):** [examples/list-transformation-functions/list-removeitems.md](../../examples/list-transformation-functions/list-removeitems.md)
-
-## Examples (engine metadata — not verified here)
-
-Remove the items in the list {2, 4, 6} from the list {1, 2, 3, 4, 2, 5, 5}.
-
-```m
-List.RemoveItems({1, 2, 3, 4, 2, 5, 5}, {2, 4, 6})
-```
-
-Stated result:
-
-```m
-{1, 3, 5, 5}
-```

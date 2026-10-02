@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.FindText(table as table, text as text) as table
 ```
 
-Returns the rows in the table `table` that contain the text `text`. If the text is not found, an empty table is returned.
+Returns all the rows that contain the given text in the table.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-findtext)
 
 ## Parameters
 
@@ -26,25 +30,3 @@ Returns the rows in the table `table` that contain the text `text`. If the text 
 | `text` | `text` | no |
 
 **Executed examples (1):** [examples/table-row-operations/table-findtext.md](../../examples/table-row-operations/table-findtext.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the rows in the table that contain "Bob".
-
-```m
-Table.FindText(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-        [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-    }),
-    "Bob"
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({[CustomerID = 1, Name = "Bob", Phone = "123-4567"]})
-```

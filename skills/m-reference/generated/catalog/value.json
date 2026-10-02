@@ -7,7 +7,7 @@
    "category": "Value",
    "returns": "any",
    "signature": "Value.ResourceExpression(value as any) as any",
-   "summary": "Value.ResourceExpression",
+   "summary": "",
    "hosts": [
     "desktop"
    ],

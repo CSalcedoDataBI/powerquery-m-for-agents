@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.Combinations(setSize as nullable number, combinationSize as nullable number) as nullable number
 ```
 
-Returns the number of unique combinations from a list of items, `setSize` with specified combination size, `combinationSize`.
+Returns the number of unique combinations.
 
-- `setSize`: The number of items in the list.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `combinationSize`: The number of items in each combination.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-combinations)
 
 ## Parameters
 
@@ -30,17 +30,3 @@ Returns the number of unique combinations from a list of items, `setSize` with s
 | `combinationSize` | `nullable number` | no |
 
 **Executed examples (4):** [examples/number-operations/number-combinations.md](../../examples/number-operations/number-combinations.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the number of combinations from a total of 5 items when each combination is a group of 3.
-
-```m
-Number.Combinations(5, 3)
-```
-
-Stated result:
-
-```m
-10
-```

@@ -16,16 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Snowflake.Databases(server as text, warehouse as text, optional options as nullable record) as table
 ```
 
-Returns a table listing the tables in the Snowflake Computing `warehouse` located at `server`. An optional record parameter, `options`, may be specified to control the following options:
-
-- `Role`: A text value to use as the Role name for the connection.
-
-- `CreateNavigationProperties`: A logical (true/false) value that sets whether to generate navigation properties on the returned values (default is true).
-
-- `ConnectionTimeout`: The number of seconds to wait for network responses from Snowflake.
-
-- `CommandTimeout`: The number of seconds to wait for a query to execute.
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -33,11 +23,3 @@ Returns a table listing the tables in the Snowflake Computing `warehouse` locate
 | `server` | `text` | no |
 | `warehouse` | `text` | no |
 | `options` | `nullable record` | yes |
-
-## Examples (engine metadata — not verified here)
-
-List the tables in a Snowflake warehouse.
-
-```m
-Snowflake.Databases("contoso.snowflakecomputing.com", "CONTOSO_WH")
-```

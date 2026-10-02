@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DateTimeZone.SwitchZone(dateTimeZone as nullable datetimezone, timezoneHours as number, optional timezoneMinutes as nullable number) as nullable datetimezone
 ```
 
-Changes timezone information to on the datetimezone value `dateTimeZone` to the new timezone information provided by `timezoneHours` and optionally `timezoneMinutes`.
-If `dateTimeZone` does not have a timezone component, an error is raised.
+Changes the timezone of the value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/datetimezone-switchzone)
 
 ## Parameters
 
@@ -26,29 +29,3 @@ If `dateTimeZone` does not have a timezone component, an error is raised.
 | `dateTimeZone` | `nullable datetimezone` | no |
 | `timezoneHours` | `number` | no |
 | `timezoneMinutes` | `nullable number` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Change timezone information for #datetimezone(2010, 12, 31, 11, 56, 02, 7, 30) to 8 hours.
-
-```m
-DateTimeZone.SwitchZone(#datetimezone(2010, 12, 31, 11, 56, 02, 7, 30), 8)
-```
-
-Stated result:
-
-```m
-#datetimezone(2010, 12, 31, 12, 26, 2, 8, 0)
-```
-
-Change timezone information for #datetimezone(2010, 12, 31, 11, 56, 02, 7, 30) to -30 minutes.
-
-```m
-DateTimeZone.SwitchZone(#datetimezone(2010, 12, 31, 11, 56, 02, 7, 30), 0, -30)
-```
-
-Stated result:
-
-```m
-#datetimezone(2010, 12, 31, 3, 56, 2, 0, -30)
-```

@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.Range(text as nullable text, offset as number, optional count as nullable number) as nullable text
 ```
 
-Returns the substring from the text `text` found at the offset `offset`.
-An optional parameter, `count`, can be included to specify how many characters to return. Raises an error if there aren't enough characters.
+Returns the substring found at offset.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-range)
 
 ## Parameters
 
@@ -28,29 +31,3 @@ An optional parameter, `count`, can be included to specify how many characters t
 | `count` | `nullable number` | yes |
 
 **Executed examples (1):** [examples/text-extraction/text-range.md](../../examples/text-extraction/text-range.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the substring from the text "Hello World" starting at index 6.
-
-```m
-Text.Range("Hello World", 6)
-```
-
-Stated result:
-
-```m
-"World"
-```
-
-Find the substring from the text "Hello World Hello" starting at index 6 spanning 5 characters.
-
-```m
-Text.Range("Hello World Hello", 6, 5)
-```
-
-Stated result:
-
-```m
-"World"
-```

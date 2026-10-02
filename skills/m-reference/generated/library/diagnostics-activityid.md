@@ -17,3 +17,7 @@ Diagnostics.ActivityId() as nullable text
 ```
 
 Returns an opaque identifier for the currently-running evaluation.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/diagnostics-activityid)

@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Type.FunctionParameters(type as type) as record
 ```
 
-Returns a record with field values set to the name of the parameters of `type`, and their values set to their corresponding types.
+Returns a record with field values set to the name of the parameters of a function type, and their values set to their corresponding types.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/type-functionparameters)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns a record with field values set to the name of the parameters of `type`, 
 | `type` | `type` | no |
 
 **Executed examples (3):** [examples/type/type-functionparameters.md](../../examples/type/type-functionparameters.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the types of the parameters to the function `(x as number, y as text)`.
-
-```m
-Type.FunctionParameters(type function (x as number, y as text) as any)
-```
-
-Stated result:
-
-```m
-[x = type number, y = type text]
-```

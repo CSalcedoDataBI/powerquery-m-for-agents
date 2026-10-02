@@ -67,7 +67,7 @@
    "category": "Text.Transformations",
    "returns": "any",
    "signature": "Text.AfterDelimiter(text as nullable text, delimiter as text, optional index as any) as any",
-   "summary": "Text.AfterDelimiter",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -97,7 +97,7 @@
    "category": "Text.Transformations",
    "returns": "any",
    "signature": "Text.BeforeDelimiter(text as nullable text, delimiter as text, optional index as any) as any",
-   "summary": "Text.BeforeDelimiter",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -112,7 +112,7 @@
    "category": "Text.Transformations",
    "returns": "any",
    "signature": "Text.BetweenDelimiters(text as nullable text, startDelimiter as text, endDelimiter as text, optional startIndex as any, optional endIndex as any) as any",
-   "summary": "Text.BetweenDelimiters",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -502,7 +502,7 @@
    "category": "Text.Transformations",
    "returns": "nullable text",
    "signature": "Text.Reverse(text as nullable text) as nullable text",
-   "summary": "Text.Reverse",
+   "summary": "",
    "hosts": [
     "desktop"
    ],

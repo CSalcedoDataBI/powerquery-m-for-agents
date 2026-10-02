@@ -16,20 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DateTime.From(value as any, optional culture as nullable text) as nullable datetime
 ```
 
-Returns a `datetime` value from the given `value`. An optional `culture` may also be provided (for example, "en-US").
-If the given `value` is `null`, `DateTime.From` returns `null`. If the given `value` is `datetime`, `value` is returned. Values of the following types can be converted to a `datetime` value:
+Creates a datetime from the given value.
 
-- `text`: A `datetime` value from textual representation. Refer to `DateTime.FromText` for details.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `date`: A `datetime` with `value` as the date component and `12:00:00 AM` as the time component.
-
-- `datetimezone`: The local `datetime` equivalent of `value`.
-
-- `time`: A `datetime` with the date equivalent of the OLE Automation Date of `0` as the date component and `value` as the time component.
-
-- `number`: A `datetime` equivalent of the OLE Automation Date expressed by `value`.
-
-If `value` is of any other type, an error is returned.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/datetime-from)
 
 ## Parameters
 
@@ -39,29 +30,3 @@ If `value` is of any other type, an error is returned.
 | `culture` | `nullable text` | yes |
 
 **Executed examples (3):** [examples/datetime/datetime-from.md](../../examples/datetime/datetime-from.md)
-
-## Examples (engine metadata — not verified here)
-
-Convert `#time(06, 45, 12)` to a `datetime` value.
-
-```m
-DateTime.From(#time(06, 45, 12))
-```
-
-Stated result:
-
-```m
-#datetime(1899, 12, 30, 06, 45, 12)
-```
-
-Convert `#date(1975, 4, 4)` to a `datetime` value.
-
-```m
-DateTime.From(#date(1975, 4, 4))
-```
-
-Stated result:
-
-```m
-#datetime(1975, 4, 4, 0, 0, 0)
-```

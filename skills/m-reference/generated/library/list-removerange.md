@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.RemoveRange(list as list, index as number, optional count as nullable number) as list
 ```
 
-Removes `count` values in the `list` starting at the specified position, `index`.
+Removes count number of values starting at the specified position.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-removerange)
 
 ## Parameters
 
@@ -27,17 +31,3 @@ Removes `count` values in the `list` starting at the specified position, `index`
 | `count` | `nullable number` | yes |
 
 **Executed examples (1):** [examples/list-transformation-functions/list-removerange.md](../../examples/list-transformation-functions/list-removerange.md)
-
-## Examples (engine metadata — not verified here)
-
-Remove 3 values in the list {1, 2, 3, 4, -6, -2, -1, 5} starting at index 4.
-
-```m
-List.RemoveRange({1, 2, 3, 4, -6, -2, -1, 5}, 4, 3)
-```
-
-Stated result:
-
-```m
-{1, 2, 3, 4, 5}
-```

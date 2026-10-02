@@ -16,7 +16,7 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.PartitionKey(table as table) as nullable list
 ```
 
-Returns the partition key of the specified table.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-partitionkey)
 
 ## Parameters
 

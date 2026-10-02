@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 IRIS.Database(host as text, port as number, namespace as text, optional ssl as nullable text, optional logs as nullable text) as table
 ```
 
-InterSystems IRIS
-
 ## Parameters
 
 | Name | Type | Optional |

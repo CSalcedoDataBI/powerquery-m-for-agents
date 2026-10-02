@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.Factorial(number as nullable number) as nullable number
 ```
 
-Returns the factorial of the number `number`.
+Returns the factorial of the number.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-factorial)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns the factorial of the number `number`.
 | `number` | `nullable number` | no |
 
 **Executed examples (3):** [examples/number-operations/number-factorial.md](../../examples/number-operations/number-factorial.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the factorial of 10.
-
-```m
-Number.Factorial(10)
-```
-
-Stated result:
-
-```m
-3628800
-```

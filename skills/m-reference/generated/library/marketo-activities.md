@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Marketo.Activities(url as text, startTime as date, activityIds as list) as table
 ```
 
-Makes a call to the Marketo REST API endpoint at `url`/rest/v1/activities.json. All activities in list `activityIds` that have occurred since `startTime` are returned.
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -25,17 +23,3 @@ Makes a call to the Marketo REST API endpoint at `url`/rest/v1/activities.json. 
 | `url` | `text` | no |
 | `startTime` | `date` | no |
 | `activityIds` | `list` | no |
-
-## Examples (engine metadata — not verified here)
-
-Pulls a table of "Visit Webpage" activities since November 1, 2015
-
-```m
-Marketo.Activities("https://100-AAA-999.mktorest.com/rest", #date(2015,11,1), {1})
-```
-
-Stated result:
-
-```m
-A table with details of all "Visit Webpage" activities since November 1
-```

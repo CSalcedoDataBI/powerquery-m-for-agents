@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.ColumnsOfType(table as table, listOfTypes as list) as list
 ```
 
-Returns a list with the names of the columns from table `table` that match the types specified in `listOfTypes`.
+Returns a list with the names of the columns that match the specified types.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-columnsoftype)
 
 ## Parameters
 
@@ -26,23 +30,3 @@ Returns a list with the names of the columns from table `table` that match the t
 | `listOfTypes` | `list` | no |
 
 **Executed examples (1):** [examples/table-column-operations/table-columnsoftype.md](../../examples/table-column-operations/table-columnsoftype.md)
-
-## Examples (engine metadata — not verified here)
-
-Return the names of columns of type Number.Type from the table.
-
-```m
-Table.ColumnsOfType(
-    Table.FromRecords(
-        {[a = 1, b = "hello"]},
-        type table[a = Number.Type, b = Text.Type]
-    ),
-    {type number}
-)
-```
-
-Stated result:
-
-```m
-{"a"}
-```

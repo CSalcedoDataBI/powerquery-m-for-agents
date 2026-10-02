@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 BinaryFormat.ByteOrder(binaryFormat as function, byteOrder as number) as function
 ```
 
-Returns a binary format with the byte order specified by `binaryFormat`. The default byte order is `ByteOrder.BigEndian`.
+Returns a binary format with the byte order specified by a function.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/binaryformat-byteorder)
 
 ## Parameters
 

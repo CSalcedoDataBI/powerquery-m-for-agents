@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.StartOfYear(dateTime as any) as any
 ```
 
-Returns the start of the year that contains `dateTime`.
-`dateTime` must be a `date`, `datetime`, or `datetimezone` value.
+Returns the start of the year.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-startofyear)
 
 ## Parameters
 
@@ -26,17 +29,3 @@ Returns the start of the year that contains `dateTime`.
 | `dateTime` | `any` | no |
 
 **Executed examples (3):** [examples/date/date-startofyear.md](../../examples/date/date-startofyear.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the start of the year for October 10th, 2011, 8:10:32AM.
-
-```m
-Date.StartOfYear(#datetime(2011, 10, 10, 8, 10, 32))
-```
-
-Stated result:
-
-```m
-#datetime(2011, 1, 1, 0, 0, 0)
-```

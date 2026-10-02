@@ -16,25 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DateTimeZone.ToLocal(dateTimeZone as nullable datetimezone) as nullable datetimezone
 ```
 
-Changes timezone information of the datetimezone value `dateTimeZone` to the local timezone information.
-If `dateTimeZone` does not have a timezone component, the local timezone information is added.
+Converts the timezone component to the local timezone.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/datetimezone-tolocal)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `dateTimeZone` | `nullable datetimezone` | no |
-
-## Examples (engine metadata — not verified here)
-
-Change timezone information for #datetimezone(2010, 12, 31, 11, 56, 02, 7, 30) to local timezone (assuming PST).
-
-```m
-DateTimeZone.ToLocal(#datetimezone(2010, 12, 31, 11, 56, 02, 7, 30))
-```
-
-Stated result:
-
-```m
-#datetimezone(2010, 12, 31, 12, 26, 2, -8, 0)
-```

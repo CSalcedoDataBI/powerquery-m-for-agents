@@ -18,6 +18,10 @@ Xml.Document(contents as any, optional encoding as nullable number) as table
 
 Returns the contents of the XML document as a hierarchical table.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/xml-document)
+
 ## Parameters
 
 | Name | Type | Optional |

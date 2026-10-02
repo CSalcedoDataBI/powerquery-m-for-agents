@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 VSTS.AnalyticsViews(url as text, project as text, optional options as nullable record) as table
 ```
 
-Returns a table of Analytics views offered by Azure DevOps.
-
 ## Parameters
 
 | Name | Type | Optional |

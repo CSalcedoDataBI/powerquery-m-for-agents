@@ -52,7 +52,7 @@
    "category": "AmazonAthena",
    "returns": "table",
    "signature": "AmazonAthena.Databases(DSN as text, optional role as nullable text, optional options as nullable record) as table",
-   "summary": "This function sends basic authentication info",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -82,7 +82,7 @@
    "category": "AmazonRedshift",
    "returns": "table",
    "signature": "AmazonRedshift.Database(server as text, database as text, optional options as nullable record) as table",
-   "summary": "Import data from an Amazon Redshift database.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -112,7 +112,7 @@
    "category": "ApacheHiveLLAP",
    "returns": "table",
    "signature": "ApacheHiveLLAP.Database(server as text, database as text, thriftTransport as number, optional options as nullable record) as table",
-   "summary": "Import data from a Hive LLAP",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -127,7 +127,7 @@
    "category": "ApacheSpark",
    "returns": "table",
    "signature": "ApacheSpark.Tables(server as text, protocol as number, optional options as nullable record) as table",
-   "summary": "Returns a table listing the tables on the specified Spark cluster.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -172,7 +172,7 @@
    "category": "AptixInsights",
    "returns": "table",
    "signature": "AptixInsights.Feed(url as text, optional query as any) as table",
-   "summary": "Use the Aptix Insights Platform OData API to build powerful reports and dashboards.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -187,7 +187,7 @@
    "category": "Asana",
    "returns": "table",
    "signature": "Asana.Tables(link as text) as table",
-   "summary": "Returns a table with Asana task data",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -202,7 +202,7 @@
    "category": "AssembleViews",
    "returns": "table",
    "signature": "AssembleViews.Contents(resourceUrl as text, optional viewAtDate as any) as table",
-   "summary": "Access views created within Assemble Insight",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -217,7 +217,7 @@
    "category": "AssembleViews",
    "returns": "table",
    "signature": "AssembleViews.Feed(resourceUrl as text) as table",
-   "summary": "Access views created within Assemble Insight",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -232,7 +232,7 @@
    "category": "AtScale",
    "returns": "table",
    "signature": "AtScale.Cubes(server as text, optional options as nullable record) as table",
-   "summary": "Import/DirectQuery cube data from an AtScale.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -277,7 +277,7 @@
    "category": "AutomationAnywhere",
    "returns": "table",
    "signature": "AutomationAnywhere.Feed(CRVersion as text, CRHostName as text) as table",
-   "summary": "Automation Anywhere - Login",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -307,7 +307,7 @@
    "category": "AzureCosmosDBForMongoDBvCore",
    "returns": "table",
    "signature": "AzureCosmosDBForMongoDBvCore.Contents(baseURL as text, optional database as nullable text, optional collection as nullable text) as table",
-   "summary": "Azure Cosmos DB for MongoDB vCore",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -337,7 +337,7 @@
    "category": "AzureCostManagement",
    "returns": "table",
    "signature": "AzureCostManagement.Tables(scope as text, scopeValue as text, numberOfMonths as number, optional options as nullable record) as table",
-   "summary": "Azure Cost Management",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -352,7 +352,7 @@
    "category": "AzureDataExplorer",
    "returns": "table",
    "signature": "AzureDataExplorer.Contents(cluster as text, optional database as nullable text, optional tableOrQuery as nullable text, optional options as nullable record) as table",
-   "summary": "Imports data from Azure Data Explorer (Kusto)",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -382,7 +382,7 @@
    "category": "AzureDataExplorer",
    "returns": "table",
    "signature": "AzureDataExplorer.KqlDatabase(optional cluster as nullable text, optional database as nullable text, optional tableOrQuery as nullable text, optional options as nullable record) as table",
-   "summary": "Import data from Fabric Kusto cluster in discovery mode.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -397,7 +397,7 @@
    "category": "AzureDeviceRegistry",
    "returns": "table",
    "signature": "AzureDeviceRegistry.Query(scope as text, optional subscriptions as nullable text, optional namespaces as nullable text, optional customAttributes as nullable text, optional options as nullable record) as table",
-   "summary": "Connector to pull Assets and Devices from Azure Device Registry",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -412,7 +412,7 @@
    "category": "AzureDevOpsServer",
    "returns": "table",
    "signature": "AzureDevOpsServer.AccountContents(url as text, optional options as nullable record) as table",
-   "summary": "Enter Url of your Azure DevOps Analytics Service.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -427,7 +427,7 @@
    "category": "AzureDevOpsServer",
    "returns": "table",
    "signature": "AzureDevOpsServer.AnalyticsViews(url as text, project as text, optional options as nullable record) as table",
-   "summary": "Enter organization and project names.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -442,7 +442,7 @@
    "category": "AzureDevOpsServer",
    "returns": "table",
    "signature": "AzureDevOpsServer.Feed(url as text, optional options as nullable record) as table",
-   "summary": "Azure DevOps Services Feed",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -457,7 +457,7 @@
    "category": "AzureDevOpsServer",
    "returns": "table",
    "signature": "AzureDevOpsServer.Views(url as text, project as text, areaPath as nullable text, optional options as nullable record) as table",
-   "summary": "Enter organization and project names.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -472,7 +472,7 @@
    "category": "AzureEnterprise",
    "returns": "binary",
    "signature": "AzureEnterprise.Contents(url as text, optional query as nullable record) as binary",
-   "summary": "Enter the URL of the Azure Enterprise REST API endpoint associated with your enrollment",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -487,7 +487,7 @@
    "category": "AzureEnterprise",
    "returns": "table",
    "signature": "AzureEnterprise.Tables(url as text) as table",
-   "summary": "Enter the URL of the Azure Enterprise REST API endpoint associated with your enrollment",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -502,7 +502,7 @@
    "category": "AzureHiveLLAP",
    "returns": "table",
    "signature": "AzureHiveLLAP.Database(server as text, database as text, optional options as nullable record) as table",
-   "summary": "Import data from HDInsight Interactive Query",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -517,7 +517,7 @@
    "category": "AzureResourceGraph",
    "returns": "table",
    "signature": "AzureResourceGraph.Query(query as text, optional scope as nullable text, optional subscription as nullable text, optional managementGroup as nullable text, optional options as nullable record) as table",
-   "summary": "See https://learn.microsoft.com/azure/governance/resource-graph/samples/starter?tabs=azure-cli for starter query sample…",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -532,7 +532,7 @@
    "category": "AzureSpark",
    "returns": "table",
    "signature": "AzureSpark.Tables(server as text, optional options as nullable record) as table",
-   "summary": "List the tables in an Azure Spark instance.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -562,7 +562,7 @@
    "category": "BI360",
    "returns": "table",
    "signature": "BI360.Contents(Url as text) as table",
-   "summary": "Retrieves a Navigation Table populated with the enabled tables for a given token",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -577,7 +577,7 @@
    "category": "BIConnector",
    "returns": "table",
    "signature": "BIConnector.Contents(dsnname as text) as table",
-   "summary": "Enter connection information",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -607,7 +607,7 @@
    "category": "Bloomberg",
    "returns": "table",
    "signature": "Bloomberg.Query(Bloomberg as text) as table",
-   "summary": "Used for retrieving Bloomberg data",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -637,7 +637,7 @@
    "category": "BQL",
    "returns": "table",
    "signature": "BQL.Query(Bloomberg as text) as table",
-   "summary": "Used for retrieving Bloomberg data",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -652,7 +652,7 @@
    "category": "BuildingConnected",
    "returns": "table",
    "signature": "BuildingConnected.Contents(optional rangeStart as nullable datetimezone, optional rangeEnd as nullable datetimezone, optional includeClosed as nullable logical) as table",
-   "summary": "Returns a table of entities for the given url and entity name.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -667,7 +667,7 @@
    "category": "CCHTagetik",
    "returns": "table",
    "signature": "CCHTagetik.Contents(URL as text, Database as text, optional AW as nullable text, optional Dataset as nullable text) as table",
-   "summary": "Wolters Kluwer CCH Tagetik",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -682,7 +682,7 @@
    "category": "CCHTagetik",
    "returns": "table",
    "signature": "CCHTagetik.Contents2(URL as text, Database as text, optional AW as nullable text, optional Dataset as nullable text, optional StartDate as nullable datetime, optional EndDate as nullable datetime) as table",
-   "summary": "Wolters Kluwer CCH Tagetik",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -697,7 +697,7 @@
    "category": "CCHTagetik",
    "returns": "table",
    "signature": "CCHTagetik.Contents3(URL as text, Database as text, optional FinancialOptions as nullable record, optional AnalyticalOptions as nullable record, optional AdvancedOptions as nullable record) as table",
-   "summary": "Wolters Kluwer CCH Tagetik",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -712,7 +712,7 @@
    "category": "CCHTagetik",
    "returns": "table",
    "signature": "CCHTagetik.Contents4(URL as text, Database as text, optional options as nullable record) as table",
-   "summary": "Wolters Kluwer CCH Tagetik",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -727,7 +727,7 @@
    "category": "CDataConnectCloud",
    "returns": "table",
    "signature": "CDataConnectCloud.Contents(optional options as nullable record) as table",
-   "summary": "Returns a table with relevant data from the connected data source in CData Connect Cloud.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -742,7 +742,7 @@
    "category": "CDataConnectCloud",
    "returns": "table",
    "signature": "CDataConnectCloud.ContentsV2(optional options as nullable record) as table",
-   "summary": "Returns a table with relevant data from the connected data source in CData Connect Cloud.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -772,7 +772,7 @@
    "category": "Cds",
    "returns": "table",
    "signature": "Cds.Entities(url as text, optional options as nullable record) as table",
-   "summary": "Connect to your Common Data Service instance (Dynamics 365 and PowerApps).",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -817,7 +817,7 @@
    "category": "Cherwell",
    "returns": "table",
    "signature": "Cherwell.SavedSearches(API URL as text, Client ID as text, optional Locale as nullable text, optional Saved Search URL as nullable text) as table",
-   "summary": "Returns the results of a Saved Search from a Cherwell Service Management REST API (requires CSM version 10.2 or later).",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -832,7 +832,7 @@
    "category": "ClickHouse",
    "returns": "table",
    "signature": "ClickHouse.Database(server as text, port as number, optional database as nullable text, optional options as nullable record) as table",
-   "summary": "ClickHouse ODBC connector for Power Query",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -847,7 +847,7 @@
    "category": "CloudBluePSA",
    "returns": "table",
    "signature": "CloudBluePSA.Feed(url as text, filter as text) as table",
-   "summary": "This function will resolve the page limitation issue and will retrieve and combine all pages of data returned by the AP…",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -862,7 +862,7 @@
    "category": "Cognite",
    "returns": "table",
    "signature": "Cognite.Contents(project as text, optional environment as nullable text) as table",
-   "summary": "Cognite Data Fusion (CDF)",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -877,7 +877,7 @@
    "category": "CogniteDataSource",
    "returns": "table",
    "signature": "CogniteDataSource.Contents(project as text, organization as text) as table",
-   "summary": "Cognite Data Fusion (CDF)",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -892,7 +892,7 @@
    "category": "CommonDataService",
    "returns": "table",
    "signature": "CommonDataService.Database(optional server as nullable text, optional options as nullable record) as table",
-   "summary": "Connect to your Dataverse instance (Dynamics 365 and PowerApps).",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -967,7 +967,7 @@
    "category": "Databricks",
    "returns": "function",
    "signature": "Databricks.Query(host as text, httpPath as text, optional options as nullable record) as function",
-   "summary": "Define a Databricks data source for running SQL queries",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -997,7 +997,7 @@
    "category": "DatabricksMultiCloud",
    "returns": "function",
    "signature": "DatabricksMultiCloud.Query(host as text, httpPath as text, optional options as nullable record) as function",
-   "summary": "Define a Databricks data source for running SQL queries",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1012,7 +1012,7 @@
    "category": "DataLake",
    "returns": "table",
    "signature": "DataLake.Contents(url as text, optional options as nullable record) as table",
-   "summary": "Enter the URL of your Azure Data Lake Storage Gen1 account.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1027,7 +1027,7 @@
    "category": "DataLake",
    "returns": "table",
    "signature": "DataLake.Files(url as text, optional options as nullable record) as table",
-   "summary": "Enter the URL of your Azure Data Lake Storage account.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1042,7 +1042,7 @@
    "category": "DataVirtuality",
    "returns": "table",
    "signature": "DataVirtuality.Database(server as text, database as text, optional options as nullable record) as table",
-   "summary": "Data Virtuality LDW",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1072,7 +1072,7 @@
    "category": "DataWorld",
    "returns": "table",
    "signature": "DataWorld.Dataset(owner as text, id as text, optional query as nullable text) as table",
-   "summary": "Retrieves a dataset from Data.World",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1087,7 +1087,7 @@
    "category": "DCWInsights",
    "returns": "table",
    "signature": "DCWInsights.Feed(url as text, optional query as any) as table",
-   "summary": "Use the DCW Integrations Platform OData API to build powerful reports and dashboards.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1117,7 +1117,7 @@
    "category": "Denodo",
    "returns": "table",
    "signature": "Denodo.Contents(DSN as text, optional debug as nullable logical, optional options as nullable record) as table",
-   "summary": "The Denodo Connector allows you to connect to Denodo's VDP server from PowerBI",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1132,7 +1132,7 @@
    "category": "DocumentDB",
    "returns": "table",
    "signature": "DocumentDB.Contents(url as text, optional database as nullable text, optional collection as nullable text, optional options as nullable record) as table",
-   "summary": "Enter the URL of an Azure Cosmos DB account.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1147,7 +1147,7 @@
    "category": "Dremio",
    "returns": "table",
    "signature": "Dremio.Databases(server as text, optional engine as nullable text, optional routingTag as nullable text, optional routingQueue as nullable text) as table",
-   "summary": "Returns a table listing the datasets on Dremio Server.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1162,7 +1162,7 @@
    "category": "Dremio",
    "returns": "table",
    "signature": "Dremio.DatabasesV300(server as text, encryption as text, optional engine as nullable text, optional routingTag as nullable text, optional routingQueue as nullable text) as table",
-   "summary": "Returns a table listing the datasets on Dremio Server.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1177,7 +1177,7 @@
    "category": "Dremio",
    "returns": "table",
    "signature": "Dremio.DatabasesV370(server as text, encryption as text, optional engine as nullable text, optional routingTag as nullable text, optional routingQueue as nullable text, optional options as nullable record) as table",
-   "summary": "Returns a table listing the datasets on Dremio Server.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1192,7 +1192,7 @@
    "category": "DremioCloud",
    "returns": "table",
    "signature": "DremioCloud.Databases(projectId as text, optional engine as nullable text) as table",
-   "summary": "Returns a table listing the datasets in the specified project on Dremio Cloud.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1207,7 +1207,7 @@
    "category": "DremioCloud",
    "returns": "table",
    "signature": "DremioCloud.DatabasesByServer(server as text, optional projectId as nullable text, optional engine as nullable text) as table",
-   "summary": "Returns a table listing the datasets on the specified server on Dremio Cloud.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1222,7 +1222,7 @@
    "category": "DremioCloud",
    "returns": "table",
    "signature": "DremioCloud.DatabasesByServerV330(server as text, optional projectId as nullable text, optional engine as nullable text, optional routingTag as nullable text, optional routingQueue as nullable text) as table",
-   "summary": "Returns a table listing the datasets on the specified server on Dremio Cloud.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1237,7 +1237,7 @@
    "category": "DremioCloud",
    "returns": "table",
    "signature": "DremioCloud.DatabasesByServerV360(server as text, optional projectId as nullable text, optional engine as nullable text, optional routingTag as nullable text, optional routingQueue as nullable text, optional encryption as nullable text) as table",
-   "summary": "Returns a table listing the datasets on the specified server on Dremio Cloud.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1252,7 +1252,7 @@
    "category": "DremioCloud",
    "returns": "table",
    "signature": "DremioCloud.DatabasesByServerV370(server as text, optional projectId as nullable text, optional engine as nullable text, optional routingTag as nullable text, optional routingQueue as nullable text, optional encryption as nullable text, optional options as nullable record) as table",
-   "summary": "Returns a table listing the datasets on the specified server on Dremio Cloud.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1282,7 +1282,7 @@
    "category": "Dynamics365BusinessCentral",
    "returns": "table",
    "signature": "Dynamics365BusinessCentral.ApiContents(optional environment as nullable text, optional company as nullable text, optional apiRoute as nullable text) as table",
-   "summary": "Enter your Dynamics 365 Business Central environment and company.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1297,7 +1297,7 @@
    "category": "Dynamics365BusinessCentral",
    "returns": "table",
    "signature": "Dynamics365BusinessCentral.ApiContentsWithOptions(optional environment as nullable text, optional company as nullable text, optional apiRoute as nullable text, optional options as nullable record) as table",
-   "summary": "Enter your Dynamics 365 Business Central environment and company.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1312,7 +1312,7 @@
    "category": "Dynamics365BusinessCentral",
    "returns": "table",
    "signature": "Dynamics365BusinessCentral.Contents(optional company as nullable text) as table",
-   "summary": "Enter your Dynamics 365 Business Central environment and company.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1327,7 +1327,7 @@
    "category": "Dynamics365BusinessCentral",
    "returns": "table",
    "signature": "Dynamics365BusinessCentral.EnvironmentContents(optional environment as nullable text, optional company as nullable text) as table",
-   "summary": "Enter your Dynamics 365 Business Central environment and company.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1342,7 +1342,7 @@
    "category": "Dynamics365BusinessCentralOnPremises",
    "returns": "table",
    "signature": "Dynamics365BusinessCentralOnPremises.Contents(url as text, optional company as nullable text) as table",
-   "summary": "Enter the URL of your Dynamics 365 Business Central (on-premises) OData service endpoint.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1357,7 +1357,7 @@
    "category": "DynamicsNav",
    "returns": "table",
    "signature": "DynamicsNav.Contents(url as text, optional company as nullable text) as table",
-   "summary": "Enter the URL of your Dynamics NAV OData service endpoint.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1372,7 +1372,7 @@
    "category": "DynatraceGrail",
    "returns": "table",
    "signature": "DynatraceGrail.Contents(url as text, optional QueryInput as nullable text, optional options as nullable record) as table",
-   "summary": "DQL Connector can be used to fetch data from Grail using DQL custom query or by selecting tables.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1402,7 +1402,7 @@
    "category": "Emigo",
    "returns": "table",
    "signature": "Emigo.Contents(optional DataRestrictionType as nullable text, optional DataRestrictionValue as nullable text, optional DataRestrictionMode as nullable text, optional AuthorizationMode as nullable text) as table",
-   "summary": "The purpose of the method is to set parameters for odata feed data source calls, thus the non-function calls may be lim…",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1507,7 +1507,7 @@
    "category": "ExactOnlinePremium",
    "returns": "table",
    "signature": "ExactOnlinePremium.Contents() as table",
-   "summary": "Get data directly from Exact Online Premium",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1522,7 +1522,7 @@
    "category": "Exasol",
    "returns": "table",
    "signature": "Exasol.Database(server as text, encrypted as text) as table",
-   "summary": "Exasol",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1537,7 +1537,7 @@
    "category": "Fabric",
    "returns": "table",
    "signature": "Fabric.Warehouse(optional options as nullable record) as table",
-   "summary": "Imports data from Warehouse",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1552,7 +1552,7 @@
    "category": "FabricSql",
    "returns": "table",
    "signature": "FabricSql.Contents(optional options as nullable record) as table",
-   "summary": "Imports data from SQL database Instance in Fabric",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1642,7 +1642,7 @@
    "category": "Foundry",
    "returns": "table",
    "signature": "Foundry.Contents(BaseUri as text, optional datasetRid as nullable text, optional branch as nullable text) as table",
-   "summary": "Connect to Palantir Foundry datasets.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1657,7 +1657,7 @@
    "category": "Funnel",
    "returns": "table",
    "signature": "Funnel.Contents() as table",
-   "summary": "Returns a navigation table to help the user navigate their Workspaces and respective Data Shares.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1702,7 +1702,7 @@
    "category": "Github",
    "returns": "table",
    "signature": "Github.Tables(RepositoryOwner as text, Repository as text) as table",
-   "summary": "Enter the GitHub repository owner and the repository name.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1717,7 +1717,7 @@
    "category": "GoogleBigQuery",
    "returns": "table",
    "signature": "GoogleBigQuery.Database(optional options as nullable record) as table",
-   "summary": "Import data from a Google BigQuery database.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1732,7 +1732,7 @@
    "category": "GoogleBigQueryAad",
    "returns": "table",
    "signature": "GoogleBigQueryAad.Database(billingProject as text, optional options as nullable record) as table",
-   "summary": "Import data from a Google BigQuery database using Microsoft Entra ID",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1747,7 +1747,7 @@
    "category": "GoogleSheets",
    "returns": "table",
    "signature": "GoogleSheets.Contents(url as text) as table",
-   "summary": "Imports data from GoogleSheets",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1822,7 +1822,7 @@
    "category": "HexagonSmartApi",
    "returns": "table",
    "signature": "HexagonSmartApi.Feed(url as text, optional headers as nullable text, optional odataFeedVersion as nullable text) as table",
-   "summary": "Returns a table from a Hexagon PPM Smart API OData feed.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1867,7 +1867,7 @@
    "category": "HexagonSmartApi",
    "returns": "function",
    "signature": "HexagonSmartApi.Typecast(typecastTarget as any, outputType as text) as function",
-   "summary": "Function to return a table representing an OData entity typecast from the target entity.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1882,7 +1882,7 @@
    "category": "Impala",
    "returns": "table",
    "signature": "Impala.Database(server as text, optional options as nullable record) as table",
-   "summary": "Import data from an Impala cluster",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1897,7 +1897,7 @@
    "category": "Indexima",
    "returns": "table",
    "signature": "Indexima.Database(server as text, port as number, optional ODBCdriver as nullable text, optional options as nullable record) as table",
-   "summary": "Connection to Indexima Data Hub",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1927,7 +1927,7 @@
    "category": "InformationGrid",
    "returns": "table",
    "signature": "InformationGrid.Contents(server as text) as table",
-   "summary": "Retrieves information from authorised BI services available on the given server",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1942,7 +1942,7 @@
    "category": "IntersystemsHealthInsight",
    "returns": "table",
    "signature": "IntersystemsHealthInsight.Database(host as text, port as number, namespace as text, ssl as text, hideSystemTables as text) as table",
-   "summary": "InterSystems Health Insight",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1957,7 +1957,7 @@
    "category": "Intune",
    "returns": "table",
    "signature": "Intune.Contents(maxHistoryDays as number) as table",
-   "summary": "Intune Data Warehouse",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1972,7 +1972,7 @@
    "category": "IntuneV2",
    "returns": "table",
    "signature": "IntuneV2.Contents(dataWarehouseAsuUri as text, optional options as nullable record) as table",
-   "summary": "Intune Data Warehouse V2",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -1987,7 +1987,7 @@
    "category": "inwink",
    "returns": "table",
    "signature": "inwink.ScopeContents(customerId as text, scope as text, scopeId as text) as table",
-   "summary": "inwink data",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2002,7 +2002,7 @@
    "category": "IRIS",
    "returns": "table",
    "signature": "IRIS.Database(host as text, port as number, namespace as text, optional ssl as nullable text, optional logs as nullable text) as table",
-   "summary": "InterSystems IRIS",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2062,7 +2062,7 @@
    "category": "Kusto",
    "returns": "table",
    "signature": "Kusto.Contents(cluster as text, optional database as nullable text, optional tableOrQuery as nullable text, optional options as nullable record) as table",
-   "summary": "Imports data from Azure Data Explorer (Kusto)",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2092,7 +2092,7 @@
    "category": "kxkdbinsightsenterprise",
    "returns": "table",
    "signature": "kxkdbinsightsenterprise.Contents(HostUrl as text) as table",
-   "summary": "Imports data from KX kdb Insights Enterprise",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2107,7 +2107,7 @@
    "category": "Kyligence",
    "returns": "table",
    "signature": "Kyligence.Database(Server as text, Port as text, Project as text, optional options as nullable record) as table",
-   "summary": "Connect your Kyligence",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2122,7 +2122,7 @@
    "category": "KyvosODBC",
    "returns": "table",
    "signature": "KyvosODBC.Databases(server as text, httpPath as text, encryption as text) as table",
-   "summary": "Returns a table listing the datasets on Kyvos Server.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2137,7 +2137,7 @@
    "category": "Lakehouse",
    "returns": "table",
    "signature": "Lakehouse.Contents(optional options as nullable record) as table",
-   "summary": "Import data from a Lakehouse",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2152,7 +2152,7 @@
    "category": "LEAP",
    "returns": "table",
    "signature": "LEAP.Contents() as table",
-   "summary": "Returns a table with relevant LEAP data.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2212,7 +2212,7 @@
    "category": "LinkedIn",
    "returns": "table",
    "signature": "LinkedIn.SalesNavigator(selectContracts as text, optional startAt as nullable date, optional endAt as nullable date) as table",
-   "summary": "LinkedIn Sales Navigator",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2272,7 +2272,7 @@
    "category": "MailChimp",
    "returns": "table",
    "signature": "MailChimp.Collection(path as text, optional entityName as nullable text) as table",
-   "summary": "Returns a table with data from a MailChimp endpoint.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2287,7 +2287,7 @@
    "category": "MailChimp",
    "returns": "table",
    "signature": "MailChimp.Instance(path as text) as table",
-   "summary": "Returns raw response results from a MailChimp API endpoint.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2317,7 +2317,7 @@
    "category": "MailChimp",
    "returns": "table",
    "signature": "MailChimp.TablesV2() as table",
-   "summary": "Returns a table with key MailChimp data.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2332,7 +2332,7 @@
    "category": "MariaDB",
    "returns": "table",
    "signature": "MariaDB.Contents(MariaDB Data Source as text, optional database as nullable text, optional CreateNavigationProperties as nullable logical) as table",
-   "summary": "Returns a navigation table.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2347,7 +2347,7 @@
    "category": "Marketo",
    "returns": "table",
    "signature": "Marketo.Activities(url as text, startTime as date, activityIds as list) as table",
-   "summary": "Returns a table with lead activities.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2362,7 +2362,7 @@
    "category": "Marketo",
    "returns": "table",
    "signature": "Marketo.Leads(url as text, leadIds as list, optional options as any) as table",
-   "summary": "Returns a table with lead details.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2377,7 +2377,7 @@
    "category": "Marketo",
    "returns": "table",
    "signature": "Marketo.Tables(url as text, QueryStart as date) as table",
-   "summary": "Enter the URL of the Marketo REST API endpoint associated with your account.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2392,7 +2392,7 @@
    "category": "MarkLogicODBC",
    "returns": "table",
    "signature": "MarkLogicODBC.Contents(server as text, port as number) as table",
-   "summary": "Returns the list of tables returned from the ODBC driver",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2407,7 +2407,7 @@
    "category": "MicrosoftAzureDataManagerForEnergy",
    "returns": "table",
    "signature": "MicrosoftAzureDataManagerForEnergy.Search(serviceName as text, dataPartition as text, kind as text, query as text, optional limit as nullable number, optional returnedFields as nullable text) as table",
-   "summary": "Queries for records in the Microsoft Azure Data Manager for Energy instance",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2422,7 +2422,7 @@
    "category": "MicrosoftGraphSecurity",
    "returns": "table",
    "signature": "MicrosoftGraphSecurity.Contents(version as text, optional options as nullable record) as table",
-   "summary": "Connector for the Microsoft Graph Security API",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2437,7 +2437,7 @@
    "category": "MicrosoftSentinel",
    "returns": "table",
    "signature": "MicrosoftSentinel.Contents(cluster as text, optional database as nullable text, optional tableOrQuery as nullable text, optional options as nullable record) as table",
-   "summary": "Imports data from Sentinel KQL",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2617,7 +2617,7 @@
    "category": "Netezza",
    "returns": "table",
    "signature": "Netezza.Database(server as text, database as text, optional options as nullable record) as table",
-   "summary": "Import data from an IBM Netezza database.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2632,7 +2632,7 @@
    "category": "OneLake",
    "returns": "table",
    "signature": "OneLake.Contents(path as text, optional options as nullable record) as table",
-   "summary": "Access data in OneLake storage",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2647,7 +2647,7 @@
    "category": "OneLake",
    "returns": "table",
    "signature": "OneLake.SqlAnalytics(workspace as text, database as text, artifactType as text, optional options as nullable record) as table",
-   "summary": "Imports data from Fabric SQL Analytics endpoint",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2707,7 +2707,7 @@
    "category": "PlanviewEnterprise",
    "returns": "table",
    "signature": "PlanviewEnterprise.CallQueryService(url as text, database as text, sqlQueryString as text) as table",
-   "summary": "Enter the URL, database name associated with your Planview Portfolios account and a SQL query.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2722,7 +2722,7 @@
    "category": "PlanviewEnterprise",
    "returns": "table",
    "signature": "PlanviewEnterprise.Feed(url as text, database as text) as table",
-   "summary": "Enter the URL and database name associated with your Planview Portfolios account.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2737,7 +2737,7 @@
    "category": "PlanviewOKR",
    "returns": "table",
    "signature": "PlanviewOKR.Contents(ODataURL as text) as table",
-   "summary": "Enter the URL of your Planview OKR account.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2752,7 +2752,7 @@
    "category": "PlanviewProjectplace",
    "returns": "table",
    "signature": "PlanviewProjectplace.Contents(ODataURL as text) as table",
-   "summary": "Enter the URL of your Planview ProjectPlace account.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2767,7 +2767,7 @@
    "category": "PowerBI",
    "returns": "table",
    "signature": "PowerBI.Dataflows(optional options as nullable record) as table",
-   "summary": "Connect to all the Power BI dataflows you have access to, and choose the entities you’d like to use.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2782,7 +2782,7 @@
    "category": "PowerBI",
    "returns": "table",
    "signature": "PowerBI.Datamarts(optional server as nullable text) as table",
-   "summary": "Imports data from Datamarts",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2797,7 +2797,7 @@
    "category": "PowerPlatform",
    "returns": "table",
    "signature": "PowerPlatform.Dataflows(optional options as nullable record) as table",
-   "summary": "Import data from a dataflow",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2842,7 +2842,7 @@
    "category": "Profisee",
    "returns": "table",
    "signature": "Profisee.Tables(url as text) as table",
-   "summary": "Navigation Table returning Profisee entities.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2857,7 +2857,7 @@
    "category": "Projectplace",
    "returns": "table",
    "signature": "Projectplace.Feed(ODataURL as text) as table",
-   "summary": "Enter the URL of your Planview Projectplace account.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2872,7 +2872,7 @@
    "category": "Python",
    "returns": "table",
    "signature": "Python.Execute(script as text, optional arguments as nullable record) as table",
-   "summary": "Executes Python script and returns data frames",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2902,7 +2902,7 @@
    "category": "QuickBase",
    "returns": "table",
    "signature": "QuickBase.Contents(url as text) as table",
-   "summary": "Quick Base Connector",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -2977,7 +2977,7 @@
    "category": "Resource",
    "returns": "any",
    "signature": "Resource.Access(resource as any, optional nativeQuery as nullable text, optional options as nullable record) as any",
-   "summary": "Resource.Access",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3007,7 +3007,7 @@
    "category": "Samsara",
    "returns": "table",
    "signature": "Samsara.Records(Region as text, RangeStart as text, optional RangeEnd as nullable text) as table",
-   "summary": "Get records from supported Samsara APIs",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3022,7 +3022,7 @@
    "category": "SDMX",
    "returns": "table",
    "signature": "SDMX.Contents(url as text, Option as text, optional Language as nullable text) as table",
-   "summary": "Get data from an SDMX RESTful web service that supports the CSV format.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3052,7 +3052,7 @@
    "category": "SingleStoreODBC",
    "returns": "table",
    "signature": "SingleStoreODBC.Contents(ServerAddr as text, Database as text, optional options as nullable record) as table",
-   "summary": "The SingleStore Connector is a high-performance connector that lets you DirectQuery and import data from your SingleSto…",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3067,7 +3067,7 @@
    "category": "SingleStoreODBC",
    "returns": "table",
    "signature": "SingleStoreODBC.Database(ServerAddr as text, Database as text, optional UseSSL as nullable logical) as table",
-   "summary": "The SingleStore Connector is a high-performance connector that lets you DirectQuery and import data from your SingleSto…",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3082,7 +3082,7 @@
    "category": "SingleStoreODBC",
    "returns": "table",
    "signature": "SingleStoreODBC.DataSource(ServerAddr as text, Database as text, optional UseSSL as nullable logical) as table",
-   "summary": "The SingleStore Connector is a high-performance connector that lets you DirectQuery and import data from your SingleSto…",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3097,7 +3097,7 @@
    "category": "SingleStoreODBC",
    "returns": "table",
    "signature": "SingleStoreODBC.Query(ServerAddr as text, Database as text, optional Query as nullable text) as table",
-   "summary": "The SingleStore Connector is a high-performance connector that lets you DirectQuery and import data from your SingleSto…",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3112,7 +3112,7 @@
    "category": "Siteimprove",
    "returns": "table",
    "signature": "Siteimprove.Contents() as table",
-   "summary": "Siteimprove API connector",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3127,7 +3127,7 @@
    "category": "Smartsheet",
    "returns": "any",
    "signature": "Smartsheet.Content(endpoint as text) as any",
-   "summary": "Returns a table of data from an Smartsheet index endpoint.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3142,7 +3142,7 @@
    "category": "Smartsheet",
    "returns": "any",
    "signature": "Smartsheet.Query(endpoint as text, args as text, headers as record) as any",
-   "summary": "Returns a JSON result from the Smartsheet API",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3157,7 +3157,7 @@
    "category": "Smartsheet",
    "returns": "table",
    "signature": "Smartsheet.Tables() as table",
-   "summary": "Returns a table of sheets, reports, folders, and workspaces from the Smartsheet API",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3172,7 +3172,7 @@
    "category": "SmartsheetGlobal",
    "returns": "table",
    "signature": "SmartsheetGlobal.Contents(region as text, optional options as nullable record) as table",
-   "summary": "Returns a table of sheets, reports, folders, and workspaces from the Smartsheet API",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3187,7 +3187,7 @@
    "category": "SmartsheetGlobal",
    "returns": "any",
    "signature": "SmartsheetGlobal.Query(region as text, endpoint as text, args as text, headers as record, optional options as nullable record) as any",
-   "summary": "Returns a JSON result from the Smartsheet API",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3202,7 +3202,7 @@
    "category": "Snowflake",
    "returns": "table",
    "signature": "Snowflake.Databases(server as text, warehouse as text, optional options as nullable record) as table",
-   "summary": "Import data from a Snowflake Computing warehouse.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3217,7 +3217,7 @@
    "category": "SoftOneBI",
    "returns": "table",
    "signature": "SoftOneBI.Contents() as table",
-   "summary": "Retrieves all Soft1/Atlantis tables in the datalake",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3277,7 +3277,7 @@
    "category": "Spark",
    "returns": "table",
    "signature": "Spark.Tables(server as text, protocol as number, optional options as nullable record) as table",
-   "summary": "Returns a table listing the tables on the specified Spark cluster.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3292,7 +3292,7 @@
    "category": "SparkPost",
    "returns": "table",
    "signature": "SparkPost.GetList(Path as text) as table",
-   "summary": "This function can be used to call any of the \"Lists\" endpoints offered by the SparkPost API v1.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3307,7 +3307,7 @@
    "category": "SparkPost",
    "returns": "table",
    "signature": "SparkPost.GetTable(DaysToAggregate as number, MetricColumns as text, NonMetricColumns as text, Path as text) as table",
-   "summary": "Returns a table of available metrics from the SparkPost API v1",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3322,7 +3322,7 @@
    "category": "SparkPost",
    "returns": "table",
    "signature": "SparkPost.NavTable(DaysToAggregate as number) as table",
-   "summary": "Retrieve the built-in tables exposed by the SparkPost connector with data aggregated over a user-specified number of da…",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3337,7 +3337,7 @@
    "category": "Spigit",
    "returns": "table",
    "signature": "Spigit.Contents(ODataURL as text) as table",
-   "summary": "Enter the URL of your Planview IdeaPlace account.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3382,7 +3382,7 @@
    "category": "Stripe",
    "returns": "table",
    "signature": "Stripe.Contents(method as text, optional query as nullable record, optional pageLimit as nullable number) as table",
-   "summary": "Makes a call to the Stripe API, with the option to limit number of API calls made.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3397,7 +3397,7 @@
    "category": "Stripe",
    "returns": "table",
    "signature": "Stripe.Method(method as text, additionalParameters as record, ColumnNames as list) as table",
-   "summary": "Makes a call to the Stripe API.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3412,7 +3412,7 @@
    "category": "Stripe",
    "returns": "table",
    "signature": "Stripe.Tables() as table",
-   "summary": "Returns a table listing the available Stripe tables and functions.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3427,7 +3427,7 @@
    "category": "SumTotal",
    "returns": "table",
    "signature": "SumTotal.ODataFeed(url as text) as table",
-   "summary": "SumTotal's Custom connector connects to SumTotal's external facing OData API service to pull data from data warehousing…",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3472,7 +3472,7 @@
    "category": "SurveyMonkey",
    "returns": "table",
    "signature": "SurveyMonkey.Contents() as table",
-   "summary": "A Navigation table showing all the surveys in the account related to the input access token.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3517,7 +3517,7 @@
    "category": "Synapse",
    "returns": "table",
    "signature": "Synapse.Contents(optional option as nullable record) as table",
-   "summary": "PQ Connector for Azure Synapse Analytics workspace",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3532,7 +3532,7 @@
    "category": "TeamDesk",
    "returns": "table",
    "signature": "TeamDesk.Database(url as text) as table",
-   "summary": "Connects to TeamDesk database and let you select a table and a view to retrieve the data from.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3547,7 +3547,7 @@
    "category": "TeamDesk",
    "returns": "table",
    "signature": "TeamDesk.Select(url as text, optional table as nullable text, optional columns as any, optional filter as nullable text, optional orderBy as any) as table",
-   "summary": "Retrieves the data from select columns in provided table.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3562,7 +3562,7 @@
    "category": "TeamDesk",
    "returns": "table",
    "signature": "TeamDesk.SelectView(url as text, optional table as nullable text, optional view as nullable text, optional filter as nullable text) as table",
-   "summary": "Retrieves the data from provided table and view.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3577,7 +3577,7 @@
    "category": "TeamsAnalytics",
    "returns": "table",
    "signature": "TeamsAnalytics.Contents() as table",
-   "summary": "The Teams Analytics connector enables you to get insights into your usage of Teams.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3592,7 +3592,7 @@
    "category": "Tenforce",
    "returns": "table",
    "signature": "Tenforce.Contents(ApplicationUrl as text, ListId as text, DataType as text) as table",
-   "summary": "Selection data",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3637,7 +3637,7 @@
    "category": "Troux",
    "returns": "table",
    "signature": "Troux.CustomFeed(url as text, query as text) as table",
-   "summary": "Enter the URL of your Planview Enterprise Architecture account and a query.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3652,7 +3652,7 @@
    "category": "Troux",
    "returns": "table",
    "signature": "Troux.Feed(url as text) as table",
-   "summary": "Enter the URL of your Planview Enterprise Architecture account.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3697,7 +3697,7 @@
    "category": "Twilio",
    "returns": "table",
    "signature": "Twilio.Tables(historyMonths as number) as table",
-   "summary": "Enter the number of months of historical Twilio data to retrieve.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3727,7 +3727,7 @@
    "category": "Usercube",
    "returns": "table",
    "signature": "Usercube.Universes(serverUrl as text) as table",
-   "summary": "Provides data from a Usercube instance",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3742,7 +3742,7 @@
    "category": "Vena",
    "returns": "table",
    "signature": "Vena.Contents(source as text, optional modelQuery as nullable text, optional apiVersion as nullable text) as table",
-   "summary": "Vena",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3757,7 +3757,7 @@
    "category": "Vertica",
    "returns": "table",
    "signature": "Vertica.Database(server as text, database as text, optional options as nullable record) as table",
-   "summary": "Import data from Vertica",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3787,7 +3787,7 @@
    "category": "VivaInsights",
    "returns": "table",
    "signature": "VivaInsights.Data(scopeId as text, optional jobName as nullable text, optional jobId as nullable text, optional options as nullable record) as table",
-   "summary": "Import weekly metrics and attribute data from Workplace Analytics.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3817,7 +3817,7 @@
    "category": "VSTS",
    "returns": "binary",
    "signature": "VSTS.AccountContents(url as text, optional options as nullable record) as binary",
-   "summary": "Enter Url of your Azure DevOps Analytics Service.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3832,7 +3832,7 @@
    "category": "VSTS",
    "returns": "table",
    "signature": "VSTS.AnalyticsViews(url as text, project as text, optional options as nullable record) as table",
-   "summary": "Enter organization and project names.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3847,7 +3847,7 @@
    "category": "VSTS",
    "returns": "binary",
    "signature": "VSTS.Contents(url as text, optional options as nullable record) as binary",
-   "summary": "Enter Url of your Azure DevOps Analytics Service.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3862,7 +3862,7 @@
    "category": "VSTS",
    "returns": "table",
    "signature": "VSTS.Feed(url as text, optional options as nullable record) as table",
-   "summary": "Azure DevOps Services Feed",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3877,7 +3877,7 @@
    "category": "VSTS",
    "returns": "table",
    "signature": "VSTS.Views(url as text, project as text, areaPath as nullable text, optional options as nullable record) as table",
-   "summary": "Enter organization and project names.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3892,7 +3892,7 @@
    "category": "Webtrends",
    "returns": "table",
    "signature": "Webtrends.KeyMetrics(ProfileId as text, optional startDate as nullable date, optional endDate as nullable date) as table",
-   "summary": "Returns a table with key Webtrends metrics.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3922,7 +3922,7 @@
    "category": "Webtrends",
    "returns": "table",
    "signature": "Webtrends.ReportContents(ProfileId as text, ReportId as text, optional startDate as nullable date, optional endDate as nullable date) as table",
-   "summary": "Returns a table with report content from Webtrends.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3937,7 +3937,7 @@
    "category": "Webtrends",
    "returns": "table",
    "signature": "Webtrends.Tables(ProfileId as text, optional startDate as nullable date, optional endDate as nullable date) as table",
-   "summary": "Enter the Profile ID associated with your Webtrends account.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3952,7 +3952,7 @@
    "category": "WebtrendsAnalytics",
    "returns": "table",
    "signature": "WebtrendsAnalytics.Tables(ProfileId as text, Period as text, reportType as text, optional startDate as nullable date, optional endDate as nullable date, optional startPeriod as nullable text, optional endPeriod as nullable text) as table",
-   "summary": "Enter the Profile ID associated with your Webtrends account.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3982,7 +3982,7 @@
    "category": "Witivio",
    "returns": "table",
    "signature": "Witivio.Contents(botId as text) as table",
-   "summary": "Witivio 365 - Configuration",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -3997,7 +3997,7 @@
    "category": "WorkforceDimensions",
    "returns": "text",
    "signature": "WorkforceDimensions.Contents(configurationServer as text, workForceDimensionsServer as text, symbolicPeriod as text, optional startDate as nullable date, optional endDate as nullable date) as text",
-   "summary": "Configuration to access OAuth server as well as default date range settigns.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -4012,7 +4012,7 @@
    "category": "Wrike",
    "returns": "table",
    "signature": "Wrike.Contents() as table",
-   "summary": "Shared function and first entry point to Connector.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -4042,7 +4042,7 @@
    "category": "Zendesk",
    "returns": "table",
    "signature": "Zendesk.Tables(url as text) as table",
-   "summary": "Enter the URL of your Zendesk account.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -4057,7 +4057,7 @@
    "category": "ZendeskData",
    "returns": "table",
    "signature": "ZendeskData.Contents(url as text, optional options as nullable record) as table",
-   "summary": "Returns a table with relevant Zendesk data.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -4072,7 +4072,7 @@
    "category": "ZohoCreator",
    "returns": "any",
    "signature": "ZohoCreator.Contents(creatordomain as text, scopname as text, applinkname as text, reportlinkname as text) as any",
-   "summary": "This connector will fetch data only from Zoho Creator application reports",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -4087,7 +4087,7 @@
    "category": "Zucchetti",
    "returns": "table",
    "signature": "Zucchetti.Contents(Url as text, Environment as text) as table",
-   "summary": "Returns contents of VisualQueries (vqr), reports or functions published by the Zucchetti HR software",
+   "summary": "",
    "hosts": [
     "desktop"
    ],

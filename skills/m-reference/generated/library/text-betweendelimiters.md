@@ -16,10 +16,7 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.BetweenDelimiters(text as nullable text, startDelimiter as text, endDelimiter as text, optional startIndex as any, optional endIndex as any) as any
 ```
 
-Returns the portion of `text` between the specified `startDelimiter` and `endDelimiter`.
-An optional numeric `startIndex` indicates which occurrence of the `startDelimiter` should be considered.
-An optional list `startIndex` indicates which occurrence of the `startDelimiter` should be considered, as well as whether indexing should be done from the start or end of the input.
-The `endIndex` is similar, except that indexing is done relative to the `startIndex`.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-betweendelimiters)
 
 ## Parameters
 
@@ -32,41 +29,3 @@ The `endIndex` is similar, except that indexing is done relative to the `startIn
 | `endIndex` | `any` | yes |
 
 **Executed examples (1):** [examples/text-transformations/text-betweendelimiters.md](../../examples/text-transformations/text-betweendelimiters.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the portion of "111 (222) 333 (444)" between the (first) open parenthesis and the (first) closed parenthesis that follows it.
-
-```m
-Text.BetweenDelimiters("111 (222) 333 (444)", "(", ")")
-```
-
-Stated result:
-
-```m
-"222"
-```
-
-Get the portion of "111 (222) 333 (444)" between the second open parenthesis and the first closed parenthesis that follows it.
-
-```m
-Text.BetweenDelimiters("111 (222) 333 (444)", "(", ")", 1, 0)
-```
-
-Stated result:
-
-```m
-"444"
-```
-
-Get the portion of "111 (222) 333 (444)" between the second open parenthesis from the end and the second closed parenthesis that follows it.
-
-```m
-Text.BetweenDelimiters("111 (222) 333 (444)", "(", ")", {1, RelativePosition.FromEnd}, {1, RelativePosition.FromStart})
-```
-
-Stated result:
-
-```m
-"222) 333 (444"
-```

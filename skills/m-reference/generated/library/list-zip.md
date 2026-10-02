@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Zip(lists as list) as list
 ```
 
-Takes a list of lists, `lists`, and returns a list of lists combining items at the same position.
+Returns a list of lists by combining items at the same position in multiple lists.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-zip)
 
 ## Parameters
 
@@ -25,35 +29,3 @@ Takes a list of lists, `lists`, and returns a list of lists combining items at t
 | `lists` | `list` | no |
 
 **Executed examples (1):** [examples/list-transformation-functions/list-zip.md](../../examples/list-transformation-functions/list-zip.md)
-
-## Examples (engine metadata — not verified here)
-
-Zips the two simple lists {1, 2} and {3, 4}.
-
-```m
-List.Zip({{1, 2}, {3, 4}})
-```
-
-Stated result:
-
-```m
-{
-    {1, 3},
-    {2, 4}
-}
-```
-
-Zips the two simple lists of different lengths {1, 2} and {3}.
-
-```m
-List.Zip({{1, 2}, {3}})
-```
-
-Stated result:
-
-```m
-{
-    {1, 3},
-    {2, null}
-}
-```

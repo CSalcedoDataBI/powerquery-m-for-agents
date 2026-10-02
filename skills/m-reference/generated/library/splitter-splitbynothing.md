@@ -18,4 +18,8 @@ Splitter.SplitByNothing() as function
 
 Returns a function that does no splitting, returning its argument as a single element list.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/splitter-splitbynothing)
+
 **Executed examples (3):** [examples/splitter/splitter-splitbynothing.md](../../examples/splitter/splitter-splitbynothing.md)

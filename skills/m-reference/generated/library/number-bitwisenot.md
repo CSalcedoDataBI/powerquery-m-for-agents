@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.BitwiseNot(number as any) as any
 ```
 
-Returns the result of performing a bitwise "Not" operation on `number`.
+Returns a byte where each bit is the opposite of the input.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-bitwisenot)
 
 ## Parameters
 

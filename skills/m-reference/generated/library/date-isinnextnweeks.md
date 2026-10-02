@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.IsInNextNWeeks(dateTime as any, weeks as number) as nullable logical
 ```
 
-Indicates whether the given datetime value `dateTime` occurs during the next number of weeks, as determined by the current date and time on the system. Note that this function will return false when passed a value that occurs within the current week.
+Indicates whether this date occurs during the next number of weeks, as determined by the current date and time on the system. Note that this function will return false when passed a value that occurs within the current week.
 
-- `dateTime`: A `date`, `datetime`, or `datetimezone` value to be evaluated.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `weeks`: The number of weeks.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-isinnextnweeks)
 
 ## Parameters
 
@@ -30,17 +30,3 @@ Indicates whether the given datetime value `dateTime` occurs during the next num
 | `weeks` | `number` | no |
 
 **Executed examples (3):** [examples/date/date-isinnextnweeks.md](../../examples/date/date-isinnextnweeks.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if the week after the current system time is in the next two weeks.
-
-```m
-Date.IsInNextNWeeks(Date.AddDays(DateTime.FixedLocalNow(), 7), 2)
-```
-
-Stated result:
-
-```m
-true
-```

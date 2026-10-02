@@ -16,13 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Folder.Files(path as text, optional options as nullable record) as table
 ```
 
-Returns a table containing a row for each file found in the specified folder and all its subfolders.
+Returns a table containing the properties and contents of the files found in the specified folder and subfolders.
 
-- `path`: The path to the folder you want to retrieve the files from. The supplied folder path must be a valid absolute path.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `options`: (Optional) This parameter is currently intended for internal use only.
-
-Each row of the returned table contains properties of the file and a link to its content.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/folder-files)
 
 ## Parameters
 
@@ -30,17 +28,3 @@ Each row of the returned table contains properties of the file and a link to its
 |---|---|---|
 | `path` | `text` | no |
 | `options` | `nullable record` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Return a table containing all of the files found in C:\test-examples\example-folder and all of its subfolders.
-
-```m
-Folder.Files("C:\test-examples\example-folder")
-```
-
-Stated result:
-
-```m
-A table containing the files, their properties, and a link to their content.
-```

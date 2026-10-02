@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DateTime.Time(dateTime as any) as nullable time
 ```
 
-Returns the time part of the given datetime value, `dateTime`.
+Returns the time part of the given datetime value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/datetime-time)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns the time part of the given datetime value, `dateTime`.
 | `dateTime` | `any` | no |
 
 **Executed examples (3):** [examples/datetime/datetime-time.md](../../examples/datetime/datetime-time.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the time value of #datetime(2010, 12, 31, 11, 56, 02).
-
-```m
-DateTime.Time(#datetime(2010, 12, 31, 11, 56, 02))
-```
-
-Stated result:
-
-```m
-#time(11, 56, 2)
-```

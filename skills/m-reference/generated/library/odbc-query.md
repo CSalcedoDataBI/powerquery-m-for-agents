@@ -16,13 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Odbc.Query(connectionString as any, query as text, optional options as nullable record) as table
 ```
 
-Returns the result of running `query` with the connection string `connectionString` using ODBC. `connectionString` can be text or a record of property value pairs. Property values can either be text or number. An optional record parameter, `options`, may be provided to specify additional properties. The record can contain the following fields:
+Returns the result of running a native query on an ODBC data source.
 
-- `ConnectionTimeout` : A duration that controls how long to wait before abandoning an attempt to make a connection to the server. The default value is 15 seconds.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `CommandTimeout` : A duration that controls how long the server-side query is allowed to run before it is canceled. The default value is ten minutes.
-
-- `SqlCompatibleWindowsAuth` : A logical (true/false) that determines whether to produce SQL Server-compatible connection string options for Windows authentication. The default value is true.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/odbc-query)
 
 ## Parameters
 
@@ -31,17 +29,3 @@ Returns the result of running `query` with the connection string `connectionStri
 | `connectionString` | `any` | no |
 | `query` | `text` | no |
 | `options` | `nullable record` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Return the result of running a simple query against the provided connection string.
-
-```m
-Odbc.Query("dsn=your_dsn", "select * from Customers")
-```
-
-Stated result:
-
-```m
-table
-```

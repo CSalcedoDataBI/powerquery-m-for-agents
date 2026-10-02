@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Folder.Contents(path as text, optional options as nullable record) as table
 ```
 
-Returns a table containing a row for each folder and file found in the folder `path`. Each row contains properties of the folder or file and a link to its content. The `options` parameter is currently intended for internal use only.
+Returns a table containing the properties and contents of the files and folders found in the specified folder.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/folder-contents)
 
 ## Parameters
 

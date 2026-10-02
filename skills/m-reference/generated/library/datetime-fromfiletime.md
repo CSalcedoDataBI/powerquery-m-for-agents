@@ -16,24 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DateTime.FromFileTime(fileTime as nullable number) as nullable datetime
 ```
 
-Creates a `datetime` value from the `fileTime` value and converts it to the local time zone. The filetime is a Windows file time value that represents the number of 100-nanosecond intervals that have elapsed since 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC).
+Creates a datetime from a 64 bits long number.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/datetime-fromfiletime)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `fileTime` | `nullable number` | no |
-
-## Examples (engine metadata — not verified here)
-
-Convert `129876402529842245` into a datetime value.
-
-```m
-DateTime.FromFileTime(129876402529842245)
-```
-
-Stated result:
-
-```m
-#datetime(2012, 7, 24, 14, 50, 52.9842245)
-```

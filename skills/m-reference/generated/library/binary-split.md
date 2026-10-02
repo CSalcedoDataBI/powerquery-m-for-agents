@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Binary.Split(binary as binary, pageSize as number) as list
 ```
 
-Splits `binary` into a list of binaries where the first element of the output list is a binary containing the first `pageSize` bytes from
-the source binary, the next element of the output list is a binary containing the next `pageSize` bytes from the source binary, and so on.
+Splits the specified binary into a list of binaries using the specified page size.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/binary-split)
 
 ## Parameters
 

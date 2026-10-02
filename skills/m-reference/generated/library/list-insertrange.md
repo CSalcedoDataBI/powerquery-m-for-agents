@@ -16,13 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.InsertRange(list as list, index as number, values as list) as list
 ```
 
-Returns a new list produced by inserting the values in `values` into `list` at `index`. The first position in the list is at index 0.
+Inserts values into a list at the given index.
 
-- `list`: The target list where values are to be inserted.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `index`: The index of the target list(`list`) where the values are to be inserted. The first position in the list is at index 0.
-
-- `values`: The list of values which are to be inserted into `list`.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-insertrange)
 
 ## Parameters
 
@@ -33,44 +31,3 @@ Returns a new list produced by inserting the values in `values` into `list` at `
 | `values` | `list` | no |
 
 **Executed examples (1):** [examples/list-selection/list-insertrange.md](../../examples/list-selection/list-insertrange.md)
-
-## Examples (engine metadata — not verified here)
-
-Insert the list ({3, 4}) into the target list ({1, 2, 5}) at index 2.
-
-```m
-List.InsertRange({1, 2, 5}, 2, {3, 4})
-```
-
-Stated result:
-
-```m
-{
-    1,
-    2,
-    3,
-    4,
-    5
-}
-```
-
-Insert a list with a nested list ({1, {1.1, 1.2}}) into a target list ({2, 3, 4}) at index 0.
-
-```m
-List.InsertRange({2, 3, 4}, 0, {1, {1.1, 1.2}})
-```
-
-Stated result:
-
-```m
-{
-    1,
-    {
-        1.1,
-        1.2
-    },
-    2,
-    3,
-    4
-}
-```

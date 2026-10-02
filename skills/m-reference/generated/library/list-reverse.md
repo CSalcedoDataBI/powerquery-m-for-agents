@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Reverse(list as list) as list
 ```
 
-Returns a list with the values in the list `list` in reversed order.
+Reverses the order of values in the list.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-reverse)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns a list with the values in the list `list` in reversed order.
 | `list` | `list` | no |
 
 **Executed examples (1):** [examples/list-transformation-functions/list-reverse.md](../../examples/list-transformation-functions/list-reverse.md)
-
-## Examples (engine metadata — not verified here)
-
-Create a list from {1..10} in reverse order.
-
-```m
-List.Reverse({1..10})
-```
-
-Stated result:
-
-```m
-{10, 9, 8, 7, 6, 5, 4, 3, 2, 1}
-```

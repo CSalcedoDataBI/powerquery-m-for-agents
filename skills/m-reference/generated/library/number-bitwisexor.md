@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.BitwiseXor(number1 as nullable number, number2 as nullable number) as nullable number
 ```
 
-Returns the result of performing a bitwise "XOR" (Exclusive-OR) between `number1` and `number2`.
+Returns the result of performing a bitwise "XOR" (Exclusive-OR) between the two inputs.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-bitwisexor)
 
 ## Parameters
 

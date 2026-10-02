@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.Abs(number as nullable number) as nullable number
 ```
 
-Returns the absolute value of `number`. If `number` is null, `Number.Abs` returns null.
+Returns the absolute value of the number.
 
-- `number`: A `number` for which the absolute value is to be calculated.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-abs)
 
 ## Parameters
 
@@ -27,17 +29,3 @@ Returns the absolute value of `number`. If `number` is null, `Number.Abs` return
 | `number` | `nullable number` | no |
 
 **Executed examples (3):** [examples/number-operations/number-abs.md](../../examples/number-operations/number-abs.md)
-
-## Examples (engine metadata — not verified here)
-
-Absolute value of -3.
-
-```m
-Number.Abs(-3)
-```
-
-Stated result:
-
-```m
-3
-```

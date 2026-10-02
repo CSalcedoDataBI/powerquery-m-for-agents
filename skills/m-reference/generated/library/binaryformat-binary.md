@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 BinaryFormat.Binary(optional length as any) as function
 ```
 
-Returns a binary format that reads a binary value. If `length` is specified, the binary value will contain that many bytes. If `length` is not specified, the binary value will contain the remaining bytes. The `length` can be specified either as a number, or as a binary format of the length that precedes the binary data.
+Returns a binary format that reads a binary value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/binaryformat-binary)
 
 ## Parameters
 

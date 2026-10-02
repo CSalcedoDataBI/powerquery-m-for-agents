@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Binary.Range(binary as binary, offset as number, optional count as nullable number) as binary
 ```
 
-Returns a subset of the binary value beginning at the offset `binary`. An optional parameter, `offset`, sets the maximum length of the subset.
+Returns a subset of the binary value beginning at an offset.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/binary-range)
 
 ## Parameters
 
@@ -27,29 +31,3 @@ Returns a subset of the binary value beginning at the offset `binary`. An option
 | `count` | `nullable number` | yes |
 
 **Executed examples (3):** [examples/binary/binary-range.md](../../examples/binary/binary-range.md)
-
-## Examples (engine metadata — not verified here)
-
-Returns a subset of the binary value starting at offset 6.
-
-```m
-Binary.Range(#binary({0..10}), 6)
-```
-
-Stated result:
-
-```m
-#binary({6, 7, 8, 9, 10})
-```
-
-Returns a subset of length 2 from offset 6 of the binary value.
-
-```m
-Binary.Range(#binary({0..10}), 6, 2)
-```
-
-Stated result:
-
-```m
-#binary({6, 7})
-```

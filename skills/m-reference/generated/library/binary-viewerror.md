@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Binary.ViewError(errorRecord as record) as record
 ```
 
-Creates a modified error record from `errorRecord` which won't trigger a fallback when raised by a handler defined on a view (via Binary.View).
+Creates a modified error record which won't trigger a fallback when thrown by a handler defined on a view (via Binary.View).
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/binary-viewerror)
 
 ## Parameters
 

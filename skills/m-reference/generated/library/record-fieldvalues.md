@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Record.FieldValues(record as record) as list
 ```
 
-Returns a list of the field values in record `record`.
+Returns a list of the field values.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/record-fieldvalues)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns a list of the field values in record `record`.
 | `record` | `record` | no |
 
 **Executed examples (3):** [examples/record-selection/record-fieldvalues.md](../../examples/record-selection/record-fieldvalues.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the field values in the record.
-
-```m
-Record.FieldValues([CustomerID = 1, Name = "Bob", Phone = "123-4567"])
-```
-
-Stated result:
-
-```m
-{1, "Bob", "123-4567"}
-```

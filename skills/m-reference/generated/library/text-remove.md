@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.Remove(text as nullable text, removeChars as any) as nullable text
 ```
 
-Returns a copy of the text value `text` with all the characters from `removeChars` removed.
+Removes all occurrences of the given character or list of characters from the input text value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-remove)
 
 ## Parameters
 
@@ -26,17 +30,3 @@ Returns a copy of the text value `text` with all the characters from `removeChar
 | `removeChars` | `any` | no |
 
 **Executed examples (1):** [examples/text-modification/text-remove.md](../../examples/text-modification/text-remove.md)
-
-## Examples (engine metadata — not verified here)
-
-Remove characters , and ; from the text value.
-
-```m
-Text.Remove("a,b;c", {",",";"})
-```
-
-Stated result:
-
-```m
-"abc"
-```

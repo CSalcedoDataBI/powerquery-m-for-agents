@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 SDMX.Contents(url as text, Option as text, optional Language as nullable text) as table
 ```
 
-Get data from an SDMX RESTful web service that supports the CSV format.
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -25,17 +23,3 @@ Get data from an SDMX RESTful web service that supports the CSV format.
 | `url` | `text` | no |
 | `Option` | `text` | no |
 | `Language` | `nullable text` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Get data from an SDMX RESTful web service that supports the CSV format.
-
-```m
-SDMX.Contents(url,"Show codes and labels","en")
-```
-
-Stated result:
-
-```m
-Data from the SDMX web service in a table format.
-```

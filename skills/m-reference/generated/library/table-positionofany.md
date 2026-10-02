@@ -16,15 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.PositionOfAny(table as table, rows as list, optional occurrence as nullable number, optional equationCriteria as any) as any
 ```
 
-Returns the row(s) position(s) from the `table` of the first occurrence of the list of `rows`. Returns -1 if no occurrence is found.
+Returns the position or positions of any of the specified rows within the table.
 
-- `table`: The input table.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `rows`: The list of rows in the table to find the positions of.
-
-- `occurrence`: *(Optional)* Specifies which occurrences of the row to return.
-
-- `equationCriteria`: *(Optional)* Controls the comparison between the table rows.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-positionofany)
 
 ## Parameters
 
@@ -36,52 +32,3 @@ Returns the row(s) position(s) from the `table` of the first occurrence of the l
 | `equationCriteria` | `any` | yes |
 
 **Executed examples (1):** [examples/table-membership/table-positionofany.md](../../examples/table-membership/table-positionofany.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the position of the first occurrence of [a = 2, b = 4] or [a = 6, b = 8] in the table `({[a = 2, b = 4], [a = 6, b = 8], [a = 2, b = 4], [a = 1, b = 4]})`.
-
-```m
-Table.PositionOfAny(
-    Table.FromRecords({
-        [a = 2, b = 4],
-        [a = 1, b = 4],
-        [a = 2, b = 4],
-        [a = 1, b = 4]
-    }),
-    {
-        [a = 2, b = 4],
-        [a = 6, b = 8]
-    }
-)
-```
-
-Stated result:
-
-```m
-0
-```
-
-Find the position of all the occurrences of [a = 2, b = 4] or [a = 6, b = 8] in the table `({[a = 2, b = 4], [a = 6, b = 8], [a = 2, b = 4], [a = 1, b = 4]}`.
-
-```m
-Table.PositionOfAny(
-    Table.FromRecords({
-        [a = 2, b = 4],
-        [a = 6, b = 8],
-        [a = 2, b = 4],
-        [a = 1, b = 4]
-    }),
-    {
-        [a = 2, b = 4],
-        [a = 6, b = 8]
-    },
-    Occurrence.All
-)
-```
-
-Stated result:
-
-```m
-{0, 1, 2}
-```

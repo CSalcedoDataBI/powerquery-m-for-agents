@@ -18,6 +18,10 @@ Splitter.SplitTextByEachDelimiter(delimiters as list, optional quoteStyle as nul
 
 Returns a function that splits text into a list of text at each specified delimiter in sequence.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/splitter-splittextbyeachdelimiter)
+
 ## Parameters
 
 | Name | Type | Optional |
@@ -27,32 +31,3 @@ Returns a function that splits text into a list of text at each specified delimi
 | `startAtEnd` | `nullable logical` | yes |
 
 **Executed examples (3):** [examples/splitter/splitter-splittextbyeachdelimiter.md](../../examples/splitter/splitter-splittextbyeachdelimiter.md)
-
-## Examples (engine metadata — not verified here)
-
-Split the input by comma, then semicolon, starting from the beginning of the input.
-
-```m
-Splitter.SplitTextByEachDelimiter({",", ";"})("a,b;c,d")
-```
-
-Stated result:
-
-```m
-{"a", "b", "c,d"}
-```
-
-Split the input by comma, then semicolon, treating quotes like any other character and starting from the end of the input.
-
-```m
-let
-    startAtEnd = true
-in
-    Splitter.SplitTextByEachDelimiter({",", ";"}, QuoteStyle.None, startAtEnd)("a,""b;c"",d")
-```
-
-Stated result:
-
-```m
-{"a,""b", "c""", "d"}
-```

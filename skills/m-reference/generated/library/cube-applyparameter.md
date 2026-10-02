@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Cube.ApplyParameter(cube as table, parameter as any, optional arguments as nullable list) as table
 ```
 
-Returns a cube after applying `parameter` with `arguments` to `cube`.
+Returns a cube after applying a parameter to it.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/cube-applyparameter)
 
 ## Parameters
 

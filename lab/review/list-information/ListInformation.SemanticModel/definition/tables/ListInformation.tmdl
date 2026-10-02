@@ -238,7 +238,7 @@ table ListInformation
 				            )
 				        in
 				            Result,
-				    Pages = #table(type table [seq = Int64.Type, Function = text, Description = text, Block = Int64.Type, Code = text, Recorded = text], {{0, "List.Count", "Returns the number of items in the specified list. - list: The list to examine.", 1, "List.Count({1, null, 3})", "3"}, {1, "List.IsEmpty", "Returns true if the list, list, contains no values (length 0). If the list contains values (length > 0), returns false.", 1, "{List.IsEmpty({}), List.IsEmpty({null})}", "{true, false}"}, {2, "List.NonNullCount", "Returns the number of non-null items in the list list.", 1, "List.NonNullCount({1, null, 3})", "2"}}),
+				    Pages = #table(type table [seq = Int64.Type, Function = text, Description = text, Block = Int64.Type, Code = text, Recorded = text], {{0, "List.Count", "Returns the number of items in the list.", 1, "List.Count({1, null, 3})", "3"}, {1, "List.IsEmpty", "Returns true if the list is empty.", 1, "{List.IsEmpty({}), List.IsEmpty({null})}", "{true, false}"}, {2, "List.NonNullCount", "Returns the number of non-null items in the list.", 1, "List.NonNullCount({1, null, 3})", "2"}}),
 				    Joined = Table.NestedJoin(Pages, "seq", Table.TransformColumns(Live, {{"id", Number.From}}), "id", "L", JoinKind.LeftOuter),
 				    Expanded = Table.ExpandTableColumn(Joined, "L", {"result"}, {"Live"}),
 				    Matched = Table.AddColumn(Expanded, "Match", each if [Live] = [Recorded] then "yes" else "NO", type text),

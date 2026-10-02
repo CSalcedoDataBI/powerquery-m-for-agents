@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.Ln(number as nullable number) as nullable number
 ```
 
-Returns the natural logarithm of a number, `number`. If `number` is null `Number.Ln` returns null.
+Returns the natural logarithm of the number.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-ln)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns the natural logarithm of a number, `number`. If `number` is null `Number
 | `number` | `nullable number` | no |
 
 **Executed examples (3):** [examples/number-operations/number-ln.md](../../examples/number-operations/number-ln.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the natural logarithm of 15.
-
-```m
-Number.Ln(15)
-```
-
-Stated result:
-
-```m
-2.70805020110221
-```

@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Currency.From(value as any, optional culture as nullable text, optional roundingMode as nullable number) as nullable number
 ```
 
-Returns a `currency` value from the given `value`. If the given `value` is `null`, `Currency.From` returns `null`. If the given `value` is `number` within the range of currency, fractional part of the `value` is rounded to 4 decimal digits and returned. If `value` is of any other type, it will first be converted to a `number` using `Number.FromText`. Valid range for currency is `-922,337,203,685,477.5808` to `922,337,203,685,477.5807`. Refer to `Number.Round` for the available rounding modes. The default is `RoundingMode.ToEven`. An optional `culture` may also be provided (for example, "en-US").
+Returns a currency value from the given value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/currency-from)
 
 ## Parameters
 
@@ -27,29 +31,3 @@ Returns a `currency` value from the given `value`. If the given `value` is `null
 | `roundingMode` | `nullable number` | yes |
 
 **Executed examples (3):** [examples/number-conversion-and-formatting/currency-from.md](../../examples/number-conversion-and-formatting/currency-from.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the `currency` value of `"1.23455"`.
-
-```m
-Currency.From("1.23455")
-```
-
-Stated result:
-
-```m
-1.2346
-```
-
-Get the `currency` value of `"1.23455"` using `RoundingMode.Down`.
-
-```m
-Currency.From("1.23455", "en-US", RoundingMode.Down)
-```
-
-Stated result:
-
-```m
-1.2345
-```

@@ -16,17 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.ReplaceValue(table as table, oldValue as any, newValue as any, replacer as function, columnsToSearch as list) as table
 ```
 
-Replaces a value with a new value in the specified columns of a table.
+Replaces one value with another in the specified columns.
 
-- `table`: The table to search.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `oldValue`: The value to be replaced.
-
-- `newValue`: The replacement value.
-
-- `replacer`: The replacer function to use. The function can be either `Replacer.ReplaceText` to replace the original text with new text, `Replacer.ReplaceValue` to replace the original value with a new value, or a custom replacer.
-
-- `columnsToSearch`: A list containing the specific column or columns in the table to search for the value to replace.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-replacevalue)
 
 ## Parameters
 
@@ -39,107 +33,3 @@ Replaces a value with a new value in the specified columns of a table.
 | `columnsToSearch` | `list` | no |
 
 **Executed examples (1):** [examples/table-transformation/table-replacevalue.md](../../examples/table-transformation/table-replacevalue.md)
-
-## Examples (engine metadata — not verified here)
-
-Replace the text "goodbye" with "world" in column B, matching only the entire value.
-
-```m
-Table.ReplaceValue(
-    Table.FromRecords({
-        [A = 1, B = "hello"],
-        [A = 2, B = "goodbye"],
-        [A = 3, B = "goodbyes"]
-    }),
-    "goodbye",
-    "world",
-    Replacer.ReplaceValue,
-    {"B"}
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [A = 1, B = "hello"],
-    [A = 2, B = "world"],
-    [A = 3, B = "goodbyes"]
-})
-```
-
-Replace the text "ur" with "or" in column B, matching any part of the value.
-
-```m
-Table.ReplaceValue(
-    Table.FromRecords({
-        [A = 1, B = "hello"],
-        [A = 2, B = "wurld"]
-    }),
-    "ur",
-    "or",
-    Replacer.ReplaceText,
-    {"B"}
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [A = 1, B = "hello"],
-    [A = 2, B = "world"]
-})
-```
-
-Anonymize the names of US employees.
-
-```m
-Table.ReplaceValue(
-    Table.FromRecords({
-        [Name = "Cindy", Country = "US"],
-        [Name = "Bob", Country = "CA"]
-    }),
-    each if [Country] = "US" then [Name] else false,
-    each Text.Repeat("*", Text.Length([Name])),
-    Replacer.ReplaceValue,
-    {"Name"}
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [Name = "*****", Country = "US"],
-    [Name = "Bob", Country = "CA"]
-})
-```
-
-Anonymize all columns of US employees.
-
-```m
-Table.ReplaceValue(
-    Table.FromRecords({
-        [Name = "Cindy", Country = "US"],
-        [Name = "Bob", Country = "CA"]
-    }),
-    each [Country] = "US",
-    "?",
-    (currentValue, isUS, replacementValue) =>
-        if isUS then
-            Text.Repeat(replacementValue, Text.Length(currentValue))
-        else
-            currentValue,
-    {"Name", "Country"}
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [Name = "?????", Country = "??"],
-    [Name = "Bob", Country = "CA"]
-})
-```

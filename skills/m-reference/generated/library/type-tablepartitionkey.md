@@ -16,7 +16,7 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Type.TablePartitionKey(tableType as type) as nullable list
 ```
 
-Returns the partition key for the given table type if it has one.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/type-tablepartitionkey)
 
 ## Parameters
 

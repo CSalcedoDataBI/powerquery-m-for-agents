@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DateTime.Date(dateTime as any) as nullable date
 ```
 
-Returns the date component of the `dateTime` parameter if the parameter is a `date`, `datetime`, or `datetimezone` value, or `null` if the parameter is `null`.
+Returns the date component of the given date, datetime, or datetimezone value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/datetime-date)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns the date component of the `dateTime` parameter if the parameter is a `da
 | `dateTime` | `any` | no |
 
 **Executed examples (3):** [examples/datetime/datetime-date.md](../../examples/datetime/datetime-date.md)
-
-## Examples (engine metadata — not verified here)
-
-Find date value of #datetime(2010, 12, 31, 11, 56, 02).
-
-```m
-DateTime.Date(#datetime(2010, 12, 31, 11, 56, 02))
-```
-
-Stated result:
-
-```m
-#date(2010, 12, 31)
-```

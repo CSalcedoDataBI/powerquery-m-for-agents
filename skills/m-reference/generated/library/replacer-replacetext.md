@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Replacer.ReplaceText(text as nullable text, old as text, new as text) as nullable text
 ```
 
-Replaces the `old` text in the original `text` with the `new` text. This replacer function can be used in `List.ReplaceValue` and `Table.ReplaceValue`.
+Replaces text within the provided input.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/replacer-replacetext)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Replaces the `old` text in the original `text` with the `new` text. This replace
 | `text` | `nullable text` | no |
 | `old` | `text` | no |
 | `new` | `text` | no |
-
-## Examples (engine metadata — not verified here)
-
-Replace the text "hE" with "He" in the string "hEllo world".
-
-```m
-Replacer.ReplaceText("hEllo world", "hE", "He")
-```
-
-Stated result:
-
-```m
-"Hello world"
-```

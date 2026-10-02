@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Record.Combine(records as list) as record
 ```
 
-Combines the records in the given `records`. If the `records` contains non-record values, an error is returned.
+Combines the records in the given list.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/record-combine)
 
 ## Parameters
 
@@ -25,20 +29,3 @@ Combines the records in the given `records`. If the `records` contains non-recor
 | `records` | `list` | no |
 
 **Executed examples (3):** [examples/record-transformations/record-combine.md](../../examples/record-transformations/record-combine.md)
-
-## Examples (engine metadata — not verified here)
-
-Create a combined record from the records.
-
-```m
-Record.Combine({
-    [CustomerID = 1, Name = "Bob"],
-    [Phone = "123-4567"]
-})
-```
-
-Stated result:
-
-```m
-[CustomerID = 1, Name = "Bob", Phone = "123-4567"]
-```

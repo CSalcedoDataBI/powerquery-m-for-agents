@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.AddKey(table as table, columns as list, isPrimary as logical) as table
 ```
 
-Adds a key to `table`, where `columns` is the list of column names that define the key, and `isPrimary` specifies whether the key is primary.
+Adds a key to a table.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-addkey)
 
 ## Parameters
 
@@ -27,27 +31,3 @@ Adds a key to `table`, where `columns` is the list of column names that define t
 | `isPrimary` | `logical` | no |
 
 **Executed examples (1):** [examples/table-transformation/table-addkey.md](../../examples/table-transformation/table-addkey.md)
-
-## Examples (engine metadata — not verified here)
-
-Add a single-column primary key to a table.
-
-```m
-let
-    table = Table.FromRecords({
-        [Id = 1, Name = "Hello There"],
-        [Id = 2, Name = "Good Bye"]
-    }),
-    resultTable = Table.AddKey(table, {"Id"}, true)
-in
-    resultTable
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [Id = 1, Name = "Hello There"],
-    [Id = 2, Name = "Good Bye"]
-})
-```

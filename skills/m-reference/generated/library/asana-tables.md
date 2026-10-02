@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Asana.Tables(link as text) as table
 ```
 
-Returns a table with Asana task data
-
 ## Parameters
 
 | Name | Type | Optional |

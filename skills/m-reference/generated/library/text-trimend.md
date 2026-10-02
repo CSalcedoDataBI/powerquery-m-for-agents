@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.TrimEnd(text as nullable text, optional trim as any) as nullable text
 ```
 
-Returns the result of removing all trailing characters from the specified `text`. By default, all the trailing whitespace characters are removed.
+Removes all specified trailing characters.
 
-- `text`: The text from which the trailing characters are to be removed.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `trim`: Overrides the whitespace characters that are trimmed by default. This parameter can either be a single character or a list of single characters. Each trailing trim operation stops when a non-trimmed character is encountered.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-trimend)
 
 ## Parameters
 
@@ -30,55 +30,3 @@ Returns the result of removing all trailing characters from the specified `text`
 | `trim` | `any` | yes |
 
 **Executed examples (1):** [examples/text-transformations/text-trimend.md](../../examples/text-transformations/text-trimend.md)
-
-## Examples (engine metadata — not verified here)
-
-Remove trailing whitespace from " a b c d ".
-
-```m
-Text.TrimEnd("     a b c d    ")
-```
-
-Stated result:
-
-```m
-"     a b c d"
-```
-
-Remove trailing zeroes from a text representation of a padded floating point number.
-
-```m
-Text.TrimEnd("03.487700000", "0")
-```
-
-Stated result:
-
-```m
-"03.4877"
-```
-
-Remove the trailing padding characters from a fixed-width account name.
-
-```m
-let
-    Source = #table(type table [Name = text, Account Name= text, Interest = number],
-    {
-        {"Bob", "US-847263****@", 2.8410},
-        {"Leslie", "FR-4648****@**", 3.8392},
-        {"Ringo", "DE-2046790@***", 12.6600}
-    }),
-    #"Trimmed Account" = Table.TransformColumns(Source, {{"Account Name", each Text.TrimEnd(_, {"*", "@"})}})
-in
-    #"Trimmed Account"
-```
-
-Stated result:
-
-```m
-#table(type table [Name = text, Account Name = text, Interest = number],
-{
-    {"Bob", "US-847263", 2.841},
-    {"Leslie", "FR-4648", 3.8392},
-    {"Ringo", "DE-2046790", 12.66}
-})
-```

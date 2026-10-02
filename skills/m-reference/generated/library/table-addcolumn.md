@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.AddColumn(table as table, newColumnName as text, columnGenerator as function, optional columnType as nullable type) as table
 ```
 
-Adds a column named `newColumnName` to the table `table`. The values for the column are computed using the specified selection function `columnGenerator` with each row taken as an input.
+Adds a column with the specified name. The value is computed using the specified selection function with each row taken as an input.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-addcolumn)
 
 ## Parameters
 
@@ -30,30 +34,3 @@ Adds a column named `newColumnName` to the table `table`. The values for the col
 **Field note:** [`notes/table-addcolumn.md`](../../notes/table-addcolumn.md)
 
 **Executed examples (1):** [examples/table-transformation/table-addcolumn.md](../../examples/table-transformation/table-addcolumn.md)
-
-## Examples (engine metadata — not verified here)
-
-Add a number column named "TotalPrice" to the table, with each value being the sum of the [Price] and [Shipping] columns.
-
-```m
-Table.AddColumn(
-    Table.FromRecords({
-        [OrderID = 1, CustomerID = 1, Item = "Fishing rod", Price = 100.0, Shipping = 10.00],
-        [OrderID = 2, CustomerID = 1, Item = "1 lb. worms", Price = 5.0, Shipping = 15.00],
-        [OrderID = 3, CustomerID = 2, Item = "Fishing net", Price = 25.0, Shipping = 10.00]
-    }),
-    "TotalPrice",
-    each [Price] + [Shipping],
-    type number
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [OrderID = 1, CustomerID = 1, Item = "Fishing rod", Price = 100, Shipping = 10, TotalPrice = 110],
-    [OrderID = 2, CustomerID = 1, Item = "1 lb. worms", Price = 5, Shipping = 15, TotalPrice = 20],
-    [OrderID = 3, CustomerID = 2, Item = "Fishing net", Price = 25, Shipping = 10, TotalPrice = 35]
-})
-```

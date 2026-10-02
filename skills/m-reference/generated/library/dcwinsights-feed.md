@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DCWInsights.Feed(url as text, optional query as any) as table
 ```
 
-Use the DCW Integrations Platform OData API to build powerful reports and dashboards. Consult the API documentation to get the various endpoints available as well as how to obtain to your JWT key.
-
 ## Parameters
 
 | Name | Type | Optional |

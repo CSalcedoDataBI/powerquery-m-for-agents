@@ -16,9 +16,7 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.BeforeDelimiter(text as nullable text, delimiter as text, optional index as any) as any
 ```
 
-Returns the portion of `text` before the specified `delimiter`.
-An optional numeric `index` indicates which occurrence of the `delimiter` should be considered.
-An optional list `index` indicates which occurrence of the `delimiter` should be considered, as well as whether indexing should be done from the start or end of the input.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-beforedelimiter)
 
 ## Parameters
 
@@ -29,41 +27,3 @@ An optional list `index` indicates which occurrence of the `delimiter` should be
 | `index` | `any` | yes |
 
 **Executed examples (1):** [examples/text-transformations/text-beforedelimiter.md](../../examples/text-transformations/text-beforedelimiter.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the portion of "111-222-333" before the (first) hyphen.
-
-```m
-Text.BeforeDelimiter("111-222-333", "-")
-```
-
-Stated result:
-
-```m
-"111"
-```
-
-Get the portion of "111-222-333" before the second hyphen.
-
-```m
-Text.BeforeDelimiter("111-222-333", "-", 1)
-```
-
-Stated result:
-
-```m
-"111-222"
-```
-
-Get the portion of "111-222-333" before the second hyphen from the end.
-
-```m
-Text.BeforeDelimiter("111-222-333", "-", {1, RelativePosition.FromEnd})
-```
-
-Stated result:
-
-```m
-"111"
-```

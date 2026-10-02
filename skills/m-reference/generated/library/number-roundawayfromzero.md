@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.RoundAwayFromZero(number as nullable number, optional digits as nullable number) as nullable number
 ```
 
-Returns the result of rounding `number` based on the sign of the number. This function will round positive numbers up and negative numbers down.
-If `digits` is specified, `number` is rounded to the `digits` number of decimal digits.
+Returns the result of rounding positive numbers up and negative numbers down. The number of digits can be specified.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-roundawayfromzero)
 
 ## Parameters
 
@@ -25,41 +28,3 @@ If `digits` is specified, `number` is rounded to the `digits` number of decimal 
 |---|---|---|
 | `number` | `nullable number` | no |
 | `digits` | `nullable number` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Round the number -1.2 away from zero.
-
-```m
-Number.RoundAwayFromZero(-1.2)
-```
-
-Stated result:
-
-```m
--2
-```
-
-Round the number 1.2 away from zero.
-
-```m
-Number.RoundAwayFromZero(1.2)
-```
-
-Stated result:
-
-```m
-2
-```
-
-Round the number -1.234 to two decimal places away from zero.
-
-```m
-Number.RoundAwayFromZero(-1.234, 2)
-```
-
-Stated result:
-
-```m
--1.24
-```

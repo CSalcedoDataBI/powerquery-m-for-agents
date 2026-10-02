@@ -15,5 +15,3 @@ source: "#shared \u2014 desktop 2.157.879.0"
 ```m
 Siteimprove.Contents() as table
 ```
-
-Siteimprove API connector

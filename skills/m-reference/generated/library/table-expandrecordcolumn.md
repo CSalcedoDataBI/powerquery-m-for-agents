@@ -16,15 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.ExpandRecordColumn(table as table, column as text, fieldNames as list, optional newColumnNames as nullable list) as table
 ```
 
-Given the `column` of records in the input `table`, creates a table with a column for each field in the record. Optionally, `newColumnNames` may be specified to ensure unique names for the columns in the new table.
+Expands a column of records into columns with each of the values.
 
-- `table`: The original table with the record column to expand.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `column`: The column to expand.
-
-- `fieldNames`: The list of fields to expand into columns in the table.
-
-- `newColumnNames`: The list of column names to give the new columns. The new column names cannot duplicate any column in the new table.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-expandrecordcolumn)
 
 ## Parameters
 
@@ -36,26 +32,3 @@ Given the `column` of records in the input `table`, creates a table with a colum
 | `newColumnNames` | `nullable list` | yes |
 
 **Executed examples (1):** [examples/table-transformation/table-expandrecordcolumn.md](../../examples/table-transformation/table-expandrecordcolumn.md)
-
-## Examples (engine metadata — not verified here)
-
-Expand column [a] in the table `({[a = [aa = 1, bb = 2, cc = 3], b = 2]})` into 3 columns "aa", "bb" and "cc".
-
-```m
-Table.ExpandRecordColumn(
-    Table.FromRecords({
-        [
-            a = [aa = 1, bb = 2, cc = 3],
-            b = 2
-        ]
-    }),
-    "a",
-    {"aa", "bb", "cc"}
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({[aa = 1, bb = 2, cc = 3, b = 2]})
-```

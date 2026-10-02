@@ -15,19 +15,3 @@ source: "#shared \u2014 desktop 2.157.879.0"
 ```m
 SoftOneBI.Contents() as table
 ```
-
-Retrieves all Soft1/Atlantis tables in the datalake
-
-## Examples (engine metadata — not verified here)
-
-Returns a table of tables from the datalake
-
-```m
-SoftOneBI.Contents()
-```
-
-Stated result:
-
-```m
-#table({"Name"}, {"ItemKind"}, {"ItemName"}, {"Data"}, {"IsLeaf"}, {{"Companies"}, {"Table"}, {"Table"}, {"Table"}, {"true"}})
-```

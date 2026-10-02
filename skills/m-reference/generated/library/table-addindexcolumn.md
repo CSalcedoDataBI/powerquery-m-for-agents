@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.AddIndexColumn(table as table, newColumnName as text, optional initialValue as nullable number, optional increment as nullable number, optional columnType as nullable type) as table
 ```
 
-Appends a column named `newColumnName` to the `table` with explicit position values.
-An optional value, `initialValue`, the initial index value. An optional value, `increment`, specifies how much to increment each index value.
+Appends a column with explicit position values.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-addindexcolumn)
 
 ## Parameters
 
@@ -30,57 +33,3 @@ An optional value, `initialValue`, the initial index value. An optional value, `
 | `columnType` | `nullable type` | yes |
 
 **Executed examples (1):** [examples/table-transformation/table-addindexcolumn.md](../../examples/table-transformation/table-addindexcolumn.md)
-
-## Examples (engine metadata — not verified here)
-
-Add an index column named "Index" to the table.
-
-```m
-Table.AddIndexColumn(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-        [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-    }),
-    "Index"
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [CustomerID = 1, Name = "Bob", Phone = "123-4567", Index = 0],
-    [CustomerID = 2, Name = "Jim", Phone = "987-6543", Index = 1],
-    [CustomerID = 3, Name = "Paul", Phone = "543-7890", Index = 2],
-    [CustomerID = 4, Name = "Ringo", Phone = "232-1550", Index = 3]
-})
-```
-
-Add an index column named "index", starting at value 10 and incrementing by 5, to the table.
-
-```m
-Table.AddIndexColumn(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-        [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-    }),
-    "Index",
-    10,
-    5
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [CustomerID = 1, Name = "Bob", Phone = "123-4567", Index = 10],
-    [CustomerID = 2, Name = "Jim", Phone = "987-6543", Index = 15],
-    [CustomerID = 3, Name = "Paul", Phone = "543-7890", Index = 20],
-    [CustomerID = 4, Name = "Ringo", Phone = "232-1550", Index = 25]
-})
-```

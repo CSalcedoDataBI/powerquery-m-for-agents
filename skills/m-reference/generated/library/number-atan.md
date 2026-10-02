@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.Atan(number as nullable number) as nullable number
 ```
 
-Returns the arctangent of `number`.
+Returns the arctangent of the number.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-atan)
 
 ## Parameters
 

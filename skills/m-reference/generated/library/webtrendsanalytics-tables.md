@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 WebtrendsAnalytics.Tables(ProfileId as text, Period as text, reportType as text, optional startDate as nullable date, optional endDate as nullable date, optional startPeriod as nullable text, optional endPeriod as nullable text) as table
 ```
 
-Returns a table with relevant Webtrends data.
-
 ## Parameters
 
 | Name | Type | Optional |

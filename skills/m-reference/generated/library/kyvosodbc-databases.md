@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 KyvosODBC.Databases(server as text, httpPath as text, encryption as text) as table
 ```
 
-Returns a table listing the datasets on Kyvos Server. This will be the same list as shown in Power BI Navigator
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -25,17 +23,3 @@ Returns a table listing the datasets on Kyvos Server. This will be the same list
 | `server` | `text` | no |
 | `httpPath` | `text` | no |
 | `encryption` | `text` | no |
-
-## Examples (engine metadata — not verified here)
-
-How to return the list of datasets
-
-```m
-Kyvos.Databases("localhost:8081")
-```
-
-Stated result:
-
-```m
-A table listing the datasets
-```

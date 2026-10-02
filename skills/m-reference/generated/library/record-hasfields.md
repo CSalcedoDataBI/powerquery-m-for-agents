@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Record.HasFields(record as record, fields as any) as logical
 ```
 
-Indicates whether the record `record` has the fields specified in `fields`, by returning a logical value (true or false).
-Multiple field values can be specified using a list.
+Indicates whether the record has the specified fields.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/record-hasfields)
 
 ## Parameters
 
@@ -27,29 +30,3 @@ Multiple field values can be specified using a list.
 | `fields` | `any` | no |
 
 **Executed examples (3):** [examples/record-information/record-hasfields.md](../../examples/record-information/record-hasfields.md)
-
-## Examples (engine metadata — not verified here)
-
-Check if the record has the field "CustomerID".
-
-```m
-Record.HasFields([CustomerID = 1, Name = "Bob", Phone = "123-4567"], "CustomerID")
-```
-
-Stated result:
-
-```m
-true
-```
-
-Check if the record has the field "CustomerID" and "Address".
-
-```m
-Record.HasFields([CustomerID = 1, Name = "Bob", Phone = "123-4567"], {"CustomerID", "Address"})
-```
-
-Stated result:
-
-```m
-false
-```

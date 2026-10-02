@@ -18,48 +18,12 @@ Value.Type(value as any) as type
 
 Returns the type of the given value.
 
-- `value`: The value whose type is returned.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/value-type)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `value` | `any` | no |
-
-## Examples (engine metadata — not verified here)
-
-Return the type of the specified number.
-
-```m
-Value.Type(243.448)
-```
-
-Stated result:
-
-```m
-type number
-```
-
-Return the type of the specified date.
-
-```m
-Value.Type(#date(2010, 12, 31))
-```
-
-Stated result:
-
-```m
-type date
-```
-
-Return the type of the specified record.
-
-```m
-Value.Type([a = 1, b = 2])
-```
-
-Stated result:
-
-```m
-type record
-```

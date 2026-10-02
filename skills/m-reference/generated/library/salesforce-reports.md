@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Salesforce.Reports(optional loginUrl as nullable text, optional options as nullable record) as table
 ```
 
-Returns the reports on the Salesforce account provided in the credentials. The account will be connected through the provided environment `loginUrl`. If no environment is provided then the account will connect to production (https://login.salesforce.com). An optional record parameter, `options`, may be provided to specify additional properties. The record can contain the following fields:
+Returns the reports from the Salesforce account.
 
-- `ApiVersion` : The Salesforce API version to use for this query. When not specified, API version 29.0 is used.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `Timeout` : A duration that controls how long to wait before abandoning the request to the server. The default value is source-specific.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/salesforce-reports)
 
 ## Parameters
 

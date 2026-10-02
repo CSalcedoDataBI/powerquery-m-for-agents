@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.MatchesAllRows(table as table, condition as function) as logical
 ```
 
-Indicates whether all the rows in the `table` match the given `condition`. Returns `true` if all of the rows match, `false` otherwise.
+Indicates whether all the rows in the table meet the given condition.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-matchesallrows)
 
 ## Parameters
 
@@ -26,41 +30,3 @@ Indicates whether all the rows in the `table` match the given `condition`. Retur
 | `condition` | `function` | no |
 
 **Executed examples (1):** [examples/table-row-operations/table-matchesallrows.md](../../examples/table-row-operations/table-matchesallrows.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine whether all of the row values in column [a] are even in the table.
-
-```m
-Table.MatchesAllRows(
-    Table.FromRecords({
-        [a = 2, b = 4],
-        [a = 6, b = 8]
-    }),
-    each Number.Mod([a], 2) = 0
-)
-```
-
-Stated result:
-
-```m
-true
-```
-
-Find if all of the row values are [a = 1, b = 2], in the table `({[a = 1, b = 2], [a = 3, b = 4]})`.
-
-```m
-Table.MatchesAllRows(
-    Table.FromRecords({
-        [a = 1, b = 2],
-        [a = -3, b = 4]
-    }),
-    each _ = [a = 1, b = 2]
-)
-```
-
-Stated result:
-
-```m
-false
-```

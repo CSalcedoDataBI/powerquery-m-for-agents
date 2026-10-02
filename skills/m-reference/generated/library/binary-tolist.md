@@ -18,6 +18,10 @@ Binary.ToList(binary as binary) as list
 
 Converts a binary value into a list of numbers.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/binary-tolist)
+
 ## Parameters
 
 | Name | Type | Optional |

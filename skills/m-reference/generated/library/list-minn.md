@@ -16,14 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.MinN(list as list, countOrCondition as any, optional comparisonCriteria as any, optional includeNulls as nullable logical) as list
 ```
 
-Returns the minimum value(s) in the list, `list`.
-The parameter, `countOrCondition`, specifies the number of values to return or a filtering condition. The optional parameter, `comparisonCriteria`, specifies how to compare values in the list.
+Returns the minimum value(s) in the list. The number of values to return or a filtering condition may be specified.
 
-- `list`: The list of values.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `countOrCondition`: If a number is specified, a list of up to `countOrCondition` items in ascending order is returned. If a condition is specified, a list of items that initially meet the condition is returned. Once an item fails the condition, no further items are considered. If this parameter is null, the single smallest value in the list is returned.
-
-- `comparisonCriteria`: *(Optional)* An optional `comparisonCriteria` value can be specified to determine how to compare the items in the list. If this parameter is null, the default comparer is used.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-minn)
 
 ## Parameters
 
@@ -35,17 +32,3 @@ The parameter, `countOrCondition`, specifies the number of values to return or a
 | `includeNulls` | `nullable logical` | yes |
 
 **Executed examples (1):** [examples/list-ordering/list-minn.md](../../examples/list-ordering/list-minn.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the 5 smallest values in the list `{3, 4, 5, -1, 7, 8, 2}`.
-
-```m
-List.MinN({3, 4, 5, -1, 7, 8, 2}, 5)
-```
-
-Stated result:
-
-```m
-{-1, 2, 3, 4, 5}
-```

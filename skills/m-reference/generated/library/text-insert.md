@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.Insert(text as nullable text, offset as number, newText as text) as nullable text
 ```
 
-Returns the result of inserting text value `newText` into the text value `text` at position `offset`. Positions start at number 0.
+Inserts one text value into another at a given position.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-insert)
 
 ## Parameters
 
@@ -27,17 +31,3 @@ Returns the result of inserting text value `newText` into the text value `text` 
 | `newText` | `text` | no |
 
 **Executed examples (1):** [examples/text-modification/text-insert.md](../../examples/text-modification/text-insert.md)
-
-## Examples (engine metadata — not verified here)
-
-Insert "C" between "B" and "D" in "ABD".
-
-```m
-Text.Insert("ABD", 2, "C")
-```
-
-Stated result:
-
-```m
-"ABCD"
-```

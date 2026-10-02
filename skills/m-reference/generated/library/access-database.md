@@ -16,13 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Access.Database(database as binary, optional options as nullable record) as table
 ```
 
-Returns a structural representation of an Access database, `database`. An optional record parameter, `options`, may be specified to control the following options:
+Returns a structural representation of an Access database.
 
-- `CreateNavigationProperties` : A logical (true/false) that sets whether to generate navigation properties on the returned values (default is false).
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `NavigationPropertyNameGenerator` : A function that is used for the creation of names for navigation properties.
-
-The record parameter is specified as [option1 = value1, option2 = value2...], for example.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/access-database)
 
 ## Parameters
 

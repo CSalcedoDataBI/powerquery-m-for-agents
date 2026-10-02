@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Embedded.Value(value as any, path as text) as any
 ```
 
-This function is intended for internal use only.
+Accesses a value by name in an embedded mashup.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/embedded-value)
 
 ## Parameters
 

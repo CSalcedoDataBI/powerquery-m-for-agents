@@ -16,38 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.Cos(number as nullable number) as nullable number
 ```
 
-Returns the cosine of the specified angle.
+Returns the cosine of the number.
 
-- `number`: An angle, measured in radians.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-cos)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `number` | `nullable number` | no |
-
-## Examples (engine metadata — not verified here)
-
-Find the cosine of the angle 0.
-
-```m
-Number.Cos(0)
-```
-
-Stated result:
-
-```m
-1
-```
-
-Find the cosine of π radians.
-
-```m
-Number.Cos(Number.PI)
-```
-
-Stated result:
-
-```m
--1
-```

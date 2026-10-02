@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Range(list as list, offset as number, optional count as nullable number) as list
 ```
 
-Returns a subset of `list` beginning at `offset`. An optional parameter, `count`, sets the maximum number of items in the subset.
+Returns a subset of the list beginning at an offset.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-range)
 
 ## Parameters
 
@@ -27,29 +31,3 @@ Returns a subset of `list` beginning at `offset`. An optional parameter, `count`
 | `count` | `nullable number` | yes |
 
 **Executed examples (1):** [examples/list-selection/list-range.md](../../examples/list-selection/list-range.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the subset starting at offset 6 of the list of numbers 1 through 10.
-
-```m
-List.Range({1..10}, 6)
-```
-
-Stated result:
-
-```m
-{7, 8, 9, 10}
-```
-
-Find the subset of length 2 from offset 6, from the list of numbers 1 through 10.
-
-```m
-List.Range({1..10}, 6, 2)
-```
-
-Stated result:
-
-```m
-{7, 8}
-```

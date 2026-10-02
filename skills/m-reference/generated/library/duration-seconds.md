@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Duration.Seconds(duration as nullable duration) as nullable number
 ```
 
-Returns the seconds portion of `duration`.
+Returns the seconds portion of a duration.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/duration-seconds)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns the seconds portion of `duration`.
 | `duration` | `nullable duration` | no |
 
 **Executed examples (3):** [examples/duration/duration-seconds.md](../../examples/duration/duration-seconds.md)
-
-## Examples (engine metadata — not verified here)
-
-Extract the seconds from a duration value.
-
-```m
-Duration.Seconds(#duration(5, 4, 3, 2))
-```
-
-Stated result:
-
-```m
-2
-```

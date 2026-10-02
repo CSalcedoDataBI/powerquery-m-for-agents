@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Tables.GetRelationships(tables as table, optional dataColumn as nullable text) as table
 ```
 
-Gets the relationships among a set of tables. The set `tables` is assumed to have a structure similar to that of a navigation table. The column defined by `dataColumn` contains the actual data tables.
+Gets the relationships among a set of tables.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/tables-getrelationships)
 
 ## Parameters
 

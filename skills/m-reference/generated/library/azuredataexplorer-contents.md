@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 AzureDataExplorer.Contents(cluster as text, optional database as nullable text, optional tableOrQuery as nullable text, optional options as nullable record) as table
 ```
 
-Imports data from your Azure Data Explorer (Kusto) instance
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -26,17 +24,3 @@ Imports data from your Azure Data Explorer (Kusto) instance
 | `database` | `nullable text` | yes |
 | `tableOrQuery` | `nullable text` | yes |
 | `options` | `nullable record` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Returns a table of Storm Events information
-
-```m
-Kusto.Contents("help", "Samples", "StormEvents", [])
-```
-
-Stated result:
-
-```m
-A table with Storm Events from the "Samples" database in the "help" cluster
-```

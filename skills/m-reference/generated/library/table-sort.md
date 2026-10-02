@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.Sort(table as table, comparisonCriteria as any) as table
 ```
 
-Sorts the `table` using the list of one or more column names and optional `comparisonCriteria` in the form { { col1, comparisonCriteria }, {col2} }.
+Sorts the table using one or more column names and comparison criteria.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-sort)
 
 ## Parameters
 
@@ -26,113 +30,3 @@ Sorts the `table` using the list of one or more column names and optional `compa
 | `comparisonCriteria` | `any` | no |
 
 **Executed examples (1):** [examples/table-ordering/table-sort.md](../../examples/table-ordering/table-sort.md)
-
-## Examples (engine metadata — not verified here)
-
-Sort the table on column "OrderID".
-
-```m
-Table.Sort(
-    Table.FromRecords({
-        [OrderID = 1, CustomerID = 1, Item = "Fishing rod", Price = 100.0],
-        [OrderID = 2, CustomerID = 1, Item = "1 lb. worms", Price = 5.0],
-        [OrderID = 3, CustomerID = 2, Item = "Fishing net", Price = 25.0],
-        [OrderID = 4, CustomerID = 3, Item = "Fish tazer", Price = 200.0],
-        [OrderID = 5, CustomerID = 3, Item = "Bandaids", Price = 2.0],
-        [OrderID = 6, CustomerID = 1, Item = "Tackle box", Price = 20.0],
-        [OrderID = 7, CustomerID = 5, Item = "Bait", Price = 3.25],
-        [OrderID = 8, CustomerID = 5, Item = "Fishing Rod", Price = 100.0],
-        [OrderID = 9, CustomerID = 6, Item = "Bait", Price = 3.25]
-    }),
-    {"OrderID"}
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [OrderID = 1, CustomerID = 1, Item = "Fishing rod", Price = 100],
-    [OrderID = 2, CustomerID = 1, Item = "1 lb. worms", Price = 5],
-    [OrderID = 3, CustomerID = 2, Item = "Fishing net", Price = 25],
-    [OrderID = 4, CustomerID = 3, Item = "Fish tazer", Price = 200],
-    [OrderID = 5, CustomerID = 3, Item = "Bandaids", Price = 2],
-    [OrderID = 6, CustomerID = 1, Item = "Tackle box", Price = 20],
-    [OrderID = 7, CustomerID = 5, Item = "Bait", Price = 3.25],
-    [OrderID = 8, CustomerID = 5, Item = "Fishing Rod", Price = 100],
-    [OrderID = 9, CustomerID = 6, Item = "Bait", Price = 3.25]
-})
-```
-
-Sort the table on column "OrderID" in descending order.
-
-```m
-Table.Sort(
-    Table.FromRecords({
-        [OrderID = 1, CustomerID = 1, Item = "Fishing rod", Price = 100.0],
-        [OrderID = 2, CustomerID = 1, Item = "1 lb. worms", Price = 5.0],
-        [OrderID = 3, CustomerID = 2, Item = "Fishing net", Price = 25.0],
-        [OrderID = 4, CustomerID = 3, Item = "Fish tazer", Price = 200.0],
-        [OrderID = 5, CustomerID = 3, Item = "Bandaids", Price = 2.0],
-        [OrderID = 6, CustomerID = 1, Item = "Tackle box", Price = 20.0],
-        [OrderID = 7, CustomerID = 5, Item = "Bait", Price = 3.25],
-        [OrderID = 8, CustomerID = 5, Item = "Fishing Rod", Price = 100.0],
-        [OrderID = 9, CustomerID = 6, Item = "Bait", Price = 3.25]
-    }),
-    {"OrderID", Order.Descending}
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [OrderID = 9, CustomerID = 6, Item = "Bait", Price = 3.25],
-    [OrderID = 8, CustomerID = 5, Item = "Fishing Rod", Price = 100],
-    [OrderID = 7, CustomerID = 5, Item = "Bait", Price = 3.25],
-    [OrderID = 6, CustomerID = 1, Item = "Tackle box", Price = 20],
-    [OrderID = 5, CustomerID = 3, Item = "Bandaids", Price = 2],
-    [OrderID = 4, CustomerID = 3, Item = "Fish tazer", Price = 200],
-    [OrderID = 3, CustomerID = 2, Item = "Fishing net", Price = 25],
-    [OrderID = 2, CustomerID = 1, Item = "1 lb. worms", Price = 5],
-    [OrderID = 1, CustomerID = 1, Item = "Fishing rod", Price = 100]
-})
-```
-
-Sort the table on column "CustomerID" then "OrderID", with "CustomerID" being in ascending order.
-
-```m
-Table.Sort(
-    Table.FromRecords({
-        [OrderID = 1, CustomerID = 1, Item = "Fishing rod", Price = 100.0],
-        [OrderID = 2, CustomerID = 1, Item = "1 lb. worms", Price = 5.0],
-        [OrderID = 3, CustomerID = 2, Item = "Fishing net", Price = 25.0],
-        [OrderID = 4, CustomerID = 3, Item = "Fish tazer", Price = 200.0],
-        [OrderID = 5, CustomerID = 3, Item = "Bandaids", Price = 2.0],
-        [OrderID = 6, CustomerID = 1, Item = "Tackle box", Price = 20.0],
-        [OrderID = 7, CustomerID = 5, Item = "Bait", Price = 3.25],
-        [OrderID = 8, CustomerID = 5, Item = "Fishing Rod", Price = 100.0],
-        [OrderID = 9, CustomerID = 6, Item = "Bait", Price = 3.25]
-    }),
-    {
-        {"CustomerID", Order.Ascending},
-        "OrderID"
-    }
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [OrderID = 1, CustomerID = 1, Item = "Fishing rod", Price = 100],
-    [OrderID = 2, CustomerID = 1, Item = "1 lb. worms", Price = 5],
-    [OrderID = 6, CustomerID = 1, Item = "Tackle box", Price = 20],
-    [OrderID = 3, CustomerID = 2, Item = "Fishing net", Price = 25],
-    [OrderID = 4, CustomerID = 3, Item = "Fish tazer", Price = 200],
-    [OrderID = 5, CustomerID = 3, Item = "Bandaids", Price = 2],
-    [OrderID = 7, CustomerID = 5, Item = "Bait", Price = 3.25],
-    [OrderID = 8, CustomerID = 5, Item = "Fishing Rod", Price = 100],
-    [OrderID = 9, CustomerID = 6, Item = "Bait", Price = 3.25]
-})
-```

@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 PowerPlatform.Dataflows(optional options as nullable record) as table
 ```
 
-Connect to all the dataflows you have access to, and choose the entities you'd like to use
-
 ## Parameters
 
 | Name | Type | Optional |

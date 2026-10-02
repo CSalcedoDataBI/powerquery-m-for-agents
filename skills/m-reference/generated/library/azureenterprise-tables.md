@@ -16,28 +16,8 @@ source: "#shared \u2014 desktop 2.157.879.0"
 AzureEnterprise.Tables(url as text) as table
 ```
 
-Returns a list of reports and months available from the Azure Enterprise API
-
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `url` | `text` | no |
-
-## Examples (engine metadata — not verified here)
-
-Using the AzureEnterprise.Tables function and navigate to a particular value to obtain the results.
-
-```m
-let
-    Source = AzureEnterprise.Tables("http://ea.azure.com/rest/12345"),
-    Contents = Source{[Key="Contents"]}[Data]
-in
-    Contents
-```
-
-Stated result:
-
-```m
-Table
-```

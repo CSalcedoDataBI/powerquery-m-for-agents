@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Type.FunctionReturn(type as type) as type
 ```
 
-Returns a type returned by a function `type`.
+Returns a type returned by a function type.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/type-functionreturn)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns a type returned by a function `type`.
 | `type` | `type` | no |
 
 **Executed examples (3):** [examples/type/type-functionreturn.md](../../examples/type/type-functionreturn.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the return type of `() as any)`.
-
-```m
-Type.FunctionReturn(type function () as any)
-```
-
-Stated result:
-
-```m
-type any
-```

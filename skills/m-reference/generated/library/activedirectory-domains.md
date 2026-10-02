@@ -18,6 +18,10 @@ ActiveDirectory.Domains(optional forestRootDomainName as nullable text) as table
 
 Returns a list of Active Directory domains in the same forest as the specified domain or of the current machine's domain if none is specified.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/activedirectory-domains)
+
 ## Parameters
 
 | Name | Type | Optional |

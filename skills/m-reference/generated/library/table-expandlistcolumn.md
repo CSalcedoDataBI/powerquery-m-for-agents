@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.ExpandListColumn(table as table, column as text) as table
 ```
 
-Given a `table` where `column` contains a list of values, splits the list into a row for each value. Values in the other columns are duplicated in each new row created. This function can also expand nested tables by treating them as lists of records.
+Given a column of lists in a table, create a copy of a row for each value in its list.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-expandlistcolumn)
 
 ## Parameters
 
@@ -26,47 +30,3 @@ Given a `table` where `column` contains a list of values, splits the list into a
 | `column` | `text` | no |
 
 **Executed examples (1):** [examples/table-transformation/table-expandlistcolumn.md](../../examples/table-transformation/table-expandlistcolumn.md)
-
-## Examples (engine metadata — not verified here)
-
-Split the list column [Name].
-
-```m
-Table.ExpandListColumn(
-    Table.FromRecords({[Name = {"Bob", "Jim", "Paul"}, Discount = .15]}),
-    "Name"
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [Name = "Bob", Discount = 0.15],
-    [Name = "Jim", Discount = 0.15],
-    [Name = "Paul", Discount = 0.15]
-})
-```
-
-Split the nested table column [Components].
-
-```m
-Table.ExpandListColumn(
-    #table(
-        {"Part", "Components"},
-        {
-            {"Tool", #table({"Name", "Quantity"}, {{"Thingamajig", 2}, {"Widget", 3}})}
-        }
-    ),
-    "Components"
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [Part = "Tool", Components = [Name = "Thingamajig", Quantity = 2]],
-    [Part = "Tool", Components = [Name = "Widget", Quantity = 3]]
-})
-```

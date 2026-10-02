@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Resource.Access(resource as any, optional nativeQuery as nullable text, optional options as nullable record) as any
 ```
 
-Resource.Access
-
 ## Parameters
 
 | Name | Type | Optional |

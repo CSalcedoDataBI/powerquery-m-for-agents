@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.ColumnCount(table as table) as number
 ```
 
-Returns the number of columns in the table `table`.
+Returns the number of columns in the table.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-columncount)
 
 ## Parameters
 
@@ -25,23 +29,3 @@ Returns the number of columns in the table `table`.
 | `table` | `table` | no |
 
 **Executed examples (1):** [examples/table-information/table-columncount.md](../../examples/table-information/table-columncount.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the number of columns in the table.
-
-```m
-Table.ColumnCount(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"]
-    })
-)
-```
-
-Stated result:
-
-```m
-3
-```

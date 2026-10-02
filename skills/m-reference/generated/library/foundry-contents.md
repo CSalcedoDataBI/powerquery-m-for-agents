@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Foundry.Contents(BaseUri as text, optional datasetRid as nullable text, optional branch as nullable text) as table
 ```
 
-Connect to Palantir Foundry datasets.
-
 ## Parameters
 
 | Name | Type | Optional |

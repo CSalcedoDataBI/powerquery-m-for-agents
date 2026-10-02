@@ -217,7 +217,7 @@
    "category": "DateTimeZone",
    "returns": "nullable number",
    "signature": "DateTimeZone.ZoneMinutes(dateTimeZone as nullable datetimezone) as nullable number",
-   "summary": "Gets the timezone minutes of the value.",
+   "summary": "Gets the timezone minute of the value.",
    "hosts": [
     "desktop"
    ],

@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.Atan2(y as nullable number, x as nullable number) as nullable number
 ```
 
-Returns the angle, in radians, whose tangent is the quotient `y`/`x` of the two numbers `y` and `x`.
+Returns the arctangent of the division of the two numbers.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-atan2)
 
 ## Parameters
 

@@ -16,28 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 RowExpression.Column(columnName as text) as record
 ```
 
-Returns an abstract syntax tree (AST) that represents access to column `columnName` of the row within a row expression.
+Returns an abstract syntax tree (AST) that represents access to a column within a row expression.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/rowexpression-column)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `columnName` | `text` | no |
-
-## Examples (engine metadata — not verified here)
-
-Creates an AST representing access of column "CustomerName".
-
-```m
-RowExpression.Column("CustomerName")
-```
-
-Stated result:
-
-```m
-[
-    Kind = "FieldAccess",
-    Expression = RowExpression.Row,
-    MemberName = "CustomerName"
-]
-```

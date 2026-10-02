@@ -16,15 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.LastN(list as list, optional countOrCondition as any) as any
 ```
 
-Returns a list of the last item or items in the specified list.
+Returns the last value in the list. Can optionally specify how many values to return or a qualifying condition.
 
-- `list`: The list to examine. If the list is empty, an empty list is returned.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `countOrCondition`: (Optional) Supports gathering multiple items or filtering items. Although this parameter is listed as optional, an error occurs if this value isn't provided or is `null`. This parameter can be specified in two ways:
-
-- If a number is specified, up to that many items are returned.
-
-- If a condition is specified, all items are returned that meet the condition, starting at the end of the list. Once an item fails the condition, no further items are considered.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-lastn)
 
 ## Parameters
 
@@ -34,29 +30,3 @@ Returns a list of the last item or items in the specified list.
 | `countOrCondition` | `any` | yes |
 
 **Executed examples (1):** [examples/list-selection/list-lastn.md](../../examples/list-selection/list-lastn.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the last value in the list {3, 4, 5, -1, 7, 8, 2}.
-
-```m
-List.LastN({3, 4, 5, -1, 7, 8, 2}, 1)
-```
-
-Stated result:
-
-```m
-{2}
-```
-
-Find the last values in the list {3, 4, 5, -1, 7, 8, 2} that are greater than 0.
-
-```m
-List.LastN({3, 4, 5, -1, 7, 8, 2}, each _ > 0)
-```
-
-Stated result:
-
-```m
-{7, 8, 2}
-```

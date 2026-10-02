@@ -18,6 +18,10 @@ Xml.Tables(contents as any, optional options as nullable record, optional encodi
 
 Returns the contents of the XML document as a nested collection of flattened tables.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/xml-tables)
+
 ## Parameters
 
 | Name | Type | Optional |
@@ -25,17 +29,3 @@ Returns the contents of the XML document as a nested collection of flattened tab
 | `contents` | `any` | no |
 | `options` | `nullable record` | yes |
 | `encoding` | `nullable number` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Retrieve the contents of a local XML file.
-
-```m
-Xml.Tables(File.Contents("C:\invoices.xml"))
-```
-
-Stated result:
-
-```m
-table
-```

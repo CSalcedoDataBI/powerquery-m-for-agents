@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Web.BrowserContents(url as text, optional options as nullable record) as text
 ```
 
-Returns the HTML for the specified `url`, as viewed by a web browser. An optional record parameter, `options`, may be provided to specify additional properties. The record can contain the following fields:
+Returns the HTML for the specified URL, as viewed by a web browser.
 
-- `ApiKeyName`: If the target site has a notion of an API key, this parameter can be used to specify the name (not the value) of the key parameter that must be used in the URL. The actual key value is provided in the credential.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `WaitFor`: Specifies a condition to wait for before downloading the HTML, in addition to waiting for the page to load (which is always done). Can be a record containing Timeout and/or Selector fields. If only a Timeout is specified, the function will wait the amount of time specified before downloading the HTML. If both a Selector and Timeout are specified, and the Timeout elapses before the Selector exists on the page, an error will be raised. If a Selector is specified with no Timeout, a default Timeout of 30 seconds is applied.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/web-browsercontents)
 
 ## Parameters
 
@@ -28,53 +28,3 @@ Returns the HTML for the specified `url`, as viewed by a web browser. An optiona
 |---|---|---|
 | `url` | `text` | no |
 | `options` | `nullable record` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Returns the HTML for https://microsoft.com.
-
-```m
-Web.BrowserContents("https://microsoft.com")
-```
-
-Stated result:
-
-```m
-"<!DOCTYPE html><html xmlns=..."
-```
-
-Returns the HTML for https://microsoft.com after waiting for a CSS selector to exist.
-
-```m
-Web.BrowserContents("https://microsoft.com", [WaitFor = [Selector = "div.ready"]])
-```
-
-Stated result:
-
-```m
-"<!DOCTYPE html><html xmlns=..."
-```
-
-Returns the HTML for https://microsoft.com after waiting ten seconds.
-
-```m
-Web.BrowserContents("https://microsoft.com", [WaitFor = [Timeout = #duration(0,0,0,10)]])
-```
-
-Stated result:
-
-```m
-"<!DOCTYPE html><html xmlns=..."
-```
-
-Returns the HTML for https://microsoft.com after waiting up to ten seconds for a CSS selector to exist.
-
-```m
-Web.BrowserContents("https://microsoft.com", [WaitFor = [Selector = "div.ready", Timeout = #duration(0,0,0,10)]])
-```
-
-Stated result:
-
-```m
-"<!DOCTYPE html><html xmlns=..."
-```

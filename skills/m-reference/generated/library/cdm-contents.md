@@ -16,7 +16,7 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Cdm.Contents(table as table) as table
 ```
 
-This function is unavailable in the current context.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/cdm-contents)
 
 ## Parameters
 

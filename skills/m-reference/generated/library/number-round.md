@@ -16,16 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.Round(number as nullable number, optional digits as nullable number, optional roundingMode as nullable number) as nullable number
 ```
 
-Returns the result of rounding `number` to the nearest number. If `number` is null, `Number.Round` returns null.
+Returns the rounded number. The number of digits and rounding mode can be specified.
 
-By default, `number` is rounded to the nearest integer, and ties are broken by rounding to the nearest even number (using `RoundingMode.ToEven`, also known as "banker's rounding").
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-However, these defaults can be overridden via the following optional parameters.
-
-- `digits`: Causes `number` to be rounded to the specified number of decimal digits.
-
-- `roundingMode`: Overrides the default tie-breaking behavior when `number` is at the midpoint between two potential rounded values
-(refer to `RoundingMode.Type` for possible values).
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-round)
 
 ## Parameters
 
@@ -34,65 +29,3 @@ However, these defaults can be overridden via the following optional parameters.
 | `number` | `nullable number` | no |
 | `digits` | `nullable number` | yes |
 | `roundingMode` | `nullable number` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Round 1.234 to the nearest integer.
-
-```m
-Number.Round(1.234)
-```
-
-Stated result:
-
-```m
-1
-```
-
-Round 1.56 to the nearest integer.
-
-```m
-Number.Round(1.56)
-```
-
-Stated result:
-
-```m
-2
-```
-
-Round 1.2345 to two decimal places.
-
-```m
-Number.Round(1.2345, 2)
-```
-
-Stated result:
-
-```m
-1.23
-```
-
-Round 1.2345 to three decimal places (Rounding up).
-
-```m
-Number.Round(1.2345, 3, RoundingMode.Up)
-```
-
-Stated result:
-
-```m
-1.235
-```
-
-Round 1.2345 to three decimal places (Rounding down).
-
-```m
-Number.Round(1.2345, 3, RoundingMode.Down)
-```
-
-Stated result:
-
-```m
-1.234
-```

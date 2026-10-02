@@ -18,6 +18,10 @@ Value.Metadata(value as any) as any
 
 Returns a record containing the input's metadata.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/value-metadata)
+
 ## Parameters
 
 | Name | Type | Optional |

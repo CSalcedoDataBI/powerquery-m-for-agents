@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 BQL.Query(Bloomberg as text) as table
 ```
 
-Used for retrieving Bloomberg data
-
 ## Parameters
 
 | Name | Type | Optional |

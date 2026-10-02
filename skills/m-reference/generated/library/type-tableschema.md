@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Type.TableSchema(tableType as type) as table
 ```
 
-Returns a table describing the columns of `tableType`.
+Returns a table containing a description of the columns (i.e. the schema) of the specified table type.
 
-Refer to the documentation for `Table.Schema` for a description of the resulting table.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/type-tableschema)
 
 ## Parameters
 

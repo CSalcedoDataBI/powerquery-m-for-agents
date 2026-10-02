@@ -7,7 +7,7 @@
    "category": "Cube",
    "returns": "table",
    "signature": "Cube.AddAndExpandDimensionColumn(cube as table, dimensionSelector as any, attributeNames as list, optional newColumnNames as any) as table",
-   "summary": "Merges the specified dimension table into the cube's filter context and changes the dimensional granularity of the filt…",
+   "summary": "Merges the specified dimension table into the cube’s filter context and changes the dimensional granularity of the filt…",
    "hosts": [
     "desktop"
    ],

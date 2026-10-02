@@ -16,24 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DateTimeZone.RemoveZone(dateTimeZone as nullable datetimezone) as nullable datetime
 ```
 
-Returns a #datetime value from `dateTimeZone` with timezone information removed.
+Removes timezone information from the given datetimezone value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/datetimezone-removezone)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `dateTimeZone` | `nullable datetimezone` | no |
-
-## Examples (engine metadata — not verified here)
-
-Remove timezone information from the value #datetimezone(2011, 12, 31, 9, 15, 36, -7, 0).
-
-```m
-DateTimeZone.RemoveZone(#datetimezone(2011, 12, 31, 9, 15, 36, -7, 0))
-```
-
-Stated result:
-
-```m
-#datetime(2011, 12, 31, 9, 15, 36)
-```

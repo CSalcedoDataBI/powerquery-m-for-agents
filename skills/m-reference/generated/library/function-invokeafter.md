@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Function.InvokeAfter(function as function, delay as duration) as any
 ```
 
-Returns the result of invoking `function` after duration `delay` has passed.
+Invokes the given function after the specified duration has passed.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/function-invokeafter)
 
 ## Parameters
 

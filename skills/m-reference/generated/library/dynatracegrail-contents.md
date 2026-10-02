@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DynatraceGrail.Contents(url as text, optional QueryInput as nullable text, optional options as nullable record) as table
 ```
 
-DQL Connector can be used to fetch data from Grail using DQL custom query or by selecting tables.
-
 ## Parameters
 
 | Name | Type | Optional |

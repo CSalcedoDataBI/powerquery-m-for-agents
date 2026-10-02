@@ -7,7 +7,7 @@
    "category": "Function",
    "returns": "function",
    "signature": "Function.From(functionType as type, function as function) as function",
-   "summary": "Creates a function with a specific parameter signature on top of a function that takes a single list argument.",
+   "summary": "Creates a function with a specific parameter signature on top of a function that takes a single list argument",
    "hosts": [
     "desktop"
    ],
@@ -22,7 +22,7 @@
    "category": "Function",
    "returns": "any",
    "signature": "Function.Invoke(function as function, args as list) as any",
-   "summary": "Invokes the given function.",
+   "summary": "Invokes the given function",
    "hosts": [
     "desktop"
    ],

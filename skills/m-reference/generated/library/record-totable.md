@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Record.ToTable(record as record) as table
 ```
 
-Returns a table containing the columns `Name` and `Value` with a row for each field in `record`.
+Returns a table with each row being a field name and value of the input record.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/record-totable)
 
 ## Parameters
 
@@ -25,22 +29,3 @@ Returns a table containing the columns `Name` and `Value` with a row for each fi
 | `record` | `record` | no |
 
 **Executed examples (3):** [examples/record-serialization/record-totable.md](../../examples/record-serialization/record-totable.md)
-
-## Examples (engine metadata — not verified here)
-
-Return the table from the record.
-
-```m
-Record.ToTable([OrderID = 1, CustomerID = 1, Item = "Fishing rod", Price = 100.0])
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [Name = "OrderID", Value = 1],
-    [Name = "CustomerID", Value = 1],
-    [Name = "Item", Value = "Fishing rod"],
-    [Name = "Price", Value = 100]
-})
-```

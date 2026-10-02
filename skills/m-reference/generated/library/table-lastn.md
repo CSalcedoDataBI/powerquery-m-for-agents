@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.LastN(table as table, countOrCondition as any) as table
 ```
 
-Returns the last row(s) from the table, `table`, depending on the value of `countOrCondition`:
+Returns the last specified number of rows.
 
-- If `countOrCondition` is a number, that many rows will be returned starting from position (end - `countOrCondition`).
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- If `countOrCondition` is a condition, the rows that meet the condition will be returned in ascending position until a row does not meet the condition.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-lastn)
 
 ## Parameters
 
@@ -30,49 +30,3 @@ Returns the last row(s) from the table, `table`, depending on the value of `coun
 | `countOrCondition` | `any` | no |
 
 **Executed examples (1):** [examples/table-row-operations/table-lastn.md](../../examples/table-row-operations/table-lastn.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the last two rows of the table.
-
-```m
-Table.LastN(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"]
-    }),
-    2
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-    [CustomerID = 3, Name = "Paul", Phone = "543-7890"]
-})
-```
-
-Find the last rows where [a] > 0 in the table.
-
-```m
-Table.LastN(
-    Table.FromRecords({
-        [a = -1, b = -2],
-        [a = 3, b = 4],
-        [a = 5, b = 6]
-    }),
-    each _ [a] > 0
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [a = 3, b = 4],
-    [a = 5, b = 6]
-})
-```

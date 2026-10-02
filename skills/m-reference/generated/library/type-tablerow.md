@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Type.TableRow(table as type) as type
 ```
 
-Returns the row type of the specified table type. The result will always be a record type.
+Returns the row type of the table type.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/type-tablerow)
 
 ## Parameters
 
@@ -25,20 +29,3 @@ Returns the row type of the specified table type. The result will always be a re
 | `table` | `type` | no |
 
 **Executed examples (3):** [examples/type/type-tablerow.md](../../examples/type/type-tablerow.md)
-
-## Examples (engine metadata — not verified here)
-
-Return the row type information for a simple table.
-
-```m
-let
-    tableRowType = Type.TableRow(Value.Type(#table({"Column1"}, {})))
-in
-    Type.RecordFields(tableRowType)
-```
-
-Stated result:
-
-```m
-[Column1 = [Type = type any, Optional = false]]
-```

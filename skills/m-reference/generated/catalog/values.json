@@ -37,7 +37,7 @@
    "category": "Values.Implementation",
    "returns": "any",
    "signature": "Embedded.Value(value as any, path as text) as any",
-   "summary": "This function is intended for internal use only.",
+   "summary": "Accesses a value by name in an embedded mashup.",
    "hosts": [
     "desktop"
    ],
@@ -172,7 +172,7 @@
    "category": "Values.Types",
    "returns": "any",
    "signature": "Value.As(value as any, type as type) as any",
-   "summary": "Returns the value if it's compatible with the specified type.",
+   "summary": "Returns the value if it is compatible with the specified type.",
    "hosts": [
     "desktop"
    ],
@@ -382,7 +382,7 @@
    "category": "Values.Implementation",
    "returns": "any",
    "signature": "Variable.Value(identifier as text) as any",
-   "summary": "Returns the value of the specified variable.",
+   "summary": "This function is intended for internal use only.",
    "hosts": [
     "desktop"
    ],
@@ -397,7 +397,7 @@
    "category": "Values.Implementation",
    "returns": "any",
    "signature": "Variable.ValueOrDefault(identifier as text, optional defaultValue as any) as any",
-   "summary": "Returns the value of the specified variable or the default value if the variable is not defined.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],

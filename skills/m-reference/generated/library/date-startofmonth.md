@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.StartOfMonth(dateTime as any) as any
 ```
 
-Returns the start of the month that contains `dateTime`.
-`dateTime` must be a `date` or `datetime` value.
+Returns the start of the month.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-startofmonth)
 
 ## Parameters
 
@@ -26,17 +29,3 @@ Returns the start of the month that contains `dateTime`.
 | `dateTime` | `any` | no |
 
 **Executed examples (3):** [examples/date/date-startofmonth.md](../../examples/date/date-startofmonth.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the start of the month for October 10th, 2011, 8:10:32AM.
-
-```m
-Date.StartOfMonth(#datetime(2011, 10, 10, 8, 10, 32))
-```
-
-Stated result:
-
-```m
-#datetime(2011, 10, 1, 0, 0, 0)
-```

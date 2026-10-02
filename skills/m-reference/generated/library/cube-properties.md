@@ -18,6 +18,10 @@ Cube.Properties(cube as table) as table
 
 Returns a table containing the set of available properties for dimensions that are expanded in the cube.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/cube-properties)
+
 ## Parameters
 
 | Name | Type | Optional |

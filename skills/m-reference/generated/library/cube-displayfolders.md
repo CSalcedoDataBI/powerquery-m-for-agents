@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Cube.DisplayFolders(cube as table) as table
 ```
 
-Returns a nested tree of tables representing the display folder hierarchy of the objects (for example, dimensions and measures) available for use in the `cube`.
+Returns a nested tree of tables representing the display folder hierarchy of the objects (for example, dimensions and measures).
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/cube-displayfolders)
 
 ## Parameters
 

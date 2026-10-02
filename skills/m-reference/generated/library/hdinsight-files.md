@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 HdInsight.Files(account as text, containerName as text) as table
 ```
 
-Returns a table containing a row for each blob file found at the container URL, `account`, from an Azure storage vault. Each row contains properties of the file and a link to its content.
+Returns a table containing the properties and contents of the blobs found in the specified container from an Azure storage vault.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/hdinsight-files)
 
 ## Parameters
 

@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.Max(table as table, comparisonCriteria as any, optional default as any) as any
 ```
 
-Returns the largest row in the `table`, given the `comparisonCriteria`. If the table is empty, the optional `default` value is returned.
+Returns the largest row or default value using the given criteria.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-max)
 
 ## Parameters
 
@@ -27,35 +31,3 @@ Returns the largest row in the `table`, given the `comparisonCriteria`. If the t
 | `default` | `any` | yes |
 
 **Executed examples (1):** [examples/table-ordering/table-max.md](../../examples/table-ordering/table-max.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the row with the largest value in column [a] in the table `({[a = 2, b = 4], [a = 6, b = 8]})`.
-
-```m
-Table.Max(
-    Table.FromRecords({
-        [a = 2, b = 4],
-        [a = 6, b = 8]
-    }),
-    "a"
-)
-```
-
-Stated result:
-
-```m
-[a = 6, b = 8]
-```
-
-Find the row with the largest value in column [a] in the table `({})`. Return -1 if empty.
-
-```m
-Table.Max(#table({"a"}, {}), "a", -1)
-```
-
-Stated result:
-
-```m
--1
-```

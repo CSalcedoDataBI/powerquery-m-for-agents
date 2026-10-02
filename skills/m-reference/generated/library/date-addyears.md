@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.AddYears(dateTime as any, numberOfYears as number) as any
 ```
 
-Returns the `date`, `datetime`, or `datetimezone` result of adding `numberOfYears` to a `datetime` value `dateTime`.
+Adds the specified years to the date.
 
-- `dateTime`: The `date`, `datetime`, or `datetimezone` value to which years are added.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `numberOfYears`: The number of years to add.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-addyears)
 
 ## Parameters
 
@@ -30,29 +30,3 @@ Returns the `date`, `datetime`, or `datetimezone` result of adding `numberOfYear
 | `numberOfYears` | `number` | no |
 
 **Executed examples (3):** [examples/date/date-addyears.md](../../examples/date/date-addyears.md)
-
-## Examples (engine metadata — not verified here)
-
-Add 4 years to the `date`, `datetime`, or `datetimezone` value representing the date 5/14/2011.
-
-```m
-Date.AddYears(#date(2011, 5, 14), 4)
-```
-
-Stated result:
-
-```m
-#date(2015, 5, 14)
-```
-
-Add 10 years to the `date`, `datetime`, or `datetimezone` value representing the date and time of 5/14/2011 08:15:22 AM.
-
-```m
-Date.AddYears(#datetime(2011, 5, 14, 8, 15, 22), 10)
-```
-
-Stated result:
-
-```m
-#datetime(2021, 5, 14, 8, 15, 22)
-```

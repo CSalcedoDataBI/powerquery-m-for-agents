@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Record.FromTable(table as table) as record
 ```
 
-Returns a record from a table of records `table` containing field names and value names `{[Name = name, Value = value]}`. An error is raised if the field names are not unique.
+Creates a record from a table of the form {[Name = name, Value = value]}.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/record-fromtable)
 
 ## Parameters
 
@@ -25,23 +29,3 @@ Returns a record from a table of records `table` containing field names and valu
 | `table` | `table` | no |
 
 **Executed examples (3):** [examples/record-serialization/record-fromtable.md](../../examples/record-serialization/record-fromtable.md)
-
-## Examples (engine metadata — not verified here)
-
-Create a record from the table of the form Table.FromRecords({[Name = "CustomerID", Value = 1], [Name = "Name", Value = "Bob"], [Name = "Phone", Value = "123-4567"]}).
-
-```m
-Record.FromTable(
-    Table.FromRecords({
-        [Name = "CustomerID", Value = 1],
-        [Name = "Name", Value = "Bob"],
-        [Name = "Phone", Value = "123-4567"]
-    })
-)
-```
-
-Stated result:
-
-```m
-[CustomerID = 1, Name = "Bob", Phone = "123-4567"]
-```

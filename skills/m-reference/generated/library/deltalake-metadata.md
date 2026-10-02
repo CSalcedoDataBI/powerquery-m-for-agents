@@ -16,7 +16,7 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DeltaLake.Metadata(table as table) as table
 ```
 
-Given a Delta Lake table, returns the log entries for that table.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/deltalake-metadata)
 
 ## Parameters
 

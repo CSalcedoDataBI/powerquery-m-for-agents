@@ -18,6 +18,10 @@ BinaryFormat.UnsignedInteger32(binary as binary) as any
 
 A binary format that reads a 32-bit unsigned integer.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/binaryformat-unsignedinteger32)
+
 ## Parameters
 
 | Name | Type | Optional |

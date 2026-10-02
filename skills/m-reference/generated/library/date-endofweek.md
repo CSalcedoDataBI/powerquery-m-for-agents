@@ -16,12 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.EndOfWeek(dateTime as any, optional firstDayOfWeek as nullable number) as any
 ```
 
-Returns the end of the week that contains `dateTime`.
-This function takes an optional `Day`, `firstDayOfWeek`, to set as the first day of the week for this relative calculation. The default value is `Day.Sunday`.
+Returns the end of the week.
 
-- `dateTime`: A `date`, `datetime`, or `datetimezone` value from which the last day of the week is calculated
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `firstDayOfWeek`: *(Optional)* A `Day.Type` value representing the first day of the week. Possible values are `Day.Sunday`, `Day.Monday`, `Day.Tuesday`, `Day.Wednesday`, `Day.Thursday`, `Day.Friday` and `Day.Saturday`. The default value is `Day.Sunday`.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-endofweek)
 
 ## Parameters
 
@@ -31,29 +30,3 @@ This function takes an optional `Day`, `firstDayOfWeek`, to set as the first day
 | `firstDayOfWeek` | `nullable number` | yes |
 
 **Executed examples (3):** [examples/date/date-endofweek.md](../../examples/date/date-endofweek.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the end of the week for 5/14/2011.
-
-```m
-Date.EndOfWeek(#date(2011, 5, 14))
-```
-
-Stated result:
-
-```m
-#date(2011, 5, 14)
-```
-
-Get the end of the week for 5/17/2011 05:00:00 PM -7:00, with Sunday as the first day of the week.
-
-```m
-Date.EndOfWeek(#datetimezone(2011, 5, 17, 5, 0, 0, -7, 0), Day.Sunday)
-```
-
-Stated result:
-
-```m
-#datetimezone(2011, 5, 21, 23, 59, 59.9999999, -7, 0)
-```

@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Binary.Buffer(binary as nullable binary) as nullable binary
 ```
 
-Buffers the binary value in memory. The result of this call is a stable binary value, which means it will have a deterministic length and order of bytes.
+Buffers the binary value in memory.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/binary-buffer)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Buffers the binary value in memory. The result of this call is a stable binary v
 | `binary` | `nullable binary` | no |
 
 **Executed examples (3):** [examples/binary/binary-buffer.md](../../examples/binary/binary-buffer.md)
-
-## Examples (engine metadata — not verified here)
-
-Create a stable version of the binary value.
-
-```m
-Binary.Buffer(Binary.FromList({0..10}))
-```
-
-Stated result:
-
-```m
-#binary({0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
-```

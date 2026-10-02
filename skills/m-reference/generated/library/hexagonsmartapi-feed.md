@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 HexagonSmartApi.Feed(url as text, optional headers as nullable text, optional odataFeedVersion as nullable text) as table
 ```
 
-Returns a table from a Hexagon PPM Smart API OData feed.
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -25,17 +23,3 @@ Returns a table from a Hexagon PPM Smart API OData feed.
 | `url` | `text` | no |
 | `headers` | `nullable text` | yes |
 | `odataFeedVersion` | `nullable text` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Returns an OData service document in table form from a Hexagon PPM Smart API OData feed.
-
-```m
-HexagonSmartApi.Feed("https://example.com/SampleService/V1")
-```
-
-Stated result:
-
-```m
-#table({"Name"}, {{"Data"}, {"Signature"}})
-```

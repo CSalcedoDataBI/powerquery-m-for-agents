@@ -16,24 +16,8 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Smartsheet.Content(endpoint as text) as any
 ```
 
-Makes a call to the Smartsheet 2.0 REST API at the specified endpoint and transforms the data element returned into a table.
-
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `endpoint` | `text` | no |
-
-## Examples (engine metadata — not verified here)
-
-Pulls a table of users information from the Smartsheet API
-
-```m
-Smartsheet.Content("users")
-```
-
-Stated result:
-
-```m
-A table with users information as returned by the Smartsheet API
-```

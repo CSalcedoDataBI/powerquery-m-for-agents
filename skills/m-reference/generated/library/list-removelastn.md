@@ -16,13 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.RemoveLastN(list as list, optional countOrCondition as any) as list
 ```
 
-Returns a list that removes the last `countOrCondition` elements from the end of list `list`. If `list` has less than `countOrCondition` elements, an empty list is returned.
+Returns a list that removes the specified number of elements from the end of the list.
 
-- If a number is specified, up to that many items are removed.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- If a condition is specified, any consecutive matching items at the end of `list` are removed.
-
-- If this parameter is null, only one item is removed.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-removelastn)
 
 ## Parameters
 
@@ -32,29 +30,3 @@ Returns a list that removes the last `countOrCondition` elements from the end of
 | `countOrCondition` | `any` | yes |
 
 **Executed examples (1):** [examples/list-transformation-functions/list-removelastn.md](../../examples/list-transformation-functions/list-removelastn.md)
-
-## Examples (engine metadata — not verified here)
-
-Create a list from {1, 2, 3, 4, 5} without the last 3 numbers.
-
-```m
-List.RemoveLastN({1, 2, 3, 4, 5}, 3)
-```
-
-Stated result:
-
-```m
-{1, 2}
-```
-
-Create a list from {5, 4, 2, 6, 4} that ends with a number less than 3.
-
-```m
-List.RemoveLastN({5, 4, 2, 6, 4}, each _ > 3)
-```
-
-Stated result:
-
-```m
-{5, 4, 2}
-```

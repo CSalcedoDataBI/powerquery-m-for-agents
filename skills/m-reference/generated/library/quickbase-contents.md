@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 QuickBase.Contents(url as text) as table
 ```
 
-Quick Base Connector
-
 ## Parameters
 
 | Name | Type | Optional |

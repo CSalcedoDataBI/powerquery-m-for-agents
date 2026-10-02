@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Uri.Combine(baseUri as text, relativeUri as text) as text
 ```
 
-Returns an absolute URI that is the combination of the input `baseUri` and `relativeUri`.
+Returns an absolute URI that is the combination of the input base URI and relative URI.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/uri-combine)
 
 ## Parameters
 

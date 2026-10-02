@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.IsInNextYear(dateTime as any) as nullable logical
 ```
 
-Indicates whether the given datetime value `dateTime` occurs during the next year, as determined by the current date and time on the system. Note that this function will return false when passed a value that occurs within the current year.
+Indicates whether this date occurs during the next year, as determined by the current date and time on the system. Note that this function will return false when passed a value that occurs within the current year.
 
-- `dateTime`: A `date`, `datetime`, or `datetimezone` value to be evaluated.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-isinnextyear)
 
 ## Parameters
 
@@ -27,17 +29,3 @@ Indicates whether the given datetime value `dateTime` occurs during the next yea
 | `dateTime` | `any` | no |
 
 **Executed examples (3):** [examples/date/date-isinnextyear.md](../../examples/date/date-isinnextyear.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if the year after the current system time is in the next year.
-
-```m
-Date.IsInNextYear(Date.AddYears(DateTime.FixedLocalNow(), 1))
-```
-
-Stated result:
-
-```m
-true
-```

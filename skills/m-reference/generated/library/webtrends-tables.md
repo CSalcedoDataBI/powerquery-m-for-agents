@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Webtrends.Tables(ProfileId as text, optional startDate as nullable date, optional endDate as nullable date) as table
 ```
 
-Returns a table with relevant Webtrends data.
-
 ## Parameters
 
 | Name | Type | Optional |

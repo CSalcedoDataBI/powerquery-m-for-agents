@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Type.ReplaceFacets(type as type, facets as record) as type
 ```
 
-Replaces the facets of `type` with the facets contained in the record `facets`.
+Replaces the facets of a type.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/type-replacefacets)
 
 ## Parameters
 

@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Cube.Measures(cube as any) as table
 ```
 
-Returns a table containing the set of available measures within the `cube`.
-Each measure is represented as a function. Measures can be applied to the cube using Cube.AddMeasureColumn.
+Returns a table containing the set of available measures.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/cube-measures)
 
 ## Parameters
 

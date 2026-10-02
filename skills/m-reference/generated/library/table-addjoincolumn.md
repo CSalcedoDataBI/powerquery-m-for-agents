@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.AddJoinColumn(table1 as table, key1 as any, table2 as any, key2 as any, newColumnName as text) as table
 ```
 
-Joins the rows of `table1` with the rows of `table2` based on the equality of the values of the key columns selected by `key1` (for `table1`) and `key2` (for `table2`). The results are stored in a column named `newColumnName`.
+Performs a join between tables on supplied columns and produces the join result in a new column.
 
-This function behaves identically to `Table.NestedJoin` with `joinKind` set to `JoinKind.LeftOuter`.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-addjoincolumn)
 
 ## Parameters
 
@@ -31,40 +33,3 @@ This function behaves identically to `Table.NestedJoin` with `joinKind` set to `
 | `newColumnName` | `text` | no |
 
 **Executed examples (1):** [examples/table-transformation/table-addjoincolumn.md](../../examples/table-transformation/table-addjoincolumn.md)
-
-## Examples (engine metadata — not verified here)
-
-Add a join column to ({[saleID = 1, item = "Shirt"], [saleID = 2, item = "Hat"]}) named "price/stock" from the table ({[saleID = 1, price = 20], [saleID = 2, price = 10]}) joined on [saleID].
-
-```m
-Table.AddJoinColumn(
-    Table.FromRecords({
-        [saleID = 1, item = "Shirt"],
-        [saleID = 2, item = "Hat"]
-    }),
-    "saleID",
-    Table.FromRecords({
-        [saleID = 1, price = 20, stock = 1234],
-        [saleID = 2, price = 10, stock = 5643]
-    }),
-    "saleID",
-    "price"
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [
-        saleID = 1,
-        item = "Shirt",
-        price = Table.FromRecords({[saleID = 1, price = 20, stock = 1234]})
-    ],
-    [
-        saleID = 2,
-        item = "Hat",
-        price = Table.FromRecords({[saleID = 2, price = 10, stock = 5643]})
-    ]
-})
-```

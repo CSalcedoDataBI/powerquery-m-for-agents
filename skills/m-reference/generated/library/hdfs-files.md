@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Hdfs.Files(url as text) as table
 ```
 
-Returns a table containing a row for each file found at the folder URL, `url`, and subfolders from a Hadoop file system. Each row contains properties of the file and a link to its content.
+Returns a table containing the properties and contents of the files found in the specified folder and subfolders from a Hadoop file system.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/hdfs-files)
 
 ## Parameters
 

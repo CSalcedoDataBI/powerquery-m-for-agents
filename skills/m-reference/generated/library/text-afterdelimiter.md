@@ -16,9 +16,7 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.AfterDelimiter(text as nullable text, delimiter as text, optional index as any) as any
 ```
 
-Returns the portion of `text` after the specified `delimiter`.
-An optional numeric `index` indicates which occurrence of the `delimiter` should be considered.
-An optional list `index` indicates which occurrence of the `delimiter` should be considered, as well as whether indexing should be done from the start or end of the input.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-afterdelimiter)
 
 ## Parameters
 
@@ -29,41 +27,3 @@ An optional list `index` indicates which occurrence of the `delimiter` should be
 | `index` | `any` | yes |
 
 **Executed examples (1):** [examples/text-transformations/text-afterdelimiter.md](../../examples/text-transformations/text-afterdelimiter.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the portion of "111-222-333" after the (first) hyphen.
-
-```m
-Text.AfterDelimiter("111-222-333", "-")
-```
-
-Stated result:
-
-```m
-"222-333"
-```
-
-Get the portion of "111-222-333" after the second hyphen.
-
-```m
-Text.AfterDelimiter("111-222-333", "-", 1)
-```
-
-Stated result:
-
-```m
-"333"
-```
-
-Get the portion of "111-222-333" after the second hyphen from the end.
-
-```m
-Text.AfterDelimiter("111-222-333", "-", {1, RelativePosition.FromEnd})
-```
-
-Stated result:
-
-```m
-"222-333"
-```

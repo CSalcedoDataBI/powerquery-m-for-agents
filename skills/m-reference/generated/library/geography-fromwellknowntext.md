@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Geography.FromWellKnownText(input as nullable text) as nullable record
 ```
 
-Translates text representing a geographic value in Well-Known Text (WKT) format into a structured record. WKT is a standard format defined by the Open Geospatial Consortium (OGC) and is the typical serialization format used by databases including SQL Server.
+Translates text representing a geographic value in Well-Known Text (WKT) format into a structured record.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/geography-fromwellknowntext)
 
 ## Parameters
 

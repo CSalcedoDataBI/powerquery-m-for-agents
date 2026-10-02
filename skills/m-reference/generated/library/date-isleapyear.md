@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.IsLeapYear(dateTime as any) as nullable logical
 ```
 
-Indicates whether the given datetime value `dateTime` falls in is a leap year.
+Indicates whether this date falls in a leap year.
 
-- `dateTime`: A `date`, `datetime`, or `datetimezone` value to be evaluated.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-isleapyear)
 
 ## Parameters
 
@@ -27,17 +29,3 @@ Indicates whether the given datetime value `dateTime` falls in is a leap year.
 | `dateTime` | `any` | no |
 
 **Executed examples (3):** [examples/date/date-isleapyear.md](../../examples/date/date-isleapyear.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if the year 2012, as represented by `#date(2012, 01, 01)` is a leap year.
-
-```m
-Date.IsLeapYear(#date(2012, 01, 01))
-```
-
-Stated result:
-
-```m
-true
-```

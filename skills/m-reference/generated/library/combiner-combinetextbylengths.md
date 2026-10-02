@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Combiner.CombineTextByLengths(lengths as list, optional template as nullable text) as function
 ```
 
-Returns a function that combines a list of text values into a single text value using the specified lengths.
+Returns a function that combines a list of text using the specified lengths.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/combiner-combinetextbylengths)
 
 ## Parameters
 
@@ -24,29 +28,3 @@ Returns a function that combines a list of text values into a single text value 
 |---|---|---|
 | `lengths` | `list` | no |
 | `template` | `nullable text` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Combine a list of text values by extracting the specified numbers of characters from each input value.
-
-```m
-Combiner.CombineTextByLengths({1, 2, 3})({"aaa", "bbb", "ccc"})
-```
-
-Stated result:
-
-```m
-"abbccc"
-```
-
-Combine a list of text values by extracting the specified numbers of characters, after first pre-filling the result with the template text.
-
-```m
-Combiner.CombineTextByLengths({1, 2, 3}, "*********")({"aaa", "bbb", "ccc"})
-```
-
-Stated result:
-
-```m
-"abbccc***"
-```

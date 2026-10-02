@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Record.FieldCount(record as record) as number
 ```
 
-Returns the number of fields in the record `record`.
+Returns the number of fields in the record.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/record-fieldcount)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns the number of fields in the record `record`.
 | `record` | `record` | no |
 
 **Executed examples (3):** [examples/record-information/record-fieldcount.md](../../examples/record-information/record-fieldcount.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the number of fields in the record.
-
-```m
-Record.FieldCount([CustomerID = 1, Name = "Bob"])
-```
-
-Stated result:
-
-```m
-2
-```

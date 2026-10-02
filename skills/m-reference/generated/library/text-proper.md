@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.Proper(text as nullable text, optional culture as nullable text) as nullable text
 ```
 
-Returns the result of capitalizing only the first letter of each word in text value `text`. All other letters are returned in lowercase. An optional `culture` may also be provided (for example, "en-US").
+Capitalizes the first letter of each word.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-proper)
 
 ## Parameters
 
@@ -26,17 +30,3 @@ Returns the result of capitalizing only the first letter of each word in text va
 | `culture` | `nullable text` | yes |
 
 **Executed examples (1):** [examples/text-transformations/text-proper.md](../../examples/text-transformations/text-proper.md)
-
-## Examples (engine metadata — not verified here)
-
-Use `Text.Proper` on a simple sentence.
-
-```m
-Text.Proper("the QUICK BrOWn fOx jUmPs oVER tHe LAzy DoG")
-```
-
-Stated result:
-
-```m
-"The Quick Brown Fox Jumps Over The Lazy Dog"
-```

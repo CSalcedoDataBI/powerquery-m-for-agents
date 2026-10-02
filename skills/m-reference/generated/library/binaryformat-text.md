@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 BinaryFormat.Text(length as any, optional encoding as nullable number) as function
 ```
 
-Returns a binary format that reads a text value. The `length` specifies the number of bytes to decode, or the binary format of the length that precedes the text. The optional `encoding` value specifies the encoding of the text. If the `encoding` is not specified, then the encoding is determined from the Unicode byte order marks. If no byte order marks are present, then `TextEncoding.Utf8` is used.
+Returns a binary format that reads a text value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/binaryformat-text)
 
 ## Parameters
 
@@ -26,40 +30,3 @@ Returns a binary format that reads a text value. The `length` specifies the numb
 | `encoding` | `nullable number` | yes |
 
 **Executed examples (3):** [examples/binary-formats-reading-text/binaryformat-text.md](../../examples/binary-formats-reading-text/binaryformat-text.md)
-
-## Examples (engine metadata — not verified here)
-
-Decode two bytes as ASCII text.
-
-```m
-let
-    binaryData = #binary({65, 66, 67}),
-    textFormat = BinaryFormat.Text(2, TextEncoding.Ascii)
-in
-    textFormat(binaryData)
-```
-
-Stated result:
-
-```m
-"AB"
-```
-
-Decode ASCII text where the length of the text in bytes appears before the text as a byte.
-
-```m
-let
-    binaryData = #binary({2, 65, 66}),
-    textFormat = BinaryFormat.Text(
-        BinaryFormat.Byte,
-        TextEncoding.Ascii
-    )
-in
-    textFormat(binaryData)
-```
-
-Stated result:
-
-```m
-"AB"
-```

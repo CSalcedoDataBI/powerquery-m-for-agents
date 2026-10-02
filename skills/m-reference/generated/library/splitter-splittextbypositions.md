@@ -18,6 +18,10 @@ Splitter.SplitTextByPositions(positions as list, optional startAtEnd as nullable
 
 Returns a function that splits text into a list of text at each specified position.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/splitter-splittextbypositions)
+
 ## Parameters
 
 | Name | Type | Optional |
@@ -26,32 +30,3 @@ Returns a function that splits text into a list of text at each specified positi
 | `startAtEnd` | `nullable logical` | yes |
 
 **Executed examples (3):** [examples/splitter/splitter-splittextbypositions.md](../../examples/splitter/splitter-splittextbypositions.md)
-
-## Examples (engine metadata — not verified here)
-
-Split the input at the specified positions, starting from the beginning of the input.
-
-```m
-Splitter.SplitTextByPositions({0, 3, 4})("ABC|12345")
-```
-
-Stated result:
-
-```m
-{"ABC", "|", "12345"}
-```
-
-Split the input at the specified positions, starting from the end of the input.
-
-```m
-let
-    startAtEnd = true
-in
-    Splitter.SplitTextByPositions({0, 5}, startAtEnd)("Redmond98052")
-```
-
-Stated result:
-
-```m
-{"Redmond", "98052"}
-```

@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.AddMonths(dateTime as any, numberOfMonths as number) as any
 ```
 
-Returns the `date`, `datetime`, or `datetimezone` result from adding `numberOfMonths` months to the `datetime` value `dateTime`.
+Adds the specified months to the date.
 
-- `dateTime`: The `date`, `datetime`, or `datetimezone` value to which months are being added.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `numberOfMonths`: The number of months to add.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-addmonths)
 
 ## Parameters
 
@@ -30,29 +30,3 @@ Returns the `date`, `datetime`, or `datetimezone` result from adding `numberOfMo
 | `numberOfMonths` | `number` | no |
 
 **Executed examples (3):** [examples/date/date-addmonths.md](../../examples/date/date-addmonths.md)
-
-## Examples (engine metadata — not verified here)
-
-Add 5 months to the `date`, `datetime`, or `datetimezone` value representing the date 5/14/2011.
-
-```m
-Date.AddMonths(#date(2011, 5, 14), 5)
-```
-
-Stated result:
-
-```m
-#date(2011, 10, 14)
-```
-
-Add 18 months to the `date`, `datetime`, or `datetimezone` value representing the date and time of 5/14/2011 08:15:22 AM.
-
-```m
-Date.AddMonths(#datetime(2011, 5, 14, 8, 15, 22), 18)
-```
-
-Stated result:
-
-```m
-#datetime(2012, 11, 14, 8, 15, 22)
-```

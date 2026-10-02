@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DateTime.ToRecord(dateTime as datetime) as record
 ```
 
-Returns a record containing the parts of the given datetime value, `dateTime`.
+Returns a record containing the datetime value's parts.
 
-- `dateTime`: A `datetime` value for from which the record of its parts is to be calculated.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/datetime-torecord)
 
 ## Parameters
 
@@ -27,24 +29,3 @@ Returns a record containing the parts of the given datetime value, `dateTime`.
 | `dateTime` | `datetime` | no |
 
 **Executed examples (3):** [examples/datetime/datetime-torecord.md](../../examples/datetime/datetime-torecord.md)
-
-## Examples (engine metadata — not verified here)
-
-Convert the `#datetime(2011, 12, 31, 11, 56, 2)` value into a record containing Date and Time values.
-
-```m
-DateTime.ToRecord(#datetime(2011, 12, 31, 11, 56, 2))
-```
-
-Stated result:
-
-```m
-[
-      Year = 2011,
-      Month = 12,
-      Day = 31,
-      Hour = 11,
-      Minute = 56,
-      Second = 2
-]
-```

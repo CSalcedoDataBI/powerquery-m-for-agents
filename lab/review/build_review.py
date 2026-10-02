@@ -80,15 +80,16 @@ def categories(catalog, only=""):
 
 
 def description(file):
-    """The function's description as its card states it - the engine's own documentation, written
-    by sync_shared.py from the export - as plain text: the paragraphs between the signature and
-    the first section, or the examples link a card with no parameters has in its place."""
+    """The function's description as its card states it, as plain text: the text between the
+    signature and the attribution line sync_shared.py writes under it. Microsoft's MIT file
+    describes most functions, not all (#1): a card without that line has no description, and
+    the column is left empty."""
     with open(os.path.join(LIBRARY, file + ".md"), encoding="utf-8") as f:
-        body = f.read().split("\n```\n", 1)[1].split("\n## ", 1)[0].split("\n**Executed examples", 1)[0]
-    text = " ".join(line.strip() for line in body.splitlines() if line.strip())
-    if not text:
-        raise SystemExit(f"{file}: its card has no description")
-    return text.replace("`", "")
+        body = f.read().split("\n```\n", 1)[1]
+    if "\n*Description: " not in body:
+        return ""
+    body = body.split("\n*Description: ", 1)[0]
+    return " ".join(line.strip() for line in body.splitlines() if line.strip()).replace("`", "")
 
 
 def partition(rows, allowed):

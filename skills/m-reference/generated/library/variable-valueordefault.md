@@ -16,7 +16,7 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Variable.ValueOrDefault(identifier as text, optional defaultValue as any) as any
 ```
 
-Returns the value of the specified variable `identifier` defined by the current evaluation environment. If the variable is not defined, the optional `defaultValue` is returned.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/variable-valueordefault)
 
 ## Parameters
 

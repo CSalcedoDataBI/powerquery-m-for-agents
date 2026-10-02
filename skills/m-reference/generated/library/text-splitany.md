@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.SplitAny(text as text, separators as text) as list
 ```
 
-Returns a list of text values resulting from the splitting of a text value based on any character specified in the delimiter.
+Returns a list of text values, split on any of the characters in the delimiter.
 
-- `text`: The text value to split.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `separators`: The delimiter characters used to split the text.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-splitany)
 
 ## Parameters
 
@@ -30,24 +30,3 @@ Returns a list of text values resulting from the splitting of a text value based
 | `separators` | `text` | no |
 
 **Executed examples (1):** [examples/text-transformations/text-splitany.md](../../examples/text-transformations/text-splitany.md)
-
-## Examples (engine metadata — not verified here)
-
-Create a list from the given text using the specified delimiter characters.
-
-```m
-Text.SplitAny("Name|Customer ID|Purchase|Month-Day-Year", "|-")
-```
-
-Stated result:
-
-```m
-{
-    "Name",
-    "Customer ID",
-    "Purchase",
-    "Month",
-    "Day",
-    "Year"
-}
-```

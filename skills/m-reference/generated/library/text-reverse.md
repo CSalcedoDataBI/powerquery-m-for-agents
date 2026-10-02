@@ -16,7 +16,7 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.Reverse(text as nullable text) as nullable text
 ```
 
-Reverses the provided `text`.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-reverse)
 
 ## Parameters
 
@@ -25,17 +25,3 @@ Reverses the provided `text`.
 | `text` | `nullable text` | no |
 
 **Executed examples (1):** [examples/text-transformations/text-reverse.md](../../examples/text-transformations/text-reverse.md)
-
-## Examples (engine metadata — not verified here)
-
-Reverse the text "123".
-
-```m
-Text.Reverse("123")
-```
-
-Stated result:
-
-```m
-"321"
-```

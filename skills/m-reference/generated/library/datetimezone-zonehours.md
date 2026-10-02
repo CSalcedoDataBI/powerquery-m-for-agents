@@ -16,26 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DateTimeZone.ZoneHours(dateTimeZone as nullable datetimezone) as nullable number
 ```
 
-Returns the time zone hour component of a `datetimezone` value.
+Gets the timezone hour of the value.
 
-- `dateTimeZone`: A `datetimezone` value from which the time zone hour component is extracted. If `dateTimeZone` is `null`, the function returns `null`.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/datetimezone-zonehours)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `dateTimeZone` | `nullable datetimezone` | no |
-
-## Examples (engine metadata — not verified here)
-
-Get the time zone hours component of the specified `datetimezone` value.
-
-```m
-DateTimeZone.ZoneHours(#datetimezone(2024, 4, 28, 13, 24, 22, 7, 30))
-```
-
-Stated result:
-
-```m
-7
-```

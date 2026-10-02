@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 SingleStoreODBC.Database(ServerAddr as text, Database as text, optional UseSSL as nullable logical) as table
 ```
 
-The SingleStore Connector is a high-performance connector that lets you DirectQuery and import data from your SingleStore instance.
-
 ## Parameters
 
 | Name | Type | Optional |

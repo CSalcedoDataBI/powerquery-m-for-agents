@@ -16,7 +16,7 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Value.VersionIdentity(value as any) as any
 ```
 
-Returns the version identity of the `value`, or `null` if it doesn't have a version.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/value-versionidentity)
 
 ## Parameters
 

@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.ToList(text as text) as list
 ```
 
-Returns a list of character values from the given text value `text`.
+Returns a list of character values from the given text value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-tolist)
 
 ## Parameters
 
@@ -25,29 +29,3 @@ Returns a list of character values from the given text value `text`.
 | `text` | `text` | no |
 
 **Executed examples (1):** [examples/text-conversions-from-and-to-text/text-tolist.md](../../examples/text-conversions-from-and-to-text/text-tolist.md)
-
-## Examples (engine metadata — not verified here)
-
-Create a list of character values from the text "Hello World".
-
-```m
-Text.ToList("Hello World")
-```
-
-Stated result:
-
-```m
-{
-    "H",
-    "e",
-    "l",
-    "l",
-    "o",
-    " ",
-    "W",
-    "o",
-    "r",
-    "l",
-    "d"
-}
-```

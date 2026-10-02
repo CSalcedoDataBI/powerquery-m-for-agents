@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.At(text as nullable text, index as number) as nullable text
 ```
 
-Returns the character in the text value, `text` at position `index`. The first character in the text is at position 0.
+Returns the character at the specified position.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-at)
 
 ## Parameters
 
@@ -26,17 +30,3 @@ Returns the character in the text value, `text` at position `index`. The first c
 | `index` | `number` | no |
 
 **Executed examples (1):** [examples/text-extraction/text-at.md](../../examples/text-extraction/text-at.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the character at position 4 in string "Hello, World".
-
-```m
-Text.At("Hello, World", 4)
-```
-
-Stated result:
-
-```m
-"o"
-```

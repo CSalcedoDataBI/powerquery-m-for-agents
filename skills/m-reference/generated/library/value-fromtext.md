@@ -16,13 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Value.FromText(text as any, optional culture as nullable text) as any
 ```
 
-Decodes a value from a textual representation and interprets it as a value with an appropriate type.
+Creates a strongly-typed value from a textual representation.
 
-- `text`: The text to interpret.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `culture`: (Optional) A specific culture used to interpret the text (for example, "en-US").
-
-This function takes a text value and returns a value of type `number`, `logical`, `null`, `datetime`, `duration`, or `text`. An empty text value is interpreted as a `null` value.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/value-fromtext)
 
 ## Parameters
 
@@ -30,53 +28,3 @@ This function takes a text value and returns a value of type `number`, `logical`
 |---|---|---|
 | `text` | `any` | no |
 | `culture` | `nullable text` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Convert text representing a number to its corresponding number value.
-
-```m
-Value.FromText("12345.6789")
-```
-
-Stated result:
-
-```m
-12345.6789
-```
-
-Convert text representing a percentage to its corresponding number value.
-
-```m
-Value.FromText("25.4%")
-```
-
-Stated result:
-
-```m
-0.254
-```
-
-Convert text representing a French Euro value to its corresponding number value.
-
-```m
-Value.FromText("€1,190", "fr-FR")
-```
-
-Stated result:
-
-```m
-1.19
-```
-
-Convert text representing a German date and time to its corresponding date and time value.
-
-```m
-Value.FromText("24 Dez 2024 14:33:20", "de-DE")
-```
-
-Stated result:
-
-```m
-#datetime(2024, 12, 24, 14, 33, 20)
-```

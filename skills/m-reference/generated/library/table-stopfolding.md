@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.StopFolding(table as table) as table
 ```
 
-Prevents any downstream operations from being run against the original source of the data in `table`.
+Prevents any downstream operations from being run against the original source of the data.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-stopfolding)
 
 ## Parameters
 
@@ -25,22 +29,3 @@ Prevents any downstream operations from being run against the original source of
 | `table` | `table` | no |
 
 **Executed examples (1):** [examples/table-other/table-stopfolding.md](../../examples/table-other/table-stopfolding.md)
-
-## Examples (engine metadata — not verified here)
-
-Fetches data from a SQL table in a way that prevents any downstream operations from running as a query on the SQL server.
-
-```m
-let
-    Source = Sql.Database("SomeSQLServer", "MyDb"),
-    MyTable = Source{[Item="MyTable"]}[Data],
-    MyLocalTable = Table.StopFolding(MyTable)
-in
-    MyLocalTable
-```
-
-Stated result:
-
-```m
-table
-```

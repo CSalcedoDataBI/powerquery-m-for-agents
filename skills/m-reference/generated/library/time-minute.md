@@ -16,24 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Time.Minute(dateTime as any) as nullable number
 ```
 
-Returns the minute component of the provided `time`, `datetime`, or `datetimezone` value, `dateTime`.
+Returns the minute component.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/time-minute)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `dateTime` | `any` | no |
-
-## Examples (engine metadata — not verified here)
-
-Find the minute in #datetime(2011, 12, 31, 9, 15, 36).
-
-```m
-Time.Minute(#datetime(2011, 12, 31, 9, 15, 36))
-```
-
-Stated result:
-
-```m
-15
-```

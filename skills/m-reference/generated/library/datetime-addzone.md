@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DateTime.AddZone(dateTime as nullable datetime, timezoneHours as number, optional timezoneMinutes as nullable number) as nullable datetimezone
 ```
 
-Adds timezone information to the `dateTime` value. The timezone information includes `timezoneHours` and optionally `timezoneMinutes`, which specify the desired offset from UTC time.
+Adds timezone information to the datetime value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/datetime-addzone)
 
 ## Parameters
 
@@ -27,17 +31,3 @@ Adds timezone information to the `dateTime` value. The timezone information incl
 | `timezoneMinutes` | `nullable number` | yes |
 
 **Executed examples (3):** [examples/datetime/datetime-addzone.md](../../examples/datetime/datetime-addzone.md)
-
-## Examples (engine metadata — not verified here)
-
-Set the timezone to UTC+7:30 (7 hours and 30 minutes past UTC).
-
-```m
-DateTime.AddZone(#datetime(2010, 12, 31, 11, 56, 02), 7, 30)
-```
-
-Stated result:
-
-```m
-#datetimezone(2010, 12, 31, 11, 56, 2, 7, 30)
-```

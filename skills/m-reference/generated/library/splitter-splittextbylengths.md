@@ -18,6 +18,10 @@ Splitter.SplitTextByLengths(lengths as list, optional startAtEnd as nullable log
 
 Returns a function that splits text into a list of text by each specified length.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/splitter-splittextbylengths)
+
 ## Parameters
 
 | Name | Type | Optional |
@@ -26,32 +30,3 @@ Returns a function that splits text into a list of text by each specified length
 | `startAtEnd` | `nullable logical` | yes |
 
 **Executed examples (3):** [examples/splitter/splitter-splittextbylengths.md](../../examples/splitter/splitter-splittextbylengths.md)
-
-## Examples (engine metadata — not verified here)
-
-Split the input into the first two characters followed by the next three, starting from the beginning of the input.
-
-```m
-Splitter.SplitTextByLengths({2, 3})("AB123")
-```
-
-Stated result:
-
-```m
-{"AB", "123"}
-```
-
-Split the input into the first three characters followed by the next two, starting from the end of the input.
-
-```m
-let
-    startAtEnd = true
-in
-    Splitter.SplitTextByLengths({5, 2}, startAtEnd)("RedmondWA98052")
-```
-
-Stated result:
-
-```m
-{"WA", "98052"}
-```

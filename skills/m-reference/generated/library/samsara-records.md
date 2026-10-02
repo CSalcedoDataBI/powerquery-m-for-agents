@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Samsara.Records(Region as text, RangeStart as text, optional RangeEnd as nullable text) as table
 ```
 
-Get records from supported Samsara APIs
-
 ## Parameters
 
 | Name | Type | Optional |

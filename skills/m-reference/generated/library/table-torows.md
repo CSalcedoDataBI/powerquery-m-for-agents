@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.ToRows(table as table) as list
 ```
 
-Creates a list of nested lists from the table, `table`. Each list item is an inner list that contains the row values.
+Creates a list of nested lists of row values from a table.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-torows)
 
 ## Parameters
 
@@ -25,27 +29,3 @@ Creates a list of nested lists from the table, `table`. Each list item is an inn
 | `table` | `table` | no |
 
 **Executed examples (1):** [examples/table-conversions/table-torows.md](../../examples/table-conversions/table-torows.md)
-
-## Examples (engine metadata — not verified here)
-
-Create a list of the row values from the table.
-
-```m
-Table.ToRows(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"]
-    })
-)
-```
-
-Stated result:
-
-```m
-{
-    {1, "Bob", "123-4567"},
-    {2, "Jim", "987-6543"},
-    {3, "Paul", "543-7890"}
-}
-```

@@ -16,12 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 AmazonRedshift.Database(server as text, database as text, optional options as nullable record) as table
 ```
 
-Returns a table listing the tables on the Amazon Redshift cluster `server` in the database `database`. An optional record parameter, `options`, may be specified to control the following options:
-
-- `Provider Name`: A text value to use as the Provider Name for the connection. This is used when using Microsoft Authentication.
-
-- `Batch Size`: The number of rows that are fetched in a single call to the server.
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -29,9 +23,3 @@ Returns a table listing the tables on the Amazon Redshift cluster `server` in th
 | `server` | `text` | no |
 | `database` | `text` | no |
 | `options` | `nullable record` | yes |
-
-## Examples (engine metadata — not verified here)
-
-```m
-AmazonRedshift.Database("contoso.redshift.amazonaws.com:5439", "dev")
-```

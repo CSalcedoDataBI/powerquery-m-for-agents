@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Witivio.Contents(botId as text) as table
 ```
 
-Witivio 365 - Configuration
-
 ## Parameters
 
 | Name | Type | Optional |

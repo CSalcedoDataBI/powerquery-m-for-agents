@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Type.TableColumn(tableType as type, column as text) as type
 ```
 
-Returns the type of the column `column` in the table type `tableType`.
+Returns the type of a column in a table.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/type-tablecolumn)
 
 ## Parameters
 

@@ -18,6 +18,10 @@ Value.Compare(value1 as any, value2 as any, optional precision as nullable numbe
 
 Returns -1, 0, or 1 based on whether the first value is less than, equal to, or greater than the second.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/value-compare)
+
 ## Parameters
 
 | Name | Type | Optional |

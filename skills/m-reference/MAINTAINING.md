@@ -26,6 +26,19 @@ python skills/m-reference/scripts/sync_shared.py exports/desktop.json exports/ex
 python skills/m-reference/scripts/sync_shared.py exports/desktop.json exports/excel.json --write
 ```
 
+The descriptions are not the engine's: only Microsoft's MIT-licensed standard library file
+is quoted (#1). The sync reads it from `exports/vscode-powerquery-standard-enUs.json`
+(`--descriptions`) and the checked Microsoft Learn pages from `exports/learn-links.json`
+(`--learn-links`). To refresh them:
+
+```bash
+gh api "repos/microsoft/vscode-powerquery/contents/server/src/library/standard/standard-enUs.json?ref=<commit>" \
+  -H "Accept: application/vnd.github.raw" > exports/vscode-powerquery-standard-enUs.json
+python lab/shared-export/learn_links.py exports/learn-links.json
+```
+
+Then record the commit in `THIRD_PARTY_NOTICES.md`.
+
 The first export named wins each card; the rest only contribute `hosts`. Gates: an export
 with fewer than 100 functions, two names mapping to one file, an orphan note, or the count
 moving more than 5% (override with `--accept-count-change`). The new tree is built in a

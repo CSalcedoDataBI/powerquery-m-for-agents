@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.Length(text as nullable text) as nullable number
 ```
 
-Returns the number of characters in the text `text`.
+Returns the number of characters.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-length)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns the number of characters in the text `text`.
 | `text` | `nullable text` | no |
 
 **Executed examples (1):** [examples/text-information/text-length.md](../../examples/text-information/text-length.md)
-
-## Examples (engine metadata — not verified here)
-
-Find how many characters are in the text "Hello World".
-
-```m
-Text.Length("Hello World")
-```
-
-Stated result:
-
-```m
-11
-```

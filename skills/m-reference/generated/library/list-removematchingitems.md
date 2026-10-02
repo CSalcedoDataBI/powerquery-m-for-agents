@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.RemoveMatchingItems(list1 as list, list2 as list, optional equationCriteria as any) as list
 ```
 
-Removes all occurrences of the given values in `list2` from the list `list1`. If the values in `list2` don't exist in `list1`, the original list is returned.
-An optional equation criteria value, `equationCriteria`, can be specified to control equality testing.
+Removes all occurrences of the input values.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-removematchingitems)
 
 ## Parameters
 
@@ -28,17 +31,3 @@ An optional equation criteria value, `equationCriteria`, can be specified to con
 | `equationCriteria` | `any` | yes |
 
 **Executed examples (1):** [examples/list-transformation-functions/list-removematchingitems.md](../../examples/list-transformation-functions/list-removematchingitems.md)
-
-## Examples (engine metadata — not verified here)
-
-Create a list from {1, 2, 3, 4, 5, 5} without {1, 5}.
-
-```m
-List.RemoveMatchingItems({1, 2, 3, 4, 5, 5}, {1, 5})
-```
-
-Stated result:
-
-```m
-{2, 3, 4}
-```

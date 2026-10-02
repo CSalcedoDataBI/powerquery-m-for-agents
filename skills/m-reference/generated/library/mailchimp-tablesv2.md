@@ -15,19 +15,3 @@ source: "#shared \u2014 desktop 2.157.879.0"
 ```m
 MailChimp.TablesV2() as table
 ```
-
-Returns a table with key MailChimp data.
-
-## Examples (engine metadata — not verified here)
-
-Returns a table with key MailChimp data.
-
-```m
-MailChimp.Tables()
-```
-
-Stated result:
-
-```m
-A table with key MailChimp data.
-```

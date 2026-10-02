@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.IsInPreviousNDays(dateTime as any, days as number) as nullable logical
 ```
 
-Indicates whether the given datetime value `dateTime` occurs during the previous number of days, as determined by the current date and time on the system. Note that this function will return false when passed a value that occurs within the current day.
+Indicates whether this date occurs during the previous number of days, as determined by the current date and time on the system. Note that this function will return false when passed a value that occurs within the current day.
 
-- `dateTime`: A `date`, `datetime`, or `datetimezone` value to be evaluated.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `days`: The number of days.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-isinpreviousndays)
 
 ## Parameters
 
@@ -30,17 +30,3 @@ Indicates whether the given datetime value `dateTime` occurs during the previous
 | `days` | `number` | no |
 
 **Executed examples (3):** [examples/date/date-isinpreviousndays.md](../../examples/date/date-isinpreviousndays.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if the day before the current system time is in the previous two days.
-
-```m
-Date.IsInPreviousNDays(Date.AddDays(DateTime.FixedLocalNow(), -1), 2)
-```
-
-Stated result:
-
-```m
-true
-```

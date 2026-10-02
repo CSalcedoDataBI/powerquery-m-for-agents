@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.Repeat(text as nullable text, count as number) as nullable text
 ```
 
-Returns a text value composed of the input text `text` repeated `count` times.
+Returns a text value composed of the input text repeated a specified number of times.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-repeat)
 
 ## Parameters
 
@@ -26,29 +30,3 @@ Returns a text value composed of the input text `text` repeated `count` times.
 | `count` | `number` | no |
 
 **Executed examples (1):** [examples/text-transformations/text-repeat.md](../../examples/text-transformations/text-repeat.md)
-
-## Examples (engine metadata — not verified here)
-
-Repeat the text "a" five times.
-
-```m
-Text.Repeat("a", 5)
-```
-
-Stated result:
-
-```m
-"aaaaa"
-```
-
-Repeat the text "helloworld" three times.
-
-```m
-Text.Repeat("helloworld.", 3)
-```
-
-Stated result:
-
-```m
-"helloworld.helloworld.helloworld."
-```

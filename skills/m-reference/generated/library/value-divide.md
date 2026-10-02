@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Value.Divide(value1 as any, value2 as any, optional precision as nullable number) as any
 ```
 
-Returns the result of dividing `value1` by `value2`. An optional `precision` parameter may be specified, by default `Precision.Double` is used.
+Returns the result of dividing the first value by the second.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/value-divide)
 
 ## Parameters
 

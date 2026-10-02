@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.MatchesAny(list as list, condition as function) as logical
 ```
 
-Returns `true` if the condition function is satisfied by any of the values in the list, otherwise returns `false`.
+Returns true if the condition function is satisfied by any value.
 
-- `list`: The list containing the values to check.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `condition`: The condition to check against the values in the list.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-matchesany)
 
 ## Parameters
 
@@ -30,61 +30,3 @@ Returns `true` if the condition function is satisfied by any of the values in th
 | `condition` | `function` | no |
 
 **Executed examples (1):** [examples/list-selection/list-matchesany.md](../../examples/list-selection/list-matchesany.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if any of the values in the list {9, 10, 11} are greater than 10.
-
-```m
-List.MatchesAny({9, 10, 11}, each _  > 10)
-```
-
-Stated result:
-
-```m
-true
-```
-
-Determine if any of the values in the list {1, 2, 3} are greater than 10.
-
-```m
-List.MatchesAny({1, 2, 3}, each _  > 10)
-```
-
-Stated result:
-
-```m
-false
-```
-
-Determine if any of the text values in the list contain "cat" while ignoring case.
-
-```m
-let
-    Source = {"A Brown Fox", "A Loyal Dog", "A Curious Cat", "A Wild Horse", "A Rascally Rabbit"},
-    Result = List.MatchesAny(Source, each Text.Contains(_, "cat", Comparer.OrdinalIgnoreCase))
-in
-    Result
-```
-
-Stated result:
-
-```m
-true
-```
-
-Determine if any of the dates contain the year 2021.
-
-```m
-let
-    Source = {#date(2024, 11, 28), #date(2023, 1, 14), #date(2021, 12, 31), #date(2025, 7, 6)},
-    Result = List.MatchesAny(Source, each Date.Year(_) = 2021)
-in
-    Result
-```
-
-Stated result:
-
-```m
-true
-```

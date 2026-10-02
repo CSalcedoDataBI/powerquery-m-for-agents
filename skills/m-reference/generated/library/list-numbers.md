@@ -16,13 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Numbers(start as number, count as number, optional increment as nullable number) as list
 ```
 
-Returns a list of numbers given an initial value, count, and optional increment value. The default increment value is 1.
+Returns a list of numbers given an initial value, count, and optional increment value.
 
-- `start`: The initial value in the list.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `count`: The number of values to create.
-
-- `increment`: *(Optional)* The value to increment by. If omitted values are incremented by 1.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-numbers)
 
 ## Parameters
 
@@ -33,51 +31,3 @@ Returns a list of numbers given an initial value, count, and optional increment 
 | `increment` | `nullable number` | yes |
 
 **Executed examples (1):** [examples/list-generators/list-numbers.md](../../examples/list-generators/list-numbers.md)
-
-## Examples (engine metadata — not verified here)
-
-Generate a list of 10 consecutive numbers starting at 1.
-
-```m
-List.Numbers(1, 10)
-```
-
-Stated result:
-
-```m
-{
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10
-}
-```
-
-Generate a list of 10 numbers starting at 1, with an increment of 2 for each subsequent number.
-
-```m
-List.Numbers(1, 10, 2)
-```
-
-Stated result:
-
-```m
-{
-    1,
-    3,
-    5,
-    7,
-    9,
-    11,
-    13,
-    15,
-    17,
-    19
-}
-```

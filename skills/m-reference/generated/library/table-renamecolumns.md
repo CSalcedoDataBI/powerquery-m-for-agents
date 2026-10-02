@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.RenameColumns(table as table, renames as list, optional missingField as nullable number) as table
 ```
 
-Performs the given renames to the columns in table `table`. A replacement operation `renames` consists of a list of two values, the old column name and new column name, provided in a list.
-If the column doesn't exist, an error is raised unless the optional parameter `missingField` specifies an alternative (eg. `MissingField.UseNull` or `MissingField.Ignore`).
+Applies rename(s) of the form {old, new}.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-renamecolumns)
 
 ## Parameters
 
@@ -28,54 +31,3 @@ If the column doesn't exist, an error is raised unless the optional parameter `m
 | `missingField` | `nullable number` | yes |
 
 **Executed examples (1):** [examples/table-column-operations/table-renamecolumns.md](../../examples/table-column-operations/table-renamecolumns.md)
-
-## Examples (engine metadata — not verified here)
-
-Replace the column name "CustomerNum" with "CustomerID" in the table.
-
-```m
-Table.RenameColumns(
-    Table.FromRecords({[CustomerNum = 1, Name = "Bob", Phone = "123-4567"]}),
-    {"CustomerNum", "CustomerID"}
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({[CustomerID = 1, Name = "Bob", Phone = "123-4567"]})
-```
-
-Replace the column name "CustomerNum" with "CustomerID" and "PhoneNum" with "Phone" in the table.
-
-```m
-Table.RenameColumns(
-    Table.FromRecords({[CustomerNum = 1, Name = "Bob", PhoneNum = "123-4567"]}),
-    {
-        {"CustomerNum", "CustomerID"},
-        {"PhoneNum", "Phone"}
-    }
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({[CustomerID = 1, Name = "Bob", Phone = "123-4567"]})
-```
-
-Replace the column name "NewCol" with "NewColumn" in the table, and ignore if the column doesn't exist.
-
-```m
-Table.RenameColumns(
-    Table.FromRecords({[CustomerID = 1, Name = "Bob", Phone = "123-4567"]}),
-    {"NewCol", "NewColumn"},
-    MissingField.Ignore
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({[CustomerID = 1, Name = "Bob", Phone = "123-4567"]})
-```

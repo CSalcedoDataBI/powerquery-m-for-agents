@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 AccessControlEntry.ConditionToIdentities(identityProvider as function, condition as function) as list
 ```
 
-Using the specified `identityProvider`, converts the `condition` into the list of identities for which `condition` would return `true` in all authorization contexts with `identityProvider` as the identity provider. An error is raised if it is not possible to convert `condition` into a list of identities, for example if `condition` consults attributes other than user or group identities to make a decision.
+Returns a list of identities that the condition will accept.
 
-Note that the list of identities represents the identities as they appear in `condition` and no normalization (such as group expansion) is performed on them.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/accesscontrolentry-conditiontoidentities)
 
 ## Parameters
 

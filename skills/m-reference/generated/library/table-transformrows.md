@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.TransformRows(table as table, transform as function) as list
 ```
 
-Creates a `list` by applying the `transform` operation to each row in `table`.
+Transforms the rows of the table using the specified transform function.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-transformrows)
 
 ## Parameters
 
@@ -26,53 +30,3 @@ Creates a `list` by applying the `transform` operation to each row in `table`.
 | `transform` | `function` | no |
 
 **Executed examples (1):** [examples/table-transformation/table-transformrows.md](../../examples/table-transformation/table-transformrows.md)
-
-## Examples (engine metadata — not verified here)
-
-Transform the rows of a table into a list of numbers.
-
-```m
-Table.TransformRows(
-    Table.FromRecords({
-        [a = 1],
-        [a = 2],
-        [a = 3],
-        [a = 4],
-        [a = 5]
-    }),
-    each [a]
-)
-```
-
-Stated result:
-
-```m
-{1, 2, 3, 4, 5}
-```
-
-Transform the rows of a numeric table into textual records.
-
-```m
-Table.TransformRows(
-    Table.FromRecords({
-        [a = 1],
-        [a = 2],
-        [a = 3],
-        [a = 4],
-        [a = 5]
-    }),
-    (row) as record => [B = Number.ToText(row[a])]
-)
-```
-
-Stated result:
-
-```m
-{
-    [B = "1"],
-    [B = "2"],
-    [B = "3"],
-    [B = "4"],
-    [B = "5"]
-}
-```

@@ -16,13 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Contains(list as list, value as any, optional equationCriteria as any) as logical
 ```
 
-Indicates whether the list contains the specified value. Returns `true` if the value is found in the list, `false` otherwise.
+Indicates whether the list contains the value.
 
-- `list`: The list to search.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `value`: The value to search for in the list.
-
-- `equationCriteria`: (Optional) The comparer used to determine if two values are equal.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-contains)
 
 ## Parameters
 
@@ -33,60 +31,3 @@ Indicates whether the list contains the specified value. Returns `true` if the v
 | `equationCriteria` | `any` | yes |
 
 **Executed examples (1):** [examples/list-membership-functions/list-contains.md](../../examples/list-membership-functions/list-contains.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if the list {1, 2, 3, 4, 5} contains 3.
-
-```m
-List.Contains({1, 2, 3, 4, 5}, 3)
-```
-
-Stated result:
-
-```m
-true
-```
-
-Determine if the list {1, 2, 3, 4, 5} contains 6.
-
-```m
-List.Contains({1, 2, 3, 4, 5}, 6)
-```
-
-Stated result:
-
-```m
-false
-```
-
-Ignoring case, determine if the list contains "rhubarb".
-
-```m
-List.Contains({"Pears", "Bananas", "Rhubarb", "Peaches"},
-    "rhubarb",
-    Comparer.OrdinalIgnoreCase
-)
-```
-
-Stated result:
-
-```m
-true
-```
-
-Determine if the list contains the date April 8, 2022.
-
-```m
-let
-    Source = {#date(2024, 2, 23), #date(2023, 12, 2), #date(2022, 4, 8), #date(2021, 7, 6)},
-    ContainsDate = List.Contains(Source, Date.From("4/8/2022"))
-in
-    ContainsDate
-```
-
-Stated result:
-
-```m
-true
-```

@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Intersect(lists as list, optional equationCriteria as any) as list
 ```
 
-Returns the intersection of the list values found in the input list `lists`. An optional parameter, `equationCriteria`, can be specified.
+Returns the intersection of the list values found in the input.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-intersect)
 
 ## Parameters
 
@@ -26,17 +30,3 @@ Returns the intersection of the list values found in the input list `lists`. An 
 | `equationCriteria` | `any` | yes |
 
 **Executed examples (1):** [examples/list-set-operations/list-intersect.md](../../examples/list-set-operations/list-intersect.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the intersection of the lists {1..5}, {2..6}, {3..7}.
-
-```m
-List.Intersect({{1..5}, {2..6}, {3..7}})
-```
-
-Stated result:
-
-```m
-{3, 4, 5}
-```

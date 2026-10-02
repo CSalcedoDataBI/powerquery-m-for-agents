@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 AutomationAnywhere.Feed(CRVersion as text, CRHostName as text) as table
 ```
 
-Automation Anywhere - Login
-
 ## Parameters
 
 | Name | Type | Optional |

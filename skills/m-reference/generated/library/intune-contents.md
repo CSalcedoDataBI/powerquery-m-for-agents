@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Intune.Contents(maxHistoryDays as number) as table
 ```
 
-Intune Data Warehouse
-
 ## Parameters
 
 | Name | Type | Optional |

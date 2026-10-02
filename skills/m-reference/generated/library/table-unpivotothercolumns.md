@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.UnpivotOtherColumns(table as table, pivotColumns as list, attributeColumn as text, valueColumn as text) as table
 ```
 
-Translates all columns other than a specified set into attribute-value pairs, combined with the rest of the values in each row.
+Translates all columns other than a specified set into attribute-value pairs.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-unpivotothercolumns)
 
 ## Parameters
 
@@ -28,32 +32,3 @@ Translates all columns other than a specified set into attribute-value pairs, co
 | `valueColumn` | `text` | no |
 
 **Executed examples (1):** [examples/table-column-operations/table-unpivotothercolumns.md](../../examples/table-column-operations/table-unpivotothercolumns.md)
-
-## Examples (engine metadata — not verified here)
-
-Translates all columns other than a specified set into attribute-value pairs, combined with the rest of the values in each row.
-
-```m
-Table.UnpivotOtherColumns(
-    Table.FromRecords({
-        [key = "key1", attribute1 = 1, attribute2 = 2, attribute3 = 3],
-        [key = "key2", attribute1 = 4, attribute2 = 5, attribute3 = 6]
-    }),
-    {"key"},
-    "column1",
-    "column2"
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [key = "key1", column1 = "attribute1", column2 = 1],
-    [key = "key1", column1 = "attribute2", column2 = 2],
-    [key = "key1", column1 = "attribute3", column2 = 3],
-    [key = "key2", column1 = "attribute1", column2 = 4],
-    [key = "key2", column1 = "attribute2", column2 = 5],
-    [key = "key2", column1 = "attribute3", column2 = 6]
-})
-```

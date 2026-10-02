@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Troux.CustomFeed(url as text, query as text) as table
 ```
 
-Returns a table with relevant Planview Enterprise Architecture data specified by the query.
-
 ## Parameters
 
 | Name | Type | Optional |

@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Marketo.Tables(url as text, QueryStart as date) as table
 ```
 
-Returns a table with relevant Marketo data.
-
 ## Parameters
 
 | Name | Type | Optional |

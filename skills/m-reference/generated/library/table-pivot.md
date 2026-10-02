@@ -18,6 +18,10 @@ Table.Pivot(table as table, pivotValues as list, attributeColumn as text, valueC
 
 Given a pair of columns representing attribute-value pairs, rotates the data in the attribute column into a column headings.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-pivot)
+
 ## Parameters
 
 | Name | Type | Optional |
@@ -29,57 +33,3 @@ Given a pair of columns representing attribute-value pairs, rotates the data in 
 | `aggregationFunction` | `nullable function` | yes |
 
 **Executed examples (1):** [examples/table-column-operations/table-pivot.md](../../examples/table-column-operations/table-pivot.md)
-
-## Examples (engine metadata — not verified here)
-
-Take the values "a", "b", and "c" in the attribute column of table `({ [ key = "x", attribute = "a", value = 1 ], [ key = "x", attribute = "c", value = 3 ], [ key = "y", attribute = "a", value = 2 ], [ key = "y", attribute = "b", value = 4 ] })` and pivot them into their own column.
-
-```m
-Table.Pivot(
-    Table.FromRecords({
-        [key = "x", attribute = "a", value = 1],
-        [key = "x", attribute = "c", value = 3],
-        [key = "y", attribute = "a", value = 2],
-        [key = "y", attribute = "b", value = 4]
-    }),
-    {"a", "b", "c"},
-    "attribute",
-    "value"
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [key = "x", a = 1, b = null, c = 3],
-    [key = "y", a = 2, b = 4, c = null]
-})
-```
-
-Take the values "a", "b", and "c" in the attribute column of table `({ [ key = "x", attribute = "a", value = 1 ], [ key = "x", attribute = "c", value = 3 ], [ key = "x", attribute = "c", value = 5 ], [ key = "y", attribute = "a", value = 2 ], [ key = "y", attribute = "b", value = 4 ] })` and pivot them into their own column. The attribute "c" for key "x" has multiple values associated with it, so use the function List.Max to resolve the conflict.
-
-```m
-Table.Pivot(
-    Table.FromRecords({
-        [key = "x", attribute = "a", value = 1],
-        [key = "x", attribute = "c", value = 3],
-        [key = "x", attribute = "c", value = 5],
-        [key = "y", attribute = "a", value = 2],
-        [key = "y", attribute = "b", value = 4]
-    }),
-    {"a", "b", "c"},
-    "attribute",
-    "value",
-    List.Max
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [key = "x", a = 1, b = null, c = 5],
-    [key = "y", a = 2, b = 4, c = null]
-})
-```

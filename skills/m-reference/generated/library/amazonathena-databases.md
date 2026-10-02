@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 AmazonAthena.Databases(DSN as text, optional role as nullable text, optional options as nullable record) as table
 ```
 
-This function sends basic authentication info
-
 ## Parameters
 
 | Name | Type | Optional |

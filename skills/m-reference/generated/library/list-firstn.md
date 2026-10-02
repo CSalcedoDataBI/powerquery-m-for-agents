@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.FirstN(list as list, countOrCondition as any) as any
 ```
 
-- If a number is specified, up to that many items are returned.
+Returns the first set of items in the list by specifying how many items to return or a qualifying condition.
 
-- If a condition is specified, all items are returned that initially meet the condition. Once an item fails the condition, no further items are considered.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-firstn)
 
 ## Parameters
 
@@ -28,17 +30,3 @@ List.FirstN(list as list, countOrCondition as any) as any
 | `countOrCondition` | `any` | no |
 
 **Executed examples (1):** [examples/list-selection/list-firstn.md](../../examples/list-selection/list-firstn.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the intial values in the list {3, 4, 5, -1, 7, 8, 2} that are greater than 0.
-
-```m
-List.FirstN({3, 4, 5, -1, 7, 8, 2}, each _ > 0)
-```
-
-Stated result:
-
-```m
-{3, 4, 5}
-```

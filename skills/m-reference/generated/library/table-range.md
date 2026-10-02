@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.Range(table as table, offset as number, optional count as nullable number) as table
 ```
 
-Returns the rows from the `table` starting at the specified `offset`. An optional parameter, `count`, specifies how many rows to return. By default, all the rows after the offset are returned.
+Returns the rows beginning at the specified offset.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-range)
 
 ## Parameters
 
@@ -27,50 +31,3 @@ Returns the rows from the `table` starting at the specified `offset`. An optiona
 | `count` | `nullable number` | yes |
 
 **Executed examples (1):** [examples/table-row-operations/table-range.md](../../examples/table-row-operations/table-range.md)
-
-## Examples (engine metadata — not verified here)
-
-Return all the rows starting at offset 1 in the table.
-
-```m
-Table.Range(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-        [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-    }),
-    1
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-    [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-    [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-})
-```
-
-Return one row starting at offset 1 in the table.
-
-```m
-Table.Range(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-        [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-    }),
-    1,
-    1
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({[CustomerID = 2, Name = "Jim", Phone = "987-6543"]})
-```

@@ -18,13 +18,9 @@ Table.AlternateRows(table as table, offset as number, skip as number, take as nu
 
 Keeps the initial offset then alternates taking and skipping the following rows.
 
-- `table`: The input table.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `offset`: The number of rows to keep before starting iterations.
-
-- `skip`: The number of rows to remove in each iteration.
-
-- `take`: The number of rows to keep in each iteration.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-alternaterows)
 
 ## Parameters
 
@@ -36,29 +32,3 @@ Keeps the initial offset then alternates taking and skipping the following rows.
 | `take` | `number` | no |
 
 **Executed examples (1):** [examples/table-row-operations/table-alternaterows.md](../../examples/table-row-operations/table-alternaterows.md)
-
-## Examples (engine metadata — not verified here)
-
-Return a table from the table that, starting at the first row, skips 1 value and then keeps 1 value.
-
-```m
-Table.AlternateRows(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"]
-    }),
-    1,
-    1,
-    1
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-    [CustomerID = 3, Name = "Paul", Phone = "543-7890"]
-})
-```

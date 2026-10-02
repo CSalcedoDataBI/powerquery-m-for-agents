@@ -16,13 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.ContainsAll(list as list, values as list, optional equationCriteria as any) as logical
 ```
 
-Indicates whether the list includes all the values from another list. Returns `true` if all the values are found in the list, `false` otherwise.
+Indicates where a list includes all the values in another list.
 
-- `list`: The list to search.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `values`: The list of values to search for in the first list.
-
-- `equationCriteria`: (Optional) The comparer used to determine if two values are equal.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-containsall)
 
 ## Parameters
 
@@ -33,57 +31,3 @@ Indicates whether the list includes all the values from another list. Returns `t
 | `equationCriteria` | `any` | yes |
 
 **Executed examples (1):** [examples/list-membership-functions/list-containsall.md](../../examples/list-membership-functions/list-containsall.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if the list {1, 2, 3, 4, 5} contains 3 and 4.
-
-```m
-List.ContainsAll({1, 2, 3, 4, 5}, {3, 4})
-```
-
-Stated result:
-
-```m
-true
-```
-
-Determine if the list {1, 2, 3, 4, 5} contains 5 and 6.
-
-```m
-List.ContainsAll({1, 2, 3, 4, 5}, {5, 6})
-```
-
-Stated result:
-
-```m
-false
-```
-
-Determine if the list contains a dog and a horse, while ignoring case.
-
-```m
-List.ContainsAll({"dog", "cat", "racoon", "horse", "rabbit"}, {"DOG", "Horse"}, Comparer.OrdinalIgnoreCase)
-```
-
-Stated result:
-
-```m
-true
-```
-
-Determine if the list contains the dates April 8, 2022 and July 6, 2021.
-
-```m
-let
-    Source = {#date(2024, 2, 23), #date(2023, 12, 2), #date(2022, 4, 8), #date(2021, 7, 6)},
-    ContainsDates = List.ContainsAll(Source, {#date(2022, 4, 8), #date(2021, 7, 6)})
-in
-    ContainsDates
-```
-
-Stated result:
-
-```m
-true
-```

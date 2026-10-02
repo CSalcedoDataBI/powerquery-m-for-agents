@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Average(list as list, optional precision as nullable number) as any
 ```
 
-Returns the average value for the items in the list, `list`. The result is given in the same datatype as the values in the list. Only works with number, date, time, datetime, datetimezone and duration values.
-If the list is empty null is returned.
+Returns the average of the values. Works with number, date, datetime, datetimezone and duration values.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-average)
 
 ## Parameters
 
@@ -27,29 +30,3 @@ If the list is empty null is returned.
 | `precision` | `nullable number` | yes |
 
 **Executed examples (1):** [examples/list-averages/list-average.md](../../examples/list-averages/list-average.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the average of the list of numbers, `{3, 4, 6}`.
-
-```m
-List.Average({3, 4, 6})
-```
-
-Stated result:
-
-```m
-4.333333333333333
-```
-
-Find the average of the date values January 1, 2011, January 2, 2011 and January 3, 2011.
-
-```m
-List.Average({#date(2011, 1, 1), #date(2011, 1, 2), #date(2011, 1, 3)})
-```
-
-Stated result:
-
-```m
-#date(2011, 1, 2)
-```

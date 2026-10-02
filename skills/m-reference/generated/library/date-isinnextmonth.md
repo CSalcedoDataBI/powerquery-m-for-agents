@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.IsInNextMonth(dateTime as any) as nullable logical
 ```
 
-Indicates whether the given datetime value `dateTime` occurs during the next month, as determined by the current date and time on the system. Note that this function will return false when passed a value that occurs within the current month.
+Indicates whether this date occurs during the next month, as determined by the current date and time on the system. Note that this function will return false when passed a value that occurs within the current month.
 
-- `dateTime`: A `date`, `datetime`, or `datetimezone` value to be evaluated.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-isinnextmonth)
 
 ## Parameters
 
@@ -27,17 +29,3 @@ Indicates whether the given datetime value `dateTime` occurs during the next mon
 | `dateTime` | `any` | no |
 
 **Executed examples (3):** [examples/date/date-isinnextmonth.md](../../examples/date/date-isinnextmonth.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if the month after the current system time is in the next month.
-
-```m
-Date.IsInNextMonth(Date.AddMonths(DateTime.FixedLocalNow(), 1))
-```
-
-Stated result:
-
-```m
-true
-```

@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Combiner.CombineTextByRanges(ranges as list, optional template as nullable text) as function
 ```
 
-Returns a function that combines a list of text values into a single text value using the specified output positions and lengths. A null length indicates that the entire text value should be included.
+Returns a function that combines a list of text using the specified positions and lengths.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/combiner-combinetextbyranges)
 
 ## Parameters
 
@@ -24,17 +28,3 @@ Returns a function that combines a list of text values into a single text value 
 |---|---|---|
 | `ranges` | `list` | no |
 | `template` | `nullable text` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Combine a list of text values using the specified output positions and lengths.
-
-```m
-Combiner.CombineTextByRanges({{0, 1}, {3, 2}, {6, null}})({"abc", "def", "ghijkl"})
-```
-
-Stated result:
-
-```m
-"a  de ghijkl"
-```

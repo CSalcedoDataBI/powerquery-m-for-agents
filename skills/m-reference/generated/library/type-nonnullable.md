@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Type.NonNullable(type as type) as type
 ```
 
-Returns the non `nullable` type from the `type`.
+Returns the non nullable type from a type.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/type-nonnullable)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns the non `nullable` type from the `type`.
 | `type` | `type` | no |
 
 **Executed examples (3):** [examples/type/type-nonnullable.md](../../examples/type/type-nonnullable.md)
-
-## Examples (engine metadata — not verified here)
-
-Return the non nullable type of `type nullable number`.
-
-```m
-Type.NonNullable(type nullable number)
-```
-
-Stated result:
-
-```m
-type number
-```

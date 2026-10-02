@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Int32.From(value as any, optional culture as nullable text, optional roundingMode as nullable number) as nullable number
 ```
 
-Returns a 32-bit integer `number` value from the given `value`. If the given `value` is `null`, `Int32.From` returns `null`. If the given `value` is `number` within the range of 32-bit integer without a fractional part, `value` is returned. If it has fractional part, then the number is rounded with the rounding mode specified. The default rounding mode is `RoundingMode.ToEven`. If `value` is of any other type, it will first be converted to a `number` using `Number.FromText`. Refer to `Number.Round` for the available rounding modes. An optional `culture` may also be provided (for example, "en-US").
+Creates a 32-bit integer from the given value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/int32-from)
 
 ## Parameters
 
@@ -27,29 +31,3 @@ Returns a 32-bit integer `number` value from the given `value`. If the given `va
 | `roundingMode` | `nullable number` | yes |
 
 **Executed examples (4):** [examples/number-conversion-and-formatting/int32-from.md](../../examples/number-conversion-and-formatting/int32-from.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the 32-bit integer `number` value of `"4"`.
-
-```m
-Int32.From("4")
-```
-
-Stated result:
-
-```m
-4
-```
-
-Get the 32-bit integer `number` value of `"4.5"` using `RoundingMode.AwayFromZero`.
-
-```m
-Int32.From("4.5", null, RoundingMode.AwayFromZero)
-```
-
-Stated result:
-
-```m
-5
-```

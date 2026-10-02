@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.TrimStart(text as nullable text, optional trim as any) as nullable text
 ```
 
-Returns the result of removing all leading characters from the specified `text`. By default, all the leading whitespace characters are removed.
+Removes all specified leading characters.
 
-- `text`: The text from which the leading characters are to be removed.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `trim`: Overrides the whitespace characters that are trimmed by default. This parameter can either be a single character or a list of single characters. Each leading trim operation stops when a non-trimmed character is encountered.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-trimstart)
 
 ## Parameters
 
@@ -30,55 +30,3 @@ Returns the result of removing all leading characters from the specified `text`.
 | `trim` | `any` | yes |
 
 **Executed examples (1):** [examples/text-transformations/text-trimstart.md](../../examples/text-transformations/text-trimstart.md)
-
-## Examples (engine metadata — not verified here)
-
-Remove leading whitespace from " a b c d ".
-
-```m
-Text.TrimStart("   a b c d    ")
-```
-
-Stated result:
-
-```m
-"a b c d    "
-```
-
-Remove leading zeroes from the text representation of a number.
-
-```m
-Text.TrimStart("0000056.420", "0")
-```
-
-Stated result:
-
-```m
-"56.420"
-```
-
-Remove the leading padding characters from a fixed-width account name.
-
-```m
-let
-    Source = #table(type table [Name = text, Account Name= text, Interest = number],
-    {
-        {"Bob", "@****847263-US", 2.8410},
-        {"Leslie", "@******4648-FR", 3.8392},
-        {"Ringo", "@***2046790-DE", 12.6600}
-    }),
-    #"Trimmed Account" = Table.TransformColumns(Source, {{"Account Name", each Text.TrimStart(_, {"*", "@"})}})
-in
-    #"Trimmed Account"
-```
-
-Stated result:
-
-```m
-#table(type table [Name = text, Account Name = text, Interest = number],
-{
-    {"Bob", "847263-US", 2.841},
-    {"Leslie", "4648-FR", 3.8392},
-    {"Ringo", "2046790-DE", 12.66}
-})
-```

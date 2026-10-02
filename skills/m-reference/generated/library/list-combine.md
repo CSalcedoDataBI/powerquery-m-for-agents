@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Combine(lists as list) as list
 ```
 
-Takes a list of lists, `lists`, and merges them into a single new list.
+Returns a single list by combining multiple lists.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-combine)
 
 ## Parameters
 
@@ -25,39 +29,3 @@ Takes a list of lists, `lists`, and merges them into a single new list.
 | `lists` | `list` | no |
 
 **Executed examples (1):** [examples/list-transformation-functions/list-combine.md](../../examples/list-transformation-functions/list-combine.md)
-
-## Examples (engine metadata — not verified here)
-
-Combine the two simple lists {1, 2} and {3, 4}.
-
-```m
-List.Combine({{1, 2}, {3, 4}})
-```
-
-Stated result:
-
-```m
-{
-    1,
-    2,
-    3,
-    4
-}
-```
-
-Combine the two lists, {1, 2} and {3, {4, 5}}, one of which contains a nested list.
-
-```m
-List.Combine({{1, 2}, {3, {4, 5}}})
-```
-
-Stated result:
-
-```m
-{
-    1,
-    2,
-    3,
-    {4, 5}
-}
-```

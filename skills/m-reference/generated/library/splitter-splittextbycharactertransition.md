@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Splitter.SplitTextByCharacterTransition(before as any, after as any) as function
 ```
 
-Returns a function that splits text into a list of text according to a transition from one kind of character to another. The `before` and `after` parameters can either be a list of characters, or a function that takes a character and returns true/false.
+Returns a function that splits text into a list of text according to a transition from one kind of character to another. The {0} and {1} parameters can either be a list of characters, or a function that takes a character and returns true/false.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/splitter-splittextbycharactertransition)
 
 ## Parameters
 
@@ -26,17 +30,3 @@ Returns a function that splits text into a list of text according to a transitio
 | `after` | `any` | no |
 
 **Executed examples (3):** [examples/splitter/splitter-splittextbycharactertransition.md](../../examples/splitter/splitter-splittextbycharactertransition.md)
-
-## Examples (engine metadata — not verified here)
-
-Split the input whenever an upper or lowercase letter is followed by a digit.
-
-```m
-Splitter.SplitTextByCharacterTransition({"A".."Z", "a".."z"}, {"0".."9"})("Abc123")
-```
-
-Stated result:
-
-```m
-{"Abc", "123"}
-```

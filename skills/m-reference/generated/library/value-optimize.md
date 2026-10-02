@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Value.Optimize(value as any) as any
 ```
 
-When used within Value.Expression, if `value` represents a query that can be optimized, this function indicates that the optimized expression should be returned. Otherwise, `value` will be passed through with no effect.
+Signals Value.Expression to return the optimized expression for a value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/value-optimize)
 
 ## Parameters
 

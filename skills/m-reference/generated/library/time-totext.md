@@ -16,13 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Time.ToText(time as nullable time, optional options as any, optional culture as nullable text) as nullable text
 ```
 
-Returns a textual representation of `time`. An optional `record` parameter, `options`, may be provided to specify additional properties. `culture` is only used for legacy workflows. The `record` can contain the following fields:
+Returns a textual representation of the time value.
 
-- `Format`: A `text` value indicating the format to use. For more details, go to https://go.microsoft.com/fwlink/?linkid=2180104 and https://go.microsoft.com/fwlink/?linkid=2180105. Omitting this field or providing `null` will result in formatting the date using the default defined by `Culture`.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `Culture`: When `Format` is not null, `Culture` controls some format specifiers. For example, in `"en-US"` `"tt"` is `"AM" or "PM"`, while in `"ar-EG"` `"tt"` is `"ص" or "م"`. When `Format` is `null`, `Culture` controls the default format to use. When `Culture` is `null` or omitted, `Culture.Current` is used.
-
-To support legacy workflows, `options` and `culture` may also be text values. This has the same behavior as if `options = [Format = options, Culture = culture]`.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/time-totext)
 
 ## Parameters
 
@@ -31,41 +29,3 @@ To support legacy workflows, `options` and `culture` may also be text values. Th
 | `time` | `nullable time` | no |
 | `options` | `any` | yes |
 | `culture` | `nullable text` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Convert `#time(01, 30, 25)` into a `text` value. *Result output may vary depending on current culture.*
-
-```m
-Time.ToText(#time(11, 56, 2))
-```
-
-Stated result:
-
-```m
-"11:56 AM"
-```
-
-Convert using a custom format and the German culture.
-
-```m
-Time.ToText(#time(11, 56, 2), [Format="hh:mm", Culture="de-DE"])
-```
-
-Stated result:
-
-```m
-"11:56"
-```
-
-Convert using standard time format.
-
-```m
-Time.ToText(#time(11, 56, 2), [Format="T", Culture="de-DE"])
-```
-
-Stated result:
-
-```m
-"11:56:02"
-```

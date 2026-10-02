@@ -18,6 +18,10 @@ Binary.Combine(binaries as list) as binary
 
 Combines a list of binaries into a single binary.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/binary-combine)
+
 ## Parameters
 
 | Name | Type | Optional |

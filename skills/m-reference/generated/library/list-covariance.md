@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Covariance(numberList1 as list, numberList2 as list) as nullable number
 ```
 
-Returns the covariance between two lists, `numberList1` and `numberList2`. `numberList1` and `numberList2` must contain the same number of `number` values.
+Returns the covariance between the two lists of numbers.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-covariance)
 
 ## Parameters
 
@@ -26,17 +30,3 @@ Returns the covariance between two lists, `numberList1` and `numberList2`. `numb
 | `numberList2` | `list` | no |
 
 **Executed examples (1):** [examples/list-numerics/list-covariance.md](../../examples/list-numerics/list-covariance.md)
-
-## Examples (engine metadata — not verified here)
-
-Calculate the covariance between two lists.
-
-```m
-List.Covariance({1, 2, 3}, {1, 2, 3})
-```
-
-Stated result:
-
-```m
-0.66666666666666607
-```

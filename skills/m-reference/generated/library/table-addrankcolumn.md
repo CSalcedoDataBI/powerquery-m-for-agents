@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.AddRankColumn(table as table, newColumnName as text, comparisonCriteria as any, optional options as nullable record) as table
 ```
 
-Appends a column named `newColumnName` to the `table` with the ranking of one or more other columns described by `comparisonCriteria`.
-The RankKind option in `options` can be used by advanced users to pick a more-specific ranking method.
+Appends a column with the ranking of one or more other columns.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-addrankcolumn)
 
 ## Parameters
 
@@ -29,32 +32,3 @@ The RankKind option in `options` can be used by advanced users to pick a more-sp
 | `options` | `nullable record` | yes |
 
 **Executed examples (1):** [examples/table-ordering/table-addrankcolumn.md](../../examples/table-ordering/table-addrankcolumn.md)
-
-## Examples (engine metadata — not verified here)
-
-Add a column named "RevenueRank" to the table which ranks the "Revenue" column from highest to lowest.
-
-```m
-Table.AddRankColumn(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Revenue = 200],
-        [CustomerID = 2, Name = "Jim", Revenue = 100],
-        [CustomerID = 3, Name = "Paul", Revenue = 200],
-        [CustomerID = 4, Name = "Ringo", Revenue = 50]
-    }),
-    "RevenueRank",
-    {"Revenue", Order.Descending},
-    [RankKind = RankKind.Competition]
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [CustomerID = 1, Name = "Bob", Revenue = 200, RevenueRank = 1],
-    [CustomerID = 3, Name = "Paul", Revenue = 200, RevenueRank = 1],
-    [CustomerID = 2, Name = "Jim", Revenue = 100, RevenueRank = 3],
-    [CustomerID = 4, Name = "Ringo", Revenue = 50, RevenueRank = 4]
-})
-```

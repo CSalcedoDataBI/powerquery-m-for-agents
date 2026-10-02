@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 CommonDataService.Database(optional server as nullable text, optional options as nullable record) as table
 ```
 
-Connect to your Dataverse instance (Dynamics 365 and PowerApps).
-
 ## Parameters
 
 | Name | Type | Optional |

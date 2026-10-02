@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.SingleOrDefault(list as list, optional default as any) as any
 ```
 
-If there is only one item in the list `list`, returns that item.
-If the list is empty, the function returns null unless an optional `default` is specified. If there is more than one item in the list, the function returns an error.
+Returns the one list item for a list of length one and the default value for an empty list.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-singleordefault)
 
 ## Parameters
 
@@ -27,41 +30,3 @@ If the list is empty, the function returns null unless an optional `default` is 
 | `default` | `any` | yes |
 
 **Executed examples (1):** [examples/list-selection/list-singleordefault.md](../../examples/list-selection/list-singleordefault.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the single value in the list {1}.
-
-```m
-List.SingleOrDefault({1})
-```
-
-Stated result:
-
-```m
-1
-```
-
-Find the single value in the list {}.
-
-```m
-List.SingleOrDefault({})
-```
-
-Stated result:
-
-```m
-null
-```
-
-Find the single value in the list {}. If is empty, return -1.
-
-```m
-List.SingleOrDefault({}, -1)
-```
-
-Stated result:
-
-```m
--1
-```

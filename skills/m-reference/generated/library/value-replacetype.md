@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Value.ReplaceType(value as any, type as type) as any
 ```
 
-Replaces the `value`'s type with the provided `type`.
+Replaces the value's type.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/value-replacetype)
 
 ## Parameters
 
@@ -24,24 +28,3 @@ Replaces the `value`'s type with the provided `type`.
 |---|---|---|
 | `value` | `any` | no |
 | `type` | `type` | no |
-
-## Examples (engine metadata — not verified here)
-
-Replace the default type of a record with a more specific type.
-
-```m
-Type.RecordFields(
-    Value.Type(
-        Value.ReplaceType(
-            [Column1 = 123],
-            type [Column1 = number]
-        )
-    )
-)[Column1][Type]
-```
-
-Stated result:
-
-```m
-type number
-```

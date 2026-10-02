@@ -16,17 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Diagnostics.Trace(traceLevel as number, message as any, value as any, optional delayed as nullable logical) as any
 ```
 
-Writes a trace `message`, if tracing is enabled, and returns `value`. An optional parameter `delayed` specifies whether to delay the evaluation of `value` until the message is traced. `traceLevel` can take one of the following values:
+Writes a trace entry, if tracing is enabled, and returns the value.
 
-- `TraceLevel.Critical`
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `TraceLevel.Error`
-
-- `TraceLevel.Warning`
-
-- `TraceLevel.Information`
-
-- `TraceLevel.Verbose`
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/diagnostics-trace)
 
 ## Parameters
 
@@ -36,17 +30,3 @@ Writes a trace `message`, if tracing is enabled, and returns `value`. An optiona
 | `message` | `any` | no |
 | `value` | `any` | no |
 | `delayed` | `nullable logical` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Trace the message before invoking Text.From function and return the result.
-
-```m
-Diagnostics.Trace(TraceLevel.Information, "TextValueFromNumber", () => Text.From(123), true)
-```
-
-Stated result:
-
-```m
-"123"
-```

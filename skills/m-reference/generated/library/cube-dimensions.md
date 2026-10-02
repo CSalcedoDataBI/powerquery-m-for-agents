@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Cube.Dimensions(cube as table) as table
 ```
 
-Returns a table containing the set of available dimensions within the `cube`. Each dimension is a table containing a set of dimension attributes and each dimension attribute is represented as a column in the dimension table. Dimensions can be expanded in the cube using Cube.AddAndExpandDimensionColumn.
+Returns a table containing the set of available dimensions.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/cube-dimensions)
 
 ## Parameters
 

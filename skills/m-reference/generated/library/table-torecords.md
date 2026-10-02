@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.ToRecords(table as table) as list
 ```
 
-Converts a table, `table`, to a list of records.
+Converts a table to a list of records.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-torecords)
 
 ## Parameters
 
@@ -25,30 +29,3 @@ Converts a table, `table`, to a list of records.
 | `table` | `table` | no |
 
 **Executed examples (1):** [examples/table-conversions/table-torecords.md](../../examples/table-conversions/table-torecords.md)
-
-## Examples (engine metadata — not verified here)
-
-Convert the table to a list of records.
-
-```m
-Table.ToRecords(
-    Table.FromRows(
-        {
-            {1, "Bob", "123-4567"},
-            {2, "Jim", "987-6543"},
-            {3, "Paul", "543-7890"}
-        },
-        {"CustomerID", "Name", "Phone"}
-    )
-)
-```
-
-Stated result:
-
-```m
-{
-    [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-    [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-    [CustomerID = 3, Name = "Paul", Phone = "543-7890"]
-}
-```

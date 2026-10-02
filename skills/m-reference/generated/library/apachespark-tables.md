@@ -16,9 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 ApacheSpark.Tables(server as text, protocol as number, optional options as nullable record) as table
 ```
 
-Returns a table listing the tables on the Spark cluster `host` using `protocol`. Valid protocols are:
-SparkProtocol.Standard, SparkProtocol.HTTP
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -26,11 +23,3 @@ SparkProtocol.Standard, SparkProtocol.HTTP
 | `server` | `text` | no |
 | `protocol` | `number` | no |
 | `options` | `nullable record` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Returns a table listing the tables on the specified Spark cluster.
-
-```m
-Spark.Tables("http://example.com:10000/cliservice", SparkProtocol.HTTP)
-```

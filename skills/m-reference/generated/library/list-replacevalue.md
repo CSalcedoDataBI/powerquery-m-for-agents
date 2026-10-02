@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.ReplaceValue(list as list, oldValue as any, newValue as any, replacer as function) as list
 ```
 
-Searches a list of values, `list`, for the value `oldValue` and replaces each occurrence with the replacement value `newValue`.
+Searches a list for the specified value and replaces it.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-replacevalue)
 
 ## Parameters
 
@@ -28,17 +32,3 @@ Searches a list of values, `list`, for the value `oldValue` and replaces each oc
 | `replacer` | `function` | no |
 
 **Executed examples (1):** [examples/list-transformation-functions/list-replacevalue.md](../../examples/list-transformation-functions/list-replacevalue.md)
-
-## Examples (engine metadata — not verified here)
-
-Replace all the "a" values in the list {"a", "B", "a", "a"} with "A".
-
-```m
-List.ReplaceValue({"a", "B", "a", "a"}, "a", "A", Replacer.ReplaceText)
-```
-
-Stated result:
-
-```m
-{"A", "B", "A", "A"}
-```

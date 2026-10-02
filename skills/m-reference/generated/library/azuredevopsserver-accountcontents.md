@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 AzureDevOpsServer.AccountContents(url as text, optional options as nullable record) as table
 ```
 
-Returns the contents downloaded from the Azure DevOps Analytics Service url as a binary value. This function uses different credentials for different organizations.
-
 ## Parameters
 
 | Name | Type | Optional |

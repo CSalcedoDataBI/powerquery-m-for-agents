@@ -7,7 +7,7 @@
    "category": "Action",
    "returns": "any",
    "signature": "Value.VersionIdentity(value as any) as any",
-   "summary": "Returns the version identity of the value.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],
@@ -22,7 +22,7 @@
    "category": "Action",
    "returns": "table",
    "signature": "Value.Versions(value as any) as table",
-   "summary": "Returns a navigation table containing the available versions of the value.",
+   "summary": "",
    "hosts": [
     "desktop"
    ],

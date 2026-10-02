@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.PartitionValues(table as table) as table
 ```
 
-Returns information about how a table is partitioned. A table is returned where each column is a partition column in the original table, and each row corresponds to a partition in the original table.
+Returns information about how a table is partitioned.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-partitionvalues)
 
 ## Parameters
 

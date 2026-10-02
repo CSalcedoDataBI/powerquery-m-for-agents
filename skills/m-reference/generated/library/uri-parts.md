@@ -16,48 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Uri.Parts(absoluteUri as text) as record
 ```
 
-Returns the parts of the input `absoluteUri` as a record, containing values such as Scheme, Host, Port, Path, Query, Fragment, UserName and Password.
+Returns the parts of the input absolute URI as a record.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/uri-parts)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `absoluteUri` | `text` | no |
-
-## Examples (engine metadata — not verified here)
-
-Find the parts of the absolute URI "www.adventure-works.com".
-
-```m
-Uri.Parts("www.adventure-works.com")
-```
-
-Stated result:
-
-```m
-[
-    Scheme = "http",
-    Host = "www.adventure-works.com",
-    Port = 80,
-    Path = "/",
-    Query = [],
-    Fragment = "",
-    UserName = "",
-    Password = ""
-]
-```
-
-Decode a percent-encoded string.
-
-```m
-let
-    UriUnescapeDataString = (data as text) as text => Uri.Parts("http://contoso?a=" & data)[Query][a]
-in
-    UriUnescapeDataString("%2Bmoney%24")
-```
-
-Stated result:
-
-```m
-"+money$"
-```

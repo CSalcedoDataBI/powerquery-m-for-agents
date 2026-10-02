@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Record.FromList(list as list, fields as any) as record
 ```
 
-Returns a record given a `list` of field values and a set of fields. The `fields` can be specified either by a list of text values, or a record type. An error is raised if the fields are not unique.
+Returns a record given a list of field values and a set of fields.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/record-fromlist)
 
 ## Parameters
 
@@ -26,29 +30,3 @@ Returns a record given a `list` of field values and a set of fields. The `fields
 | `fields` | `any` | no |
 
 **Executed examples (3):** [examples/record-serialization/record-fromlist.md](../../examples/record-serialization/record-fromlist.md)
-
-## Examples (engine metadata — not verified here)
-
-Build a record from a list of field values and a list of field names.
-
-```m
-Record.FromList({1, "Bob", "123-4567"}, {"CustomerID", "Name", "Phone"})
-```
-
-Stated result:
-
-```m
-[CustomerID = 1, Name = "Bob", Phone = "123-4567"]
-```
-
-Build a record from a list of field values and a record type.
-
-```m
-Record.FromList({1, "Bob", "123-4567"}, type [CustomerID = number, Name = text, Phone = number])
-```
-
-Stated result:
-
-```m
-[CustomerID = 1, Name = "Bob", Phone = "123-4567"]
-```

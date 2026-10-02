@@ -16,32 +16,8 @@ source: "#shared \u2014 desktop 2.157.879.0"
 DateTime.LocalNow() as datetime
 ```
 
-Returns a `datetime` value set to the current date and time on the system.
+Returns the current date and time in the local timezone.
 
-The value returned by this function depends on whether you're running your query on a local machine or online. For example, if you run your query on a system located in the U.S. Pacific Time zone, Power Query Desktop returns the date and time set on your local machine. However, if you run your query on the cloud, Power Query Online returns UTC time because it's reading the time set on the cloud virtual machines, which are all set to UTC.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-## Examples (engine metadata — not verified here)
-
-Invoke this function on a local machine running Power Query Desktop.
-
-```m
-DateTime.LocalNow()
-```
-
-Stated result:
-
-```m
-The current local date and time.
-```
-
-Invoke this function on the cloud running Power Query Online.
-
-```m
-DateTime.LocalNow()
-```
-
-Stated result:
-
-```m
-The current online (UTC) date and time.
-```
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/datetime-localnow)

@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.FromText(text as nullable text, optional culture as nullable text) as nullable number
 ```
 
-Returns a `number` value from the given text value, `text`.
+Creates numbers from common text formats ("15", "3,423.10", "5.0E-10").
 
-- `text`: The textual representation of a number value. The representation must be in a common number format, such as "15", "3,423.10", or "5.0E-10".
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `culture`: An optional culture that controls how `text` is interpreted (for example, "en-US").
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-fromtext)
 
 ## Parameters
 
@@ -32,29 +32,3 @@ Returns a `number` value from the given text value, `text`.
 **Field note:** [`notes/number-fromtext.md`](../../notes/number-fromtext.md)
 
 **Executed examples (3):** [examples/number-conversion-and-formatting/number-fromtext.md](../../examples/number-conversion-and-formatting/number-fromtext.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the number value of `"4"`.
-
-```m
-Number.FromText("4")
-```
-
-Stated result:
-
-```m
-4
-```
-
-Get the number value of `"5.0e-10"`.
-
-```m
-Number.FromText("5.0e-10")
-```
-
-Stated result:
-
-```m
-5E-10
-```

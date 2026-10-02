@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.Min(list as list, optional default as any, optional comparisonCriteria as any, optional includeNulls as nullable logical) as any
 ```
 
-Returns the minimum item in the list `list`, or the optional default value `default` if the list is empty.
-An optional comparisonCriteria value, `comparisonCriteria`, may be specified to determine how to compare the items in the list. If this parameter is null, the default comparer is used.
+Returns the minimum value or the default value for an empty list.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-min)
 
 ## Parameters
 
@@ -29,29 +32,3 @@ An optional comparisonCriteria value, `comparisonCriteria`, may be specified to 
 | `includeNulls` | `nullable logical` | yes |
 
 **Executed examples (1):** [examples/list-ordering/list-min.md](../../examples/list-ordering/list-min.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the min in the list {1, 4, 7, 3, -2, 5}.
-
-```m
-List.Min({1, 4, 7, 3, -2, 5})
-```
-
-Stated result:
-
-```m
--2
-```
-
-Find the min in the list {} or return -1 if it is empty.
-
-```m
-List.Min({}, -1)
-```
-
-Stated result:
-
-```m
--1
-```

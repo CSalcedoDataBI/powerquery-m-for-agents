@@ -16,24 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.From(value as any, optional culture as nullable text) as nullable number
 ```
 
-Returns a `number` value from the given `value`. An optional `culture` may also be provided (for example, "en-US").
-If the given `value` is `null`, `Number.From` returns `null`. If the given `value` is `number`, `value` is returned. Values of the following types can be converted to a `number` value:
+Creates a number from the given value.
 
-- `text`: A `number` value from textual representation. Common text formats are handled ("15", "3,423.10", "5.0E-10"). Refer to `Number.FromText` for details.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `logical`: 1 for `true`, 0 for `false`.
-
-- `datetime`: A double-precision floating-point number that contains an OLE Automation date equivalent.
-
-- `datetimezone`: A double-precision floating-point number that contains an OLE Automation date equivalent of the local date and time of `value`.
-
-- `date`: A double-precision floating-point number that contains an OLE Automation date equivalent.
-
-- `time`: Expressed in fractional days.
-
-- `duration`: Expressed in whole and fractional days.
-
-If `value` is of any other type, an error is returned.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-from)
 
 ## Parameters
 
@@ -43,41 +30,3 @@ If `value` is of any other type, an error is returned.
 | `culture` | `nullable text` | yes |
 
 **Executed examples (3):** [examples/number-conversion-and-formatting/number-from.md](../../examples/number-conversion-and-formatting/number-from.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the `number` value of `"4"`.
-
-```m
-Number.From("4")
-```
-
-Stated result:
-
-```m
-4
-```
-
-Get the `number` value of `#datetime(2020, 3, 20, 6, 0, 0)`.
-
-```m
-Number.From(#datetime(2020, 3, 20, 6, 0, 0))
-```
-
-Stated result:
-
-```m
-43910.25
-```
-
-Get the `number` value of `"12.3%"`.
-
-```m
-Number.From("12.3%")
-```
-
-Stated result:
-
-```m
-0.123
-```

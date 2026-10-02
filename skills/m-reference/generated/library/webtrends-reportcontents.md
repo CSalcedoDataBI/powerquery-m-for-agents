@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Webtrends.ReportContents(ProfileId as text, ReportId as text, optional startDate as nullable date, optional endDate as nullable date) as table
 ```
 
-Makes a call to the given Webtrends reporting endpoint and returns all data as a table.
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -26,17 +24,3 @@ Makes a call to the given Webtrends reporting endpoint and returns all data as a
 | `ReportId` | `text` | no |
 | `startDate` | `nullable date` | yes |
 | `endDate` | `nullable date` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Makes a call to the Webtrends visitors report endpoint for data in the last 30 days
-
-```m
-Webtrends.ReportContents("98765", "xPcmTDDP0P6")
-```
-
-Stated result:
-
-```m
-A table of visitor data
-```

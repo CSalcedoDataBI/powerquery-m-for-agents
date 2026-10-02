@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Duration.TotalDays(duration as nullable duration) as nullable number
 ```
 
-Returns the total days spanned by `duration`.
+Returns the total days this duration spans.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/duration-totaldays)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns the total days spanned by `duration`.
 | `duration` | `nullable duration` | no |
 
 **Executed examples (3):** [examples/duration/duration-totaldays.md](../../examples/duration/duration-totaldays.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the total days spanned by a duration value.
-
-```m
-Duration.TotalDays(#duration(5, 4, 3, 2))
-```
-
-Stated result:
-
-```m
-5.1687731481481478
-```

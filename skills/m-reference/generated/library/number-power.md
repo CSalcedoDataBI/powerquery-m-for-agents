@@ -16,12 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.Power(number as nullable number, power as nullable number) as nullable number
 ```
 
-Returns the result of raising `number` to the power of `power`.
-If `number` or `power` are null, `Number.Power` returns null.
+Raises a number to the given power.
 
-- `number`: The base.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `power`: The exponent.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-power)
 
 ## Parameters
 
@@ -31,17 +30,3 @@ If `number` or `power` are null, `Number.Power` returns null.
 | `power` | `nullable number` | no |
 
 **Executed examples (3):** [examples/number-operations/number-power.md](../../examples/number-operations/number-power.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the value of 5 raised to the power of 3 (5 cubed).
-
-```m
-Number.Power(5, 3)
-```
-
-Stated result:
-
-```m
-125
-```

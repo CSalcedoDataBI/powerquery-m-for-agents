@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Replacer.ReplaceValue(value as any, old as any, new as any) as any
 ```
 
-Replaces the `old` value in the original `value` with the `new` value. This replacer function can be used in `List.ReplaceValue` and `Table.ReplaceValue`.
+Replaces values within the provided input.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/replacer-replacevalue)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Replaces the `old` value in the original `value` with the `new` value. This repl
 | `value` | `any` | no |
 | `old` | `any` | no |
 | `new` | `any` | no |
-
-## Examples (engine metadata — not verified here)
-
-Replace the value 11 with the value 10.
-
-```m
-Replacer.ReplaceValue(11, 11, 10)
-```
-
-Stated result:
-
-```m
-10
-```

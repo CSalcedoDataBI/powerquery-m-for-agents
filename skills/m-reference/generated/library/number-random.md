@@ -16,18 +16,8 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.Random() as number
 ```
 
-Returns a random number between 0 and 1.
+Returns a random number.
 
-## Examples (engine metadata — not verified here)
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-Get a random number.
-
-```m
-Number.Random()
-```
-
-Stated result:
-
-```m
-0.919303
-```
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-random)

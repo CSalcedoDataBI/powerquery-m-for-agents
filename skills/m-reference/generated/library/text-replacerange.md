@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.ReplaceRange(text as nullable text, offset as number, count as number, newText as text) as nullable text
 ```
 
-Returns the result of removing a number of characters, `count`, from text value `text` beginning at position `offset` and then inserting the text value `newText` at the same position in `text`.
+Removes a range of characters and inserts a new value at a specified position.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-replacerange)
 
 ## Parameters
 
@@ -28,17 +32,3 @@ Returns the result of removing a number of characters, `count`, from text value 
 | `newText` | `text` | no |
 
 **Executed examples (1):** [examples/text-modification/text-replacerange.md](../../examples/text-modification/text-replacerange.md)
-
-## Examples (engine metadata — not verified here)
-
-Replace a single character at position 2 in text value "ABGF" with new text value "CDE".
-
-```m
-Text.ReplaceRange("ABGF", 2, 1, "CDE")
-```
-
-Stated result:
-
-```m
-"ABCDEF"
-```

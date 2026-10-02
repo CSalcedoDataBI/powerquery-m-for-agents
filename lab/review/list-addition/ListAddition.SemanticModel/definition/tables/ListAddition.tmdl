@@ -238,7 +238,7 @@ table ListAddition
 				            )
 				        in
 				            Result,
-				    Pages = #table(type table [seq = Int64.Type, Function = text, Description = text, Block = Int64.Type, Code = text, Recorded = text], {{0, "List.Sum", "Returns the sum of the non-null values in the list, list. Returns null if there are no non-null values in the list.", 1, "{List.Sum({1, null, 2}), List.Sum({}), List.Sum({0.1, 0.2}), List.Sum({0.1, 0.2}, Precision.Decimal)}", "{3, null, 0.30000000000000004, 0.3}"}}),
+				    Pages = #table(type table [seq = Int64.Type, Function = text, Description = text, Block = Int64.Type, Code = text, Recorded = text], {{0, "List.Sum", "Returns the sum of the items in the list.", 1, "{List.Sum({1, null, 2}), List.Sum({}), List.Sum({0.1, 0.2}), List.Sum({0.1, 0.2}, Precision.Decimal)}", "{3, null, 0.30000000000000004, 0.3}"}}),
 				    Joined = Table.NestedJoin(Pages, "seq", Table.TransformColumns(Live, {{"id", Number.From}}), "id", "L", JoinKind.LeftOuter),
 				    Expanded = Table.ExpandTableColumn(Joined, "L", {"result"}, {"Live"}),
 				    Matched = Table.AddColumn(Expanded, "Match", each if [Live] = [Recorded] then "yes" else "NO", type text),

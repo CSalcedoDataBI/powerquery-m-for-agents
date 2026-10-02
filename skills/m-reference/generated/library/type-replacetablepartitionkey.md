@@ -16,7 +16,7 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Type.ReplaceTablePartitionKey(tableType as type, partitionKey as nullable list) as type
 ```
 
-Returns a new table type with the partition key replaced by the specified partition key.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/type-replacetablepartitionkey)
 
 ## Parameters
 

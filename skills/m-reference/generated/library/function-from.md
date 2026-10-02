@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Function.From(functionType as type, function as function) as function
 ```
 
-Takes a unary function `function` and creates a new function with the type `functionType` that constructs a list out of its arguments and passes it to `function`.
+Creates a function with a specific parameter signature on top of a function that takes a single list argument
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/function-from)
 
 ## Parameters
 
@@ -24,29 +28,3 @@ Takes a unary function `function` and creates a new function with the type `func
 |---|---|---|
 | `functionType` | `type` | no |
 | `function` | `function` | no |
-
-## Examples (engine metadata — not verified here)
-
-Converts List.Sum into a two-argument function whose arguments are added together.
-
-```m
-Function.From(type function (a as number, b as number) as number, List.Sum)(2, 1)
-```
-
-Stated result:
-
-```m
-3
-```
-
-Converts a function taking a list into a two-argument function.
-
-```m
-Function.From(type function (a as text, b as text) as text, (list) => list{0} & list{1})("2", "1")
-```
-
-Stated result:
-
-```m
-"21"
-```

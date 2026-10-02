@@ -16,11 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Duration.ToText(duration as nullable duration, optional format as nullable text) as nullable text
 ```
 
-Returns a textual representation in the form "day.hour:mins:sec" of the given duration value, `duration`.
+Returns the text of the form "d.h:m:s".
 
-- `duration`: A `duration` from which the textual representation is calculated.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `format`: *(Optional)* Deprecated, will raise an error if not null.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/duration-totext)
 
 ## Parameters
 
@@ -30,17 +30,3 @@ Returns a textual representation in the form "day.hour:mins:sec" of the given du
 | `format` | `nullable text` | yes |
 
 **Executed examples (3):** [examples/duration/duration-totext.md](../../examples/duration/duration-totext.md)
-
-## Examples (engine metadata — not verified here)
-
-Convert `#duration(2, 5, 55, 20)` into a text value.
-
-```m
-Duration.ToText(#duration(2, 5, 55, 20))
-```
-
-Stated result:
-
-```m
-"2.05:55:20"
-```

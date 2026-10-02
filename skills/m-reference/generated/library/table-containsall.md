@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.ContainsAll(table as table, rows as list, optional equationCriteria as any) as logical
 ```
 
-Indicates whether all the specified records in the list of records `rows`, appear as rows in the `table`.
-An optional parameter `equationCriteria` may be specified to control comparison between the rows of the table.
+Indicates whether all of the specified records appear as rows in the table.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-containsall)
 
 ## Parameters
 
@@ -28,52 +31,3 @@ An optional parameter `equationCriteria` may be specified to control comparison 
 | `equationCriteria` | `any` | yes |
 
 **Executed examples (1):** [examples/table-membership/table-containsall.md](../../examples/table-membership/table-containsall.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if the table contains all the rows, comparing only the column [CustomerID].
-
-```m
-Table.ContainsAll(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-        [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-    }),
-    {
-        [CustomerID = 1, Name = "Bill"],
-        [CustomerID = 2, Name = "Fred"]
-    },
-    "CustomerID"
-)
-```
-
-Stated result:
-
-```m
-true
-```
-
-Determine if the table contains all the rows.
-
-```m
-Table.ContainsAll(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-        [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-    }),
-    {
-        [CustomerID = 1, Name = "Bill"],
-        [CustomerID = 2, Name = "Fred"]
-    }
-)
-```
-
-Stated result:
-
-```m
-false
-```

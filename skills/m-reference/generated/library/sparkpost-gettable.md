@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 SparkPost.GetTable(DaysToAggregate as number, MetricColumns as text, NonMetricColumns as text, Path as text) as table
 ```
 
-This function can be used to retrieve data from a particular "Metrics" endpoint of the SparkPost API v1. When refreshing these tables or making calls to the SparkPost API using this connector, keep in mind that the SparkPost API has a strict API rate limit. If you see a 429 status code being returned from the SparkPost server you have hit the rate limit and will need to wait a few moments before making more calls. When choosing a value for the Number of days parameter, note that the API only stores 6 months worth of data.
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -26,17 +24,3 @@ This function can be used to retrieve data from a particular "Metrics" endpoint 
 | `MetricColumns` | `text` | no |
 | `NonMetricColumns` | `text` | no |
 | `Path` | `text` | no |
-
-## Examples (engine metadata — not verified here)
-
-Retrieves count_sent and count_rejected deliverability metrics for all campaign_ids aggregated over the last three days.
-
-```m
-Source = SparkPost.GetTable(3, "count_sent,count_rejected", "campaign_id", "metrics/deliverability/campaign")
-```
-
-Stated result:
-
-```m
-table
-```

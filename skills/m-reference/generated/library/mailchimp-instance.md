@@ -16,24 +16,8 @@ source: "#shared \u2014 desktop 2.157.879.0"
 MailChimp.Instance(path as text) as table
 ```
 
-Makes a call to the MailChimp API and returns the raw response.
-
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `path` | `text` | no |
-
-## Examples (engine metadata — not verified here)
-
-Returns raw data from the reports/click-details MailChimp API endpoint for a given campaign.
-
-```m
-MailChimp.Instance("reports/{campaign_id}/click-details")
-```
-
-Stated result:
-
-```m
-Raw click details data from the given campaign.
-```

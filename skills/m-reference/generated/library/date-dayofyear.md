@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Date.DayOfYear(dateTime as any) as nullable number
 ```
 
-Returns a number representing the day of the year in the provided `date`, `datetime`, or `datetimezone` value, `dateTime`.
+Returns a number from 1 to 366 representing the day of the year.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date-dayofyear)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns a number representing the day of the year in the provided `date`, `datet
 | `dateTime` | `any` | no |
 
 **Executed examples (3):** [examples/date/date-dayofyear.md](../../examples/date/date-dayofyear.md)
-
-## Examples (engine metadata — not verified here)
-
-The day of the year for March 1st, 2011.
-
-```m
-Date.DayOfYear(#date(2011, 03, 01))
-```
-
-Stated result:
-
-```m
-60
-```

@@ -277,7 +277,7 @@
    "category": "Record.Transformations",
    "returns": "record",
    "signature": "Record.ReorderFields(record as record, fieldOrder as list, optional missingField as nullable number) as record",
-   "summary": "Reorders the record fields to match the order of a list of field names.",
+   "summary": "Reorders the field(s) specified into the new order.",
    "hosts": [
     "desktop"
    ],

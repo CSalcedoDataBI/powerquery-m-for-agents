@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Cube.MeasureProperty(measure as any, propertyName as text) as any
 ```
 
-Returns the property `propertyName` of measure `measure`.
+Returns a property of a measure (cell property).
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/cube-measureproperty)
 
 ## Parameters
 

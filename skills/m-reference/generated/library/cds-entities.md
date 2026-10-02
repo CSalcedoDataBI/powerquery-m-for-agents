@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Cds.Entities(url as text, optional options as nullable record) as table
 ```
 
-Connect to your Common Data Service instance (Dynamics 365 and PowerApps).
-
 ## Parameters
 
 | Name | Type | Optional |

@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 PowerBI.Datamarts(optional server as nullable text) as table
 ```
 
-Imports data from Datamarts
-
 ## Parameters
 
 | Name | Type | Optional |

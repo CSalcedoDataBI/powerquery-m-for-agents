@@ -15,5 +15,3 @@ source: "#shared \u2014 desktop 2.157.879.0"
 ```m
 Stripe.Tables() as table
 ```
-
-Returns a table listing the available Stripe tables and functions.

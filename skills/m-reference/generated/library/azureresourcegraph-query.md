@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 AzureResourceGraph.Query(query as text, optional scope as nullable text, optional subscription as nullable text, optional managementGroup as nullable text, optional options as nullable record) as table
 ```
 
-See https://learn.microsoft.com/azure/governance/resource-graph/samples/starter?tabs=azure-cli for starter query samples.
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -27,11 +25,3 @@ See https://learn.microsoft.com/azure/governance/resource-graph/samples/starter?
 | `subscription` | `nullable text` | yes |
 | `managementGroup` | `nullable text` | yes |
 | `options` | `nullable record` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Return a table with query results of user query 'resources'
-
-```m
-AzureResourceGraph.Query("resources")
-```

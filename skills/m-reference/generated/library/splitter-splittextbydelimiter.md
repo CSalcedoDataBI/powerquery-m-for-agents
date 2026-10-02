@@ -18,6 +18,10 @@ Splitter.SplitTextByDelimiter(delimiter as text, optional quoteStyle as nullable
 
 Returns a function that splits text into a list of text according to the specified delimiter.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/splitter-splittextbydelimiter)
+
 ## Parameters
 
 | Name | Type | Optional |
@@ -27,17 +31,3 @@ Returns a function that splits text into a list of text according to the specifi
 | `csvStyle` | `nullable number` | yes |
 
 **Executed examples (3):** [examples/splitter/splitter-splittextbydelimiter.md](../../examples/splitter/splitter-splittextbydelimiter.md)
-
-## Examples (engine metadata — not verified here)
-
-Split the input by comma, ignoring quoted commas.
-
-```m
-Splitter.SplitTextByDelimiter(",", QuoteStyle.Csv)("a,""b,c"",d")
-```
-
-Stated result:
-
-```m
-{"a", "b,c", "d"}
-```

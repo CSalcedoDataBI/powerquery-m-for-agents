@@ -15,26 +15,3 @@ source: "#shared \u2014 desktop 2.157.879.0"
 ```m
 LEAP.Contents() as table
 ```
-
-Returns a table with relevant LEAP data.
-
-## Examples (engine metadata — not verified here)
-
-Returns a table with relevant LEAP data.
-
-```m
-LEAP.Contents
-```
-
-Stated result:
-
-```m
-#table({Name, Key, Data, ItemKind, ItemName, IsLeaf}, {
-                    { Matters & Clients, MC , Table, Folder, Table, false },
-                    { Firm, F , Table, Folder, Table, false },
-                    { officeSectionAlias, OF, Table, Folder, Table, false},
-                    { Management, MGMT, CreateManagementFolder(), Folder, Table, false},
-                    { trustSectionAlias, TR, CreateTrustFolder(trustAlias, controlledMoneyAlias), Folder, Table, false},
-                    { Custom Function, Q , CreateCustomDateRangeTable(), Folder, Folder, false }
-                })
-```

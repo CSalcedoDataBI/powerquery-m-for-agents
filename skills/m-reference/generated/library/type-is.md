@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Type.Is(type1 as type, type2 as type) as logical
 ```
 
-Determines if a value of `type1` is always compatible with `type2`. Parameter `type2` should be a primitive (or nullable primitive) type value. Otherwise, this function's behavior is undefined and shouldn't be relied on.
+Determines if a value of the first type is always compatible with the second type.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/type-is)
 
 ## Parameters
 
@@ -26,29 +30,3 @@ Determines if a value of `type1` is always compatible with `type2`. Parameter `t
 | `type2` | `type` | no |
 
 **Executed examples (3):** [examples/type/type-is.md](../../examples/type/type-is.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine if a value of type number can always also be treated as type any.
-
-```m
-Type.Is(type number, type any)
-```
-
-Stated result:
-
-```m
-true
-```
-
-Determine if a value of type any can always also be treated as type number.
-
-```m
-Type.Is(type any, type number)
-```
-
-Stated result:
-
-```m
-false
-```

@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.IsDistinct(list as list, optional equationCriteria as any) as logical
 ```
 
-Returns a logical value whether there are duplicates in the list `list`; `true` if the list is distinct, `false` if there are duplicate values.
+Indicates whether there are duplicates in the list.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-isdistinct)
 
 ## Parameters
 
@@ -26,29 +30,3 @@ Returns a logical value whether there are duplicates in the list `list`; `true` 
 | `equationCriteria` | `any` | yes |
 
 **Executed examples (1):** [examples/list-selection/list-isdistinct.md](../../examples/list-selection/list-isdistinct.md)
-
-## Examples (engine metadata — not verified here)
-
-Find if the list {1, 2, 3} is distinct (i.e. no duplicates).
-
-```m
-List.IsDistinct({1, 2, 3})
-```
-
-Stated result:
-
-```m
-true
-```
-
-Find if the list {1, 2, 3, 3} is distinct (i.e. no duplicates).
-
-```m
-List.IsDistinct({1, 2, 3, 3})
-```
-
-Stated result:
-
-```m
-false
-```

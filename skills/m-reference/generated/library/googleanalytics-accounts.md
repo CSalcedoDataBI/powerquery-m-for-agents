@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 GoogleAnalytics.Accounts(optional options as nullable record) as table
 ```
 
-Returns Google Analytics accounts that are accessible from the current credential.
+Returns Google Analytics accounts.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/googleanalytics-accounts)
 
 ## Parameters
 

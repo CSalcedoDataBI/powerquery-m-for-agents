@@ -18,6 +18,10 @@ Lines.ToText(lines as list, optional lineSeparator as nullable text) as text
 
 Converts a list of text into a single text. The specified lineSeparator is appended to each line. If not specified then the carriage return and line feed characters are used.
 
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/lines-totext)
+
 ## Parameters
 
 | Name | Type | Optional |

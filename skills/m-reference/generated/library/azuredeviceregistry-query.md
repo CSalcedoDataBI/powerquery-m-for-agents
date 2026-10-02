@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 AzureDeviceRegistry.Query(scope as text, optional subscriptions as nullable text, optional namespaces as nullable text, optional customAttributes as nullable text, optional options as nullable record) as table
 ```
 
-Connector to pull Assets and Devices from Azure Device Registry
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -27,9 +25,3 @@ Connector to pull Assets and Devices from Azure Device Registry
 | `namespaces` | `nullable text` | yes |
 | `customAttributes` | `nullable text` | yes |
 | `options` | `nullable record` | yes |
-
-## Examples (engine metadata — not verified here)
-
-```m
-AzureDeviceRegistry.Query("resources")
-```

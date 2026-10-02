@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.InsertRows(table as table, offset as number, rows as list) as table
 ```
 
-Returns a table with the list of rows, `rows`, inserted into the `table` at the given position, `offset`. Each column in the row to insert must match the column types of the table.
+Inserts a list of rows into the table at the specified position.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-insertrows)
 
 ## Parameters
 
@@ -27,51 +31,3 @@ Returns a table with the list of rows, `rows`, inserted into the `table` at the 
 | `rows` | `list` | no |
 
 **Executed examples (1):** [examples/table-row-operations/table-insertrows.md](../../examples/table-row-operations/table-insertrows.md)
-
-## Examples (engine metadata — not verified here)
-
-Insert the row into the table at position 1.
-
-```m
-Table.InsertRows(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"]
-    }),
-    1,
-    {[CustomerID = 3, Name = "Paul", Phone = "543-7890"]}
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-    [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-    [CustomerID = 2, Name = "Jim", Phone = "987-6543"]
-})
-```
-
-Insert two rows into the table at position 1.
-
-```m
-Table.InsertRows(
-    Table.FromRecords({[CustomerID = 1, Name = "Bob", Phone = "123-4567"]}),
-    1,
-    {
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"]
-    }
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({
-    [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-    [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-    [CustomerID = 3, Name = "Paul", Phone = "543-7890"]
-})
-```

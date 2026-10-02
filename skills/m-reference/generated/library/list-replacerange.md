@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.ReplaceRange(list as list, index as number, count as number, replaceWith as list) as list
 ```
 
-Replaces `count` values in the `list` with the list `replaceWith`, starting at specified position, `index`.
+Replaces count number of values starting at position with the replacement values.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-replacerange)
 
 ## Parameters
 
@@ -28,17 +32,3 @@ Replaces `count` values in the `list` with the list `replaceWith`, starting at s
 | `replaceWith` | `list` | no |
 
 **Executed examples (1):** [examples/list-transformation-functions/list-replacerange.md](../../examples/list-transformation-functions/list-replacerange.md)
-
-## Examples (engine metadata — not verified here)
-
-Replace {7, 8, 9} in the list {1, 2, 7, 8, 9, 5} with {3, 4}.
-
-```m
-List.ReplaceRange({1, 2, 7, 8, 9, 5}, 2, 3, {3, 4})
-```
-
-Stated result:
-
-```m
-{1, 2, 3, 4, 5}
-```

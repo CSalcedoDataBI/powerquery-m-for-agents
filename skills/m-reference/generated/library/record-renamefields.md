@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Record.RenameFields(record as record, renames as list, optional missingField as nullable number) as record
 ```
 
-Returns a record after renaming fields in the input `record` to the new field names specified in list `renames`. For multiple renames, a nested list can be used ({ {old1, new1}, {old2, new2} }).
+Applies rename(s) from a list in the form { old, new }.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/record-renamefields)
 
 ## Parameters
 
@@ -27,38 +31,3 @@ Returns a record after renaming fields in the input `record` to the new field na
 | `missingField` | `nullable number` | yes |
 
 **Executed examples (3):** [examples/record-transformations/record-renamefields.md](../../examples/record-transformations/record-renamefields.md)
-
-## Examples (engine metadata — not verified here)
-
-Rename the field "UnitPrice" to "Price" from the record.
-
-```m
-Record.RenameFields(
-    [OrderID = 1, CustomerID = 1, Item = "Fishing rod", UnitPrice = 100.0],
-    {"UnitPrice", "Price"}
-)
-```
-
-Stated result:
-
-```m
-[OrderID = 1, CustomerID = 1, Item = "Fishing rod", Price = 100.0]
-```
-
-Rename the fields "UnitPrice" to "Price" and "OrderNum" to "OrderID" from the record.
-
-```m
-Record.RenameFields(
-    [OrderNum = 1, CustomerID = 1, Item = "Fishing rod", UnitPrice = 100.0],
-    {
-        {"UnitPrice", "Price"},
-        {"OrderNum", "OrderID"}
-    }
-)
-```
-
-Stated result:
-
-```m
-[OrderID = 1, CustomerID = 1, Item = "Fishing rod", Price = 100.0]
-```

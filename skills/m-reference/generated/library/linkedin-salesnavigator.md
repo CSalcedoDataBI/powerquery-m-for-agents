@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 LinkedIn.SalesNavigator(selectContracts as text, optional startAt as nullable date, optional endAt as nullable date) as table
 ```
 
-LinkedIn Sales Navigator
-
 ## Parameters
 
 | Name | Type | Optional |

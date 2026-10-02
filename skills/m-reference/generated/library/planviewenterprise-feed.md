@@ -16,25 +16,9 @@ source: "#shared \u2014 desktop 2.157.879.0"
 PlanviewEnterprise.Feed(url as text, database as text) as table
 ```
 
-Returns a table with Planview Portfolios data.
-
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `url` | `text` | no |
 | `database` | `text` | no |
-
-## Examples (engine metadata — not verified here)
-
-Returns a table of Planview Portfolios information
-
-```m
-PlanviewEnterprise.Feed("https://contoso.com/planview", "pve")
-```
-
-Stated result:
-
-```m
-A table of Planview Portfolios data about database pve
-```

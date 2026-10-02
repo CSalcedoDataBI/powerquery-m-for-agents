@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Value.Equals(value1 as any, value2 as any, optional precision as nullable number) as logical
 ```
 
-Returns true if value `value1` is equal to value `value2`, false otherwise.
+Returns whether two values are equal.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/value-equals)
 
 ## Parameters
 

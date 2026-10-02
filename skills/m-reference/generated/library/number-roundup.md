@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.RoundUp(number as nullable number, optional digits as nullable number) as nullable number
 ```
 
-Returns the result of rounding `number` up to the next highest integer. If `number` is null, this function returns null.
-If `digits` is provided, `number` is rounded to the specified number of decimal digits.
+Returns the next highest number. The number of digits can be specified.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-roundup)
 
 ## Parameters
 
@@ -25,41 +28,3 @@ If `digits` is provided, `number` is rounded to the specified number of decimal 
 |---|---|---|
 | `number` | `nullable number` | no |
 | `digits` | `nullable number` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Round up 1.234 to integer.
-
-```m
-Number.RoundUp(1.234)
-```
-
-Stated result:
-
-```m
-2
-```
-
-Round up 1.999 to integer.
-
-```m
-Number.RoundUp(1.999)
-```
-
-Stated result:
-
-```m
-2
-```
-
-Round up 1.234 to two decimal places.
-
-```m
-Number.RoundUp(1.234, 2)
-```
-
-Stated result:
-
-```m
-1.24
-```

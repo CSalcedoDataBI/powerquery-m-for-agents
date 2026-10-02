@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Duration.TotalHours(duration as nullable duration) as nullable number
 ```
 
-Returns the total hours spanned by `duration`.
+Returns the total hours this duration spans.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/duration-totalhours)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns the total hours spanned by `duration`.
 | `duration` | `nullable duration` | no |
 
 **Executed examples (3):** [examples/duration/duration-totalhours.md](../../examples/duration/duration-totalhours.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the total hours spanned by a duration value.
-
-```m
-Duration.TotalHours(#duration(5, 4, 3, 2))
-```
-
-Stated result:
-
-```m
-124.05055555555555
-```

@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 List.DateTimeZones(start as datetimezone, count as number, step as duration) as list
 ```
 
-Returns a list of `datetimezone` values of size `count`, starting at `start`. The given increment, `step`, is a `duration` value that is added to every value.
+Generates a list of datetimezone values given an initial value, count, and incremental duration value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/list-datetimezones)
 
 ## Parameters
 
@@ -27,28 +31,3 @@ Returns a list of `datetimezone` values of size `count`, starting at `start`. Th
 | `step` | `duration` | no |
 
 **Executed examples (1):** [examples/list-generators/list-datetimezones.md](../../examples/list-generators/list-datetimezones.md)
-
-## Examples (engine metadata — not verified here)
-
-Create a list of 10 values starting from 5 minutes before New Year's Day (#datetimezone(2011, 12, 31, 23, 55, 0, -8, 0)) incrementing by 1 minute (#duration(0, 0, 1, 0)).
-
-```m
-List.DateTimeZones(#datetimezone(2011, 12, 31, 23, 55, 0, -8, 0), 10, #duration(0, 0, 1, 0))
-```
-
-Stated result:
-
-```m
-{
-    #datetimezone(2011, 12, 31, 23, 55, 0, -8, 0),
-    #datetimezone(2011, 12, 31, 23, 56, 0, -8, 0),
-    #datetimezone(2011, 12, 31, 23, 57, 0, -8, 0),
-    #datetimezone(2011, 12, 31, 23, 58, 0, -8, 0),
-    #datetimezone(2011, 12, 31, 23, 59, 0, -8, 0),
-    #datetimezone(2012, 1, 1, 0, 0, 0, -8, 0),
-    #datetimezone(2012, 1, 1, 0, 1, 0, -8, 0),
-    #datetimezone(2012, 1, 1, 0, 2, 0, -8, 0),
-    #datetimezone(2012, 1, 1, 0, 3, 0, -8, 0),
-    #datetimezone(2012, 1, 1, 0, 4, 0, -8, 0)
-}
-```

@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.ColumnNames(table as table) as list
 ```
 
-Returns the column names in the table `table` as a list of text.
+Returns the column names as a list.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-columnnames)
 
 ## Parameters
 
@@ -25,24 +29,3 @@ Returns the column names in the table `table` as a list of text.
 | `table` | `table` | no |
 
 **Executed examples (1):** [examples/table-column-operations/table-columnnames.md](../../examples/table-column-operations/table-columnnames.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the column names of the table.
-
-```m
-Table.ColumnNames(
-    Table.FromRecords({
-        [CustomerID = 1, Name = "Bob", Phone = "123-4567"],
-        [CustomerID = 2, Name = "Jim", Phone = "987-6543"],
-        [CustomerID = 3, Name = "Paul", Phone = "543-7890"],
-        [CustomerID = 4, Name = "Ringo", Phone = "232-1550"]
-    })
-)
-```
-
-Stated result:
-
-```m
-{"CustomerID", "Name", "Phone"}
-```

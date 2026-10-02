@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.Sqrt(number as nullable number) as nullable number
 ```
 
-Returns the square root of `number`.
-If `number` is null, `Number.Sqrt` returns null. If it is a negative value, `Number.NaN` is returned (Not a number).
+Returns the square root of the number.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-sqrt)
 
 ## Parameters
 
@@ -26,29 +29,3 @@ If `number` is null, `Number.Sqrt` returns null. If it is a negative value, `Num
 | `number` | `nullable number` | no |
 
 **Executed examples (3):** [examples/number-operations/number-sqrt.md](../../examples/number-operations/number-sqrt.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the square root of 625.
-
-```m
-Number.Sqrt(625)
-```
-
-Stated result:
-
-```m
-25
-```
-
-Find the square root of 85.
-
-```m
-Number.Sqrt(85)
-```
-
-Stated result:
-
-```m
-9.2195444572928871
-```

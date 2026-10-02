@@ -16,36 +16,8 @@ source: "#shared \u2014 desktop 2.157.879.0"
 InformationGrid.Contents(server as text) as table
 ```
 
-Retrieves information from authorised BI services available on the given server
-
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `server` | `text` | no |
-
-## Examples (engine metadata — not verified here)
-
-Returns a Navigation Table listing the available InformationGrid BI services
-
-```m
-InformationGrid.Contents("192.168.1.123", false)
-```
-
-Stated result:
-
-```m
-(Navigation table listing available BI services)
-```
-
-Returns information from a specific named InformationGrid BI service using HTTP
-
-```m
-InformationGrid.Contents("igserver.somedomain.com", true){[Service="service-name"]}[Data]
-```
-
-Stated result:
-
-```m
-(Data retrieved for the named BI service)
-```

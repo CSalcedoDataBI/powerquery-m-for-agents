@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Record.SelectFields(record as record, fields as any, optional missingField as nullable number) as record
 ```
 
-Returns a record which includes only the fields specified in list `fields` from the input `record`.
+Returns a record that contains only the specified fields.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/record-selectfields)
 
 ## Parameters
 
@@ -27,20 +31,3 @@ Returns a record which includes only the fields specified in list `fields` from 
 | `missingField` | `nullable number` | yes |
 
 **Executed examples (3):** [examples/record-selection/record-selectfields.md](../../examples/record-selection/record-selectfields.md)
-
-## Examples (engine metadata — not verified here)
-
-Select the fields "Item" and "Price" in the record.
-
-```m
-Record.SelectFields(
-    [OrderID = 1, CustomerID = 1, Item = "Fishing rod", Price = 100.0],
-    {"Item", "Price"}
-)
-```
-
-Stated result:
-
-```m
-[Item = "Fishing rod", Price = 100]
-```

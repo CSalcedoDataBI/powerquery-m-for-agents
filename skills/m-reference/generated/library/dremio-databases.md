@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Dremio.Databases(server as text, optional engine as nullable text, optional routingTag as nullable text, optional routingQueue as nullable text) as table
 ```
 
-Returns a table listing the datasets on Dremio Server. This will be the same list as shown in Power BI Navigator. See https://docs.microsoft.com/en-us/powerquery-m/odbc-datasource
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -26,17 +24,3 @@ Returns a table listing the datasets on Dremio Server. This will be the same lis
 | `engine` | `nullable text` | yes |
 | `routingTag` | `nullable text` | yes |
 | `routingQueue` | `nullable text` | yes |
-
-## Examples (engine metadata — not verified here)
-
-How to return the list of datasets on localhost. This uses the default encrypted connection.
-
-```m
-Dremio.Databases("localhost:31010")
-```
-
-Stated result:
-
-```m
-A table listing the datasets on localhost.
-```

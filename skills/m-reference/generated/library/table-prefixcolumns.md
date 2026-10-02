@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Table.PrefixColumns(table as table, prefix as text) as table
 ```
 
-Returns a table where all the column names from the `table` provided are prefixed with the given text, `prefix`, plus a period in the form `prefix.ColumnName`.
+Returns a table where the columns have all been prefixed with the given text.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/table-prefixcolumns)
 
 ## Parameters
 
@@ -26,20 +30,3 @@ Returns a table where all the column names from the `table` provided are prefixe
 | `prefix` | `text` | no |
 
 **Executed examples (1):** [examples/table-column-operations/table-prefixcolumns.md](../../examples/table-column-operations/table-prefixcolumns.md)
-
-## Examples (engine metadata — not verified here)
-
-Prefix the columns with "MyTable" in the table.
-
-```m
-Table.PrefixColumns(
-    Table.FromRecords({[CustomerID = 1, Name = "Bob", Phone = "123-4567"]}),
-    "MyTable"
-)
-```
-
-Stated result:
-
-```m
-Table.FromRecords({[MyTable.CustomerID = 1, MyTable.Name = "Bob", MyTable.Phone = "123-4567"]})
-```

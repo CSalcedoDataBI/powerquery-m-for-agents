@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Percentage.From(value as any, optional culture as nullable text) as nullable number
 ```
 
-Returns a `percentage` value from the given `value`. If the given `value` is `null`, `Percentage.From` returns `null`. If the given `value` is `text` with a trailing percent symbol, then the converted decimal number will be returned. Otherwise, the value will be converted to a `number` using `Number.From`. An optional `culture` may also be provided (for example, "en-US").
+Returns a percentage value from the given value.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/percentage-from)
 
 ## Parameters
 
@@ -26,17 +30,3 @@ Returns a `percentage` value from the given `value`. If the given `value` is `nu
 | `culture` | `nullable text` | yes |
 
 **Executed examples (3):** [examples/number-conversion-and-formatting/percentage-from.md](../../examples/number-conversion-and-formatting/percentage-from.md)
-
-## Examples (engine metadata — not verified here)
-
-Get the `percentage` value of `"12.3%"`.
-
-```m
-Percentage.From("12.3%")
-```
-
-Stated result:
-
-```m
-0.123
-```

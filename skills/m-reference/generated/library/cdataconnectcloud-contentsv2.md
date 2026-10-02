@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 CDataConnectCloud.ContentsV2(optional options as nullable record) as table
 ```
 
-Returns a table with relevant data from the connected data source in CData Connect Cloud.
-
 ## Parameters
 
 | Name | Type | Optional |

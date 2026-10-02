@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Soda.Feed(url as text) as table
 ```
 
-Returns a table from the contents at the specified URL `url` formatted according to the SODA 2.0 API. The URL must point to a valid SODA-compliant source that ends in a .csv extension.
+Returns a table from the contents at the specified URL formatted according to the SODA 2.0 API.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/soda-feed)
 
 ## Parameters
 

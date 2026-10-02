@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Duration.Minutes(duration as nullable duration) as nullable number
 ```
 
-Returns the minutes portion of `duration`.
+Returns the minutes portion of a duration.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/duration-minutes)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns the minutes portion of `duration`.
 | `duration` | `nullable duration` | no |
 
 **Executed examples (3):** [examples/duration/duration-minutes.md](../../examples/duration/duration-minutes.md)
-
-## Examples (engine metadata — not verified here)
-
-Extract the minutes from a duration value.
-
-```m
-Duration.Minutes(#duration(5, 4, 3, 2))
-```
-
-Stated result:
-
-```m
-3
-```

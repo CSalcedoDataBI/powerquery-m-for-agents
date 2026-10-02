@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Record.FieldNames(record as record) as list
 ```
 
-Returns the names of the fields in the record `record` as text.
+Returns the names of the fields.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/record-fieldnames)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns the names of the fields in the record `record` as text.
 | `record` | `record` | no |
 
 **Executed examples (3):** [examples/record-selection/record-fieldnames.md](../../examples/record-selection/record-fieldnames.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the names of the fields in the record.
-
-```m
-Record.FieldNames([OrderID = 1, CustomerID = 1, Item = "Fishing rod", Price = 100.0])
-```
-
-Stated result:
-
-```m
-{"OrderID", "CustomerID", "Item", "Price"}
-```

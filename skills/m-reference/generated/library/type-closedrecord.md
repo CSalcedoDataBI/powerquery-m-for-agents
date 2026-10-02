@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Type.ClosedRecord(type as type) as type
 ```
 
-Returns a closed version of the given `record` `type` (or the same type, if it is already closed).
+Returns a closed version of the given record type (or the same type, if it is already closed).
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/type-closedrecord)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns a closed version of the given `record` `type` (or the same type, if it i
 | `type` | `type` | no |
 
 **Executed examples (3):** [examples/type/type-closedrecord.md](../../examples/type/type-closedrecord.md)
-
-## Examples (engine metadata — not verified here)
-
-Create a closed version of `type [ A = number,...]`.
-
-```m
-Type.ClosedRecord(type [A = number, ...])
-```
-
-Stated result:
-
-```m
-type [A = number]
-```

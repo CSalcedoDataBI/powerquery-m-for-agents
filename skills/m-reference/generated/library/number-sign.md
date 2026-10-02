@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.Sign(number as nullable number) as nullable number
 ```
 
-Returns 1 for if `number` is a positive number, -1 if it is a negative number, and 0 if it is zero.
-If `number` is null, `Number.Sign` returns null.
+Returns 1 if the number is positive, -1 if it is negative, and 0 if it is zero.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-sign)
 
 ## Parameters
 
@@ -26,41 +29,3 @@ If `number` is null, `Number.Sign` returns null.
 | `number` | `nullable number` | no |
 
 **Executed examples (3):** [examples/number-operations/number-sign.md](../../examples/number-operations/number-sign.md)
-
-## Examples (engine metadata — not verified here)
-
-Determine the sign of 182.
-
-```m
-Number.Sign(182)
-```
-
-Stated result:
-
-```m
-1
-```
-
-Determine the sign of -182.
-
-```m
-Number.Sign(-182)
-```
-
-Stated result:
-
-```m
--1
-```
-
-Determine the sign of 0.
-
-```m
-Number.Sign(0)
-```
-
-Stated result:
-
-```m
-0
-```

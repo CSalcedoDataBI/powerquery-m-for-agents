@@ -16,24 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.Tan(number as nullable number) as nullable number
 ```
 
-Returns the tangent of `number`.
+Returns the tangent of the number.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-tan)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `number` | `nullable number` | no |
-
-## Examples (engine metadata — not verified here)
-
-Find the tangent of the angle 1.
-
-```m
-Number.Tan(1)
-```
-
-Stated result:
-
-```m
-1.5574077246549023
-```

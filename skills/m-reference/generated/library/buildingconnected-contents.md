@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 BuildingConnected.Contents(optional rangeStart as nullable datetimezone, optional rangeEnd as nullable datetimezone, optional includeClosed as nullable logical) as table
 ```
 
-Returns a table of entities for the given url and entity name.
-
 ## Parameters
 
 | Name | Type | Optional |
@@ -25,11 +23,3 @@ Returns a table of entities for the given url and entity name.
 | `rangeStart` | `nullable datetimezone` | yes |
 | `rangeEnd` | `nullable datetimezone` | yes |
 | `includeClosed` | `nullable logical` | yes |
-
-## Examples (engine metadata — not verified here)
-
-Get entities for a given url and entity name.
-
-```m
-BuildingConnected.Contents("https://developer.api.autodesk.com")
-```

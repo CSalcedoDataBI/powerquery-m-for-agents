@@ -16,8 +16,6 @@ source: "#shared \u2014 desktop 2.157.879.0"
 CogniteDataSource.Contents(project as text, organization as text) as table
 ```
 
-Cognite Data Fusion (CDF)
-
 ## Parameters
 
 | Name | Type | Optional |

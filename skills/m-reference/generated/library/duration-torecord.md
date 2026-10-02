@@ -16,9 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Duration.ToRecord(duration as duration) as record
 ```
 
-Returns a record containing the parts the duration value, `duration`.
+Returns a record containing the parts of the duration.
 
-- `duration`: A `duration` from which the record is created.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/duration-torecord)
 
 ## Parameters
 
@@ -27,22 +29,3 @@ Returns a record containing the parts the duration value, `duration`.
 | `duration` | `duration` | no |
 
 **Executed examples (3):** [examples/duration/duration-torecord.md](../../examples/duration/duration-torecord.md)
-
-## Examples (engine metadata — not verified here)
-
-Convert `#duration(2, 5, 55, 20)` into a record of its parts including days, hours, minutes, and seconds if applicable.
-
-```m
-Duration.ToRecord(#duration(2, 5, 55, 20))
-```
-
-Stated result:
-
-```m
-[
-    Days = 2,
-    Hours = 5,
-    Minutes = 55,
-    Seconds = 20
-]
-```

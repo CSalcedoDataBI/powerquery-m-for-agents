@@ -16,8 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Text.PadStart(text as nullable text, count as number, optional character as nullable text) as nullable text
 ```
 
-Returns a `text` value padded to length `count` by inserting spaces at the start of the text value `text`.
-An optional character `character` can be used to specify the character used for padding. The default pad character is a space.
+Returns text of a specified length by padding the start of the given text.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/text-padstart)
 
 ## Parameters
 
@@ -28,29 +31,3 @@ An optional character `character` can be used to specify the character used for 
 | `character` | `nullable text` | yes |
 
 **Executed examples (1):** [examples/text-transformations/text-padstart.md](../../examples/text-transformations/text-padstart.md)
-
-## Examples (engine metadata — not verified here)
-
-Pad the start of a text value so it is 10 characters long.
-
-```m
-Text.PadStart("Name", 10)
-```
-
-Stated result:
-
-```m
-"      Name"
-```
-
-Pad the start of a text value with "|" so it is 10 characters long.
-
-```m
-Text.PadStart("Name", 10, "|")
-```
-
-Stated result:
-
-```m
-"||||||Name"
-```

@@ -16,36 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Expression.Identifier(name as text) as text
 ```
 
-Returns the M source code representation of an identifier `name`.
+Returns the M source code representation of an identifier.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/expression-identifier)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `name` | `text` | no |
-
-## Examples (engine metadata — not verified here)
-
-Get the M source code representation of an identifier.
-
-```m
-Expression.Identifier("MyIdentifier")
-```
-
-Stated result:
-
-```m
-"MyIdentifier"
-```
-
-Get the M source code representation of an identifier that contains a space.
-
-```m
-Expression.Identifier("My Identifier")
-```
-
-Stated result:
-
-```m
-"#""My Identifier"""
-```

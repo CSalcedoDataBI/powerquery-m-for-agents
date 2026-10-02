@@ -16,12 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Number.IntegerDivide(number1 as nullable number, number2 as nullable number, optional precision as nullable number) as nullable number
 ```
 
-Returns the integer portion of the result from dividing a number, `number1`, by another number, `number2`.
-If `number1` or `number2` are null, `Number.IntegerDivide` returns null.
+Divides two numbers and returns the integer portion of the result.
 
-- `number1`: The dividend.
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
-- `number2`: The divisor.
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-integerdivide)
 
 ## Parameters
 
@@ -32,29 +31,3 @@ If `number1` or `number2` are null, `Number.IntegerDivide` returns null.
 | `precision` | `nullable number` | yes |
 
 **Executed examples (4):** [examples/number-operations/number-integerdivide.md](../../examples/number-operations/number-integerdivide.md)
-
-## Examples (engine metadata — not verified here)
-
-Divide 6 by 4.
-
-```m
-Number.IntegerDivide(6, 4)
-```
-
-Stated result:
-
-```m
-1
-```
-
-Divide 8.3 by 3.
-
-```m
-Number.IntegerDivide(8.3, 3)
-```
-
-Stated result:
-
-```m
-2
-```

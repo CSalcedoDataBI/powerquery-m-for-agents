@@ -16,24 +16,14 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Uri.EscapeDataString(data as text) as text
 ```
 
-Encodes special characters in the input `data` according to the rules of RFC 3986.
+Encodes special characters in accordance with RFC 3986.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/uri-escapedatastring)
 
 ## Parameters
 
 | Name | Type | Optional |
 |---|---|---|
 | `data` | `text` | no |
-
-## Examples (engine metadata — not verified here)
-
-Encode the special characters in "+money$".
-
-```m
-Uri.EscapeDataString("+money$")
-```
-
-Stated result:
-
-```m
-"%2Bmoney%24"
-```

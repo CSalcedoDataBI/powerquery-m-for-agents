@@ -16,7 +16,11 @@ source: "#shared \u2014 desktop 2.157.879.0"
 Type.FunctionRequiredParameters(type as type) as number
 ```
 
-Returns a number indicating the minimum number of parameters required to invoke the input `type` of function.
+Returns a number indicating the minimum number of parameters required to invoke the type of function.
+
+*Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
+
+Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/type-functionrequiredparameters)
 
 ## Parameters
 
@@ -25,17 +29,3 @@ Returns a number indicating the minimum number of parameters required to invoke 
 | `type` | `type` | no |
 
 **Executed examples (3):** [examples/type/type-functionrequiredparameters.md](../../examples/type/type-functionrequiredparameters.md)
-
-## Examples (engine metadata — not verified here)
-
-Find the number of required parameters to the function `(x as number, optional y as text)`.
-
-```m
-Type.FunctionRequiredParameters(type function (x as number, optional y as text) as any)
-```
-
-Stated result:
-
-```m
-1
-```
