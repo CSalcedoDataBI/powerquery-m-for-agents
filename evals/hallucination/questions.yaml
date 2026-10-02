@@ -1,0 +1,306 @@
+# Questions for the invented-name A/B (#7). Same design as dax-for-agents.
+#
+# Each question must be one whose answer NAMES M LIBRARY FUNCTIONS, because that is what the
+# metric counts: every dotted name (Table.AddColumn, BinaryFormat.Byte) and every # literal
+# written in the answer's code. A question answerable in prose measures nothing.
+#
+# `regime` splits the bank in two, and the halves are never averaged together:
+#   core  Text, List, Table, Record, Number, Date and friends: the part of the library every
+#         tutorial covers and every model has seen thousands of times.
+#   deep  BinaryFormat, Splitter/Combiner/Replacer/Comparer, Type, Expression, Lines, Uri,
+#         Cube, Diagnostics, Function: the part almost nobody writes about.
+# The claim "the reference helps" can be true for one half and false for the other, and a
+# single blended number would hide which.
+#
+# `category` is the catalogue file (generated/catalog/<category>.json) whose rows arm B is
+# given: names and one-line summaries, never the card that holds the answer. Handing over
+# the answer would measure obedience, not invention.
+#
+# `traps` are names this question is known to attract that do NOT exist. They are not the
+# metric (the metric is the whole catalogue); they show what the question is for, and a test
+# asserts each one is absent from the catalogue, so a trap Microsoft later ships stops being
+# a trap loudly.
+
+questions:
+  # ---------------------------------------------------------------- core
+  - id: text-first-chars
+    regime: core
+    category: text
+    question: >-
+      In Power Query M, how do I keep only the first 3 characters of a text column, and how
+      do I get the last 3? Name the functions and show a short step.
+    traps: [Text.Left, Text.Right, Text.Substring]
+
+  - id: text-between-delimiters
+    regime: core
+    category: text
+    question: >-
+      In Power Query M I have codes like "INV-2024-0042". How do I extract the part between
+      the two dashes? Name the function and show the expression.
+    traps: [Text.Extract, Text.SubstringBetween, Text.Mid]
+
+  - id: text-proper-trim
+    regime: core
+    category: text
+    question: >-
+      In Power Query M, how do I trim spaces from a name and capitalise each word? Show a
+      Table.TransformColumns step that does both.
+    traps: [Text.TitleCase, Text.Capitalize, Text.Strip]
+
+  - id: list-running-total
+    regime: core
+    category: list
+    question: >-
+      In Power Query M, how do I build a running total of a list of numbers without a loop?
+      Name the list function and show the code.
+    traps: [List.RunningSum, List.CumulativeSum, List.Scan]
+
+  - id: list-unique-count
+    regime: core
+    category: list
+    question: >-
+      In Power Query M, how do I count the distinct values in a column of a table? Name the
+      functions and show the expression.
+    traps: [List.CountDistinct, List.DistinctCount, Table.CountDistinct]
+
+  - id: list-pairwise
+    regime: core
+    category: list
+    question: >-
+      In Power Query M, how do I pair two lists element by element, like Python's zip, and
+      then multiply each pair? Show the code.
+    traps: [List.Pair, List.Map, List.ZipWith]
+
+  - id: table-rank
+    regime: core
+    category: table
+    question: >-
+      In Power Query M, how do I add a rank column to a table of sales, highest amount first,
+      with ties sharing a rank? Name the function and show the step.
+    traps: [Table.AddRank, Table.Rank, Table.RankColumn]
+
+  - id: table-unpivot
+    regime: core
+    category: table
+    question: >-
+      In Power Query M, how do I turn month columns (Jan, Feb, Mar...) into rows, keeping the
+      Product column? Name the function and show the step.
+    traps: [Table.UnpivotAll, Table.Melt, Table.ColumnsToRows]
+
+  - id: table-left-join
+    regime: core
+    category: table
+    question: >-
+      In Power Query M, how do I left-join Sales to Customers on CustomerID and bring only the
+      customer Name into Sales? Name the functions and show the steps.
+    traps: [Table.LeftJoin, Table.Merge, Table.Lookup]
+
+  - id: table-group-concat
+    regime: core
+    category: table
+    question: >-
+      In Power Query M, how do I group a table by Customer and concatenate every product they
+      bought into one comma-separated text? Show the Table.Group step.
+    traps: [Text.Concat, List.Concatenate, Table.GroupConcat]
+
+  - id: table-rename-many
+    regime: core
+    category: table
+    question: >-
+      In Power Query M, how do I rename many columns at once, for example replacing every
+      underscore in the column names with a space? Show the code.
+    traps: [Table.RenameAllColumns, Table.TransformColumnNames2, Table.ReplaceColumnNames]
+
+  - id: record-to-table
+    regime: core
+    category: record
+    question: >-
+      In Power Query M, how do I turn a record into a two-column table of names and values,
+      and how do I safely read a field that might not exist? Name the functions.
+    traps: [Record.ToRows, Record.GetField, Record.TryField]
+
+  - id: number-round-half-up
+    regime: core
+    category: number
+    question: >-
+      In Power Query M, Number.Round(2.5) gives 2. How do I round half up so 2.5 becomes 3,
+      and how do I always round down? Name the functions or options.
+    traps: [Number.RoundHalfUp, Number.Floor, Number.Ceiling]
+
+  - id: date-end-of-month
+    regime: core
+    category: date
+    question: >-
+      In Power Query M, how do I get the last day of the month of a date, and the number of
+      days in that month? Name the functions.
+    traps: [Date.EOMonth, Date.LastDayOfMonth, Date.MonthEnd]
+
+  - id: date-age-years
+    regime: core
+    category: date
+    question: >-
+      In Power Query M, how do I compute a person's age in whole years from a BirthDate column
+      as of today? Show the expression.
+    traps: [Date.DateDiff, Date.YearsBetween, Date.Diff]
+
+  - id: date-weekday-name
+    regime: core
+    category: date
+    question: >-
+      In Power Query M, how do I add a column with the weekday name in Spanish, and another
+      with the ISO week number? Name the functions.
+    traps: [Date.WeekdayName, Date.ISOWeekNumber, Date.WeekNumber]
+
+  - id: duration-hours
+    regime: core
+    category: duration
+    question: >-
+      In Power Query M, I subtract two datetimes and get a duration. How do I turn it into a
+      decimal number of hours? Name the function.
+    traps: [Duration.ToHours, Duration.AsHours, Duration.InHours]
+
+  - id: datetime-parse-culture
+    regime: core
+    category: datetime
+    question: >-
+      In Power Query M, how do I parse "31/12/2024 18:30" as a datetime when the machine's
+      culture is en-US? Show the expression.
+    traps: [DateTime.Parse, DateTime.ParseExact, DateTime.FromString]
+
+  # ---------------------------------------------------------------- deep
+  - id: binary-read-header
+    regime: deep
+    category: binary-formats
+    question: >-
+      In Power Query M, how do I read a binary file whose first 4 bytes are a big-endian
+      unsigned record count, followed by that many 2-byte little-endian integers? Name the
+      BinaryFormat functions and show the code.
+    traps: [BinaryFormat.UInt32, BinaryFormat.Int16, BinaryFormat.BigEndian]
+
+  - id: binary-length-prefixed-text
+    regime: deep
+    category: binary-formats
+    question: >-
+      In Power Query M, how do I parse a binary where each record is a one-byte length
+      followed by that many bytes of UTF-8 text? Name the BinaryFormat functions.
+    traps: [BinaryFormat.String, BinaryFormat.PascalString, BinaryFormat.VarText]
+
+  - id: binary-compression
+    regime: deep
+    category: binary
+    question: >-
+      In Power Query M, how do I decompress a gzip-compressed binary and then read it as
+      lines of text? Name the functions.
+    traps: [Binary.Gunzip, Binary.Unzip, Binary.ToLines]
+
+  - id: splitter-camelcase
+    regime: deep
+    category: splitter
+    question: >-
+      In Power Query M, how do I split "OrderDateKey" into "Order", "Date", "Key" at each
+      change from lower to upper case? Name the splitter function and show the code.
+    traps: [Splitter.SplitByCase, Splitter.SplitTextByCamelCase, Text.SplitCamelCase]
+
+  - id: splitter-fixed-width
+    regime: deep
+    category: splitter
+    question: >-
+      In Power Query M, how do I split a fixed-width text line into fields of 5, 10 and 3
+      characters? Name the splitter function and show the step.
+    traps: [Splitter.SplitTextByWidths, Splitter.FixedWidth, Text.SplitByLength]
+
+  - id: combiner-columns
+    regime: deep
+    category: combiner
+    question: >-
+      In Power Query M, how do I merge FirstName and LastName columns into one FullName column
+      separated by a space? Name the combiner function and show the step.
+    traps: [Combiner.CombineTextWithDelimiter, Combiner.Join, Combiner.Concatenate]
+
+  - id: replacer-partial
+    regime: deep
+    category: replacer
+    question: >-
+      In Power Query M, Table.ReplaceValue replaces whole cells unless I pass a different
+      replacer. Which replacer replaces text inside a cell? Show the step.
+    traps: [Replacer.ReplacePartial, Replacer.ReplaceSubstring, Replacer.ReplaceAll]
+
+  - id: comparer-ignore-case
+    regime: deep
+    category: comparer
+    question: >-
+      In Power Query M, how do I make List.Distinct or Text.Contains ignore case? Name the
+      comparer and show both calls.
+    traps: [Comparer.IgnoreCase, Comparer.CaseInsensitive, Comparer.Ordinal.IgnoreCase]
+
+  - id: type-replace-schema
+    regime: deep
+    category: type
+    question: >-
+      In Power Query M, how do I read the column names and types of a table's type, and how
+      do I set a table's type to a new one with Value.ReplaceType? Name the Type functions.
+    traps: [Type.TableColumns, Type.Columns, Type.GetSchema]
+
+  - id: type-function-params
+    regime: deep
+    category: type
+    question: >-
+      In Power Query M, given a function value, how do I list its parameters and its return
+      type? Name the Type functions and show the code.
+    traps: [Type.FunctionParams, Type.Parameters, Function.Parameters]
+
+  - id: expression-evaluate
+    regime: deep
+    category: expression
+    question: >-
+      In Power Query M, how do I evaluate a text such as "1 + 2" as M code, with Text and List
+      available to it? Name the function and show the call.
+    traps: [Expression.Eval, Expression.Run, Expression.Execute]
+
+  - id: function-invoke-after
+    regime: deep
+    category: function
+    question: >-
+      In Power Query M, how do I call a web API and wait 2 seconds between calls, and how do
+      I invoke a function with a list of arguments? Name the Function functions.
+    traps: [Function.Delay, Function.Sleep, Function.Apply]
+
+  - id: lines-from-binary
+    regime: deep
+    category: lines
+    question: >-
+      In Power Query M, how do I turn a binary text file into a list of lines, and a list of
+      lines back into text? Name the Lines functions.
+    traps: [Lines.Split, Lines.Read, Lines.Join]
+
+  - id: uri-query-string
+    regime: deep
+    category: uri
+    question: >-
+      In Power Query M, how do I build a URL query string from a record of parameters with
+      proper escaping, and how do I parse a URL into its parts? Name the Uri functions.
+    traps: [Uri.EncodeQuery, Uri.Parse, Uri.Encode]
+
+  - id: diagnostics-trace
+    regime: deep
+    category: diagnostics
+    question: >-
+      In Power Query M, how do I write a trace message while a step evaluates so it shows up
+      in the diagnostics log? Name the function and its trace levels.
+    traps: [Diagnostics.Log, Diagnostics.Write, Diagnostics.Print]
+
+  - id: cube-measures
+    regime: deep
+    category: cube
+    question: >-
+      In Power Query M, connected to an Analysis Services cube, how do I add a measure column
+      and expand a dimension attribute? Name the Cube functions.
+    traps: [Cube.AddMeasure, Cube.ExpandDimension, Cube.SelectMeasures]
+
+  - id: metadata-attach
+    regime: deep
+    category: metadata
+    question: >-
+      In Power Query M, how do I attach documentation metadata to a custom function's type
+      and later read it back? Name the functions.
+    traps: [Value.SetMetadata, Value.GetMetadata, Type.SetDocumentation]

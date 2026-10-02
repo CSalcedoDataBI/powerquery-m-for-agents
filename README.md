@@ -8,7 +8,7 @@ doesn't tell you.
 > and the build it came from are in the header of
 > [`catalog.md`](skills/m-reference/generated/catalog.md), counted by the generator rather
 > than typed here. Executed examples cover the Text, List and Table functions, and the language
-> itself has hand-written concept pages. No second host or evals yet. Plan and open questions:
+> itself has hand-written concept pages. No second host yet. Plan and open questions:
 > [design spec](docs/superpowers/specs/2026-09-28-powerquery-m-for-agents-design.md).
 
 Sibling of [dax-for-agents](https://github.com/CSalcedoDataBI/dax-for-agents), with the same
@@ -27,6 +27,35 @@ So the catalogue is **exported, not scraped**:
 - Exporting several hosts (Desktop, Excel, Dataflows Gen2) and merging them gives every card
   a `hosts` field. No public document carries that.
 - Regenerating means running one query in a new Desktop build.
+
+## Does it stop invented functions?
+
+Each question of the [bank](evals/hallucination/questions.yaml) is asked twice of the same
+model: alone, and with the catalogue rows of its category (names and one-line summaries,
+never the card that holds the answer). Every M library name written in the answer's code is
+looked up in the catalogue; a name the engine does not have is an invention. No model judges
+another. A question counts only when the model answered both times.
+
+| Model | Questions compared | Invented, without the reference | Invented, with it |
+|---|---|---|---|
+| Claude Haiku 4.5 | 35 | 10 | **6** |
+| Claude Sonnet 5.5 | 30 | 0 | 1 |
+| DeepSeek V4-Pro | 33 | 5 | **2** |
+| DeepSeek V4-Flash | 35 | 9 | **1** |
+
+What the inventions look like: `BinaryFormat.BigEndian` (it is `ByteOrder.BigEndian`),
+`Diagnostics.TraceLevel.Information` (it is `TraceLevel.Information`), `Thread.Sleep`,
+`Splitter.FixedWidth`, `DateTime.Now`. They sit mostly in the less-written corners of the
+library (BinaryFormat, Diagnostics, Type, Uri, Cube), which is where the reference helps most.
+The strongest model barely invents with or without it: the reference earns its keep with the
+smaller and cheaper ones.
+
+Sonnet 5.5 refuses some questions outright (evaluating text as M with `Expression.Evaluate`,
+waiting between web calls), and DeepSeek V4-Pro sometimes spends its whole budget reasoning;
+those questions are left out of that model's row rather than scored as zero. Every answer is
+in [`evals/hallucination/runs/`](evals/hallucination/runs/), and
+`python evals/hallucination/run_ab.py --replay <file>` recounts any of them with no API call.
+`scripts/check_eval_claims.py` checks this table against those files in CI.
 
 ## Skills
 
@@ -66,6 +95,7 @@ The repository also holds maintainer tools. None runs unless you run it:
 | `scripts/*.py` | Python checks, the same ones CI runs | Nothing | Nothing |
 | `lab/runner/`, `lab/shared-export/` | Open Power BI Desktop on this machine; the runner evaluates the example blocks there, limited to functions that compute on values (`scripts/m_blocks.py`) | Nothing | Nothing |
 | `lab/review/build_review.py` | Python; writes the review PBIPs, which you open yourself | Nothing | Nothing |
+| `evals/hallucination/run_ab.py` | Python, standard library plus PyYAML | Each benchmark question to the Anthropic or DeepSeek API, with `ANTHROPIC_API_KEY` or `DEEPSEEK_API_KEY` read from the environment. `--replay` sends nothing | Nothing |
 | `lab/drafting/pilot.py` (pilot) | Python; writes the prompts, and turns the answers `run_dsh.ps1` saved into example pages | Nothing | Nothing |
 | `lab/drafting/run_dsh.ps1` (pilot, opt-in) | A Docker container with DeepSeek's `dsh` CLI | Each prompt to the DeepSeek API, with `DEEPSEEK_API_KEY` read from your Windows user environment | When the image is built: the `node:24-bookworm-slim` base image, and `@deepseek-ai/dsh` from npm at a pinned version |
 

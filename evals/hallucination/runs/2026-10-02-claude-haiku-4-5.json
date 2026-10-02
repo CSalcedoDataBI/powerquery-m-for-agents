@@ -1,0 +1,426 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "provider": "anthropic",
+  "records": [
+    {
+      "id": "text-first-chars",
+      "regime": "core",
+      "category": "text",
+      "question": "In Power Query M, how do I keep only the first 3 characters of a text column, and how do I get the last 3? Name the functions and show a short step.",
+      "A": {
+        "text": "# Text Extraction in Power Query M\n\n**First 3 characters:** Use `Text.Start`\n```m\nText.Start([ColumnName], 3)\n```\n\n**Last 3 characters:** Use `Text.End`\n```m\nText.End([ColumnName], 3)\n```\n\nApply these in a custom column or transformation step in your query."
+      },
+      "B": {
+        "text": "**First 3 characters:** Use `Text.Start`\n\n```m\nText.Start([Column], 3)\n```\n\n**Last 3 characters:** Use `Text.End`\n\n```m\nText.End([Column], 3)\n```"
+      }
+    },
+    {
+      "id": "text-between-delimiters",
+      "regime": "core",
+      "category": "text",
+      "question": "In Power Query M I have codes like \"INV-2024-0042\". How do I extract the part between the two dashes? Name the function and show the expression.",
+      "A": {
+        "text": "Use `Text.BetweenDelimiters`:\n\n```m\nText.BetweenDelimiters(\"INV-2024-0042\", \"-\", \"-\")\n```\n\nThis returns `\"2024\"`.\n\nAlternatively, `Text.Split` works:\n\n```m\nText.Split(\"INV-2024-0042\", \"-\"){1}\n```"
+      },
+      "B": {
+        "text": "Use **Text.BetweenDelimiters**:\n\n```m\nText.BetweenDelimiters(\"INV-2024-0042\", \"-\", \"-\")\n```\n\nThis returns `\"2024\"`."
+      }
+    },
+    {
+      "id": "text-proper-trim",
+      "regime": "core",
+      "category": "text",
+      "question": "In Power Query M, how do I trim spaces from a name and capitalise each word? Show a Table.TransformColumns step that does both.",
+      "A": {
+        "text": "Use `Text.Trim()` and `Text.Proper()`:\n\n```m\nTable.TransformColumns(\n  Source,\n  {\"Name\", each Text.Proper(Text.Trim(_))}\n)\n```\n\nThis trims leading/trailing spaces and capitalizes the first letter of each word."
+      },
+      "B": {
+        "text": "Use `Text.Trim` and `Text.Proper`:\n\n```powerquery\nTable.TransformColumns(\n  YourTable,\n  {\n    {\"NameColumn\", each Text.Proper(Text.Trim(_))}\n  }\n)\n```\n\n`Text.Trim` removes leading/trailing spaces, then `Text.Proper` capitalizes the first letter of each word."
+      }
+    },
+    {
+      "id": "list-running-total",
+      "regime": "core",
+      "category": "list",
+      "question": "In Power Query M, how do I build a running total of a list of numbers without a loop? Name the list function and show the code.",
+      "A": {
+        "text": "# Running Total with List.Scan\n\nUse **List.Scan** to build a running total:\n\n```m\nList.Scan({1, 2, 3, 4, 5}, 0, (state, current) => state + current)\n// Result: {0, 1, 3, 6, 10, 15}\n```\n\nThe function accumulates values by applying the lambda expression to each element, passing the previous result as `state` and the current element as `current`."
+      },
+      "B": {
+        "text": "Use **List.Accumulate**:\n\n```m\nlet\n    numbers = {1, 2, 3, 4, 5},\n    runningTotal = List.Accumulate(numbers, 0, (acc, current) => acc + current)\nin\n    runningTotal\n```\n\nThis returns `{1, 3, 6, 10, 15}` as intermediate values. If you need the full list of running totals, wrap it differently:\n\n```m\nList.Accumulate(numbers, {0}, (acc, current) => acc & {List.Last(acc) + current})\n```"
+      }
+    },
+    {
+      "id": "list-unique-count",
+      "regime": "core",
+      "category": "list",
+      "question": "In Power Query M, how do I count the distinct values in a column of a table? Name the functions and show the expression.",
+      "A": {
+        "text": "Use **List.Distinct** and **List.Count**:\n\n```m\nList.Count(List.Distinct(Table.Column(YourTable, \"ColumnName\")))\n```\n\nOr more concisely with **Table.Group**:\n\n```m\nTable.RowCount(Table.Group(YourTable, {\"ColumnName\"}, {{\"Count\", each Table.RowCount(_)}}))\n```\n\nThe first approach is simpler for a quick distinct count."
+      },
+      "B": {
+        "text": "Use **List.Distinct** and **List.Count**:\n\n```m\nList.Count(List.Distinct(Table.Column(YourTable, \"ColumnName\")))\n```\n\nOr more concisely with a column reference:\n\n```m\nList.Count(List.Distinct(YourTable[ColumnName]))\n```\n\nThis extracts the column, removes duplicates, then counts the remaining values."
+      }
+    },
+    {
+      "id": "list-pairwise",
+      "regime": "core",
+      "category": "list",
+      "question": "In Power Query M, how do I pair two lists element by element, like Python's zip, and then multiply each pair? Show the code.",
+      "A": {
+        "text": "Use `List.Zip` to pair the lists, then `List.Transform` to multiply:\n\n```m\nlet\n    list1 = {1, 2, 3},\n    list2 = {10, 20, 30},\n    zipped = List.Zip({list1, list2}),\n    result = List.Transform(zipped, each _{0} * _{1})\nin\n    result\n```\n\nThis returns `{10, 40, 90}`."
+      },
+      "B": {
+        "text": "Use **List.Zip** to pair the lists, then **List.Transform** to multiply each pair:\n\n```m\nlet\n    list1 = {1, 2, 3},\n    list2 = {4, 5, 6},\n    zipped = List.Zip({list1, list2}),\n    result = List.Transform(zipped, each _{0} * _{1})\nin\n    result\n```\n\nThis gives you `{4, 10, 18}`."
+      }
+    },
+    {
+      "id": "table-rank",
+      "regime": "core",
+      "category": "table",
+      "question": "In Power Query M, how do I add a rank column to a table of sales, highest amount first, with ties sharing a rank? Name the function and show the step.",
+      "A": {
+        "text": "Use **Table.AddColumn** with **List.PositionOf** to create a rank based on unique sorted values.\n\n```m\nTable.AddColumn(\n  SalesTable, \n  \"Rank\", \n  each List.PositionOf(List.Sort(List.Distinct(SalesTable[Amount]), Order.Descending), [Amount]) + 1\n)\n```\n\nThis ranks by Amount descending, with ties receiving the same rank."
+      },
+      "B": {
+        "text": "Use **Table.AddRankColumn** with `RankingMethod.Dense` to handle ties:\n\n```m\nTable.AddRankColumn(\n  SalesTable, \n  \"Rank\", \n  {\"Amount\"}, \n  Order.Descending, \n  RankingMethod.Dense\n)\n```\n\nThis adds a \"Rank\" column ranking by Amount (highest first), where tied values share the same rank and the next rank skips accordingly."
+      }
+    },
+    {
+      "id": "table-unpivot",
+      "regime": "core",
+      "category": "table",
+      "question": "In Power Query M, how do I turn month columns (Jan, Feb, Mar...) into rows, keeping the Product column? Name the function and show the step.",
+      "A": {
+        "text": "Use **Table.Unpivot**:\n\n```m\nTable.Unpivot(\n  PreviousStep, \n  {\"Jan\", \"Feb\", \"Mar\"}, \n  \"Month\", \n  \"Sales\"\n)\n```\n\nThis keeps Product as an identifier column and transforms the month columns into rows with Month and Sales columns."
+      },
+      "B": {
+        "text": "Use **Table.Unpivot** or **Table.UnpivotOtherColumns**.\n\n```m\nTable.UnpivotOtherColumns(Source, {\"Product\"}, \"Month\", \"Value\")\n```\n\nThis keeps `Product` as an identifier column and unpivots all month columns (Jan, Feb, Mar, etc.) into two new columns: `Month` (attribute) and `Value` (the data)."
+      }
+    },
+    {
+      "id": "table-left-join",
+      "regime": "core",
+      "category": "table",
+      "question": "In Power Query M, how do I left-join Sales to Customers on CustomerID and bring only the customer Name into Sales? Name the functions and show the steps.",
+      "A": {
+        "text": "Use **Table.NestedJoin** and **Table.ExpandTableColumn**:\n\n```m\nTable.NestedJoin(\n  Sales, \n  \"CustomerID\", \n  Customers, \n  \"CustomerID\", \n  \"Customers\"\n)\n|> Table.ExpandTableColumn(\n  _, \n  \"Customers\", \n  {\"Name\"}, \n  {\"CustomerName\"}\n)\n```\n\nThis left-joins Sales to Customers and expands only the Name column (renamed to CustomerName)."
+      },
+      "B": {
+        "text": "Use **Table.NestedJoin** to perform the left join, then **Table.ExpandRecordColumn** to extract the Name field.\n\n```m\nlet\n    Sales = Table.FromRecords({[CustomerID=1, Amount=100], [CustomerID=2, Amount=200]}),\n    Customers = Table.FromRecords({[CustomerID=1, Name=\"Alice\"], [CustomerID=2, Name=\"Bob\"]}),\n    \n    Joined = Table.NestedJoin(Sales, \"CustomerID\", Customers, \"CustomerID\", \"Cust\", JoinKind.LeftOuter),\n    Expanded = Table.ExpandRecordColumn(Joined, \"Cust\", {\"Name\"}, {\"Name\"}),\n    Result = Table.RemoveColumns(Expanded, {\"Cust\"})\nin\n    Result\n```\n\nThe key functions:\n- **Table.NestedJoin**: Left join with results in a nested column\n- **Table.ExpandRecordColumn**: Unpack the nested record to extract Name\n- **Table.RemoveColumns**: Clean up the nested column"
+      }
+    },
+    {
+      "id": "table-group-concat",
+      "regime": "core",
+      "category": "table",
+      "question": "In Power Query M, how do I group a table by Customer and concatenate every product they bought into one comma-separated text? Show the Table.Group step.",
+      "A": {
+        "text": "Use `Table.Group` with `List.Combine` and `Text.Combine`:\n\n```m\nTable.Group(\n  Source,\n  {\"Customer\"},\n  {{\"Products\", each Text.Combine([Product], \", \"), type text}}\n)\n```\n\nThis groups by Customer and concatenates all Product values with \", \" as the delimiter."
+      },
+      "B": {
+        "text": "Use **Table.Group** with **Text.Combine**:\n\n```m\nTable.Group(\n  Source,\n  {\"Customer\"},\n  {{\"Products\", each Text.Combine([Product], \", \"), type text}}\n)\n```\n\nThis groups by the Customer column and concatenates all Product values in that group with \", \" as the delimiter."
+      }
+    },
+    {
+      "id": "table-rename-many",
+      "regime": "core",
+      "category": "table",
+      "question": "In Power Query M, how do I rename many columns at once, for example replacing every underscore in the column names with a space? Show the code.",
+      "A": {
+        "text": "# Rename Multiple Columns at Once\n\nUse **Table.RenameColumns** with **List.Transform** to apply a function to all column names:\n\n```m\nlet\n    Source = Table1,\n    Renamed = Table.RenameColumns(\n        Source,\n        List.Transform(\n            Table.ColumnNames(Source),\n            each {_, Text.Replace(_, \"_\", \" \")}\n        )\n    )\nin\n    Renamed\n```\n\nThis gets all column names, transforms each one by replacing underscores with spaces, then renames them all in one operation. The `each {_, Text.Replace(...)}` creates pairs of `{old_name, new_name}` for each column."
+      },
+      "B": {
+        "text": "Use **Table.TransformColumnNames** with **Text.Replace**:\n\n```m\nTable.TransformColumnNames(Source, each Text.Replace(_, \"_\", \" \"))\n```\n\nThis function applies the transformation to every column name in the table, replacing all underscores with spaces."
+      }
+    },
+    {
+      "id": "record-to-table",
+      "regime": "core",
+      "category": "record",
+      "question": "In Power Query M, how do I turn a record into a two-column table of names and values, and how do I safely read a field that might not exist? Name the functions.",
+      "A": {
+        "text": "# Record to Table\n\nUse **Record.ToList()** with **Record.FieldNames()**:\n\n```m\nlet\n  rec = [Name=\"Alice\", Age=30],\n  names = Record.FieldNames(rec),\n  values = Record.ToList(rec),\n  table = Table.FromColumns({names, values}, {\"Field\", \"Value\"})\nin\n  table\n```\n\n# Safe Field Access\n\nUse **Record.FieldOrDefault()**:\n\n```m\nlet\n  rec = [Name=\"Alice\"],\n  age = Record.FieldOrDefault(rec, \"Age\", null)\nin\n  age\n```\n\nOr **try/otherwise**:\n\n```m\ntry rec[Age] otherwise null\n```"
+      },
+      "B": {
+        "text": "**Turn a record into a two-column table:**\n\nUse `Record.ToTable`:\n\n```m\nlet\n    myRecord = [Name = \"John\", Age = 30, City = \"NYC\"],\n    myTable = Record.ToTable(myRecord)\nin\n    myTable\n```\n\nResult: `{[Name = \"Name\", Value = \"John\"], [Name = \"Age\", Value = 30], [Name = \"City\", Value = \"NYC\"]}`\n\n---\n\n**Safely read a field that might not exist:**\n\nUse `Record.FieldOrDefault`:\n\n```m\nRecord.FieldOrDefault(myRecord, \"Phone\", \"N/A\")\n```\n\nReturns the field value if it exists, otherwise returns `\"N/A\"`."
+      }
+    },
+    {
+      "id": "number-round-half-up",
+      "regime": "core",
+      "category": "number",
+      "question": "In Power Query M, Number.Round(2.5) gives 2. How do I round half up so 2.5 becomes 3, and how do I always round down? Name the functions or options.",
+      "A": {
+        "text": "# Rounding in Power Query M\n\n**Round half up (2.5 → 3):**\nUse `Number.RoundUp()`:\n```m\nNumber.RoundUp(2.5) // returns 3\n```\n\n**Always round down:**\nUse `Number.RoundDown()`:\n```m\nNumber.RoundDown(2.5) // returns 2\n```\n\nNote: `Number.Round()` uses \"round half to even\" (banker's rounding) by default, which is why 2.5 rounds to 2."
+      },
+      "B": {
+        "text": "**Round half up (2.5 → 3):**\nUse `Number.RoundAwayFromZero`\n\n```M\nNumber.RoundAwayFromZero(2.5) // returns 3\n```\n\n**Always round down:**\nUse `Number.RoundDown`\n\n```M\nNumber.RoundDown(2.5) // returns 2\n```"
+      }
+    },
+    {
+      "id": "date-end-of-month",
+      "regime": "core",
+      "category": "date",
+      "question": "In Power Query M, how do I get the last day of the month of a date, and the number of days in that month? Name the functions.",
+      "A": {
+        "text": "# Last Day of Month & Days in Month\n\n**Functions:** `Date.EndOfMonth()` and `Date.DaysInMonth()`\n\n**Snippet:**\n```m\nlet\n    myDate = #date(2024, 2, 15),\n    lastDay = Date.EndOfMonth(myDate),           // #date(2024, 2, 29)\n    daysInMonth = Date.DaysInMonth(myDate)       // 29\nin\n    [LastDay = lastDay, DaysCount = daysInMonth]\n```"
+      },
+      "B": {
+        "text": "Use **Date.EndOfMonth** and **Date.DaysInMonth**:\n\n```M\nlet\n    myDate = #date(2024, 2, 15),\n    lastDay = Date.EndOfMonth(myDate),\n    daysInMonth = Date.DaysInMonth(myDate)\nin\n    [LastDay = lastDay, DaysInMonth = daysInMonth]\n```\n\n`Date.EndOfMonth` returns the last day of the month as a date, and `Date.DaysInMonth` returns the count (28–31)."
+      }
+    },
+    {
+      "id": "date-age-years",
+      "regime": "core",
+      "category": "date",
+      "question": "In Power Query M, how do I compute a person's age in whole years from a BirthDate column as of today? Show the expression.",
+      "A": {
+        "text": "Use `Date.From()`, `DateTime.Now()`, and `Duration.Days()`:\n\n```m\nlet\n    BirthDate = #date(1990, 5, 15),\n    Today = Date.From(DateTime.Now()),\n    Age = Int32.From((Today - BirthDate) / 365.25)\nin\n    Age\n```\n\nOr more precisely with `Date.Year()`:\n\n```m\nAge = Date.Year(Today) - Date.Year(BirthDate) - \n      (if Date.MonthDay(Today) < Date.MonthDay(BirthDate) then 1 else 0)\n```\n\nThe second approach accounts for whether the birthday has occurred this year."
+      },
+      "B": {
+        "text": "Use `Date.Year` with `Date.From` and `DateTime.Now`:\n\n```m\n= Date.Year(DateTime.Now()) - Date.Year([BirthDate]) - (if Date.Month([BirthDate]) > Date.Month(DateTime.Now()) or (Date.Month([BirthDate]) = Date.Month(DateTime.Now()) and Date.Day([BirthDate]) > Date.Day(DateTime.Now())) then 1 else 0)\n```\n\nThis subtracts birth year from current year, then adjusts down by 1 if the birthday hasn't occurred yet this year."
+      }
+    },
+    {
+      "id": "date-weekday-name",
+      "regime": "core",
+      "category": "date",
+      "question": "In Power Query M, how do I add a column with the weekday name in Spanish, and another with the ISO week number? Name the functions.",
+      "A": {
+        "text": "Use `Date.DayOfWeek()` with `Day.Monday` as the week start, then `Text.Upper()` and `Text.Range()` to get Spanish names from `Culture.Current`. For ISO week numbers, use `Date.WeekOfYear()` with `WeekOfYear.ISO8601`.\n\n```m\nlet\n    Source = #table({\"Date\"}, {{#date(2024,1,15)}}),\n    AddColumns = Table.AddColumns(Source, {\n        {\"DayNameES\", each Text.Range(Text.Upper(Date.ToText([Date], \"dddd\", \"es-ES\")), 0, 3)},\n        {\"ISOWeek\", each Date.WeekOfYear([Date], Day.Monday)}\n    })\nin\n    AddColumns\n```\n\nActually, for Spanish day names directly: `Date.ToText([Date], \"dddd\", \"es-ES\")` gives the full name. For ISO week, `Date.WeekOfYear([Date], Day.Monday)` returns the week number per ISO 8601."
+      },
+      "B": {
+        "text": "Use **Date.DayOfWeekName** for Spanish weekday names and **Date.WeekOfYear** for ISO week numbers:\n\n```m\nlet\n    Source = Table.FromRecords({[Date = #date(2024, 1, 15)]}),\n    AddColumns = Table.AddColumns(Source, \n        {\n            {\"Weekday_ES\", each Date.DayOfWeekName([Date], \"es-ES\")},\n            {\"ISOWeek\", each Date.WeekOfYear([Date])}\n        }\n    )\nin\n    AddColumns\n```\n\nThe locale parameter `\"es-ES\"` in `Date.DayOfWeekName` returns Spanish day names."
+      }
+    },
+    {
+      "id": "duration-hours",
+      "regime": "core",
+      "category": "duration",
+      "question": "In Power Query M, I subtract two datetimes and get a duration. How do I turn it into a decimal number of hours? Name the function.",
+      "A": {
+        "text": "Use **Duration.TotalHours**:\n\n```m\nlet\n    duration = DateTime.From(\"2024-01-01 10:30:00\") - DateTime.From(\"2024-01-01 08:00:00\"),\n    hours = Duration.TotalHours(duration)\nin\n    hours\n```\n\nThis returns `2.5` as a decimal number."
+      },
+      "B": {
+        "text": "Use **Duration.TotalHours**:\n\n```M\nlet\n    dur = #datetime(2024,1,2,15,30,0) - #datetime(2024,1,1,10,30,0)\n    hours = Duration.TotalHours(dur)\nin\n    hours\n```\n\nReturns `29` (as a decimal number)."
+      }
+    },
+    {
+      "id": "datetime-parse-culture",
+      "regime": "core",
+      "category": "datetime",
+      "question": "In Power Query M, how do I parse \"31/12/2024 18:30\" as a datetime when the machine's culture is en-US? Show the expression.",
+      "A": {
+        "text": "Use `DateTime.FromText()` with the culture parameter:\n\n```m\nDateTime.FromText(\"31/12/2024 18:30\", \"en-GB\")\n```\n\nThe culture code tells the parser how to interpret the date format. Since your string uses DD/MM/YYYY (non-US format), specify `\"en-GB\"` or another culture that uses that convention, not the machine's en-US culture."
+      },
+      "B": {
+        "text": "Use **DateTime.FromText** with the optional **culture** parameter:\n\n```m\nDateTime.FromText(\"31/12/2024 18:30\", \"en-GB\")\n```\n\nSince your string uses DD/MM/YYYY format (not en-US's MM/DD/YYYY), specify \"en-GB\" culture to parse it correctly despite the machine being en-US."
+      }
+    },
+    {
+      "id": "binary-read-header",
+      "regime": "deep",
+      "category": "binary-formats",
+      "question": "In Power Query M, how do I read a binary file whose first 4 bytes are a big-endian unsigned record count, followed by that many 2-byte little-endian integers? Name the BinaryFormat functions and show the code.",
+      "A": {
+        "text": "Use `BinaryFormat.SignedInteger32` and `BinaryFormat.UnsignedInteger16` with `BinaryFormat.Binary.Read`:\n\n```m\nlet\n    Source = File.Contents(\"path/to/file\"),\n    Format = BinaryFormat.ByteOrder(BinaryFormat.SignedInteger32, ByteOrder.BigEndian)\n        & BinaryFormat.List(\n            BinaryFormat.ByteOrder(BinaryFormat.UnsignedInteger16, ByteOrder.LittleEndian)\n          ),\n    Data = BinaryFormat.Binary.Read(Source, Format)\nin\n    Data\n```\n\nThe key functions:\n- `BinaryFormat.ByteOrder()` - enforces endianness\n- `BinaryFormat.List()` - repeats a format based on the count from the previous field\n- `BinaryFormat.SignedInteger32` / `BinaryFormat.UnsignedInteger16` - the binary types"
+      },
+      "B": {
+        "text": "Use `BinaryFormat.ByteOrder`, `BinaryFormat.UnsignedInteger32`, `BinaryFormat.List`, and `BinaryFormat.UnsignedInteger16`:\n\n```m\nlet\n  format = BinaryFormat.ByteOrder(\n    BinaryFormat.Record([\n      count = BinaryFormat.ByteOrder(BinaryFormat.UnsignedInteger32, BinaryOrder.BigEndian),\n      values = BinaryFormat.Transform(\n        BinaryFormat.ByteOrder(BinaryFormat.UnsignedInteger32, BinaryOrder.BigEndian),\n        (countValue) => BinaryFormat.List(\n          BinaryFormat.ByteOrder(BinaryFormat.UnsignedInteger16, BinaryOrder.LittleEndian),\n          countValue\n        )\n      )\n    ]),\n    BinaryOrder.LittleEndian\n  ),\n  data = Binary.Buffer(File.Contents(\"path/to/file\"))\nin\n  Binary.Format(data, format)\n```\n\nActually, simpler approach using `BinaryFormat.Choice` to read count then build the list:\n\n```m\nlet\n  format = BinaryFormat.Record([\n    count = BinaryFormat.ByteOrder(BinaryFormat.UnsignedInteger32, BinaryOrder.BigEndian),\n    values = BinaryFormat.Transform(\n      BinaryFormat.Null,\n      (_) => BinaryFormat.List(\n        BinaryFormat.ByteOrder(BinaryFormat.UnsignedInteger16, BinaryOrder.LittleEndian),\n        [TargetCount = null]\n      )\n    )\n  ])\nin\n  Binary.Format(File.Contents(\"path\"), format)\n```\n\nThe first version with nested `BinaryFormat.Transform` is the cleaner pattern for this use case."
+      }
+    },
+    {
+      "id": "binary-length-prefixed-text",
+      "regime": "deep",
+      "category": "binary-formats",
+      "question": "In Power Query M, how do I parse a binary where each record is a one-byte length followed by that many bytes of UTF-8 text? Name the BinaryFormat functions.",
+      "A": {
+        "text": "Use `BinaryFormat.SignedInteger8` for the length byte and `BinaryFormat.Text` for the UTF-8 data:\n\n```m\nlet\n  bf = BinaryFormat.Record({\n    {BinaryFormat.SignedInteger8, \"length\"},\n    {BinaryFormat.Text(BinaryFormat.SignedInteger8, TextEncoding.Utf8), \"text\"}\n  })\nin\n  BinaryFormat.List(bf, BinaryFormat.Byte)\n```\n\nWait—`BinaryFormat.Text` takes a fixed byte count, not a dynamic reference. You need `BinaryFormat.Binary` to read the variable-length bytes, then decode separately:\n\n```m\nlet\n  bf = BinaryFormat.Record({\n    {BinaryFormat.Byte, \"length\"},\n    {BinaryFormat.Binary(BinaryFormat.Byte), \"data\"}\n  }),\n  parsed = BinaryFormat.List(bf, BinaryFormat.Byte)(#binary),\n  decoded = Table.TransformColumns(parsed, {\"data\", each Text.FromBinary(_, TextEncoding.Utf8)})\nin\n  decoded\n```\n\nThe key functions are **`BinaryFormat.Byte`**, **`BinaryFormat.Record`**, **`BinaryFormat.Binary`**, **`BinaryFormat.List`**, and **`Text.FromBinary`**."
+      },
+      "B": {
+        "text": "Use **BinaryFormat.List** with **BinaryFormat.Choice** and **BinaryFormat.Length**:\n\n```m\nlet\n  format = BinaryFormat.List(\n    BinaryFormat.Choice(\n      BinaryFormat.Byte,\n      (len) => BinaryFormat.Text(len, TextEncoding.Utf8)\n    )\n  )\nin\n  BinaryFormat.Binary(format)\n```\n\nThe `BinaryFormat.Byte` reads the length, then `BinaryFormat.Choice` passes that length to `BinaryFormat.Text` to read exactly that many bytes as UTF-8."
+      }
+    },
+    {
+      "id": "binary-compression",
+      "regime": "deep",
+      "category": "binary",
+      "question": "In Power Query M, how do I decompress a gzip-compressed binary and then read it as lines of text? Name the functions.",
+      "A": {
+        "text": "Use `Binary.Decompress` and `Text.FromBinary`, then `Text.Split`:\n\n```m\nlet\n    compressed = Binary.FromText(\"...\"),\n    decompressed = Binary.Decompress(compressed, Compression.GZip),\n    text = Text.FromBinary(decompressed, TextEncoding.Utf8),\n    lines = Text.Split(text, \"#(lf)\")\nin\n    lines\n```\n\nThe key functions are:\n- `Binary.Decompress` with `Compression.GZip`\n- `Text.FromBinary` to convert to text\n- `Text.Split` to split into lines"
+      },
+      "B": {
+        "text": "Use **Binary.Decompress** and **Text.FromBinary**, then **Text.Split**:\n\n```m\nlet\n    decompressed = Binary.Decompress(gzipBinary, Compression.GZip),\n    text = Text.FromBinary(decompressed),\n    lines = Text.Split(text, \"#(lf)\")\nin\n    lines\n```\n\nThe functions are:\n- **Binary.Decompress** — decompress with `Compression.GZip`\n- **Text.FromBinary** — convert binary to text\n- **Text.Split** — split into lines"
+      }
+    },
+    {
+      "id": "splitter-camelcase",
+      "regime": "deep",
+      "category": "splitter",
+      "question": "In Power Query M, how do I split \"OrderDateKey\" into \"Order\", \"Date\", \"Key\" at each change from lower to upper case? Name the splitter function and show the code.",
+      "A": {
+        "text": "Use **Text.Split** with **Splitter.SplitTextByCharacterTransition**:\n\n```m\nText.Split(\n  \"OrderDateKey\",\n  Splitter.SplitTextByCharacterTransition(\n    (c1, c2) => Character.IsLowerCase(c1) and Character.IsUpperCase(c2)\n  )\n)\n```\n\nThis returns `{\"Order\", \"Date\", \"Key\"}`."
+      },
+      "B": {
+        "text": "Use **Splitter.SplitTextByCharacterTransition**:\n\n```m\nlet\n    Text = \"OrderDateKey\",\n    Split = Text.Split(Text, Splitter.SplitTextByCharacterTransition({\"a\"..\"z\"}, {\"A\"..\"Z\"}))\nin\n    Split\n```\n\nThis splits at each transition from lowercase to uppercase characters, giving you `{\"Order\", \"Date\", \"Key\"}`."
+      }
+    },
+    {
+      "id": "splitter-fixed-width",
+      "regime": "deep",
+      "category": "splitter",
+      "question": "In Power Query M, how do I split a fixed-width text line into fields of 5, 10 and 3 characters? Name the splitter function and show the step.",
+      "A": {
+        "text": "Use **Text.Split** with **Splitter.FixedWidth**:\n\n```m\nlet\n    Source = \"ABCDEFGHIJKLMNOPRSTUVWabcd\",\n    Split = Text.Split(Source, Splitter.FixedWidth({5, 10, 3}))\nin\n    Split\n```\n\nThis returns a list with three items: `{\"ABCDE\", \"FGHIJKLMNOP\", \"RST\"}`."
+      },
+      "B": {
+        "text": "Use **Splitter.SplitTextByLengths**:\n\n```m\nSplitter.SplitTextByLengths({5, 10, 3})(\"your fixed-width line here\")\n```\n\nThis splits the text into three fields of exactly 5, 10, and 3 characters respectively."
+      }
+    },
+    {
+      "id": "combiner-columns",
+      "regime": "deep",
+      "category": "combiner",
+      "question": "In Power Query M, how do I merge FirstName and LastName columns into one FullName column separated by a space? Name the combiner function and show the step.",
+      "A": {
+        "text": "Use **Text.Combine** with **&** operator, or the simpler concatenation approach:\n\n```m\nFullName = Table.AddColumn(Source, \"FullName\", each [FirstName] & \" \" & [LastName])\n```\n\nOr with `Text.Combine`:\n\n```m\nFullName = Table.AddColumn(Source, \"FullName\", each Text.Combine({[FirstName], [LastName]}, \" \"))\n```\n\nThe `&` operator is more common for this simple case."
+      },
+      "B": {
+        "text": "Use **Text.Combine** with a space delimiter:\n\n```\nTable.AddColumn(#\"PreviousStep\", \"FullName\", each Text.Combine({[FirstName], [LastName]}, \" \"))\n```\n\nThis combines the two columns into a list and joins them with a space separator."
+      }
+    },
+    {
+      "id": "replacer-partial",
+      "regime": "deep",
+      "category": "replacer",
+      "question": "In Power Query M, Table.ReplaceValue replaces whole cells unless I pass a different replacer. Which replacer replaces text inside a cell? Show the step.",
+      "A": {
+        "text": "Use `Replacer.ReplaceText` as the replacer parameter:\n\n```m\nTable.ReplaceValue(\n  YourTable,\n  \"old\",\n  \"new\",\n  Replacer.ReplaceText,\n  {\"ColumnName\"}\n)\n```\n\nThis replaces all occurrences of \"old\" with \"new\" within cell values, not just exact cell matches."
+      },
+      "B": {
+        "text": "Use `Replacer.ReplaceText` as the replacer function:\n\n```m\nTable.ReplaceValue(\n  Source,\n  \"old\",\n  \"new\",\n  Replacer.ReplaceText,\n  {\"ColumnName\"}\n)\n```\n\nThis replaces partial text matches within cells, whereas the default `Replacer.ReplaceValue` only matches whole cell values."
+      }
+    },
+    {
+      "id": "comparer-ignore-case",
+      "regime": "deep",
+      "category": "comparer",
+      "question": "In Power Query M, how do I make List.Distinct or Text.Contains ignore case? Name the comparer and show both calls.",
+      "A": {
+        "text": "Use `Comparer.OrdinalIgnoreCase`:\n\n```m\nList.Distinct(myList, Comparer.OrdinalIgnoreCase)\n\nText.Contains(myText, \"search\", Comparer.OrdinalIgnoreCase)\n```"
+      },
+      "B": {
+        "text": "Use **Comparer.OrdinalIgnoreCase**:\n\n```m\nList.Distinct(list, Comparer.OrdinalIgnoreCase)\n\nText.Contains(text, substring, Comparer.OrdinalIgnoreCase)\n```"
+      }
+    },
+    {
+      "id": "type-replace-schema",
+      "regime": "deep",
+      "category": "type",
+      "question": "In Power Query M, how do I read the column names and types of a table's type, and how do I set a table's type to a new one with Value.ReplaceType? Name the Type functions.",
+      "A": {
+        "text": "# Reading Column Names and Types\n\nUse **Type.RecordFields()** to get column metadata:\n\n```m\nlet\n  myTable = Table.FromRecords({[A=1, B=\"x\"]}),\n  tableType = Value.Type(myTable),\n  fields = Type.RecordFields(tableType)\nin\n  fields\n```\n\nThis returns a record where each field name maps to a `[Type=..., Optional=...]` record.\n\n# Setting a Table's Type\n\nUse **Value.ReplaceType()** with a new type constructed via **Type.ForRecord()**:\n\n```m\nlet\n  myTable = Table.FromRecords({[A=1, B=\"x\"]}),\n  newType = Type.ForRecord([\n    A = [Type = type number, Optional = false],\n    B = [Type = type text, Optional = false]\n  ], false),\n  typed = Value.ReplaceType(myTable, newType)\nin\n  typed\n```\n\nThe `false` parameter in `Type.ForRecord()` means \"open=false\" (no extra fields allowed)."
+      },
+      "B": {
+        "text": "# Reading Column Names and Types\n\nUse **Type.RecordFields** to get column metadata from a table's type:\n\n```m\nlet\n    tbl = Table.FromRecords({[Name=\"Alice\", Age=30]}),\n    tableType = Value.Type(tbl),\n    rowType = Type.TableRow(tableType),\n    fields = Type.RecordFields(rowType)\nin\n    fields\n```\n\nThis returns a record where each field contains `[Type = ..., Optional = ...]`.\n\n---\n\n# Setting a New Table Type\n\nUse **Value.ReplaceType** with **Type.ForRecord** and **Type.TableRow**:\n\n```m\nlet\n    tbl = Table.FromRecords({[Name=\"Alice\", Age=30]}),\n    newRowType = Type.ForRecord([\n        Name = [Type = type text, Optional = false],\n        Age = [Type = type number, Optional = false]\n    ]),\n    newTableType = Type.TableRow(newRowType),\n    typedTable = Value.ReplaceType(tbl, newTableType)\nin\n    typedTable\n```\n\nThe key functions: **Type.RecordFields**, **Type.ForRecord**, **Type.TableRow**, and **Value.ReplaceType**."
+      }
+    },
+    {
+      "id": "type-function-params",
+      "regime": "deep",
+      "category": "type",
+      "question": "In Power Query M, given a function value, how do I list its parameters and its return type? Name the Type functions and show the code.",
+      "A": {
+        "text": "Use `Type.FunctionParameters()` and `Type.FunctionReturn()`:\n\n```m\nlet\n    MyFunc = (x as number, y as text) as logical => x > 0,\n    FuncType = Value.Type(MyFunc),\n    Params = Type.FunctionParameters(FuncType),\n    ReturnType = Type.FunctionReturn(FuncType)\nin\n    {Params, ReturnType}\n```\n\n`Params` returns a record with parameter names as keys and their types as values. `ReturnType` gives you the return type directly."
+      },
+      "B": {
+        "text": "Use **Type.FunctionParameters** and **Type.FunctionReturn**:\n\n```m\nlet\n    MyFunc = (x as number, y as text) => x & y,\n    FuncType = Value.Type(MyFunc),\n    Parameters = Type.FunctionParameters(FuncType),\n    ReturnType = Type.FunctionReturn(FuncType)\nin\n    {Parameters, ReturnType}\n```\n\n**Type.FunctionParameters** returns a record where field names are parameter names and values are their types.\n\n**Type.FunctionReturn** returns the function's return type."
+      }
+    },
+    {
+      "id": "expression-evaluate",
+      "regime": "deep",
+      "category": "expression",
+      "question": "In Power Query M, how do I evaluate a text such as \"1 + 2\" as M code, with Text and List available to it? Name the function and show the call.",
+      "A": {
+        "text": "# Expression.Evaluate\n\n```m\nExpression.Evaluate(\"1 + 2\", [Text = Text, List = List])\n```\n\nThe second parameter is a record providing the variable scope available to the evaluated expression."
+      },
+      "B": {
+        "text": "Use **Expression.Evaluate**:\n\n```m\nExpression.Evaluate(\"1 + 2\", [Text = Text, List = List])\n```\n\nThe second parameter is a record providing the environment (variables/modules) available to the evaluated expression."
+      }
+    },
+    {
+      "id": "function-invoke-after",
+      "regime": "deep",
+      "category": "function",
+      "question": "In Power Query M, how do I call a web API and wait 2 seconds between calls, and how do I invoke a function with a list of arguments? Name the Function functions.",
+      "A": {
+        "text": "# Web API with Delay\n\nUse `Web.Contents()` to call the API, and `Function.InvokeAfter()` to delay:\n\n```m\nFunction.InvokeAfter(() => Web.Contents(\"https://api.example.com/data\"), #duration(0, 0, 0, 2))\n```\n\n# Invoke Function with List of Arguments\n\nUse `Function.Invoke()`:\n\n```m\nFunction.Invoke(MyFunction, {arg1, arg2, arg3})\n```\n\nThe second parameter is a list of arguments in order."
+      },
+      "B": {
+        "text": "**For waiting 2 seconds between calls:**\n\nUse `Function.InvokeAfter`:\n\n```m\nFunction.InvokeAfter(() => Json.Document(Web.Contents(url)), #duration(0, 0, 0, 2))\n```\n\n**For invoking a function with a list of arguments:**\n\nUse `Function.Invoke`:\n\n```m\nFunction.Invoke(myFunction, {arg1, arg2, arg3})\n```"
+      }
+    },
+    {
+      "id": "lines-from-binary",
+      "regime": "deep",
+      "category": "lines",
+      "question": "In Power Query M, how do I turn a binary text file into a list of lines, and a list of lines back into text? Name the Lines functions.",
+      "A": {
+        "text": "**Text to lines:**\n```m\nText.Split(text, \"#(lf)\")\n```\nor use the built-in function:\n```m\nLines.FromText(text)\n```\n\n**Lines back to text:**\n```m\nText.Combine(linesList, \"#(lf)\")\n```\nor:\n```m\nLines.ToText(linesList)\n```\n\nThe `Lines.*` functions handle line break detection automatically across different formats (LF, CRLF)."
+      },
+      "B": {
+        "text": "**Binary to lines:**\n```M\nLines.FromBinary(binaryValue)\n```\n\n**Lines back to text:**\n```M\nLines.ToText(linesList)\n```"
+      }
+    },
+    {
+      "id": "uri-query-string",
+      "regime": "deep",
+      "category": "uri",
+      "question": "In Power Query M, how do I build a URL query string from a record of parameters with proper escaping, and how do I parse a URL into its parts? Name the Uri functions.",
+      "A": {
+        "text": "# URL Query String & Parsing\n\n**Building a query string from a record:**\nUse `Uri.BuildQueryString()`:\n\n```m\nlet\n  params = [search = \"hello world\", page = \"1\"],\n  queryString = Uri.BuildQueryString(params)\nin\n  queryString\n// Result: \"search=hello%20world&page=1\"\n```\n\n**Parsing a URL into parts:**\nUse `Uri.Parts()`:\n\n```m\nlet\n  url = \"https://example.com/path?search=test#section\",\n  parts = Uri.Parts(url)\nin\n  parts\n// Returns: [Scheme = \"https\", Host = \"example.com\", Path = \"/path\", Query = \"search=test\", Fragment = \"section\"]\n```\n\n**Key functions:**\n- `Uri.BuildQueryString()` – encodes record into query string\n- `Uri.Parts()` – breaks URL into components\n- `Uri.EscapeDataString()` – manually escape individual strings if needed"
+      },
+      "B": {
+        "text": "# URI Query String and Parsing in Power Query M\n\n**Build a query string from a record:**\n```m\nUri.BuildQueryString([search = \"power query\", page = \"1\"])\n// Returns: \"search=power%20query&page=1\"\n```\n\n**Parse a URL into its parts:**\n```m\nUri.Parts(\"https://example.com:8080/path?query=value#anchor\")\n// Returns a record with: Scheme, Host, Port, Path, Query, Fragment\n```\n\nThe key functions are:\n- **`Uri.BuildQueryString`** – converts a record to a properly escaped query string\n- **`Uri.Parts`** – breaks down a URL into its components\n- **`Uri.EscapeDataString`** – manually escape special characters if needed\n- **`Uri.Combine`** – join base and relative URIs"
+      }
+    },
+    {
+      "id": "diagnostics-trace",
+      "regime": "deep",
+      "category": "diagnostics",
+      "question": "In Power Query M, how do I write a trace message while a step evaluates so it shows up in the diagnostics log? Name the function and its trace levels.",
+      "A": {
+        "text": "Use **Diagnostics.Trace()** with these trace levels:\n\n```m\nDiagnostics.Trace(TraceLevel.Information, \"My message\", () => [your expression])\n```\n\n**Trace levels:**\n- `TraceLevel.Information`\n- `TraceLevel.Warning`\n- `TraceLevel.Error`\n\nThe function returns the result of your expression while logging the message to diagnostics."
+      },
+      "B": {
+        "text": "Use **Diagnostics.Trace**.\n\n```m\nDiagnostics.Trace(TraceLevel.Information, \"My message\", value)\n```\n\n**Trace levels:**\n- `TraceLevel.Information`\n- `TraceLevel.Error`\n- `TraceLevel.Warning`\n\nThe function returns the value unchanged, so it's safe to insert inline in your query steps for debugging."
+      }
+    },
+    {
+      "id": "cube-measures",
+      "regime": "deep",
+      "category": "cube",
+      "question": "In Power Query M, connected to an Analysis Services cube, how do I add a measure column and expand a dimension attribute? Name the Cube functions.",
+      "A": {
+        "text": "# Analysis Services in Power Query M\n\n**Functions:**\n- `AnalysisServices.Databases()` - connect to the cube\n- `Table.AddColumn()` - add the measure column\n- `Table.ExpandRecordColumn()` - expand dimension attributes\n\n**Snippet:**\n\n```m\nlet\n    Source = AnalysisServices.Databases(\"servername\"){[Name=\"cubename\"]}[Data],\n    AddMeasure = Table.AddColumn(Source, \"NewMeasure\", each [SalesAmount]),\n    ExpandDim = Table.ExpandRecordColumn(AddMeasure, \"DimensionName\", {\"AttributeField\"}, {\"AttributeField\"})\nin\n    ExpandDim\n```\n\nThe `AnalysisServices.Databases()` function establishes the connection, then standard table transformation functions handle the column operations."
+      },
+      "B": {
+        "text": "Use **Cube.AddMeasureColumn** and **Cube.AddAndExpandDimensionColumn**:\n\n```m\nlet\n  Source = AnalysisServices.Databases(\"server\", \"database\"){0}[Data],\n  AddMeasure = Cube.AddMeasureColumn(Source, \"Sales\", \"[Measures].[Sales Amount]\"),\n  ExpandDimension = Cube.AddAndExpandDimensionColumn(AddMeasure, \"Product\", \"[Product].[Category]\")\nin\n  ExpandDimension\n```"
+      }
+    },
+    {
+      "id": "metadata-attach",
+      "regime": "deep",
+      "category": "metadata",
+      "question": "In Power Query M, how do I attach documentation metadata to a custom function's type and later read it back? Name the functions.",
+      "A": {
+        "text": "# Type Metadata in Power Query M\n\nUse **`type`** and **`meta`** functions.\n\n**Writing metadata:**\n\n```m\nlet\n  MyFunction = (x as number) as number =>\n    let\n      documentation = type function (x as number) as number meta [Documentation.Name = \"My Function\", Documentation.Description = \"Does something\"]\n    in\n      x * 2\nin\n  MyFunction\n```\n\n**Reading metadata back:**\n\n```m\nlet\n  FunctionType = Value.Type(MyFunction),\n  Metadata = type meta [Documentation.Name = \"My Function\"]\nin\n  Metadata\n```\n\nThe **`meta`** keyword attaches key-value pairs to type definitions. You access it via the type's metadata properties."
+      },
+      "B": {
+        "text": "Use **Value.ReplaceMetadata** to attach metadata and **Value.Metadata** to read it back.\n\n```m\nlet\n    MyFunc = (x) => x + 1,\n    WithDocs = Value.ReplaceMetadata(MyFunc, [Documentation = \"Adds 1 to input\"]),\n    ReadBack = Value.Metadata(WithDocs)\nin\n    ReadBack[Documentation]\n```"
+      }
+    }
+  ]
+}

@@ -45,3 +45,7 @@ jobs:
         run: python -m unittest discover -s scripts -t scripts -v
       - name: Unit tests (sync pipeline)
         run: python -m unittest discover -s skills/m-reference/scripts -t skills/m-reference/scripts -v
+      - name: README invention table matches the saved runs (no API calls)
+        run: python scripts/check_eval_claims.py
+      - name: Unit tests (invented-name eval counter; no API calls)
+        run: python -m unittest discover -s evals/hallucination -t evals/hallucination -v
