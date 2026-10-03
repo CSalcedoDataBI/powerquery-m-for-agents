@@ -90,6 +90,8 @@ no MCP or LSP servers (`claude plugin details` lists that one skill and zero of 
 The skill is Markdown that Claude reads; installing or using it starts no process,
 sends nothing anywhere and downloads nothing.
 
+The plugin's privacy policy is in [PRIVACY.md](PRIVACY.md).
+
 The repository also holds maintainer tools. None runs unless you run it:
 
 | Tool | Runs | Sends | Downloads |
