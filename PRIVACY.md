@@ -22,10 +22,12 @@ Your queries, models and conversations stay between you, Claude and the tools yo
 The plugin keeps no copy of them and retains no data.
 
 Maintainer scripts in this repository are **not** run by the plugin; they run only when a
-maintainer starts them by hand. Two of them send data, as the README's table "What it runs,
-sends and downloads" lists: `evals/hallucination/run_ab.py` sends benchmark questions to the
-Anthropic or DeepSeek API, and `lab/drafting/run_dsh.ps1` sends drafting prompts to the
-DeepSeek API, each with the maintainer's own key read from the environment.
+maintainer starts them by hand. Three of them reach the network, as the README's table "What
+it runs, sends and downloads" lists: `evals/hallucination/run_ab.py` sends benchmark questions
+to the Anthropic or DeepSeek API and `lab/drafting/run_dsh.ps1` sends drafting prompts to the
+DeepSeek API, each with the maintainer's own key read from the environment; and
+`lab/shared-export/learn_links.py` sends one HEAD request per function to
+`learn.microsoft.com`, to check which Microsoft Learn pages exist.
 
 ## Children
 

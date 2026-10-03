@@ -99,7 +99,8 @@ The repository also holds maintainer tools. None runs unless you run it:
 | `skills/m-reference/scripts/sync_shared.py` | Python, standard library only | Nothing | Nothing. Reads `exports/*.json` (the maintainer's private exports, not in this repository), writes `generated/` |
 | `skills/m-reference/scripts/export_shared.pq` | M, pasted into your own Power BI or Excel | Nothing | Nothing. Reads `#shared` |
 | `scripts/*.py` | Python checks, the same ones CI runs | Nothing | Nothing |
-| `lab/runner/`, `lab/shared-export/` | Open Power BI Desktop on this machine; the runner evaluates the example blocks there, limited to functions that compute on values (`scripts/m_blocks.py`) | Nothing | Nothing |
+| `lab/runner/`, `lab/shared-export/` (except `learn_links.py`) | Open Power BI Desktop on this machine; the runner evaluates the example blocks there, limited to functions that compute on values (`scripts/m_blocks.py`) | Nothing | Nothing |
+| `lab/shared-export/learn_links.py` | Python, standard library only | One HEAD request per catalogue function to `https://learn.microsoft.com/en-us/powerquery-m/<function page>`, to keep only the links that answer 200. The URL names the function; nothing else is sent | Nothing but the status code |
 | `lab/review/build_review.py` | Python; writes the review PBIPs (kept private, not in this repository), which you open yourself | Nothing | Nothing |
 | `evals/hallucination/run_ab.py` | Python, standard library plus PyYAML | Each benchmark question to the Anthropic or DeepSeek API, with `ANTHROPIC_API_KEY` or `DEEPSEEK_API_KEY` read from the environment. `--replay` sends nothing | Nothing |
 | `lab/drafting/pilot.py` (pilot) | Python; writes the prompts, and turns the answers `run_dsh.ps1` saved into example pages | Nothing | Nothing |
