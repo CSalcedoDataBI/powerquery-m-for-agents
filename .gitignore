@@ -40,3 +40,10 @@ skills/m-reference/.publish-*/
 # Prompts, raw answers and measurements of lab/drafting/ runs. Pages that pass review are
 # copied into skills/ by pilot.py collect; nothing else leaves this folder.
 /lab/drafting/out/
+
+# Private working material, kept in the private repo CSalcedoDataBI/Power-Query-Scripts
+# (folder powerquery-m-for-agents/): the #shared exports and the review PBIPs. The scripts
+# read and write them here as before; the plugin directory does not validate export-ignore.
+exports/*.json
+lab/review/*/
+!lab/review/thank-you/

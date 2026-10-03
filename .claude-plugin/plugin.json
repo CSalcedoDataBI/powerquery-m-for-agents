@@ -3,13 +3,17 @@
   "name": "powerquery-m-for-agents",
   "displayName": "Power Query M for agents",
   "version": "0.1.0",
-  "description": "The Power Query M language, agent-native. Every library function exported from the engine's own #shared, with its signature, parameter types, return type and the hosts that have it (Power BI Desktop, Excel, Dataflows Gen2), and the language itself (let/in, each, records, lists, tables, types, errors). Annotated with field notes and examples executed in a runnable lab. Not modeling or TMDL - that is data-goblin's power-query skill.",
+  "description": "The Power Query M language, agent-native: function cards from #shared with host availability, language concepts and executed examples. Not modeling or TMDL.",
   "author": {
-    "name": "CSalcedoDataBI",
-    "url": "https://github.com/CSalcedoDataBI"
+    "name": "Cristóbal Salcedo",
+    "email": "contacto@csalcedodatabi.com",
+    "url": "https://csalcedodatabi.com"
   },
   "homepage": "https://github.com/CSalcedoDataBI/powerquery-m-for-agents",
   "repository": "https://github.com/CSalcedoDataBI/powerquery-m-for-agents",
+  "documentationUrl": "https://github.com/CSalcedoDataBI/powerquery-m-for-agents#readme",
+  "supportUrl": "https://github.com/CSalcedoDataBI/powerquery-m-for-agents/issues",
+  "privacyPolicyUrl": "https://github.com/CSalcedoDataBI/powerquery-m-for-agents/blob/main/PRIVACY.md",
   "license": "MIT",
   "keywords": [
     "power-query",

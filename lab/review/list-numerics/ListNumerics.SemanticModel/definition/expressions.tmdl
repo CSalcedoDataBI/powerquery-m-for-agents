@@ -1,9 +1,0 @@
-expression 'List.Covariance (1)' =
-		List.Covariance({1, 2, 3}, {1, 2, 4})
-	lineageTag: 38a2aaf7-d6af-5e59-8bb5-fbb76132f936
-	queryGroup: 'List.Covariance'
-
-expression 'List.Product (1)' =
-		List.Product({2, 3, 4})
-	lineageTag: c3a00b6a-d2ba-5cde-9a89-85748915dbe1
-	queryGroup: 'List.Product'
