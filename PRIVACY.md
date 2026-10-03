@@ -17,7 +17,6 @@ maintainer.
 | When | What happens | Where it goes |
 |---|---|---|
 | The skill is used | Claude reads Markdown and JSON from the installed plugin folder | Nowhere: local reads only |
-| You open a review project under `lab/review/` | Power BI Desktop evaluates the example expressions written in the project. They use literal values only: no data source, no connector | Nowhere. The last-page buttons open the author's website, blog, GitHub, YouTube and LinkedIn only if you click them |
 
 Your queries, models and conversations stay between you, Claude and the tools you already use.
 The plugin keeps no copy of them and retains no data.

@@ -96,11 +96,11 @@ The repository also holds maintainer tools. None runs unless you run it:
 
 | Tool | Runs | Sends | Downloads |
 |---|---|---|---|
-| `skills/m-reference/scripts/sync_shared.py` | Python, standard library only | Nothing | Nothing. Reads `exports/*.json` (in the git repository only, not in the plugin archive), writes `generated/` |
+| `skills/m-reference/scripts/sync_shared.py` | Python, standard library only | Nothing | Nothing. Reads `exports/*.json` (the maintainer's private exports, not in this repository), writes `generated/` |
 | `skills/m-reference/scripts/export_shared.pq` | M, pasted into your own Power BI or Excel | Nothing | Nothing. Reads `#shared` |
 | `scripts/*.py` | Python checks, the same ones CI runs | Nothing | Nothing |
 | `lab/runner/`, `lab/shared-export/` | Open Power BI Desktop on this machine; the runner evaluates the example blocks there, limited to functions that compute on values (`scripts/m_blocks.py`) | Nothing | Nothing |
-| `lab/review/build_review.py` | Python; writes the review PBIPs, which you open yourself | Nothing | Nothing |
+| `lab/review/build_review.py` | Python; writes the review PBIPs (kept private, not in this repository), which you open yourself | Nothing | Nothing |
 | `evals/hallucination/run_ab.py` | Python, standard library plus PyYAML | Each benchmark question to the Anthropic or DeepSeek API, with `ANTHROPIC_API_KEY` or `DEEPSEEK_API_KEY` read from the environment. `--replay` sends nothing | Nothing |
 | `lab/drafting/pilot.py` (pilot) | Python; writes the prompts, and turns the answers `run_dsh.ps1` saved into example pages | Nothing | Nothing |
 | `lab/drafting/run_dsh.ps1` (pilot, opt-in) | A Docker container with DeepSeek's `dsh` CLI | Each prompt to the DeepSeek API, with `DEEPSEEK_API_KEY` read from your Windows user environment | When the image is built: the `node:24-bookworm-slim` base image, and `@deepseek-ai/dsh` from npm at a pinned version |
@@ -131,7 +131,8 @@ from the MIT-licensed standard library of
 examples carry no stated licence, so the cards do not quote them (#1); each card links its
 Microsoft Learn page instead, when that page exists.
 
-The raw engine exports in [`exports/`](exports/) keep the documentation text the engine
+The raw engine exports (see [`exports/`](exports/)) keep the documentation text the engine
 returns, so they do hold those long descriptions and examples: © Microsoft, kept only so
-every catalogue can be regenerated from its exact input. They are in the git repository, not
-in the plugin archive, and no card quotes those long descriptions or examples.
+every catalogue can be regenerated from its exact input. They are the maintainer's private
+working material, not part of this repository, and no card quotes those long descriptions or
+examples.

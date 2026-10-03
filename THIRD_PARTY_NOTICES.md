@@ -6,7 +6,7 @@ The one-line descriptions in `skills/m-reference/generated/` (the cards, `catalo
 `constants.md`) are copied from the standard library file of
 [microsoft/vscode-powerquery](https://github.com/microsoft/vscode-powerquery):
 `server/src/library/standard/standard-enUs.json`, at commit
-`51dd91670c11956633702865c96f27a29212273d`. The repository keeps that input as
+`51dd91670c11956633702865c96f27a29212273d`. The maintainer keeps that input, privately, as
 `exports/vscode-powerquery-standard-enUs.json`.
 
 Everything else in the cards is either a fact read from the engine's `#shared` (names,
@@ -17,9 +17,9 @@ was written in this repository.
 
 The raw exports `exports/<host>-<version>.json`, written by `export_shared.pq` from the
 engine's `#shared`, include the documentation text Microsoft ships inside the engine
-(`description`, `longDescription`, `examples`). That text is © Microsoft Corporation. It is
-kept as the engine returns it, as the reproducible input of the catalogue, and is not part
-of the plugin archive. The cards do not quote the long descriptions or the examples; their
+(`description`, `longDescription`, `examples`). That text is © Microsoft Corporation. The
+maintainer keeps it as the engine returns it, privately, as the reproducible input of the
+catalogue; it is not in this repository. The cards do not quote the long descriptions or the examples; their
 one-line descriptions come from the MIT file above. See [`exports/README.md`](exports/README.md).
 
 ```

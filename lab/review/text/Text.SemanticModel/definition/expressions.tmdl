@@ -1,4 +1,0 @@
-expression 'Text.InferNumberType (1)' =
-		{Text.InferNumberType("42"), Text.InferNumberType("1.5")}
-	lineageTag: 457fe2ce-91d6-5d59-8300-864089505521
-	queryGroup: 'Text.InferNumberType'

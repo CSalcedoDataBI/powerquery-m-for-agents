@@ -53,3 +53,11 @@ catálogo, y se cita como © Microsoft en `exports/README.md`, en `THIRD_PARTY_N
 el README. La frase del README se corrige para decir lo que es cierto: las fichas no citan
 esos textos y el export en bruto sí los contiene. Queda fuera del archivo del plugin
 (`export-ignore`) y `sync_shared.py` no los lee.
+
+## Adenda 2026-10-02 (2): los exports salen del repo público
+
+El directorio de plugins de Anthropic no valida un repositorio con `export-ignore` («Couldn't
+validate that repository»), así que esa marca no sirve para dejarlos fuera del plugin (#35).
+Decisión del mantenedor: los exports y los informes `.pbip` de revisión se mueven a un repo
+privado suyo y, en este, sus rutas pasan a `.gitignore`. Los scripts los leen y escriben en el
+mismo sitio. Los commits anteriores, públicos desde el 2026-10-02, los siguen conteniendo.
