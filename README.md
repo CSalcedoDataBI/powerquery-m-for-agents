@@ -85,10 +85,16 @@ skills (`scripts/check_plugin_manifest.py`).
 
 ## What it runs, sends and downloads
 
-**The plugin itself runs nothing.** It is one skill, `m-reference`, and nothing else: no hooks, no agents,
-no MCP or LSP servers (`claude plugin details` lists that one skill and zero of each).
-The skill is Markdown that Claude reads; installing or using it starts no process,
-sends nothing anywhere and downloads nothing.
+**The plugin itself runs nothing on its own.** It is the skills `m-reference` and `m-feedback`,
+and nothing else: no hooks, no agents, no MCP or LSP servers (`claude plugin details` lists
+those skills and zero of each). Both are Markdown that Claude reads; installing or using
+them starts no process and downloads nothing.
+
+`m-reference` sends nothing anywhere. `m-feedback` sends one thing, and only when you ask for
+it: when you ask to report a gap in the reference, Claude drafts a sanitized GitHub issue, shows
+you the text, and only after you approve it runs your own `gh issue create` to file it on this
+public repository, under your GitHub account. Without `gh` it hands you the text to file
+yourself.
 
 The plugin's privacy policy is in [PRIVACY.md](PRIVACY.md).
 

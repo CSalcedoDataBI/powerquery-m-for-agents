@@ -24,6 +24,7 @@
     "reference"
   ],
   "skills": [
-    "./skills/m-reference"
+    "./skills/m-reference",
+    "./skills/m-feedback"
   ]
 }

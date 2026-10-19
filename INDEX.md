@@ -1,6 +1,6 @@
 # Skills — index and routing
 
-One skill today, three planned, one idea: **the Power Query M language**. No modeling, no TMDL, no connector
+Two skills today, three planned, one idea: **the Power Query M language**. No modeling, no TMDL, no connector
 development — there are better repos for those, linked from the [README](README.md).
 
 ---
@@ -12,7 +12,8 @@ A question about Power Query M
   ├─ does this function exist? what does it take/return? which hosts?  → m-reference
   ├─ does this step fold? why is the refresh slow?                     → m-folding (planned)
   ├─ I am going to write my own function                               → m-custom-functions (planned)
-  └─ loop / paginate / running total / buffer                          → m-iteration (planned)
+  ├─ loop / paginate / running total / buffer                          → m-iteration (planned)
+  └─ the reference is wrong or misses a trap; report it                 → m-feedback
 
 Partitions, TMDL, incremental refresh policy? → not here. Use data-goblin's power-query skill.
 ```
@@ -22,6 +23,7 @@ Partitions, TMDL, incremental refresh policy? → not here. Use data-goblin's po
 | Skill | Use it when | Status |
 |---|---|---|
 | **`m-reference`** | Language reference: whether a function exists, its signature and types, what it returns, which hosts have it. Cards generated from the engine's own `#shared`, plus field notes measured in the lab. | ✅ Desktop export, concepts, Text/List/Table examples · 🚧 more hosts |
+| **`m-feedback`** | m-reference proved wrong or incomplete while you worked in another project: drafts a sanitized issue for this public repo and files it only after the user approves the text. | ✅ |
 | **`m-folding`** | Whether a step folds to the source, what breaks it, how to verify, `Value.NativeQuery` with `EnableFolding`. | 🚧 planned, in `planned/` |
 | **`m-custom-functions`** | Typed and optional parameters, recursion, documenting your function with `Value.ReplaceType`. | 🚧 planned, in `planned/` |
 | **`m-iteration`** | `List.Generate`, `List.Accumulate`, buffering, pagination, `GroupKind.Local`. | 🚧 planned, in `planned/` |

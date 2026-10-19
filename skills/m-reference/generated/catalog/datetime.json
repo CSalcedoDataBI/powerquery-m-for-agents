@@ -87,7 +87,7 @@
     "desktop"
    ],
    "partialHosts": false,
-   "notes": false,
+   "notes": true,
    "examples": 3
   },
   {

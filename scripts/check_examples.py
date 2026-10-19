@@ -100,14 +100,20 @@ def check(root=m_blocks.ROOT, ref=REF, page_list=None):
     # (Expression.Error), metadata fields (Documentation.Name). A name that also appears in
     # some ```m block cannot be vouched for this way - an error message, or a `try` record's
     # Message, repeats the very name that failed ("The name 'Text.Uppercase' ...").
-    written = set()
+    # A record field name is vouched for by a block that printed it without writing it:
+    # Value.Metadata(Int64.Type) prints #"Documentation.Name" on its own, so another block may
+    # then write that field to document a function. An invented field is never printed
+    # unwritten, and an error message never prints a name as a field.
+    written, printed, fields = set(), set(), set()
     for blocks in parsed.values():
         for block in blocks:
-            written |= code_names(block.code)
-    printed = set()
-    for result in results:
-        printed |= {a or b for a, b in REASON_RE.findall(result)}
-    known = exported | (printed - written)
+            mine = code_names(block.code)
+            written |= mine
+            if block.result is not None:
+                found = REASON_RE.findall(block.result)
+                printed |= {a or b for a, b in found}
+                fields |= {b for _, b in found if b} - mine
+    known = exported | (printed - written) | fields
 
     # 2: example placement
     by_file = {r["file"]: r for r in functions.values()}

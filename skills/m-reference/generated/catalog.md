@@ -153,7 +153,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `DateTime.FixedLocalNow` | DateTime | datetime |  | Returns the current date and time in the local timezone. |
 | `DateTime.From` | DateTime | nullable datetime | ▶ | Creates a datetime from the given value. |
 | `DateTime.FromFileTime` | DateTime | nullable datetime |  | Creates a datetime from a 64 bits long number. |
-| `DateTime.FromText` | DateTime | nullable datetime | ▶ | Creates a datetimezone from local and universal datetime formats. |
+| `DateTime.FromText` | DateTime | nullable datetime | ★▶ | Creates a datetimezone from local and universal datetime formats. |
 | `DateTime.IsInCurrentHour` | DateTime | nullable logical | ▶ | Indicates whether this datetime occurs during the current hour, as determined by the current date and time on the syste… |
 | `DateTime.IsInCurrentMinute` | DateTime | nullable logical | ▶ | Indicates whether this datetime occurs during the current minute, as determined by the current date and time on the sys… |
 | `DateTime.IsInCurrentSecond` | DateTime | nullable logical | ▶ | Indicates whether this datetime occurs during the current second, as determined by the current date and time on the sys… |
@@ -461,7 +461,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Table.Distinct` | Table.Membership | table | ★▶ | Removes duplicate rows from the table. |
 | `Table.DuplicateColumn` | Table.Column operations | table | ▶ | Duplicates a column with the specified name. |
 | `Table.ExpandListColumn` | Table.Transformation | table | ▶ | Given a column of lists in a table, create a copy of a row for each value in its list. |
-| `Table.ExpandRecordColumn` | Table.Transformation | table | ▶ | Expands a column of records into columns with each of the values. |
+| `Table.ExpandRecordColumn` | Table.Transformation | table | ★▶ | Expands a column of records into columns with each of the values. |
 | `Table.ExpandTableColumn` | Table.Transformation | table | ▶ | Expands a column of records or a column of tables into multiple columns in the containing table. |
 | `Table.FillDown` | Table.Transformation | table | ▶ | Propagates the value of a previous cell to the null-valued cells below in the column. |
 | `Table.FillUp` | Table.Transformation | table | ▶ | Propagates the value of a cell to the null-valued cells above in the column. |
@@ -494,7 +494,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Table.MaxN` | Table.Ordering | table | ▶ | Returns the largest row(s) using the given criteria. |
 | `Table.Min` | Table.Ordering | any | ▶ | Returns the smallest row or a default value using the given criteria. |
 | `Table.MinN` | Table.Ordering | table | ▶ | Returns the smallest row(s) using the given criteria. |
-| `Table.NestedJoin` | Table.Transformation | table | ▶ | Performs a join between tables on supplied columns and produces the join result in a new column. |
+| `Table.NestedJoin` | Table.Transformation | table | ★▶ | Performs a join between tables on supplied columns and produces the join result in a new column. |
 | `Table.Partition` | Table.Row operations | list | ▶ | Partitions the table into a list of tables based on the number of groups and column specified. |
 | `Table.PartitionKey` | Table.Transformation | nullable list | ▶ |  |
 | `Table.PartitionValues` | Table.Information | table | ▶ | Returns information about how a table is partitioned. |
@@ -502,7 +502,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Table.PositionOf` | Table.Membership | any | ▶ | Returns the position or positions of the row within the table. |
 | `Table.PositionOfAny` | Table.Membership | any | ▶ | Returns the position or positions of any of the specified rows within the table. |
 | `Table.PrefixColumns` | Table.Column operations | table | ▶ | Returns a table where the columns have all been prefixed with the given text. |
-| `Table.Profile` | Table.Information | table | ▶ | Returns a profile of the columns of a table. |
+| `Table.Profile` | Table.Information | table | ★▶ | Returns a profile of the columns of a table. |
 | `Table.PromoteHeaders` | Table.Column operations | table | ▶ | Promotes the first row of values as the new column headers (i.e. |
 | `Table.Range` | Table.Row operations | table | ▶ | Returns the rows beginning at the specified offset. |
 | `Table.RemoveColumns` | Table.Column operations | table | ▶ | Removes the specified columns. |

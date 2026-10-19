@@ -3,7 +3,7 @@ name: "Table.NestedJoin"
 category: "Table.Transformation"
 returns: "table"
 hosts: ["desktop"]
-notes: false
+notes: true
 examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
@@ -33,5 +33,7 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/tabl
 | `newColumnName` | `text` | no |
 | `joinKind` | `nullable number` | yes |
 | `keyEqualityComparers` | `nullable list` | yes |
+
+**Field note:** [`notes/table-nestedjoin.md`](../../notes/table-nestedjoin.md)
 
 **Executed examples (1):** [examples/table-transformation/table-nestedjoin.md](../../examples/table-transformation/table-nestedjoin.md)

@@ -163,6 +163,9 @@ SINGLE_ESCAPES = {"cr": chr(13), "lf": chr(10), "tab": chr(9), "#": "#"}
 # any script (My_Connector.Contents, Ñandú.X), and every dotted segment of it.
 DOTTED_RE = re.compile(r"(?<![\w.])([^\W\d]\w*(?:\.\w+)+)(?![\w])")
 ENVIRONMENT_RE = re.compile(r"#(shared|sections)\b")
+# A dotted name right after "[" or "," and before "=" is a record field being written
+# ([Documentation.Name = "x"]), not a value being read: nothing is looked up.
+FIELD_RE = re.compile(r"(?<=[\[,])(\s*)([^\W\d]\w*(?:\.\w+)+)(?=\s*=(?![>=]))")
 
 
 def scan(code):
@@ -249,7 +252,8 @@ def unsafe_calls(code, catalog, unknown=False):
             continue
         row = functions.get(name)
         if row is None:
-            if unknown and name not in known and DOTTED_RE.fullmatch(name):
+            if (unknown and name not in known and DOTTED_RE.fullmatch(name)
+                    and name in DOTTED_RE.findall(FIELD_RE.sub(r"\1", bare))):
                 found.append(name)
             continue
         category = row.get("category") or ""

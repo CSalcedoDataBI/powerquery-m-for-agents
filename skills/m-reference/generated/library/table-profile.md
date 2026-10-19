@@ -3,7 +3,7 @@ name: "Table.Profile"
 category: "Table.Information"
 returns: "table"
 hosts: ["desktop"]
-notes: false
+notes: true
 examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
@@ -28,5 +28,7 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/tabl
 |---|---|---|
 | `table` | `table` | no |
 | `additionalAggregates` | `nullable list` | yes |
+
+**Field note:** [`notes/table-profile.md`](../../notes/table-profile.md)
 
 **Executed examples (1):** [examples/table-information/table-profile.md](../../examples/table-information/table-profile.md)
