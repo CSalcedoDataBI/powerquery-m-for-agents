@@ -3,7 +3,7 @@ name: "DateTime.FromText"
 category: "DateTime"
 returns: "nullable datetime"
 hosts: ["desktop"]
-notes: false
+notes: true
 examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
@@ -28,5 +28,7 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date
 |---|---|---|
 | `text` | `nullable text` | no |
 | `options` | `any` | yes |
+
+**Field note:** [`notes/datetime-fromtext.md`](../../notes/datetime-fromtext.md)
 
 **Executed examples (3):** [examples/datetime/datetime-fromtext.md](../../examples/datetime/datetime-fromtext.md)

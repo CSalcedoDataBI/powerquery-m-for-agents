@@ -1,22 +1,24 @@
 # Privacy policy — powerquery-m-for-agents
 
-*Effective 2026-10-02. Maintainer: Cristóbal Salcedo — contacto@csalcedodatabi.com*
+*Effective 2026-10-02, updated 2026-10-19. Maintainer: Cristóbal Salcedo — contacto@csalcedodatabi.com*
 
 This policy covers the **powerquery-m-for-agents** plugin for Claude. The website
 [csalcedodatabi.com](https://csalcedodatabi.com) has [its own policy](https://csalcedodatabi.com/privacidad).
 
 ## What the plugin collects
 
-**Nothing.** The plugin is text: one skill, `m-reference`, made of Markdown and JSON reference
-pages. It ships no hooks, no agents, no MCP or LSP server, no telemetry, no analytics and no
-background process. It has no server of its own, so nothing you do with it reaches the
-maintainer.
+**Nothing.** The plugin is text: two skills, `m-reference` (Markdown and JSON reference pages)
+and `m-feedback` (instructions for reporting a gap in them). It ships no hooks, no agents, no
+MCP or LSP server, no telemetry, no analytics and no background process. It has no server of
+its own. The only thing that can reach the maintainer is a public GitHub issue you approve
+and file through `m-feedback`, below.
 
 ## What it reads and sends
 
 | When | What happens | Where it goes |
 |---|---|---|
-| The skill is used | Claude reads Markdown and JSON from the installed plugin folder | Nowhere: local reads only |
+| A skill is used | Claude reads Markdown and JSON from the installed plugin folder | Nowhere: local reads only |
+| You ask `m-feedback` to report a gap **and approve the drafted text** | Claude runs your own `gh issue create` with that text | A public issue on [github.com/CSalcedoDataBI/powerquery-m-for-agents](https://github.com/CSalcedoDataBI/powerquery-m-for-agents/issues), under your GitHub account and [GitHub's privacy statement](https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement) |
 
 Your queries, models and conversations stay between you, Claude and the tools you already use.
 The plugin keeps no copy of them and retains no data.

@@ -1,4 +1,4 @@
-<!-- lab: desktop 2.157.879.0 -->
+<!-- lab: desktop 2.158.1304.0 -->
 
 # Table.Join versus Table.NestedJoin
 
@@ -51,3 +51,52 @@ in
 
 **Do this:** use `Table.NestedJoin` + `Table.ExpandTableColumn` when names can collide or you
 want only some right-hand columns; `Table.Join` when the names are already distinct.
+
+## Keys of different types never match
+
+**What happens:** `"10" = 10` is `false`, so a key read as text on one side and as a number on
+the other matches nothing, with no error. It is the usual case when crossing sources: a CSV
+read with `Csv.Document` gives every column as text, while an Excel workbook keeps the number
+the cell holds. A left outer join leaves every row without a partner, and `Table.NestedJoin`
+behaves the same.
+
+```m
+let
+    FromCsv = #table({"Key"}, {{"10"}, {"11"}}),
+    FromExcel = #table({"Id", "Code"}, {{10, "EUR"}, {11, "USD"}})
+in
+    Table.Join(FromCsv, "Key", FromExcel, "Id", JoinKind.LeftOuter)
+```
+
+```text
+#table(type table [Key = any, Id = any, Code = any], {{"10", null, null}, {"11", null, null}})
+```
+
+Bring both keys to one type first. Text is the safe side, with the culture of the data:
+
+```m
+let
+    FromCsv = #table({"Key"}, {{"10"}, {"11"}}),
+    FromExcel = #table({"Id", "Code"}, {{10, "EUR"}, {11, "USD"}}),
+    Keyed = Table.TransformColumns(FromExcel, {{"Id", each Text.From(_, "en-US"), type text}})
+in
+    Table.Join(FromCsv, "Key", Keyed, "Id", JoinKind.LeftOuter)
+```
+
+```text
+#table(type table [Key = any, Id = nullable text, Code = any], {{"10", "10", "EUR"}, {"11", "11", "USD"}})
+```
+
+Pick one canonical form, because the number does not remember how the text wrote it:
+
+```m
+{Text.From(10.0, "en-US"), Text.From(10.0, "en-US") = "10.0", Number.From("10.0") = 10}
+```
+
+```text
+{"10", false, true}
+```
+
+**Do this:** before joining sources of different origin, normalise both keys the same way -
+`Text.Trim(Text.From(v, culture))` on both sides, or `Number.From` on both when the keys are
+truly numeric. Check the match count after the join, since a miss is silent.

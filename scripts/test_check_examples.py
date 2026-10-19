@@ -131,6 +131,22 @@ class Check(unittest.TestCase):
         self.assertEqual(len(errors), 1)
         self.assertIn("'T.Name'", errors[0])
 
+    def test_a_field_the_engine_printed_unwritten_may_be_written_elsewhere(self):
+        printed = self.page("skills/m-reference/concepts/s.md",
+                            "<!-- lab: desktop 1 -->\n\n```m\n1\n```\n\n```text\n"
+                            "[#\"Documentation.Name\" = \"x\"]\n```\n")
+        writes = self.page("skills/m-reference/concepts/r.md",
+                           "<!-- lab: desktop 1 -->\n\n```m\n1 meta [Documentation.Name = \"y\", "
+                           "Documentation.Nme = \"z\"]\n```\n\n```text\n1\n```\n")
+        errors = self.run_check(printed, writes)
+        self.assertEqual(len(errors), 1)
+        self.assertIn("'Documentation.Nme'", errors[0])
+
+    def test_a_field_only_echoed_by_the_block_that_wrote_it_is_not_vouched_for(self):
+        p = self.block_page("skills/m-reference/concepts/p.md",
+                            "[Documentation.Nme = 1]", "[#\"Documentation.Nme\" = 1]")
+        self.assertIn("'Documentation.Nme'", "\n".join(self.run_check(p)))
+
     def test_names_off_the_strict_shape_are_checked_under_known_prefixes(self):
         # `Text.upper` has a lowercase second segment, so only the loose pattern sees it;
         # `catalog.md` has a prefix the export never uses and is left alone.
@@ -178,6 +194,16 @@ class Check(unittest.TestCase):
                          ["New.Connector"])
         self.assertEqual(mb.unsafe_calls('New.Connector("x")', catalog), [])
         self.assertEqual(mb.unsafe_calls('{JoinKind.Inner, #"Step one"}', catalog, unknown=True), [])
+
+    def test_a_record_field_being_written_is_not_a_lookup(self):
+        catalog = {"functions": []}
+        code = '1 meta [Documentation.Name = "x",\n Documentation.Examples = {}]'
+        self.assertEqual(mb.unsafe_calls(code, catalog, unknown=True), [])
+        # The same name read as a value is still refused.
+        self.assertEqual(mb.unsafe_calls('[a = Documentation.Name]', catalog, unknown=True),
+                         ["Documentation.Name"])
+        self.assertEqual(mb.unsafe_calls('[New.Connector = 1, b = New.Connector("x")]',
+                                         catalog, unknown=True), ["New.Connector"])
 
     def test_identifiers_with_underscores_are_names(self):
         catalog = {"functions": []}

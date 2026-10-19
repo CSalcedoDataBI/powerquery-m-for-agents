@@ -43,16 +43,20 @@ literals; an error shows as `error: <Reason>: <Message>`.
 
 **A name that matches none of `catalog.md`, `connectors.md` and `constants.md` does not exist
 in any exported host.** Say so rather than offering it. That covers functions, connector
-entry points and constants such as `GroupKind.Local` or `Occurrence.All`. One kind of name is
-**not** covered, so its absence proves nothing:
+entry points and constants such as `GroupKind.Local` or `Occurrence.All`. Two kinds of name
+are **not** covered, so their absence proves nothing:
 
 - **Literal keywords** such as `#date`, `#table`, `#duration`. They are part of the language
   syntax, not library members.
+- **Metadata record fields** such as `Documentation.Name`, `Documentation.LongDescription`
+  and `Documentation.Examples`: field names in a `meta` record, not functions. They are how a
+  custom function documents itself (`concepts/types-metadata.md`).
 
 A connector is a function the engine gives no category, under a prefix no library function
 uses. Connectors carry no description: only Microsoft's MIT-licensed text is quoted, and it
 does not cover them. A card's one-line description, when it has one, is that text; its
-Microsoft Learn link, when it has one, is the full documentation. Data-access functions the engine documents (`Csv.Document`,
+Microsoft Learn link, when it has one, is the full documentation. When that line and the
+signature disagree on what comes back, the signature is the engine's: trust it. Data-access functions the engine documents (`Csv.Document`,
 `Web.Contents`, `Sql.Database`, …) are library, in `catalog.md`.
 
 ## Layout

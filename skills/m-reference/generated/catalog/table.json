@@ -447,7 +447,7 @@
     "desktop"
    ],
    "partialHosts": false,
-   "notes": false,
+   "notes": true,
    "examples": 1
   },
   {
@@ -942,7 +942,7 @@
     "desktop"
    ],
    "partialHosts": false,
-   "notes": false,
+   "notes": true,
    "examples": 1
   },
   {
@@ -1062,7 +1062,7 @@
     "desktop"
    ],
    "partialHosts": false,
-   "notes": false,
+   "notes": true,
    "examples": 1
   },
   {

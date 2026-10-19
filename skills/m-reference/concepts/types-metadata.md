@@ -1,4 +1,4 @@
-<!-- lab: desktop 2.157.879.0 -->
+<!-- lab: desktop 2.158.1304.0 -->
 
 # Types and metadata
 
@@ -86,4 +86,26 @@ A declared parameter type is checked when the function is called.
 
 ```text
 error: Expression.Error: We cannot convert the value "1" to type Number. | Detail: [Value = "1", Type = type number]
+```
+
+## Documenting a custom function
+
+A function documents itself through metadata on its type: `Value.ReplaceType` gives it a
+function type whose `meta` record holds `Documentation.*` fields. They are record field names,
+not library functions, so they are in no catalogue; the engine reads them back like any other
+metadata.
+
+```m
+let
+    Double = Value.ReplaceType((x as number) => x * 2,
+        type function (x as number) as number meta [
+            Documentation.Name = "Double",
+            Documentation.LongDescription = "Doubles a number.",
+            Documentation.Examples = {[Description = "Two", Code = "Double(1)", Result = "2"]}])
+in
+    {Double(21), Value.Metadata(Value.Type(Double))}
+```
+
+```text
+{42, [#"Documentation.Name" = "Double", #"Documentation.LongDescription" = "Doubles a number.", #"Documentation.Examples" = {[Description = "Two", Code = "Double(1)", Result = "2"]}]}
 ```

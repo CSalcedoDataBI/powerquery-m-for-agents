@@ -3,7 +3,7 @@ name: "Table.ExpandRecordColumn"
 category: "Table.Transformation"
 returns: "table"
 hosts: ["desktop"]
-notes: false
+notes: true
 examples: 1
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
@@ -30,5 +30,7 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/tabl
 | `column` | `text` | no |
 | `fieldNames` | `list` | no |
 | `newColumnNames` | `nullable list` | yes |
+
+**Field note:** [`notes/table-expandrecordcolumn.md`](../../notes/table-expandrecordcolumn.md)
 
 **Executed examples (1):** [examples/table-transformation/table-expandrecordcolumn.md](../../examples/table-transformation/table-expandrecordcolumn.md)
