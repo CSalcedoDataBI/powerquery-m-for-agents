@@ -4,7 +4,7 @@ category: "Text.Conversions from and to text"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -28,3 +28,5 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/valu
 |---|---|---|
 | `text` | `any` | no |
 | `culture` | `nullable text` | yes |
+
+**Executed examples (3):** [examples/text-conversions-from-and-to-text/value-fromtext.md](../../examples/text-conversions-from-and-to-text/value-fromtext.md)

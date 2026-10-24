@@ -40,6 +40,7 @@ another. A question counts only when the model answered both times.
 |---|---|---|---|
 | Claude Haiku 4.5 | 35 | 10 | **6** |
 | Claude Sonnet 5.5 | 30 | 0 | 1 |
+| Claude Opus 5.5 | 25 | 0 | 0 |
 | DeepSeek V4-Pro | 33 | 5 | **2** |
 | DeepSeek V4-Flash | 35 | 9 | **1** |
 
@@ -47,11 +48,12 @@ What the inventions look like: `BinaryFormat.BigEndian` (it is `ByteOrder.BigEnd
 `Diagnostics.TraceLevel.Information` (it is `TraceLevel.Information`), `Thread.Sleep`,
 `Splitter.FixedWidth`, `DateTime.Now`. They sit mostly in the less-written corners of the
 library (BinaryFormat, Diagnostics, Type, Uri, Cube), which is where the reference helps most.
-The strongest model barely invents with or without it: the reference earns its keep with the
-smaller and cheaper ones.
+The strongest models barely invent with or without it: Sonnet 5.5 and Opus 5.5 invent nothing
+on arm A, so the reference earns its keep with the smaller and cheaper ones.
 
 Sonnet 5.5 refuses some questions outright (evaluating text as M with `Expression.Evaluate`,
-waiting between web calls), and DeepSeek V4-Pro sometimes spends its whole budget reasoning;
+waiting between web calls), Opus 5.5 refuses more still (10 of its questions are dropped for a
+refusal in one or both arms), and DeepSeek V4-Pro sometimes spends its whole budget reasoning;
 those questions are left out of that model's row rather than scored as zero. Arm B is given
 the function rows of the question's category, not the constants (`ByteOrder.BigEndian`,
 `TraceLevel.Information`), which live in their own file; several inventions above are

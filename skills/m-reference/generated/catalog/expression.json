@@ -13,7 +13,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Expression.Evaluate",
@@ -43,7 +43,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Graph.Nodes",
@@ -88,7 +88,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Value.Lineage",

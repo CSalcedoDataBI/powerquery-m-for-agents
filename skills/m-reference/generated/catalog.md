@@ -62,17 +62,17 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Byte.From` | Number.Conversion and formatting | nullable number | ▶ | Creates an 8-bit integer from the given value. |
 | `Cdm.Contents` | Accessing data | table |  |  |
 | `Cdm.MapToEntity` | Cdm | table |  |  |
-| `Character.FromNumber` | Text.Conversions from and to text | nullable text |  | Converts a number to a text character. |
-| `Character.ToNumber` | Text.Conversions from and to text | nullable number |  | Converts a character to a number value. |
-| `Combiner.CombineTextByDelimiter` | Combiner | function |  | Returns a function that combines a list of text using the specified delimiter. |
-| `Combiner.CombineTextByEachDelimiter` | Combiner | function |  | Returns a function that combines a list of text using a sequence of delimiters. |
-| `Combiner.CombineTextByLengths` | Combiner | function |  | Returns a function that combines a list of text using the specified lengths. |
-| `Combiner.CombineTextByPositions` | Combiner | function |  | Returns a function that combines a list of text using the specified output positions. |
-| `Combiner.CombineTextByRanges` | Combiner | function |  | Returns a function that combines a list of text using the specified positions and lengths. |
-| `Comparer.Equals` | Comparer | logical |  | Returns a logical value based on the equality check over the two given values. |
-| `Comparer.FromCulture` | Comparer | function |  | Returns a comparer function based on the specified culture and case-sensitivity. |
-| `Comparer.Ordinal` | Comparer | number |  | Returns a comparer function which uses Ordinal rules to compare values. |
-| `Comparer.OrdinalIgnoreCase` | Comparer | number |  | Returns a case-insensitive comparer function which uses Ordinal rules to compare values. |
+| `Character.FromNumber` | Text.Conversions from and to text | nullable text | ▶ | Converts a number to a text character. |
+| `Character.ToNumber` | Text.Conversions from and to text | nullable number | ▶ | Converts a character to a number value. |
+| `Combiner.CombineTextByDelimiter` | Combiner | function | ▶ | Returns a function that combines a list of text using the specified delimiter. |
+| `Combiner.CombineTextByEachDelimiter` | Combiner | function | ▶ | Returns a function that combines a list of text using a sequence of delimiters. |
+| `Combiner.CombineTextByLengths` | Combiner | function | ▶ | Returns a function that combines a list of text using the specified lengths. |
+| `Combiner.CombineTextByPositions` | Combiner | function | ▶ | Returns a function that combines a list of text using the specified output positions. |
+| `Combiner.CombineTextByRanges` | Combiner | function | ▶ | Returns a function that combines a list of text using the specified positions and lengths. |
+| `Comparer.Equals` | Comparer | logical | ▶ | Returns a logical value based on the equality check over the two given values. |
+| `Comparer.FromCulture` | Comparer | function | ▶ | Returns a comparer function based on the specified culture and case-sensitivity. |
+| `Comparer.Ordinal` | Comparer | number | ▶ | Returns a comparer function which uses Ordinal rules to compare values. |
+| `Comparer.OrdinalIgnoreCase` | Comparer | number | ▶ | Returns a case-insensitive comparer function which uses Ordinal rules to compare values. |
 | `Csv.Document` | Accessing data | table |  | Returns the contents of the CSV document as a table. |
 | `Cube.AddAndExpandDimensionColumn` | Cube | table |  | Merges the specified dimension table into the cube’s filter context and changes the dimensional granularity of the filt… |
 | `Cube.AddMeasureColumn` | Cube | table |  | Adds a column to the cube that contains the results of the measure applied in the row context of each row. |
@@ -175,19 +175,19 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `DateTime.ToText` | DateTime | nullable text | ▶ | Returns a textual representation of the datetime value. |
 | `DateTimeZone.FixedLocalNow` | DateTimeZone | datetimezone |  | Returns the current date & time in the local timezone. |
 | `DateTimeZone.FixedUtcNow` | DateTimeZone | datetimezone |  | Returns the current date and time in UTC (the GMT timezone). |
-| `DateTimeZone.From` | DateTimeZone | nullable datetimezone |  | Creates a datetimezone from the given value. |
+| `DateTimeZone.From` | DateTimeZone | nullable datetimezone | ▶ | Creates a datetimezone from the given value. |
 | `DateTimeZone.FromFileTime` | DateTimeZone | nullable datetimezone |  | Creates a datetimezone from a 64 bits long number. |
-| `DateTimeZone.FromText` | DateTimeZone | nullable datetimezone |  | Creates a datetimezone from local, universal, and custom datetimezone formats. |
+| `DateTimeZone.FromText` | DateTimeZone | nullable datetimezone | ▶ | Creates a datetimezone from local, universal, and custom datetimezone formats. |
 | `DateTimeZone.LocalNow` | DateTimeZone | datetimezone |  | Returns the current date & time in the local timezone. |
-| `DateTimeZone.RemoveZone` | DateTimeZone | nullable datetime |  | Removes timezone information from the given datetimezone value. |
-| `DateTimeZone.SwitchZone` | DateTimeZone | nullable datetimezone |  | Changes the timezone of the value. |
+| `DateTimeZone.RemoveZone` | DateTimeZone | nullable datetime | ▶ | Removes timezone information from the given datetimezone value. |
+| `DateTimeZone.SwitchZone` | DateTimeZone | nullable datetimezone | ▶ | Changes the timezone of the value. |
 | `DateTimeZone.ToLocal` | DateTimeZone | nullable datetimezone |  | Converts the timezone component to the local timezone. |
-| `DateTimeZone.ToRecord` | DateTimeZone | record |  | Returns a record containing the datetimezone value's parts. |
-| `DateTimeZone.ToText` | DateTimeZone | nullable text |  | Returns a textual representation of the datetimezone value. |
-| `DateTimeZone.ToUtc` | DateTimeZone | nullable datetimezone |  | Converts the timezone component to UTC timezone. |
+| `DateTimeZone.ToRecord` | DateTimeZone | record | ▶ | Returns a record containing the datetimezone value's parts. |
+| `DateTimeZone.ToText` | DateTimeZone | nullable text | ▶ | Returns a textual representation of the datetimezone value. |
+| `DateTimeZone.ToUtc` | DateTimeZone | nullable datetimezone | ▶ | Converts the timezone component to UTC timezone. |
 | `DateTimeZone.UtcNow` | DateTimeZone | datetimezone |  | Returns the current date and time in UTC (the GMT timezone). |
-| `DateTimeZone.ZoneHours` | DateTimeZone | nullable number |  | Gets the timezone hour of the value. |
-| `DateTimeZone.ZoneMinutes` | DateTimeZone | nullable number |  | Gets the timezone minute of the value. |
+| `DateTimeZone.ZoneHours` | DateTimeZone | nullable number | ▶ | Gets the timezone hour of the value. |
+| `DateTimeZone.ZoneMinutes` | DateTimeZone | nullable number | ▶ | Gets the timezone minute of the value. |
 | `DB2.Database` | Accessing data | table |  | Returns a table of SQL tables and views available in a Db2 database. |
 | `Decimal.From` | Number.Conversion and formatting | nullable number | ▶ | Creates a Decimal from the given value. |
 | `DeltaLake.Metadata` | Accessing data | table |  |  |
@@ -210,24 +210,24 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Duration.TotalSeconds` | Duration | nullable number | ▶ | Returns the total seconds this duration spans. |
 | `Duration.ToText` | Duration | nullable text | ▶ | Returns the text of the form "d.h:m:s". |
 | `Embedded.Value` | Values.Implementation | any |  | Accesses a value by name in an embedded mashup. |
-| `Error.Record` | Error | record |  | Returns an error record from the provided text values for reason, message, detail and error code. |
+| `Error.Record` | Error | record | ▶ | Returns an error record from the provided text values for reason, message, detail and error code. |
 | `Essbase.Cubes` | Accessing data | table |  | Returns the cubes in an Essbase instance grouped by Essbase server. |
 | `Excel.CurrentWorkbook` | Accessing data | table |  |  |
 | `Excel.ShapeTable` | Values.Implementation | any |  | This function is intended for internal use only. |
 | `Excel.Workbook` | Accessing data | table |  | Returns the contents of the Excel workbook. |
 | `Exchange.Contents` | Accessing data | table |  | Returns a table of contents from a Microsoft Exchange account. |
-| `Expression.Constant` | Expression | text |  | Returns the M source code representation of a constant value. |
+| `Expression.Constant` | Expression | text | ▶ | Returns the M source code representation of a constant value. |
 | `Expression.Evaluate` | Expression | any |  | Returns the result of evaluating an M expression. |
-| `Expression.Identifier` | Expression | text |  | Returns the M source code representation of an identifier. |
+| `Expression.Identifier` | Expression | text | ▶ | Returns the M source code representation of an identifier. |
 | `File.Contents` | Accessing data | binary |  | Returns the contents of the specified file as binary. |
 | `Folder.Contents` | Accessing data | table |  | Returns a table containing the properties and contents of the files and folders found in the specified folder. |
 | `Folder.Files` | Accessing data | table |  | Returns a table containing the properties and contents of the files found in the specified folder and subfolders. |
-| `Function.From` | Function | function |  | Creates a function with a specific parameter signature on top of a function that takes a single list argument |
-| `Function.Invoke` | Function | any |  | Invokes the given function |
+| `Function.From` | Function | function | ▶ | Creates a function with a specific parameter signature on top of a function that takes a single list argument |
+| `Function.Invoke` | Function | any | ▶ | Invokes the given function |
 | `Function.InvokeAfter` | Function | any |  | Invokes the given function after the specified duration has passed. |
 | `Function.InvokeWithErrorContext` | Values.Implementation | any |  | This function is intended for internal use only. |
 | `Function.IsDataSource` | Type | logical | ▶ | Returns whether or not a particular function is considered a data source. |
-| `Function.ScalarVector` | Function | function |  | Creates a scalar function on top of a vector function, batching multiple invocations. |
+| `Function.ScalarVector` | Function | function | ▶ | Creates a scalar function on top of a vector function, batching multiple invocations. |
 | `Geography.FromWellKnownText` | Record.Serialization | nullable record | ▶ | Translates text representing a geographic value in Well-Known Text (WKT) format into a structured record. |
 | `Geography.ToWellKnownText` | Record.Serialization | nullable text | ▶ | Translates a structured geographic point value into its Well-Known Text (WKT) representation. |
 | `GeographyPoint.From` | Record.Serialization | record | ▶ | Creates a record representing a geographic point from parts. |
@@ -236,7 +236,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `GeometryPoint.From` | Record.Serialization | record | ▶ | Creates a record representing a geometric point from parts. |
 | `GoogleAnalytics.Accounts` | Accessing data | table |  | Returns Google Analytics accounts. |
 | `Graph.Nodes` | Expression | list |  | This function is intended for internal use only. |
-| `Guid.From` | Text.Conversions from and to text | nullable text |  | Returns a guid value from the given value. |
+| `Guid.From` | Text.Conversions from and to text | nullable text | ▶ | Returns a guid value from the given value. |
 | `Hdfs.Contents` | Accessing data | table |  | Returns a table containing the properties and contents of the files and folders found in the specified folder from a Ha… |
 | `Hdfs.Files` | Accessing data | table |  | Returns a table containing the properties and contents of the files found in the specified folder and subfolders from a… |
 | `HdInsight.Containers` | Accessing data | table |  | Returns a navigational table containing the containers found in the specified account from an Azure storage vault. |
@@ -251,13 +251,13 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Int32.From` | Number.Conversion and formatting | nullable number | ▶ | Creates a 32-bit integer from the given value. |
 | `Int64.From` | Number.Conversion and formatting | nullable number | ▶ | Creates a 64-bit integer from the given value. |
 | `Int8.From` | Number.Conversion and formatting | nullable number | ▶ | Creates a signed 8-bit integer from the given value. |
-| `ItemExpression.From` | Table.Table construction | record |  | Returns the abstract syntax tree (AST) for the body of a function. |
+| `ItemExpression.From` | Table.Table construction | record | ▶ | Returns the abstract syntax tree (AST) for the body of a function. |
 | `Json.Document` | Accessing data | any |  | Returns the content of the JSON document. |
-| `Json.FromValue` | Text.Conversions from and to text | binary |  | Produces a JSON representation of a given value. |
-| `Lines.FromBinary` | Lines | list |  | Converts a binary value to a list of text values split at lines breaks. |
-| `Lines.FromText` | Lines | list |  | Converts a text value to a list of text values split at lines breaks. |
-| `Lines.ToBinary` | Lines | binary |  | Converts a list of text into a binary value using the specified encoding and lineSeparator.The specified lineSeparator… |
-| `Lines.ToText` | Lines | text |  | Converts a list of text into a single text. |
+| `Json.FromValue` | Text.Conversions from and to text | binary | ▶ | Produces a JSON representation of a given value. |
+| `Lines.FromBinary` | Lines | list | ▶ | Converts a binary value to a list of text values split at lines breaks. |
+| `Lines.FromText` | Lines | list | ▶ | Converts a text value to a list of text values split at lines breaks. |
+| `Lines.ToBinary` | Lines | binary | ▶ | Converts a list of text into a binary value using the specified encoding and lineSeparator.The specified lineSeparator… |
+| `Lines.ToText` | Lines | text | ▶ | Converts a list of text into a single text. |
 | `List.Accumulate` | List.Transformation functions | any | ▶ | Accumulates a summary value from the items in the list. |
 | `List.AllTrue` | List.Membership functions | logical | ▶ | Returns true if all expressions are true. |
 | `List.Alternate` | List.Selection | list | ▶ | Returns a list comprised of all the odd numbered offset elements in a list. |
@@ -335,46 +335,46 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Module.Versions` | Values.Implementation | record |  | Returns a record of module versions for the current module and its dependencies. |
 | `MySQL.Database` | Accessing data | table |  | Returns a table of SQL tables, views, and stored scalar functions available in a MySQL database. |
 | `Number.Abs` | Number.Operations | nullable number | ▶ | Returns the absolute value of the number. |
-| `Number.Acos` | Number.Trigonometry | nullable number |  | Returns the arccosine of the number. |
-| `Number.Asin` | Number.Trigonometry | nullable number |  | Returns the arcsine of the number. |
-| `Number.Atan` | Number.Trigonometry | nullable number |  | Returns the arctangent of the number. |
-| `Number.Atan2` | Number.Trigonometry | nullable number |  | Returns the arctangent of the division of the two numbers. |
-| `Number.BitwiseAnd` | Number.Bytes | nullable number |  | Returns the result of performing a bitwise "And" operation between the two inputs. |
-| `Number.BitwiseNot` | Number.Bytes | any |  | Returns a byte where each bit is the opposite of the input. |
-| `Number.BitwiseOr` | Number.Bytes | nullable number |  | Returns the result of performing a bitwise "Or" between the two inputs. |
-| `Number.BitwiseShiftLeft` | Number.Bytes | nullable number |  | Shifts the bits set to the left. |
-| `Number.BitwiseShiftRight` | Number.Bytes | nullable number |  | Shifts the bits set to the right. |
-| `Number.BitwiseXor` | Number.Bytes | nullable number |  | Returns the result of performing a bitwise "XOR" (Exclusive-OR) between the two inputs. |
+| `Number.Acos` | Number.Trigonometry | nullable number | ▶ | Returns the arccosine of the number. |
+| `Number.Asin` | Number.Trigonometry | nullable number | ▶ | Returns the arcsine of the number. |
+| `Number.Atan` | Number.Trigonometry | nullable number | ▶ | Returns the arctangent of the number. |
+| `Number.Atan2` | Number.Trigonometry | nullable number | ▶ | Returns the arctangent of the division of the two numbers. |
+| `Number.BitwiseAnd` | Number.Bytes | nullable number | ▶ | Returns the result of performing a bitwise "And" operation between the two inputs. |
+| `Number.BitwiseNot` | Number.Bytes | any | ▶ | Returns a byte where each bit is the opposite of the input. |
+| `Number.BitwiseOr` | Number.Bytes | nullable number | ▶ | Returns the result of performing a bitwise "Or" between the two inputs. |
+| `Number.BitwiseShiftLeft` | Number.Bytes | nullable number | ▶ | Shifts the bits set to the left. |
+| `Number.BitwiseShiftRight` | Number.Bytes | nullable number | ▶ | Shifts the bits set to the right. |
+| `Number.BitwiseXor` | Number.Bytes | nullable number | ▶ | Returns the result of performing a bitwise "XOR" (Exclusive-OR) between the two inputs. |
 | `Number.Combinations` | Number.Operations | nullable number | ▶ | Returns the number of unique combinations. |
-| `Number.Cos` | Number.Trigonometry | nullable number |  | Returns the cosine of the number. |
-| `Number.Cosh` | Number.Trigonometry | nullable number |  | Returns the hyperbolic cosine of the number. |
+| `Number.Cos` | Number.Trigonometry | nullable number | ▶ | Returns the cosine of the number. |
+| `Number.Cosh` | Number.Trigonometry | nullable number | ▶ | Returns the hyperbolic cosine of the number. |
 | `Number.Exp` | Number.Operations | nullable number | ▶ | Raises e to the given power. |
 | `Number.Factorial` | Number.Operations | nullable number | ▶ | Returns the factorial of the number. |
 | `Number.From` | Number.Conversion and formatting | nullable number | ▶ | Creates a number from the given value. |
 | `Number.FromText` | Number.Conversion and formatting | nullable number | ★▶ | Creates numbers from common text formats ("15", "3,423.10", "5.0E-10"). |
 | `Number.IntegerDivide` | Number.Operations | nullable number | ▶ | Divides two numbers and returns the integer portion of the result. |
-| `Number.IsEven` | Number.Information | logical |  | Indicates if the value is even. |
-| `Number.IsNaN` | Number.Information | logical |  | Indicates if the value is NaN (Not a number). |
-| `Number.IsOdd` | Number.Information | logical |  | Indicates if the value is odd. |
+| `Number.IsEven` | Number.Information | logical | ▶ | Indicates if the value is even. |
+| `Number.IsNaN` | Number.Information | logical | ▶ | Indicates if the value is NaN (Not a number). |
+| `Number.IsOdd` | Number.Information | logical | ▶ | Indicates if the value is odd. |
 | `Number.Ln` | Number.Operations | nullable number | ▶ | Returns the natural logarithm of the number. |
 | `Number.Log` | Number.Operations | nullable number | ▶ | Returns the logarithm of the number to the specified base (default e). |
 | `Number.Log10` | Number.Operations | nullable number | ▶ | Returns the base 10 logarithm of the number. |
 | `Number.Mod` | Number.Operations | nullable number | ▶ | Integer divides two numbers and returns the remainder. |
 | `Number.Permutations` | Number.Operations | nullable number | ▶ | Returns the number of permutations. |
 | `Number.Power` | Number.Operations | nullable number | ▶ | Raises a number to the given power. |
-| `Number.Random` | Number.Random | number |  | Returns a random number. |
-| `Number.RandomBetween` | Number.Random | number |  | Returns a random number between two numbers. |
-| `Number.Round` | Number.Rounding | nullable number |  | Returns the rounded number. |
-| `Number.RoundAwayFromZero` | Number.Rounding | nullable number |  | Returns the result of rounding positive numbers up and negative numbers down. |
-| `Number.RoundDown` | Number.Rounding | nullable number |  | Returns the highest previous number. |
-| `Number.RoundTowardZero` | Number.Rounding | nullable number |  | Returns the result of rounding positive numbers down and negative numbers up. |
-| `Number.RoundUp` | Number.Rounding | nullable number |  | Returns the next highest number. |
+| `Number.Random` | Number.Random | number | ▶ | Returns a random number. |
+| `Number.RandomBetween` | Number.Random | number | ▶ | Returns a random number between two numbers. |
+| `Number.Round` | Number.Rounding | nullable number | ▶ | Returns the rounded number. |
+| `Number.RoundAwayFromZero` | Number.Rounding | nullable number | ▶ | Returns the result of rounding positive numbers up and negative numbers down. |
+| `Number.RoundDown` | Number.Rounding | nullable number | ▶ | Returns the highest previous number. |
+| `Number.RoundTowardZero` | Number.Rounding | nullable number | ▶ | Returns the result of rounding positive numbers down and negative numbers up. |
+| `Number.RoundUp` | Number.Rounding | nullable number | ▶ | Returns the next highest number. |
 | `Number.Sign` | Number.Operations | nullable number | ▶ | Returns 1 if the number is positive, -1 if it is negative, and 0 if it is zero. |
-| `Number.Sin` | Number.Trigonometry | nullable number |  | Returns the sine of the number. |
-| `Number.Sinh` | Number.Trigonometry | nullable number |  | Returns the hyperbolic sine of the number. |
+| `Number.Sin` | Number.Trigonometry | nullable number | ▶ | Returns the sine of the number. |
+| `Number.Sinh` | Number.Trigonometry | nullable number | ▶ | Returns the hyperbolic sine of the number. |
 | `Number.Sqrt` | Number.Operations | nullable number | ▶ | Returns the square root of the number. |
-| `Number.Tan` | Number.Trigonometry | nullable number |  | Returns the tangent of the number. |
-| `Number.Tanh` | Number.Trigonometry | nullable number |  | Returns the hyperbolic tangent of the number. |
+| `Number.Tan` | Number.Trigonometry | nullable number | ▶ | Returns the tangent of the number. |
+| `Number.Tanh` | Number.Trigonometry | nullable number | ▶ | Returns the hyperbolic tangent of the number. |
 | `Number.ToText` | Number.Conversion and formatting | nullable text | ▶ | Converts the given number to text. |
 | `OData.Feed` | Accessing data | any |  | Returns a table of OData feeds offered by an OData service. |
 | `Odbc.DataSource` | Accessing data | table |  | Returns a table of SQL tables and views from the ODBC data source. |
@@ -407,10 +407,10 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Record.ToList` | Record.Serialization | list | ▶ | Returns a list of values containing the field values of the input record. |
 | `Record.ToTable` | Record.Serialization | table | ▶ | Returns a table with each row being a field name and value of the input record. |
 | `Record.TransformFields` | Record.Transformations | record | ▶ | Returns a record after applying specified transformations. |
-| `Replacer.ReplaceText` | Replacer | nullable text |  | Replaces text within the provided input. |
-| `Replacer.ReplaceValue` | Replacer | any |  | Replaces values within the provided input. |
-| `RowExpression.Column` | Table.Table construction | record |  | Returns an abstract syntax tree (AST) that represents access to a column within a row expression. |
-| `RowExpression.From` | Table.Table construction | record |  | Returns the abstract syntax tree (AST) for the body of a function. |
+| `Replacer.ReplaceText` | Replacer | nullable text | ▶ | Replaces text within the provided input. |
+| `Replacer.ReplaceValue` | Replacer | any | ▶ | Replaces values within the provided input. |
+| `RowExpression.Column` | Table.Table construction | record | ▶ | Returns an abstract syntax tree (AST) that represents access to a column within a row expression. |
+| `RowExpression.From` | Table.Table construction | record | ▶ | Returns the abstract syntax tree (AST) for the body of a function. |
 | `Salesforce.Data` | Accessing data | table |  | Returns the objects from the Salesforce account. |
 | `Salesforce.Reports` | Accessing data | table |  | Returns the reports from the Salesforce account. |
 | `SapBusinessWarehouse.Cubes` | Accessing data | table |  | Returns the InfoCubes and queries in an SAP Business Warehouse system grouped by InfoArea. |
@@ -549,7 +549,7 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Table.ViewError` | Table.Table construction | record | ▶ | Creates a modified error record which won't trigger a fallback when thrown by a handler defined on a view (via Table.Vi… |
 | `Table.ViewFunction` | Table.Table construction | function | ▶ | Creates a function that can be intercepted by a handler defined on a view (via Table.View). |
 | `Table.WithErrorContext` | Values.Implementation | any | ▶ | This function is intended for internal use only. |
-| `Tables.GetRelationships` | Table.Information | table |  | Gets the relationships among a set of tables. |
+| `Tables.GetRelationships` | Table.Information | table | ▶ | Gets the relationships among a set of tables. |
 | `Teradata.Database` | Accessing data | table |  | Returns a table of SQL tables and views from the Teradata database. |
 | `Text.AfterDelimiter` | Text.Transformations | any | ▶ |  |
 | `Text.At` | Text.Extraction | nullable text | ▶ | Returns the character at the specified position. |
@@ -593,14 +593,14 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Text.TrimStart` | Text.Transformations | nullable text | ▶ | Removes all specified leading characters. |
 | `Text.Upper` | Text.Transformations | nullable text | ▶ | Converts all characters to uppercase. |
 | `Time.EndOfHour` | Date | any | ▶ | Returns the end of the hour. |
-| `Time.From` | Time | nullable time |  | Creates a time from the given value. |
-| `Time.FromText` | Time | nullable time |  | Creates a Time from local and universal, and custom Time formats. |
-| `Time.Hour` | Time | nullable number |  | Returns the hour component. |
-| `Time.Minute` | Time | nullable number |  | Returns the minute component. |
-| `Time.Second` | Time | nullable number |  | Returns the second component. |
+| `Time.From` | Time | nullable time | ▶ | Creates a time from the given value. |
+| `Time.FromText` | Time | nullable time | ▶ | Creates a Time from local and universal, and custom Time formats. |
+| `Time.Hour` | Time | nullable number | ▶ | Returns the hour component. |
+| `Time.Minute` | Time | nullable number | ▶ | Returns the minute component. |
+| `Time.Second` | Time | nullable number | ▶ | Returns the second component. |
 | `Time.StartOfHour` | Date | any | ▶ | Returns the start of the hour. |
-| `Time.ToRecord` | Time | record |  | Returns a record containing the Time value's parts. |
-| `Time.ToText` | Time | nullable text |  | Returns a textual representation of the time value. |
+| `Time.ToRecord` | Time | record | ▶ | Returns a record containing the Time value's parts. |
+| `Time.ToText` | Time | nullable text | ▶ | Returns a textual representation of the time value. |
 | `Type.AddTableKey` | Type | type | ▶ | Adds a key to the given table type. |
 | `Type.ClosedRecord` | Type | type | ▶ | Returns a closed version of the given record type (or the same type, if it is already closed). |
 | `Type.Facets` | Type | record | ▶ | Returns the facets of a type. |
@@ -625,33 +625,33 @@ Open one card: `library/<file>.md`, where <file> is the name in lower case with 
 | `Type.TableRow` | Type | type | ▶ | Returns the row type of the table type. |
 | `Type.TableSchema` | Type | table | ▶ | Returns a table containing a description of the columns (i.e. |
 | `Type.Union` | Type | type | ▶ | Returns the union of a list of types. |
-| `Uri.BuildQueryString` | Uri | text |  | Assemble a record into a URI query string. |
-| `Uri.Combine` | Uri | text |  | Returns an absolute URI that is the combination of the input base URI and relative URI. |
-| `Uri.EscapeDataString` | Uri | text |  | Encodes special characters in accordance with RFC 3986. |
-| `Uri.Parts` | Uri | record |  | Returns the parts of the input absolute URI as a record. |
-| `Value.Add` | Values.Arithmetic operations | any |  | Returns the sum of the two values. |
+| `Uri.BuildQueryString` | Uri | text | ▶ | Assemble a record into a URI query string. |
+| `Uri.Combine` | Uri | text | ▶ | Returns an absolute URI that is the combination of the input base URI and relative URI. |
+| `Uri.EscapeDataString` | Uri | text | ▶ | Encodes special characters in accordance with RFC 3986. |
+| `Uri.Parts` | Uri | record | ▶ | Returns the parts of the input absolute URI as a record. |
+| `Value.Add` | Values.Arithmetic operations | any | ▶ | Returns the sum of the two values. |
 | `Value.Alternates` | Expression | any |  | Expresses alternate query plans. |
-| `Value.As` | Values.Types | any |  | Returns the value if it is compatible with the specified type. |
-| `Value.Compare` | Values | number |  | Returns -1, 0, or 1 based on whether the first value is less than, equal to, or greater than the second. |
-| `Value.Divide` | Values.Arithmetic operations | any |  | Returns the result of dividing the first value by the second. |
-| `Value.Equals` | Values | logical |  | Returns whether two values are equal. |
-| `Value.Expression` | Expression | nullable record |  | Returns an abstract syntax tree (AST) that represents the value's expression. |
+| `Value.As` | Values.Types | any | ▶ | Returns the value if it is compatible with the specified type. |
+| `Value.Compare` | Values | number | ▶ | Returns -1, 0, or 1 based on whether the first value is less than, equal to, or greater than the second. |
+| `Value.Divide` | Values.Arithmetic operations | any | ▶ | Returns the result of dividing the first value by the second. |
+| `Value.Equals` | Values | logical | ▶ | Returns whether two values are equal. |
+| `Value.Expression` | Expression | nullable record | ▶ | Returns an abstract syntax tree (AST) that represents the value's expression. |
 | `Value.Firewall` | Values.Implementation | any |  | This function is intended for internal use only. |
-| `Value.FromText` | Text.Conversions from and to text | any |  | Creates a strongly-typed value from a textual representation. |
-| `Value.Is` | Values.Types | logical |  | Determines whether a value is compatible with the specified type. |
+| `Value.FromText` | Text.Conversions from and to text | any | ▶ | Creates a strongly-typed value from a textual representation. |
+| `Value.Is` | Values.Types | logical | ▶ | Determines whether a value is compatible with the specified type. |
 | `Value.Lineage` | Expression | any |  | This function is intended for internal use only. |
-| `Value.Metadata` | Metadata | any |  | Returns a record containing the input's metadata. |
-| `Value.Multiply` | Values.Arithmetic operations | any |  | Returns the product of the two values. |
+| `Value.Metadata` | Metadata | any | ▶ | Returns a record containing the input's metadata. |
+| `Value.Multiply` | Values.Arithmetic operations | any | ▶ | Returns the product of the two values. |
 | `Value.NativeQuery` | Values | any |  | Evaluates a query against a target. |
-| `Value.NullableEquals` | Values | nullable logical |  | Returns whether two values are equal. |
+| `Value.NullableEquals` | Values | nullable logical | ▶ | Returns whether two values are equal. |
 | `Value.Optimize` | Expression | any |  | Signals Value.Expression to return the optimized expression for a value. |
-| `Value.RemoveMetadata` | Metadata | any |  | Strips the input of metadata. |
-| `Value.ReplaceMetadata` | Metadata | any |  | Replaces the input's metadata information. |
-| `Value.ReplaceType` | Values.Types | any |  | Replaces the value's type. |
+| `Value.RemoveMetadata` | Metadata | any | ▶ | Strips the input of metadata. |
+| `Value.ReplaceMetadata` | Metadata | any | ▶ | Replaces the input's metadata information. |
+| `Value.ReplaceType` | Values.Types | any | ▶ | Replaces the value's type. |
 | `Value.ResourceExpression` | Value | any |  |  |
-| `Value.Subtract` | Values.Arithmetic operations | any |  | Returns the difference of the two values. |
+| `Value.Subtract` | Values.Arithmetic operations | any | ▶ | Returns the difference of the two values. |
 | `Value.Traits` | Expression | table |  | This function is intended for internal use only. |
-| `Value.Type` | Values | type |  | Returns the type of the given value. |
+| `Value.Type` | Values | type | ▶ | Returns the type of the given value. |
 | `Value.VersionIdentity` | Action | any |  |  |
 | `Value.Versions` | Action | table |  |  |
 | `Value.ViewError` | Values.Implementation | record |  | This function is intended for internal use only. |

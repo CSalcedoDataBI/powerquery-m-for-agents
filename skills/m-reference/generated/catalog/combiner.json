@@ -13,7 +13,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Combiner.CombineTextByEachDelimiter",
@@ -28,7 +28,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Combiner.CombineTextByLengths",
@@ -43,7 +43,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Combiner.CombineTextByPositions",
@@ -58,7 +58,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "Combiner.CombineTextByRanges",
@@ -73,7 +73,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   }
  ]
 }

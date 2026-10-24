@@ -4,7 +4,7 @@ category: "Text.Conversions from and to text"
 returns: "nullable text"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -27,3 +27,5 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/guid
 | Name | Type | Optional |
 |---|---|---|
 | `value` | `nullable text` | no |
+
+**Executed examples (3):** [examples/text-conversions-from-and-to-text/guid-from.md](../../examples/text-conversions-from-and-to-text/guid-from.md)
