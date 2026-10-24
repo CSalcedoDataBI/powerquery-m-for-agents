@@ -4,7 +4,7 @@ category: "Metadata"
 returns: "any"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -28,3 +28,5 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/valu
 |---|---|---|
 | `value` | `any` | no |
 | `metaValue` | `any` | yes |
+
+**Executed examples (3):** [examples/metadata/value-removemetadata.md](../../examples/metadata/value-removemetadata.md)

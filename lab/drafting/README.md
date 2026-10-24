@@ -1,26 +1,41 @@
 # Drafting with an outside model
 
-A pilot (issue #21): can a low-cost agent harness draft executed-example pages well enough that
-bulk coverage stops costing the main agent's quota? The harness under test is
-[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`, MIT, developer
-preview), headless profile, its default model `deepseek-flash`.
+Bulk coverage of executed-example pages should not cost the main agent's quota, so an outside
+model drafts them. Nothing the model writes is trusted: it drafts the ```` ```m ```` blocks and
+one-line notes only; the engine writes every result, and the same checks as any page
+(`pilot.py collect`, then the lab runner and `check_examples.py`) decide what stays.
 
-Nothing the model writes is trusted. It drafts the ```` ```m ```` blocks and one-line notes; the
-engine writes every result, and the same checks as any page decide what stays.
+The prompt, the collect step and every safety check are shared; only how a prompt is answered
+differs. Two harnesses answer it:
+
+- **Claude, through a reviewer CLI** (`run_claude.ps1`) — the current drafter. A command with
+  the second-opinion interface (`--prompt-file`, `-o`, `--gasto`, default `claude-review`)
+  answers each prompt with the Anthropic API. The CLI owns the key and the spend log, so no key
+  reaches this repo and `-Ceiling` caps a pass. A page already answered is skipped, so a capped
+  or interrupted pass resumes.
+- **DeepSeek, in an isolated container** (`run_dsh.ps1`) — the original pilot (issue #21),
+  testing whether a low-cost local harness
+  ([DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness), `dsh`, MIT, headless,
+  `deepseek-flash`) could do the same with no host access and one secret. Its isolation is below.
 
 ```bash
-python lab/drafting/pilot.py prompts --out lab/drafting/out/dsh     # one prompt per function
-pwsh lab/drafting/run_dsh.ps1 -Out lab/drafting/out/dsh -CheckOnly   # build + isolation check, no model call
-pwsh lab/drafting/run_dsh.ps1 -Out lab/drafting/out/dsh              # one container per function
-python lab/drafting/pilot.py collect --out lab/drafting/out/dsh     # answers -> examples/
+# one prompt per function missing an example, in the given category roots
+python lab/drafting/pilot.py prompts --out lab/drafting/out/claude --missing-only --categories Number,Text,Time
+
+# answer each prompt (claude-review, stop before US$93 of total spend)
+pwsh lab/drafting/run_claude.ps1 -Out lab/drafting/out/claude -Ceiling 93
+# ...or the DeepSeek container, one per function (build + isolation check first with -CheckOnly)
+pwsh lab/drafting/run_dsh.ps1 -Out lab/drafting/out/dsh
+
+python lab/drafting/pilot.py collect --out lab/drafting/out/claude   # answers -> examples/
 python lab/runner/run_examples.py --port <port> --write --only examples/number-
 python scripts/check_examples.py
-python lab/drafting/pilot.py report --out lab/drafting/out/dsh
+python lab/drafting/pilot.py report --out lab/drafting/out/claude
 ```
 
 `lab/drafting/out/` is ignored by git: prompts, raw answers and timings stay on the machine.
 
-## Isolation
+## Isolation (DeepSeek container)
 
 | Rule | How |
 |---|---|

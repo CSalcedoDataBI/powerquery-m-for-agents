@@ -4,7 +4,7 @@ category: "Table.Table construction"
 returns: "record"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -27,3 +27,5 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/rowe
 | Name | Type | Optional |
 |---|---|---|
 | `function` | `function` | no |
+
+**Executed examples (3):** [examples/table-table-construction/rowexpression-from.md](../../examples/table-table-construction/rowexpression-from.md)

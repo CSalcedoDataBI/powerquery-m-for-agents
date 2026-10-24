@@ -4,7 +4,7 @@ category: "Number.Random"
 returns: "number"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -21,3 +21,5 @@ Returns a random number.
 *Description: Microsoft, MIT ([THIRD_PARTY_NOTICES.md](../../../../THIRD_PARTY_NOTICES.md)).*
 
 Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-random)
+
+**Executed examples (3):** [examples/number-random/number-random.md](../../examples/number-random/number-random.md)

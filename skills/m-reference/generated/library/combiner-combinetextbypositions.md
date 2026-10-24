@@ -4,7 +4,7 @@ category: "Combiner"
 returns: "function"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -28,3 +28,5 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/comb
 |---|---|---|
 | `positions` | `list` | no |
 | `template` | `nullable text` | yes |
+
+**Executed examples (3):** [examples/combiner/combiner-combinetextbypositions.md](../../examples/combiner/combiner-combinetextbypositions.md)

@@ -4,7 +4,7 @@ category: "Uri"
 returns: "record"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -27,3 +27,5 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/uri-
 | Name | Type | Optional |
 |---|---|---|
 | `absoluteUri` | `text` | no |
+
+**Executed examples (3):** [examples/uri/uri-parts.md](../../examples/uri/uri-parts.md)

@@ -43,7 +43,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 2
   },
   {
    "name": "DateTimeZone.FromFileTime",
@@ -73,7 +73,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTimeZone.LocalNow",
@@ -103,7 +103,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTimeZone.SwitchZone",
@@ -118,7 +118,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTimeZone.ToLocal",
@@ -148,7 +148,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTimeZone.ToText",
@@ -163,7 +163,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTimeZone.ToUtc",
@@ -178,7 +178,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTimeZone.UtcNow",
@@ -208,7 +208,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   },
   {
    "name": "DateTimeZone.ZoneMinutes",
@@ -223,7 +223,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 3
   }
  ]
 }
