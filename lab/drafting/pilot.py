@@ -143,6 +143,10 @@ def cmd_prompts(args):
     folder = os.path.join(args.out, "prompts")
     os.makedirs(folder, exist_ok=True)
     rows = pilot_rows(catalog, args.categories)
+    if args.missing_only:
+        rows = [r for r in rows
+                if not os.path.exists(os.path.join(
+                    REF, "examples", category_slug(r["category"]), r["file"] + ".md"))]
     for r in rows:
         with open(os.path.join(REF, "generated", "library", r["file"] + ".md"), encoding="utf-8") as f:
             card = f.read()
@@ -270,6 +274,8 @@ def main(argv=None):
     parser.add_argument("command", choices=["prompts", "collect", "report"])
     parser.add_argument("--out", required=True, help="the run's folder (keep it under lab/drafting/out/)")
     parser.add_argument("--force", action="store_true", help="collect: overwrite existing pages")
+    parser.add_argument("--missing-only", action="store_true",
+                        help="prompts: skip functions that already have an example page")
     parser.add_argument("--categories", default="",
                         help="category roots, comma-separated (Date,DateTime,Duration,Type); "
                              "default: the first pilot's two Number categories")

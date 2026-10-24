@@ -4,7 +4,7 @@ category: "Number.Trigonometry"
 returns: "nullable number"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -28,3 +28,5 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 |---|---|---|
 | `y` | `nullable number` | no |
 | `x` | `nullable number` | no |
+
+**Executed examples (3):** [examples/number-trigonometry/number-atan2.md](../../examples/number-trigonometry/number-atan2.md)

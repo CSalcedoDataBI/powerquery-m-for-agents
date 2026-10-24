@@ -4,7 +4,7 @@ category: "DateTimeZone"
 returns: "nullable datetimezone"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 2
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -28,3 +28,5 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date
 |---|---|---|
 | `value` | `any` | no |
 | `culture` | `nullable text` | yes |
+
+**Executed examples (2):** [examples/datetimezone/datetimezone-from.md](../../examples/datetimezone/datetimezone-from.md)

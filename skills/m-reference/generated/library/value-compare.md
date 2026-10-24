@@ -4,7 +4,7 @@ category: "Values"
 returns: "number"
 hosts: ["desktop"]
 notes: false
-examples: 0
+examples: 3
 source: "#shared \u2014 desktop 2.157.879.0"
 ---
 
@@ -29,3 +29,5 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/valu
 | `value1` | `any` | no |
 | `value2` | `any` | no |
 | `precision` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/values/value-compare.md](../../examples/values/value-compare.md)
