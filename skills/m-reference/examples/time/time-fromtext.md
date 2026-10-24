@@ -12,7 +12,7 @@ These examples show that null text returns null, that a custom format can ignore
 {null, #time(10, 12, 31)}
 ```
 
-With `Format`, the date part of the text is parsed and then discarded. Only the time, including fractional seconds, is kept.
+A `Format` string that includes a date component is rejected, even when the text also carries a time: the engine returns a `Parameter.Error` rather than keeping the time part.
 
 ```m
 Time.FromText("30 Dec 2010 02:04:50.369730", [Format = "dd MMM yyyy HH:mm:ss.ffffff", Culture = "en-US"])

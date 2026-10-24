@@ -2,7 +2,7 @@
 
 # Value.Expression
 
-These examples show the tree returned for a plain literal, for null, and for a function value.
+Value.Expression does not resolve a plain value: a literal, null and a function all return the same error asking for `Value.Expression(Value.Optimize(...))` first.
 
 ```m
 Value.Expression(42)

@@ -22,7 +22,7 @@ List.Sort({"b", "B", "a", "A", "Z", "z"}, Comparer.Ordinal)
 {"A", "B", "Z", "a", "b", "z"}
 ```
 
-Nulls and non-text values are compared too.
+Comparing a null with text raises an error, though two nulls compare equal (0); non-text values such as numbers are still compared (2 sorts before 10).
 
 ```m
 {Comparer.Ordinal(null, "a"), Comparer.Ordinal("a", null), Comparer.Ordinal(null, null), Comparer.Ordinal(2, 10)}

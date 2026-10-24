@@ -28,7 +28,7 @@ An empty record clears all metadata. The value itself is unchanged.
 [Cleared = [], SameValue = true]
 ```
 
-A null metaValue is not the same as an empty record.
+A null metaValue also clears the metadata, giving the same empty record `[]` as passing an empty record.
 
 ```m
 Value.Metadata(Value.ReplaceMetadata(1 meta [A = 1], null))

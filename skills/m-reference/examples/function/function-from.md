@@ -2,7 +2,7 @@
 
 # Function.From
 
-The wrapped function receives every argument as one list, including omitted optional ones, and the declared parameter types may not be checked.
+The wrapped function receives the supplied arguments as one list, and the declared parameter types may not be checked.
 
 ```m
 Function.From(type function (a as number, b as number) as number, List.Sum)(2, 1)
@@ -12,7 +12,7 @@ Function.From(type function (a as number, b as number) as number, List.Sum)(2, 1
 3
 ```
 
-When an optional parameter is omitted, this shows whether the list holds a null for it or is shorter.
+An omitted optional parameter is absent from the list rather than passed as null, so the list is shorter.
 
 ```m
 Function.From(type function (a as number, optional b as number) as list, each _)(5)

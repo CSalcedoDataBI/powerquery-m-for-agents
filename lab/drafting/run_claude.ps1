@@ -67,14 +67,18 @@ if (-not $Redraft) {
 $start = Get-Spend
 Write-Host ("Reviewer $Reviewer ($Model). {0} prompt(s) to answer. Spend so far: {1}." -f `
         @($files).Count, $(if ($null -ne $start) { "US`$$start" } else { 'unknown' }))
-if ($Ceiling -gt 0) { Write-Host "Stopping before the call that would pass US`$$Ceiling." }
+if ($Ceiling -gt 0) { Write-Host "Stopping once logged spend reaches US`$$Ceiling (checked before each call)." }
 if ($CheckOnly) { $files | ForEach-Object { "  would draft $($_.BaseName)" }; return }
 
 $runs = @()
 foreach ($f in $files) {
     if ($Ceiling -gt 0) {
         $now = Get-Spend
-        if ($null -ne $now -and $now -ge $Ceiling) {
+        # Fail closed: an unreadable spend log with a ceiling set would otherwise draft with no cap.
+        if ($null -eq $now) {
+            throw "cannot read spend from '$Reviewer --gasto'; refusing to draft with -Ceiling set (the budget guard would fail open)"
+        }
+        if ($now -ge $Ceiling) {
             Write-Warning "Spend US`$$now reached the ceiling US`$$Ceiling - stopping; run again to resume."
             break
         }
@@ -84,10 +88,16 @@ foreach ($f in $files) {
     & $Reviewer --prompt-file $f.FullName --model $Model -o $target 2>&1 | Out-Null
     $exit = $LASTEXITCODE
     $clock.Stop()
-    if ($exit -ne 0 -and (Test-Path $target) -and (Get-Item $target).Length -eq 0) { Remove-Item $target }
+    # A failed call must leave no answer: a partial or error file would be skipped as "done" on resume.
+    if ($exit -ne 0 -and (Test-Path $target)) { Remove-Item $target }
     $runs += [ordered]@{ file = $f.BaseName; exit = $exit; seconds = [math]::Round($clock.Elapsed.TotalSeconds, 1) }
     Write-Host ("  {0,-30} exit {1}  {2,6:n1}s" -f $f.BaseName, $exit, $clock.Elapsed.TotalSeconds)
 }
-$runs | ConvertTo-Json -AsArray | Set-Content (Join-Path $Out 'runs.json') -Encoding utf8
+# Merge with earlier passes (resume keeps their timings); a later pass's entry wins per file.
+$runsPath = Join-Path $Out 'runs.json'
+$merged = [ordered]@{}
+if (Test-Path $runsPath) { foreach ($r in @(Get-Content $runsPath -Raw | ConvertFrom-Json)) { if ($r.file) { $merged[$r.file] = $r } } }
+foreach ($r in $runs) { $merged[$r.file] = $r }
+$merged.Values | ConvertTo-Json -AsArray | Set-Content $runsPath -Encoding utf8
 $end = Get-Spend
 if ($null -ne $start -and $null -ne $end) { Write-Host ("Spend this pass: US`${0:n2} (US`${1} -> US`${2})." -f ($end - $start), $start, $end) }

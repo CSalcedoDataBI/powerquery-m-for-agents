@@ -12,7 +12,7 @@ Null passes through, and the result is the same for a negative input.
 {null, 1, 1.5430806348152437, 1.5430806348152437}
 ```
 
-Large inputs overflow to infinity instead of raising an error.
+A large input stays finite near the largest double (710 gives about 1.1E+308); only an actually infinite input returns #infinity, and neither raises an error.
 
 ```m
 {Number.Cosh(710), Number.Cosh(-710), Number.Cosh(Number.PositiveInfinity)}

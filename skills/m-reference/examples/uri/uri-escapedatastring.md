@@ -24,7 +24,7 @@ Uri.EscapeDataString("-._~ é ß €")
 "-._~%20%C3%A9%20%C3%9F%20%E2%82%AC"
 ```
 
-The `data` parameter is not nullable. Test this call to see whether null is rejected or passed through.
+The `data` parameter is not nullable: null raises an error rather than passing through.
 
 ```m
 Uri.EscapeDataString(null)

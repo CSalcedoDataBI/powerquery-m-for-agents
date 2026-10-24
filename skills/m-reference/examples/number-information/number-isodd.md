@@ -12,7 +12,7 @@ These examples show how negative numbers, fractions and null are handled.
 {true, true, false, false}
 ```
 
-A fraction is neither odd nor even, whatever integer it sits next to.
+The fractional part is dropped before the parity check, so 3.5 counts as odd (from 3), 2.5 as even (from 2) and 1.0000001 as odd (from 1).
 
 ```m
 {Number.IsOdd(3.5), Number.IsOdd(2.5), Number.IsOdd(1.0000001)}
