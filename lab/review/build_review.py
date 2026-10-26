@@ -7,7 +7,8 @@
 
 A batch is added with --only; after that it is rebuilt with the rest, and CI checks it.
 
-The example pages under skills/m-reference/examples/<category>/ stay the source of truth: this
+The example pages under plugins/powerquery-m-for-agents/skills/m-reference/examples/<category>.md
+stay the source of truth: this
 only turns them into a Power BI project. Open it, Refresh, and the Examples page lists every
 block with the result its page records, the result the engine returns now, and whether they
 match. The first page, which the report opens on, is the author's "Thank You!!" page (lab/review/thank-you/).
@@ -32,8 +33,8 @@ import m_blocks  # noqa: E402
 from build_pbip import json_text, project_files, tmdl_source  # noqa: E402
 from check_examples import category_slug  # noqa: E402
 
-EXAMPLES = os.path.join(ROOT, "skills", "m-reference", "examples")
-LIBRARY = os.path.join(ROOT, "skills", "m-reference", "generated", "library")
+EXAMPLES = os.path.join(m_blocks.SKILLS, "m-reference", "examples")
+LIBRARY = os.path.join(m_blocks.SKILLS, "m-reference", "generated", "library")
 RUNNER = os.path.join(ROOT, "lab", "runner", "runner.pq")
 THANK_YOU = os.path.join(HERE, "thank-you")
 GENERATOR = "lab/review/build_review.py from the example pages"
@@ -59,37 +60,39 @@ def project_name(category):
 
 
 def categories(catalog, only=""):
-    """{category: [(function, page path, [blocks])]} for every examples/<folder>/ with pages."""
-    by_file = {r["file"]: r for r in catalog["functions"]}
+    """{category: [(function, [blocks], description)]} for every examples/<category>.md, one
+    entry per `## <Name>` section that holds blocks."""
+    by_name = {r["name"]: r for r in catalog["functions"]}
+    sections = m_blocks.sync_shared().sections
     found = {}
-    for folder in sorted(os.listdir(EXAMPLES)):
-        if only and not any(o in folder for o in only.split(",")):
+    for page in sorted(os.listdir(EXAMPLES)):
+        if not page.endswith(".md") or (only and not any(o in page for o in only.split(","))):
             continue
-        path = os.path.join(EXAMPLES, folder)
-        if not os.path.isdir(path):
-            continue
-        for name in sorted(os.listdir(path)):
-            row = by_file.get(name[:-3])
-            if not name.endswith(".md") or row is None:
-                continue
-            with open(os.path.join(path, name), encoding="utf-8") as f:
-                blocks = m_blocks.find_blocks(f.read())
+        with open(os.path.join(EXAMPLES, page), encoding="utf-8") as f:
+            text = f.read()
+        for name, body in sections(text):
+            row = by_name.get(name)
+            blocks = m_blocks.find_blocks(body) if row else []
             if blocks:
-                found.setdefault(row["category"], []).append((row["name"], blocks, description(row["file"])))
+                found.setdefault(row["category"], []).append((name, blocks, description(row)))
     return found
 
 
-def description(file):
+def description(row):
     """The function's description as its card states it, as plain text: the text between the
-    signature and the attribution line sync_shared.py writes under it. Microsoft's MIT file
-    describes most functions, not all (#1): a card without that line has no description, and
-    the column is left empty."""
-    with open(os.path.join(LIBRARY, file + ".md"), encoding="utf-8") as f:
-        body = f.read().split("\n```\n", 1)[1]
+    card's Category line and the attribution line sync_shared.py writes under it. Microsoft's
+    MIT file describes most functions, not all (#1): a card without that line has no
+    description, and the column is left empty."""
+    with open(os.path.join(LIBRARY, row["card"] + ".md"), encoding="utf-8") as f:
+        body = dict(m_blocks.sync_shared().sections(f.read()))[row["name"]]
+    body = body.split("\n```\n", 1)[1]
     if "\n*Description: " not in body:
         return ""
     body = body.split("\n*Description: ", 1)[0]
-    return " ".join(line.strip() for line in body.splitlines() if line.strip()).replace("`", "")
+    lines = [line.strip() for line in body.splitlines() if line.strip()]
+    if lines and lines[0].startswith("Category: "):
+        lines = lines[1:]
+    return " ".join(lines).replace("`", "")
 
 
 def partition(rows, allowed):

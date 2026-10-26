@@ -39,10 +39,8 @@ jobs:
         run: python lab/shared-export/build_pbip.py --check
       - name: Actions cost rules
         run: python scripts/check_workflow_cost.py
-      - name: Unit tests (repo scripts)
+      - name: Unit tests (repo scripts and the sync pipeline)
         run: python -m unittest discover -s scripts -t scripts -v
-      - name: Unit tests (sync pipeline)
-        run: python -m unittest discover -s skills/m-reference/scripts -t skills/m-reference/scripts -v
       - name: README invention table matches the saved runs (no API calls)
         run: python scripts/check_eval_claims.py
       - name: Unit tests (invented-name eval counter; no API calls)

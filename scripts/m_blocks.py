@@ -11,7 +11,8 @@ engine returned sits in the ```text block right after it (blank lines allowed be
     "007"
     ```
 
-A page holding blocks carries one stamp line naming where they ran:
+A page holding blocks carries one stamp line naming where they ran (an examples/<category>.md
+page packs many functions, one `## <Name>` section each, under that one stamp):
 
     <!-- lab: desktop 2.157.879.0 -->
 
@@ -22,7 +23,7 @@ import re
 from dataclasses import dataclass
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SKILLS = os.path.join(ROOT, "skills")
+SKILLS = os.path.join(ROOT, "plugins", "powerquery-m-for-agents", "skills")
 STAMP_RE = re.compile(r"^<!-- lab: (?P<host>\S+) (?P<version>\S+) -->$", re.M)
 
 
@@ -40,24 +41,24 @@ _SYNC_SHARED = None
 
 
 def sync_shared():
-    """skills/m-reference/scripts/sync_shared.py, which writes the catalogue and owns its format.
+    """scripts/sync_shared.py, which writes the catalogue and owns its format.
     Loaded once per process."""
     global _SYNC_SHARED
     if _SYNC_SHARED is not None:
         return _SYNC_SHARED
     import importlib.util
     spec = importlib.util.spec_from_file_location(
-        "sync_shared", os.path.join(SKILLS, "m-reference", "scripts", "sync_shared.py"))
+        "sync_shared", os.path.join(ROOT, "scripts", "sync_shared.py"))
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     _SYNC_SHARED = module
     return module
 
 
-def load_catalog(ref=os.path.join(SKILLS, "m-reference")):
+def load_catalog(folder=None):
     """The m-reference catalogue as one dict, {exports, functions, constants}, or None.
-    It is written split under generated/catalog/; this reads it back whole."""
-    return sync_shared().load_catalog(os.path.join(ref, "generated"))
+    It is written split under catalog/ (default: the repository's); this reads it back whole."""
+    return sync_shared().load_catalog(folder or sync_shared().CATALOG)
 
 
 def pages():

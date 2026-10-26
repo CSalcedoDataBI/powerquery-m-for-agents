@@ -55,7 +55,7 @@ ROOT = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 import m_blocks  # noqa: E402
 
-CATALOG_DIR = os.path.join(ROOT, "skills", "m-reference", "generated", "catalog")
+CATALOG_DIR = os.path.join(ROOT, "catalog")
 QUESTIONS = os.path.join(HERE, "questions.yaml")
 
 # The # literals of the M grammar. #shared and #sections are environment, not library

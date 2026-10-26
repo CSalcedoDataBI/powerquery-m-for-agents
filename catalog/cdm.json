@@ -1,0 +1,20 @@
+{
+ "functions": [
+  {
+   "name": "Cdm.MapToEntity",
+   "file": "cdm-maptoentity",
+   "kind": "library",
+   "category": "Cdm",
+   "returns": "table",
+   "signature": "Cdm.MapToEntity(table as table, columnDefinitions as any, optional defaultType as nullable type, optional defaultCdmClass as nullable text) as table",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0,
+   "card": "cdm"
+  }
+ ]
+}

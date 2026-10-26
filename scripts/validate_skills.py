@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """CI validation for the powerquery-m-for-agents repo.
 
-Checks, for every skill folder (a dir under `skills/` containing SKILL.md):
+Checks, for every skill folder (a dir under the plugin's `skills/` containing SKILL.md):
   1. Frontmatter: name == folder, name is kebab-case, description starts with "Use when".
   2. The skill is referenced in INDEX.md.
 Then, repo-wide:
-  3. Every Python script under skills/*/scripts/, scripts/ and lab/ compiles.
-  4. m-reference integrity: catalog rows <-> library cards <-> notes all line up.
+  3. Every Python script under scripts/ and lab/ compiles.
+  3b. The shipped plugin folder stays under 512 files, none over 256 KiB.
+  4. m-reference integrity: catalog rows <-> packed library cards <-> notes all line up.
      Tolerates the pre-export state where generated/ does not exist yet.
 
 Adapted from dax-for-agents. Run: python scripts/validate_skills.py
@@ -42,7 +43,8 @@ def frontmatter(path):
 
 
 # ---- 1 & 2: per-skill frontmatter + INDEX coverage ----
-SKILLS = os.path.join(ROOT, "skills")
+PLUGIN = os.path.join(ROOT, "plugins", "powerquery-m-for-agents")
+SKILLS = os.path.join(PLUGIN, "skills")
 skill_dirs = sorted(
     d for d in (os.listdir(SKILLS) if os.path.isdir(SKILLS) else [])
     if os.path.isfile(os.path.join(SKILLS, d, "SKILL.md"))
@@ -78,8 +80,7 @@ for d in skill_dirs:
         errors.append(f"{d}: not referenced in INDEX.md")
 
 # ---- 3: every Python script compiles ----
-py_scripts = glob.glob(os.path.join(ROOT, "skills", "*", "scripts", "*.py")) + \
-    glob.glob(os.path.join(ROOT, "scripts", "*.py")) + \
+py_scripts = glob.glob(os.path.join(ROOT, "scripts", "*.py")) + \
     glob.glob(os.path.join(ROOT, "lab", "*.py"))
 for py in sorted(py_scripts):
     r = subprocess.run([sys.executable, "-m", "py_compile", py],
@@ -88,32 +89,41 @@ for py in sorted(py_scripts):
     if r.returncode != 0:
         errors.append(f"py_compile failed: {os.path.relpath(py, ROOT)}: {r.stderr.strip()}")
 
-# ---- 3b: no shipped file over 256 KiB ----
-# The plugin folder is the repo root, so everything git tracks ships. export-ignore is not
-# an option (the plugin directory refuses to validate a repo that uses it): a file that must
-# not ship is not tracked. The plugin directory holds a file over 256 KiB for a reviewer;
-# the catalogue is split by category so none is.
+# ---- 3b: the shipped folder stays small ----
+# Only plugins/powerquery-m-for-agents/ ships. The plugin directory holds a plugin of more than
+# 512 files, or with a file over 256 KiB, for a reviewer ("Ship fewer files"): the cards and
+# the examples are packed one file per category so neither happens.
+MAX_FILES = 512
+MAX_BYTES = 256 * 1024
+
+
 def shipped_files(root):
-    tracked = subprocess.run(["git", "-C", root, "ls-files", "-z"], capture_output=True,
-                             check=True).stdout.decode("utf-8").split("\0")
+    tracked = subprocess.run(["git", "-C", root, "ls-files", "-z", "--", PLUGIN],
+                             capture_output=True, check=True).stdout.decode("utf-8").split("\0")
     return [t for t in tracked if t]
 
 
 try:
-    for rel in shipped_files(ROOT):
+    shipped = shipped_files(ROOT)
+    if len(shipped) >= MAX_FILES:
+        errors.append(f"the plugin folder ships {len(shipped)} files; the plugin directory holds "
+                      f"one of {MAX_FILES} or more for review (pack, or move maintainer files out)")
+    for rel in shipped:
         path = os.path.join(ROOT, rel)
-        if os.path.isfile(path) and os.path.getsize(path) > 256 * 1024:
+        if os.path.isfile(path) and os.path.getsize(path) > MAX_BYTES:
             errors.append(f"{rel} is {os.path.getsize(path):,} bytes, over the 256 KiB a "
-                          f"plugin file may weigh (split it, or keep it out of git)")
+                          f"plugin file may weigh (split it)")
 except (OSError, subprocess.CalledProcessError) as e:
+    shipped = []
     errors.append(f"could not list the shipped files with git: {e}")
 
 # ---- 4: m-reference integrity ----
 REF = os.path.join(SKILLS, "m-reference")
 GEN = os.path.join(REF, "generated")
-cat_dir = os.path.join(GEN, "catalog")
 lib_dir = os.path.join(GEN, "library")
 notes_dir = os.path.join(REF, "notes")
+sys.path.insert(0, os.path.join(ROOT, "scripts"))
+import m_blocks  # noqa: E402
 
 
 def stems(d):
@@ -122,34 +132,44 @@ def stems(d):
     return {os.path.splitext(f)[0] for f in os.listdir(d) if f.endswith(".md")}
 
 
-cards = stems(lib_dir)
+# {card file stem: {function names with a section there}}
+cards = {}
+for stem in sorted(stems(lib_dir)):
+    with open(os.path.join(lib_dir, stem + ".md"), encoding="utf-8") as f:
+        cards[stem] = {name for name, _ in m_blocks.sync_shared().sections(f.read())}
+carded = set().union(*cards.values()) if cards else set()
 notes = stems(notes_dir)
 
-# A note is written about a function the engine exported. Before the first export there is
-# nothing to write a note about, so a note then is about a function nobody verified exists.
-for orphan in sorted(notes - cards):
-    errors.append(f"m-reference/notes/{orphan}.md has no generated/library/{orphan}.md")
-
-if os.path.isdir(cat_dir):
-    try:
-        import m_blocks
-        cat = m_blocks.load_catalog(REF)
-        if cat is None:
-            raise ValueError("generated/catalog/index.json is missing")
-        rows = {fn.get("file") for fn in cat.get("functions", [])}
-        for missing in sorted(rows - cards):
-            errors.append(f"catalog lists '{missing}' but generated/library/{missing}.md is missing")
-        for extra in sorted(cards - rows):
-            errors.append(f"generated/library/{extra}.md exists but is not in the catalog")
-        flagged = {fn.get("file") for fn in cat.get("functions", []) if fn.get("notes")}
+try:
+    cat = m_blocks.load_catalog()
+    if cat is None:
+        # Before the first export there is nothing to write a note about.
+        for orphan in sorted(notes):
+            errors.append(f"m-reference/notes/{orphan}.md is about no exported function")
+        if cards:
+            errors.append("generated/library/ has cards but catalog/ is missing - run the sync")
+    else:
+        functions = cat.get("functions", [])
+        files = {fn.get("file") for fn in functions}
+        # A note is written about a function the engine exported.
+        for orphan in sorted(notes - files):
+            errors.append(f"m-reference/notes/{orphan}.md is about no function in the catalogue")
+        for fn in functions:
+            card = fn.get("card")
+            if fn.get("name") not in cards.get(card, ()):
+                errors.append(f"catalog puts '{fn.get('name')}' in library/{card}.md, which has "
+                              "no section for it - run the sync")
+        for extra in sorted(carded - {fn.get("name") for fn in functions}):
+            errors.append(f"generated/library/ has a section for '{extra}', not in the catalog")
+        flagged = {fn.get("file") for fn in functions if fn.get("notes")}
         for bad in sorted(flagged - notes):
             errors.append(f"catalog flags '{bad}' as having notes but notes/{bad}.md is missing")
         # Each name the agent can look up sits in exactly the index its kind says, so a
         # hand edit or a half-written sync cannot hide a function from the lookup.
         expected = {
-            "catalog.md": {fn.get("name") for fn in cat.get("functions", [])
+            "catalog.md": {fn.get("name") for fn in functions
                            if fn.get("kind", "library") == "library"},
-            "connectors.md": {fn.get("name") for fn in cat.get("functions", [])
+            "connectors.md": {fn.get("name") for fn in functions
                               if fn.get("kind") == "connector"},
             "constants.md": {c.get("name") for c in cat.get("constants", [])},
         }
@@ -166,10 +186,8 @@ if os.path.isdir(cat_dir):
                 errors.append(f"generated/{index} does not list '{missing}' from the catalogue")
             for extra in sorted(listed - names):
                 errors.append(f"generated/{index} lists '{extra}', which the catalogue puts elsewhere")
-    except (OSError, ValueError, KeyError, AttributeError, TypeError) as e:
-        errors.append(f"m-reference/generated/catalog/ is not readable: {e}")
-elif cards:
-    errors.append("generated/library/ has cards but generated/catalog/ is missing - run the sync")
+except (OSError, ValueError, KeyError, AttributeError, TypeError) as e:
+    errors.append(f"catalog/ is not readable: {e}")
 
 # ---- report ----
 if errors:
@@ -177,6 +195,7 @@ if errors:
     for e in errors:
         print(f"  - {e}")
     sys.exit(1)
-state = f"{len(cards)} cards, {len(notes)} notes" if cards else "not exported yet"
+state = (f"{len(carded)} cards in {len(cards)} files, {len(notes)} notes" if cards
+         else "not exported yet")
 print(f"OK: {len(skill_dirs)} skill(s) validated, {len(py_scripts)} script(s) compiled, "
-      f"m-reference: {state}.")
+      f"{len(shipped)} file(s) shipped, m-reference: {state}.")

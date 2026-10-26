@@ -12,7 +12,7 @@
 # The claim "the reference helps" can be true for one half and false for the other, and a
 # single blended number would hide which.
 #
-# `category` is the catalogue file (generated/catalog/<category>.json) whose rows arm B is
+# `category` is the catalogue file (catalog/<category>.json) whose rows arm B is
 # given: names and one-line summaries, never the card that holds the answer. Handing over
 # the answer would measure obedience, not invention.
 #

@@ -14,7 +14,7 @@ The model writes only the ```m blocks and the note. Nothing it writes is trusted
     out: the runner would evaluate it on this machine.
   - Outside ```m blocks a page may hold headings and plain prose only: another fence, HTML,
     an image or a link refuses it (off_format).
-  - A page is written only under examples/<category>/<file>.md of a pilot function, and never
+  - A page is written only as the section of a pilot function in examples/<category>.md, and never
     over an existing page unless --force says so.
 
 Issue #21 has the pilot scope and the isolation rules.
@@ -32,12 +32,12 @@ sys.path.insert(0, os.path.join(ROOT, "scripts"))
 import m_blocks  # noqa: E402
 from check_examples import category_slug  # noqa: E402
 
-REF = os.path.join(ROOT, "skills", "m-reference")
+REF = os.path.join(m_blocks.SKILLS, "m-reference")
 # The first pilot (#21). --categories picks others by their root: "Date,Duration".
 PILOT_CATEGORIES = ["Number.Operations", "Number.Conversion and formatting"]
 # The format the model copies: one page with a single block, one with two.
-MODELS = ["examples/list-information/list-count.md",
-          "examples/table-transformation/table-fuzzyjoin.md"]
+MODELS = [("examples/list-information.md", "List.Count"),
+          ("examples/table-transformation.md", "Table.FuzzyJoin")]
 
 INSTRUCTIONS = """\
 You write one example page for a Power Query M reference library.
@@ -67,7 +67,7 @@ Rules:
 
 
 def load_catalog():
-    return m_blocks.load_catalog(REF)
+    return m_blocks.load_catalog()
 
 
 def pilot_rows(catalog, categories=None):
@@ -124,6 +124,9 @@ def off_format(page):
             continue
         if FENCE_RE.match(line):
             return f"a fence other than ```m: {line.strip()[:20]}"
+        if line.startswith("## "):
+            # In the packed examples/<category>.md a `## ` line starts another function.
+            return f"a second-level heading: {line.strip()[:20]}"
         if re.search(r"<[A-Za-z!/]", line):
             return "HTML"
         # Inline [x](url), reference [x][id] and definitions [id]: url, any scheme:// URL,
@@ -134,18 +137,48 @@ def off_format(page):
     return None
 
 
+def section(path, name):
+    """The `## <name>` section of a packed page, as the one-function page it was written as:
+    `# <name>` and its body."""
+    with open(path, encoding="utf-8") as f:
+        body = dict(m_blocks.sync_shared().sections(f.read()))[name]
+    return f"# {name}\n\n" + body.strip("\n") + "\n"
+
+
+def add_section(path, name, page, force=False):
+    """Put a one-function page (`# <name>` first) into the packed examples/<category>.md as its
+    `## <name>` section, sections kept in name order. False when it exists and not `force`."""
+    body = page.split("\n", 1)[1].strip("\n") if "\n" in page else ""
+    head, found = "", []
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            text = f.read()
+        found = m_blocks.sync_shared().sections(text)
+        head = text.split("\n## ", 1)[0].rstrip("\n") if found else text.rstrip("\n")
+    else:
+        slug = os.path.splitext(os.path.basename(path))[0]
+        head = (f"# Executed examples: {slug}\n\nOne `## <Name>` section per function. Every "
+                "```text block is what the engine returned, written by the lab runner, never typed.")
+    sections = {n: b.strip("\n") for n, b in found}
+    if name in sections and not force:
+        return False
+    sections[name] = body
+    out = [head, ""]
+    for n in sorted(sections, key=str.lower):
+        out += [f"## {n}", "", sections[n], ""]
+    with open(path, "w", encoding="utf-8", newline="\n") as f:
+        f.write("\n".join(out).rstrip("\n") + "\n")
+    return True
+
+
 def cmd_prompts(args):
     catalog = load_catalog()
-    models = []
-    for rel in MODELS:
-        with open(os.path.join(REF, rel), encoding="utf-8") as f:
-            models.append(strip_results(f.read())[0])
+    models = [strip_results(section(os.path.join(REF, rel), name))[0] for rel, name in MODELS]
     folder = os.path.join(args.out, "prompts")
     os.makedirs(folder, exist_ok=True)
     rows = pilot_rows(catalog, args.categories)
     for r in rows:
-        with open(os.path.join(REF, "generated", "library", r["file"] + ".md"), encoding="utf-8") as f:
-            card = f.read()
+        card = section(os.path.join(REF, "generated", "library", r["card"] + ".md"), r["name"])
         text = INSTRUCTIONS.format(name=r["name"], card=card, model1=models[0], model2=models[1])
         with open(os.path.join(folder, r["file"] + ".txt"), "w", encoding="utf-8", newline="\n") as f:
             f.write(text)
@@ -206,16 +239,12 @@ def cmd_collect(args):
             continue
         if not page.startswith(f"# {row['name']}\n"):
             page = f"# {row['name']}\n\n" + page
-        rel = f"examples/{category_slug(row['category'])}/{file}.md"
-        target = os.path.join(REF, rel)
-        if os.path.exists(target) and not args.force:
+        rel = f"examples/{category_slug(row['category'])}.md"
+        if not add_section(os.path.join(REF, rel), row["name"], page, args.force):
             entry["status"] = "exists (use --force)"
             continue
-        os.makedirs(os.path.dirname(target), exist_ok=True)
-        with open(target, "w", encoding="utf-8", newline="\n") as f:
-            f.write(page)
         entry["status"] = "written"
-        entry["page"] = "skills/m-reference/" + rel
+        entry["page"] = os.path.relpath(os.path.join(REF, rel), ROOT).replace("\\", "/")
     with open(os.path.join(args.out, "collect.json"), "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2)
     for name, e in results.items():

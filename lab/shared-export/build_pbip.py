@@ -2,7 +2,7 @@
 """Build SharedExport.pbip: a one-table model whose partition IS export_shared.pq.
 
 The query is embedded, not copied by hand, so the file that runs in Desktop is always the
-one in skills/m-reference/scripts/. Rebuild after editing the query:
+one in scripts/. Rebuild after editing the query:
 
   python lab/shared-export/build_pbip.py --host desktop --host-version 2.157.879.0
 
@@ -21,7 +21,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
-QUERY = os.path.join(ROOT, "skills", "m-reference", "scripts", "export_shared.pq")
+QUERY = os.path.join(ROOT, "scripts", "export_shared.pq")
 NAME = "SharedExport"
 TABLE = os.path.join(HERE, f"{NAME}.SemanticModel", "definition", "tables", f"{NAME}.tmdl")
 

@@ -1,6 +1,6 @@
 # Exports
 
-Raw output of `skills/m-reference/scripts/export_shared.pq`, one file per host and build:
+Raw output of `scripts/export_shared.pq`, one file per host and build:
 `<host>-<version>.json`, kept so every generation can be reproduced from the exact input it
 came from.
 

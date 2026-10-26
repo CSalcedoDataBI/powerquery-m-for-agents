@@ -8,7 +8,7 @@ model: once alone (arm A), and once with the catalogue rows of its category (arm
 and one-line summaries, never the card that holds the answer).
 
 In the code of every answer, each dotted name (`Table.AddColumn`, `BinaryFormat.Byte`) and
-each `#` literal is looked up in `skills/m-reference/generated/catalog/`. A name the export
+each `#` literal is looked up in `catalog/`. A name the export
 does not have is an invention. No model judges another: the count is a lookup, and it can be
 re-run on a saved answer file at no cost.
 

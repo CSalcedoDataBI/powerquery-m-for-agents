@@ -192,7 +192,7 @@ def main(argv=None):
         cases = [c for c in cases if any(w in c[0] for w in wanted)]
         texts = {p: t for p, t in texts.items() if any(w in p for w in wanted)}
     if not cases:
-        print("No ```m blocks under skills/.")
+        print("No ```m blocks under the plugin's skills/.")
         return 0
     print(f"{len(cases)} block(s) in {len(texts)} page(s).")
     # Every block runs on this machine: refuse the ones that could read or send anything.

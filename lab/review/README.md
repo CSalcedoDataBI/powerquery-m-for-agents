@@ -5,7 +5,7 @@ of in Markdown. The example pages stay the source of truth; these projects are g
 them.
 
 The table on the Examples page shows, for each block, the function's description as the engine
-documents it (from its card under `generated/library/`), the code, the result recorded on the
+documents it (from its card in the plugin's `generated/library/`), the code, the result recorded on the
 page and the result this Power BI returns after Refresh.
 
 The projects themselves are not in this public repository. They are the maintainer's

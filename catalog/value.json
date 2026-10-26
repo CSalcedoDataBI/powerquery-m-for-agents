@@ -1,0 +1,20 @@
+{
+ "functions": [
+  {
+   "name": "Value.ResourceExpression",
+   "file": "value-resourceexpression",
+   "kind": "library",
+   "category": "Value",
+   "returns": "any",
+   "signature": "Value.ResourceExpression(value as any) as any",
+   "summary": "",
+   "hosts": [
+    "desktop"
+   ],
+   "partialHosts": false,
+   "notes": false,
+   "examples": 0,
+   "card": "value"
+  }
+ ]
+}

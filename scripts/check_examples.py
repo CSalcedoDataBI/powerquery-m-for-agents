@@ -4,8 +4,8 @@
   1. Every ```m block in a hand-written page under skills/ is followed by its ```text result,
      and a page with blocks carries the lab stamp (`<!-- lab: desktop <build> -->`). The
      results themselves are written by lab/runner/run_examples.py, on a machine with Desktop.
-  2. examples/<category>/<file>.md belongs to a card, under that card's category - the path
-     sync_shared.py looks at to set the ▶ flag. Anywhere else the example is never linked.
+  2. Every `## <Name>` section of examples/<category>.md is a function of that category - the
+     place sync_shared.py looks at to set the ▶ flag. Anywhere else the example is never linked.
   3. No invented names: every `Prefix.Name` in a page is a function or constant the export
      has, or a name the engine itself printed in some result (an error reason such as
      `Expression.Error`, a metadata field such as `Documentation.Name`).
@@ -60,11 +60,7 @@ def category_slug(category):
     return re.sub(r"[^a-z0-9]+", "-", category.lower()).strip("-") or "uncategorised"
 
 
-def load_catalog(ref):
-    return m_blocks.load_catalog(ref)
-
-
-def check(root=m_blocks.ROOT, ref=REF, page_list=None):
+def check(root=m_blocks.ROOT, ref=REF, page_list=None, catalog_dir=None):
     errors = []
     pages = page_list if page_list is not None else m_blocks.pages()
     texts = {}
@@ -90,7 +86,7 @@ def check(root=m_blocks.ROOT, ref=REF, page_list=None):
         if blocks and not m_blocks.stamp(text):
             errors.append(f"{page}: has ```m blocks but no '<!-- lab: <host> <build> -->' stamp")
 
-    catalog = load_catalog(ref)
+    catalog = m_blocks.load_catalog(catalog_dir)
     if catalog is None:
         return errors
     functions = {r["name"]: r for r in catalog.get("functions", [])}
@@ -116,22 +112,29 @@ def check(root=m_blocks.ROOT, ref=REF, page_list=None):
     known = exported | (printed - written) | fields
 
     # 2: example placement
-    by_file = {r["file"]: r for r in functions.values()}
     examples_root = os.path.relpath(os.path.join(ref, "examples"), root).replace("\\", "/") + "/"
     for page in texts:
         if not page.startswith(examples_root):
             continue
-        parts = page[len(examples_root):].split("/")
-        if len(parts) != 2:
-            errors.append(f"{page}: examples go in examples/<category>/<file>.md")
+        rel = page[len(examples_root):]
+        if "/" in rel:
+            errors.append(f"{page}: examples go in examples/<category>.md, one `## <Name>` "
+                          "section per function")
             continue
-        folder, file = parts[0], parts[1][:-3]
-        row = by_file.get(file)
-        if row is None:
-            errors.append(f"{page}: no card generated/library/{file}.md")
-        elif category_slug(row["category"]) != folder:
-            errors.append(f"{page}: {row['name']} is in category '{row['category']}', so its "
-                          f"examples go in examples/{category_slug(row['category'])}/")
+        folder, seen = rel[:-3], set()
+        found = m_blocks.sync_shared().sections(texts[page])
+        if not found:
+            errors.append(f"{page}: no `## <Name>` section")
+        for name, _ in found:
+            row = functions.get(name)
+            if name in seen:
+                errors.append(f"{page}: two sections for {name}")
+            seen.add(name)
+            if row is None:
+                errors.append(f"{page}: section '{name}' has no card in the catalogue")
+            elif category_slug(row["category"]) != folder:
+                errors.append(f"{page}: {row['name']} is in category '{row['category']}', so its "
+                              f"examples go in examples/{category_slug(row['category'])}.md")
 
     # 3: no invented names, outside the engine's own result blocks
     for page, blocks in parsed.items():
