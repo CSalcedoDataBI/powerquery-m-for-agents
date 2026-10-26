@@ -1,0 +1,33 @@
+name: Move stable
+
+# The plugin directory tracks `stable`: it reviews every commit on the branch it tracks, and
+# each new one replaces the version in review. `stable` moves here and only here, to the
+# commit of a published release (CONTRIBUTING.md). Fast-forward without force: if it ever is
+# not one, this fails instead of rewriting what the reviewer already read.
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+# R2, release exception: a run cancelled half-way leaves `stable` behind its release.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  stable:
+    if: ${{ !github.event.release.prerelease }}
+    runs-on: ubuntu-latest
+    # R3: two API calls.
+    timeout-minutes: 5
+    steps:
+      - name: Move stable to the new release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          sha=$(gh api "repos/$REPO/commits/$TAG" --jq .sha)
+          gh api -X PATCH "repos/$REPO/git/refs/heads/stable" -f sha="$sha" -F force=false
