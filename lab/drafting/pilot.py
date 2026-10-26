@@ -67,7 +67,7 @@ Rules:
 
 
 def load_catalog():
-    return m_blocks.load_catalog(REF)
+    return m_blocks.load_catalog()
 
 
 def pilot_rows(catalog, categories=None):
@@ -124,6 +124,9 @@ def off_format(page):
             continue
         if FENCE_RE.match(line):
             return f"a fence other than ```m: {line.strip()[:20]}"
+        if line.startswith("## "):
+            # In the packed examples/<category>.md a `## ` line starts another function.
+            return f"a second-level heading: {line.strip()[:20]}"
         if re.search(r"<[A-Za-z!/]", line):
             return "HTML"
         # Inline [x](url), reference [x][id] and definitions [id]: url, any scheme:// URL,

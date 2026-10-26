@@ -143,6 +143,9 @@ notes = stems(notes_dir)
 try:
     cat = m_blocks.load_catalog()
     if cat is None:
+        # Before the first export there is nothing to write a note about.
+        for orphan in sorted(notes):
+            errors.append(f"m-reference/notes/{orphan}.md is about no exported function")
         if cards:
             errors.append("generated/library/ has cards but catalog/ is missing - run the sync")
     else:

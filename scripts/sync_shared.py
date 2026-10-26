@@ -572,7 +572,9 @@ def sync(export_paths, ref=REF, write=False, accept_count_change=False,
     catalog_staging = os.path.join(staging, "catalog")
     write_catalog(catalog_staging, exports_meta, rows, constants)
 
-    # Swap in one move each, so a failure part-way leaves the previous output as it was.
+    # Swap each folder in one move, so a failure part-way leaves that folder as it was. If the
+    # second swap fails, generated/ is new and catalog/ old: validate_skills.py reports it, and
+    # the next sync repairs it.
     catalog_new = catalog_dir.rstrip("\\/") + f".publish-{os.getpid()}"
     shutil.rmtree(catalog_new, ignore_errors=True)
     shutil.move(catalog_staging, catalog_new)

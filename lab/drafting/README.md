@@ -41,7 +41,7 @@ python lab/drafting/pilot.py report --out lab/drafting/out/dsh
   evaluates anything);
 - outside ```` ```m ```` blocks a page may hold headings and plain prose only: another fence,
   HTML or a link refuses it;
-- a page is written only as `examples/<category>/<file>.md` of a pilot function, never over an
+- a page is written only as the `## <Name>` section of a pilot function in `examples/<category>.md`, never over an
   existing page without `--force`.
 
 None of that judges the prose. **Every page is read by a person before it is committed**, against

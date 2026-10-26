@@ -4,9 +4,11 @@ name: Move stable
 # each new one replaces the version in review. `stable` moves here and only here, to the
 # commit of a published release (CONTRIBUTING.md). Fast-forward without force: if it ever is
 # not one, this fails instead of rewriting what the reviewer already read.
+# `released` fires for a new full release and for a prerelease promoted to one, never for a
+# prerelease itself.
 on:
   release:
-    types: [published]
+    types: [released]
 
 permissions:
   contents: write
@@ -18,7 +20,6 @@ concurrency:
 
 jobs:
   stable:
-    if: ${{ !github.event.release.prerelease }}
     runs-on: ubuntu-latest
     # R3: two API calls.
     timeout-minutes: 5
