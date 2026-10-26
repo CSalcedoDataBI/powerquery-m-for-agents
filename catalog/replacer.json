@@ -13,7 +13,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "replacer"
   },
   {
    "name": "Replacer.ReplaceValue",
@@ -28,7 +29,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "replacer"
   }
  ]
 }

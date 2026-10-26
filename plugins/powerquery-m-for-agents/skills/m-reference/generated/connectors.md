@@ -1,280 +1,280 @@
 # M connector entry points
 
 273 connector functions from `#shared` (`desktop` 2.157.879.0): functions the engine gives no category, from a prefix no library function uses. No licensed description exists for them, so none is given. Flags as in `catalog.md`.
-Open one card: `library/<file>.md`, where <file> is the name in lower case with every run of non-alphanumerics as one dash (`Table.AddColumn` -> `table-addcolumn`).
+A card is a section of `library/<Card>.md`: search that file for the line `## <Function>` and read from there to the next `## `.
 
-| Function | Connector | Returns | Flags |
-|---|---|---|---|
-| `Acterys.Contents` | Acterys | any |  |
-| `Actian.Contents` | Actian | any |  |
-| `ADPAnalytics.Contents` | ADPAnalytics | any |  |
-| `AmazonAthena.Databases` | AmazonAthena | table |  |
-| `AmazonOpenSearchService.Contents` | AmazonOpenSearchService | table |  |
-| `AmazonRedshift.Database` | AmazonRedshift | table |  |
-| `Anaplan.Contents` | Anaplan | table |  |
-| `ApacheHiveLLAP.Database` | ApacheHiveLLAP | table |  |
-| `ApacheSpark.Tables` | ApacheSpark | table |  |
-| `appFigures.Content` | appFigures | any |  |
-| `appFigures.Tables` | appFigures | table |  |
-| `AptixInsights.Feed` | AptixInsights | table |  |
-| `Asana.Tables` | Asana | table |  |
-| `AssembleViews.Contents` | AssembleViews | table |  |
-| `AssembleViews.Feed` | AssembleViews | table |  |
-| `AtScale.Cubes` | AtScale | table |  |
-| `AutodeskConstructionCloud.Contents` | AutodeskConstructionCloud | table |  |
-| `AutodeskConstructionCloud.Feed` | AutodeskConstructionCloud | table |  |
-| `AutomationAnywhere.Feed` | AutomationAnywhere | table |  |
-| `AutomyDataAnalytics.Contents` | AutomyDataAnalytics | table |  |
-| `AzureCosmosDBForMongoDBvCore.Contents` | AzureCosmosDBForMongoDBvCore | table |  |
-| `AzureCostManagement.Contents` | AzureCostManagement | table |  |
-| `AzureCostManagement.Tables` | AzureCostManagement | table |  |
-| `AzureDataExplorer.Contents` | AzureDataExplorer | table |  |
-| `AzureDataExplorer.Databases` | AzureDataExplorer | list |  |
-| `AzureDataExplorer.KqlDatabase` | AzureDataExplorer | table |  |
-| `AzureDeviceRegistry.Query` | AzureDeviceRegistry | table |  |
-| `AzureDevOpsServer.AccountContents` | AzureDevOpsServer | table |  |
-| `AzureDevOpsServer.AnalyticsViews` | AzureDevOpsServer | table |  |
-| `AzureDevOpsServer.Feed` | AzureDevOpsServer | table |  |
-| `AzureDevOpsServer.Views` | AzureDevOpsServer | table |  |
-| `AzureEnterprise.Contents` | AzureEnterprise | binary |  |
-| `AzureEnterprise.Tables` | AzureEnterprise | table |  |
-| `AzureHiveLLAP.Database` | AzureHiveLLAP | table |  |
-| `AzureResourceGraph.Query` | AzureResourceGraph | table |  |
-| `AzureSpark.Tables` | AzureSpark | table |  |
-| `AzureTimeSeriesInsights.Contents` | AzureTimeSeriesInsights | table |  |
-| `BI360.Contents` | BI360 | table |  |
-| `BIConnector.Contents` | BIConnector | table |  |
-| `BitSightSecurityRatings.Contents` | BitSightSecurityRatings | any |  |
-| `Bloomberg.Query` | Bloomberg | table |  |
-| `BQECore.Contents` | BQECore | any |  |
-| `BQL.Query` | BQL | table |  |
-| `BuildingConnected.Contents` | BuildingConnected | table |  |
-| `CCHTagetik.Contents` | CCHTagetik | table |  |
-| `CCHTagetik.Contents2` | CCHTagetik | table |  |
-| `CCHTagetik.Contents3` | CCHTagetik | table |  |
-| `CCHTagetik.Contents4` | CCHTagetik | table |  |
-| `CDataConnectCloud.Contents` | CDataConnectCloud | table |  |
-| `CDataConnectCloud.ContentsV2` | CDataConnectCloud | table |  |
-| `Cds.Contents` | Cds | any |  |
-| `Cds.Entities` | Cds | table |  |
-| `Celonis.KnowledgeModels` | Celonis | table |  |
-| `Celonis.Navigation` | Celonis | table |  |
-| `Cherwell.SavedSearches` | Cherwell | table |  |
-| `ClickHouse.Database` | ClickHouse | table |  |
-| `CloudBluePSA.Feed` | CloudBluePSA | table |  |
-| `Cognite.Contents` | Cognite | table |  |
-| `CogniteDataSource.Contents` | CogniteDataSource | table |  |
-| `CommonDataService.Database` | CommonDataService | table |  |
-| `CosmosDB.Contents` | CosmosDB | table |  |
-| `CustomerInsights.Contents` | CustomerInsights | table |  |
-| `Databricks.Catalogs` | Databricks | table |  |
-| `Databricks.Contents` | Databricks | table |  |
-| `Databricks.Query` | Databricks | function |  |
-| `DatabricksMultiCloud.Catalogs` | DatabricksMultiCloud | table |  |
-| `DatabricksMultiCloud.Query` | DatabricksMultiCloud | function |  |
-| `DataLake.Contents` | DataLake | table |  |
-| `DataLake.Files` | DataLake | table |  |
-| `DataVirtuality.Database` | DataVirtuality | table |  |
-| `DataWorld.Contents` | DataWorld | table |  |
-| `DataWorld.Dataset` | DataWorld | table |  |
-| `DCWInsights.Feed` | DCWInsights | table |  |
-| `DeltaSharing.Contents` | DeltaSharing | table |  |
-| `Denodo.Contents` | Denodo | table |  |
-| `DocumentDB.Contents` | DocumentDB | table |  |
-| `Dremio.Databases` | Dremio | table |  |
-| `Dremio.DatabasesV300` | Dremio | table |  |
-| `Dremio.DatabasesV370` | Dremio | table |  |
-| `DremioCloud.Databases` | DremioCloud | table |  |
-| `DremioCloud.DatabasesByServer` | DremioCloud | table |  |
-| `DremioCloud.DatabasesByServerV330` | DremioCloud | table |  |
-| `DremioCloud.DatabasesByServerV360` | DremioCloud | table |  |
-| `DremioCloud.DatabasesByServerV370` | DremioCloud | table |  |
-| `DremioTesting.Contents` | DremioTesting | any |  |
-| `Dynamics365BusinessCentral.ApiContents` | Dynamics365BusinessCentral | table |  |
-| `Dynamics365BusinessCentral.ApiContentsWithOptions` | Dynamics365BusinessCentral | table |  |
-| `Dynamics365BusinessCentral.Contents` | Dynamics365BusinessCentral | table |  |
-| `Dynamics365BusinessCentral.EnvironmentContents` | Dynamics365BusinessCentral | table |  |
-| `Dynamics365BusinessCentralOnPremises.Contents` | Dynamics365BusinessCentralOnPremises | table |  |
-| `DynamicsNav.Contents` | DynamicsNav | table |  |
-| `DynatraceGrail.Contents` | DynatraceGrail | table |  |
-| `EduFrame.Contents` | EduFrame | table |  |
-| `Emigo.Contents` | Emigo | table |  |
-| `Emigo.GetExtractFunction` | Emigo | any |  |
-| `EmigoDataSourceConnector.GetExtractFunction` | EmigoDataSourceConnector | any |  |
-| `EntersoftBusinessSuite.Contents` | EntersoftBusinessSuite | any |  |
-| `EQuIS.Contents` | EQuIS | table |  |
-| `eWayCRM.Contents` | eWayCRM | table |  |
-| `eWayCRM.Contents2` | eWayCRM | table |  |
-| `ExactOnlinePremium.Contents` | ExactOnlinePremium | table |  |
-| `Exasol.Database` | Exasol | table |  |
-| `Fabric.Warehouse` | Fabric | table |  |
-| `FabricSql.Contents` | FabricSql | table |  |
-| `FactSetAnalytics.ConnectionCheck` | FactSetAnalytics | any |  |
-| `FactSetAnalytics.Contents` | FactSetAnalytics | table |  |
-| `FactSetAnalytics.Functions` | FactSetAnalytics | table |  |
-| `FactSetRMS.Functions` | FactSetRMS | table |  |
-| `Fhir.Contents` | Fhir | table |  |
-| `Foundry.Contents` | Foundry | table |  |
-| `Funnel.Contents` | Funnel | table |  |
-| `Github.Contents` | Github | any |  |
-| `Github.PagedTable` | Github | any |  |
-| `Github.Tables` | Github | table |  |
-| `GoogleBigQuery.Database` | GoogleBigQuery | table |  |
-| `GoogleBigQueryAad.Database` | GoogleBigQueryAad | table |  |
-| `GoogleSheets.Contents` | GoogleSheets | table |  |
-| `HexagonSmartApi.ApplySelectList` | HexagonSmartApi | table |  |
-| `HexagonSmartApi.ApplyUnitsOfMeasure` | HexagonSmartApi | any |  |
-| `HexagonSmartApi.ExecuteParametricFilterOnFilterRecord` | HexagonSmartApi | any |  |
-| `HexagonSmartApi.ExecuteParametricFilterOnFilterUrl` | HexagonSmartApi | any |  |
-| `HexagonSmartApi.Feed` | HexagonSmartApi | table |  |
-| `HexagonSmartApi.GenerateParametricFilterByFilterSourceType` | HexagonSmartApi | any |  |
-| `HexagonSmartApi.GetODataMetadata` | HexagonSmartApi | any |  |
-| `HexagonSmartApi.Typecast` | HexagonSmartApi | function |  |
-| `Impala.Database` | Impala | table |  |
-| `Indexima.Database` | Indexima | table |  |
-| `IndustrialAppStore.NavigationTable` | IndustrialAppStore | any |  |
-| `InformationGrid.Contents` | InformationGrid | table |  |
-| `IntersystemsHealthInsight.Database` | IntersystemsHealthInsight | table |  |
-| `Intune.Contents` | Intune | table |  |
-| `IntuneV2.Contents` | IntuneV2 | table |  |
-| `inwink.ScopeContents` | inwink | table |  |
-| `IRIS.Database` | IRIS | table |  |
-| `JamfPro.Contents` | JamfPro | text |  |
-| `JethroODBC.Database` | JethroODBC | table |  |
-| `Kognitwin.Contents` | Kognitwin | table |  |
-| `Kusto.Contents` | Kusto | table |  |
-| `Kusto.Databases` | Kusto | list |  |
-| `kxkdbinsightsenterprise.Contents` | kxkdbinsightsenterprise | table |  |
-| `Kyligence.Database` | Kyligence | table |  |
-| `KyvosODBC.Databases` | KyvosODBC | table |  |
-| `Lakehouse.Contents` | Lakehouse | table |  |
-| `LEAP.Contents` | LEAP | table |  |
-| `Linkar.Contents` | Linkar | table |  |
-| `LinkedIn.SalesContracts` | LinkedIn | table |  |
-| `LinkedIn.SalesContractsWithReportAccess` | LinkedIn | table |  |
-| `LinkedIn.SalesNavigator` | LinkedIn | table |  |
-| `LinkedIn.SalesNavigatorAnalytics` | LinkedIn | table |  |
-| `LinkedIn.SalesNavigatorAnalyticsImpl` | LinkedIn | any |  |
-| `LinkedInLearning.Contents` | LinkedInLearning | any |  |
-| `MailChimp.Collection` | MailChimp | table |  |
-| `MailChimp.Instance` | MailChimp | table |  |
-| `MailChimp.Tables` | MailChimp | table |  |
-| `MailChimp.TablesV2` | MailChimp | table |  |
-| `MariaDB.Contents` | MariaDB | table |  |
-| `Marketo.Activities` | Marketo | table |  |
-| `Marketo.Leads` | Marketo | table |  |
-| `Marketo.Tables` | Marketo | table |  |
-| `MarkLogicODBC.Contents` | MarkLogicODBC | table |  |
-| `MicrosoftAzureDataManagerForEnergy.Search` | MicrosoftAzureDataManagerForEnergy | table |  |
-| `MicrosoftGraphSecurity.Contents` | MicrosoftGraphSecurity | table |  |
-| `MicrosoftSentinel.Contents` | MicrosoftSentinel | table |  |
-| `MicroStrategyDataset.Contents` | MicroStrategyDataset | table |  |
-| `MicroStrategyDataset.TestConnection` | MicroStrategyDataset | any |  |
-| `Mixpanel.Contents` | Mixpanel | any |  |
-| `Mixpanel.Export` | Mixpanel | any |  |
-| `Mixpanel.FunnelById` | Mixpanel | any |  |
-| `Mixpanel.FunnelByName` | Mixpanel | any |  |
-| `Mixpanel.Funnels` | Mixpanel | any |  |
-| `Mixpanel.Segmentation` | Mixpanel | any |  |
-| `Mixpanel.Tables` | Mixpanel | any |  |
-| `MongoDBAtlasODBC.Contents` | MongoDBAtlasODBC | table |  |
-| `MongoDBAtlasODBC.Query` | MongoDBAtlasODBC | any |  |
-| `Netezza.Database` | Netezza | table |  |
-| `OneLake.Contents` | OneLake | table |  |
-| `OneLake.SqlAnalytics` | OneLake | table |  |
-| `OneStream.Navigation` | OneStream | any |  |
-| `OpenSearchProject.Contents` | OpenSearchProject | table |  |
-| `Paxata.Contents` | Paxata | table |  |
-| `PlanviewEnterprise.CallQueryService` | PlanviewEnterprise | table |  |
-| `PlanviewEnterprise.Feed` | PlanviewEnterprise | table |  |
-| `PlanviewOKR.Contents` | PlanviewOKR | table |  |
-| `PlanviewProjectplace.Contents` | PlanviewProjectplace | table |  |
-| `PowerBI.Dataflows` | PowerBI | table |  |
-| `PowerBI.Datamarts` | PowerBI | table |  |
-| `PowerPlatform.Dataflows` | PowerPlatform | table |  |
-| `ProductInsights.Contents` | ProductInsights | table |  |
-| `ProductInsights.QueryMetric` | ProductInsights | any |  |
-| `Profisee.Tables` | Profisee | table |  |
-| `Projectplace.Feed` | Projectplace | table |  |
-| `Python.Execute` | Python | table |  |
-| `QubolePresto.Contents` | QubolePresto | any |  |
-| `QuickBase.Contents` | QuickBase | table |  |
-| `QuickBooks.Query` | QuickBooks | table |  |
-| `QuickBooks.Report` | QuickBooks | table |  |
-| `QuickBooks.Tables` | QuickBooks | any |  |
-| `R.Execute` | R | table |  |
-| `Resource.Access` | Resource | any |  |
-| `Roamler.Contents` | Roamler | any |  |
-| `Samsara.Records` | Samsara | table |  |
-| `SDMX.Contents` | SDMX | table |  |
-| `ShortcutsBI.Contents` | ShortcutsBI | table |  |
-| `SingleStoreODBC.Contents` | SingleStoreODBC | table |  |
-| `SingleStoreODBC.Database` | SingleStoreODBC | table |  |
-| `SingleStoreODBC.DataSource` | SingleStoreODBC | table |  |
-| `SingleStoreODBC.Query` | SingleStoreODBC | table |  |
-| `Siteimprove.Contents` | Siteimprove | table |  |
-| `Smartsheet.Content` | Smartsheet | any |  |
-| `Smartsheet.Query` | Smartsheet | any |  |
-| `Smartsheet.Tables` | Smartsheet | table |  |
-| `SmartsheetGlobal.Contents` | SmartsheetGlobal | table |  |
-| `SmartsheetGlobal.Query` | SmartsheetGlobal | any |  |
-| `Snowflake.Databases` | Snowflake | table |  |
-| `SoftOneBI.Contents` | SoftOneBI | table |  |
-| `SolarWindsServiceDesk.Contents` | SolarWindsServiceDesk | any |  |
-| `SolarWindsServiceDesk.ContentsV110` | SolarWindsServiceDesk | any |  |
-| `SolarWindsServiceDesk.ContentsV113` | SolarWindsServiceDesk | any |  |
-| `Spark.Tables` | Spark | table |  |
-| `SparkPost.GetList` | SparkPost | table |  |
-| `SparkPost.GetTable` | SparkPost | table |  |
-| `SparkPost.NavTable` | SparkPost | table |  |
-| `Spigit.Contents` | Spigit | table |  |
-| `StarburstAad.Contents` | StarburstAad | table |  |
-| `StarburstPresto.Contents` | StarburstPresto | table |  |
-| `Stripe.Contents` | Stripe | table |  |
-| `Stripe.Method` | Stripe | table |  |
-| `Stripe.Tables` | Stripe | table |  |
-| `SumTotal.ODataFeed` | SumTotal | table |  |
-| `Supermetrics.Render` | Supermetrics | table |  |
-| `Supermetrics.Test` | Supermetrics | any |  |
-| `SurveyMonkey.Contents` | SurveyMonkey | table |  |
-| `SweetIQ.Contents` | SweetIQ | any |  |
-| `SweetIQ.Tables` | SweetIQ | any |  |
-| `Synapse.Contents` | Synapse | table |  |
-| `TeamDesk.Database` | TeamDesk | table |  |
-| `TeamDesk.Select` | TeamDesk | table |  |
-| `TeamDesk.SelectView` | TeamDesk | table |  |
-| `TeamsAnalytics.Contents` | TeamsAnalytics | table |  |
-| `Tenforce.Contents` | Tenforce | table |  |
-| `TibcoTdv.DataSource` | TibcoTdv | table |  |
-| `TimeSeriesInsights.Contents` | TimeSeriesInsights | table |  |
-| `Troux.CustomFeed` | Troux | table |  |
-| `Troux.Feed` | Troux | table |  |
-| `Troux.TestConnection` | Troux | any |  |
-| `Twilio.Contents` | Twilio | any |  |
-| `Twilio.Tables` | Twilio | table |  |
-| `Twilio.URL` | Twilio | any |  |
-| `Usercube.Universes` | Usercube | table |  |
-| `Vena.Contents` | Vena | table |  |
-| `Vertica.Database` | Vertica | table |  |
-| `VesselInsight.Contents` | VesselInsight | any |  |
-| `VivaInsights.Data` | VivaInsights | table |  |
-| `VivaInsightsApi.GetResults` | VivaInsightsApi | any |  |
-| `VSTS.AccountContents` | VSTS | binary |  |
-| `VSTS.AnalyticsViews` | VSTS | table |  |
-| `VSTS.Contents` | VSTS | binary |  |
-| `VSTS.Feed` | VSTS | table |  |
-| `VSTS.Views` | VSTS | table |  |
-| `Webtrends.KeyMetrics` | Webtrends | table |  |
-| `Webtrends.Profile` | Webtrends | any |  |
-| `Webtrends.ReportContents` | Webtrends | table |  |
-| `Webtrends.Tables` | Webtrends | table |  |
-| `WebtrendsAnalytics.Tables` | WebtrendsAnalytics | table |  |
-| `Windsor.Main` | Windsor | table |  |
-| `Witivio.Contents` | Witivio | table |  |
-| `WorkforceDimensions.Contents` | WorkforceDimensions | text |  |
-| `Wrike.Contents` | Wrike | table |  |
-| `Zendesk.Collection` | Zendesk | any |  |
-| `Zendesk.Tables` | Zendesk | table |  |
-| `ZendeskData.Contents` | ZendeskData | table |  |
-| `ZohoCreator.Contents` | ZohoCreator | any |  |
-| `Zucchetti.Contents` | Zucchetti | table |  |
+| Function | Connector | Returns | Flags | Card |
+|---|---|---|---|---|
+| `Acterys.Contents` | Acterys | any |  | connectors |
+| `Actian.Contents` | Actian | any |  | connectors |
+| `ADPAnalytics.Contents` | ADPAnalytics | any |  | connectors |
+| `AmazonAthena.Databases` | AmazonAthena | table |  | connectors |
+| `AmazonOpenSearchService.Contents` | AmazonOpenSearchService | table |  | connectors |
+| `AmazonRedshift.Database` | AmazonRedshift | table |  | connectors |
+| `Anaplan.Contents` | Anaplan | table |  | connectors |
+| `ApacheHiveLLAP.Database` | ApacheHiveLLAP | table |  | connectors |
+| `ApacheSpark.Tables` | ApacheSpark | table |  | connectors |
+| `appFigures.Content` | appFigures | any |  | connectors |
+| `appFigures.Tables` | appFigures | table |  | connectors |
+| `AptixInsights.Feed` | AptixInsights | table |  | connectors |
+| `Asana.Tables` | Asana | table |  | connectors |
+| `AssembleViews.Contents` | AssembleViews | table |  | connectors |
+| `AssembleViews.Feed` | AssembleViews | table |  | connectors |
+| `AtScale.Cubes` | AtScale | table |  | connectors |
+| `AutodeskConstructionCloud.Contents` | AutodeskConstructionCloud | table |  | connectors |
+| `AutodeskConstructionCloud.Feed` | AutodeskConstructionCloud | table |  | connectors |
+| `AutomationAnywhere.Feed` | AutomationAnywhere | table |  | connectors |
+| `AutomyDataAnalytics.Contents` | AutomyDataAnalytics | table |  | connectors |
+| `AzureCosmosDBForMongoDBvCore.Contents` | AzureCosmosDBForMongoDBvCore | table |  | connectors |
+| `AzureCostManagement.Contents` | AzureCostManagement | table |  | connectors |
+| `AzureCostManagement.Tables` | AzureCostManagement | table |  | connectors |
+| `AzureDataExplorer.Contents` | AzureDataExplorer | table |  | connectors |
+| `AzureDataExplorer.Databases` | AzureDataExplorer | list |  | connectors |
+| `AzureDataExplorer.KqlDatabase` | AzureDataExplorer | table |  | connectors |
+| `AzureDeviceRegistry.Query` | AzureDeviceRegistry | table |  | connectors |
+| `AzureDevOpsServer.AccountContents` | AzureDevOpsServer | table |  | connectors |
+| `AzureDevOpsServer.AnalyticsViews` | AzureDevOpsServer | table |  | connectors |
+| `AzureDevOpsServer.Feed` | AzureDevOpsServer | table |  | connectors |
+| `AzureDevOpsServer.Views` | AzureDevOpsServer | table |  | connectors |
+| `AzureEnterprise.Contents` | AzureEnterprise | binary |  | connectors |
+| `AzureEnterprise.Tables` | AzureEnterprise | table |  | connectors |
+| `AzureHiveLLAP.Database` | AzureHiveLLAP | table |  | connectors |
+| `AzureResourceGraph.Query` | AzureResourceGraph | table |  | connectors |
+| `AzureSpark.Tables` | AzureSpark | table |  | connectors |
+| `AzureTimeSeriesInsights.Contents` | AzureTimeSeriesInsights | table |  | connectors |
+| `BI360.Contents` | BI360 | table |  | connectors |
+| `BIConnector.Contents` | BIConnector | table |  | connectors |
+| `BitSightSecurityRatings.Contents` | BitSightSecurityRatings | any |  | connectors |
+| `Bloomberg.Query` | Bloomberg | table |  | connectors |
+| `BQECore.Contents` | BQECore | any |  | connectors |
+| `BQL.Query` | BQL | table |  | connectors |
+| `BuildingConnected.Contents` | BuildingConnected | table |  | connectors |
+| `CCHTagetik.Contents` | CCHTagetik | table |  | connectors |
+| `CCHTagetik.Contents2` | CCHTagetik | table |  | connectors |
+| `CCHTagetik.Contents3` | CCHTagetik | table |  | connectors |
+| `CCHTagetik.Contents4` | CCHTagetik | table |  | connectors |
+| `CDataConnectCloud.Contents` | CDataConnectCloud | table |  | connectors |
+| `CDataConnectCloud.ContentsV2` | CDataConnectCloud | table |  | connectors |
+| `Cds.Contents` | Cds | any |  | connectors |
+| `Cds.Entities` | Cds | table |  | connectors |
+| `Celonis.KnowledgeModels` | Celonis | table |  | connectors |
+| `Celonis.Navigation` | Celonis | table |  | connectors |
+| `Cherwell.SavedSearches` | Cherwell | table |  | connectors |
+| `ClickHouse.Database` | ClickHouse | table |  | connectors |
+| `CloudBluePSA.Feed` | CloudBluePSA | table |  | connectors |
+| `Cognite.Contents` | Cognite | table |  | connectors |
+| `CogniteDataSource.Contents` | CogniteDataSource | table |  | connectors |
+| `CommonDataService.Database` | CommonDataService | table |  | connectors |
+| `CosmosDB.Contents` | CosmosDB | table |  | connectors |
+| `CustomerInsights.Contents` | CustomerInsights | table |  | connectors |
+| `Databricks.Catalogs` | Databricks | table |  | connectors |
+| `Databricks.Contents` | Databricks | table |  | connectors |
+| `Databricks.Query` | Databricks | function |  | connectors |
+| `DatabricksMultiCloud.Catalogs` | DatabricksMultiCloud | table |  | connectors |
+| `DatabricksMultiCloud.Query` | DatabricksMultiCloud | function |  | connectors |
+| `DataLake.Contents` | DataLake | table |  | connectors |
+| `DataLake.Files` | DataLake | table |  | connectors |
+| `DataVirtuality.Database` | DataVirtuality | table |  | connectors |
+| `DataWorld.Contents` | DataWorld | table |  | connectors |
+| `DataWorld.Dataset` | DataWorld | table |  | connectors |
+| `DCWInsights.Feed` | DCWInsights | table |  | connectors |
+| `DeltaSharing.Contents` | DeltaSharing | table |  | connectors |
+| `Denodo.Contents` | Denodo | table |  | connectors |
+| `DocumentDB.Contents` | DocumentDB | table |  | connectors |
+| `Dremio.Databases` | Dremio | table |  | connectors |
+| `Dremio.DatabasesV300` | Dremio | table |  | connectors |
+| `Dremio.DatabasesV370` | Dremio | table |  | connectors |
+| `DremioCloud.Databases` | DremioCloud | table |  | connectors |
+| `DremioCloud.DatabasesByServer` | DremioCloud | table |  | connectors |
+| `DremioCloud.DatabasesByServerV330` | DremioCloud | table |  | connectors |
+| `DremioCloud.DatabasesByServerV360` | DremioCloud | table |  | connectors |
+| `DremioCloud.DatabasesByServerV370` | DremioCloud | table |  | connectors |
+| `DremioTesting.Contents` | DremioTesting | any |  | connectors |
+| `Dynamics365BusinessCentral.ApiContents` | Dynamics365BusinessCentral | table |  | connectors |
+| `Dynamics365BusinessCentral.ApiContentsWithOptions` | Dynamics365BusinessCentral | table |  | connectors |
+| `Dynamics365BusinessCentral.Contents` | Dynamics365BusinessCentral | table |  | connectors |
+| `Dynamics365BusinessCentral.EnvironmentContents` | Dynamics365BusinessCentral | table |  | connectors |
+| `Dynamics365BusinessCentralOnPremises.Contents` | Dynamics365BusinessCentralOnPremises | table |  | connectors |
+| `DynamicsNav.Contents` | DynamicsNav | table |  | connectors |
+| `DynatraceGrail.Contents` | DynatraceGrail | table |  | connectors |
+| `EduFrame.Contents` | EduFrame | table |  | connectors |
+| `Emigo.Contents` | Emigo | table |  | connectors |
+| `Emigo.GetExtractFunction` | Emigo | any |  | connectors |
+| `EmigoDataSourceConnector.GetExtractFunction` | EmigoDataSourceConnector | any |  | connectors |
+| `EntersoftBusinessSuite.Contents` | EntersoftBusinessSuite | any |  | connectors |
+| `EQuIS.Contents` | EQuIS | table |  | connectors |
+| `eWayCRM.Contents` | eWayCRM | table |  | connectors |
+| `eWayCRM.Contents2` | eWayCRM | table |  | connectors |
+| `ExactOnlinePremium.Contents` | ExactOnlinePremium | table |  | connectors |
+| `Exasol.Database` | Exasol | table |  | connectors |
+| `Fabric.Warehouse` | Fabric | table |  | connectors |
+| `FabricSql.Contents` | FabricSql | table |  | connectors |
+| `FactSetAnalytics.ConnectionCheck` | FactSetAnalytics | any |  | connectors |
+| `FactSetAnalytics.Contents` | FactSetAnalytics | table |  | connectors |
+| `FactSetAnalytics.Functions` | FactSetAnalytics | table |  | connectors |
+| `FactSetRMS.Functions` | FactSetRMS | table |  | connectors |
+| `Fhir.Contents` | Fhir | table |  | connectors |
+| `Foundry.Contents` | Foundry | table |  | connectors |
+| `Funnel.Contents` | Funnel | table |  | connectors |
+| `Github.Contents` | Github | any |  | connectors |
+| `Github.PagedTable` | Github | any |  | connectors |
+| `Github.Tables` | Github | table |  | connectors |
+| `GoogleBigQuery.Database` | GoogleBigQuery | table |  | connectors |
+| `GoogleBigQueryAad.Database` | GoogleBigQueryAad | table |  | connectors |
+| `GoogleSheets.Contents` | GoogleSheets | table |  | connectors |
+| `HexagonSmartApi.ApplySelectList` | HexagonSmartApi | table |  | connectors |
+| `HexagonSmartApi.ApplyUnitsOfMeasure` | HexagonSmartApi | any |  | connectors |
+| `HexagonSmartApi.ExecuteParametricFilterOnFilterRecord` | HexagonSmartApi | any |  | connectors |
+| `HexagonSmartApi.ExecuteParametricFilterOnFilterUrl` | HexagonSmartApi | any |  | connectors |
+| `HexagonSmartApi.Feed` | HexagonSmartApi | table |  | connectors |
+| `HexagonSmartApi.GenerateParametricFilterByFilterSourceType` | HexagonSmartApi | any |  | connectors |
+| `HexagonSmartApi.GetODataMetadata` | HexagonSmartApi | any |  | connectors |
+| `HexagonSmartApi.Typecast` | HexagonSmartApi | function |  | connectors |
+| `Impala.Database` | Impala | table |  | connectors |
+| `Indexima.Database` | Indexima | table |  | connectors |
+| `IndustrialAppStore.NavigationTable` | IndustrialAppStore | any |  | connectors |
+| `InformationGrid.Contents` | InformationGrid | table |  | connectors |
+| `IntersystemsHealthInsight.Database` | IntersystemsHealthInsight | table |  | connectors |
+| `Intune.Contents` | Intune | table |  | connectors |
+| `IntuneV2.Contents` | IntuneV2 | table |  | connectors |
+| `inwink.ScopeContents` | inwink | table |  | connectors |
+| `IRIS.Database` | IRIS | table |  | connectors |
+| `JamfPro.Contents` | JamfPro | text |  | connectors |
+| `JethroODBC.Database` | JethroODBC | table |  | connectors |
+| `Kognitwin.Contents` | Kognitwin | table |  | connectors |
+| `Kusto.Contents` | Kusto | table |  | connectors |
+| `Kusto.Databases` | Kusto | list |  | connectors |
+| `kxkdbinsightsenterprise.Contents` | kxkdbinsightsenterprise | table |  | connectors |
+| `Kyligence.Database` | Kyligence | table |  | connectors |
+| `KyvosODBC.Databases` | KyvosODBC | table |  | connectors |
+| `Lakehouse.Contents` | Lakehouse | table |  | connectors |
+| `LEAP.Contents` | LEAP | table |  | connectors |
+| `Linkar.Contents` | Linkar | table |  | connectors |
+| `LinkedIn.SalesContracts` | LinkedIn | table |  | connectors |
+| `LinkedIn.SalesContractsWithReportAccess` | LinkedIn | table |  | connectors |
+| `LinkedIn.SalesNavigator` | LinkedIn | table |  | connectors |
+| `LinkedIn.SalesNavigatorAnalytics` | LinkedIn | table |  | connectors |
+| `LinkedIn.SalesNavigatorAnalyticsImpl` | LinkedIn | any |  | connectors |
+| `LinkedInLearning.Contents` | LinkedInLearning | any |  | connectors |
+| `MailChimp.Collection` | MailChimp | table |  | connectors |
+| `MailChimp.Instance` | MailChimp | table |  | connectors |
+| `MailChimp.Tables` | MailChimp | table |  | connectors |
+| `MailChimp.TablesV2` | MailChimp | table |  | connectors |
+| `MariaDB.Contents` | MariaDB | table |  | connectors |
+| `Marketo.Activities` | Marketo | table |  | connectors |
+| `Marketo.Leads` | Marketo | table |  | connectors |
+| `Marketo.Tables` | Marketo | table |  | connectors |
+| `MarkLogicODBC.Contents` | MarkLogicODBC | table |  | connectors |
+| `MicrosoftAzureDataManagerForEnergy.Search` | MicrosoftAzureDataManagerForEnergy | table |  | connectors |
+| `MicrosoftGraphSecurity.Contents` | MicrosoftGraphSecurity | table |  | connectors |
+| `MicrosoftSentinel.Contents` | MicrosoftSentinel | table |  | connectors |
+| `MicroStrategyDataset.Contents` | MicroStrategyDataset | table |  | connectors |
+| `MicroStrategyDataset.TestConnection` | MicroStrategyDataset | any |  | connectors |
+| `Mixpanel.Contents` | Mixpanel | any |  | connectors |
+| `Mixpanel.Export` | Mixpanel | any |  | connectors |
+| `Mixpanel.FunnelById` | Mixpanel | any |  | connectors |
+| `Mixpanel.FunnelByName` | Mixpanel | any |  | connectors |
+| `Mixpanel.Funnels` | Mixpanel | any |  | connectors |
+| `Mixpanel.Segmentation` | Mixpanel | any |  | connectors |
+| `Mixpanel.Tables` | Mixpanel | any |  | connectors |
+| `MongoDBAtlasODBC.Contents` | MongoDBAtlasODBC | table |  | connectors |
+| `MongoDBAtlasODBC.Query` | MongoDBAtlasODBC | any |  | connectors |
+| `Netezza.Database` | Netezza | table |  | connectors |
+| `OneLake.Contents` | OneLake | table |  | connectors |
+| `OneLake.SqlAnalytics` | OneLake | table |  | connectors |
+| `OneStream.Navigation` | OneStream | any |  | connectors |
+| `OpenSearchProject.Contents` | OpenSearchProject | table |  | connectors |
+| `Paxata.Contents` | Paxata | table |  | connectors |
+| `PlanviewEnterprise.CallQueryService` | PlanviewEnterprise | table |  | connectors |
+| `PlanviewEnterprise.Feed` | PlanviewEnterprise | table |  | connectors |
+| `PlanviewOKR.Contents` | PlanviewOKR | table |  | connectors |
+| `PlanviewProjectplace.Contents` | PlanviewProjectplace | table |  | connectors |
+| `PowerBI.Dataflows` | PowerBI | table |  | connectors |
+| `PowerBI.Datamarts` | PowerBI | table |  | connectors |
+| `PowerPlatform.Dataflows` | PowerPlatform | table |  | connectors |
+| `ProductInsights.Contents` | ProductInsights | table |  | connectors |
+| `ProductInsights.QueryMetric` | ProductInsights | any |  | connectors |
+| `Profisee.Tables` | Profisee | table |  | connectors |
+| `Projectplace.Feed` | Projectplace | table |  | connectors |
+| `Python.Execute` | Python | table |  | connectors |
+| `QubolePresto.Contents` | QubolePresto | any |  | connectors |
+| `QuickBase.Contents` | QuickBase | table |  | connectors |
+| `QuickBooks.Query` | QuickBooks | table |  | connectors |
+| `QuickBooks.Report` | QuickBooks | table |  | connectors |
+| `QuickBooks.Tables` | QuickBooks | any |  | connectors |
+| `R.Execute` | R | table |  | connectors |
+| `Resource.Access` | Resource | any |  | connectors |
+| `Roamler.Contents` | Roamler | any |  | connectors |
+| `Samsara.Records` | Samsara | table |  | connectors |
+| `SDMX.Contents` | SDMX | table |  | connectors |
+| `ShortcutsBI.Contents` | ShortcutsBI | table |  | connectors |
+| `SingleStoreODBC.Contents` | SingleStoreODBC | table |  | connectors |
+| `SingleStoreODBC.Database` | SingleStoreODBC | table |  | connectors |
+| `SingleStoreODBC.DataSource` | SingleStoreODBC | table |  | connectors |
+| `SingleStoreODBC.Query` | SingleStoreODBC | table |  | connectors |
+| `Siteimprove.Contents` | Siteimprove | table |  | connectors |
+| `Smartsheet.Content` | Smartsheet | any |  | connectors |
+| `Smartsheet.Query` | Smartsheet | any |  | connectors |
+| `Smartsheet.Tables` | Smartsheet | table |  | connectors |
+| `SmartsheetGlobal.Contents` | SmartsheetGlobal | table |  | connectors |
+| `SmartsheetGlobal.Query` | SmartsheetGlobal | any |  | connectors |
+| `Snowflake.Databases` | Snowflake | table |  | connectors |
+| `SoftOneBI.Contents` | SoftOneBI | table |  | connectors |
+| `SolarWindsServiceDesk.Contents` | SolarWindsServiceDesk | any |  | connectors |
+| `SolarWindsServiceDesk.ContentsV110` | SolarWindsServiceDesk | any |  | connectors |
+| `SolarWindsServiceDesk.ContentsV113` | SolarWindsServiceDesk | any |  | connectors |
+| `Spark.Tables` | Spark | table |  | connectors |
+| `SparkPost.GetList` | SparkPost | table |  | connectors |
+| `SparkPost.GetTable` | SparkPost | table |  | connectors |
+| `SparkPost.NavTable` | SparkPost | table |  | connectors |
+| `Spigit.Contents` | Spigit | table |  | connectors |
+| `StarburstAad.Contents` | StarburstAad | table |  | connectors |
+| `StarburstPresto.Contents` | StarburstPresto | table |  | connectors |
+| `Stripe.Contents` | Stripe | table |  | connectors |
+| `Stripe.Method` | Stripe | table |  | connectors |
+| `Stripe.Tables` | Stripe | table |  | connectors |
+| `SumTotal.ODataFeed` | SumTotal | table |  | connectors |
+| `Supermetrics.Render` | Supermetrics | table |  | connectors |
+| `Supermetrics.Test` | Supermetrics | any |  | connectors |
+| `SurveyMonkey.Contents` | SurveyMonkey | table |  | connectors |
+| `SweetIQ.Contents` | SweetIQ | any |  | connectors |
+| `SweetIQ.Tables` | SweetIQ | any |  | connectors |
+| `Synapse.Contents` | Synapse | table |  | connectors |
+| `TeamDesk.Database` | TeamDesk | table |  | connectors |
+| `TeamDesk.Select` | TeamDesk | table |  | connectors |
+| `TeamDesk.SelectView` | TeamDesk | table |  | connectors |
+| `TeamsAnalytics.Contents` | TeamsAnalytics | table |  | connectors |
+| `Tenforce.Contents` | Tenforce | table |  | connectors |
+| `TibcoTdv.DataSource` | TibcoTdv | table |  | connectors |
+| `TimeSeriesInsights.Contents` | TimeSeriesInsights | table |  | connectors |
+| `Troux.CustomFeed` | Troux | table |  | connectors |
+| `Troux.Feed` | Troux | table |  | connectors |
+| `Troux.TestConnection` | Troux | any |  | connectors |
+| `Twilio.Contents` | Twilio | any |  | connectors |
+| `Twilio.Tables` | Twilio | table |  | connectors |
+| `Twilio.URL` | Twilio | any |  | connectors |
+| `Usercube.Universes` | Usercube | table |  | connectors |
+| `Vena.Contents` | Vena | table |  | connectors |
+| `Vertica.Database` | Vertica | table |  | connectors |
+| `VesselInsight.Contents` | VesselInsight | any |  | connectors |
+| `VivaInsights.Data` | VivaInsights | table |  | connectors |
+| `VivaInsightsApi.GetResults` | VivaInsightsApi | any |  | connectors |
+| `VSTS.AccountContents` | VSTS | binary |  | connectors |
+| `VSTS.AnalyticsViews` | VSTS | table |  | connectors |
+| `VSTS.Contents` | VSTS | binary |  | connectors |
+| `VSTS.Feed` | VSTS | table |  | connectors |
+| `VSTS.Views` | VSTS | table |  | connectors |
+| `Webtrends.KeyMetrics` | Webtrends | table |  | connectors |
+| `Webtrends.Profile` | Webtrends | any |  | connectors |
+| `Webtrends.ReportContents` | Webtrends | table |  | connectors |
+| `Webtrends.Tables` | Webtrends | table |  | connectors |
+| `WebtrendsAnalytics.Tables` | WebtrendsAnalytics | table |  | connectors |
+| `Windsor.Main` | Windsor | table |  | connectors |
+| `Witivio.Contents` | Witivio | table |  | connectors |
+| `WorkforceDimensions.Contents` | WorkforceDimensions | text |  | connectors |
+| `Wrike.Contents` | Wrike | table |  | connectors |
+| `Zendesk.Collection` | Zendesk | any |  | connectors |
+| `Zendesk.Tables` | Zendesk | table |  | connectors |
+| `ZendeskData.Contents` | ZendeskData | table |  | connectors |
+| `ZohoCreator.Contents` | ZohoCreator | any |  | connectors |
+| `Zucchetti.Contents` | Zucchetti | table |  | connectors |

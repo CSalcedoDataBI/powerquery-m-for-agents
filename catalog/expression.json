@@ -13,7 +13,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "expression"
   },
   {
    "name": "Expression.Evaluate",
@@ -28,7 +29,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "expression"
   },
   {
    "name": "Expression.Identifier",
@@ -43,7 +45,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "expression"
   },
   {
    "name": "Graph.Nodes",
@@ -58,7 +61,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "expression"
   },
   {
    "name": "Value.Alternates",
@@ -73,7 +77,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "expression"
   },
   {
    "name": "Value.Expression",
@@ -88,7 +93,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "expression"
   },
   {
    "name": "Value.Lineage",
@@ -103,7 +109,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "expression"
   },
   {
    "name": "Value.Optimize",
@@ -118,7 +125,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "expression"
   },
   {
    "name": "Value.Traits",
@@ -133,7 +141,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "expression"
   }
  ]
 }

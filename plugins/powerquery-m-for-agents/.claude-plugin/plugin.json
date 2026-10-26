@@ -13,7 +13,7 @@
   "repository": "https://github.com/CSalcedoDataBI/powerquery-m-for-agents",
   "documentationUrl": "https://github.com/CSalcedoDataBI/powerquery-m-for-agents#readme",
   "supportUrl": "https://github.com/CSalcedoDataBI/powerquery-m-for-agents/issues",
-  "privacyPolicyUrl": "https://github.com/CSalcedoDataBI/powerquery-m-for-agents/blob/main/PRIVACY.md",
+  "privacyPolicyUrl": "https://github.com/CSalcedoDataBI/powerquery-m-for-agents/blob/main/plugins/powerquery-m-for-agents/PRIVACY.md",
   "license": "MIT",
   "keywords": [
     "power-query",

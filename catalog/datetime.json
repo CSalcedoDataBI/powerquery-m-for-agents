@@ -13,7 +13,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "datetime"
   },
   {
    "name": "DateTime.Date",
@@ -28,7 +29,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "datetime"
   },
   {
    "name": "DateTime.FixedLocalNow",
@@ -43,7 +45,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "datetime"
   },
   {
    "name": "DateTime.From",
@@ -58,7 +61,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "datetime"
   },
   {
    "name": "DateTime.FromFileTime",
@@ -73,7 +77,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "datetime"
   },
   {
    "name": "DateTime.FromText",
@@ -88,7 +93,8 @@
    ],
    "partialHosts": false,
    "notes": true,
-   "examples": 3
+   "examples": 3,
+   "card": "datetime"
   },
   {
    "name": "DateTime.IsInCurrentHour",
@@ -103,7 +109,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "datetime"
   },
   {
    "name": "DateTime.IsInCurrentMinute",
@@ -118,7 +125,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "datetime"
   },
   {
    "name": "DateTime.IsInCurrentSecond",
@@ -133,7 +141,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "datetime"
   },
   {
    "name": "DateTime.IsInNextHour",
@@ -148,7 +157,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "datetime"
   },
   {
    "name": "DateTime.IsInNextMinute",
@@ -163,7 +173,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "datetime"
   },
   {
    "name": "DateTime.IsInNextNHours",
@@ -178,7 +189,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "datetime"
   },
   {
    "name": "DateTime.IsInNextNMinutes",
@@ -193,7 +205,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "datetime"
   },
   {
    "name": "DateTime.IsInNextNSeconds",
@@ -208,7 +221,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "datetime"
   },
   {
    "name": "DateTime.IsInNextSecond",
@@ -223,7 +237,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "datetime"
   },
   {
    "name": "DateTime.IsInPreviousHour",
@@ -238,7 +253,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "datetime"
   },
   {
    "name": "DateTime.IsInPreviousMinute",
@@ -253,7 +269,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "datetime"
   },
   {
    "name": "DateTime.IsInPreviousNHours",
@@ -268,7 +285,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "datetime"
   },
   {
    "name": "DateTime.IsInPreviousNMinutes",
@@ -283,7 +301,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "datetime"
   },
   {
    "name": "DateTime.IsInPreviousNSeconds",
@@ -298,7 +317,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "datetime"
   },
   {
    "name": "DateTime.IsInPreviousSecond",
@@ -313,7 +333,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "datetime"
   },
   {
    "name": "DateTime.LocalNow",
@@ -328,7 +349,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "datetime"
   },
   {
    "name": "DateTime.Time",
@@ -343,7 +365,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "datetime"
   },
   {
    "name": "DateTime.ToRecord",
@@ -358,7 +381,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "datetime"
   },
   {
    "name": "DateTime.ToText",
@@ -373,7 +397,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "datetime"
   }
  ]
 }

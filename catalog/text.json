@@ -13,7 +13,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "text"
   },
   {
    "name": "Character.ToNumber",
@@ -28,7 +29,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "text"
   },
   {
    "name": "Guid.From",
@@ -43,7 +45,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "text"
   },
   {
    "name": "Json.FromValue",
@@ -58,7 +61,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "text"
   },
   {
    "name": "Text.AfterDelimiter",
@@ -73,7 +77,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.At",
@@ -88,7 +93,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.BeforeDelimiter",
@@ -103,7 +109,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.BetweenDelimiters",
@@ -118,7 +125,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.Clean",
@@ -133,7 +141,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.Combine",
@@ -148,7 +157,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.Contains",
@@ -163,7 +173,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.End",
@@ -178,7 +189,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.EndsWith",
@@ -193,7 +205,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.Format",
@@ -208,7 +221,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.From",
@@ -223,7 +237,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.FromBinary",
@@ -238,7 +253,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.InferNumberType",
@@ -253,7 +269,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.Insert",
@@ -268,7 +285,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.Length",
@@ -283,7 +301,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.Lower",
@@ -298,7 +317,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.Middle",
@@ -313,7 +333,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.NewGuid",
@@ -328,7 +349,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.PadEnd",
@@ -343,7 +365,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.PadStart",
@@ -358,7 +381,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.PositionOf",
@@ -373,7 +397,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.PositionOfAny",
@@ -388,7 +413,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.Proper",
@@ -403,7 +429,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.Range",
@@ -418,7 +445,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.Remove",
@@ -433,7 +461,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.RemoveRange",
@@ -448,7 +477,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.Repeat",
@@ -463,7 +493,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.Replace",
@@ -478,7 +509,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.ReplaceRange",
@@ -493,7 +525,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.Reverse",
@@ -508,7 +541,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.Select",
@@ -523,7 +557,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.Split",
@@ -538,7 +573,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.SplitAny",
@@ -553,7 +589,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.Start",
@@ -568,7 +605,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.StartsWith",
@@ -583,7 +621,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.ToBinary",
@@ -598,7 +637,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.ToList",
@@ -613,7 +653,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.Trim",
@@ -628,7 +669,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.TrimEnd",
@@ -643,7 +685,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.TrimStart",
@@ -658,7 +701,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Text.Upper",
@@ -673,7 +717,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "text"
   },
   {
    "name": "Value.FromText",
@@ -688,7 +733,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "text"
   }
  ]
 }

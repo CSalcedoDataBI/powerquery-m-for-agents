@@ -13,7 +13,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.AllTrue",
@@ -28,7 +29,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Alternate",
@@ -43,7 +45,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.AnyTrue",
@@ -58,7 +61,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Average",
@@ -73,7 +77,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Buffer",
@@ -88,7 +93,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Combine",
@@ -103,7 +109,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.ConformToPageReader",
@@ -118,7 +125,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Contains",
@@ -133,7 +141,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.ContainsAll",
@@ -148,7 +157,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.ContainsAny",
@@ -163,7 +173,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Count",
@@ -178,7 +189,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Covariance",
@@ -193,7 +205,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Dates",
@@ -208,7 +221,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.DateTimes",
@@ -223,7 +237,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.DateTimeZones",
@@ -238,7 +253,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Difference",
@@ -253,7 +269,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Distinct",
@@ -268,7 +285,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Durations",
@@ -283,7 +301,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.FindText",
@@ -298,7 +317,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.First",
@@ -313,7 +333,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.FirstN",
@@ -328,7 +349,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Generate",
@@ -343,7 +365,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.InsertRange",
@@ -358,7 +381,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Intersect",
@@ -373,7 +397,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.IsDistinct",
@@ -388,7 +413,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.IsEmpty",
@@ -403,7 +429,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Last",
@@ -418,7 +445,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.LastN",
@@ -433,7 +461,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.MatchesAll",
@@ -448,7 +477,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.MatchesAny",
@@ -463,7 +493,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Max",
@@ -478,7 +509,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.MaxN",
@@ -493,7 +525,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Median",
@@ -508,7 +541,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Min",
@@ -523,7 +557,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.MinN",
@@ -538,7 +573,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Mode",
@@ -553,7 +589,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Modes",
@@ -568,7 +605,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.NonNullCount",
@@ -583,7 +621,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Numbers",
@@ -598,7 +637,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Percentile",
@@ -613,7 +653,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.PositionOf",
@@ -628,7 +669,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.PositionOfAny",
@@ -643,7 +685,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Positions",
@@ -658,7 +701,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Product",
@@ -673,7 +717,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Random",
@@ -688,7 +733,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Range",
@@ -703,7 +749,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.RemoveFirstN",
@@ -718,7 +765,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.RemoveItems",
@@ -733,7 +781,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.RemoveLastN",
@@ -748,7 +797,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.RemoveMatchingItems",
@@ -763,7 +813,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.RemoveNulls",
@@ -778,7 +829,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.RemoveRange",
@@ -793,7 +845,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Repeat",
@@ -808,7 +861,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.ReplaceMatchingItems",
@@ -823,7 +877,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.ReplaceRange",
@@ -838,7 +893,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.ReplaceValue",
@@ -853,7 +909,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Reverse",
@@ -868,7 +925,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Select",
@@ -883,7 +941,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Single",
@@ -898,7 +957,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.SingleOrDefault",
@@ -913,7 +973,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Skip",
@@ -928,7 +989,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Sort",
@@ -943,7 +1005,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Split",
@@ -958,7 +1021,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.StandardDeviation",
@@ -973,7 +1037,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Sum",
@@ -988,7 +1053,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Times",
@@ -1003,7 +1069,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Transform",
@@ -1018,7 +1085,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.TransformMany",
@@ -1033,7 +1101,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Union",
@@ -1048,7 +1117,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   },
   {
    "name": "List.Zip",
@@ -1063,7 +1133,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "list"
   }
  ]
 }

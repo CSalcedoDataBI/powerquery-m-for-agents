@@ -13,7 +13,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "DirectQueryCapabilities.From",
@@ -28,7 +29,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "Embedded.Value",
@@ -43,7 +45,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "Excel.ShapeTable",
@@ -58,7 +61,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "Function.InvokeWithErrorContext",
@@ -73,7 +77,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "Module.Versions",
@@ -88,7 +93,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "Progress.DataSourceProgress",
@@ -103,7 +109,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "SqlExpression.SchemaFrom",
@@ -118,7 +125,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "SqlExpression.ToExpression",
@@ -133,7 +141,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "Table.WithErrorContext",
@@ -148,7 +157,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "values"
   },
   {
    "name": "Value.Add",
@@ -163,7 +173,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "Value.As",
@@ -178,7 +189,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "Value.Compare",
@@ -193,7 +205,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "Value.Divide",
@@ -208,7 +221,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "Value.Equals",
@@ -223,7 +237,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "Value.Firewall",
@@ -238,7 +253,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "Value.Is",
@@ -253,7 +269,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "Value.Multiply",
@@ -268,7 +285,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "Value.NativeQuery",
@@ -283,7 +301,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "Value.NullableEquals",
@@ -298,7 +317,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "Value.ReplaceType",
@@ -313,7 +333,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "Value.Subtract",
@@ -328,7 +349,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "Value.Type",
@@ -343,7 +365,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "Value.ViewError",
@@ -358,7 +381,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "Value.ViewFunction",
@@ -373,7 +397,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "Variable.Value",
@@ -388,7 +413,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   },
   {
    "name": "Variable.ValueOrDefault",
@@ -403,7 +429,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "values"
   }
  ]
 }

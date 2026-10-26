@@ -1,14 +1,16 @@
 # Agent instructions
 
-This repository is **private for now and meant to go public** (see the
-[design spec](docs/superpowers/specs/2026-09-28-powerquery-m-for-agents-design.md), §3).
-Write every issue and commit as if it were already public: no client names, no real
-engagements, no credentials, no contents of private repositories.
+This repository is **public**. Write every issue and commit for a public reader: no client
+names, no real engagements, no credentials, no contents of private repositories.
+
+**Only `plugins/powerquery-m-for-agents/` ships** to the plugin directory. Keep it under 512
+files with nothing a maintainer alone needs (`scripts/validate_skills.py` checks the count).
 
 ## Rules specific to this repo
 
-- **`skills/m-reference/generated/` is written only by `sync_shared.py`.** Never edit a card
-  by hand; write a note in `notes/` instead.
+- **`plugins/powerquery-m-for-agents/skills/m-reference/generated/` and `catalog/` are written
+  only by `scripts/sync_shared.py`.** Never edit a card by hand; write a note in `notes/`
+  instead.
 - **Never add a function name to anything an agent reads unless it came from a `#shared`
   export.** This library exists to stop invention; it cannot contain any.
 - **Every number in the README is counted from the tree**, not typed. Until there is a check

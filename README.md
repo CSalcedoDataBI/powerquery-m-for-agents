@@ -6,10 +6,9 @@ doesn't tell you.
 
 > **Status: early.** The catalogue is generated from one export, Power BI Desktop; its size
 > and the build it came from are in the header of
-> [`catalog.md`](skills/m-reference/generated/catalog.md), counted by the generator rather
+> [`catalog.md`](plugins/powerquery-m-for-agents/skills/m-reference/generated/catalog.md), counted by the generator rather
 > than typed here. Executed examples cover the Text, List and Table functions, and the language
-> itself has hand-written concept pages. No second host yet. Plan and open questions:
-> [design spec](docs/superpowers/specs/2026-09-28-powerquery-m-for-agents-design.md).
+> itself has hand-written concept pages. No second host yet.
 
 Sibling of [dax-for-agents](https://github.com/CSalcedoDataBI/dax-for-agents), with the same
 architecture: an agent reads one flat index, finds the function, and opens **one** card.
@@ -83,6 +82,11 @@ Routing and conventions: [INDEX.md](INDEX.md).
 Needs Claude Code 2.1.142 or later: earlier versions install the plugin and load none of its
 skills (`scripts/check_plugin_manifest.py`).
 
+The plugin is the folder [`plugins/powerquery-m-for-agents/`](plugins/powerquery-m-for-agents/),
+and only that folder is installed. Everything else here (`scripts/`, `lab/`, `evals/`,
+`catalog/`, `docs/`) is maintainer tooling. The cards and the executed examples are packed
+one file per category, a `## <Function>` section each, so the folder stays small.
+
 ## What it runs, sends and downloads
 
 **The plugin itself runs nothing on its own.** It is the skills `m-reference` and `m-feedback`,
@@ -96,14 +100,14 @@ you the text, and only after you approve it runs your own `gh issue create` to f
 public repository, under your GitHub account. Without `gh` it hands you the text to file
 yourself.
 
-The plugin's privacy policy is in [PRIVACY.md](PRIVACY.md).
+The plugin's privacy policy is in [PRIVACY.md](plugins/powerquery-m-for-agents/PRIVACY.md).
 
 The repository also holds maintainer tools. None runs unless you run it:
 
 | Tool | Runs | Sends | Downloads |
 |---|---|---|---|
-| `skills/m-reference/scripts/sync_shared.py` | Python, standard library only | Nothing | Nothing. Reads `exports/*.json` (the maintainer's private exports, not in this repository), writes `generated/` |
-| `skills/m-reference/scripts/export_shared.pq` | M, pasted into your own Power BI or Excel | Nothing | Nothing. Reads `#shared` |
+| `scripts/sync_shared.py` | Python, standard library only | Nothing | Nothing. Reads `exports/*.json` (the maintainer's private exports, not in this repository), writes the plugin's `generated/` and `catalog/` |
+| `scripts/export_shared.pq` | M, pasted into your own Power BI or Excel | Nothing | Nothing. Reads `#shared` |
 | `scripts/*.py` | Python checks, the same ones CI runs | Nothing | Nothing |
 | `lab/runner/`, `lab/shared-export/` (except `learn_links.py`) | Open Power BI Desktop on this machine; the runner evaluates the example blocks there, limited to functions that compute on values (`scripts/m_blocks.py`) | Nothing | Nothing |
 | `lab/shared-export/learn_links.py` | Python, standard library only | One HEAD request per catalogue function to `https://learn.microsoft.com/en-us/powerquery-m/<function page>`, to keep only the links that answer 200. The URL names the function; nothing else is sent | Nothing but the status code |
@@ -126,7 +130,6 @@ python scripts/validate_skills.py
 python scripts/check_plugin_manifest.py
 python scripts/check_workflow_cost.py
 python -m unittest discover -s scripts -t scripts
-python -m unittest discover -s skills/m-reference/scripts -t skills/m-reference/scripts
 ```
 
 ## License
@@ -134,7 +137,7 @@ python -m unittest discover -s skills/m-reference/scripts -t skills/m-reference/
 MIT © CSalcedoDataBI. The one-line function and constant descriptions are Microsoft's,
 from the MIT-licensed standard library of
 [microsoft/vscode-powerquery](https://github.com/microsoft/vscode-powerquery): see
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The engine's own long descriptions and
+[THIRD_PARTY_NOTICES.md](plugins/powerquery-m-for-agents/THIRD_PARTY_NOTICES.md). The engine's own long descriptions and
 examples carry no stated licence, so the cards do not quote them (#1); each card links its
 Microsoft Learn page instead, when that page exists.
 

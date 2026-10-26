@@ -22,8 +22,8 @@ powershell.exe -ExecutionPolicy Bypass -File lab/shared-export/export_desktop.ps
 Then report, and write:
 
 ```bash
-python skills/m-reference/scripts/sync_shared.py exports/desktop.json exports/excel.json
-python skills/m-reference/scripts/sync_shared.py exports/desktop.json exports/excel.json --write
+python scripts/sync_shared.py exports/desktop.json exports/excel.json
+python scripts/sync_shared.py exports/desktop.json exports/excel.json --write
 ```
 
 The descriptions are not the engine's: only Microsoft's MIT-licensed standard library file
@@ -37,16 +37,22 @@ gh api "repos/microsoft/vscode-powerquery/contents/server/src/library/standard/s
 python lab/shared-export/learn_links.py exports/learn-links.json
 ```
 
-Then record the commit in `THIRD_PARTY_NOTICES.md`.
+Then record the commit in `plugins/powerquery-m-for-agents/THIRD_PARTY_NOTICES.md`.
 
 The first export named wins each card; the rest only contribute `hosts`. Gates: an export
 with fewer than 100 functions, two names mapping to one file, an orphan note, or the count
 moving more than 5% (override with `--accept-count-change`). The new tree is built in a
 scratch directory and swapped in one move.
 
+What it writes: the plugin's `generated/` (the three indexes, and `library/<part>.md` with
+every card of one catalogue part as a `## <Name>` section, continued in `<part>-2.md` past
+256 KiB) and `catalog/` at the repository root (the JSON catalogue the scripts read; it does
+not ship). The plugin directory holds a plugin of 512 files or more for review, which is why
+the cards are packed: `scripts/validate_skills.py` fails the build at that count.
+
 ## Running the examples
 
-Every ```` ```m ```` block under `skills/` is run by `lab/runner/run_examples.py` in Power BI
+Every ```` ```m ```` block under the plugin's `skills/` is run by `lab/runner/run_examples.py` in Power BI
 Desktop, each block in its own refresh, and its result written below it. Keep one Desktop
 open for the session instead of one per run:
 
@@ -60,3 +66,8 @@ The port is the one Desktop's engine listens on (the `powerbi-modeling` MCP list
 local instance). CI cannot run Desktop; `scripts/check_examples.py` checks there that every
 block has a result, that examples sit under their card's category, and that every dotted
 library name in these pages is in the export or was printed by the engine.
+
+Examples are packed like the cards: `examples/<category>.md`, one `## <Name>` section per
+function, in name order, under one `<!-- lab: ... -->` stamp at the top of the file (the
+runner rewrites it when it writes results). To add a function, add its section to its
+category's file (`lab/drafting/pilot.py collect` does it for drafted pages).

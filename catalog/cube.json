@@ -13,7 +13,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "cube"
   },
   {
    "name": "Cube.AddMeasureColumn",
@@ -28,7 +29,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "cube"
   },
   {
    "name": "Cube.ApplyParameter",
@@ -43,7 +45,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "cube"
   },
   {
    "name": "Cube.AttributeMemberId",
@@ -58,7 +61,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "cube"
   },
   {
    "name": "Cube.AttributeMemberProperty",
@@ -73,7 +77,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "cube"
   },
   {
    "name": "Cube.CollapseAndRemoveColumns",
@@ -88,7 +93,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "cube"
   },
   {
    "name": "Cube.Dimensions",
@@ -103,7 +109,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "cube"
   },
   {
    "name": "Cube.DisplayFolders",
@@ -118,7 +125,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "cube"
   },
   {
    "name": "Cube.MeasureProperties",
@@ -133,7 +141,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "cube"
   },
   {
    "name": "Cube.MeasureProperty",
@@ -148,7 +157,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "cube"
   },
   {
    "name": "Cube.Measures",
@@ -163,7 +173,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "cube"
   },
   {
    "name": "Cube.Parameters",
@@ -178,7 +189,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "cube"
   },
   {
    "name": "Cube.Properties",
@@ -193,7 +205,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "cube"
   },
   {
    "name": "Cube.PropertyKey",
@@ -208,7 +221,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "cube"
   },
   {
    "name": "Cube.ReplaceDimensions",
@@ -223,7 +237,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "cube"
   },
   {
    "name": "Cube.Transform",
@@ -238,7 +253,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "cube"
   }
  ]
 }

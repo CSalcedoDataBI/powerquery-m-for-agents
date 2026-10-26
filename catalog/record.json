@@ -13,7 +13,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "record"
   },
   {
    "name": "Geography.ToWellKnownText",
@@ -28,7 +29,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "record"
   },
   {
    "name": "GeographyPoint.From",
@@ -43,7 +45,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "record"
   },
   {
    "name": "Geometry.FromWellKnownText",
@@ -58,7 +61,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "record"
   },
   {
    "name": "Geometry.ToWellKnownText",
@@ -73,7 +77,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "record"
   },
   {
    "name": "GeometryPoint.From",
@@ -88,7 +93,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "record"
   },
   {
    "name": "Record.AddField",
@@ -103,7 +109,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "record"
   },
   {
    "name": "Record.Combine",
@@ -118,7 +125,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "record"
   },
   {
    "name": "Record.Field",
@@ -133,7 +141,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "record"
   },
   {
    "name": "Record.FieldCount",
@@ -148,7 +157,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "record"
   },
   {
    "name": "Record.FieldNames",
@@ -163,7 +173,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "record"
   },
   {
    "name": "Record.FieldOrDefault",
@@ -178,7 +189,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "record"
   },
   {
    "name": "Record.FieldValues",
@@ -193,7 +205,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "record"
   },
   {
    "name": "Record.FromList",
@@ -208,7 +221,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "record"
   },
   {
    "name": "Record.FromTable",
@@ -223,7 +237,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "record"
   },
   {
    "name": "Record.HasFields",
@@ -238,7 +253,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "record"
   },
   {
    "name": "Record.RemoveFields",
@@ -253,7 +269,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "record"
   },
   {
    "name": "Record.RenameFields",
@@ -268,7 +285,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "record"
   },
   {
    "name": "Record.ReorderFields",
@@ -283,7 +301,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "record"
   },
   {
    "name": "Record.SelectFields",
@@ -298,7 +317,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "record"
   },
   {
    "name": "Record.ToList",
@@ -313,7 +333,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "record"
   },
   {
    "name": "Record.ToTable",
@@ -328,7 +349,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "record"
   },
   {
    "name": "Record.TransformFields",
@@ -343,7 +365,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "record"
   }
  ]
 }

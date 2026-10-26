@@ -13,7 +13,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "type"
   },
   {
    "name": "Type.AddTableKey",
@@ -28,7 +29,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "type"
   },
   {
    "name": "Type.ClosedRecord",
@@ -43,7 +45,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "type"
   },
   {
    "name": "Type.Facets",
@@ -58,7 +61,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "type"
   },
   {
    "name": "Type.ForFunction",
@@ -73,7 +77,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "type"
   },
   {
    "name": "Type.ForRecord",
@@ -88,7 +93,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 4
+   "examples": 4,
+   "card": "type"
   },
   {
    "name": "Type.FunctionParameters",
@@ -103,7 +109,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "type"
   },
   {
    "name": "Type.FunctionRequiredParameters",
@@ -118,7 +125,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "type"
   },
   {
    "name": "Type.FunctionReturn",
@@ -133,7 +141,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "type"
   },
   {
    "name": "Type.Is",
@@ -148,7 +157,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "type"
   },
   {
    "name": "Type.IsNullable",
@@ -163,7 +173,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "type"
   },
   {
    "name": "Type.IsOpenRecord",
@@ -178,7 +189,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "type"
   },
   {
    "name": "Type.ListItem",
@@ -193,7 +205,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "type"
   },
   {
    "name": "Type.NonNullable",
@@ -208,7 +221,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "type"
   },
   {
    "name": "Type.OpenRecord",
@@ -223,7 +237,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "type"
   },
   {
    "name": "Type.RecordFields",
@@ -238,7 +253,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "type"
   },
   {
    "name": "Type.ReplaceFacets",
@@ -253,7 +269,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "type"
   },
   {
    "name": "Type.ReplaceTableKeys",
@@ -268,7 +285,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "type"
   },
   {
    "name": "Type.ReplaceTablePartitionKey",
@@ -283,7 +301,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "type"
   },
   {
    "name": "Type.TableColumn",
@@ -298,7 +317,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "type"
   },
   {
    "name": "Type.TableKeys",
@@ -313,7 +333,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "type"
   },
   {
    "name": "Type.TablePartitionKey",
@@ -328,7 +349,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 2
+   "examples": 2,
+   "card": "type"
   },
   {
    "name": "Type.TableRow",
@@ -343,7 +365,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "type"
   },
   {
    "name": "Type.TableSchema",
@@ -358,7 +381,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "type"
   },
   {
    "name": "Type.Union",
@@ -373,7 +397,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "type"
   }
  ]
 }

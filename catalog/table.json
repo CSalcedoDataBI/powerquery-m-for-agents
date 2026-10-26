@@ -13,7 +13,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "table"
   },
   {
    "name": "RowExpression.Column",
@@ -28,7 +29,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "table"
   },
   {
    "name": "RowExpression.From",
@@ -43,7 +45,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "table"
   },
   {
    "name": "Table.AddColumn",
@@ -58,7 +61,8 @@
    ],
    "partialHosts": false,
    "notes": true,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.AddFuzzyClusterColumn",
@@ -73,7 +77,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 2
+   "examples": 2,
+   "card": "table"
   },
   {
    "name": "Table.AddIndexColumn",
@@ -88,7 +93,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.AddJoinColumn",
@@ -103,7 +109,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.AddKey",
@@ -118,7 +125,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.AddRankColumn",
@@ -133,7 +141,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.AggregateTableColumn",
@@ -148,7 +157,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.AlternateRows",
@@ -163,7 +173,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ApproximateRowCount",
@@ -178,7 +189,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.Buffer",
@@ -193,7 +205,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ClearDown",
@@ -208,7 +221,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.Column",
@@ -223,7 +237,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ColumnCount",
@@ -238,7 +253,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ColumnNames",
@@ -253,7 +269,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ColumnsOfType",
@@ -268,7 +285,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.Combine",
@@ -283,7 +301,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.CombineColumns",
@@ -298,7 +317,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.CombineColumnsToRecord",
@@ -313,7 +333,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ConformToPageReader",
@@ -328,7 +349,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.Contains",
@@ -343,7 +365,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ContainsAll",
@@ -358,7 +381,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ContainsAny",
@@ -373,7 +397,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.DemoteHeaders",
@@ -388,7 +413,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.Distinct",
@@ -403,7 +429,8 @@
    ],
    "partialHosts": false,
    "notes": true,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.DuplicateColumn",
@@ -418,7 +445,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ExpandListColumn",
@@ -433,7 +461,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ExpandRecordColumn",
@@ -448,7 +477,8 @@
    ],
    "partialHosts": false,
    "notes": true,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ExpandTableColumn",
@@ -463,7 +493,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.FillDown",
@@ -478,7 +509,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.FillUp",
@@ -493,7 +525,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.FilterWithDataTable",
@@ -508,7 +541,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "table"
   },
   {
    "name": "Table.FindText",
@@ -523,7 +557,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.First",
@@ -538,7 +573,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.FirstN",
@@ -553,7 +589,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.FirstValue",
@@ -568,7 +605,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.FromColumns",
@@ -583,7 +621,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.FromList",
@@ -598,7 +637,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.FromPartitions",
@@ -613,7 +653,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.FromRecords",
@@ -628,7 +669,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.FromRows",
@@ -643,7 +685,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.FromValue",
@@ -658,7 +701,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.FuzzyGroup",
@@ -673,7 +717,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 2
+   "examples": 2,
+   "card": "table"
   },
   {
    "name": "Table.FuzzyJoin",
@@ -688,7 +733,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 2
+   "examples": 2,
+   "card": "table"
   },
   {
    "name": "Table.FuzzyNestedJoin",
@@ -703,7 +749,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 2
+   "examples": 2,
+   "card": "table"
   },
   {
    "name": "Table.Group",
@@ -718,7 +765,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.HasColumns",
@@ -733,7 +781,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.InsertRows",
@@ -748,7 +797,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.IsDistinct",
@@ -763,7 +813,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.IsEmpty",
@@ -778,7 +829,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.Join",
@@ -793,7 +845,8 @@
    ],
    "partialHosts": false,
    "notes": true,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.Keys",
@@ -808,7 +861,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.Last",
@@ -823,7 +877,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.LastN",
@@ -838,7 +893,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.MatchesAllRows",
@@ -853,7 +909,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.MatchesAnyRows",
@@ -868,7 +925,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.Max",
@@ -883,7 +941,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.MaxN",
@@ -898,7 +957,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.Min",
@@ -913,7 +973,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.MinN",
@@ -928,7 +989,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.NestedJoin",
@@ -943,7 +1005,8 @@
    ],
    "partialHosts": false,
    "notes": true,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.Partition",
@@ -958,7 +1021,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.PartitionKey",
@@ -973,7 +1037,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.PartitionValues",
@@ -988,7 +1053,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.Pivot",
@@ -1003,7 +1069,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.PositionOf",
@@ -1018,7 +1085,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.PositionOfAny",
@@ -1033,7 +1101,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.PrefixColumns",
@@ -1048,7 +1117,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.Profile",
@@ -1063,7 +1133,8 @@
    ],
    "partialHosts": false,
    "notes": true,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.PromoteHeaders",
@@ -1078,7 +1149,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.Range",
@@ -1093,7 +1165,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.RemoveColumns",
@@ -1108,7 +1181,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.RemoveFirstN",
@@ -1123,7 +1197,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.RemoveLastN",
@@ -1138,7 +1213,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.RemoveMatchingRows",
@@ -1153,7 +1229,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.RemoveRows",
@@ -1168,7 +1245,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.RemoveRowsWithErrors",
@@ -1183,7 +1261,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.RenameColumns",
@@ -1198,7 +1277,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ReorderColumns",
@@ -1213,7 +1293,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.Repeat",
@@ -1228,7 +1309,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ReplaceErrorValues",
@@ -1243,7 +1325,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ReplaceKeys",
@@ -1258,7 +1341,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ReplaceMatchingRows",
@@ -1273,7 +1357,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ReplacePartitionKey",
@@ -1288,7 +1373,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ReplaceRelationshipIdentity",
@@ -1303,7 +1389,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ReplaceRows",
@@ -1318,7 +1405,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ReplaceValue",
@@ -1333,7 +1421,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ReverseRows",
@@ -1348,7 +1437,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.RowCount",
@@ -1363,7 +1453,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.Schema",
@@ -1378,7 +1469,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.SelectColumns",
@@ -1393,7 +1485,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.SelectRows",
@@ -1408,7 +1501,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.SelectRowsWithErrors",
@@ -1423,7 +1517,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.SingleRow",
@@ -1438,7 +1533,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.Skip",
@@ -1453,7 +1549,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.Sort",
@@ -1468,7 +1565,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.Split",
@@ -1483,7 +1581,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.SplitAt",
@@ -1498,7 +1597,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.SplitColumn",
@@ -1513,7 +1613,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.StopFolding",
@@ -1528,7 +1629,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ToColumns",
@@ -1543,7 +1645,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ToList",
@@ -1558,7 +1661,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ToRecords",
@@ -1573,7 +1677,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ToRows",
@@ -1588,7 +1693,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.TransformColumnNames",
@@ -1603,7 +1709,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.TransformColumns",
@@ -1618,7 +1725,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.TransformColumnTypes",
@@ -1633,7 +1741,8 @@
    ],
    "partialHosts": false,
    "notes": true,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.TransformRows",
@@ -1648,7 +1757,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.Transpose",
@@ -1663,7 +1773,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.Unpivot",
@@ -1678,7 +1789,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.UnpivotOtherColumns",
@@ -1693,7 +1805,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.View",
@@ -1708,7 +1821,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ViewError",
@@ -1723,7 +1837,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Table.ViewFunction",
@@ -1738,7 +1853,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 1
+   "examples": 1,
+   "card": "table"
   },
   {
    "name": "Tables.GetRelationships",
@@ -1753,7 +1869,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "table"
   }
  ]
 }

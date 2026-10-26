@@ -13,7 +13,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Actian.Contents",
@@ -28,7 +29,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "ADPAnalytics.Contents",
@@ -43,7 +45,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AmazonAthena.Databases",
@@ -58,7 +61,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AmazonOpenSearchService.Contents",
@@ -73,7 +77,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AmazonRedshift.Database",
@@ -88,7 +93,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Anaplan.Contents",
@@ -103,7 +109,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "ApacheHiveLLAP.Database",
@@ -118,7 +125,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "ApacheSpark.Tables",
@@ -133,7 +141,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "appFigures.Content",
@@ -148,7 +157,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "appFigures.Tables",
@@ -163,7 +173,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AptixInsights.Feed",
@@ -178,7 +189,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Asana.Tables",
@@ -193,7 +205,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AssembleViews.Contents",
@@ -208,7 +221,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AssembleViews.Feed",
@@ -223,7 +237,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AtScale.Cubes",
@@ -238,7 +253,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AutodeskConstructionCloud.Contents",
@@ -253,7 +269,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AutodeskConstructionCloud.Feed",
@@ -268,7 +285,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AutomationAnywhere.Feed",
@@ -283,7 +301,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AutomyDataAnalytics.Contents",
@@ -298,7 +317,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AzureCosmosDBForMongoDBvCore.Contents",
@@ -313,7 +333,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AzureCostManagement.Contents",
@@ -328,7 +349,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AzureCostManagement.Tables",
@@ -343,7 +365,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AzureDataExplorer.Contents",
@@ -358,7 +381,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AzureDataExplorer.Databases",
@@ -373,7 +397,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AzureDataExplorer.KqlDatabase",
@@ -388,7 +413,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AzureDeviceRegistry.Query",
@@ -403,7 +429,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AzureDevOpsServer.AccountContents",
@@ -418,7 +445,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AzureDevOpsServer.AnalyticsViews",
@@ -433,7 +461,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AzureDevOpsServer.Feed",
@@ -448,7 +477,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AzureDevOpsServer.Views",
@@ -463,7 +493,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AzureEnterprise.Contents",
@@ -478,7 +509,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AzureEnterprise.Tables",
@@ -493,7 +525,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AzureHiveLLAP.Database",
@@ -508,7 +541,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AzureResourceGraph.Query",
@@ -523,7 +557,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AzureSpark.Tables",
@@ -538,7 +573,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "AzureTimeSeriesInsights.Contents",
@@ -553,7 +589,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "BI360.Contents",
@@ -568,7 +605,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "BIConnector.Contents",
@@ -583,7 +621,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "BitSightSecurityRatings.Contents",
@@ -598,7 +637,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Bloomberg.Query",
@@ -613,7 +653,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "BQECore.Contents",
@@ -628,7 +669,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "BQL.Query",
@@ -643,7 +685,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "BuildingConnected.Contents",
@@ -658,7 +701,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "CCHTagetik.Contents",
@@ -673,7 +717,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "CCHTagetik.Contents2",
@@ -688,7 +733,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "CCHTagetik.Contents3",
@@ -703,7 +749,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "CCHTagetik.Contents4",
@@ -718,7 +765,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "CDataConnectCloud.Contents",
@@ -733,7 +781,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "CDataConnectCloud.ContentsV2",
@@ -748,7 +797,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Cds.Contents",
@@ -763,7 +813,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Cds.Entities",
@@ -778,7 +829,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Celonis.KnowledgeModels",
@@ -793,7 +845,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Celonis.Navigation",
@@ -808,7 +861,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Cherwell.SavedSearches",
@@ -823,7 +877,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "ClickHouse.Database",
@@ -838,7 +893,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "CloudBluePSA.Feed",
@@ -853,7 +909,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Cognite.Contents",
@@ -868,7 +925,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "CogniteDataSource.Contents",
@@ -883,7 +941,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "CommonDataService.Database",
@@ -898,7 +957,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "CosmosDB.Contents",
@@ -913,7 +973,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "CustomerInsights.Contents",
@@ -928,7 +989,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Databricks.Catalogs",
@@ -943,7 +1005,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Databricks.Contents",
@@ -958,7 +1021,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Databricks.Query",
@@ -973,7 +1037,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "DatabricksMultiCloud.Catalogs",
@@ -988,7 +1053,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "DatabricksMultiCloud.Query",
@@ -1003,7 +1069,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "DataLake.Contents",
@@ -1018,7 +1085,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "DataLake.Files",
@@ -1033,7 +1101,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "DataVirtuality.Database",
@@ -1048,7 +1117,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "DataWorld.Contents",
@@ -1063,7 +1133,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "DataWorld.Dataset",
@@ -1078,7 +1149,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "DCWInsights.Feed",
@@ -1093,7 +1165,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "DeltaSharing.Contents",
@@ -1108,7 +1181,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Denodo.Contents",
@@ -1123,7 +1197,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "DocumentDB.Contents",
@@ -1138,7 +1213,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Dremio.Databases",
@@ -1153,7 +1229,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Dremio.DatabasesV300",
@@ -1168,7 +1245,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Dremio.DatabasesV370",
@@ -1183,7 +1261,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "DremioCloud.Databases",
@@ -1198,7 +1277,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "DremioCloud.DatabasesByServer",
@@ -1213,7 +1293,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "DremioCloud.DatabasesByServerV330",
@@ -1228,7 +1309,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "DremioCloud.DatabasesByServerV360",
@@ -1243,7 +1325,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "DremioCloud.DatabasesByServerV370",
@@ -1258,7 +1341,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "DremioTesting.Contents",
@@ -1273,7 +1357,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Dynamics365BusinessCentral.ApiContents",
@@ -1288,7 +1373,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Dynamics365BusinessCentral.ApiContentsWithOptions",
@@ -1303,7 +1389,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Dynamics365BusinessCentral.Contents",
@@ -1318,7 +1405,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Dynamics365BusinessCentral.EnvironmentContents",
@@ -1333,7 +1421,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Dynamics365BusinessCentralOnPremises.Contents",
@@ -1348,7 +1437,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "DynamicsNav.Contents",
@@ -1363,7 +1453,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "DynatraceGrail.Contents",
@@ -1378,7 +1469,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "EduFrame.Contents",
@@ -1393,7 +1485,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Emigo.Contents",
@@ -1408,7 +1501,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Emigo.GetExtractFunction",
@@ -1423,7 +1517,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "EmigoDataSourceConnector.GetExtractFunction",
@@ -1438,7 +1533,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "EntersoftBusinessSuite.Contents",
@@ -1453,7 +1549,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "EQuIS.Contents",
@@ -1468,7 +1565,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "eWayCRM.Contents",
@@ -1483,7 +1581,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "eWayCRM.Contents2",
@@ -1498,7 +1597,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "ExactOnlinePremium.Contents",
@@ -1513,7 +1613,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Exasol.Database",
@@ -1528,7 +1629,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Fabric.Warehouse",
@@ -1543,7 +1645,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "FabricSql.Contents",
@@ -1558,7 +1661,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "FactSetAnalytics.ConnectionCheck",
@@ -1573,7 +1677,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "FactSetAnalytics.Contents",
@@ -1588,7 +1693,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "FactSetAnalytics.Functions",
@@ -1603,7 +1709,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "FactSetRMS.Functions",
@@ -1618,7 +1725,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Fhir.Contents",
@@ -1633,7 +1741,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Foundry.Contents",
@@ -1648,7 +1757,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Funnel.Contents",
@@ -1663,7 +1773,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Github.Contents",
@@ -1678,7 +1789,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Github.PagedTable",
@@ -1693,7 +1805,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Github.Tables",
@@ -1708,7 +1821,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "GoogleBigQuery.Database",
@@ -1723,7 +1837,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "GoogleBigQueryAad.Database",
@@ -1738,7 +1853,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "GoogleSheets.Contents",
@@ -1753,7 +1869,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "HexagonSmartApi.ApplySelectList",
@@ -1768,7 +1885,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "HexagonSmartApi.ApplyUnitsOfMeasure",
@@ -1783,7 +1901,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "HexagonSmartApi.ExecuteParametricFilterOnFilterRecord",
@@ -1798,7 +1917,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "HexagonSmartApi.ExecuteParametricFilterOnFilterUrl",
@@ -1813,7 +1933,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "HexagonSmartApi.Feed",
@@ -1828,7 +1949,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "HexagonSmartApi.GenerateParametricFilterByFilterSourceType",
@@ -1843,7 +1965,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "HexagonSmartApi.GetODataMetadata",
@@ -1858,7 +1981,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "HexagonSmartApi.Typecast",
@@ -1873,7 +1997,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Impala.Database",
@@ -1888,7 +2013,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Indexima.Database",
@@ -1903,7 +2029,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "IndustrialAppStore.NavigationTable",
@@ -1918,7 +2045,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "InformationGrid.Contents",
@@ -1933,7 +2061,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "IntersystemsHealthInsight.Database",
@@ -1948,7 +2077,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Intune.Contents",
@@ -1963,7 +2093,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "IntuneV2.Contents",
@@ -1978,7 +2109,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "inwink.ScopeContents",
@@ -1993,7 +2125,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "IRIS.Database",
@@ -2008,7 +2141,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "JamfPro.Contents",
@@ -2023,7 +2157,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "JethroODBC.Database",
@@ -2038,7 +2173,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Kognitwin.Contents",
@@ -2053,7 +2189,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Kusto.Contents",
@@ -2068,7 +2205,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Kusto.Databases",
@@ -2083,7 +2221,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "kxkdbinsightsenterprise.Contents",
@@ -2098,7 +2237,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Kyligence.Database",
@@ -2113,7 +2253,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "KyvosODBC.Databases",
@@ -2128,7 +2269,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Lakehouse.Contents",
@@ -2143,7 +2285,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "LEAP.Contents",
@@ -2158,7 +2301,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Linkar.Contents",
@@ -2173,7 +2317,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "LinkedIn.SalesContracts",
@@ -2188,7 +2333,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "LinkedIn.SalesContractsWithReportAccess",
@@ -2203,7 +2349,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "LinkedIn.SalesNavigator",
@@ -2218,7 +2365,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "LinkedIn.SalesNavigatorAnalytics",
@@ -2233,7 +2381,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "LinkedIn.SalesNavigatorAnalyticsImpl",
@@ -2248,7 +2397,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "LinkedInLearning.Contents",
@@ -2263,7 +2413,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "MailChimp.Collection",
@@ -2278,7 +2429,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "MailChimp.Instance",
@@ -2293,7 +2445,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "MailChimp.Tables",
@@ -2308,7 +2461,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "MailChimp.TablesV2",
@@ -2323,7 +2477,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "MariaDB.Contents",
@@ -2338,7 +2493,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Marketo.Activities",
@@ -2353,7 +2509,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Marketo.Leads",
@@ -2368,7 +2525,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Marketo.Tables",
@@ -2383,7 +2541,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "MarkLogicODBC.Contents",
@@ -2398,7 +2557,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "MicrosoftAzureDataManagerForEnergy.Search",
@@ -2413,7 +2573,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "MicrosoftGraphSecurity.Contents",
@@ -2428,7 +2589,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "MicrosoftSentinel.Contents",
@@ -2443,7 +2605,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "MicroStrategyDataset.Contents",
@@ -2458,7 +2621,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "MicroStrategyDataset.TestConnection",
@@ -2473,7 +2637,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Mixpanel.Contents",
@@ -2488,7 +2653,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Mixpanel.Export",
@@ -2503,7 +2669,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Mixpanel.FunnelById",
@@ -2518,7 +2685,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Mixpanel.FunnelByName",
@@ -2533,7 +2701,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Mixpanel.Funnels",
@@ -2548,7 +2717,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Mixpanel.Segmentation",
@@ -2563,7 +2733,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Mixpanel.Tables",
@@ -2578,7 +2749,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "MongoDBAtlasODBC.Contents",
@@ -2593,7 +2765,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "MongoDBAtlasODBC.Query",
@@ -2608,7 +2781,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Netezza.Database",
@@ -2623,7 +2797,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "OneLake.Contents",
@@ -2638,7 +2813,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "OneLake.SqlAnalytics",
@@ -2653,7 +2829,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "OneStream.Navigation",
@@ -2668,7 +2845,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "OpenSearchProject.Contents",
@@ -2683,7 +2861,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Paxata.Contents",
@@ -2698,7 +2877,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "PlanviewEnterprise.CallQueryService",
@@ -2713,7 +2893,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "PlanviewEnterprise.Feed",
@@ -2728,7 +2909,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "PlanviewOKR.Contents",
@@ -2743,7 +2925,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "PlanviewProjectplace.Contents",
@@ -2758,7 +2941,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "PowerBI.Dataflows",
@@ -2773,7 +2957,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "PowerBI.Datamarts",
@@ -2788,7 +2973,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "PowerPlatform.Dataflows",
@@ -2803,7 +2989,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "ProductInsights.Contents",
@@ -2818,7 +3005,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "ProductInsights.QueryMetric",
@@ -2833,7 +3021,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Profisee.Tables",
@@ -2848,7 +3037,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Projectplace.Feed",
@@ -2863,7 +3053,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Python.Execute",
@@ -2878,7 +3069,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "QubolePresto.Contents",
@@ -2893,7 +3085,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "QuickBase.Contents",
@@ -2908,7 +3101,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "QuickBooks.Query",
@@ -2923,7 +3117,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "QuickBooks.Report",
@@ -2938,7 +3133,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "QuickBooks.Tables",
@@ -2953,7 +3149,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "R.Execute",
@@ -2968,7 +3165,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Resource.Access",
@@ -2983,7 +3181,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Roamler.Contents",
@@ -2998,7 +3197,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Samsara.Records",
@@ -3013,7 +3213,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "SDMX.Contents",
@@ -3028,7 +3229,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "ShortcutsBI.Contents",
@@ -3043,7 +3245,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "SingleStoreODBC.Contents",
@@ -3058,7 +3261,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "SingleStoreODBC.Database",
@@ -3073,7 +3277,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "SingleStoreODBC.DataSource",
@@ -3088,7 +3293,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "SingleStoreODBC.Query",
@@ -3103,7 +3309,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Siteimprove.Contents",
@@ -3118,7 +3325,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Smartsheet.Content",
@@ -3133,7 +3341,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Smartsheet.Query",
@@ -3148,7 +3357,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Smartsheet.Tables",
@@ -3163,7 +3373,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "SmartsheetGlobal.Contents",
@@ -3178,7 +3389,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "SmartsheetGlobal.Query",
@@ -3193,7 +3405,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Snowflake.Databases",
@@ -3208,7 +3421,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "SoftOneBI.Contents",
@@ -3223,7 +3437,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "SolarWindsServiceDesk.Contents",
@@ -3238,7 +3453,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "SolarWindsServiceDesk.ContentsV110",
@@ -3253,7 +3469,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "SolarWindsServiceDesk.ContentsV113",
@@ -3268,7 +3485,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Spark.Tables",
@@ -3283,7 +3501,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "SparkPost.GetList",
@@ -3298,7 +3517,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "SparkPost.GetTable",
@@ -3313,7 +3533,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "SparkPost.NavTable",
@@ -3328,7 +3549,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Spigit.Contents",
@@ -3343,7 +3565,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "StarburstAad.Contents",
@@ -3358,7 +3581,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "StarburstPresto.Contents",
@@ -3373,7 +3597,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Stripe.Contents",
@@ -3388,7 +3613,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Stripe.Method",
@@ -3403,7 +3629,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Stripe.Tables",
@@ -3418,7 +3645,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "SumTotal.ODataFeed",
@@ -3433,7 +3661,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Supermetrics.Render",
@@ -3448,7 +3677,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Supermetrics.Test",
@@ -3463,7 +3693,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "SurveyMonkey.Contents",
@@ -3478,7 +3709,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "SweetIQ.Contents",
@@ -3493,7 +3725,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "SweetIQ.Tables",
@@ -3508,7 +3741,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Synapse.Contents",
@@ -3523,7 +3757,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "TeamDesk.Database",
@@ -3538,7 +3773,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "TeamDesk.Select",
@@ -3553,7 +3789,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "TeamDesk.SelectView",
@@ -3568,7 +3805,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "TeamsAnalytics.Contents",
@@ -3583,7 +3821,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Tenforce.Contents",
@@ -3598,7 +3837,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "TibcoTdv.DataSource",
@@ -3613,7 +3853,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "TimeSeriesInsights.Contents",
@@ -3628,7 +3869,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Troux.CustomFeed",
@@ -3643,7 +3885,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Troux.Feed",
@@ -3658,7 +3901,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Troux.TestConnection",
@@ -3673,7 +3917,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Twilio.Contents",
@@ -3688,7 +3933,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Twilio.Tables",
@@ -3703,7 +3949,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Twilio.URL",
@@ -3718,7 +3965,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Usercube.Universes",
@@ -3733,7 +3981,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Vena.Contents",
@@ -3748,7 +3997,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Vertica.Database",
@@ -3763,7 +4013,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "VesselInsight.Contents",
@@ -3778,7 +4029,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "VivaInsights.Data",
@@ -3793,7 +4045,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "VivaInsightsApi.GetResults",
@@ -3808,7 +4061,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "VSTS.AccountContents",
@@ -3823,7 +4077,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "VSTS.AnalyticsViews",
@@ -3838,7 +4093,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "VSTS.Contents",
@@ -3853,7 +4109,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "VSTS.Feed",
@@ -3868,7 +4125,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "VSTS.Views",
@@ -3883,7 +4141,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Webtrends.KeyMetrics",
@@ -3898,7 +4157,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Webtrends.Profile",
@@ -3913,7 +4173,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Webtrends.ReportContents",
@@ -3928,7 +4189,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Webtrends.Tables",
@@ -3943,7 +4205,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "WebtrendsAnalytics.Tables",
@@ -3958,7 +4221,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Windsor.Main",
@@ -3973,7 +4237,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Witivio.Contents",
@@ -3988,7 +4253,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "WorkforceDimensions.Contents",
@@ -4003,7 +4269,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Wrike.Contents",
@@ -4018,7 +4285,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Zendesk.Collection",
@@ -4033,7 +4301,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Zendesk.Tables",
@@ -4048,7 +4317,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "ZendeskData.Contents",
@@ -4063,7 +4333,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "ZohoCreator.Contents",
@@ -4078,7 +4349,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   },
   {
    "name": "Zucchetti.Contents",
@@ -4093,7 +4365,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "connectors"
   }
  ]
 }

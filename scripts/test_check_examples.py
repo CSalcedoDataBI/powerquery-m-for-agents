@@ -18,6 +18,7 @@ Text.Upper("a")
 "A"
 ```
 """
+PACKED = "# Executed examples: text-transformations\n\n#" + PAGE
 
 
 class Blocks(unittest.TestCase):
@@ -51,8 +52,9 @@ class Check(unittest.TestCase):
     def setUp(self):
         self.root = tempfile.mkdtemp()
         self.ref = os.path.join(self.root, "skills", "m-reference")
+        self.catalog = os.path.join(self.root, "catalog")
         mb.sync_shared().write_catalog(
-            os.path.join(self.ref, "generated"), [],
+            self.catalog, [],
             [{"name": "Text.Upper", "file": "text-upper",
               "category": "Text.Transformations", "kind": "library"},
              {"name": "File.Contents", "file": "file-contents",
@@ -70,12 +72,23 @@ class Check(unittest.TestCase):
         return rel
 
     def run_check(self, *pages):
-        return c.check(root=self.root, ref=self.ref, page_list=list(pages))
+        return c.check(root=self.root, ref=self.ref, page_list=list(pages),
+                       catalog_dir=self.catalog)
 
     def test_a_good_example_passes(self):
-        p = self.page("skills/m-reference/examples/text-transformations/text-upper.md",
-                      "<!-- lab: desktop 1 -->\n\n" + PAGE)
+        p = self.page("skills/m-reference/examples/text-transformations.md",
+                      "<!-- lab: desktop 1 -->\n\n" + PACKED)
         self.assertEqual(self.run_check(p), [])
+
+    def test_an_example_page_in_a_folder_is_refused(self):
+        p = self.page("skills/m-reference/examples/text-transformations/text-upper.md",
+                      "<!-- lab: desktop 1 -->\n\n" + PACKED)
+        self.assertIn("examples/<category>.md", "\n".join(self.run_check(p)))
+
+    def test_two_sections_for_one_function(self):
+        p = self.page("skills/m-reference/examples/text-transformations.md",
+                      "<!-- lab: desktop 1 -->\n\n" + PACKED + PACKED.split("\n", 2)[2])
+        self.assertIn("two sections for Text.Upper", "\n".join(self.run_check(p)))
 
     def test_missing_result_and_stamp(self):
         p = self.page("skills/m-reference/concepts/x.md", "```m\n1\n```\n")
@@ -84,14 +97,14 @@ class Check(unittest.TestCase):
         self.assertIn("no '<!-- lab:", errors)
 
     def test_example_in_the_wrong_category(self):
-        p = self.page("skills/m-reference/examples/text/text-upper.md",
-                      "<!-- lab: desktop 1 -->\n\n" + PAGE)
-        self.assertIn("examples/text-transformations/", "\n".join(self.run_check(p)))
+        p = self.page("skills/m-reference/examples/text.md",
+                      "<!-- lab: desktop 1 -->\n\n" + PACKED)
+        self.assertIn("examples/text-transformations.md", "\n".join(self.run_check(p)))
 
     def test_example_without_a_card(self):
-        p = self.page("skills/m-reference/examples/text-transformations/text-nope.md",
-                      "<!-- lab: desktop 1 -->\n\n" + PAGE)
-        self.assertIn("no card", "\n".join(self.run_check(p)))
+        p = self.page("skills/m-reference/examples/text-transformations.md",
+                      "<!-- lab: desktop 1 -->\n\n" + PACKED.replace("## Text.Upper", "## Text.Nope"))
+        self.assertIn("has no card", "\n".join(self.run_check(p)))
 
     def test_invented_name_fails_but_engine_printed_name_passes(self):
         p = self.page("skills/m-reference/concepts/y.md",

@@ -53,23 +53,50 @@ class Sync(unittest.TestCase):
     def tearDown(self):
         shutil.rmtree(self.ref, ignore_errors=True)
 
+    def catalog_dir(self):
+        return os.path.join(self.ref, "catalog")
+
     def run_sync(self, *paths, **kw):
         kw.setdefault("min_functions", 1)
-        return s.sync(list(paths), ref=self.ref, write=True, **kw)
+        return s.sync(list(paths), ref=self.ref, write=True, catalog_dir=self.catalog_dir(), **kw)
 
     def catalog(self):
-        catalog = s.load_catalog(os.path.join(self.ref, "generated"))
+        catalog = s.load_catalog(self.catalog_dir())
         return {r["name"]: r for r in catalog["functions"]}
+
+    def card(self, name):
+        """The `## <name>` section of the packed file the catalogue says holds it."""
+        text = self.generated(f"library/{self.catalog()[name]['card']}.md")
+        return dict(s.sections(text))[name]
 
     def generated(self, name):
         with open(os.path.join(self.ref, "generated", name), encoding="utf-8") as f:
             return f.read()
 
-    def test_writes_one_card_per_usable_function(self):
+    def test_cards_are_packed_one_file_per_part(self):
         self.run_sync(DESKTOP)
-        cards = sorted(os.listdir(os.path.join(self.ref, "generated", "library")))
-        self.assertEqual(cards, ["csv-document.md", "hash-date.md", "list-hidden.md",
-                                 "list-sum.md", "mixpanel-tables.md", "table-addcolumn.md"])
+        files = sorted(os.listdir(os.path.join(self.ref, "generated", "library")))
+        cat = self.catalog()
+        self.assertEqual(files, sorted({f"{r['card']}.md" for r in cat.values()}))
+        self.assertLess(len(files), len(cat))
+        for name, row in cat.items():
+            self.assertEqual(row["card"], s.catalog_part(row), name)
+            self.assertIn(f"{name}(", self.card(name))
+        # The catalogue row names the file, so the agent opens one file and one section.
+        self.assertIn("| table |", self.generated("catalog.md"))
+        self.assertIn("| connectors |", self.generated("connectors.md"))
+
+    def test_a_part_over_the_limit_continues_in_a_second_file(self):
+        rows = [{"name": f"Table.F{i}", "kind": "library", "category": "Table"} for i in range(3)]
+        sections = {r["name"]: f"## {r['name']}\n\n" + "x" * 600 + "\n" for r in rows}
+        files = s.pack_cards(rows, sections, [], limit=1024 + 1300)
+        self.assertEqual(sorted(files), ["table", "table-2"])
+        self.assertEqual([r["card"] for r in rows], ["table", "table", "table-2"])
+        self.assertEqual([n for n, _ in s.sections(files["table-2"])], ["Table.F2"])
+
+    def test_sections_ignore_headings_inside_code(self):
+        text = "# t\n\n## A.B\n\n```m\n## not a heading\n```\n\n## C.D\n\nx\n"
+        self.assertEqual([n for n, _ in s.sections(text)], ["A.B", "C.D"])
 
     def test_connectors_split_from_the_library(self):
         self.run_sync(DESKTOP)
@@ -101,12 +128,12 @@ class Sync(unittest.TestCase):
 
     def test_the_catalogue_is_split_and_reads_back_whole(self):
         self.run_sync(DESKTOP)
-        folder = os.path.join(self.ref, "generated", "catalog")
-        self.assertFalse(os.path.exists(os.path.join(self.ref, "generated", "catalog.json")))
+        folder = self.catalog_dir()
+        self.assertFalse(os.path.exists(os.path.join(self.ref, "generated", "catalog")))
         with open(os.path.join(folder, "index.json"), encoding="utf-8") as f:
             parts = json.load(f)["parts"]
         self.assertGreater(len(parts), 1)
-        catalog = s.load_catalog(os.path.join(self.ref, "generated"))
+        catalog = s.load_catalog(folder)
         names = [r["name"] for r in catalog["functions"]]
         self.assertEqual(names, sorted(names, key=str.lower))
         on_disk = 0
@@ -123,12 +150,12 @@ class Sync(unittest.TestCase):
         # own examples are not copied; a Learn link only for a page that was checked.
         self.run_sync(DESKTOP, descriptions={"Table.AddColumn": "Adds a column named newColumnName."},
                       learn=("https://learn.example/", {"table-addcolumn"}))
-        card = self.generated("library/table-addcolumn.md")
+        card = self.card("Table.AddColumn")
         self.assertIn("Adds a column named newColumnName.", card)
         self.assertIn("*Description: Microsoft, MIT", card)
         self.assertIn("Reference: [Microsoft Learn](https://learn.example/table-addcolumn)", card)
         self.assertNotIn("Examples (engine metadata", card)
-        undescribed = self.generated("library/list-sum.md")
+        undescribed = self.card("List.Sum")
         self.assertNotIn("Description: Microsoft", undescribed)
         self.assertNotIn("Microsoft Learn", undescribed)
         self.assertNotIn("Examples (engine metadata", undescribed)
@@ -137,7 +164,7 @@ class Sync(unittest.TestCase):
         # excel-fixture predates the constants export: it contributes no hosts to them.
         self.run_sync(DESKTOP, EXCEL, accept_count_change=True)
         constants = {c["name"]: c for c in
-                     s.load_catalog(os.path.join(self.ref, "generated"))["constants"]}
+                     s.load_catalog(self.catalog_dir())["constants"]}
         self.assertEqual(constants["JoinKind.Inner"]["hosts"], ["desktop"])
         self.assertFalse(constants["JoinKind.Inner"]["partialHosts"])
         # ...and is not named as a source of constants.md either.
@@ -165,20 +192,22 @@ class Sync(unittest.TestCase):
 
     def test_first_export_wins_the_card(self):
         self.run_sync(DESKTOP, EXCEL)
-        card = open(os.path.join(self.ref, "generated", "library", "list-sum.md"),
-                    encoding="utf-8").read()
+        card = self.card("List.Sum")
         self.assertIn("optional precision as nullable number", card)
 
     def test_notes_and_examples_set_flags(self):
         os.makedirs(os.path.join(self.ref, "notes"))
         write(os.path.join(self.ref, "notes", "list-sum.md"), "# note\n")
-        ex = os.path.join(self.ref, "examples", "list-addition")
+        ex = os.path.join(self.ref, "examples")
         os.makedirs(ex)
-        write(os.path.join(ex, "list-sum.md"), "```m\n1\n```\n```m\n2\n```\n")
+        write(os.path.join(ex, "list-addition.md"),
+              "# x\n\n## List.Sum\n\n```m\n1\n```\n```m\n2\n```\n\n## List.Other\n\n```m\n3\n```\n")
         self.run_sync(DESKTOP)
         row = self.catalog()["List.Sum"]
         self.assertTrue(row["notes"])
         self.assertEqual(row["examples"], 2)
+        self.assertIn("examples/list-addition.md", self.card("List.Sum"))
+        self.assertIn("section `## List.Sum`", self.card("List.Sum"))
 
     def test_orphan_note_refuses(self):
         os.makedirs(os.path.join(self.ref, "notes"))
@@ -186,6 +215,7 @@ class Sync(unittest.TestCase):
         with self.assertRaises(s.GateError):
             self.run_sync(DESKTOP)
         self.assertFalse(os.path.exists(os.path.join(self.ref, "generated")))
+        self.assertFalse(os.path.exists(self.catalog_dir()))
 
     def test_small_export_refuses(self):
         with self.assertRaises(s.GateError):
@@ -200,8 +230,10 @@ class Sync(unittest.TestCase):
         self.assertEqual(len(self.catalog()), 2)
 
     def test_report_mode_writes_nothing(self):
-        s.sync([DESKTOP], ref=self.ref, write=False, min_functions=1)
+        s.sync([DESKTOP], ref=self.ref, write=False, min_functions=1,
+               catalog_dir=self.catalog_dir())
         self.assertFalse(os.path.exists(os.path.join(self.ref, "generated")))
+        self.assertFalse(os.path.exists(self.catalog_dir()))
 
     def test_chunked_export_is_reassembled(self):
         payload = open(DESKTOP, encoding="utf-8").read()

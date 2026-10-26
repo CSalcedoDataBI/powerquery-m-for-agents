@@ -13,7 +13,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "logical"
   },
   {
    "name": "Logical.FromText",
@@ -28,7 +29,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "logical"
   },
   {
    "name": "Logical.ToText",
@@ -43,7 +45,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "logical"
   }
  ]
 }

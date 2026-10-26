@@ -13,7 +13,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "splitter"
   },
   {
    "name": "Splitter.SplitTextByAnyDelimiter",
@@ -28,7 +29,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "splitter"
   },
   {
    "name": "Splitter.SplitTextByCharacterTransition",
@@ -43,7 +45,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "splitter"
   },
   {
    "name": "Splitter.SplitTextByDelimiter",
@@ -58,7 +61,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "splitter"
   },
   {
    "name": "Splitter.SplitTextByEachDelimiter",
@@ -73,7 +77,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "splitter"
   },
   {
    "name": "Splitter.SplitTextByLengths",
@@ -88,7 +93,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "splitter"
   },
   {
    "name": "Splitter.SplitTextByPositions",
@@ -103,7 +109,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "splitter"
   },
   {
    "name": "Splitter.SplitTextByRanges",
@@ -118,7 +125,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "splitter"
   },
   {
    "name": "Splitter.SplitTextByRepeatedLengths",
@@ -133,7 +141,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "splitter"
   },
   {
    "name": "Splitter.SplitTextByWhitespace",
@@ -148,7 +157,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 3
+   "examples": 3,
+   "card": "splitter"
   }
  ]
 }

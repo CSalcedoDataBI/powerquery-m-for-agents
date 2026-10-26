@@ -2,7 +2,7 @@
 
 ## Function and constant descriptions: Microsoft `vscode-powerquery`
 
-The one-line descriptions in `skills/m-reference/generated/` (the cards, `catalog.md` and
+The one-line descriptions in `skills/m-reference/generated/` of this plugin (the cards, `catalog.md` and
 `constants.md`) are copied from the standard library file of
 [microsoft/vscode-powerquery](https://github.com/microsoft/vscode-powerquery):
 `server/src/library/standard/standard-enUs.json`, at commit
@@ -20,7 +20,7 @@ engine's `#shared`, include the documentation text Microsoft ships inside the en
 (`description`, `longDescription`, `examples`). That text is © Microsoft Corporation. The
 maintainer keeps it as the engine returns it, privately, as the reproducible input of the
 catalogue; it is not in this repository. The cards do not quote the long descriptions or the examples; their
-one-line descriptions come from the MIT file above. See [`exports/README.md`](exports/README.md).
+one-line descriptions come from the MIT file above. See [`exports/README.md`](https://github.com/CSalcedoDataBI/powerquery-m-for-agents/blob/main/exports/README.md).
 
 ```
 MIT License

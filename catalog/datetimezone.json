@@ -13,7 +13,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "datetimezone"
   },
   {
    "name": "DateTimeZone.FixedUtcNow",
@@ -28,7 +29,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "datetimezone"
   },
   {
    "name": "DateTimeZone.From",
@@ -43,7 +45,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "datetimezone"
   },
   {
    "name": "DateTimeZone.FromFileTime",
@@ -58,7 +61,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "datetimezone"
   },
   {
    "name": "DateTimeZone.FromText",
@@ -73,7 +77,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "datetimezone"
   },
   {
    "name": "DateTimeZone.LocalNow",
@@ -88,7 +93,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "datetimezone"
   },
   {
    "name": "DateTimeZone.RemoveZone",
@@ -103,7 +109,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "datetimezone"
   },
   {
    "name": "DateTimeZone.SwitchZone",
@@ -118,7 +125,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "datetimezone"
   },
   {
    "name": "DateTimeZone.ToLocal",
@@ -133,7 +141,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "datetimezone"
   },
   {
    "name": "DateTimeZone.ToRecord",
@@ -148,7 +157,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "datetimezone"
   },
   {
    "name": "DateTimeZone.ToText",
@@ -163,7 +173,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "datetimezone"
   },
   {
    "name": "DateTimeZone.ToUtc",
@@ -178,7 +189,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "datetimezone"
   },
   {
    "name": "DateTimeZone.UtcNow",
@@ -193,7 +205,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "datetimezone"
   },
   {
    "name": "DateTimeZone.ZoneHours",
@@ -208,7 +221,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "datetimezone"
   },
   {
    "name": "DateTimeZone.ZoneMinutes",
@@ -223,7 +237,8 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0
+   "examples": 0,
+   "card": "datetimezone"
   }
  ]
 }

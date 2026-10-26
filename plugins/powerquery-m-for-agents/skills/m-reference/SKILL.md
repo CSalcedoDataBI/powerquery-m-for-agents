@@ -7,8 +7,7 @@ description: Use when you need to know whether a Power Query M library function 
 
 Every Power Query M library function, agent-native. The catalogue is **exported from the
 engine itself** (`#shared`), not scraped from documentation: a function in the catalogue
-exists in the host it names. See
-[the design spec](../../docs/superpowers/specs/2026-09-28-powerquery-m-for-agents-design.md).
+exists in the host it names.
 
 > **Status.** `generated/` is built from one export: Power BI Desktop (the host and build are
 > in the header of `catalog.md`). No other host yet, so no card carries ⌂. Which functions
@@ -24,16 +23,18 @@ tables, types, `try`/`otherwise`/`catch`, laziness - no function answers. Read
 
 1. **Search** **`generated/catalog.md`** for the name or its prefix (`Table.Join`, `Text.`);
    do not read it whole. Every library function has one row: name, category, return type,
-   flags, one-line summary. Looking for a connector (`Snowflake.Databases`,
-   `Stripe.Contents`)? Search **`generated/connectors.md`** instead. A constant or type value
+   flags, the file its card is in (`Card`), one-line summary. Looking for a connector
+   (`Snowflake.Databases`, `Stripe.Contents`)? Search **`generated/connectors.md`** instead. A constant or type value
    (`JoinKind.Inner`, `Int64.Type`)? **`generated/constants.md`**, which already holds the
    whole answer: there are no constant cards.
-2. Find the function. Open its card: **`generated/library/<file>.md`** (file naming below).
-   Connector cards live there too.
+2. Find the function. Its card is a section of **`generated/library/<Card>.md`**: search
+   that file for the line `## <Function>` (`## Table.AddColumn`) and read from there to the
+   next `## `. Do not read the file whole. Connector cards live there too.
 3. Flag **★** → also read **`notes/<file>.md`**: field knowledge not in the engine metadata,
    each claim next to the query that shows it.
-4. Flag **▶** → the card links to **`examples/<category>/<file>.md`**: queries executed in
-   this repository's lab, each with the value the engine returned.
+4. Flag **▶** → the card links to **`examples/<category>.md`**: search it for the same
+   `## <Function>` line. Queries executed in this repository's lab, each with the value the
+   engine returned.
 5. Flag **⌂** → the function is missing from at least one exported host. The card says
    which ones have it. Check before suggesting it for Excel or a dataflow.
 
@@ -66,21 +67,18 @@ signature disagree on what comes back, the signature is the engine's: trust it. 
 | `generated/catalog.md` | The index the agent reads: library functions. **Generated** |
 | `generated/connectors.md` | Connector entry points, same columns. **Generated** |
 | `generated/constants.md` | Constants and type values, with their value. **Generated** |
-| `generated/catalog/` | All three indexes for scripts, one JSON file per category root. **Generated**, never loaded into context |
-| `generated/library/<file>.md` | One card per function or connector. **Generated — never edit by hand** |
+| `generated/library/<Card>.md` | The cards of one category, one `## <Function>` section each. **Generated — never edit by hand** |
 | `concepts.md` | Index of the language pages. **Hand-written** |
 | `concepts/<topic>.md` | One page per language topic, with executed blocks. **Hand-written** |
-| `notes/<file>.md` | Field notes. **Hand-written**; the sync never touches them |
-| `examples/<category>/<file>.md` | Executed examples. **Hand-written** code; results written by the lab runner |
-| `scripts/export_shared.pq` | The M query that dumps `#shared` (functions and constants) as JSON |
-| `scripts/sync_shared.py` | JSON exports → `generated/` |
+| `notes/<file>.md` | Field notes, one per function. **Hand-written**; the sync never touches them |
+| `examples/<category>.md` | Executed examples, one `## <Function>` section each. **Hand-written** code; results written by the lab runner |
 
-Card file names: lower case, every run of non-alphanumerics becomes one dash
-(`Table.AddColumn` → `table-addcolumn`); a leading `#` would become `hash-`, though no
-exported name starts with one.
+Note file names: lower case, every run of non-alphanumerics becomes one dash
+(`Table.AddColumn` → `notes/table-addcolumn.md`).
 
 Regenerating `generated/` or running the lab is maintainer work, in
-[MAINTAINING.md](MAINTAINING.md). Answering a question about M never needs it.
+[MAINTAINING.md](https://github.com/CSalcedoDataBI/powerquery-m-for-agents/blob/main/docs/MAINTAINING.md).
+Answering a question about M never needs it.
 
 ## Related skills
 

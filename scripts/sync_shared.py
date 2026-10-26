@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Regenerate m-reference/generated/ from one or more #shared exports.
+"""Regenerate plugins/powerquery-m-for-agents/skills/m-reference/generated/ from one or more
+#shared exports.
 
 The upstream is the engine itself: export_shared.pq dumps every function #shared holds,
 with the documentation metadata on its type, as JSON. Each export is one host (Desktop,
@@ -22,7 +23,7 @@ documented library category, so it stays in catalog.md.
 Every text a card quotes has a licence. Names, signatures, types, categories and hosts are
 facts read from #shared. The one-line descriptions come from Microsoft's MIT-licensed
 standard library file (vscode-powerquery, kept as exports/vscode-powerquery-standard-enUs.json;
-THIRD_PARTY_NOTICES.md at the repo root); a function or constant that file does not describe
+THIRD_PARTY_NOTICES.md at the plugin root); a function or constant that file does not describe
 gets no description. The engine's own long descriptions and examples, which carry no stated
 licence, are not copied (#1). A card links its Microsoft Learn page when
 exports/learn-links.json, written by lab/shared-export/learn_links.py, says the page exists.
@@ -34,6 +35,12 @@ all. An export taken before the query exported constants simply contributes none
 Everything under generated/ is replaced wholesale. notes/ and examples/ are read to set
 the ★ and ▶ flags and are never written.
 
+The cards are packed: generated/library/<part>.md holds every card of one catalogue part, one
+`## <Name>` section each, because the plugin directory holds a plugin of more than 512 files
+for review. A part that would pass CARD_FILE_LIMIT continues in <part>-2.md; each index row
+names the file its card is in. The executed examples are packed the same way, by hand:
+examples/<category>.md, one `## <Name>` section per function (sections() reads both).
+
 Gates, all checked before anything is written:
   - an export with fewer than --min-functions functions (wrong query, wrong host);
   - two functions that map to the same card filename;
@@ -41,9 +48,9 @@ Gates, all checked before anything is written:
   - the function count moving more than 5% from the last catalogue, unless
     --accept-count-change.
 
-The catalogue for scripts is generated/catalog/: one JSON file per category root, plus
-connectors.json, constants.json and index.json, so no file nears the 256 KiB a plugin file
-may weigh. load_catalog() reads it back whole.
+The catalogue for scripts is catalog/ at the repository root, outside the shipped plugin: one
+JSON file per category root, plus connectors.json, constants.json and index.json.
+load_catalog() reads it back whole.
 
 Run:
   python sync_shared.py exports/desktop-2.140.json exports/excel-16.0.json          # report
@@ -57,7 +64,10 @@ import re
 import shutil
 import sys
 
-REF = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+REF = os.path.join(REPO, "plugins", "powerquery-m-for-agents", "skills", "m-reference")
+CATALOG = os.path.join(REPO, "catalog")
+CARD_FILE_LIMIT = 256 * 1024
 COUNT_TOLERANCE = 0.05
 MIN_FUNCTIONS = 100
 SUMMARY_CHARS = 120
@@ -157,7 +167,6 @@ def constant_summary(description):
     return truncate(re.sub(r"\s+", " ", clean_text(description)), CONSTANT_SUMMARY_CHARS)
 
 
-REPO = os.path.dirname(os.path.dirname(REF))
 DESCRIPTIONS = os.path.join(REPO, "exports", "vscode-powerquery-standard-enUs.json")
 LEARN_LINKS = os.path.join(REPO, "exports", "learn-links.json")
 NOTICE = "THIRD_PARTY_NOTICES.md"
@@ -193,12 +202,33 @@ def stems(directory):
     return {os.path.splitext(f)[0] for f in os.listdir(directory) if f.endswith(".md")}
 
 
-def example_count(ref, category, file):
-    path = os.path.join(ref, "examples", category_slug(category), f"{file}.md")
-    if not os.path.isfile(path):
-        return 0
-    with open(path, encoding="utf-8") as f:
-        return len(re.findall(r"^```m\s*$", f.read(), re.M))
+def sections(text):
+    """[(name, body)] for every `## <name>` heading of a packed page, outside code fences, in
+    order. A ```m block may hold a line starting with #, never a heading."""
+    out, name, body, fence = [], None, [], False
+    for line in text.split("\n"):
+        if line.startswith("```"):
+            fence = not fence
+        if not fence and line.startswith("## "):
+            if name is not None:
+                out.append((name, "\n".join(body)))
+            name, body = line[3:].strip(), []
+        elif name is not None:
+            body.append(line)
+    if name is not None:
+        out.append((name, "\n".join(body)))
+    return out
+
+
+def example_counts(ref):
+    """{(category slug, function name): number of ```m blocks} from examples/<category>.md."""
+    folder = os.path.join(ref, "examples")
+    counts = {}
+    for slug in sorted(stems(folder)):
+        with open(os.path.join(folder, f"{slug}.md"), encoding="utf-8") as f:
+            for name, body in sections(f.read()):
+                counts[(slug, name)] = len(re.findall(r"^```m\s*$", body, re.M))
+    return counts
 
 
 def merge(exports, min_functions):
@@ -249,6 +279,7 @@ def merge_constants(exports, descriptions=None):
 
 def build_rows(ref, hosts, merged, descriptions=None):
     notes = stems(os.path.join(ref, "notes"))
+    examples = example_counts(ref)
     prefixes = library_prefixes(entry["fn"] for entry in merged.values())
     rows = []
     for name in sorted(merged, key=str.lower):
@@ -266,7 +297,7 @@ def build_rows(ref, hosts, merged, descriptions=None):
             "hosts": fn_hosts,
             "partialHosts": len(fn_hosts) < len(hosts),
             "notes": file in notes,
-            "examples": example_count(ref, category, file),
+            "examples": examples.get((category_slug(category), name), 0),
         })
     orphans = sorted(notes - {r["file"] for r in rows})
     if orphans:
@@ -279,26 +310,16 @@ def flags(row):
            ("⌂" if row["partialHosts"] else "")
 
 
-def render_card(row, fn, exports_meta, description="", learn_url=""):
-    source = ", ".join(f"{m['host']} {m.get('hostVersion') or ''}".strip() for m in exports_meta)
+def render_section(row, fn, description="", learn_url=""):
+    """One card as a `## <Name>` section of its packed library file."""
     lines = [
-        "---",
-        f"name: {json.dumps(row['name'])}",
-        f"category: {json.dumps(row['category'])}",
-        f"returns: {json.dumps(row['returns'])}",
-        f"hosts: {json.dumps(row['hosts'])}",
-        f"notes: {str(row['notes']).lower()}",
-        f"examples: {row['examples']}",
-        f"source: {json.dumps('#shared — ' + source)}",
-        "---",
-        "",
-        "<!-- Generated by scripts/sync_shared.py. Do not edit: write in notes/ instead. -->",
-        "",
-        f"# {row['name']}",
+        f"## {row['name']}",
         "",
         "```m",
         row["signature"],
         "```",
+        "",
+        f"Category: {row['category']} · hosts: {', '.join(row['hosts'])}",
         "",
     ]
     description = clean_text(description)
@@ -311,24 +332,62 @@ def render_card(row, fn, exports_meta, description="", learn_url=""):
         lines += [f"> **Not available everywhere.** Present in: {', '.join(row['hosts'])}.", ""]
     params = fn.get("parameters") or []
     if params:
-        lines += ["## Parameters", "", "| Name | Type | Optional |", "|---|---|---|"]
+        lines += ["### Parameters", "", "| Name | Type | Optional |", "|---|---|---|"]
         lines += [f"| `{p['name']}` | `{p.get('type') or 'any'}` | "
                   f"{'yes' if p.get('optional') else 'no'} |" for p in params]
         lines.append("")
     if row["notes"]:
         lines += [f"**Field note:** [`notes/{row['file']}.md`](../../notes/{row['file']}.md)", ""]
     if row["examples"]:
-        path = f"../../examples/{category_slug(row['category'])}/{row['file']}.md"
-        lines += [f"**Executed examples ({row['examples']}):** [{path.lstrip('./')}]({path})", ""]
+        path = f"../../examples/{category_slug(row['category'])}.md"
+        lines += [f"**Executed examples ({row['examples']}):** [{path.lstrip('./')}]({path}), "
+                  f"section `## {row['name']}`", ""]
     return "\n".join(lines).rstrip() + "\n"
+
+
+def library_header(card, count, exports_meta):
+    return "\n".join([
+        f"# M library cards: {card}",
+        "",
+        "<!-- Generated by scripts/sync_shared.py. Do not edit: write in notes/ instead. -->",
+        "",
+        f"{count} cards from `#shared` ({source_text(exports_meta)}), one `## <Name>` section "
+        "each. Find the line `## <Name>` and read to the next `## `; do not read the file whole.",
+        "",
+    ]) + "\n"
+
+
+def pack_cards(rows, sections_by_name, exports_meta, limit=CARD_FILE_LIMIT):
+    """{card file stem: text}, one file per catalogue part, a part continuing in <part>-2,
+    <part>-3... when the next card would take it past `limit` bytes. Sets row["card"]."""
+    files, order = {}, {}
+    for row in rows:
+        order.setdefault(catalog_part(row), []).append(row)
+    for part, part_rows in order.items():
+        chunks, current, size = [], [], 0
+        for row in part_rows:
+            weight = len(sections_by_name[row["name"]].encode("utf-8")) + 1
+            if current and size + weight > limit - 1024:
+                chunks.append(current)
+                current, size = [], 0
+            current.append(row)
+            size += weight
+        chunks.append(current)
+        for i, chunk in enumerate(chunks):
+            card = part if i == 0 else f"{part}-{i + 1}"
+            for row in chunk:
+                row["card"] = card
+            files[card] = library_header(card, len(chunk), exports_meta) + "\n".join(
+                sections_by_name[r["name"]] for r in chunk)
+    return files
 
 
 def source_text(exports_meta):
     return ", ".join(f"`{m['host']}` {m.get('hostVersion') or ''}".strip() for m in exports_meta)
 
 
-CARD_HINT = ("Open one card: `library/<file>.md`, where <file> is the name in lower case with "
-             "every run of non-alphanumerics as one dash (`Table.AddColumn` -> `table-addcolumn`).")
+CARD_HINT = ("A card is a section of `library/<Card>.md`: search that file for the line "
+             "`## <Function>` and read from there to the next `## `.")
 
 
 def render_catalog_md(rows, exports_meta, n_connectors=0, n_constants=0):
@@ -349,11 +408,11 @@ def render_catalog_md(rows, exports_meta, n_connectors=0, n_constants=0):
     lines += [
         CARD_HINT,
         "",
-        "| Function | Category | Returns | Flags | Summary |",
-        "|---|---|---|---|---|",
+        "| Function | Category | Returns | Flags | Card | Summary |",
+        "|---|---|---|---|---|---|",
     ]
     lines += [f"| `{r['name']}` | {r['category']} | {r['returns']} | "
-              f"{flags(r)} | {r['summary']} |" for r in rows]
+              f"{flags(r)} | {r['card']} | {r['summary']} |" for r in rows]
     return "\n".join(lines) + "\n"
 
 
@@ -366,10 +425,10 @@ def render_connectors_md(rows, exports_meta):
         "No licensed description exists for them, so none is given. Flags as in `catalog.md`.",
         CARD_HINT,
         "",
-        "| Function | Connector | Returns | Flags |",
-        "|---|---|---|---|",
+        "| Function | Connector | Returns | Flags | Card |",
+        "|---|---|---|---|---|",
     ]
-    lines += [f"| `{r['name']}` | {r['category']} | {r['returns']} | {flags(r)} |"
+    lines += [f"| `{r['name']}` | {r['category']} | {r['returns']} | {flags(r)} | {r['card']} |"
               for r in rows]
     return "\n".join(lines) + "\n"
 
@@ -394,7 +453,6 @@ def render_constants_md(rows, exports_meta):
     return "\n".join(lines) + "\n"
 
 
-CATALOG_DIR = "catalog"
 RESERVED_PARTS = {"index", "connectors", "constants"}
 
 
@@ -405,8 +463,8 @@ def catalog_part(row):
     return category_slug((row.get("category") or "").split(".")[0])
 
 
-def write_catalog(generated, exports_meta, rows, constants):
-    """Write generated/catalog/: index.json (the exports and the part files), one file per
+def write_catalog(folder, exports_meta, rows, constants):
+    """Write the catalogue folder: index.json (the exports and the part files), one file per
     part, and constants.json. load_catalog reads it back as one dict."""
     parts = {}
     for row in rows:
@@ -415,7 +473,6 @@ def write_catalog(generated, exports_meta, rows, constants):
     if clash or any(r.get("kind") != "connector" for r in parts.get("connectors", [])):
         raise GateError("a category root takes a reserved catalogue file name: "
                         f"{clash or ['connectors']}")
-    folder = os.path.join(generated, CATALOG_DIR)
     os.makedirs(folder, exist_ok=True)
 
     def dump(name, value):
@@ -429,10 +486,9 @@ def write_catalog(generated, exports_meta, rows, constants):
     dump("index", {"exports": exports_meta, "parts": sorted(parts)})
 
 
-def load_catalog(generated):
-    """generated/catalog/ as one dict, {exports, functions, constants}, the functions in the
+def load_catalog(folder=CATALOG):
+    """The catalogue folder as one dict, {exports, functions, constants}, the functions in the
     order the sync wrote them (by name, case-insensitive). None when there is no catalogue."""
-    folder = os.path.join(generated, CATALOG_DIR)
     index_path = os.path.join(folder, "index.json")
     if not os.path.isfile(index_path):
         return None
@@ -451,20 +507,14 @@ def load_catalog(generated):
     return {"exports": index.get("exports", []), "functions": functions, "constants": constants}
 
 
-def previous_count(generated):
-    catalog = load_catalog(generated)
-    if catalog is None:
-        # The single catalog.json the sync wrote before the split.
-        path = os.path.join(generated, "catalog.json")
-        if not os.path.isfile(path):
-            return None
-        with open(path, encoding="utf-8") as f:
-            catalog = json.load(f)
-    return len(catalog.get("functions", []))
+def previous_count(catalog_dir):
+    catalog = load_catalog(catalog_dir)
+    return None if catalog is None else len(catalog.get("functions", []))
 
 
 def sync(export_paths, ref=REF, write=False, accept_count_change=False,
-         min_functions=MIN_FUNCTIONS, descriptions=None, learn=("", frozenset())):
+         min_functions=MIN_FUNCTIONS, descriptions=None, learn=("", frozenset()),
+         catalog_dir=CATALOG):
     exports = [load_export(p) for p in export_paths]
     hosts, merged = merge(exports, min_functions)
     descriptions = descriptions or {}
@@ -475,7 +525,7 @@ def sync(export_paths, ref=REF, write=False, accept_count_change=False,
     constants = merge_constants(exports, descriptions)
     generated = os.path.join(ref, "generated")
 
-    before = previous_count(generated)
+    before = previous_count(catalog_dir)
     if before and not accept_count_change:
         drift = abs(len(rows) - before) / before
         if drift > COUNT_TOLERANCE:
@@ -498,12 +548,14 @@ def sync(export_paths, ref=REF, write=False, accept_count_change=False,
     shutil.rmtree(staging, ignore_errors=True)
     library = os.path.join(staging, "library")
     os.makedirs(library)
-    for row in rows:
-        with open(os.path.join(library, f"{row['file']}.md"), "w", encoding="utf-8",
-                  newline="\n") as f:
-            f.write(render_card(row, merged[row["name"]]["fn"], exports_meta,
-                                descriptions.get(row["name"], ""),
-                                learn_base + row["file"] if row["file"] in learn_files else ""))
+    sections_by_name = {
+        row["name"]: render_section(row, merged[row["name"]]["fn"],
+                                    descriptions.get(row["name"], ""),
+                                    learn_base + row["file"] if row["file"] in learn_files else "")
+        for row in rows}
+    for card, text in pack_cards(rows, sections_by_name, exports_meta).items():
+        with open(os.path.join(library, f"{card}.md"), "w", encoding="utf-8", newline="\n") as f:
+            f.write(text)
     indexes = {
         "catalog.md": render_catalog_md(library_rows, exports_meta,
                                         len(connector_rows), len(constants)),
@@ -517,14 +569,19 @@ def sync(export_paths, ref=REF, write=False, accept_count_change=False,
     for name, text in indexes.items():
         with open(os.path.join(staging, name), "w", encoding="utf-8", newline="\n") as f:
             f.write(text)
-    write_catalog(staging, exports_meta, rows, constants)
+    catalog_staging = os.path.join(staging, "catalog")
+    write_catalog(catalog_staging, exports_meta, rows, constants)
 
-    # Swap in one move, so a failure part-way leaves the previous generated/ as it was.
-    retired = os.path.join(ref, f".retired-{os.getpid()}")
-    if os.path.isdir(generated):
-        os.replace(generated, retired)
-    os.replace(staging, generated)
-    shutil.rmtree(retired, ignore_errors=True)
+    # Swap in one move each, so a failure part-way leaves the previous output as it was.
+    catalog_new = catalog_dir.rstrip("\\/") + f".publish-{os.getpid()}"
+    shutil.rmtree(catalog_new, ignore_errors=True)
+    shutil.move(catalog_staging, catalog_new)
+    for new, target in ((staging, generated), (catalog_new, catalog_dir)):
+        retired = target.rstrip("\\/") + f".retired-{os.getpid()}"
+        if os.path.isdir(target):
+            os.replace(target, retired)
+        os.replace(new, target)
+        shutil.rmtree(retired, ignore_errors=True)
     return report + " Written."
 
 
