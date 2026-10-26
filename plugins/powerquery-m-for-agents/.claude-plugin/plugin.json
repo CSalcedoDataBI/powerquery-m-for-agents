@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "powerquery-m-for-agents",
   "displayName": "Power Query M for agents",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "The Power Query M language, agent-native: function cards from #shared with host availability, language concepts and executed examples. Not modeling or TMDL.",
   "author": {
     "name": "Cristóbal Salcedo",
