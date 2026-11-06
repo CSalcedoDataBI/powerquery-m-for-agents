@@ -24,6 +24,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/valu
 |---|---|---|
 | `value` | `any` | no |
 
+**Executed examples (3):** [examples/metadata.md](../../examples/metadata.md), section `## Value.Metadata`
+
 ## Value.RemoveMetadata
 
 ```m
@@ -45,6 +47,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/valu
 | `value` | `any` | no |
 | `metaValue` | `any` | yes |
 
+**Executed examples (3):** [examples/metadata.md](../../examples/metadata.md), section `## Value.RemoveMetadata`
+
 ## Value.ReplaceMetadata
 
 ```m
@@ -65,3 +69,5 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/valu
 |---|---|---|
 | `value` | `any` | no |
 | `metaValue` | `any` | no |
+
+**Executed examples (3):** [examples/metadata.md](../../examples/metadata.md), section `## Value.ReplaceMetadata`

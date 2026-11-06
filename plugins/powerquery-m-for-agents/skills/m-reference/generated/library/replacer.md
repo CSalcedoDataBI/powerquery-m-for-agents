@@ -26,6 +26,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/repl
 | `old` | `text` | no |
 | `new` | `text` | no |
 
+**Executed examples (3):** [examples/replacer.md](../../examples/replacer.md), section `## Replacer.ReplaceText`
+
 ## Replacer.ReplaceValue
 
 ```m
@@ -47,3 +49,5 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/repl
 | `value` | `any` | no |
 | `old` | `any` | no |
 | `new` | `any` | no |
+
+**Executed examples (3):** [examples/replacer.md](../../examples/replacer.md), section `## Replacer.ReplaceValue`

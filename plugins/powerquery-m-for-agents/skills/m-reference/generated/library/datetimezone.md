@@ -53,6 +53,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date
 | `value` | `any` | no |
 | `culture` | `nullable text` | yes |
 
+**Executed examples (2):** [examples/datetimezone.md](../../examples/datetimezone.md), section `## DateTimeZone.From`
+
 ## DateTimeZone.FromFileTime
 
 ```m
@@ -94,6 +96,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date
 | `text` | `nullable text` | no |
 | `options` | `any` | yes |
 
+**Executed examples (3):** [examples/datetimezone.md](../../examples/datetimezone.md), section `## DateTimeZone.FromText`
+
 ## DateTimeZone.LocalNow
 
 ```m
@@ -128,6 +132,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date
 |---|---|---|
 | `dateTimeZone` | `nullable datetimezone` | no |
 
+**Executed examples (3):** [examples/datetimezone.md](../../examples/datetimezone.md), section `## DateTimeZone.RemoveZone`
+
 ## DateTimeZone.SwitchZone
 
 ```m
@@ -149,6 +155,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date
 | `dateTimeZone` | `nullable datetimezone` | no |
 | `timezoneHours` | `number` | no |
 | `timezoneMinutes` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/datetimezone.md](../../examples/datetimezone.md), section `## DateTimeZone.SwitchZone`
 
 ## DateTimeZone.ToLocal
 
@@ -190,6 +198,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date
 |---|---|---|
 | `dateTimeZone` | `datetimezone` | no |
 
+**Executed examples (3):** [examples/datetimezone.md](../../examples/datetimezone.md), section `## DateTimeZone.ToRecord`
+
 ## DateTimeZone.ToText
 
 ```m
@@ -212,6 +222,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date
 | `options` | `any` | yes |
 | `culture` | `nullable text` | yes |
 
+**Executed examples (3):** [examples/datetimezone.md](../../examples/datetimezone.md), section `## DateTimeZone.ToText`
+
 ## DateTimeZone.ToUtc
 
 ```m
@@ -231,6 +243,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date
 | Name | Type | Optional |
 |---|---|---|
 | `dateTimeZone` | `nullable datetimezone` | no |
+
+**Executed examples (3):** [examples/datetimezone.md](../../examples/datetimezone.md), section `## DateTimeZone.ToUtc`
 
 ## DateTimeZone.UtcNow
 
@@ -266,6 +280,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date
 |---|---|---|
 | `dateTimeZone` | `nullable datetimezone` | no |
 
+**Executed examples (3):** [examples/datetimezone.md](../../examples/datetimezone.md), section `## DateTimeZone.ZoneHours`
+
 ## DateTimeZone.ZoneMinutes
 
 ```m
@@ -285,3 +301,5 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/date
 | Name | Type | Optional |
 |---|---|---|
 | `dateTimeZone` | `nullable datetimezone` | no |
+
+**Executed examples (3):** [examples/datetimezone.md](../../examples/datetimezone.md), section `## DateTimeZone.ZoneMinutes`

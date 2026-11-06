@@ -25,6 +25,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/comb
 | `delimiter` | `text` | no |
 | `quoteStyle` | `nullable number` | yes |
 
+**Executed examples (3):** [examples/combiner.md](../../examples/combiner.md), section `## Combiner.CombineTextByDelimiter`
+
 ## Combiner.CombineTextByEachDelimiter
 
 ```m
@@ -45,6 +47,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/comb
 |---|---|---|
 | `delimiters` | `list` | no |
 | `quoteStyle` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/combiner.md](../../examples/combiner.md), section `## Combiner.CombineTextByEachDelimiter`
 
 ## Combiner.CombineTextByLengths
 
@@ -67,6 +71,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/comb
 | `lengths` | `list` | no |
 | `template` | `nullable text` | yes |
 
+**Executed examples (3):** [examples/combiner.md](../../examples/combiner.md), section `## Combiner.CombineTextByLengths`
+
 ## Combiner.CombineTextByPositions
 
 ```m
@@ -88,6 +94,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/comb
 | `positions` | `list` | no |
 | `template` | `nullable text` | yes |
 
+**Executed examples (3):** [examples/combiner.md](../../examples/combiner.md), section `## Combiner.CombineTextByPositions`
+
 ## Combiner.CombineTextByRanges
 
 ```m
@@ -108,3 +116,5 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/comb
 |---|---|---|
 | `ranges` | `list` | no |
 | `template` | `nullable text` | yes |
+
+**Executed examples (3):** [examples/combiner.md](../../examples/combiner.md), section `## Combiner.CombineTextByRanges`

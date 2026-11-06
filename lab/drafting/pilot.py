@@ -145,6 +145,14 @@ def section(path, name):
     return f"# {name}\n\n" + body.strip("\n") + "\n"
 
 
+def has_section(path, name):
+    """True when the packed examples/<category>.md already has a `## <name>` section."""
+    if not os.path.exists(path):
+        return False
+    with open(path, encoding="utf-8") as f:
+        return name in dict(m_blocks.sync_shared().sections(f.read()))
+
+
 def add_section(path, name, page, force=False):
     """Put a one-function page (`# <name>` first) into the packed examples/<category>.md as its
     `## <name>` section, sections kept in name order. False when it exists and not `force`."""
@@ -177,6 +185,9 @@ def cmd_prompts(args):
     folder = os.path.join(args.out, "prompts")
     os.makedirs(folder, exist_ok=True)
     rows = pilot_rows(catalog, args.categories)
+    if args.missing_only:
+        rows = [r for r in rows if not has_section(
+            os.path.join(REF, "examples", category_slug(r["category"]) + ".md"), r["name"])]
     for r in rows:
         card = section(os.path.join(REF, "generated", "library", r["card"] + ".md"), r["name"])
         text = INSTRUCTIONS.format(name=r["name"], card=card, model1=models[0], model2=models[1])
@@ -299,6 +310,8 @@ def main(argv=None):
     parser.add_argument("command", choices=["prompts", "collect", "report"])
     parser.add_argument("--out", required=True, help="the run's folder (keep it under lab/drafting/out/)")
     parser.add_argument("--force", action="store_true", help="collect: overwrite existing pages")
+    parser.add_argument("--missing-only", action="store_true",
+                        help="prompts: skip functions that already have an example section")
     parser.add_argument("--categories", default="",
                         help="category roots, comma-separated (Date,DateTime,Duration,Type); "
                              "default: the first pilot's two Number categories")

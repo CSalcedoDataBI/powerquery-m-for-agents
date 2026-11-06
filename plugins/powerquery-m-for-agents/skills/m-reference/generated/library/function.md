@@ -25,6 +25,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/func
 | `functionType` | `type` | no |
 | `function` | `function` | no |
 
+**Executed examples (3):** [examples/function.md](../../examples/function.md), section `## Function.From`
+
 ## Function.Invoke
 
 ```m
@@ -45,6 +47,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/func
 |---|---|---|
 | `function` | `function` | no |
 | `args` | `list` | no |
+
+**Executed examples (3):** [examples/function.md](../../examples/function.md), section `## Function.Invoke`
 
 ## Function.InvokeAfter
 
@@ -87,3 +91,5 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/func
 |---|---|---|
 | `scalarFunctionType` | `type` | no |
 | `vectorFunction` | `function` | no |
+
+**Executed examples (3):** [examples/function.md](../../examples/function.md), section `## Function.ScalarVector`

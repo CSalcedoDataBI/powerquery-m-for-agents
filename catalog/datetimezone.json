@@ -45,7 +45,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0,
+   "examples": 2,
    "card": "datetimezone"
   },
   {
@@ -77,7 +77,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0,
+   "examples": 3,
    "card": "datetimezone"
   },
   {
@@ -109,7 +109,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0,
+   "examples": 3,
    "card": "datetimezone"
   },
   {
@@ -125,7 +125,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0,
+   "examples": 3,
    "card": "datetimezone"
   },
   {
@@ -157,7 +157,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0,
+   "examples": 3,
    "card": "datetimezone"
   },
   {
@@ -173,7 +173,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0,
+   "examples": 3,
    "card": "datetimezone"
   },
   {
@@ -189,7 +189,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0,
+   "examples": 3,
    "card": "datetimezone"
   },
   {
@@ -221,7 +221,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0,
+   "examples": 3,
    "card": "datetimezone"
   },
   {
@@ -237,7 +237,7 @@
    ],
    "partialHosts": false,
    "notes": false,
-   "examples": 0,
+   "examples": 3,
    "card": "datetimezone"
   }
  ]

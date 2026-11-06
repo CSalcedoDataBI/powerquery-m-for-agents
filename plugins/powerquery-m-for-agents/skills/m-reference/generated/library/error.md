@@ -27,3 +27,5 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/erro
 | `detail` | `any` | yes |
 | `parameters` | `nullable list` | yes |
 | `errorCode` | `nullable text` | yes |
+
+**Executed examples (3):** [examples/error.md](../../examples/error.md), section `## Error.Record`

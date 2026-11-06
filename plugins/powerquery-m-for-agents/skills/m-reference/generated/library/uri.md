@@ -24,6 +24,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/uri-
 |---|---|---|
 | `query` | `record` | no |
 
+**Executed examples (3):** [examples/uri.md](../../examples/uri.md), section `## Uri.BuildQueryString`
+
 ## Uri.Combine
 
 ```m
@@ -45,6 +47,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/uri-
 | `baseUri` | `text` | no |
 | `relativeUri` | `text` | no |
 
+**Executed examples (3):** [examples/uri.md](../../examples/uri.md), section `## Uri.Combine`
+
 ## Uri.EscapeDataString
 
 ```m
@@ -65,6 +69,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/uri-
 |---|---|---|
 | `data` | `text` | no |
 
+**Executed examples (3):** [examples/uri.md](../../examples/uri.md), section `## Uri.EscapeDataString`
+
 ## Uri.Parts
 
 ```m
@@ -84,3 +90,5 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/uri-
 | Name | Type | Optional |
 |---|---|---|
 | `absoluteUri` | `text` | no |
+
+**Executed examples (3):** [examples/uri.md](../../examples/uri.md), section `## Uri.Parts`

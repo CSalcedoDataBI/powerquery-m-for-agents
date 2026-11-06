@@ -24,6 +24,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/char
 |---|---|---|
 | `number` | `nullable number` | no |
 
+**Executed examples (3):** [examples/text-conversions-from-and-to-text.md](../../examples/text-conversions-from-and-to-text.md), section `## Character.FromNumber`
+
 ## Character.ToNumber
 
 ```m
@@ -43,6 +45,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/char
 | Name | Type | Optional |
 |---|---|---|
 | `character` | `nullable text` | no |
+
+**Executed examples (3):** [examples/text-conversions-from-and-to-text.md](../../examples/text-conversions-from-and-to-text.md), section `## Character.ToNumber`
 
 ## Guid.From
 
@@ -64,6 +68,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/guid
 |---|---|---|
 | `value` | `nullable text` | no |
 
+**Executed examples (3):** [examples/text-conversions-from-and-to-text.md](../../examples/text-conversions-from-and-to-text.md), section `## Guid.From`
+
 ## Json.FromValue
 
 ```m
@@ -84,6 +90,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/json
 |---|---|---|
 | `value` | `any` | no |
 | `encoding` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/text-conversions-from-and-to-text.md](../../examples/text-conversions-from-and-to-text.md), section `## Json.FromValue`
 
 ## Text.AfterDelimiter
 
@@ -1043,3 +1051,5 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/valu
 |---|---|---|
 | `text` | `any` | no |
 | `culture` | `nullable text` | yes |
+
+**Executed examples (3):** [examples/text-conversions-from-and-to-text.md](../../examples/text-conversions-from-and-to-text.md), section `## Value.FromText`

@@ -24,6 +24,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/expr
 |---|---|---|
 | `value` | `any` | no |
 
+**Executed examples (3):** [examples/expression.md](../../examples/expression.md), section `## Expression.Constant`
+
 ## Expression.Evaluate
 
 ```m
@@ -64,6 +66,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/expr
 | Name | Type | Optional |
 |---|---|---|
 | `name` | `text` | no |
+
+**Executed examples (3):** [examples/expression.md](../../examples/expression.md), section `## Expression.Identifier`
 
 ## Graph.Nodes
 
@@ -124,6 +128,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/valu
 | Name | Type | Optional |
 |---|---|---|
 | `value` | `any` | no |
+
+**Executed examples (3):** [examples/expression.md](../../examples/expression.md), section `## Value.Expression`
 
 ## Value.Lineage
 

@@ -25,6 +25,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/time
 | `value` | `any` | no |
 | `culture` | `nullable text` | yes |
 
+**Executed examples (3):** [examples/time.md](../../examples/time.md), section `## Time.From`
+
 ## Time.FromText
 
 ```m
@@ -46,6 +48,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/time
 | `text` | `nullable text` | no |
 | `options` | `any` | yes |
 
+**Executed examples (3):** [examples/time.md](../../examples/time.md), section `## Time.FromText`
+
 ## Time.Hour
 
 ```m
@@ -65,6 +69,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/time
 | Name | Type | Optional |
 |---|---|---|
 | `dateTime` | `any` | no |
+
+**Executed examples (3):** [examples/time.md](../../examples/time.md), section `## Time.Hour`
 
 ## Time.Minute
 
@@ -86,6 +92,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/time
 |---|---|---|
 | `dateTime` | `any` | no |
 
+**Executed examples (3):** [examples/time.md](../../examples/time.md), section `## Time.Minute`
+
 ## Time.Second
 
 ```m
@@ -106,6 +114,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/time
 |---|---|---|
 | `dateTime` | `any` | no |
 
+**Executed examples (3):** [examples/time.md](../../examples/time.md), section `## Time.Second`
+
 ## Time.ToRecord
 
 ```m
@@ -125,6 +135,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/time
 | Name | Type | Optional |
 |---|---|---|
 | `time` | `time` | no |
+
+**Executed examples (3):** [examples/time.md](../../examples/time.md), section `## Time.ToRecord`
 
 ## Time.ToText
 
@@ -147,3 +159,5 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/time
 | `time` | `nullable time` | no |
 | `options` | `any` | yes |
 | `culture` | `nullable text` | yes |
+
+**Executed examples (3):** [examples/time.md](../../examples/time.md), section `## Time.ToText`
