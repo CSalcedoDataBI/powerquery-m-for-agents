@@ -27,6 +27,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/line
 | `includeLineSeparators` | `nullable logical` | yes |
 | `encoding` | `nullable number` | yes |
 
+**Executed examples (3):** [examples/lines.md](../../examples/lines.md), section `## Lines.FromBinary`
+
 ## Lines.FromText
 
 ```m
@@ -48,6 +50,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/line
 | `text` | `text` | no |
 | `quoteStyle` | `any` | yes |
 | `includeLineSeparators` | `nullable logical` | yes |
+
+**Executed examples (3):** [examples/lines.md](../../examples/lines.md), section `## Lines.FromText`
 
 ## Lines.ToBinary
 
@@ -72,6 +76,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/line
 | `encoding` | `nullable number` | yes |
 | `includeByteOrderMark` | `nullable logical` | yes |
 
+**Executed examples (3):** [examples/lines.md](../../examples/lines.md), section `## Lines.ToBinary`
+
 ## Lines.ToText
 
 ```m
@@ -92,3 +98,5 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/line
 |---|---|---|
 | `lines` | `list` | no |
 | `lineSeparator` | `nullable text` | yes |
+
+**Executed examples (3):** [examples/lines.md](../../examples/lines.md), section `## Lines.ToText`

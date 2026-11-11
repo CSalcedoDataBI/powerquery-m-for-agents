@@ -222,6 +222,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/valu
 | `value2` | `any` | no |
 | `precision` | `nullable number` | yes |
 
+**Executed examples (3):** [examples/values-arithmetic-operations.md](../../examples/values-arithmetic-operations.md), section `## Value.Add`
+
 ## Value.As
 
 ```m
@@ -242,6 +244,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/valu
 |---|---|---|
 | `value` | `any` | no |
 | `type` | `type` | no |
+
+**Executed examples (3):** [examples/values-types.md](../../examples/values-types.md), section `## Value.As`
 
 ## Value.Compare
 
@@ -265,6 +269,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/valu
 | `value2` | `any` | no |
 | `precision` | `nullable number` | yes |
 
+**Executed examples (3):** [examples/values.md](../../examples/values.md), section `## Value.Compare`
+
 ## Value.Divide
 
 ```m
@@ -287,6 +293,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/valu
 | `value2` | `any` | no |
 | `precision` | `nullable number` | yes |
 
+**Executed examples (3):** [examples/values-arithmetic-operations.md](../../examples/values-arithmetic-operations.md), section `## Value.Divide`
+
 ## Value.Equals
 
 ```m
@@ -308,6 +316,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/valu
 | `value1` | `any` | no |
 | `value2` | `any` | no |
 | `precision` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/values.md](../../examples/values.md), section `## Value.Equals`
 
 ## Value.Firewall
 
@@ -350,6 +360,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/valu
 | `value` | `any` | no |
 | `type` | `type` | no |
 
+**Executed examples (3):** [examples/values-types.md](../../examples/values-types.md), section `## Value.Is`
+
 ## Value.Multiply
 
 ```m
@@ -371,6 +383,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/valu
 | `value1` | `any` | no |
 | `value2` | `any` | no |
 | `precision` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/values-arithmetic-operations.md](../../examples/values-arithmetic-operations.md), section `## Value.Multiply`
 
 ## Value.NativeQuery
 
@@ -417,6 +431,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/valu
 | `value2` | `any` | no |
 | `precision` | `nullable number` | yes |
 
+**Executed examples (3):** [examples/values.md](../../examples/values.md), section `## Value.NullableEquals`
+
 ## Value.ReplaceType
 
 ```m
@@ -437,6 +453,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/valu
 |---|---|---|
 | `value` | `any` | no |
 | `type` | `type` | no |
+
+**Executed examples (3):** [examples/values-types.md](../../examples/values-types.md), section `## Value.ReplaceType`
 
 ## Value.Subtract
 
@@ -460,6 +478,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/valu
 | `value2` | `any` | no |
 | `precision` | `nullable number` | yes |
 
+**Executed examples (3):** [examples/values-arithmetic-operations.md](../../examples/values-arithmetic-operations.md), section `## Value.Subtract`
+
 ## Value.Type
 
 ```m
@@ -479,6 +499,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/valu
 | Name | Type | Optional |
 |---|---|---|
 | `value` | `any` | no |
+
+**Executed examples (3):** [examples/values.md](../../examples/values.md), section `## Value.Type`
 
 ## Value.ViewError
 

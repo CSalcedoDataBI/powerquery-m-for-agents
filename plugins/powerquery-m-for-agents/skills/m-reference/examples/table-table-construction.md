@@ -1,8 +1,100 @@
-<!-- lab: desktop 2.157.879.0 -->
+<!-- lab: desktop 2.159.883.0 -->
 
 # Executed examples: table-table-construction
 
 One `## <Name>` section per function. Every ```text block is what the engine returned, written by the lab runner, never typed.
+
+## ItemExpression.From
+
+These examples show the record it returns for a one-parameter function's body, and what happens with field access and a two-parameter function.
+
+```m
+ItemExpression.From(each _ <> null)
+```
+
+```text
+[Kind = "Binary", Operator = "NotEquals", Left = [Kind = "Invocation", Function = [Kind = "Constant", Value = function () as any], Arguments = {}], Right = [Kind = "Constant", Value = null]]
+```
+
+Field access on the item becomes a `FieldAccess` node.
+
+```m
+ItemExpression.From(each [Price] > 10 and [Price] <= 100)
+```
+
+```text
+[Kind = "Binary", Operator = "And", Left = [Kind = "Binary", Operator = "GreaterThan", Left = [Kind = "FieldAccess", MemberName = "Price", Expression = [Kind = "Invocation", Function = [Kind = "Constant", Value = function () as any], Arguments = {}]], Right = [Kind = "Constant", Value = 10]], Right = [Kind = "Binary", Operator = "LessThanOrEquals", Left = [Kind = "FieldAccess", MemberName = "Price", Expression = [Kind = "Invocation", Function = [Kind = "Constant", Value = function () as any], Arguments = {}]], Right = [Kind = "Constant", Value = 100]]]
+```
+
+A function with two parameters has no single item.
+
+```m
+ItemExpression.From((x, y) => x + y)
+```
+
+```text
+[Kind = "Invocation", Function = [Kind = "Constant", Value = function (x as any, y as any) as any], Arguments = {[Kind = "Invocation", Function = [Kind = "Constant", Value = function () as any], Arguments = {}]}]
+```
+
+## RowExpression.Column
+
+The result is a record describing a column access, not the column's value.
+
+```m
+RowExpression.Column("Sales")
+```
+
+```text
+[Kind = "FieldAccess", MemberName = "Sales", Expression = [Kind = "Invocation", Function = [Kind = "Constant", Value = function () as any], Arguments = {}]]
+```
+
+It should describe the same access that `each [Sales]` produces.
+
+```m
+RowExpression.Column("Sales") = RowExpression.From(each [Sales])
+```
+
+```text
+true
+```
+
+`columnName` is not optional, so `null` should raise an error. An empty name or one containing spaces is a separate case.
+
+```m
+[Null = try RowExpression.Column(null), Empty = try RowExpression.Column(""), Spaced = try RowExpression.Column("Unit Price")]
+```
+
+```text
+[Null = [HasError = true, Error = [Reason = "Expression.Error", Message = "We cannot convert the value null to type Text.", Detail = [Value = null, Type = type text], #"Message.Format" = "We cannot convert the value #{0} to type #{1}.", #"Message.Parameters" = {"null", "Text"}, ErrorCode = "10277"]], Empty = [HasError = false, Value = [Kind = "FieldAccess", MemberName = "", Expression = [Kind = "Invocation", Function = [Kind = "Constant", Value = function () as any], Arguments = {}]]], Spaced = [HasError = false, Value = [Kind = "FieldAccess", MemberName = "Unit Price", Expression = [Kind = "Invocation", Function = [Kind = "Constant", Value = function () as any], Arguments = {}]]]]
+```
+
+## RowExpression.From
+
+These examples show the AST built from a row function's body, including nulls, captured variables and a function with more than one parameter.
+
+```m
+RowExpression.From(each [Units] > 20 and [Region] = null)
+```
+
+```text
+[Kind = "Binary", Operator = "And", Left = [Kind = "Binary", Operator = "GreaterThan", Left = [Kind = "FieldAccess", MemberName = "Units", Expression = [Kind = "Invocation", Function = [Kind = "Constant", Value = function () as any], Arguments = {}]], Right = [Kind = "Constant", Value = 20]], Right = [Kind = "Binary", Operator = "Equals", Left = [Kind = "FieldAccess", MemberName = "Region", Expression = [Kind = "Invocation", Function = [Kind = "Constant", Value = function () as any], Arguments = {}]], Right = [Kind = "Constant", Value = null]]]
+```
+
+```m
+let threshold = 10 in RowExpression.From(each [Units] >= threshold)
+```
+
+```text
+[Kind = "Binary", Operator = "GreaterThanOrEquals", Left = [Kind = "FieldAccess", MemberName = "Units", Expression = [Kind = "Invocation", Function = [Kind = "Constant", Value = function () as any], Arguments = {}]], Right = [Kind = "Constant", Value = 10]]
+```
+
+```m
+RowExpression.From((a, b) => a + b)
+```
+
+```text
+[Kind = "Invocation", Function = [Kind = "Constant", Value = function (a as any, b as any) as any], Arguments = {[Kind = "Invocation", Function = [Kind = "Constant", Value = function () as any], Arguments = {}]}]
+```
 
 ## Table.FromColumns
 

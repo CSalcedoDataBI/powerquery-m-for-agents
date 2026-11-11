@@ -236,6 +236,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 |---|---|---|
 | `number` | `nullable number` | no |
 
+**Executed examples (3):** [examples/number-trigonometry.md](../../examples/number-trigonometry.md), section `## Number.Acos`
+
 ## Number.Asin
 
 ```m
@@ -256,6 +258,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 |---|---|---|
 | `number` | `nullable number` | no |
 
+**Executed examples (3):** [examples/number-trigonometry.md](../../examples/number-trigonometry.md), section `## Number.Asin`
+
 ## Number.Atan
 
 ```m
@@ -275,6 +279,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 | Name | Type | Optional |
 |---|---|---|
 | `number` | `nullable number` | no |
+
+**Executed examples (3):** [examples/number-trigonometry.md](../../examples/number-trigonometry.md), section `## Number.Atan`
 
 ## Number.Atan2
 
@@ -297,6 +303,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 | `y` | `nullable number` | no |
 | `x` | `nullable number` | no |
 
+**Executed examples (3):** [examples/number-trigonometry.md](../../examples/number-trigonometry.md), section `## Number.Atan2`
+
 ## Number.BitwiseAnd
 
 ```m
@@ -318,6 +326,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 | `number1` | `nullable number` | no |
 | `number2` | `nullable number` | no |
 
+**Executed examples (3):** [examples/number-bytes.md](../../examples/number-bytes.md), section `## Number.BitwiseAnd`
+
 ## Number.BitwiseNot
 
 ```m
@@ -337,6 +347,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 | Name | Type | Optional |
 |---|---|---|
 | `number` | `any` | no |
+
+**Executed examples (3):** [examples/number-bytes.md](../../examples/number-bytes.md), section `## Number.BitwiseNot`
 
 ## Number.BitwiseOr
 
@@ -359,6 +371,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 | `number1` | `nullable number` | no |
 | `number2` | `nullable number` | no |
 
+**Executed examples (3):** [examples/number-bytes.md](../../examples/number-bytes.md), section `## Number.BitwiseOr`
+
 ## Number.BitwiseShiftLeft
 
 ```m
@@ -379,6 +393,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 |---|---|---|
 | `number1` | `nullable number` | no |
 | `number2` | `nullable number` | no |
+
+**Executed examples (3):** [examples/number-bytes.md](../../examples/number-bytes.md), section `## Number.BitwiseShiftLeft`
 
 ## Number.BitwiseShiftRight
 
@@ -401,6 +417,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 | `number1` | `nullable number` | no |
 | `number2` | `nullable number` | no |
 
+**Executed examples (3):** [examples/number-bytes.md](../../examples/number-bytes.md), section `## Number.BitwiseShiftRight`
+
 ## Number.BitwiseXor
 
 ```m
@@ -421,6 +439,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 |---|---|---|
 | `number1` | `nullable number` | no |
 | `number2` | `nullable number` | no |
+
+**Executed examples (3):** [examples/number-bytes.md](../../examples/number-bytes.md), section `## Number.BitwiseXor`
 
 ## Number.Combinations
 
@@ -465,6 +485,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 |---|---|---|
 | `number` | `nullable number` | no |
 
+**Executed examples (3):** [examples/number-trigonometry.md](../../examples/number-trigonometry.md), section `## Number.Cos`
+
 ## Number.Cosh
 
 ```m
@@ -484,6 +506,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 | Name | Type | Optional |
 |---|---|---|
 | `number` | `nullable number` | no |
+
+**Executed examples (3):** [examples/number-trigonometry.md](../../examples/number-trigonometry.md), section `## Number.Cosh`
 
 ## Number.Exp
 
@@ -621,6 +645,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 |---|---|---|
 | `number` | `number` | no |
 
+**Executed examples (3):** [examples/number-information.md](../../examples/number-information.md), section `## Number.IsEven`
+
 ## Number.IsNaN
 
 ```m
@@ -641,6 +667,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 |---|---|---|
 | `number` | `number` | no |
 
+**Executed examples (3):** [examples/number-information.md](../../examples/number-information.md), section `## Number.IsNaN`
+
 ## Number.IsOdd
 
 ```m
@@ -660,6 +688,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 | Name | Type | Optional |
 |---|---|---|
 | `number` | `number` | no |
+
+**Executed examples (3):** [examples/number-information.md](../../examples/number-information.md), section `## Number.IsOdd`
 
 ## Number.Ln
 
@@ -812,6 +842,8 @@ Returns a random number.
 
 Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/number-random)
 
+**Executed examples (3):** [examples/number-random.md](../../examples/number-random.md), section `## Number.Random`
+
 ## Number.RandomBetween
 
 ```m
@@ -832,6 +864,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 |---|---|---|
 | `bottom` | `number` | no |
 | `top` | `number` | no |
+
+**Executed examples (3):** [examples/number-random.md](../../examples/number-random.md), section `## Number.RandomBetween`
 
 ## Number.Round
 
@@ -855,6 +889,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 | `digits` | `nullable number` | yes |
 | `roundingMode` | `nullable number` | yes |
 
+**Executed examples (3):** [examples/number-rounding.md](../../examples/number-rounding.md), section `## Number.Round`
+
 ## Number.RoundAwayFromZero
 
 ```m
@@ -875,6 +911,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 |---|---|---|
 | `number` | `nullable number` | no |
 | `digits` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/number-rounding.md](../../examples/number-rounding.md), section `## Number.RoundAwayFromZero`
 
 ## Number.RoundDown
 
@@ -897,6 +935,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 | `number` | `nullable number` | no |
 | `digits` | `nullable number` | yes |
 
+**Executed examples (3):** [examples/number-rounding.md](../../examples/number-rounding.md), section `## Number.RoundDown`
+
 ## Number.RoundTowardZero
 
 ```m
@@ -918,6 +958,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 | `number` | `nullable number` | no |
 | `digits` | `nullable number` | yes |
 
+**Executed examples (3):** [examples/number-rounding.md](../../examples/number-rounding.md), section `## Number.RoundTowardZero`
+
 ## Number.RoundUp
 
 ```m
@@ -938,6 +980,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 |---|---|---|
 | `number` | `nullable number` | no |
 | `digits` | `nullable number` | yes |
+
+**Executed examples (3):** [examples/number-rounding.md](../../examples/number-rounding.md), section `## Number.RoundUp`
 
 ## Number.Sign
 
@@ -981,6 +1025,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 |---|---|---|
 | `number` | `nullable number` | no |
 
+**Executed examples (3):** [examples/number-trigonometry.md](../../examples/number-trigonometry.md), section `## Number.Sin`
+
 ## Number.Sinh
 
 ```m
@@ -1000,6 +1046,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 | Name | Type | Optional |
 |---|---|---|
 | `number` | `nullable number` | no |
+
+**Executed examples (3):** [examples/number-trigonometry.md](../../examples/number-trigonometry.md), section `## Number.Sinh`
 
 ## Number.Sqrt
 
@@ -1043,6 +1091,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 |---|---|---|
 | `number` | `nullable number` | no |
 
+**Executed examples (3):** [examples/number-trigonometry.md](../../examples/number-trigonometry.md), section `## Number.Tan`
+
 ## Number.Tanh
 
 ```m
@@ -1062,6 +1112,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/numb
 | Name | Type | Optional |
 |---|---|---|
 | `number` | `nullable number` | no |
+
+**Executed examples (3):** [examples/number-trigonometry.md](../../examples/number-trigonometry.md), section `## Number.Tanh`
 
 ## Number.ToText
 

@@ -7,7 +7,8 @@ doesn't tell you.
 > **Status: early.** The catalogue is generated from one export, Power BI Desktop; its size
 > and the build it came from are in the header of
 > [`catalog.md`](plugins/powerquery-m-for-agents/skills/m-reference/generated/catalog.md), counted by the generator rather
-> than typed here. Executed examples cover the Text, List and Table functions, and the language
+> than typed here. Executed examples cover Text, List, Table, Number, date and time, Comparer,
+> Combiner, Uri and other value-computing functions, and the language
 > itself has hand-written concept pages. No second host yet.
 
 Sibling of [dax-for-agents](https://github.com/CSalcedoDataBI/dax-for-agents), with the same
@@ -39,6 +40,7 @@ another. A question counts only when the model answered both times.
 |---|---|---|---|
 | Claude Haiku 4.5 | 35 | 10 | **6** |
 | Claude Sonnet 5.5 | 30 | 0 | 1 |
+| Claude Opus 5.5 | 25 | 0 | 0 |
 | DeepSeek V4-Pro | 33 | 5 | **2** |
 | DeepSeek V4-Flash | 35 | 9 | **1** |
 
@@ -46,11 +48,12 @@ What the inventions look like: `BinaryFormat.BigEndian` (it is `ByteOrder.BigEnd
 `Diagnostics.TraceLevel.Information` (it is `TraceLevel.Information`), `Thread.Sleep`,
 `Splitter.FixedWidth`, `DateTime.Now`. They sit mostly in the less-written corners of the
 library (BinaryFormat, Diagnostics, Type, Uri, Cube), which is where the reference helps most.
-The strongest model barely invents with or without it: the reference earns its keep with the
-smaller and cheaper ones.
+The strongest models barely invent with or without it: Sonnet 5.5 and Opus 5.5 invent nothing
+on arm A, so the reference earns its keep with the smaller and cheaper ones.
 
 Sonnet 5.5 refuses some questions outright (evaluating text as M with `Expression.Evaluate`,
-waiting between web calls), and DeepSeek V4-Pro sometimes spends its whole budget reasoning;
+waiting between web calls), Opus 5.5 refuses more still (10 of its questions are dropped for a
+refusal in one or both arms), and DeepSeek V4-Pro sometimes spends its whole budget reasoning;
 those questions are left out of that model's row rather than scored as zero. Arm B is given
 the function rows of the question's category, not the constants (`ByteOrder.BigEndian`,
 `TraceLevel.Information`), which live in their own file; several inventions above are
@@ -113,7 +116,8 @@ The repository also holds maintainer tools. None runs unless you run it:
 | `lab/shared-export/learn_links.py` | Python, standard library only | One HEAD request per catalogue function to `https://learn.microsoft.com/en-us/powerquery-m/<function page>`, to keep only the links that answer 200. The URL names the function; nothing else is sent | Nothing but the status code |
 | `lab/review/build_review.py` | Python; writes the review PBIPs (kept private, not in this repository), which you open yourself | Nothing | Nothing |
 | `evals/hallucination/run_ab.py` | Python, standard library plus PyYAML | Each benchmark question to the Anthropic or DeepSeek API, with `ANTHROPIC_API_KEY` or `DEEPSEEK_API_KEY` read from the environment. `--replay` sends nothing | Nothing |
-| `lab/drafting/pilot.py` (pilot) | Python; writes the prompts, and turns the answers `run_dsh.ps1` saved into example pages | Nothing | Nothing |
+| `lab/drafting/pilot.py` | Python; writes the prompts, and turns the saved answers into example sections | Nothing | Nothing |
+| `lab/drafting/run_claude.ps1` (opt-in) | A reviewer CLI you install yourself (default `claude-review`), resolved on PATH | Each prompt to the Anthropic API through that CLI, which holds the key; this repository reads no key | Nothing |
 | `lab/drafting/run_dsh.ps1` (pilot, opt-in) | A Docker container with DeepSeek's `dsh` CLI | Each prompt to the DeepSeek API, with `DEEPSEEK_API_KEY` read from your Windows user environment | When the image is built: the `node:24-bookworm-slim` base image, and `@deepseek-ai/dsh` from npm at a pinned version |
 
 ## Not here

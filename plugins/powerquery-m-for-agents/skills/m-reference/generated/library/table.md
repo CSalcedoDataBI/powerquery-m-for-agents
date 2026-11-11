@@ -24,6 +24,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/item
 |---|---|---|
 | `function` | `function` | no |
 
+**Executed examples (3):** [examples/table-table-construction.md](../../examples/table-table-construction.md), section `## ItemExpression.From`
+
 ## RowExpression.Column
 
 ```m
@@ -44,6 +46,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/rowe
 |---|---|---|
 | `columnName` | `text` | no |
 
+**Executed examples (3):** [examples/table-table-construction.md](../../examples/table-table-construction.md), section `## RowExpression.Column`
+
 ## RowExpression.From
 
 ```m
@@ -63,6 +67,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/rowe
 | Name | Type | Optional |
 |---|---|---|
 | `function` | `function` | no |
+
+**Executed examples (3):** [examples/table-table-construction.md](../../examples/table-table-construction.md), section `## RowExpression.From`
 
 ## Table.AddColumn
 
@@ -2762,3 +2768,5 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/tabl
 |---|---|---|
 | `tables` | `table` | no |
 | `dataColumn` | `nullable text` | yes |
+
+**Executed examples (3):** [examples/table-information.md](../../examples/table-information.md), section `## Tables.GetRelationships`

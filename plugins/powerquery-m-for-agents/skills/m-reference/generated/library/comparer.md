@@ -26,6 +26,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/comp
 | `x` | `any` | no |
 | `y` | `any` | no |
 
+**Executed examples (3):** [examples/comparer.md](../../examples/comparer.md), section `## Comparer.Equals`
+
 ## Comparer.FromCulture
 
 ```m
@@ -46,6 +48,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/comp
 |---|---|---|
 | `culture` | `text` | no |
 | `ignoreCase` | `nullable logical` | yes |
+
+**Executed examples (3):** [examples/comparer.md](../../examples/comparer.md), section `## Comparer.FromCulture`
 
 ## Comparer.Ordinal
 
@@ -68,6 +72,8 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/comp
 | `x` | `any` | no |
 | `y` | `any` | no |
 
+**Executed examples (3):** [examples/comparer.md](../../examples/comparer.md), section `## Comparer.Ordinal`
+
 ## Comparer.OrdinalIgnoreCase
 
 ```m
@@ -88,3 +94,5 @@ Reference: [Microsoft Learn](https://learn.microsoft.com/en-us/powerquery-m/comp
 |---|---|---|
 | `x` | `any` | no |
 | `y` | `any` | no |
+
+**Executed examples (3):** [examples/comparer.md](../../examples/comparer.md), section `## Comparer.OrdinalIgnoreCase`
