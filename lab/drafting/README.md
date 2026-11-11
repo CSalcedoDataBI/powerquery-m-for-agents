@@ -22,8 +22,8 @@ differs. Two harnesses answer it:
 # one prompt per function missing an example, in the given category roots
 python lab/drafting/pilot.py prompts --out lab/drafting/out/claude --missing-only --categories Number,Text,Time
 
-# answer each prompt (claude-review, stop once logged spend reaches US$93)
-pwsh lab/drafting/run_claude.ps1 -Out lab/drafting/out/claude -Ceiling 93
+# answer each prompt (stop once the reviewer's logged spend reaches the ceiling, in US$)
+pwsh lab/drafting/run_claude.ps1 -Out lab/drafting/out/claude -Ceiling 20
 # ...or the DeepSeek container, one per function (build + isolation check first with -CheckOnly)
 pwsh lab/drafting/run_dsh.ps1 -Out lab/drafting/out/dsh
 

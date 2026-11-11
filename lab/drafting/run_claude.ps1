@@ -25,7 +25,7 @@
 .EXAMPLE
   pwsh lab/drafting/run_claude.ps1 -Out lab/drafting/out/claude -CheckOnly
   pwsh lab/drafting/run_claude.ps1 -Out lab/drafting/out/claude -Only number-acos,number-asin
-  pwsh lab/drafting/run_claude.ps1 -Out lab/drafting/out/claude -Ceiling 93
+  pwsh lab/drafting/run_claude.ps1 -Out lab/drafting/out/claude -Ceiling 20
 #>
 [CmdletBinding(PositionalBinding = $false)]
 param(
