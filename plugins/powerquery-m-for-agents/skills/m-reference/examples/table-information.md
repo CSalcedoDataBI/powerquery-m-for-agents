@@ -1,4 +1,4 @@
-<!-- lab: desktop 2.157.879.0 -->
+<!-- lab: desktop 2.159.883.0 -->
 
 # Executed examples: table-information
 
@@ -111,7 +111,7 @@ in
 
 ## Tables.GetRelationships
 
-The examples show the default `Data` column, a differently named data column passed as `dataColumn`, and a missing `Data` column.
+All three calls fail, each on an in-memory table: with a `Data` column, with a differently named column passed as `dataColumn`, and with no `Data` column at all.
 
 ```m
 Tables.GetRelationships(
