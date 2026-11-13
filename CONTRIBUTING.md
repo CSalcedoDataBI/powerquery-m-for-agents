@@ -18,14 +18,18 @@ commit that lands on the branch it tracks and puts each one in review, replacing
 before. `stable` moves only when a release is published, so `main` can take commits every day.
 Claude Code users who install from this repo's marketplace still get `main`.
 
-A release is two steps by hand and one automatic:
+release-please decides the number from the conventional commits
+(`.github/workflows/release-please.yml`):
 
-1. Bump `version` in `plugins/powerquery-m-for-agents/.claude-plugin/plugin.json` on `main`,
-   through a pull request.
-2. Tag the merged commit and publish the release: `git tag -a vX.Y.Z <sha>`,
-   `git push origin vX.Y.Z`, `gh release create vX.Y.Z --verify-tag`.
-3. `.github/workflows/stable.yml` then fast-forwards `stable` to that commit. If it fails
+1. It keeps one release pull request open, which bumps `version` in
+   `plugins/powerquery-m-for-agents/.claude-plugin/plugin.json` and writes `CHANGELOG.md`.
+2. Merging that pull request, with the maintainer's OK, creates the tag `vX.Y.Z` and its
+   GitHub Release, and the same workflow fast-forwards `stable` to that commit. A release
+   published by hand moves it through `.github/workflows/stable.yml` instead. If either fails
    because it is not a fast-forward, stop: never force `stable`.
+
+Every other pull request is reviewed and merged against [FICHA.md](FICHA.md) by the repo's
+experto (`.claude/agents/experto.md`) once the check `validate` is green.
 
 - **Batch the work.** A release is a review cycle measured in days, not a deploy.
 - **Test before releasing**, in Claude Code against the local plugin

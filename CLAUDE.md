@@ -18,4 +18,12 @@ files with nothing a maintainer alone needs (`scripts/validate_skills.py` checks
 - Repository language is English; specs and ADRs under `docs/` are in Spanish, as in
   dax-for-agents.
 
+## North and merges
+
+**[FICHA.md](FICHA.md) is this repo's north**: what the tool is and is not, its protected zones
+and its required check. Every change enters `main` by pull request; the experto
+(`.claude/agents/experto.md`) reviews it once against the ficha and merges it when the check
+`validate` is green. The release-please pull request moves `stable`, so it waits for the
+maintainer.
+
 Conventions live in [INDEX.md](INDEX.md#conventions).
