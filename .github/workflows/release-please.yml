@@ -1,0 +1,53 @@
+name: release-please
+
+# release-please reads the conventional commits on main and keeps one release pull request
+# open with the next version and the CHANGELOG. Merging that pull request creates the tag and
+# the GitHub Release, and the last step moves `stable`: that publishes a new version to the
+# plugin directory, so the release pull request waits for the maintainer (FICHA.md).
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+  # For `gh workflow run` on the release branch (see the second step).
+  actions: write
+
+# R2, release exception: a run cancelled half-way leaves tags and pull requests out of step.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    # R3: the action reads commits and updates one pull request.
+    timeout-minutes: 10
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # A pull request pushed by GITHUB_TOKEN starts its workflows as `action_required`, so the
+      # required check `validate` would never report on the release branch. workflow_dispatch is
+      # exempt from that rule: ask for the verdict here. `pr` is set only when this run created
+      # or updated the release pull request.
+      - name: Run validate on the release branch
+        if: steps.release.outputs.pr != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          BRANCH: ${{ fromJSON(steps.release.outputs.pr || '{}').headBranchName }}
+        run: gh workflow run validate-skills.yml --ref "$BRANCH"
+
+      # A release created by GITHUB_TOKEN does not fire `release:`, so stable.yml would not run
+      # for it. Same move as stable.yml: fast-forward to the release commit, never forced.
+      - name: Move stable to the new release
+        if: steps.release.outputs.release_created == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ steps.release.outputs.sha }}
+        run: gh api -X PATCH "repos/$REPO/git/refs/heads/stable" -f sha="$SHA" -F force=false
